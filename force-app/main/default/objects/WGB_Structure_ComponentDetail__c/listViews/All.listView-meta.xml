@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Line_Item_No__c</columns>
+    <columns>Component__c</columns>
+    <columns>Text1Val__c</columns>
+    <columns>Text2Val__c</columns>
+    <columns>Text3Val__c</columns>
+    <columns>Text4Val__c</columns>
+    <columns>Text5Val__c</columns>
+    <columns>Text6Val__c</columns>
+    <columns>Text7Val__c</columns>
+    <columns>Text8Val__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

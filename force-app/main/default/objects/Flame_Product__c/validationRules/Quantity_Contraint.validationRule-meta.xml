@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Contraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(  Quantity__c ),
+Bypass__c = FALSE,
+Product_Material_and_Options_flag__c=true
+)</errorConditionFormula>
+    <errorDisplayField>Quantity__c</errorDisplayField>
+    <errorMessage>Please Enter a Value</errorMessage>
+</ValidationRule>

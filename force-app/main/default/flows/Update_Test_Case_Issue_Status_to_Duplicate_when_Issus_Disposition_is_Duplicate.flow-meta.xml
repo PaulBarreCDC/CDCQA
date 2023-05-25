@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <decisions>
+        <name>Is_Test_Case_Issue_a_Dupicate</name>
+        <label>Is Test Case Issue a Dupicate</label>
+        <locationX>170</locationX>
+        <locationY>330</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Test_Case_Issue_Disposition_is_Duplicate</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Disposition__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Duplicate</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Test_Case_Issue_to_Closed</targetReference>
+            </connector>
+            <label>Test Case Issue Disposition is Duplicate</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Update Test Case Issue Status to Duplicate - when Issus Disposition is Duplicate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Test Case Issue Status to Duplicate - when Issue Disposition is Duplicate</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Set_Test_Case_Issue_to_Closed</name>
+        <label>Set Test Case Complete Date</label>
+        <locationX>180</locationX>
+        <locationY>512</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Issue_Status__c</field>
+            <value>
+                <stringValue>Duplicate</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Test_Case_Issues__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Is_Test_Case_Issue_a_Dupicate</targetReference>
+        </connector>
+        <object>Test_Case_Issues__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

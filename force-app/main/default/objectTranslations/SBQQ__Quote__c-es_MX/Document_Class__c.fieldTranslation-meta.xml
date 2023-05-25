@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Document_Class__c</name>
+    <picklistValues>
+        <masterLabel>SALES-100 (Customer Quotes)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-110 (Denied Party Screening Results)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-120 (Customer Purchase Orders)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-130 (Liberty (Discs) Contract Review Checklist)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-140 (Stafford (Valves) Contract Review Checklist)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-150 (Customer Specifications)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-160 (Customer Procedures)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-200 (Customer Order Requirements from Salesforce)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SALES-210 (Terms &amp; Conditions)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

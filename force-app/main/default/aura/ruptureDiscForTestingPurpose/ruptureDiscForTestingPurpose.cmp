@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,lightning:isUrlAddressable">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}"/>
+    <aura:attribute name="quoteId" type="String"/>
+    <aura:attribute name="configId" type="String"/>
+    <!--c:lwcRdForTestingPurpose recordId="{!v.configId}" quoteId="{!v.quoteId}"/-->
+</aura:component>

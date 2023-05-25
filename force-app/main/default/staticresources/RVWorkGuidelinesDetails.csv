@@ -1,0 +1,3 @@
+CDC_Ext_ID__c,Description__c,Flag__c,GuidlineSeq__c,Inspection_Sign_Off_Required__c,Operation__c,Sign_Off__c,Text1Val__c,Text__c,Type__c
+1,Coating,,20,Not Required,190,Required to Close Operation,1221B Fiberglass,Supply Coating Report,Subtask
+3,Steam Jacket Shell Test,,35,Not Required,190,Required to Close Operation,1221B Fiberglass,Supply Shell Test Report for Steam Jacket,Subtask

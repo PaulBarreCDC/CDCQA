@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Required_Flow_units_Constraint</fullName>
+    <active>false</active>
+    <description>Required Flow units is a Mandatory field to be entered by the user when Evaluation Type = &quot;Sizing&quot; OR Evaluation Type = Sizing &amp; Capacity&quot;</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Evaluation_Type__c , &quot;Sizing&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Type__c , &quot;Sizing &amp; Capacity&quot;), 
+OR( 
+ISBLANK ( TEXT( cdcpc__Required_Flow_units__c ) ) 
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Required_Flow_units__c</errorDisplayField>
+    <errorMessage>Required Flow units: Please select a value from the drop down</errorMessage>
+</ValidationRule>

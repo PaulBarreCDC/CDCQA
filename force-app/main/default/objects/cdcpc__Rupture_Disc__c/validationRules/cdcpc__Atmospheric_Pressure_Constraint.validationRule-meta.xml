@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Atmospheric_Pressure_Constraint</fullName>
+    <active>false</active>
+    <description>Atmospheric Pressure is a Mandatory field if Pressure Relief is selected in Relief type.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(cdcpc__Relief_Type__c, &quot;Pressure Relief&quot;)|| 
+ISPICKVAL(cdcpc__Relief_Type__c, &quot;Pressure &amp; Vacuum Relief&quot;), 
+OR(
+ISBLANK (cdcpc__Atmospheric_Pressure__c)
+)
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp; 
+(  cdcpc__Relief_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Atmospheric_Pressure__c</errorDisplayField>
+    <errorMessage>Please Enter a Value</errorMessage>
+</ValidationRule>

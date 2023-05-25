@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>cdcpc__PTC__c</fields>
+    <fields>cdcpc__SZC__c</fields>
+    <fields>cdcpc__Matl__c</fields>
+    <fields>cdcpc__SourceCode__c</fields>
+    <fields>cdcpc__OptionCode__c</fields>
+    <fields>cdcpc__TestingCode__c</fields>
+    <fields>cdcpc__RVIGasketPartNumber__c</fields>
+    <fields>cdcpc__Thickness__c</fields>
+    <fields>cdcpc__Qty_Per_Assembly__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

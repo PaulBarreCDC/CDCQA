@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Painting_Coating_Option_Field_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISBLANK(Painting_Coating_Option__c),
+Bypass__c = FALSE,
+Product_Material_and_Options_flag__c=true
+)</errorConditionFormula>
+    <errorMessage>Painting/Coating Option : Please select a value from the drop down</errorMessage>
+</ValidationRule>

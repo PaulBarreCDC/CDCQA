@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>BTC__c</columns>
+    <columns>CableLength__c</columns>
+    <columns>EndConnection__c</columns>
+    <columns>GasketMatlCode__c</columns>
+    <columns>Interface__c</columns>
+    <columns>Seal_Thickness__c</columns>
+    <columns>StripMatlCode__c</columns>
+    <columns>WireType__c</columns>
+    <columns>ModulePN__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

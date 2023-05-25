@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>AssySeat__c</fields>
+    <fields>RefSTC1__c</fields>
+    <fields>RefSTC2__c</fields>
+    <fields>RefSTC3__c</fields>
+    <fields>RefSTC4__c</fields>
+    <fields>RefSTC5__c</fields>
+    <fields>RefSTC6__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

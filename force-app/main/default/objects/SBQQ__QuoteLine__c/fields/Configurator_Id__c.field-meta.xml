@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Configurator_Id__c</fullName>
+    <description>CC - Id of the configurator used to create Quote Line record. Used to navigate back to specific configurator from QLE via custom action.</description>
+    <externalId>false</externalId>
+    <label>Configurator Id</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

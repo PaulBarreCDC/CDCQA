@@ -1,0 +1,7 @@
+Element__c,Attribute_Code__c,Interface_to_IFS_Attributes__c,Product__c 
+Value,MCD,TRUE,RD
+Info,OW040,TRUE,RD
+Number,PSRMAX,TRUE,RD
+Info,OW0405,TRUE,RD
+Value,CLEAN,TRUE,RD
+Value,ADMERK,TRUE,RD

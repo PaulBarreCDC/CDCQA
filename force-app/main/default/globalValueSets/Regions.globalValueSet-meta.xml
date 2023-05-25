@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>AF1</fullName>
+        <default>false</default>
+        <label>AF1</label>
+    </customValue>
+    <customValue>
+        <fullName>D01</fullName>
+        <default>false</default>
+        <label>Domestic 1</label>
+    </customValue>
+    <customValue>
+        <fullName>D02</fullName>
+        <default>false</default>
+        <label>Domestic 2</label>
+    </customValue>
+    <customValue>
+        <fullName>D03</fullName>
+        <default>false</default>
+        <label>Domestic 3</label>
+    </customValue>
+    <customValue>
+        <fullName>D04</fullName>
+        <default>false</default>
+        <label>Domestic 4</label>
+    </customValue>
+    <customValue>
+        <fullName>D05</fullName>
+        <default>false</default>
+        <label>Domestic 5</label>
+    </customValue>
+    <customValue>
+        <fullName>D06</fullName>
+        <default>false</default>
+        <label>Domestic 6</label>
+    </customValue>
+    <customValue>
+        <fullName>DUPS</fullName>
+        <default>false</default>
+        <label>Domestic Upstream</label>
+    </customValue>
+    <customValue>
+        <fullName>E0</fullName>
+        <default>false</default>
+        <label>East 0</label>
+    </customValue>
+    <customValue>
+        <fullName>E1</fullName>
+        <default>false</default>
+        <label>East 1</label>
+    </customValue>
+    <customValue>
+        <fullName>E2</fullName>
+        <default>false</default>
+        <label>East 2</label>
+    </customValue>
+    <customValue>
+        <fullName>EU1</fullName>
+        <default>false</default>
+        <label>European Union 1</label>
+    </customValue>
+    <customValue>
+        <fullName>EU2</fullName>
+        <default>false</default>
+        <label>European Union 2</label>
+    </customValue>
+    <customValue>
+        <fullName>EU3</fullName>
+        <default>false</default>
+        <label>European Union 3</label>
+    </customValue>
+    <customValue>
+        <fullName>EU4</fullName>
+        <default>false</default>
+        <label>European Union 4</label>
+    </customValue>
+    <customValue>
+        <fullName>FR1</fullName>
+        <default>false</default>
+        <label>N France</label>
+    </customValue>
+    <customValue>
+        <fullName>LA1</fullName>
+        <default>false</default>
+        <label>Latin America 1</label>
+    </customValue>
+    <customValue>
+        <fullName>LA2</fullName>
+        <default>false</default>
+        <label>Latin America 2</label>
+    </customValue>
+    <customValue>
+        <fullName>LA3</fullName>
+        <default>false</default>
+        <label>Latin America 3</label>
+    </customValue>
+    <customValue>
+        <fullName>ME1</fullName>
+        <default>false</default>
+        <label>Middle East 1</label>
+    </customValue>
+    <customValue>
+        <fullName>ME2</fullName>
+        <default>false</default>
+        <label>Middle East 2</label>
+    </customValue>
+    <customValue>
+        <fullName>OC1</fullName>
+        <default>false</default>
+        <label>Oceania</label>
+    </customValue>
+    <customValue>
+        <fullName>FR2</fullName>
+        <default>false</default>
+        <label>S France</label>
+    </customValue>
+    <customValue>
+        <fullName>DOE3</fullName>
+        <default>false</default>
+        <label>DOE3</label>
+    </customValue>
+    <customValue>
+        <fullName>DDH1</fullName>
+        <default>false</default>
+        <label>DDH1</label>
+    </customValue>
+    <customValue>
+        <fullName>DOE2</fullName>
+        <default>false</default>
+        <label>DOE2</label>
+    </customValue>
+    <customValue>
+        <fullName>DNIH</fullName>
+        <default>false</default>
+        <label>DNIH</label>
+    </customValue>
+    <customValue>
+        <fullName>LOE1</fullName>
+        <default>false</default>
+        <label>LOE1</label>
+    </customValue>
+    <customValue>
+        <fullName>DOE1</fullName>
+        <default>false</default>
+        <label>DOE1</label>
+    </customValue>
+    <customValue>
+        <fullName>DLD</fullName>
+        <default>false</default>
+        <label>DLD</label>
+    </customValue>
+    <customValue>
+        <fullName>DHV</fullName>
+        <default>false</default>
+        <label>DHV</label>
+    </customValue>
+    <masterLabel>Regions</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

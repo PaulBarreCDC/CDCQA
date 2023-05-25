@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Lead_Time__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Lead Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product_Group__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Product_Lead_Time</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Groth Valve Products</controllingFieldValue>
+            <valueName>Standard Lead-Time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth Valve Products</controllingFieldValue>
+            <valueName>Shortest possible lead-time needed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth Valve Products</controllingFieldValue>
+            <valueName>A specific product ship date has been specified</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

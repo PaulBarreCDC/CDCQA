@@ -1,0 +1,12 @@
+Component_Scrap__c,Component__c,Line_Item_No__c,NumVal1__c,NumVal2__c,Part_Number__c,Qty_per_Assembly__c,Scrap_Factor__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c,Text8Val__c
+0,Burner Base,10,,,BNR4B120005100C000000000,1,0,8392B,12,C,4,,,,
+0,Ignitor,20,,,MGIEA4A00005000000000000,1,0,8391B,,,,,,,
+0,Flame Sensor,30,,,MGTCA4A0000100004AQ00000,1,0,8391B,D,1,,,,,
+0,Supply Manifold,60,,,MGSMF4B000050000SSD00000,1,0,8392B,Automatic,psig,Y,,,,
+0,Pilot Gas,70,,,MGPGA4A00051000000000000,1,0,8391B,,,,,,,
+0,Transformer,80,,,MGTFM4A0002000000000000P,1,0,8391B,Y,4,,,,,
+0,Control Panel,100,,,CPK4AEDE3046000Y4AU00000,1,0,8391B,N,D,6,N,N,Y,N
+0,Transformer Bracket,90,,,BTJ4A0000020000000000000,1,0,8391B,4,3,,,,,
+0,Stack Orifice,40,4,8,OSP4ADC18054000000000000,1,0,8391B,D,in water,,,,,
+0,Flame Front Orifice,50,4,8,OSP4ADC18054000000000000,1,0,8392B,D,in. water,,,,,
+0,Sunshield,110,,,MGFRA4B00005000000000000,1,0,8392B,5,N,,,,,

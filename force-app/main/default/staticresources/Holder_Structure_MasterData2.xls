@@ -1,0 +1,25 @@
+Accessory_Type_Code__c,Additional_Code__c,AutoEyebolt__c,BodySC__c,CapscrewSC__c,ClampSC__c,CompanionFlangeSC__c,Component_Part_Number__c,Component_Scrap__c,CompPTC__c,Desc__c,Diameter__c,ExcessFlowSC__c,EyeboltsSC__c,GasketSC__c,GaugeSC__c,Gauge_Selection_Mid_Flange__c,Gauge_Selection__c,HCLASS__c,Holder_Structure_Type__c,INLETCOMPPTC__c,InletSC__c,JackScrewPN__c,JackscrewSC__c,KBDesign__c,KnifebladeSC__c,LeadtimeSchedule__c,Length__c,LotSerial__c,Material_Sourcing_Requirements__c,MatlCode__c,MCBODY__c,MCCF__c,MCCLMP__c,MCEYEBOLT__c,MCHG__c,MCHI__c,MCHN__c,MCHO__c,MCHRNG__c,MCKBLD__c,MCMFLG__c,MCSTUD__c,MidFlangeSC__c,ModulePN__c,NutSC__c,OBDesc__c,OptionCode__c,OUTLETCOMPPTC__c,OutletSC__c,PartCode__c,PhysicalProps__c,PressUnits__c,PTC__c,Qty_Per_Assembly__c,ReducerBushingSelection__c,Required__c,RingSC__c,ROP__c,Scrap_Factor__c,Source_Code__c,StudsSC__c,SZC__c,TeeHandSC__c,Testing_Code__c,TubeCaseMatl__c,Id
+,0,,,,,,CFW100000200A1000590000,0,CFW,,,,,,,,,A1,Companion Flange2,,,,,,,OT,,,,,,002,,,,,,,,,,,,,,,059,,,0,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000MnWAQA0
+,0,,,,,,CFW100000400A1000590000,0,CFW,,,,,,,,,A1,Companion Flange2,,,,,,,OT,,,,,,051,,,,,,,,,,,,,,,059,,,0,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000MnWBQA0
+,0,,,,,,GKU000808000A1X20000000,0,GKU,,,,,,,,,A1,Gasket2,,,,,,,MR,,,,,,,,,080,,,,,,,,,,,,0,,,X2,,,HXI,2,,FALSE,,5,0,0,,1000,,000,,a638A000000Mnc2QAC
+,0,,,,,,GKU010008000A3X20000000,0,GKU,,,,,,,,,A1,Gasket2,,,,,,,MR,,,,,,,,,080,,,,,,,,,,,,0,,,X2,,,HXI,2,,FALSE,,5,0,0,,1000,,000,,a638A000000Mnc3QAC
+,0,,,,,,SRG000805000C7060000000,0,SRG,,,,,,,,,A1,Ring2,,,,,,,OT,,,,,,,,,,,,,050,,,,,,,,0,,,6,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000MmosQAC
+,0,,,,,,SRG000805100C7060000000,0,SRG,,,,,,,,,A1,Ring2,,,,,,,OT,,,,,,,,,,,,,051,,,,,,,,0,,,6,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000MmotQAC
+,0,,,,,,STI100000200A1020420000,0,,,,,,,,,,A1,Outlet,,,,,,,OT,,,,,,,,,,,,005,,NA,,,,,,,042,,,2,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000QGAVQA4
+,0,,,,,,STI100000300A1020420000,0,,,,,,,,,,A1,Outlet,,,,,,,EDM,,,,,,,,,,,,005,,NA,,,,,,,042,STI,,2,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000QGAWQA4
+,,,,,,,4.03212E+17,0,,"Nipple Sch 40 1/4"" X 3"" 316 SS",,,,,,,,A1,Nipple,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,10,0,0,,1000,,000,,a638A000000MpfEQAS
+,,,,,,,4.03212E+17,0,,"Nipple Sch 40 1/4"" X 3"" Carbon Steel",,,,,,,,A1,Nipple,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,5,0,0,,1000,,000,,a638A000000MpfFQAS
+,,,,,,,4.53209E+17,0,,Tee 1/4 150 Class 316 SS,,,,,,,,A1,Tee,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,30,0,0,,1000,,000,,a638A000000MpfUQAS
+,,,,,,,4.53209E+17,0,,Tee 1/4 150 Class CS,,,,,,,,A1,Tee,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,-1,0,0,,1000,,000,,a638A000000MpfVQAS
+,,,,,,,4.34032E+17,0,,,,,,,,,,A1,Reducer Bushing,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,1/2 x 1/4 - Carbon Steel,FALSE,,-1,0,0,,1000,,000,,a638A000000MpF1QAK
+,,,,,,,4.34032E+17,0,,,,,,,,,,A1,Reducer Bushing,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,1/2 x 1/4 - 316 SS,FALSE,,-1,0,0,,1000,,000,,a638A000000MpF2QAK
+,,,,,,,5.03201E+17,0,,,,,,,,,"Gauge 2 1/2"" 0-30 Psig 1/4"" MPT SS/SS",A1,Gauge,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,"Regular - 2 1/2"" Face w/ 1/4"" MPT Connection",Psig - 0-30,HXI,1,,FALSE,,-1,0,0,,1000,,000,SS/SS,a638A000000MpdoQAC
+,,,,,,,5.03201E+17,0,,,,,,,,,"Gauge 2 1/2"" 0-30 Psig 1/4"" MPT BRZ/CS",A1,Gauge,,,,,,,MR,,,,,,,,,,,,,,,,,,,,,,,,,"Regular - 2 1/2"" Face w/ 1/4"" MPT Connection",Psig - 0-30,HXI,1,,FALSE,,-1,0,0,,1000,,000,BRZ/CS,a638A000000MpdpQAC
+,0,,,,,,UXD040002000D3030960000,0,UXD,,,,,,,,,A1,Mid Flange,,,,,,,OTC,,,,,,,,,,,,,,,050,,,,,,096,,,3,,,HXI,1,,FALSE,,-1,0,0,,1000,,000,,a638A000000Q50sQAC
+,0,,,,,,UXD040005000D3030960000,0,UXD,,,,,,,,,A1,Mid Flange,,,,,,,OTC,,,,,,,,,,,,,,,050,,,,,,096,,,3,,,HXI,1,,FALSE,,-1,0,0,,1000,,000,,a638A000000Q50tQAC
+,,,,,,,6.23218E+17,0,,Excess Flow Valve 1/4-in MPT X 1/8-in FPT 316 SS,,,,,,,,A1,Excess Flow Valve,,,,,,,XX,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,10,0,,,1000,,000,,a638A000000MpfpQAC
+,,,,,,,6.24036E+17,0,,Excess Flow Valve 1/2-in MPT X 3/8-in FPT 316 SS,,,,,,,,A1,Excess Flow Valve,,,,,,,XX,,,,,,,,,,,,,,,,,,,,,,,,,,,HXI,1,,FALSE,,5,0,,,1000,,000,,a638A000000MpfqQAC
+,0,,,,,,ULN001200500C2050000000,0,ULN,,,,,,,,,A1,Nut2,,,,,,,OT,,,,,,,,,,,005,,,,,,,,,,0,,,5,,,HXI,1,,FALSE,,15,0,0,,1000,,000,,a638A000000MmiWQAS
+,0,,,,,,ULN010805200C2050000000,0,ULN,,,,,,,,,A1,Nut2,,,,,,,OT,,,,,,,,,,,052,,,,,,,,,,0,,,5,,,HXI,1,,FALSE,,-1,0,0,,1000,,000,,a638A000000MmiXQAS
+,0,,,,,,012060005100S5X20000000,0,12,,,,,,,,,A1,Clamp2,,,,,,,MR,,,,,,,051,,,,,,,,,,,,,,0,,,X2,,,HXI,1,,FALSE,,3,0,0,,1000,,000,,a638A000000Mn6aQAC
+,0,,,,,,012080005100S5X20000000,0,12,,,,,,,,,A1,Clamp2,,,,,,,MR,,,,,,,051,,,,,,,,,,,,,,0,,,X2,,,HXI,1,,FALSE,,-1,0,0,,1000,,000,,a638A000000Mn6bQAC

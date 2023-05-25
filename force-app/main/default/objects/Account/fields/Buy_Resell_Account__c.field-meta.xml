@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Buy_Resell_Account__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used by admins to identify what accounts are representative accounts so we can better identify buy resell opportunities</description>
+    <externalId>false</externalId>
+    <label>Buy Resell Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

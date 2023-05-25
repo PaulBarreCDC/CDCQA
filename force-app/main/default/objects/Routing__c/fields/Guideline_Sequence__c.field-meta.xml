@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Guideline_Sequence__c</fullName>
+    <description>The sequece this guideline falls in the routing step.  Sequence begins with 1 and can vary by the operation number.  A routing can send Guidelines optionally or default to data defined in ERP system for Standard Operation Id.</description>
+    <externalId>false</externalId>
+    <label>Guideline Sequence</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

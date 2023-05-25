@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositiveMaterialIdentification_Validatio</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISBLANK(Positive_Material_Identification__c),
+Bypass__c = FALSE,
+Examination_Option_flag__c=true
+)</errorConditionFormula>
+    <errorMessage>Positive Material Identification : Please select a value from the drop down</errorMessage>
+</ValidationRule>

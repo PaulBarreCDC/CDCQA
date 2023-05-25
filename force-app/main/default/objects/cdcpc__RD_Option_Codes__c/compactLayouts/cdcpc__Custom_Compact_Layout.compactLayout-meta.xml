@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>cdcpc__Inlet_Coating__c</fields>
+    <fields>cdcpc__Outlet_Coating__c</fields>
+    <fields>cdcpc__Metal_Girdle__c</fields>
+    <fields>cdcpc__Electropolish__c</fields>
+    <fields>cdcpc__Surface_Finish__c</fields>
+    <fields>cdcpc__OGaskOpt__c</fields>
+    <fields>cdcpc__IGaskOpt__c</fields>
+    <fields>cdcpc__IRingOpt__c</fields>
+    <fields>cdcpc__ArcRingOpt__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

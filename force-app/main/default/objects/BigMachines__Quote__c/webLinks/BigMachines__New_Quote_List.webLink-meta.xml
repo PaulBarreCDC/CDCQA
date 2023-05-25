@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__New_Quote_List</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/apex.js&quot;)}
+
+var urlParams = &apos;&apos;;
+if (&apos;{!Opportunity.Id}&apos;.length &gt; 0) {
+	urlParams += &apos;?oppId={!Opportunity.Id}&apos;;
+}
+if (&apos;{!Account.Id}&apos;.length &gt; 0) {
+	urlParams += urlParams.length &gt; 0 ? &apos;&amp;&apos; : &apos;?&apos;;
+	urlParams += &apos;actId={!Account.Id}&apos;;
+}
+
+var onlyActiveSiteId = sforce.apex.execute(&apos;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&apos;, &apos;getOnlyActiveSiteId&apos;, {});
+
+if (onlyActiveSiteId[0] != null) {
+	urlParams += &apos;&amp;siteId=&apos; + onlyActiveSiteId;
+	window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteEdit&quot; + urlParams;
+} else {
+	window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteCreate&quot; + urlParams;
+}</url>
+</WebLink>

@@ -1,0 +1,3 @@
+CDC_Ext_ID__c,Component_Part__c,Component_Scrap__c,CurrencyIsoCode,Flag__c,ItemNo__c,NumVal1__c,NumVal2__c,Qty_per_Assembly__c,Scrap_Factor__c,Structure_Element__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c,Text8Val__c,Text9Val__c,Text10Val__c,Text11Val__c,Text12Val__c,Text13Val__c,Text14Val__c,Text15Val__c,Text16Val__c,Text17Val__c,Text18Val__c,Text19Val__c,Text20Val__c,Text21Val__c
+,BDY1B06000T700AFB9600000,0,USD,,110,,,1,0,Body,1221B Fiberglass,,,,,,,,,,,,,,,,,,,,
+,MGPAL00060T700HVL1200000,0,USD,,271,,,1,0,VacPallet,1221B Fiberglass,,,,,,,,,,,,,,,,,,,,

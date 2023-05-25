@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>Delivery_Number__c</field>
+        <formula>SBQQ__QuoteLine__c.Delivery_Count__c + 1</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>SBQQ__QuoteLine__c.Name + &quot;-&quot; + TEXT( SBQQ__QuoteLine__c.Delivery_Count__c + 1 )</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Planned_Delivery_Date__c</field>
+        <formula>SBQQ__QuoteLine__c.Planned_Delivery_Date__c</formula>
+    </fieldOverrides>
+    <label>Add Delivery</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Quote_Line__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Quantity__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Delivery_Number__c</field>
+                <uiBehavior>Readonly</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Planned_Delivery_Date__c</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+    </quickActionLayout>
+    <targetObject>Delivery_Information__c</targetObject>
+    <targetParentField>Quote_Line__c</targetParentField>
+    <type>Create</type>
+</QuickAction>

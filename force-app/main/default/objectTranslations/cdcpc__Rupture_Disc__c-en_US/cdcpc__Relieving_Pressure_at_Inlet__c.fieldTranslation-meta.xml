@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>cdcpc__Relieving_Pressure_at_Inlet__c</name>
+    <picklistValues>
+        <masterLabel>Enter Relieving Pressure Value/ units</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + 10% Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + 16% Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + 21% Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + 3 psi Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + 4 psi Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Use Pressure Setting + No Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

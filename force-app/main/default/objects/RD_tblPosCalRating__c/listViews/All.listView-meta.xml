@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>TempLL__c</columns>
+    <columns>TempUL__c</columns>
+    <columns>MinGrdlRatedLL__c</columns>
+    <columns>MinGrdlRatedUL__c</columns>
+    <columns>MinTSMfgRngLL__c</columns>
+    <columns>MinTSMfgRngUL__c</columns>
+    <columns>NRSC1Thck__c</columns>
+    <columns>NRSC2Thck__c</columns>
+    <columns>SC1Thck__c</columns>
+    <columns>SC2Thck__c</columns>
+    <columns>SealThck__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

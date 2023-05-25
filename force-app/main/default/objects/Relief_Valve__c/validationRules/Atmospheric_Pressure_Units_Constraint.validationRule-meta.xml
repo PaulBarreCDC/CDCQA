@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Atmospheric_Pressure_Units_Constraint</fullName>
+    <active>true</active>
+    <description>Atmospheric Pressure Units is a Mandatory field if Pressure Relief is selected in Relief type.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Vacuum&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+Atmospheric_Pressure__c &gt; 0,
+ISPICKVAL( Atmospheric_Pressure_Units__c , &quot;&quot;),
+Section_B_Flag__c  = TRUE)</errorConditionFormula>
+    <errorMessage>Atmospheric Pressure Unit : Please select a value from the drop down</errorMessage>
+</ValidationRule>

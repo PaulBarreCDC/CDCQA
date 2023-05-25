@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Requested_Ship_Date</fullName>
+    <active>true</active>
+    <description>Make the Requested Ship Date required when &apos;A specific date product should leave factory has been specified&apos; has been selected from Product Lead TIme</description>
+    <errorConditionFormula>AND( ISPICKVAL(Product_Lead_Time__c, &apos;A specific product ship date has been specified&apos;), ISBLANK(Requested_Ship_Date__c ) )</errorConditionFormula>
+    <errorDisplayField>Requested_Ship_Date__c</errorDisplayField>
+    <errorMessage>Request Ship Date is Required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vacuum_Port_Option_Constraint</fullName>
+    <active>true</active>
+    <description>Vacuum Port Option is a mandatory field.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISBLANK(Vacuum_Port_Option__c ),
+(Section_F_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Vacuum_Port_Option__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

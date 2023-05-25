@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Clone_Quote_List</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Clone Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var records = {!GETRECORDIDS($ObjectType.BigMachines__Quote__c)};
+var isOpp = &apos;{!Opportunity.Id}&apos;.length &gt; 0;
+
+if (records.length &gt; 1) {
+	alert(&apos;Please select only one quote to clone.&apos;);
+} else if (records.length == 1) {
+	var canEdit = sforce.apex.execute(&apos;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&apos;, &apos;canEditQuote&apos;, {quoteId:records[0]});
+	if (canEdit == &apos;true&apos;) {
+		if (isOpp) {
+			window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteEdit?id=&quot; + records[0] + &quot;&amp;oppId={!Opportunity.Id}&amp;clone=true&quot;; 
+		} else {
+			window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteEdit?id=&quot; + records[0] + &quot;&amp;actId={!Account.Id}&amp;clone=true&quot;; 
+		}
+	} else {
+		alert(&apos;You do not have permission to clone that quote.  Please contact your system administrator.&apos;);
+	}
+} else {
+	if (isOpp) {
+		window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteCloneSelection?oppId={!Opportunity.Id}&quot;;
+	} else {
+		window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteCloneSelection?actId={!Account.Id}&quot;;
+	}
+}</url>
+</WebLink>

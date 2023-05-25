@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_Per__c</fullName>
+    <externalId>false</externalId>
+    <label>Evaluation Per</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ASME Gas/Vapor</fullName>
+                <default>false</default>
+                <label>ASME Gas/Vapor</label>
+            </value>
+            <value>
+                <fullName>ASME Water</fullName>
+                <default>false</default>
+                <label>ASME Water</label>
+            </value>
+            <value>
+                <fullName>ASME Steam</fullName>
+                <default>false</default>
+                <label>ASME Steam</label>
+            </value>
+            <value>
+                <fullName>API Gas/Vapor</fullName>
+                <default>false</default>
+                <label>API Gas/Vapor</label>
+            </value>
+            <value>
+                <fullName>API Liquid</fullName>
+                <default>false</default>
+                <label>API Liquid</label>
+            </value>
+            <value>
+                <fullName>API Steam</fullName>
+                <default>false</default>
+                <label>API Steam</label>
+            </value>
+            <value>
+                <fullName>ISO Gas/Vapor</fullName>
+                <default>false</default>
+                <label>ISO Gas/Vapor</label>
+            </value>
+            <value>
+                <fullName>ISO Liquid</fullName>
+                <default>false</default>
+                <label>ISO Liquid</label>
+            </value>
+            <value>
+                <fullName>ISO Dry Steam</fullName>
+                <default>false</default>
+                <label>ISO Dry Steam</label>
+            </value>
+            <value>
+                <fullName>ISO Wet Steam</fullName>
+                <default>false</default>
+                <label>ISO Wet Steam</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

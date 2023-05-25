@@ -1,0 +1,120 @@
+<apex:page standardController="Product2"  lightningStylesheets="true" extensions="CustomReOrderController" standardStylesheets="true">
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial,Verdana,sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+        .overrideFloat
+        {
+            float:right;
+        }
+        .pbHeader, .slds-vf-scope .pbHeader {
+            font-family: Arial,Verdana,sans-serif;
+            border-top: 0;
+            color: white;
+            /* background-color: #54678d; */
+            background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+        .overrideFloat
+        {
+            float:right;
+        }
+        .messageCell {
+            display:inline-block;
+        }
+        .messageText, .slds-vf-scope .messageText {
+            display: flex;
+        }
+    </style>
+    <apex:form id="form">
+        <!--<apex:pageMessage severity="Error" id="partNumError" rendered="showPartNumError" escape="false" summary="art Number not found. Please re-enter Part Number or Configure New Product" strength="3"></apex:pageMessage>
+        <apex:pageMessage severity="Error" id="mfttNumError" rendered="showMfttNumError" escape="false" summary="<b>MFG#/Serial Number not found.</b> Please re-enter MFG#/Serial Number or Configure New Product" strength="3"></apex:pageMessage>
+        <apex:pageMessage severity="Error" id="partBlankError" rendered="showPartBlankError" escape="false" summary="First Error message on page" strength="3"></apex:pageMessage>
+        -->
+        <apex:pageMessages escape="false"></apex:pageMessages>
+        <apex:pageBlock id="userInputPanel">
+            <apex:pageBlockSection title="Select Option to Add Product" columns="1" >
+            <apex:pageBlocksection columns="1">
+                <apex:pageblocksectionitem >  
+                    <apex:panelGrid columns="1" id="theGrid">
+                        <apex:selectRadio value="{!selectedProduct}">
+                            <apex:selectOptions value="{!Items}"/>   
+                            <apex:actionSupport event="onchange" action="{!actionSup}" rerender="userInputPanel"/>                     
+                        </apex:selectRadio> 
+                    </apex:panelGrid>
+                </apex:pageblocksectionitem>
+            </apex:pageBlocksection>
+            
+                <apex:outputPanel rendered="{!showPart}">
+                    <apex:pageBlocksection columns="1">
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel >Enter Part Number </apex:outputLabel>
+                    <apex:inputText label="Enter Part Number" value="{!strPartNumber}">                    
+                    </apex:inputText>
+                    
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                <apex:outputLabel >Quantity </apex:outputLabel>
+                    <apex:inputText label="Quantity" value="{!Quantity}">                    
+                    </apex:inputText>
+                </apex:pageblocksectionitem>
+                <apex:commandButton value="Continue for ReOrder" action="{!search}"/>
+            </apex:pageBlocksection>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!showMft}">
+                <apex:pageBlocksection columns="1">
+            <apex:pageblocksectionitem >
+                <apex:outputLabel >Enter Mft Number </apex:outputLabel>
+                <apex:inputText label="Enter Part Number" value="{!strMfgNumber}">                    
+                </apex:inputText>
+                
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+            <apex:outputLabel >Quantity </apex:outputLabel>
+                <apex:inputText label="Quantity" value="{!Quantity}">                    
+                </apex:inputText>
+            </apex:pageblocksectionitem>
+            <apex:commandButton value="Continue for ReOrder" action="{!search}"/>
+        </apex:pageBlocksection>
+        </apex:outputPanel>
+        </apex:pageBlockSection>
+       
+            
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{! IF(selectedOrderWraper.size > 0, true, false)}">
+            <apex:pageBlockSection title="Search Result" columns="1">
+                <apex:pageBlockSectionItem >
+        <apex:pageBlockTable value="{!selectedOrderWraper}" var="pdLine">
+            <strong rendered="{!(selectedOrderWraper.size == 0)}"><font color="#ff0000">cjhvcjfh</font></strong>>
+            <apex:column ><apex:inputCheckbox disabled="true" value="{!pdLine.isSelected}"/></apex:column>
+            <apex:column headervalue="Part Number" value="{!pdLine.strPartNumber}"/>
+          <!--  <apex:column headervalue="Quote Line Number" value="{!pdLine.strQuoteLine }"/>
+           <apex:column headervalue="Product Name" value="{!pdLine.strProduct }"/>-->
+            <apex:column value="{!pdLine.p['Configurator__c']}"/>
+            <apex:column value="{!pdLine.p['BRAND__c']}"/>
+            <apex:column value="{!pdLine.p['Managed_In__c']}"/>
+            <apex:column value="{!pdLine.p['Field1__c']}"/>
+            <apex:column title="Service" value="{!pdLine.p['Field2__c']}"/>
+             <apex:column value="{!pdLine.p['Field3__c']}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSectionItem>
+            <br/>
+        <apex:pageBlockSectionItem >
+             <apex:commandButton value="Continue for Reorder" action="{!reOrderProduct}"/>
+             <apex:commandButton value="Skip & Add New Product" action="{!reOrderProduct}"/>
+             </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

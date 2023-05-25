@@ -1,0 +1,3 @@
+Component_Scrap__c,DSCVAR__c,Leadtime__c,MCDT__c,MCOR__c,OptionCode__c,OutletRingPartNumber__c,Part_Code__c,Part_Seat__c,PressLL__c,PressUL__c,ProcMedia__c,PTC__c,Qty_Per_Assembly__c,Scrap_Factor__c,SourceCode__c,STC__c,SZC__c,TefSealThickLL__c,TefSealThickUL__c,TestingCode__c,ThckCode__c,Thickness__c
+0,A,RA,-,005,000,RXO100000100FS0600000000,HPZ,NA,-1000,999999,-,HPZ,1,0,00,NA,0108,0,100,000,600,0.06
+0,A,RD,-,006,000,RGT030000600SF0050000000,HPZ,NA,-1000,999999,-,HPZ,1,0,00,NA,0108,0,100,000,50,0.005

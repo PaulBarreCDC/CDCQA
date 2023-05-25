@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Configurator_Instance__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Configurator Instance associated with the RuptureDisc Part Configurator Instance</description>
+    <externalId>false</externalId>
+    <label>Configurator Instance</label>
+    <referenceTo>cdcpc__ConfiguratorInstance__c</referenceTo>
+    <relationshipLabel>RD</relationshipLabel>
+    <relationshipName>RD</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

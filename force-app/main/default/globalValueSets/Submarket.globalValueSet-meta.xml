@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agricultural</fullName>
+        <default>false</default>
+        <label>Agricultural</label>
+    </customValue>
+    <customValue>
+        <fullName>Agriculture/Farming</fullName>
+        <default>false</default>
+        <label>Agriculture/Farming</label>
+    </customValue>
+    <customValue>
+        <fullName>Alternative Fuels</fullName>
+        <default>false</default>
+        <label>Alternative Fuels</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive/Transportation</fullName>
+        <default>false</default>
+        <label>Automotive/Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Biobutanol (biogasoline)</fullName>
+        <default>false</default>
+        <label>Biobutanol (biogasoline)</label>
+    </customValue>
+    <customValue>
+        <fullName>Biodiesel (Green Diesel)</fullName>
+        <default>false</default>
+        <label>Biodiesel (Green Diesel)</label>
+    </customValue>
+    <customValue>
+        <fullName>Bioethanol</fullName>
+        <default>false</default>
+        <label>Bioethanol</label>
+    </customValue>
+    <customValue>
+        <fullName>Bio Ethers</fullName>
+        <default>false</default>
+        <label>Bio Ethers</label>
+    </customValue>
+    <customValue>
+        <fullName>Biofuels</fullName>
+        <default>false</default>
+        <label>Biofuels</label>
+    </customValue>
+    <customValue>
+        <fullName>Biogas</fullName>
+        <default>false</default>
+        <label>Biogas</label>
+    </customValue>
+    <customValue>
+        <fullName>Braking systems</fullName>
+        <default>false</default>
+        <label>Braking systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Cellulosic Ethanol</fullName>
+        <default>false</default>
+        <label>Cellulosic Ethanol</label>
+    </customValue>
+    <customValue>
+        <fullName>Compressor equipment/systems</fullName>
+        <default>false</default>
+        <label>Compressor equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Contractor</fullName>
+        <default>false</default>
+        <label>Contractor</label>
+    </customValue>
+    <customValue>
+        <fullName>Crude Oil Storage</fullName>
+        <default>false</default>
+        <label>Crude Oil Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Digesters</fullName>
+        <default>false</default>
+        <label>Digesters</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributor - Authorized</fullName>
+        <default>false</default>
+        <label>Distributor - Authorized</label>
+    </customValue>
+    <customValue>
+        <fullName>Distributor - Unauthorized</fullName>
+        <default>false</default>
+        <label>Distributor - Unauthorized</label>
+    </customValue>
+    <customValue>
+        <fullName>Downhole</fullName>
+        <default>false</default>
+        <label>Downhole</label>
+    </customValue>
+    <customValue>
+        <fullName>Down hole oil tools &amp; well testing equipment</fullName>
+        <default>false</default>
+        <label>Down hole oil tools &amp; well testing equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronics/Semiconductors</fullName>
+        <default>false</default>
+        <label>Electronics/Semiconductors</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Ethyl Alcohol Manufacturing</fullName>
+        <default>false</default>
+        <label>Ethyl Alcohol Manufacturing</label>
+    </customValue>
+    <customValue>
+        <fullName>Exploration and Drilling</fullName>
+        <default>false</default>
+        <label>Exploration and Drilling</label>
+    </customValue>
+    <customValue>
+        <fullName>Extraction &amp; Recovery Equipment</fullName>
+        <default>false</default>
+        <label>Extraction &amp; Recovery Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Machinery &amp; Equipment</fullName>
+        <default>false</default>
+        <label>Field Machinery &amp; Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Field-type Drilling Machinery &amp; Equipment</fullName>
+        <default>false</default>
+        <label>Field-type Drilling Machinery &amp; Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Finished Product Storage</fullName>
+        <default>false</default>
+        <label>Finished Product Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Flare equipment/systems</fullName>
+        <default>false</default>
+        <label>Flare equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Flotation systems</fullName>
+        <default>false</default>
+        <label>Flotation systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Food &amp; Beverage</fullName>
+        <default>false</default>
+        <label>Food &amp; Beverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Fuel tanks and systems</fullName>
+        <default>false</default>
+        <label>Fuel tanks and systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Gas Well Machinery &amp; Equipment</fullName>
+        <default>false</default>
+        <label>Gas Well Machinery &amp; Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>General Chemicals</fullName>
+        <default>false</default>
+        <label>General Chemicals</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrial Gases</fullName>
+        <default>false</default>
+        <label>Industrial Gases</label>
+    </customValue>
+    <customValue>
+        <fullName>Instrumentation/measurement/control equipment</fullName>
+        <default>false</default>
+        <label>Instrumentation/measurement/control equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>LNG</fullName>
+        <default>false</default>
+        <label>LNG</label>
+    </customValue>
+    <customValue>
+        <fullName>LNG equipment/systems</fullName>
+        <default>false</default>
+        <label>LNG equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>LNG Processing Equipment</fullName>
+        <default>false</default>
+        <label>LNG Processing Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical/Healthcare</fullName>
+        <default>false</default>
+        <label>Medical/Healthcare</label>
+    </customValue>
+    <customValue>
+        <fullName>Metals and Minerals</fullName>
+        <default>false</default>
+        <label>Metals and Minerals</label>
+    </customValue>
+    <customValue>
+        <fullName>Mining, Minerals, Aggregates</fullName>
+        <default>false</default>
+        <label>Mining, Minerals, Aggregates</label>
+    </customValue>
+    <customValue>
+        <fullName>Mining (Except Oil &amp; Gas)</fullName>
+        <default>false</default>
+        <label>Mining (Except Oil &amp; Gas)</label>
+    </customValue>
+    <customValue>
+        <fullName>OEM - Specific OEM Type</fullName>
+        <default>false</default>
+        <label>OEM - Specific OEM Type</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (Aero)</fullName>
+        <default>false</default>
+        <label>Other (Aero)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (BG)</fullName>
+        <default>false</default>
+        <label>Other (BG)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (CHEM)</fullName>
+        <default>false</default>
+        <label>Other (CHEM)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (DEF)</fullName>
+        <default>false</default>
+        <label>Other (DEF)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (F&amp;B)</fullName>
+        <default>false</default>
+        <label>Other (F&amp;B)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (OGD)</fullName>
+        <default>false</default>
+        <label>Other (OGD)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (OGU)</fullName>
+        <default>false</default>
+        <label>Other (OGU)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (OID)</fullName>
+        <default>false</default>
+        <label>Other (OID)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (Pharma)</fullName>
+        <default>false</default>
+        <label>Other (Pharma)</label>
+    </customValue>
+    <customValue>
+        <fullName>Oxygen systems/breathing apparatus</fullName>
+        <default>false</default>
+        <label>Oxygen systems/breathing apparatus</label>
+    </customValue>
+    <customValue>
+        <fullName>Paints and Coatings</fullName>
+        <default>false</default>
+        <label>Paints and Coatings</label>
+    </customValue>
+    <customValue>
+        <fullName>Paper, Pulp, Wood</fullName>
+        <default>false</default>
+        <label>Paper, Pulp, Wood</label>
+    </customValue>
+    <customValue>
+        <fullName>Petroleum Refining</fullName>
+        <default>false</default>
+        <label>Petroleum Refining</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmaceutical &amp; Biotech</fullName>
+        <default>false</default>
+        <label>Pharmaceutical &amp; Biotech</label>
+    </customValue>
+    <customValue>
+        <fullName>Pipelines</fullName>
+        <default>false</default>
+        <label>Pipelines</label>
+    </customValue>
+    <customValue>
+        <fullName>Power</fullName>
+        <default>false</default>
+        <label>Power</label>
+    </customValue>
+    <customValue>
+        <fullName>Process modules/skids/equipment/systems</fullName>
+        <default>false</default>
+        <label>Process modules/skids/equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Pumps and transfer equipment/systems</fullName>
+        <default>false</default>
+        <label>Pumps and transfer equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Railroad - Rolling Stock</fullName>
+        <default>false</default>
+        <label>Railroad - Rolling Stock</label>
+    </customValue>
+    <customValue>
+        <fullName>Raw Material Storage &amp; Transportation</fullName>
+        <default>false</default>
+        <label>Raw Material Storage &amp; Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Refining &amp; Processing Equipment</fullName>
+        <default>false</default>
+        <label>Refining &amp; Processing Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Solid Biofuels</fullName>
+        <default>false</default>
+        <label>Solid Biofuels</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialist Equipment Manufacturer for Biofuels</fullName>
+        <default>false</default>
+        <label>Specialist Equipment Manufacturer for Biofuels</label>
+    </customValue>
+    <customValue>
+        <fullName>Stainless steel tanks/vessels</fullName>
+        <default>false</default>
+        <label>Stainless steel tanks/vessels</label>
+    </customValue>
+    <customValue>
+        <fullName>Sterilisation equipment/systems</fullName>
+        <default>false</default>
+        <label>Sterilisation equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Surface</fullName>
+        <default>false</default>
+        <label>Surface</label>
+    </customValue>
+    <customValue>
+        <fullName>Syngas</fullName>
+        <default>false</default>
+        <label>Syngas</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank Container/Road &amp; Rail Tankers</fullName>
+        <default>false</default>
+        <label>Tank Container/Road &amp; Rail Tankers</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank Container and Transportation</fullName>
+        <default>false</default>
+        <label>Tank Container and Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank farm/terminal</fullName>
+        <default>false</default>
+        <label>Tank farm/terminal</label>
+    </customValue>
+    <customValue>
+        <fullName>Tanks and storage vessels</fullName>
+        <default>false</default>
+        <label>Tanks and storage vessels</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank Terminals</fullName>
+        <default>false</default>
+        <label>Tank Terminals</label>
+    </customValue>
+    <customValue>
+        <fullName>Terminals and Storage</fullName>
+        <default>false</default>
+        <label>Terminals and Storage</label>
+    </customValue>
+    <customValue>
+        <fullName>Thermal process equipment/systems</fullName>
+        <default>false</default>
+        <label>Thermal process equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation Equipment</fullName>
+        <default>false</default>
+        <label>Transportation Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Water</fullName>
+        <default>false</default>
+        <label>Water</label>
+    </customValue>
+    <customValue>
+        <fullName>Weapons systems</fullName>
+        <default>false</default>
+        <label>Weapons systems</label>
+    </customValue>
+    <masterLabel>Submarket</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

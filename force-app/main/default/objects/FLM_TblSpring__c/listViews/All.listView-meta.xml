@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>SettingID__c</columns>
+    <columns>SpringDesc__c</columns>
+    <columns>SpringID__c</columns>
+    <columns>SZC__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

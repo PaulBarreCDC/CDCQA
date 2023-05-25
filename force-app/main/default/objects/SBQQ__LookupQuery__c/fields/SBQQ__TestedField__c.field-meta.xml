@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SBQQ__TestedField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Field on Quote, Quote Line or Product Option object that is evaluated by this query. Required if Match Type = Field Value.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Field on Quote, Quote Line or Product Option object that is evaluated by this query. Required if Match Type = Field Value.</inlineHelpText>
+    <label>Tested Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Code</fullName>
+                <default>false</default>
+                <label>Product Code</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Product__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Product__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__PriceBook__c</fullName>
+                <default>false</default>
+                <label>SBQQ__PriceBook__c</label>
+            </value>
+            <value>
+                <fullName>PricebookId__c</fullName>
+                <default>false</default>
+                <label>PricebookId__c</label>
+            </value>
+            <value>
+                <fullName>CurrencyIsoCode</fullName>
+                <default>false</default>
+                <label>CurrencyIsoCode</label>
+            </value>
+            <value>
+                <fullName>PartNumber__c</fullName>
+                <default>false</default>
+                <label>PartNumber__c</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Quantity__c</fullName>
+                <default>false</default>
+                <label>SBQQ__Quantity__c</label>
+            </value>
+            <value>
+                <fullName>Configured_Part__c</fullName>
+                <default>false</default>
+                <label>Configured_Part__c</label>
+            </value>
+            <value>
+                <fullName>Configured_Part_Output__c</fullName>
+                <default>false</default>
+                <label>Configured_Part_Output__c</label>
+            </value>
+            <value>
+                <fullName>Active_Configured_Part_Record_Id__c</fullName>
+                <default>false</default>
+                <label>Active_Configured_Part_Record_Id__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

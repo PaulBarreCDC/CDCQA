@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__ShowPosSizingCapacityPage__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>ISPICKVAL( cdcpc__constrain_product_selection_by_flow__c, &quot;Yes&quot;)
+&amp;&amp; NOT(ISPICKVAL(cdcpc__Relief_Type__c, &quot;Vacuum Relief&quot;))
+&amp;&amp; IF(
+(ISPICKVAL(cdcpc__Relief_Type__c, &quot;Pressure &amp; Vacuum Relief&quot;)), NOT(ISPICKVAL(cdcpc__Constrain_product_selection__c, &quot;Vacuum&quot;)), TRUE
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ShowPosSizingCapacityPage</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

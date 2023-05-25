@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_type_is_mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISPICKVAL( Service_Type__c, &quot;&quot;),
+Bypass__c = FALSE,
+Relief_flag__c = TRUE
+)</errorConditionFormula>
+    <errorMessage>Service Type: Please select a value</errorMessage>
+</ValidationRule>

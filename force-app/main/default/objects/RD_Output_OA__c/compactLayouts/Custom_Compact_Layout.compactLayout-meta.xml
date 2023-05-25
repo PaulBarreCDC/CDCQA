@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>PTC__c</fields>
+    <fields>SZC__c</fields>
+    <fields>CSSUM__c</fields>
+    <fields>STC__c</fields>
+    <fields>COIN__c</fields>
+    <fields>COOUT__c</fields>
+    <fields>HCLASS__c</fields>
+    <fields>DPM__c</fields>
+    <fields>addIntegralBDI__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

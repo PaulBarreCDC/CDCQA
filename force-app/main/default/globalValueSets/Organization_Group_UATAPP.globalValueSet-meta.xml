@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Engineering</fullName>
+        <default>false</default>
+        <label>Engineering</label>
+    </customValue>
+    <customValue>
+        <fullName>Finance</fullName>
+        <default>false</default>
+        <label>Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>IT</fullName>
+        <default>false</default>
+        <label>IT</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales</fullName>
+        <default>false</default>
+        <label>Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Supply Chain</fullName>
+        <default>false</default>
+        <label>Supply Chain</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Services</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Field Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Support</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Services</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Professional Services</label>
+    </customValue>
+    <masterLabel>Organization Group</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

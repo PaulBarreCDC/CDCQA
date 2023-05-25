@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AA1_Quantity_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+(Quantity__c&lt;=0)
+&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Product_Material_and_Options_Flag__c=true))</errorConditionFormula>
+    <errorMessage>Quantity : Please enter a positive Integer Value</errorMessage>
+</ValidationRule>

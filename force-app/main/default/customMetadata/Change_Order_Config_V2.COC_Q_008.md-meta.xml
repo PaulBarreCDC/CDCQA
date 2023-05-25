@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>COC Q 008</label>
+    <protected>false</protected>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">Action:UpdateQuote:ChangeOrderLog|UpdateFields:Freight Info;
+Action:UpdateQuote:ChangeOrderLog|UpdateFields:Header;
+Action:UpdateQuote:ChangeOrderLog|UpdateFields:Misc Order Info;
+Action:UpdateQuote:ChangeOrderLog;
+Action:UpdateQuote:ChangeOrderLog||Submit:QuoteCommentController.callPageReference:NavigateClonedQuote</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Force_Next__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Option__c</field>
+        <value xsi:type="xsd:string">Freight Info;
+Header;
+Misc Order Info;
+Charges;
+Order Lines</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">8.0</value>
+    </values>
+    <values>
+        <field>Question_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question_Hint__c</field>
+        <value xsi:type="xsd:string">&lt;b&gt;Commercial&lt;/b&gt; : Freight and Delivery Info, Header, Misc Order Info, Charges
+&lt;br/&gt;
+&lt;b&gt;Config&lt;/b&gt; : Order Lines
+&lt;br/&gt;&lt;br/&gt;</value>
+    </values>
+    <values>
+        <field>Question__c</field>
+        <value xsi:type="xsd:string">Choose all the changes you intend to make to the Order in IFS</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Checkbox</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The Quantity field cannot be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISBLANK( Quantity__c),
+				Bypass__c = FALSE,
+    Product_material_options_flag__c = TRUE
+				)</errorConditionFormula>
+    <errorMessage>Quantity: Please Enter a Value Greater than 0</errorMessage>
+</ValidationRule>

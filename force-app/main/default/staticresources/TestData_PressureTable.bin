@@ -1,0 +1,27 @@
+Adder__c,Multiplier__c,Pressure_UOM_From__c,Pressure_UOM_To__c
+0,68.9476,psig,mbarg
+0,51.7149,psig,mm Hg
+0,703.764,psig,mm water
+0,0.00689476,psig,MPa
+0.101325,0.00689476,psig,MPa abs.
+0,16,psig,osig
+0,6894.76,psig,Pa
+101325,6894.76,psig,Pa abs.
+14.6959,1,psig,psia
+0,1,psig,psid
+0,1,psig,psig
+0,51.7149,psig,torr
+1,0.068046,psig,atm abs.
+0,0.068046,psig,atmg
+1.01325,0.0689476,psig,bar abs.
+0,0.0689476,psig,bard
+0,0.0689476,psig,barg
+0,70.307,psig,gf/cm2
+0,2.03602,psig,in. Hg
+0,27.7073,psig,in. water
+0,0.070307,psig,kgf/cm2
+1.03323,0.070307,psig,kgf/cm2 abs.
+0,6.89476,psig,kPa
+101.325,6.89476,psig,kPa abs.
+1013.25,68.9476,psig,mbar abs.
+14.6959,1,psia,psia

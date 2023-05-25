@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>COC Q 001</label>
+    <protected>false</protected>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">Question:5;
+Question:2;
+Question:9;
+Question:8</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Force_Next__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Option__c</field>
+        <value xsi:type="xsd:string">Cancel;
+Block;
+Unblock;
+No Action Necessary</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Question_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question_Hint__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question__c</field>
+        <value xsi:type="xsd:string">Do you want to Cancel/Block/Unblock the order before you proceed with Change Order updates?</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Radio</value>
+    </values>
+</CustomMetadata>

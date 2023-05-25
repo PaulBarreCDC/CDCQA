@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>cdcpc__Customer_Specific_Requirements__c</name>
+    <picklistValues>
+        <masterLabel>Manufacture per MP-8002</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mfg per MP-8002 and Sanitary Req per MP-8001</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Metal Seal or Slot Covers</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary Req per MP-8001 and No Metal Seals or Slot Covers</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary Requirements per MP-8001</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

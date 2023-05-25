@@ -1,0 +1,928 @@
+<template>
+
+    <lightning-record-edit-form object-api-name="Relief_Valve__c" onsubmit={handleSaveSizingFlowArea} onsuccess={handleSizingFlowAreaSuccess} class="SizingFlowAreaForm" record-id={recordId}>
+        <lightning-messages></lightning-messages>
+        <article class="slds-card" style="background-color: #fafbfc;">
+            <template if:true={isErrorSizingArea}>
+                <div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+                    <h2 class="slds-text-heading_small ">
+                        {sizingFlowAreaMessage}
+                    </h2>
+                </div>
+               
+            </template>
+            
+            <div class="sizingArea slds-grid slds-card__header" style="background-color:white;">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                    <h3 class="slds-section slds-section__title">
+                        Sizing/Flow Area
+                    </h3>
+                </div>
+                </header>
+                <div class="slds-einstein-header__actions">
+                </div>
+            </div>
+        
+            <div class=" sizingArea slds-card__body slds-card__body_inner slds-p-around_medium">
+                <div class="slds-form">
+                    <div class="slds-grid slds-wrap">
+
+                        <!-- pressure -->
+                        <template if:true={isPressureSelected}>
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Atmospheric Pressure
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <input disabled={sDisabled} name="atmosphericPressure" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={atmosphericPressure} onfocusout={RemoveDecimal} required></input>
+                                        <lightning-input-field field-name="Atmospheric_Pressure__c" class="slds-hide" variant="label-inline" value={atmosphericPressure} ></lightning-input-field>
+                                        <!--<lightning-input-field variant="label-inline" field-name="Atmospheric_Pressure__c" value={atmosphericPressure}></lightning-input-field> --> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Atmospheric_Pressure_Units__c" value={AtmosphericPressureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Media	
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-combobox
+                                            name="Pressure_Media"
+                                            value={selectedPressureMedia}
+                                            placeholder="Select Pressure Media"
+                                            options={PressureMediaOptions}
+                                            onchange={handlePressureMediaChange} 
+                                            variant="label-hidden"
+                                            disabled={bDisabled}
+                                            >
+                                        </lightning-combobox>
+                                        <!--<lightning-input-field field-name="Media_Type__c" variant="label-hidden"></lightning-input-field>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <template if:true={CustomSpecified}>
+                                <div class="slds-size_1-of-2"> 
+                                </div>
+                                <div class="slds-size_1-of-2">                                  
+                                    <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" value={customerSpecified} field-name="Customer_Specified_Media_Name__c"></lightning-input-field>
+                                    <!-- <input name="customerSpecified" type="number" class="slds-input"  variant="label-hidden" value={customerSpecified} onfocusout={RemoveDecimal}></input>
+                                    <lightning-input-field field-name="Customer_Specified_Media_Name__c" class="slds-hide" variant="label-inline" value={customerSpecified}></lightning-input-field> -->
+                               </div>
+                            </template>
+
+                            <div class="slds-size_1-of-2">  
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Ratio of Specific Heats (k)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={ratioOfSpecificHeats} field-name="Ratio_of_Specific_Heats__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                    <template if:false={bDisabled}>
+                                      <input name="ratioOfSpecificHeats" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={ratioOfSpecificHeats} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                    </template>
+                                    
+                                    <template if:true={bDisabled}>
+                                          <input name="ratioOfSpecificHeats" type="number" class="slds-input" value={ratioOfSpecificHeats} disabled="disabled"></input>
+                                    </template>
+                                        
+
+
+                                        <lightning-input-field disabled={bDisabled} field-name="Ratio_of_Specific_Heats__c" class="slds-hide" variant="label-inline" value={ratioOfSpecificHeats}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Molecular Weight (MW)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={molecularWeight} field-name="Molecular_Weight__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                       
+                                        <template if:false={bDisabled}>
+                                            <input name="molecularWeight" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={molecularWeight} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="molecularWeight" type="number" class="slds-input" value={molecularWeight}  disabled="disabled"></input>
+                                          </template>
+                                        <lightning-input-field field-name="Molecular_Weight__c" class="slds-hide" variant="label-inline" value={molecularWeight}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Compressibility Factor (Z)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={CompressibilityFactor} field-name="Compressibility_Factor__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="CompressibilityFactor" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={CompressibilityFactor} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="CompressibilityFactor" type="number" class="slds-input"  value={CompressibilityFactor} disabled="disabled"></input>
+                                          </template>
+
+                                        
+
+                                        <lightning-input-field field-name="Compressibility_Factor__c" class="slds-hide" variant="label-inline" value={CompressibilityFactor}></lightning-input-field>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relief Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Pressure_Relief_Req_Flow_Rate__c" value={pressureReliefRequired} ></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="pressureReliefRequired" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={pressureReliefRequired} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Pressure_Relief_Req_Flow_Rate__c" class="slds-hide" variant="label-inline" value={pressureReliefRequired}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} variant="label-inline" onchange={sizingFlowChanged} field-name="Pressure_Relief_Req_Flow_Units__c" value={PressureReliefReqFlowUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                               
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.Enter_Relieving_Pressure_Value__c.inlineHelpText}></c-custom-tool-tip>
+
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Enter_Relieving_Pressure_Value__c" value={enterRelievingPressure} onchange={handleOverpressure}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="enterRelievingPressure" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={enterRelievingPressure} disabled={disableForRelievingPressure} onfocusout={handleReleivingPressureOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="enterRelievingPressure" class="slds-input"  value={enterRelievingPressure} disabled="disabled" ></input>
+                                          </template>
+
+                                        
+
+                                        <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" class="slds-hide" variant="label-inline" value={enterRelievingPressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field  disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Enter_Relieving_Pressure_Units__c" value={EnterRelievingPressureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        % Overpressure Value
+                                        <lightning-helptext class="tooltip_cust"  content="Enter either the relieving pressure or %overpressure. The % overpressure field is available after entering 0 for the relieving pressure, and is overridden if the relieving pressure is changed to a non-zero value"></lightning-helptext>
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Overpressure__c" value={pOverpressure} disabled={disableForOverpressure}></lightning-input-field>-->
+                                       
+                                        <template if:false={bDisabled}>
+                                            <input name="pOverpressure"  class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={pOverpressure} disabled={disableForOverpressure} onfocusout={handleReleivingPressureOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="pOverpressure"  class="slds-input" value={pOverpressure} disabled="disabled" ></input>
+                                          </template>
+
+                                        
+
+
+                                        <lightning-input-field field-name="Overpressure__c" class="slds-hide" variant="label-inline" value={pOverpressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            
+                            <div class="slds-size_1-of-2">
+                                
+                            </div>
+                            
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relieving Temperature Value
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Pressure_Relieving_Temperature__c" value={pressureReliefTemperature}></lightning-input-field>-->        
+                                        <input disabled={sDisabled} name="pressureReliefTemperature" type="number" class="slds-input" onkeydown={restrictNonNumericalValuesWithoutNegative}  variant="label-hidden" value={pressureReliefTemperature} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Pressure_Relieving_Temperature__c" class="slds-hide" variant="label-inline" value={pressureReliefTemperature}></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Pressure_Relieving_Temperature_Units__c" value={PressureRelievingTemperatureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            
+                        </template>
+
+                        <!-- vaccum -->
+                        <template if:true={isVacuumSelected}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Atmospheric Pressure
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <input disabled={sDisabled} name="atmosphericPressure" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={atmosphericPressure} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Atmospheric_Pressure__c" class="slds-hide" variant="label-inline" value={atmosphericPressure}></lightning-input-field>
+                                        <!--<lightning-input-field variant="label-inline" field-name="Atmospheric_Pressure__c" value={atmosphericPressure}></lightning-input-field> --> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Atmospheric_Pressure_Units__c" value={AtmosphericPressureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Media	
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-combobox
+                                            name="Vacuum_Media"
+                                            value={selectedVacuumMedia}
+                                            placeholder="Select Vacuum Media"
+                                            options={vacuumMediaOptions}
+                                            onchange={handleVacuumMediaChange} 
+                                            variant="label-hidden"
+                                            disabled={bDisabled}
+                                            >
+                                        </lightning-combobox>
+                                        <!--<lightning-input-field field-name="Vacuum_Media__c" variant="label-hidden"></lightning-input-field>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <template if:true={VCustomSpecified}>
+                                <div class="slds-size_1-of-2"> 
+                                </div>
+                                <div class="slds-size_1-of-2">
+                                    <lightning-input-field disabled={bDisabled}  onchange={sizingFlowChanged} variant="label-inline" value={vCustomerSpecified} field-name="V_Customer_Specified_Media_Name__c"></lightning-input-field>
+                                    <!-- <input name="vCustomerSpecified" type="number" class="slds-input"  variant="label-hidden" value={vCustomerSpecified} onfocusout={RemoveDecimal}></input>
+                                    <lightning-input-field field-name="V_Customer_Specified_Media_Name__c" class="slds-hide" variant="label-inline" value={vCustomerSpecified}></lightning-input-field>-->
+                                </div>
+                                
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Ratio of Specific Heats (k)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!-- <lightning-input-field variant="label-inline" value={vRatioOfSpecificHeats} field-name="V_Ratio_of_Specific_Heats__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        <template if:false={bDisabled}>
+                                            <input name="vRatioOfSpecificHeats" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vRatioOfSpecificHeats} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vRatioOfSpecificHeats" type="number" class="slds-input" value={vRatioOfSpecificHeats} disabled="disabled"></input>
+                                          </template>
+
+
+                                        
+                                        <lightning-input-field field-name="V_Ratio_of_Specific_Heats__c" class="slds-hide" variant="label-inline" value={vRatioOfSpecificHeats}></lightning-input-field>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Molecular Weight (MW)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={vMolecularWeight} field-name="V_Molecular_Weight__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="vMolecularWeight" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vMolecularWeight} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vMolecularWeight" type="number" class="slds-input"  value={vMolecularWeight}  disabled="disabled"></input>
+                                          </template>
+
+                                        
+
+                                        <lightning-input-field field-name="V_Molecular_Weight__c" class="slds-hide" variant="label-inline" value={vMolecularWeight}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Compressibility Factor (Z)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={vCompressibilityFactor} field-name="V_Compressibility_Factor__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="vCompressibilityFactor" type="number" min="0" onkeydown={restrictNonNumericalValues} class="slds-input"  variant="label-hidden" value={vCompressibilityFactor} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vCompressibilityFactor" type="number"  class="slds-input"  value={vCompressibilityFactor} disabled="disabled"></input>
+                                          </template>
+
+                                        
+
+                                        <lightning-input-field field-name="V_Compressibility_Factor__c" class="slds-hide" variant="label-inline" value={vCompressibilityFactor}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Relief Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Vacuum_Relief_Req_Flow__c" value={vacRelReqFlo}></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="vacuumReliefRequired" type="number" min="0" onkeydown={restrictNonNumericalValues} class="slds-input"  variant="label-hidden" value={vacuumReliefRequired} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Vacuum_Relief_Req_Flow__c" class="slds-hide" variant="label-inline" value={vacuumReliefRequired}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Vacuum_Relief_Required_Flow_Units__c" value={VacuumReliefRequiredFlowUnits}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Vacuum Value
+                                        <lightning-helptext class="tooltip_cust"  content="Enter either the relieving vacuum or %overpressure vacuum. The % overpressure field is available after entering 0 for the relieving vacuum, and is overridden if the relieving vacuum is changed to a non-zero value"></lightning-helptext>
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="V_Enter_Relieving_Vacuum_Value__c" value={vacRelVac} onchange={handleVacuumOverpressure}></lightning-input-field>-->
+                                       
+                                        <template if:false={bDisabled}>
+                                            <input name="vacuumRelievingValue" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" disabled={disableForRelievingVacuum} value={vacuumRelievingValue} onfocusout={RemoveDecimal} onchange={handleRelievingVacuumOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vacuumRelievingValue" class="slds-input"    disabled="disabled" value={vacuumRelievingValue}></input>
+                                          </template>
+
+                                        
+
+                                        <lightning-input-field field-name="V_Enter_Relieving_Vacuum_Value__c" class="slds-hide" variant="label-inline" value={vacuumRelievingValue}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="V_Enter_Relieving_Vacuum_units__c" value={V_EnterRelievingVacuumUnitsVal}></lightning-input-field>
+                           
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                               
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        % Overpressure Vacuum Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.V_Overpressure_Vacuum_Value__c.inlineHelpText}></c-custom-tool-tip>
+                                    </label>
+                                    
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="V_Overpressure_Vacuum_Value__c" value={vOverpressure} disabled={disableForVacuumOverpressure}></lightning-input-field>-->
+                                       
+                                        <template if:false={bDisabled}>
+                                            <input name="vOverpressure"  class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vOverpressure} onfocusout={RemoveDecimal} disabled={disableForVacuumOverpressure} onchange={handleRelievingVacuumOverpressure} ></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vOverpressure"  class="slds-input"  value={vOverpressure} disabled="disabled" ></input>
+                                          </template>                                        
+
+                                        <lightning-input-field field-name="V_Overpressure_Vacuum_Value__c" class="slds-hide" variant="label-inline" value={vOverpressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                            </div>                          
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Relieving Temperature
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--  <lightning-input-field variant="label-inline" field-name="V_Vacuum_Relieving_Temperature__c" value={vacuumRelievingTemp}></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="vacuumRelievingTemp" type="number" class="slds-input" onkeydown={restrictNonNumericalValuesWithoutNegative} variant="label-hidden" value={vacuumRelievingTemp} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="V_Vacuum_Relieving_Temperature__c" class="slds-hide" variant="label-inline" value={vacuumRelievingTemp}></lightning-input-field>
+                                    </div>
+                                </div>
+                              
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="V_Vacuum_Relieving_Temperature_Units__c" value={V_VacuumRelievingTemperatureUnitsVal}></lightning-input-field>
+                            </div>
+
+                           
+                        </template>
+
+
+                        <!-- Pressure / Vacuum -->
+                        <template if:true={isVacuumAndPressureSelected}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Atmospheric Pressure
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <input disabled={sDisabled} name="atmosphericPressure" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={atmosphericPressure} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field onchange={sizingFlowChanged} field-name="Atmospheric_Pressure__c" class="slds-hide" variant="label-inline" value={atmosphericPressure}></lightning-input-field>
+                                        <!--<lightning-input-field variant="label-inline" field-name="Atmospheric_Pressure__c" value={atmosphericPressure}></lightning-input-field> --> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Atmospheric_Pressure_Units__c" value={AtmosphericPressureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Media	
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-combobox
+                                            name="Pressure_Media"
+                                            value={selectedPressureMedia}
+                                            placeholder="Select Pressure Media"
+                                            options={PressureMediaOptions}
+                                            onchange={handlePressureMediaChange} 
+                                            variant="label-hidden"
+                                            disabled={bDisabled}
+                                            >
+                                        </lightning-combobox>
+                                        <!--<lightning-input-field field-name="Media_Type__c" variant="label-hidden"></lightning-input-field>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <template if:true={CustomSpecified}>
+                                <div class="slds-size_1-of-2"> 
+                                </div>
+                                <div class="slds-size_1-of-2">
+                                    <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" value={customerSpecified} field-name="Customer_Specified_Media_Name__c"></lightning-input-field>
+                                    <!-- <input name="customerSpecified" type="number" class="slds-input"  min="0" variant="label-hidden" value={customerSpecified} onfocusout={RemoveDecimal}></input>
+                                    <lightning-input-field field-name="Customer_Specified_Media_Name__c" class="slds-hide" variant="label-inline" value={customerSpecified}></lightning-input-field> -->
+                                </div>
+                                
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Ratio of Specific Heats (k)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={ratioOfSpecificHeats} field-name="Ratio_of_Specific_Heats__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                        <template if:false={bDisabled}>
+                                            <input name="ratioOfSpecificHeats" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={ratioOfSpecificHeats} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="ratioOfSpecificHeats" type="number" class="slds-input"   value={ratioOfSpecificHeats} disabled="disabled"></input>
+                                          </template>      
+
+                                        
+                                        <lightning-input-field field-name="Ratio_of_Specific_Heats__c" class="slds-hide" variant="label-inline" value={ratioOfSpecificHeats}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Molecular Weight (MW)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={molecularWeight} field-name="Molecular_Weight__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="molecularWeight" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={molecularWeight} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="molecularWeight" type="number" class="slds-input"  value={molecularWeight}  disabled="disabled"></input>
+                                          </template>      
+
+                                        
+
+                                        <lightning-input-field field-name="Molecular_Weight__c" class="slds-hide" variant="label-inline" value={molecularWeight}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Compressibility Factor (Z)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={CompressibilityFactor} field-name="Compressibility_Factor__c" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+                                        <template if:false={bDisabled}>
+                                            <input name="CompressibilityFactor" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues}  variant="label-hidden" value={CompressibilityFactor} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="CompressibilityFactor" type="number" class="slds-input" value={CompressibilityFactor} disabled="disabled"></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field field-name="Compressibility_Factor__c" class="slds-hide" variant="label-inline" value={CompressibilityFactor}></lightning-input-field>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relief Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Pressure_Relief_Req_Flow_Rate__c" value={pressureReliefRequired} ></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="pressureReliefRequired" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={pressureReliefRequired} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Pressure_Relief_Req_Flow_Rate__c" class="slds-hide" variant="label-inline" value={pressureReliefRequired}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Pressure_Relief_Req_Flow_Units__c" value={PressureReliefReqFlowUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                               
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.Enter_Relieving_Pressure_Value__c.inlineHelpText}></c-custom-tool-tip>
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Enter_Relieving_Pressure_Value__c" value={enterRelievingPressure} onchange={handleOverpressure}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="enterRelievingPressure"  class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={enterRelievingPressure} disabled={disableForRelievingPressure} onfocusout={handleReleivingPressureOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="enterRelievingPressure"  class="slds-input" value={enterRelievingPressure} disabled="disabled"></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" class="slds-hide" variant="label-inline" value={enterRelievingPressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Enter_Relieving_Pressure_Units__c" value={EnterRelievingPressureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        % Overpressure Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.Overpressure__c.inlineHelpText}></c-custom-tool-tip>
+                                    </label>
+                                    
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Overpressure__c" value={pOverpressure} disabled={disableForOverpressure}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="pOverpressure"  class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={pOverpressure} disabled={disableForOverpressure} onfocusout={handleReleivingPressureOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="pOverpressure"  class="slds-input" value={pOverpressure} disabled="disabled"></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="Overpressure__c" class="slds-hide" variant="label-inline" value={pOverpressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                            </div>
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relieving Temperature Value
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Pressure_Relieving_Temperature__c" value={pressureReliefTemperature}></lightning-input-field>-->        
+                                        <input disabled={sDisabled} name="pressureReliefTemperature" type="number" class="slds-input" onkeydown={restrictNonNumericalValuesWithoutNegative} variant="label-hidden" value={pressureReliefTemperature} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Pressure_Relieving_Temperature__c" class="slds-hide" variant="label-inline" value={pressureReliefTemperature}></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Pressure_Relieving_Temperature_Units__c" value={PressureRelievingTemperatureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            <!-- ************************************* -->
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Media	
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-combobox
+                                            name="Vacuum_Media"
+                                            value={selectedVacuumMedia}
+                                            placeholder="Select Vacuum Media"
+                                            options={vacuumMediaOptions}
+                                            onchange={handleVacuumMediaChange} 
+                                            variant="label-hidden"
+                                            disabled={bDisabled}
+                                            >
+                                        </lightning-combobox>
+                                        <!--<lightning-input-field field-name="Vacuum_Media__c" variant="label-hidden"></lightning-input-field>-->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <template if:true={VCustomSpecified}>
+                                <div class="slds-size_1-of-2"> 
+                                </div>
+                                <div class="slds-size_1-of-2">
+                                    <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" value={vCustomerSpecified} field-name="V_Customer_Specified_Media_Name__c"></lightning-input-field>
+                                    <!--<input name="vCustomerSpecified" type="number" class="slds-input"  variant="label-hidden" value={vCustomerSpecified} onfocusout={RemoveDecimal}></input>
+                                    <lightning-input-field field-name="V_Customer_Specified_Media_Name__c" class="slds-hide" variant="label-inline" value={vCustomerSpecified}></lightning-input-field>-->
+                                </div>
+                                
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Ratio of Specific Heats (k)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!-- <lightning-input-field variant="label-inline" value={vRatioOfSpecificHeats} field-name="V_Ratio_of_Specific_Heats__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        <template if:false={bDisabled}>
+                                            <input name="vRatioOfSpecificHeats" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vRatioOfSpecificHeats} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                          <input name="vRatioOfSpecificHeats" type="number" class="slds-input"  value={vRatioOfSpecificHeats} disabled="disabled"></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="V_Ratio_of_Specific_Heats__c" class="slds-hide" variant="label-inline" value={vRatioOfSpecificHeats}></lightning-input-field>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Molecular Weight (MW)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={vMolecularWeight} field-name="V_Molecular_Weight__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="vMolecularWeight" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vMolecularWeight} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vMolecularWeight" type="number" class="slds-input"  value={vMolecularWeight} disabled="disabled"></input>
+                                          </template>  
+
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="V_Molecular_Weight__c" class="slds-hide" variant="label-inline" value={vMolecularWeight}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Compressibility Factor (Z)
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" value={vCompressibilityFactor} field-name="V_Compressibility_Factor__c" disabled={disableForVacuumNonCustomerSpecified}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="vCompressibilityFactor" type="number" class="slds-input" min="0" onkeydown={restrictNonNumericalValues}  variant="label-hidden" value={vCompressibilityFactor} onfocusout={RemoveDecimal} disabled={disableForVacuumNonCustomerSpecified}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vCompressibilityFactor" type="number" class="slds-input"   value={vCompressibilityFactor} disabled="disabled"></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="V_Compressibility_Factor__c" class="slds-hide" variant="label-inline" value={vCompressibilityFactor}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Relief Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="Vacuum_Relief_Req_Flow__c" value={vacRelReqFlo}></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="vacuumReliefRequired" type="number" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vacuumReliefRequired} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="Vacuum_Relief_Req_Flow__c" class="slds-hide" variant="label-inline" value={vacuumReliefRequired}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="Vacuum_Relief_Required_Flow_Units__c" value={VacuumReliefRequiredFlowUnits}></lightning-input-field>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Vacuum Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.V_Enter_Relieving_Vacuum_Value__c.inlineHelpText}></c-custom-tool-tip>
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="V_Enter_Relieving_Vacuum_Value__c" value={vacRelVac} onchange={handleVacuumOverpressure}></lightning-input-field>-->
+                                        
+                                        <template if:false={bDisabled}>
+                                            <input name="vacuumRelievingValue" class="slds-input" min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" disabled={disableForRelievingVacuum} value={vacuumRelievingValue} onfocusout={handleRelievingVacuumOverpressure}></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vacuumRelievingValue" class="slds-input"  disabled="disabled" value={vacuumRelievingValue} ></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="V_Enter_Relieving_Vacuum_Value__c" class="slds-hide" variant="label-inline" value={vacuumRelievingValue}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="V_Enter_Relieving_Vacuum_units__c" value={V_EnterRelievingVacuumUnitsVal}></lightning-input-field>
+                           
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                               
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        % Overpressure Vacuum Value
+                                        <c-custom-tool-tip help-text={fieldsInfo.V_Overpressure_Vacuum_Value__c.inlineHelpText}></c-custom-tool-tip>
+                                    </label>
+
+                                    <div class="slds-form-element__control">
+                                        <!--<lightning-input-field variant="label-inline" field-name="V_Overpressure_Vacuum_Value__c" value={vOverpressure} disabled={disableForVacuumOverpressure}></lightning-input-field>-->
+                                        <template if:false={bDisabled}>
+                                            <input name="vOverpressure" class="slds-input"  min="0" onkeydown={restrictNonNumericalValues} variant="label-hidden" value={vOverpressure} disabled={disableForVacuumOverpressure} onfocusout={handleRelievingVacuumOverpressure} ></input>
+                                        </template>
+                                          
+                                          <template if:true={bDisabled}>
+                                            <input name="vOverpressure" class="slds-input"  value={vOverpressure} disabled="disabled" ></input>
+                                          </template>  
+
+                                        
+
+                                        <lightning-input-field disabled={bDisabled} field-name="V_Overpressure_Vacuum_Value__c" class="slds-hide" variant="label-inline" value={vOverpressure}></lightning-input-field>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                
+                            </div>                          
+
+                            <div class="slds-size_1-of-2">
+                                
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Vacuum Relieving Temperature
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <!--  <lightning-input-field variant="label-inline" field-name="V_Vacuum_Relieving_Temperature__c" value={vacuumRelievingTemp}></lightning-input-field>-->
+                                        <input disabled={sDisabled} name="vacuumRelievingTemp" type="number" class="slds-input"  onkeydown={restrictNonNumericalValuesWithoutNegative} variant="label-hidden" value={vacuumRelievingTemp} onfocusout={RemoveDecimal}></input>
+                                        <lightning-input-field field-name="V_Vacuum_Relieving_Temperature__c" class="slds-hide" variant="label-inline" value={vacuumRelievingTemp}></lightning-input-field>
+                                    </div>
+                                </div>
+                              
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <lightning-input-field disabled={bDisabled} onchange={sizingFlowChanged} variant="label-inline" field-name="V_Vacuum_Relieving_Temperature_Units__c" value={V_VacuumRelievingTemperatureUnitsVal}></lightning-input-field>
+                            </div>
+
+                            
+
+                        </template>
+
+
+
+                    </div>
+                </div>
+            </div>
+       
+            <footer class="slds-card__footer">
+                <div class="slds-align_absolute-center" style="height:5rem"> 
+                    <template if:false={bDisabled}>
+                        <lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                       <!-- <button class="slds-button slds-button_outline-brand" type="submit" name="Save & Continue" value="Submit" form="form1">Save & Continue</button>-->
+                        <!--<lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button>-->
+                    </template>
+                </div>
+            </footer>
+
+        </article>
+    </lightning-record-edit-form>
+    
+</template>

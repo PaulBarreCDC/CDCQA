@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Mining_Tool__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please select which Mining Tool was used to gather this Lead</inlineHelpText>
+    <label>Lead Mining Tool</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeadSource</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>D.B. Hoovers</fullName>
+                <default>false</default>
+                <label>D.B. Hoovers</label>
+            </value>
+            <value>
+                <fullName>FedBizOpps</fullName>
+                <default>false</default>
+                <label>FedBizOpps</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PecWeb (IIR)</fullName>
+                <default>false</default>
+                <label>PecWeb (IIR)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

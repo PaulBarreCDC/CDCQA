@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Gas_Group__c</name>
+    <picklistValues>
+        <masterLabel>IEC IIA ( MESG &gt; 0.90)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IEC IIA1 ( MESG ≥ 1.14)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IEC IIB3 ( MESG ≥ 0.65)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Methane (MESG ≥ 1.14)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEC C ( MESG &gt; 0.45 ≤ 0.75)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NEC D (MESG &gt; 0.75)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,5 @@
+Attribute__c,CDC_Ext_ID__c,Flag__c,NumVal1__c,NumVal2__c,NumVal3__c,NumVal4__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c,Text8Val__c,Text9Val__c,Text__c,Value__c
+ASSEMBLYWT,,,,,,,1221B Fiberglass,,,,,,,,,,0
+ASSEMBLYWTUOM,,,,,,,1221B Fiberglass,,,,,,,,,lb,
+ASYTYP,,,,,,,1221B Fiberglass,,,,,,,,,PVRV,
+ATTRTEMPLATE,,,,,,,1221B Fiberglass,,,,,,,,,PVRV,

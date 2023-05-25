@@ -1,0 +1,34 @@
+Description__c,Guidline_Seq__c,Operation__c,Outside_Operation_Item__c,Standard_Operation_ID__c,Test__c,Text1Val__c,Text__c,Type__c
+Clean for Dry-Chlorine Service,15,0090,,FINAL INSP,Cleaning Requirement,C3,1) Supply Certificate of Conformance for Cleaning,Subtask
+Halogen Based Restrictions for cleaning,15,0090,,FINAL INSP,Cleaning Requirement,C7,1) Supply Certificate of Conformance for Halogen Cleaning,Subtask
+NACE MR0103,10,0090,,FINAL INSP,NACE Evaluation,MR0103,1) Verify Hardness meets NACE requirements \n 2) Supply NACE Certificate of Conformance,Subtask
+Clean for Liquid Oxygen Service,15,0090,,FINAL INSP,Cleaning Requirement,C5,1) Supply Certificate of Conformance for Cleaning,Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,0.4,1) Supply Surface Finish Report,Subtask
+PMI,3,0080,,PMI,Positive Material ID,CHEMICAL,1) Supply PMI Report,Subtask
+Electropolish,13,0090,,FINAL INSP,Electropolish,Y,1) Supply Electropolish Report,Subtask
+China Manufacturing License,5,0090,,FINAL INSP,China ML,CUSTSI,"1) Supply Certificate of conformance. \n 2) Supply One Certified Drawing \n 3) Supply China Quality License \n 4) Supply Material Test Reports to EN 10204 3.1"" \n 5) Supply Quality Plan QCF-1037-1 \n 6) Source Inspection Required. Supply source inspection",Subtask
+Comply with Regels Voor Tosellan Oder Druk M084/78-10,2,0020,,TPI,Regels,Y,1) Supply 3.2 Inspection Certificate that is signed and stamped by a Notified Body,Subtask
+KOSHA Compliance,8,0090,,FINAL INSP,KOSHA,Y,1) Verify KOSHA code is marked on a tag (Refer to KOSHA Code Table),Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,10,1) Supply Surface Finish Report,Subtask
+Clean with Acetone,15,0090,,FINAL INSP,Cleaning Requirement,C2,1) Supply Certificate of Conformance for Cleaning,Subtask
+China Manufacturing License,5,0090,,FINAL INSP,China ML,CDCSI,"1) Supply Certificate of conformance. \n2) Supply One Certified Drawing \n3) Supply China Quality License \n4) Supply Material Test Reports to EN 10204 3.1"" \n5) Supply Quality Plan QCF-1037-1 \n6) Source Inspection Required. Supply source inspection cert",Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,0.5,1) Supply Surface Finish Report,Subtask
+3A Sanitary Standards,14,0090,,FINAL INSP,3A,Y,1)Verify Tag is marked with 3A symbol \n2) Supply 3A Certificate of Conformance,Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,20,1) Supply Surface Finish Report,Subtask
+CU TR,9,0090,,FINAL INSP,CU TR,Y,1) Supply 1 copy of the CU TR 032/2013 Certification \n 2) Supply 1 copy of the CU TR 032/2013 Technical Passport \n 3) Supply Burst Cert/Certificate of Conformance \n 4) Supply Installation Instruction translated in Russian \n 5) Supply Material Test Rep,Subtask
+PMI,3,0080,,PMI,Positive Material ID,CONFIRM,1) Supply PMI Report,Subtask
+PED 2014/68/EU (CE Mark),4,0090,,FINAL INSP,CEMark,CEC,1) Supply PED declaration of conformity and verify CE Marks on tag and burst certificate.,Subtask
+Comply with AD2000-Merkblatt A1,1,0020,,TPI,Merkblatt,Y,1) Supply 3.2 Inspection Certificate that is signed and stamped by a Notified Body,Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,0.26,1) Supply Surface Finish Report,Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,15,1) Supply Surface Finish Report,Subtask
+Clean with Blue Gold  Cleaner,15,0090,,FINAL INSP,Cleaning Requirement,C1,1) Supply Certificate of Conformance for Cleaning,Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,0.35,1) Supply Surface Finish Report,Subtask
+Clean for Oxygen Service,15,0090,,FINAL INSP,Cleaning Requirement,C6,1) Supply Certificate of Conformance for Cleaning,Subtask
+PED 2014/68/EU (CE Mark),4,0090,,FINAL INSP,CEMark,CET,1) Supply PED declaration of conformity and verify CE Marks on tag and burst certificate.,Subtask
+CSA Marking (CRN Number),6,0090,,FINAL INSP,CSA Marking,Y,"""1) Verify Canadian Registration Number is printed on the tags, box labels and certificates",Subtask
+NACE MR0175/ ISO15156,10,0090,,FINAL INSP,NACE Evaluation,MR0175,1) Verify Hardness meets NACE requirements \n 2) Supply NACE Certificate of Conformance,Subtask
+Clean for Flourine Service,15,0090,,FINAL INSP,Cleaning Requirement,C4,1) Supply Certificate of Conformance for Cleaning,Subtask
+ATEX Certificate,7,0090,,FINAL INSP,ATEX Certificate,Y,1) Supply ATEX declaration of conformity.,Subtask
+China Manufacturing License,5,0090,,FINAL INSP,China ML,WSI,"1) Supply Certificate of conformance. \n 2) Supply One Certified Drawing \n 3) Supply China Quality License \n 4) Supply Material Test Reports to EN 10204 3.1"" \n 5) Supply Quality Plan QCF-1037-1 \n 6) Source Inspection Required. Supply source inspection",Subtask
+Surface Finish,12,0090,,FINAL INSP,Surface Finish,12,1) Supply Surface Finish Report,Subtask
+Shell Test,11,0090,,FINAL INSP,Shell Test,Y,1) Supply Shell Test Report,Subtask

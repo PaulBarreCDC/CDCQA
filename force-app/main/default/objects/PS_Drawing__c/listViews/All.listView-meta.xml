@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ASSYPARTNO__c</columns>
+    <columns>DrawingID__c</columns>
+    <columns>DimA__c</columns>
+    <columns>DimB__c</columns>
+    <columns>DimC__c</columns>
+    <columns>DimD__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OBJECT_ID</field>
+        <operation>equals</operation>
+        <value>a5t0v000000cSsC</value>
+    </filters>
+    <label>All</label>
+</ListView>

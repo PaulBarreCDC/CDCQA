@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Temperature_of_flowing_value_Constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(  Temperature_of_flowing_Vapor__c )),
+OR(
+Temperature_of_flowing_Vapor__c &lt; -320,
+Temperature_of_flowing_Vapor__c &gt; 1000
+)
+) &amp;&amp; Bypass__c = FALSE</errorConditionFormula>
+    <errorDisplayField>Temperature_of_flowing_Vapor__c</errorDisplayField>
+    <errorMessage>Temperature Setting must be Greater than -320 F and less than 1000 F</errorMessage>
+</ValidationRule>

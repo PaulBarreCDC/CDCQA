@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Status Reason</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Change_Order_Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CHNG ORD</fullName>
+                <default>false</default>
+                <label>Change Order Processed, New Order Entered</label>
+            </value>
+            <value>
+                <fullName>CUST REQ</fullName>
+                <default>false</default>
+                <label>Customer Requested to Cancel Order</label>
+            </value>
+            <value>
+                <fullName>ERROR</fullName>
+                <default>false</default>
+                <label>Cancel Order Due to Internal Mistake</label>
+            </value>
+            <value>
+                <fullName>NON PMT</fullName>
+                <default>false</default>
+                <label>Cancel Order Due to Lack of Payment By Customer</label>
+            </value>
+            <value>
+                <fullName>CHG ORDER</fullName>
+                <default>false</default>
+                <label>Change Order in Process</label>
+            </value>
+            <value>
+                <fullName>CUST HOLD</fullName>
+                <default>false</default>
+                <label>Waiting for Approval from Customer to Proceed with Production</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Blocked</controllingFieldValue>
+            <valueName>CHG ORDER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Blocked</controllingFieldValue>
+            <valueName>CUST HOLD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>CHNG ORD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>CUST REQ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>ERROR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel</controllingFieldValue>
+            <valueName>NON PMT</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

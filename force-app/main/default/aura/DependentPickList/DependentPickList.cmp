@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens"
+                access="global"
+                controller="dependentPicklist_UpdateCtrl">
+    <!-- call doInit function on component load -->  
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+   
+    <!-- aura attributes-->  
+    <aura:attribute name="listControllingValues" type="list" default="[]" description="to store controller field values"/>
+    <aura:attribute name="listDependingValues" type="list" default="['--- None ---']" description="to store dependent field values"/>
+    <aura:attribute name="depnedentFieldMap" type="map" description="map to store dependent values with controlling value"/>
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/>
+   
+    <aura:attribute name="objDetail" type="SBQQ__Quote__c" default="{'sobjectType' : 'SBQQ__Quote__c'}"/>
+    <aura:attribute name="controllingFieldAPI" type="string" default="Document_Class__c" description="store field API name of Controller field"/>
+    <aura:attribute name="dependingFieldAPI" type="string" default="Document_Class_Description__c" description="store field API name of dependent field"/>
+    <aura:attribute name="pval1" type="string" />
+    <aura:attribute name="pval2" type="string" />
+   
+    <!--Controller Field-->
+    <lightning:layoutItem size="12" padding="around-small">    
+        <lightning:select name="controllerFld"
+                          value="{!v.objDetail.Document_Class__c}"
+                          label="Document Class"
+                          onchange="{!c.onControllerFieldChange}">
+            <aura:iteration items="{!v.listControllingValues}" var="val">
+                <option value="{!val}">{!val}</option>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:layoutItem>  
+    <!--Dependent Field-->
+    <lightning:layoutItem size="12" padding="around-small">
+        <lightning:select name="dependentFld"
+                          value="{!v.objDetail.Document_Class_Description__c}"
+                          label="Document Class Description"
+                          disabled="true">
+            <aura:iteration items="{!v.listDependingValues}" var="val">
+                <option value="{!val}">{!val}</option>
+            </aura:iteration>
+        </lightning:select>
+    </lightning:layoutItem>  
+</aura:component>

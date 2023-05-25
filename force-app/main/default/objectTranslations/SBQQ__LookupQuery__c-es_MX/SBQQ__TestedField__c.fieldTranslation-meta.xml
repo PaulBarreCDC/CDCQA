@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Campo en el objeto Presupuesto o Partida de presupuesto u Opción de producto que evalúa esta consulta. Se requiere si Tipo de coincidencia = Valor de campo.</help>
+    <label></label>
+    <name>SBQQ__TestedField__c</name>
+    <picklistValues>
+        <masterLabel>Active_Configured_Part_Record_Id__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configured_Part_Output__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Configured_Part__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CurrencyIsoCode</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PartNumber__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PricebookId__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Code</masterLabel>
+        <translation>Código del producto</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBQQ__PriceBook__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBQQ__Product__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SBQQ__Quantity__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

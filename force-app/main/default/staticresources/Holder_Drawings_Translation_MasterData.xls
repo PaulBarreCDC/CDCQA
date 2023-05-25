@@ -1,0 +1,4 @@
+Drawing_Type__c,Text1__c,Text2__c,Text3__c,Text4__c,Text5__c,Text6__c,Text7__c,Text8__c,Text9__c,Text10__c,TextOpp1__c,TextOpp2__c,TextOpp3__c,TextOpp4__c,TextOpp5__c,TextOpp6__c,TextOpp7__c,TextOpp8__c,TextOpp9__c,TextOpp10__c
+Submittal Drawing,HPTC,SZC,HCLASS,HIC,HOC,COIN,COOUT,COMF,,,=,=,=,=,=,contains,contains,contains,,
+IINO,Entity,,,,,,,,,,=,,,,,,,,,
+J-Hook IINO,COIN,,,,,,,,,,=,,,,,,,,,

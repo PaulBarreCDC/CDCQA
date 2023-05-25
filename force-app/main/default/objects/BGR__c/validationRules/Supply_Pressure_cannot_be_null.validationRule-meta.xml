@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Pressure_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The Supply Pressure field cannot be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>And(
+				NOT(ISNEW()),
+				ISBLANK( Supply_Pressure__c ),
+				NOT(ISBLANK(Setting__c)),
+				NOT(ISPICKVAL(Setting_Units__c, &quot;&quot;)),  
+				Bypass__c = FALSE,
+    Relief_flag__c = TRUE
+   )</errorConditionFormula>
+    <errorDisplayField>Supply_Pressure__c</errorDisplayField>
+    <errorMessage>Supply Pressure: Please Enter a Value</errorMessage>
+</ValidationRule>

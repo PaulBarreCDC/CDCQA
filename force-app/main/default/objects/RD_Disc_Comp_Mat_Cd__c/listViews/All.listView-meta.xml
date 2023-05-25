@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Component__c</columns>
+    <columns>PTC__c</columns>
+    <columns>DSCVAR__c</columns>
+    <columns>SizeLL__c</columns>
+    <columns>SizeUL__c</columns>
+    <columns>TempLL__c</columns>
+    <columns>TempUL__c</columns>
+    <columns>MatlCode__c</columns>
+    <columns>MakeBuyFlag__c</columns>
+    <columns>ATEX__c</columns>
+    <columns>NACE__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

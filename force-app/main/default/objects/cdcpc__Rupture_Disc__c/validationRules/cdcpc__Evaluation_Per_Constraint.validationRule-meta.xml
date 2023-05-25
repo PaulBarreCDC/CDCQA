@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Evaluation_Per_Constraint</fullName>
+    <active>false</active>
+    <description>Evaluation Per is a Mandatory field to be selected by the User</description>
+    <errorConditionFormula>AND( 
+ISBLANK(TEXT( cdcpc__Evaluation_Per__c )) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE)&amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Evaluation_Per__c</errorDisplayField>
+    <errorMessage>Evaluation Per: Please select a value from the drop down</errorMessage>
+</ValidationRule>

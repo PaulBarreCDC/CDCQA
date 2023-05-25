@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>LiquidFlowRate_UOM_From__c</columns>
+    <columns>LiquidFlowRate_UOM_To__c</columns>
+    <columns>DensityActualFrom__c</columns>
+    <columns>DensityActualTo__c</columns>
+    <columns>Multiplier__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

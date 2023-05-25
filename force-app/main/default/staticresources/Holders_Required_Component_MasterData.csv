@@ -1,0 +1,3 @@
+"Body__c","CDC_Ext_ID__c","Clamp__c","Companion_Flange__c","Flag__c","Gasket__c","Holddown_Ring__c","Inlet__c","Jackscrews__c","Mid_Flange__c","Name","Nut__c","Outlet__c","PTC__c","Spacer_Ring__c","Studs_and_Nuts__c"
+"false","1","false","false","","false","false","true","Unavailable","false","HRC# 0000366","false","true","VFS","false","Required"
+"false","2","false","false","","false","false","true","Optional","false","HRC# 0000367","false","true","RHI","false","Optional"

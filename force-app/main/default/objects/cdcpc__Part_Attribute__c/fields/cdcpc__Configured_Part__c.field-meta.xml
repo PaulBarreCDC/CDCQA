@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Configured_Part__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Configured Part</label>
+    <referenceTo>cdcpc__ConfiguredPart__c</referenceTo>
+    <relationshipLabel>Part Attribute Configured Parts</relationshipLabel>
+    <relationshipName>Part_Attribute_Configured_Parts</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Molecular_Weight_constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(  Molecular_Weight__c  )), 
+OR( 
+Molecular_Weight__c &lt; 2.015, 
+Molecular_Weight__c &gt; 400 
+) 
+) &amp;&amp; Bypass__c = FALSE &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Molecular_Weight__c</errorDisplayField>
+    <errorMessage>Molecular Weight: Please enter a positive Integer Value between 2.015 and 400</errorMessage>
+</ValidationRule>

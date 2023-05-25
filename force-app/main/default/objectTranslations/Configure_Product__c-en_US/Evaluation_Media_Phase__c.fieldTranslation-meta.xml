@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Evaluation_Media_Phase__c</name>
+    <picklistValues>
+        <masterLabel>Dry &amp; Saturated Steam</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dry &amp; Saturated, or Super Heated Steam</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gas/Vapor (MW, k, Z)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Homogenous Wet Steam of Dryness 90% or Over</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liquid (Density/SG)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

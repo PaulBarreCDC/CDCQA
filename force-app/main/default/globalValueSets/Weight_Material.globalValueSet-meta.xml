@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NA</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>3</fullName>
+        <default>false</default>
+        <label>Carbon Steel</label>
+    </customValue>
+    <customValue>
+        <fullName>R3</fullName>
+        <default>false</default>
+        <label>Resin Encapsulated Carbon Steel</label>
+    </customValue>
+    <customValue>
+        <fullName>L</fullName>
+        <default>false</default>
+        <label>Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>RL</fullName>
+        <default>false</default>
+        <label>Resin Encapsulated Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>KL</fullName>
+        <default>false</default>
+        <label>Kynar(R) Encapsulated Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>CL</fullName>
+        <default>false</default>
+        <label>CPVC Encapsulated Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>HL</fullName>
+        <default>false</default>
+        <label>High Density Polyethylene Encapsulated Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>PL</fullName>
+        <default>false</default>
+        <label>Polypropylene Encapsulated Lead</label>
+    </customValue>
+    <customValue>
+        <fullName>S</fullName>
+        <default>false</default>
+        <label>Stainless Steel</label>
+    </customValue>
+    <masterLabel>Weight Material</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vac_Rating_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Vac Rating Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Burst Pressure Min/Max.</fullName>
+                <default>false</default>
+                <label>Burst Pressure Min/Max.</label>
+            </value>
+            <value>
+                <fullName>Rated</fullName>
+                <default>false</default>
+                <label>Rated</label>
+            </value>
+            <value>
+                <fullName>Specified</fullName>
+                <default>false</default>
+                <label>Specified</label>
+            </value>
+            <value>
+                <fullName>Start/Full Relief (Min/Max)</fullName>
+                <default>false</default>
+                <label>Start/Full Relief (Min/Max)</label>
+            </value>
+            <value>
+                <fullName>No Rating But Must Withstand</fullName>
+                <default>false</default>
+                <label>No Rating But Must Withstand</label>
+            </value>
+            <value>
+                <fullName>No Rating</fullName>
+                <default>false</default>
+                <label>No Rating</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

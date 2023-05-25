@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_Via__c</fullName>
+    <externalId>false</externalId>
+    <label>Ship Via</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>247</fullName>
+                <default>false</default>
+                <label>24/7 Delivery SERVICE</label>
+            </value>
+            <value>
+                <fullName>ADL</fullName>
+                <default>false</default>
+                <label>ADITYA LOGISTICS (DOMESTIC FOR GCMPL)</label>
+            </value>
+            <value>
+                <fullName>AFW</fullName>
+                <default>false</default>
+                <label>AMERICAN FREIGHTWAYS</label>
+            </value>
+            <value>
+                <fullName>ARC</fullName>
+                <default>false</default>
+                <label>ARC TRANSPORT (DOMESTIC FOR GCMPL)</label>
+            </value>
+            <value>
+                <fullName>BEL</fullName>
+                <default>false</default>
+                <label>BELLAIRE</label>
+            </value>
+            <value>
+                <fullName>BWY</fullName>
+                <default>false</default>
+                <label>BEST WAY PREPAID AND ADD</label>
+            </value>
+            <value>
+                <fullName>CHE</fullName>
+                <default>false</default>
+                <label>CHEETAH</label>
+            </value>
+            <value>
+                <fullName>CMS</fullName>
+                <default>false</default>
+                <label>COMET SEA SHIPMENT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>CTS</fullName>
+                <default>false</default>
+                <label>CTS GROUP FREIGHT</label>
+            </value>
+            <value>
+                <fullName>CPU</fullName>
+                <default>false</default>
+                <label>CUSTOMER&apos;S SHIPPING AGENT PICK UP</label>
+            </value>
+            <value>
+                <fullName>DEL</fullName>
+                <default>false</default>
+                <label>DELIVER</label>
+            </value>
+            <value>
+                <fullName>DHL</fullName>
+                <default>false</default>
+                <label>DHL</label>
+            </value>
+            <value>
+                <fullName>FE2</fullName>
+                <default>false</default>
+                <label>FED EX 2 Business days not freight</label>
+            </value>
+            <value>
+                <fullName>F2A</fullName>
+                <default>false</default>
+                <label>FED EX 2 DAY AM NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>FEO</fullName>
+                <default>false</default>
+                <label>FED EX FIRST OVERNIGHT</label>
+            </value>
+            <value>
+                <fullName>FF2</fullName>
+                <default>false</default>
+                <label>FED EX FREIGHT 2 DAY NOT INTNL</label>
+            </value>
+            <value>
+                <fullName>FF3</fullName>
+                <default>false</default>
+                <label>FED EX FREIGHT 3 DAY NOT INTNL</label>
+            </value>
+            <value>
+                <fullName>FFF</fullName>
+                <default>false</default>
+                <label>FED EX FREIGHT FIRST OVERNIGHT</label>
+            </value>
+            <value>
+                <fullName>FFE</fullName>
+                <default>false</default>
+                <label>FED EX FREIGHT INTNL ECONOMY</label>
+            </value>
+            <value>
+                <fullName>FFI</fullName>
+                <default>false</default>
+                <label>FED EX FREIGHT INTNL PRIORITY</label>
+            </value>
+            <value>
+                <fullName>FFP</fullName>
+                <default>false</default>
+                <label>FED EX Freight Priority NOT INTNL</label>
+            </value>
+            <value>
+                <fullName>FEG</fullName>
+                <default>false</default>
+                <label>FED EX Ground NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>FEH</fullName>
+                <default>false</default>
+                <label>FED EX HOME DELIVERY</label>
+            </value>
+            <value>
+                <fullName>FIF</fullName>
+                <default>false</default>
+                <label>FED EX INTERNATIONAL FIRST OVERNITE</label>
+            </value>
+            <value>
+                <fullName>FIO</fullName>
+                <default>false</default>
+                <label>FED EX INTL PRIORITY NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>FE3</fullName>
+                <default>false</default>
+                <label>FED EX INTL ECONOMY NOT FRT (INDIA)</label>
+            </value>
+            <value>
+                <fullName>FE1</fullName>
+                <default>false</default>
+                <label>FED EX PRIORITY OVERNIGHT NOT FRT</label>
+            </value>
+            <value>
+                <fullName>FES</fullName>
+                <default>false</default>
+                <label>FED EX SAVER (INTRA US ONLY)</label>
+            </value>
+            <value>
+                <fullName>FSO</fullName>
+                <default>false</default>
+                <label>FED EX STANDARD OVERNIGHT NOT FRT</label>
+            </value>
+            <value>
+                <fullName>ODF</fullName>
+                <default>false</default>
+                <label>OLD DOMINION FREIGHT</label>
+            </value>
+            <value>
+                <fullName>OTX</fullName>
+                <default>false</default>
+                <label>OTX Logistics</label>
+            </value>
+            <value>
+                <fullName>RLC</fullName>
+                <default>false</default>
+                <label>R&amp;L Carriers</label>
+            </value>
+            <value>
+                <fullName>SAI</fullName>
+                <default>false</default>
+                <label>SAIA MOTOR FREIGHT</label>
+            </value>
+            <value>
+                <fullName>SFS</fullName>
+                <default>false</default>
+                <label>Secure Freight Systems</label>
+            </value>
+            <value>
+                <fullName>SGL</fullName>
+                <default>false</default>
+                <label>Secure Global</label>
+            </value>
+            <value>
+                <fullName>SNF</fullName>
+                <default>false</default>
+                <label>SOUTHEASTERN MOTOR FREIGHT</label>
+            </value>
+            <value>
+                <fullName>TTP</fullName>
+                <default>false</default>
+                <label>TEAMS TRANSPORT</label>
+            </value>
+            <value>
+                <fullName>TBA</fullName>
+                <default>false</default>
+                <label>TO BE ASSIGNED OR DETERMINED</label>
+            </value>
+            <value>
+                <fullName>TLA</fullName>
+                <default>false</default>
+                <label>TRANSLOG AIR SHIPMENT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>TLS</fullName>
+                <default>false</default>
+                <label>TRANSLOG SEA SHIPMENT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UP2</fullName>
+                <default>false</default>
+                <label>UPS 2nd Day &quot;BLUE&quot; NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>U2A</fullName>
+                <default>false</default>
+                <label>UPS 2ND DAY AM NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UP3</fullName>
+                <default>false</default>
+                <label>UPS 3 DAY SELECT NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UPF</fullName>
+                <default>false</default>
+                <label>UPS FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UPG</fullName>
+                <default>false</default>
+                <label>UPS GROUND NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UPN</fullName>
+                <default>false</default>
+                <label>UPS NEXT DAY AIR &quot;RED&quot; NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>UNA</fullName>
+                <default>false</default>
+                <label>UPS NEXT DAY AIR EARLY AM &quot;RED AM&quot;</label>
+            </value>
+            <value>
+                <fullName>UNS</fullName>
+                <default>false</default>
+                <label>UPS NEXT DAY AIR SAVER NOT FREIGHT</label>
+            </value>
+            <value>
+                <fullName>WCL</fullName>
+                <default>false</default>
+                <label>WILL CALL</label>
+            </value>
+            <value>
+                <fullName>XPO</fullName>
+                <default>false</default>
+                <label>XPO Freight</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,12 @@
+NOMINAL_VALUE__c,NORM_TYPE__c,NumVal1__c,NumVal2__c,NumVal3__c,NumVal4__c,NumVal5__c,Operation_Number__c,OUTER_MAX__c,OUTER_MIN__c,Process_Characteristic__c,SAMPLE_PERCENT__c,Special_Characteristic_Classification__c,SystemModstamp,TEST_OPERATION_DESC__c,Test_OPNO__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c,Text8Val__c,Text9Val__c,Text10Val__c,Tool_ID__c
+,DISTANCE (INCHES),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:39.000Z,Score Depth,9130,HPZ,,,,,,,,,,
+,CATEGORICAL,,,,,,10,,,,1,PACD,2020-10-11T22:02:49.000Z,Actual (A) / Calculated (C),9040,HPZ,,,,,,,,,,
+,DISTANCE (INCHES),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:40.000Z,Top Section / Disc Thk,9220,HPZ,,,,,,,,,,
+,FORCE (POUNDS),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:40.000Z,Hold Score (Lbf),9110,HPZ,,,,,,,,,,
+,DISTANCE (INCHES),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:51.000Z,Indentation,9120,HPZ,,,,,,,,,,
+,FORCE (POUNDS),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:23.000Z,Hold Form (Lbf),9070,HPZ,,,,,,,,,,
+,PERCENTAGE,,,,,,10,200,0,,1,,2020-10-11T22:02:18.000Z,Prebulge Percentage,9140,HPZ,,,,,,,,,,
+,DISTANCE (INCHES),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:16.000Z,Top Section / Disc C.H.,9240,HPZ,,,,,,,,,,
+,FORCE (POUNDS),,,,,,10,1000000000,1,,1,,2020-10-11T22:02:32.000Z,Hold Burst LBF,9065,HPZ,,,,,,,,,,
+,TEMPERATURE (F),,,,,,10,110,32,,1,PRTMP,2020-10-11T22:02:34.000Z,Room Temp,9010,HPZ,,,,,,,,,,
+,PRESSURE (PSIG),,,,,,10,1000000000,0,,1,,2020-10-11T22:02:31.000Z,Prebulge Pressure (Psig),9150,HPZ,,,,,,,,,,

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routing_Parent__c</fullName>
+    <externalId>false</externalId>
+    <label>Routing Parent</label>
+    <referenceTo>Routing__c</referenceTo>
+    <relationshipLabel>Control Plans</relationshipLabel>
+    <relationshipName>Control_Plans</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

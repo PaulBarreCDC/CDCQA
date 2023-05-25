@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Script_ID__c</fullName>
+    <description>This field maps to the Test Script ID provided by CDC</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field maps to the Test Script ID provided by CDC</inlineHelpText>
+    <label>Test Script ID</label>
+    <length>20</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

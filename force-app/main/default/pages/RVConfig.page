@@ -1,0 +1,1058 @@
+<apex:page standardController="Relief_Valve__c" lightningStylesheets="true" extensions="configureRVproduct" action="{!getTabData}">
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial,Verdana,sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+    </style>
+
+<style>
+    .btnCenter{
+        float: left;
+        left: 50%;
+    }
+    .slds-button_brand{
+     padding-left:1rem !important;
+     padding-right:1rem !important;
+     text-align:center !important;
+     vertical-align:middle !important;
+     -webkit-box-pack:center !important;
+         -ms-flex-pack:center !important;
+             justify-content:center !important;
+     border:1px solid #dddbda !important;
+     -webkit-transition:border 0.15s linear !important;
+     transition:border 0.15s linear !important;
+     background-color:#0070d2 !important;
+     border-color:#0070d2 !important;
+     color:white !important;
+     background:#0070d2 !important; 
+   }
+   
+   .slds-button_outline-brand{
+     padding-left:1rem !important;
+     padding-right:1rem !important;
+     text-align:center !important;
+     vertical-align:middle !important;
+     -webkit-box-pack:center !important;
+         -ms-flex-pack:center !important;
+             justify-content:center !important;
+     border:1px solid #dddbda !important;
+     -webkit-transition:border 0.15s linear !important;
+     transition:border 0.15s linear !important;
+     border-color:#dddbda !important;
+     background-color:white !important;
+     border-color:#0070d2 !important;
+   }
+   
+
+   .slds-notify-container,
+.slds-notify_container{
+  position:fixed !important;
+  width:100% !important;
+  left:0 !important;
+  top:0 !important;
+  z-index:10000 !important;
+  text-align:center !important;
+}
+
+.slds-is-relative{
+            position:relative !important;
+          }
+          .slds-notify_toast,
+.slds-notify--toast{
+  color:white !important;
+  display:-webkit-inline-box !important;
+  display:-ms-inline-flexbox !important;
+  display:inline-flex !important;
+  -webkit-box-align:center !important;
+      -ms-flex-align:center !important;
+          align-items:center !important;
+  position:relative !important;
+  background:#706e6b !important;
+  font-weight:300 !important;
+  border-radius:0.25rem !important;
+  margin:0.5rem !important;
+  padding:0.75rem 3rem 0.75rem 1.5rem !important;
+  min-width:30rem !important;
+  text-align:left !important;
+  -webkit-box-pack:start !important;
+      -ms-flex-pack:start !important;
+          justify-content:flex-start !important;
+          }
+
+.slds-theme_warning, .slds-theme--warning{
+    background-color:#ffb75d !important;
+    color:#080707 !important;
+  }
+
+    </style>
+
+    
+   <script type="text/javascript">
+  function isNumberKey(evt, obj) 
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+            var value = obj.value;
+            var dotcontains = value.indexOf(".") != -1;
+            if (dotcontains)
+                if (charCode == 46) return false;
+            if (charCode == 46) return true;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+ function isNumberKeyQ(evt, obj) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+    var bProductMaterialandOptionsSaved = true; // added by piyush  
+    var bValveExaminationOptionSaved = true; //added by piyush 
+   // added by piyush 
+    function ProductMaterialAndOptionsChange(){
+        console.log('changed');
+        bProductMaterialandOptionsSaved = false;
+    }
+
+    function ValveExaminationOptionChange(){
+        console.log('changed ValveExaminationOptionChange');
+        bValveExaminationOptionSaved = false;
+    }
+
+    function onSaveProductMaterialsComplete(event){
+        event.value = 'Save & Continue'; 
+        bProductMaterialandOptionsSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+    
+     function onValveExaminationOptionComplete(event){
+        event.value = 'Save & Continue'; 
+        bValveExaminationOptionSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+
+    function onMouseInExaminationOption(){
+     if(bProductMaterialandOptionsSaved == false){
+        console.log('---> ' + document.getElementById("toastMsgText"));
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Product Material and Options"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+     }
+    } 
+
+ //
+    function onMouseInDocsourcing(){
+     if(bValveExaminationOptionSaved == false){
+        console.log('---> ' + document.getElementById("toastMsgText"));
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Examination Option"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+     }
+    }
+
+    var oPopupPDF;
+    function openFAReference(strURL){
+        if(strURL == ''){
+                return;
+        }
+
+        //window.open(strURL, '_blank' );
+        oPopupPDF = window.open(strURL , "", "width=500,height=500");
+    }
+
+    function validateConfigs(event,tabName){
+        //alert(varConfiguration_Complete);
+        if(varConfiguration_Complete == false){
+            alert('Please complete your changes by clicking Finish Configuration before leaving the page');
+            event.preventDefault();
+           return false ;
+        }else{
+            return true;
+        }
+       
+    }
+
+
+</script> 
+    <script type="text/javascript">
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function()
+                       {
+                           var shellTestBody = "{!shellTestValueBody}";
+                           console.log('shellTestBody = '+shellTestBody);
+                           if(shellTestBody == 'PneuAutoHydAvail' || shellTestBody == 'HydAutoPneuNotAvail')
+                           {
+                               j$("[id$=shellTestValveBody] :input").prop("disabled",true); 
+                           }
+                       });
+    </script>
+    
+    
+    <apex:form id="configForm">
+        <apex:pageMessages id="configFormErr" ></apex:pageMessages>
+        <apex:actionFunction name="getTabData" action="{!getTabData}" reRender="theTabPanel" oncomplete="" status="actStatusId">
+            <apex:param assignTo="{!selectedTab}" name="selectedTab" value="x"/>
+            <!-- <apex:actionSupport event="onchange" status="recordStatus" rerender=""/>
+            <apex:actionStatus startText="Loading..." id="recordStatus"/> -->
+        </apex:actionFunction>
+        <apex:tabPanel switchType="client" id="theTabPanel" value="{!selectedTab}" >
+            <apex:actionStatus id="actStatusId" startText="Loading">
+                <apex:facet name="start" >
+                  Loading <img src="/img/loading.gif" />                    
+                </apex:facet>
+            </apex:actionStatus>
+            <!--<apex:tabPanel switchType="client" selectedTab="Engineering" id="theTabPanel">  -->
+            <apex:tab label="Product Configuration" name="configuration" id="tabOne" ontabenter="getTabData('Configuration');">
+                <apex:pageBlock id="PMaterial">    
+                <div style="padding-bottom:20px;height:80px;">
+                    <div id="notifyToast" class="slds-notify_container slds-is-relative" style="display:none;width:auto;left:25%;">
+                        <div class="slds-notify slds-notify_toast slds-theme_warning" style="padding: 0px;padding-left: 20px;padding-right: 20px;" role="status">
+                          <div class="slds-notify__content">
+                            <h2 class="slds-text-heading_small" style="font-weight:100" id="toastMsgText">Unsaved Changes.</h2>
+                          </div>
+                        </div>
+                    </div>
+
+                <apex:commandButton value="Return to Product Selection" 
+                    styleClass="slds-button_outline-brand"
+                    action="{!goBack}"
+                    rendered="{!bShowReturnToProductSelectionButton}"
+                    oncomplete="goBackQLI('{!strURL}');" 
+                    style="font-weight:bold;float:left;margin-top: 20px;margin-left: 20px;">
+                </apex:commandButton> 
+
+                <apex:commandButton styleClass="slds-button_brand" 
+                    value="{!editModeLable}" 
+                    action="{!EnableEditMode}"
+                    style="font-weight:bold;float:right;margin-top: 20px;margin-right: 20px;"
+                    reRender="theTabPanel" 
+                    oncomplete="openFAReference('{!strURL}');" 
+                    rendered="{!bShowEditButton}"
+                ></apex:commandButton>
+
+                </div>
+                <div style="float:none;">&nbsp;</div>
+
+
+                <script>
+                    function goBackQLI(strURL){
+                        parent.location.href=strURL;
+                    }
+                </script>
+              
+				 <apex:pageMessages id="ValidationMessage" ></apex:pageMessages>
+                    <apex:pageBlockSection id="SectionF" title="Product Material & Options" >
+
+                        <!--apex:inputField id="quantity" value="{!conRV.Quantity__c}" /-->
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Quantity__c}" id="qtty3" onkeypress="return isNumberKeyQ(event,this)" rendered="{! (!disableButton)}"/>   
+                         <apex:outputField value="{!conRV.Quantity__c}" rendered="{!disableButton}"/>
+                        <apex:selectList value="{!conRV.Drilling__c}" label="Drilling" size="1" multiselect="false" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!drillingOption}"/>
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" action="{!getbodyMaterialOptions}" rerender="PMaterial,ValidationMessage" status="loadingbody"/>
+                            <apex:actionStatus startText="Loading..." id="loadingbody" />
+                        </apex:selectList>
+
+                        <apex:selectList value="{!conRV.Body_Material__c}" label="Body Material" size="1" multiselect="false" rendered="{!bodyMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!bodyMaterialOptions}"/> 
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getOnChangeBodyMaterial}" status="loadingFacing"/>
+                            <apex:actionStatus startText="Loading..." id="loadingFacing" />
+                        </apex:selectList>
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Facing__c}" label="Facing" size="1" multiselect="false"  rendered="{!facingBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!FacingOptions}"/>  
+                            <!--<apex:actionSupport event="onchange" rerender="PMaterial" action="{!getSeatMaterialOptions}" status="loadingSeatMaterial"/>
+                            <apex:actionStatus startText="Loading..." id="loadingSeatMaterial" />-->
+                        </apex:selectList>
+                        <apex:selectList value="{!conRV.Seat_Material__c}" label="Seat Material" size="1" multiselect="false" rendered="{!seatMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!SeatMaterialOptions}"/> 
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getOnChangeSeatMaterial}" status="loadingPressurePalletMaterial"/>
+                            <apex:actionStatus startText="Loading..." id="loadingPressurePalletMaterial" />
+                        </apex:selectList>
+                        <apex:selectList value="{!conRV.Pressure_Pallet_Material__c}" size="1" multiselect="false" rendered="{!pressurePalletMaterialBoolean}" disabled="{!disableButton}"  >
+                            <apex:selectOptions value="{!PressurePalletMaterialOptions}"/> 
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getOnChangePressurePalletMaterial}" status="loadingPalletTypeOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingPalletTypeOptions" />
+                        </apex:selectList>
+                        <apex:selectList value="{!conRV.Pallet_Type__c}" size="1" multiselect="false"  rendered="{!palletTypeBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!PalletTypeOptions}"/>  
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getDiaphragmMaterialOptions}" status="loadingDiaphragmMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingDiaphragmMaterialOptions" />
+                        </apex:selectList> 
+                        <apex:selectList value="{!conRV.Diaphragm_Material__c}" size="1" multiselect="false" rendered="{!diaphragmMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!DiaphragmMaterialOptions}"/>
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getPilotSoftGoodsMaterialOptions}" status="loadingVacuumPalletMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingVacuumPalletMaterialOptions" />
+                        </apex:selectList>
+
+
+                        <apex:selectList value="{!conRV.Vacuum_Pallet_Material__c}" size="1" multiselect="false" rendered="{!vacuumPalletMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!VacuumPalletMaterialOptions}"/>
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getOnChangeVacuumPalletMaterial}" status="loadingPilotSoftGoodsMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingPilotSoftGoodsMaterialOptions" />
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Pilot_Soft_Goods_Material__c}" size="1" multiselect="false"  rendered="{!pilotSoftGoodsMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!PilotSoftGoodsMaterialOptions}"/>
+                            <!--<apex:actionSupport event="onchange" rerender="PMaterial" action="{!getWeightMaterialOptions}" status="loadWeightMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadWeightMaterialOptions" />-->
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Weight_Material__c}" size="1" multiselect="false"  rendered="{!weightMaterialBoolean}" disabled="{!disableButton}">
+                            <apex:selectOptions value="{!WeightMaterialOptions}"/> 
+                           <!--<apex:actionSupport event="onchange" rerender="PMaterial" action="{!getSpringMaterialOptions}" status="loadingSpringMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingSpringMaterialOptions" />-->
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Spring_Material__c}" size="1" multiselect="false" rendered="{!springMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!SpringMaterialOptions}"/>  
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Fastener_Material__c}" size="1" multiselect="false" rendered="{!fastenerMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!FastenerMaterialOptions}"/>
+                            <!--<apex:actionSupport event="onchange" rerender="PMaterial" action="{!getSteamJacketMaterialOptions}" status="loadingSteamJacketMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingSteamJacketMaterialOptions" />-->
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Steam_Jacket_Material__c}" size="1" multiselect="false" rendered="{!steamJacketMaterialBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!SteamJacketMaterialOptions}"/>  
+                        </apex:selectList>
+
+                        <apex:selectList value="{!conRV.Painting_Coating_Option__c}" size="1" multiselect="false" rendered="{!paintingCoatingBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!PaintingCoatingOptions}"/>
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getBodyCoatingMaterialOptions}" status="loadingBodyCoatingMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingBodyCoatingMaterialOptions" />
+                        </apex:selectList>
+
+                        <apex:selectList value="{!conRV.Body_Coating_Material__c}" size="1" multiselect="false"  rendered="{!bodyCoatingMaterialBoolean}" disabled="{!disableButton}">
+                            <apex:selectOptions value="{!BodyCoatingMaterialOptions}"/>
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getPalletFastenerCoatingMaterialOptions}" status="loadingPalletFastenerCoatingMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingPalletFastenerCoatingMaterialOptions" />
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Pallet_Fastener_Coating_Material__c}" size="1" multiselect="false" rendered="{!palletFastenerCoatingMaterialBoolean}" disabled="{!disableButton}"  >
+                            <apex:selectOptions value="{!PalletFastenerCoatingMaterialOptions}"/>
+                            <!--<apex:actionSupport event="onchange" rerender="PMaterial" action="{!getElementMaterialOptions}" status="loadingElementMaterialOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingElementMaterialOptions" />-->
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Element_Material__c}" size="1" label="Element Material" multiselect="false" rendered="{!elementMaterialBoolean}"  disabled="{!disableButton}">
+                            <apex:selectOptions value="{!ElementMaterialOptions}"/>  
+                        </apex:selectList> 
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Flame_Arrester_Option__c}" size="1" label="Flame Arrester Option" multiselect="false" rendered="{!flameArresterBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!FlameArresterOptions}"/>  
+                        </apex:selectList> 
+
+                        <apex:selectList onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Vacuum_Port_Option__c}" label="Vacuum Port Option" size="1" multiselect="false"  rendered="{!vacuumPortBoolean}"  disabled="{!disableButton}">
+                            <apex:selectOptions value="{!VacuumPortOptions}"/>  
+                        </apex:selectList> 
+                        
+                         <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Pressure_Port_Proximity_Sensor__c}" rendered="{!pressurePortProximitySensor && (!disableButton)}"/>
+						 <apex:inputField html-disabled="true" value="{!conRV.Pressure_Port_Proximity_Sensor__c}" rendered="{!pressurePortProximitySensor && (disableButton)}"/>
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Vacuum_Port_Proximity_Sensor__c}" rendered="{!vacuumPortProximitySensor && (!disableButton)}"/>
+						 <apex:inputField html-disabled="true" value="{!conRV.Vacuum_Port_Proximity_Sensor__c}" rendered="{!vacuumPortProximitySensor && (disableButton)}"/>
+
+                        <apex:selectList value="{!conRV.Pilot_Action__c}" label="Pilot Action" size="1" multiselect="false" rendered="{!pilotActionBoolean}" disabled="{!disableButton}">
+                            <apex:selectOptions value="{!PilotActionOptions}"/>  
+                            <apex:actionSupport oncomplete="ProductMaterialAndOptionsChange()" event="onchange" rerender="PMaterial" action="{!getPilotSupplyFilter}" status="loadingPilotActionOptions"/>
+                            <apex:actionStatus startText="Loading..." id="loadingPilotActionOptions" />
+                        </apex:selectList>
+                        
+                         <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Manual_Blowdown__c}" rendered="{!manualBlowdown && (!disableButton)}" />
+                        <apex:inputField html-disabled="true" value="{!conRV.Manual_Blowdown__c}" rendered="{!manualBlowdown && (disableButton)}" />
+                    
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Remote_Sense__c}" rendered="{!remoteSense && (!disableButton)}"  />
+						<apex:inputField html-disabled="true"  value="{!conRV.Remote_Sense__c}" rendered="{!remoteSense && (disableButton)}" />                    
+                     
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Pilot_Exhaust_Piped_to_Discharge_Header__c}" rendered="{!pilotExhaustPipedToDischargeHeader&& (!disableButton)}" />
+						<apex:inputField html-disabled="true" value="{!conRV.Pilot_Exhaust_Piped_to_Discharge_Header__c}" rendered="{!pilotExhaustPipedToDischargeHeader && (disableButton)}" />
+                       
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Field_Test_Connection__c}" rendered="{!fieldTestConnection && (!disableButton)}" />
+                        <apex:inputField html-disabled="true" value="{!conRV.Field_Test_Connection__c}" rendered="{!fieldTestConnection&& (disableButton)}" />
+                       
+                        <apex:inputField onchange="ProductMaterialAndOptionsChange()" value="{!conRV.Pilot_Supply_Filter__c}" rendered="{!pilotSupplyFilter && (!disableButton)}" />
+                        <apex:inputField html-disabled="true" value="{!conRV.Pilot_Supply_Filter__c}" rendered="{!pilotSupplyFilter&& (disableButton)}" />
+                        
+                    </apex:pageBlockSection>
+                    <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}" style="left: 44%;position: absolute;">-->
+                        
+                        <div align="center" draggable="false" >
+                    <apex:commandButton action="{!saveProductMaterialAndOptions}"
+                    rendered="{!!disableButton}"
+                    value="Save & Continue" 
+                        onclick="this.value = 'Processing'"
+                        
+                         rerender="configFormErr,PMaterial,SectionG,pnlScriptData" 
+                         oncomplete="onSaveProductMaterialsComplete(this)"
+                        styleClass="slds-button_brand"
+                        disabled="{!disableButton}"/>
+                        </div>
+                        <!--<apex:commandButton value="Back" action="{!goBackRV}" ></apex:commandButton> -->
+                    <!--</apex:pageBlockButtons>-->
+                </apex:pageBlock>   
+                
+                <apex:pageBlock id="SecG"> 
+                    <apex:pageBlockSection id="SectionG" title="Valve Examination Option" onmouseover="onMouseInExaminationOption()">
+                        
+                        
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Method21_Leak_Detection__c}" rendered="{!method21LeakDetection && (!disableButton)}"/>
+						 <apex:outputField value="{!conRV.Method21_Leak_Detection__c}" rendered="{!method21LeakDetection && (disableButton)}"/>
+                        <apex:selectList onchange="ValveExaminationOptionChange()" value="{!conRV.Radiography__c}" label="Radiography" size="1" multiselect="false" rendered="{!radiographyBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!RadiographyOptions}"/>  
+                        </apex:selectList>
+
+                         <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Fillet_Weld_Liquid_Dye_Penetrant__c}" rendered="{!filletWeldLiquidDyePenetrant && (!disableButton)}"/>
+						 <apex:outputField value="{!conRV.Fillet_Weld_Liquid_Dye_Penetrant__c}" rendered="{!filletWeldLiquidDyePenetrant && (disableButton)}"/>
+                       
+
+                       
+                        <apex:selectList onchange="ValveExaminationOptionChange()" value="{!conRV.Liquid_Dye_Penetrant__c}" size="1" multiselect="false" rendered="{!liquidDyePenetrantBoolean}" disabled="{!disableButton}"  >
+                            <apex:selectOptions value="{!LiquidDyePenetrantOptions}"/>  
+                        </apex:selectList>
+
+                        <apex:selectList onchange="ValveExaminationOptionChange()" value="{!conRV.Positive_Material_Identification__c}" size="1" multiselect="false" rendered="{!positiveMaterialIdentificationBoolean}" disabled="{!disableButton}" >
+                            <apex:selectOptions value="{!PositiveMaterialIdentificationOptions}"/>  
+                        </apex:selectList>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Ultrasonic_Examination__c}" rendered="{!ultrasonicExamination && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Ultrasonic_Examination__c}" rendered="{!ultrasonicExamination && (disableButton)}"/>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Magnetic_Particle_Examination__c}" rendered="{!magneticParticleExamination && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Magnetic_Particle_Examination__c}" rendered="{!magneticParticleExamination && (disableButton)}"/>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Brinell_hardness_examination__c}" rendered="{!brinellHardnessExamination && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Brinell_hardness_examination__c}" rendered="{!brinellHardnessExamination && (disableButton)}"/>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Charpy_Impact_Testing__c}" rendered="{!charpyImpactTesting && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Charpy_Impact_Testing__c}" rendered="{!charpyImpactTesting && (disableButton)}"/>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Visual_Casting_Examination__c}" rendered="{!visualCastingExamination && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Visual_Casting_Examination__c}" rendered="{!visualCastingExamination && (disableButton)}"/>
+
+                        <apex:inputField onchange="ValveExaminationOptionChange()" value="{!conRV.Intergranular_Corossion_Test__c}" rendered="{!intergranularCorrosionTest && (!disableButton)}"/>
+                        <apex:inputField html-disabled="true" value="{!conRV.Intergranular_Corossion_Test__c}" rendered="{!intergranularCorrosionTest && (disableButton)}"/>
+
+
+                        <apex:selectRadio onchange="ValveExaminationOptionChange()" value="{!conRV.Shell_Test_Valve_Body__c}" id="shellTestValveBody" disabled="{!disableButton}" layout="pageDirection">
+                            <apex:selectOptions value="{!ShellTestValveBody}"></apex:selectOptions>
+                            </apex:selectRadio>
+                    </apex:pageBlockSection>
+
+                    <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}" style="left: 44%;position: absolute;">-->
+                        <div align="center" draggable="false" >    
+                    <apex:commandButton action="{!saveValveExaminationOption}" 
+                    value="Save & Continue"
+                    rendered="{!!disableButton}"
+                        oncomplete="onValveExaminationOptionComplete(this)"
+                         onclick="this.value = 'Processing'" rerender="SecG,pnlScriptData,PMaterial" styleClass="slds-button_brand" 
+                         disabled="{!disableButton}"/>
+                    </div>
+                    <!--</apex:pageBlockButtons>-->
+
+                </apex:pageBlock>    
+                <apex:pageBlock id="SecH">   
+                    <apex:pageBlockSection id="SectionH" title="Certificate Document or Sourcing Restrictions"  onmouseover="onMouseInDocsourcing()"  >
+                        
+                        <apex:inputField value="{!conRV.Final_Assembly_Location_Requirements__c}" rendered="{! (!disableButton)}"/>
+						  <apex:outputField value="{!conRV.Final_Assembly_Location_Requirements__c}" rendered="{!disableButton}"/>
+                        <apex:inputField value="{!conRV.Material_Sourcing_Requirements__c}" rendered="{! (!disableButton)}"/> 
+						<apex:outputField value="{!conRV.Material_Sourcing_Requirements__c}" rendered="{!disableButton}"/> 
+
+                    </apex:pageBlockSection>
+                    <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}" style="left: 44%;position: absolute;">-->
+                        <div align="center" draggable="false" >        
+                    <apex:commandButton action="{!saveDocSourcing}" rendered="{!!disableButton}" styleClass="slds-button_brand" value="Finish Configuration" 
+                        onclick="this.value = 'Processing'" rerender="SecH" disabled="{!disableButton}"/>
+                        </div>
+                        <!-- <apex:commandButton value="Back" action="{!goBackRV}" ></apex:commandButton> -->
+                    <!--</apex:pageBlockButtons>-->
+                </apex:pageBlock>  
+            </apex:tab>
+            
+            <apex:tab label="Product Review" name="ProductReview" id="ProdRev" ontabenter="validateConfigs('productReview'); getTabData('ProductReview');">
+                <apex:pageBlock >
+                    <div style="padding:20px">
+                        <apex:commandButton value="Return to Quote"
+                                            styleClass="slds-button_outline-brand"
+                                            action="{!goBackToQuote}"
+                                            oncomplete="goBackQLI('{!strURL}');"
+                                            style="font-weight:bold"></apex:commandButton>
+                    </div>
+                    
+                    <apex:pageBlockSection title="List Price Each (USD)" id="RVPricing" columns="1">
+                          
+                        Discountable Price Each = ${!TotalRVPriceOverride} <br/> <br/>                                
+                        Non - Discountable Lot Charge = ${!NonDiscountablePriceEach} <br/> <br/>                                  
+                        List Price Each = ${!ListPriceEach}
+                                
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Lead-time (Working Days)" id="LeadTime" columns="1">
+                        <apex:pageBlockTable value="{!RVLeadTimeList}" var="RecLDT" styleclass="hidePricingBody">
+                            <apex:column >
+                                <apex:facet name="header"> Lead Time Item </apex:facet>
+                                <apex:facet name="footer"> Total </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 10 </apex:facet>
+                                <apex:facet name="footer"> {!Total10Override} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 20 </apex:facet> 
+                                <apex:facet name="footer"> {!Total20Override} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 30 </apex:facet>
+                                <apex:facet name="footer"> {!Total30Override} </apex:facet>
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> Site 40 </apex:facet>
+                                <apex:facet name="footer"> {!Total40Override} </apex:facet>
+                            </apex:column> 
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection> 
+                    <apex:pageBlockSection title="Product Description" id="Quotedes" columns="2">
+                        <apex:pageBlockTable value="{!quoteDescriptionList}" var="RecQD" id="QT">  
+                            <apex:column >
+                                <apex:repeat value="{!RecQD.overridedescriptionList}" var="descriptionItem">
+                                    <apex:outputText value="{!descriptionItem}"/><br/>
+                                </apex:repeat>
+                            </apex:column>                           
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="Price, LT & Cost" name="Pricing" id="tabtwo" rendered="{!showsales}" ontabenter="validateConfigs('productReview'); getTabData('Pricing');">
+                <apex:pageBlock > 
+                    <apex:pageBlockSection title="List Price Each (USD)" id="RVPricing" columns="1">
+                        <apex:outputField value="{!conRV.Price_Engineer_Override__c}" style="width: 15px" label="Pricing Override" rendered="{!bReadOnlyChceckBox}" />          
+                        <apex:inputField value="{!conRV.Price_Engineer_Override__c}" style="width: 15px" label="Pricing Override" rendered="{!!bReadOnlyChceckBox}">
+                            <apex:actionSupport event="onchange" action="{!ApplyDefaultPricing}" rerender="pricingTable" status="loadingstatusmsg"/>
+                            <apex:actionStatus startText="Please wait..." id="loadingstatusmsg"/> 
+                        </apex:inputField>                       
+                        <apex:pageBlockTable value="{!RVPriceWrapperList}" var="RecPRC" id="pricingTable" columnsWidth="25%">
+                            <apex:column >
+                                <apex:facet name="header"> Pricing Element </apex:facet>
+                                {!RecPRC.rvPrice.Pricing_Element__c}
+                                <apex:facet name="footer">    
+                                    Discountable Price Each = ${!TotalRVPriceOverride} <br/> <br/>                                
+                                    Non - Discountable Lot Charge = ${!NonDiscountablePriceEach} <br/> <br/>                                  
+                                    List Price Each = ${!ListPriceEach}
+                                </apex:facet>    
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> List Price Each (USD) </apex:facet>
+                                {!RecPRC.rvPrice.Price__c} 
+                                <!-- <apex:facet name="footer"> {!TotalBGRPrice} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Pricing Override </apex:facet> 
+                                <apex:inputText value="{!RecPRC.rvPriceOverride}" style="{!IF(conRV.Price_Engineer_Override__c == false,'width:100px;pointer-events: none;','width:100px;')}" onkeypress="return isNumberKey(event,this)"/>
+                                <!-- <apex:facet name="footer"> {!TotalBGRPriceOverride} </apex:facet>  -->
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlockSectionItem dataStyle="float: right;left: 50%;">
+                            <!-- <apex:commandButton value="Apply Default" action="{!ApplyDefaultPricing}"  onclick="this.value = 'Processing'" rerender="BGRPricing"/> -->
+                            <apex:commandButton rendered="{!bShowEditButton}" styleClass="slds-button_brand" value="Save" action="{!SavePriceOverride}" onclick="this.value = 'Processing'" 
+                            rerender="RVPricing"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection title="Lead-Time (Working Days)" id="LeadTime" columns="1">
+                        <apex:outputField value="{!conRV.Lead_Time_Override__c}" label="Lead-Time Override" rendered="{!bReadOnlyChceckBox}" />           
+
+                        <apex:inputField value="{!conRV.Lead_Time_Override__c}" label="Lead-Time Override"  rendered="{!!bReadOnlyChceckBox}">
+                            <apex:actionSupport event="onchange" action="{!ApplyDefaultLeadtime}" rerender="LeadTable" status="loadingstatusmsg1"/>
+                            <apex:actionStatus startText="Please wait..." id="loadingstatusmsg1"/> 
+                        </apex:inputField>
+                        <apex:pageBlockTable value="{!RVLeadTimeList}" var="RecLDT" id="LeadTable">
+                            <apex:column >
+                                <apex:facet name="header"> Lead Time Item </apex:facet>
+                                {!RecLDT.item}
+                                <apex:facet name="footer"> Total </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 10 </apex:facet>
+                                {!RecLDT.x10}
+                                <apex:facet name="footer"> {!Total10} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 10 Override</apex:facet>
+                               <!-- <apex:inputField value="{!RecLDT.leadTimeRec.X10_Override__c}" rendered="{!RecLDT.item != 'Queue Time'}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/> -->
+                                <apex:inputText value="{!RecLDT.x10Override}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <apex:facet name="footer"> {!Total10Override} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 20 </apex:facet> 
+                                {!RecLDT.x20}
+                                <apex:facet name="footer"> {!Total20} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 20 Override</apex:facet>
+                                <!--<apex:inputField value="{!RecLDT.leadTimeRec.X20_Override__c}" rendered="{!RecLDT.item != 'Queue Time'}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/> -->
+                                <apex:inputText value="{!RecLDT.x20Override}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <apex:facet name="footer"> {!Total20Override} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 30 </apex:facet>
+                                {!RecLDT.x30}
+                                <apex:facet name="footer"> {!Total30} </apex:facet>
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> Site 30 Override</apex:facet>
+                                <!--<apex:inputField value="{!RecLDT.leadTimeRec.X30_Override__c}" rendered="{!RecLDT.item != 'Queue Time'}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/> -->
+                                <apex:inputText value="{!RecLDT.x30Override}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <apex:facet name="footer"> {!Total30Override} </apex:facet>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Site 40 </apex:facet>
+                                {!RecLDT.x40}
+                                <apex:facet name="footer"> {!Total40} </apex:facet>
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> Site 40 Override</apex:facet>
+                                <!-- <apex:inputField value="{!RecLDT.leadTimeRec.X40_Override__c}" rendered="{!RecLDT.item != 'Queue Time'}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/> -->
+                                <apex:inputText value="{!RecLDT.x40Override}" style="{!IF(conRv.Lead_Time_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <apex:facet name="footer"> {!Total40Override} </apex:facet>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlockSectionItem dataStyle="float: right;left: 50%;">
+                            <apex:commandButton rendered="{!bShowEditButton}" value="Save"  styleClass="slds-button_brand" action="{!saveLeadTime}" onclick="this.value = 'Processing'" rerender="LeadTime"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                   <apex:pageBlockSection title="Cost" id="RVCost" columns="1" >
+                    <apex:outputField value="{!conRV.Build_Cost_Override__c}" label="Cost Override" rendered="{!bReadOnlyChceckBox}" /> 
+
+                        <apex:inputField value="{!conRV.Build_Cost_Override__c}" label="Cost Override" rendered="{!!bReadOnlyChceckBox}" >
+                                <apex:actionSupport event="onchange" action="{!ApplyDefaultCost}" rerender="RVCost" status="loadingstatusmsg"/>
+                                <apex:actionStatus startText="Please wait..." id="loadingstatusmsg"/>
+                            </apex:inputField>
+                       
+                            <apex:pageBlockSection title="Assembly Cost"  columns="1" id="RVCostSection">
+                                <apex:pageBlockTable value="{!assembleCost}" var="cst" id="CostTable">
+                                    <apex:column >
+                                        <apex:facet name="header"> Standard Operation</apex:facet>
+                                        {!cst.Part_Number__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins</apex:facet>
+                                        {!cst.Inside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_10__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Out</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Out Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_10__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_20__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Out</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Out Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_20__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_30__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Out</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Out Ovrrd</apex:facet>
+                                         <apex:inputField value="{!cst.Outside_Cost_Override_30__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:pageBlockSection>
+                        
+                            <apex:pageBlockSection title="Build Cost" columns="1" >
+                                <apex:pageBlockTable value="{!buildCost}" var="cst" id="CostTable">
+                                    <apex:column >
+                                        <apex:facet name="header">Cost Type</apex:facet>
+                                        {!cst.Cost_Sub_Type__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> Standard Operation</apex:facet>
+                                        {!cst.Part_Number__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins</apex:facet>
+                                        {!cst.Inside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_10__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                     {!cst.Inside_Cost_Override_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_10__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_10__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_20__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                        {!cst.Inside_Cost_Override_20__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_20__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_20__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_30__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                        {!cst.Inside_Cost_Override_30__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_30__c}" style="{!IF(conRV.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_30__c} 
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                    	</apex:pageBlockSection>
+
+                  <apex:pageBlockSection title="Overridden">
+                        <apex:pageBlockTable value="{!overridenCost}" var="cst" id="OverridenTable">
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Ins.Ovrrd</apex:facet>
+                                        <apex:outputText value="{!cst.Inside_Cost_10__c}" style="padding-inline-end: 10px;"></apex:outputText>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins.Ovrrd</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins.Ovrrd</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                        
+                    <apex:pageBlockSectionItem dataStyle="float: right;left: 50%;">
+                                    <apex:commandButton rendered="{!bShowEditButton}" styleClass="slds-button_brand" value="Save" action="{!saveCosting}" onclick="this.value = 'Processing'" rerender="RVCost"/>
+                                </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                </apex:pageBlock>
+            </apex:tab>
+
+            <apex:tab label="Engineering Specials" name="EngineeringSpecials" id="EngineeringSpecials" reRender="Quote" rendered="{!showsales}" ontabenter="validateConfigs('productReview');getTabData('EngineeringSpecials');">
+                <apex:pageBlock id="EngSplcl"> 
+                    <apex:outputPanel id="EngSpecial">
+                        <apex:pageBlockSection title="Part Number" id="PartNumber" columns="1">
+                            <apex:inputField value="{!conRV.Part_Number_Base__c}" style="{!IF(conRV.Quote_Description_Engineer_Override__c == false,'pointer-events: none;','')}"/>
+                            <apex:inputField value="{!conRV.Part_Number__c}" style="width: 230px" html-disabled="true" />
+                            <apex:outputPanel rendered="{!conRV.Quote_Description_Engineer_Override__c}" id="test1">    
+                                <apex:commandButton rendered="{!bShowEditButton}" styleClass="slds-button_brand" value="Save" onclick="this.value = 'Processing'" 
+                                action="{!savePartNumber}" style="float: right;right: 53%;" rerender="PartNumber"/>
+                           </apex:outputPanel> 
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                        <apex:pageBlockSection title="Product Description" id="Quote" columns="1" >
+                            <apex:outputField value="{!conRV.Quote_Description_Engineer_Override__c}" label="Description Override" rendered="{!bReadOnlyChceckBox}" />   
+
+                            <apex:inputField value="{!conRV.Quote_Description_Engineer_Override__c}" label="Description Override" rendered="{!!bReadOnlyChceckBox}">
+                            <apex:actionSupport event="onchange" action="{!ApplyDefaultQuoteDescription}" rerender="PartNumber,QuoteTable,tabOne" oncomplete="callNext1()"  status="loadingstatusmsg2"/>
+                            <apex:actionFunction name="callNext1" rerender="EngSpecial,testdoc"/>
+                                    <apex:actionStatus startText="Please wait..." id="loadingstatusmsg2"/> 
+                            </apex:inputField>
+                            <apex:pageBlockTable value="{!quoteDescriptionList}" var="RecQD" id="QuoteTable">
+                                    <apex:column >
+                                            <apex:facet name="header"> Attribute </apex:facet>
+                                            <apex:outputText value="{!RecQD.quotes}" id="quotes"/> 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> Description </apex:facet>
+                                        <apex:repeat value="{!RecQD.descriptionList}" var="descriptionItem">
+                                            <apex:outputText value="{!descriptionItem}"/><br/>
+                                        </apex:repeat>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> Description Override </apex:facet>
+                                         <apex:inputTextarea value="{!RecQD.overrideDescription}" id="quoteDescriptionOverride" style="{!IF(conRV.Quote_Description_Engineer_Override__c == false,'width:450px;pointer-events: none;','width:450px;')}">
+                                        </apex:inputTextarea>
+                                         <script>
+                                        var noOfRecords = {!RecQD.descriptionList.size};
+                                        if(noOfRecords > 2)
+                                        {
+                                            var setHeight = (23 * noOfRecords);
+                                            setHeight = setHeight +'px';
+                                            var quoteOverrideId = '{!$Component.quoteDescriptionOverride}';
+                                            document.getElementById(quoteOverrideId).style.height = setHeight;
+                                        }
+                                        </script>
+                                    </apex:column>
+                            </apex:pageBlockTable>
+                               
+                            <apex:pageBlockSectionItem dataStyle="float: right;left: 50%;">  
+                                    <apex:commandButton rendered="{!bShowEditButton}" styleClass="slds-button_brand" value="Save" action="{!SaveQuoteDescriptionOverride}" onclick="this.value = 'Processing'" rerender="Quote"/>
+                                </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Engineering Notes" columns="1" id="Notes" >
+                        <apex:inputField value="{!conRV.Engineering_Notes__c}" style="resize:none; height:300px;width:200px;"/>
+                        <apex:commandButton rendered="{!bShowEditButton}" style="float: right;right: 53%;" styleClass="slds-button_brand" action="{!saveNotes}" value="Save"  onclick="this.value = 'Processing'"/>
+                    </apex:pageBlockSection>
+                    <apex:outputPanel id="testdoc">
+                        <apex:pageBlockSection title="Additional Documents" columns="1" rendered="{!conRV.Quote_Description_Engineer_Override__c}"> 
+                            <apex:inputTextarea value="{!conRV.Document_IDs__c}" style="resize:none; height:200px;width:200px;"/>
+                            <apex:commandButton rendered="{!bShowEditButton}" style="float: right;right: 53%;" styleClass="slds-button_brand" value="Save" action="{!SaveDocID}" onclick="this.value = 'Processing'" rerender="testdoc"/>
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                </apex:pageBlock>
+            </apex:tab>
+
+            <apex:tab label="Manufacturing Outputs" title="Engineering" id="Engineering" rendered="{!showsales}" ontabenter="validateConfigs('productReview');getTabData('Engineering');">
+                <apex:pageBlock > 
+                    <div class="slds-grid">
+                        <apex:pageBlockSection title="Structure Details" columns="1">
+                            <apex:pageBlockTable value="{!strucWrapList}" var="strc">
+                                <apex:column >
+                                    <apex:facet name="header"> Line Item No </apex:facet>
+                                    {!strc.strLineItemNo}
+                                </apex:column>                                
+                                <apex:column >
+                                    <apex:facet name="header"> Component Part</apex:facet>
+                                    {!strc.strComponent}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Part Number </apex:facet>
+                                    {!strc.strComponentPart}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Qty per Assembly </apex:facet>
+                                    {!strc.strQtrPerAssembly}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Scrap Factor(%) </apex:facet>
+                                    {!strc.strScrapFactor}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Component Scrap </apex:facet>
+                                    {!strc.strComponentScrap}
+                                </apex:column>
+                            </apex:pageBlockTable> 
+                        </apex:pageBlockSection> 
+                        <apex:pageBlockSection title="Routing Steps" id="RS" columns="1">
+                            <apex:pageBlockTable value="{!RouterWrapList}" var="RecR">
+                                <apex:column >
+                                    <apex:facet name="header"> Operation </apex:facet>
+                                    {!RecR.strOperation}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Standard Operation ID </apex:facet>
+                                    {!RecR.strStandard_Operation_ID}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description </apex:facet>
+                                    {!RecR.strDescr}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Outside Operation Item </apex:facet>
+                                    {!RecR.strOutside_Operation_Item}
+                                </apex:column>                                
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Control Plan Details" id="CP" columns="1">
+                            <apex:pageBlockTable value="{!controlWrapList}" var="RecCP">
+                                <apex:column >
+                                    <apex:facet name="header"> Test Operation No </apex:facet>
+                                    {!RecCP.strTEST_OPNO}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> TEST OPERATION DESC </apex:facet>
+                                    {!RecCP.strTEST_OPERATION_DESC}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> NORM TYPE </apex:facet>
+                                    {!RecCP.strNORM_TYPE}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> OPERATION NUMBER </apex:facet>
+                                    {!RecCP.strOperation_Number}
+                                </apex:column>
+                                
+                                <!--apex:column > 
+                                    <apex:facet name="header"> INSPECTION CODE </apex:facet>
+                                    {!RecCP.strINSPECTION_CODE}
+                                </apex:column-->
+                                <apex:column >
+                                    <apex:facet name="header"> Outer Min </apex:facet>
+                                    {!RecCP.strOUTER_MIN}
+                                </apex:column>
+                                <!--apex:column >
+                                    <apex:facet name="header"> Inner Min </apex:facet>
+                                    {!RecCP.strINNER_MIN}
+                                </apex:column-->
+                                <apex:column >
+                                    <apex:facet name="header"> Nominal Value </apex:facet>
+                                    {!RecCP.strNOMINAL_VALUE}
+                                </apex:column>
+                                 <!--apex:column >
+                                    <apex:facet name="header"> Inner Max </apex:facet>
+                                    {!RecCP.strINNER_MAX}
+                                </apex:column-->
+                                <apex:column >
+                                    <apex:facet name="header"> Outer Max </apex:facet>
+                                    {!RecCP.strOUTER_MAX}
+                                </apex:column>
+                                
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Work Guidelines" columns="1">
+                            <apex:pageBlockTable value="{!workguildeWrapList}" var="WD">
+                                <apex:column >
+                                    <apex:facet name="header"> Guideline Sequence </apex:facet>
+                                    {!WD.strGuidline_Seq}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Operation </apex:facet>
+                                    {!WD.strStandard_Operation_ID}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description </apex:facet>
+                                    {!WD.strDescription}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Text </apex:facet>
+                                    {!WD.strText}
+                                </apex:column>
+                                <!--apex:column >
+                                    <apex:facet name="header"> Type </apex:facet>
+                                    {!WD.strType}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Sign Off </apex:facet>
+                                    {!WD.strSign_Off}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Inspection Sign Off Required </apex:facet>
+                                    {!WD.strInspection_Sign_Off_Required}
+                                </apex:column-->
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Product Documents" columns="1">
+                            <apex:pageBlockTable value="{!documentWrapList}" var="PD">
+                                <apex:column >
+                                    <apex:facet name="header"> Document </apex:facet>
+                                    {!PD.strDocument}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Document ID</apex:facet>
+                                    {!PD.strDocument_ID}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Revision </apex:facet>
+                                    {!PD.strRevision}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection> 
+                        <apex:pageBlockSection title="Interface Attributes" columns="2">
+                            <apex:repeat value="{!IFSAttributes}" var="RecQD" id="QuoteTable">
+                                <tr>
+                                    <td colspan="4">{!RecQD.Key}</td>
+                                    <td colspan="4">{!RecQD.Values}</td>
+                                </tr>                            
+                             </apex:repeat> 
+                        </apex:pageBlockSection>
+                    </div>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Troubleshooting" name="TroubleShoot" id="tabTroubleshoot" rendered="{!showsales}" ontabenter="validateConfigs('productReview');getTabData('TroubleShoot');">
+            <apex:pageBlock > 
+              <apex:pageBlockSection title="Troubleshooting Fields" columns="1">
+               <apex:repeat value="{!TroubleshootingAttributes}" var="RecQD" id="QuoteTable">
+                    <tr>
+                        <td colspan="4">{!RecQD.Key}</td>
+                        <td colspan="4">{!RecQD.Values}</td>
+                    </tr>                            
+                 </apex:repeat> 
+              </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:tab>
+        </apex:tabPanel>
+
+        <apex:outputPanel id="pnlScriptData">
+            <script type="text/javascript">
+            var varConfiguration_Complete = {!ConRV.Finish_Configuration_Flag__c};
+           /* var selectedTab = '{!selectedTab}';
+            if(varConfiguration_Complete && selectedTab == 'ProductReview'){
+              //  getTabData('ProductReview');
+            }
+            */
+
+            </script>
+            </apex:outputPanel>
+
+    </apex:form>
+</apex:page>

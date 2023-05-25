@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Edit_Customer_Lead_Time</fullName>
+    <active>true</active>
+    <errorConditionFormula>(TEXT(SBQQ__Quote__r.SBQQ__Status__c) = &apos;Pending Approvals&apos; || TEXT(SBQQ__Quote__r.SBQQ__Status__c) = &apos;Approved&apos;||
+TEXT(SBQQ__Quote__r.SBQQ__Status__c) = &apos;Order Submitted&apos;) &amp;&amp;
+Ischanged( Customer_Leadtime__c)</errorConditionFormula>
+    <errorDisplayField>Customer_Leadtime__c</errorDisplayField>
+    <errorMessage>Customer Lead Time CANNOT be changed when Quote is Pending Approved or Approved</errorMessage>
+</ValidationRule>

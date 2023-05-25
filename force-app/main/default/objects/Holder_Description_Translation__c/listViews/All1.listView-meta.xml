@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All1</fullName>
+    <columns>NAME</columns>
+    <columns>Attribute__c</columns>
+    <columns>Text1__c</columns>
+    <columns>Text2__c</columns>
+    <columns>Text3__c</columns>
+    <columns>Text4__c</columns>
+    <columns>TextOpp1__c</columns>
+    <columns>TextOpp2__c</columns>
+    <columns>TextOpp3__c</columns>
+    <columns>TextOpp4__c</columns>
+    <columns>Text5__c</columns>
+    <columns>Text6__c</columns>
+    <columns>TextOpp5__c</columns>
+    <columns>TextOpp6__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Text1__c</field>
+        <operation>equals</operation>
+        <value>CHINAMFG</value>
+    </filters>
+    <label>All</label>
+</ListView>

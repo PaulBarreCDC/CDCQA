@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_Number_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+IF(Product_GroupText__c = &apos;Enter Part Number&apos;, true, false),
+ISBLANK(PartNum__c),
+Product_Selection_Flag__c
+)</errorConditionFormula>
+    <errorMessage>Part Number: Please Enter a Value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>STC__c</columns>
+    <columns>TefSealMatl__c</columns>
+    <columns>SZC__c</columns>
+    <columns>CapHt__c</columns>
+    <columns>DSCVAR__c</columns>
+    <columns>ThckCode__c</columns>
+    <columns>TeflonSealPartNumber__c</columns>
+    <columns>OptionCode__c</columns>
+    <columns>SourceCode__c</columns>
+    <columns>TestingCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>TeflonSealPartNumber__c</field>
+        <operation>equals</operation>
+        <value>SLA001107300FS0050000000</value>
+    </filters>
+    <filters>
+        <field>PTC__c</field>
+        <operation>equals</operation>
+        <value>CDT</value>
+    </filters>
+    <label>All</label>
+</ListView>

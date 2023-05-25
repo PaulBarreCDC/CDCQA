@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terms_and_Conditions_Review__c</fullName>
+    <externalId>false</externalId>
+    <label>Terms and Conditions Review</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1. Rep order, CDC Terms and Conditions apply</fullName>
+                <default>false</default>
+                <label>1. Rep order, CDC Terms and Conditions apply</label>
+            </value>
+            <value>
+                <fullName>2. Customer order, CDC Terms and Conditions apply</fullName>
+                <default>false</default>
+                <label>2. Customer order, CDC Terms and Conditions apply</label>
+            </value>
+            <value>
+                <fullName>3. Customer order, Negotiated Terms and Conditions apply and are attached in Salesforce</fullName>
+                <default>false</default>
+                <label>3. Customer order, Negotiated Terms and Conditions apply and are attached in Salesforce</label>
+            </value>
+            <value>
+                <fullName>4. Customer order, customer Terms and Conditions apply and are attached in Salesforce</fullName>
+                <default>false</default>
+                <label>4. Customer order, customer Terms and Conditions apply and are attached in Salesforce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

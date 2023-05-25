@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>CDC Accounts - Community View</layout>
+        <sections>
+            <label></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Correspondence Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Market Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Community Prospect Accounts</layout>
+        <sections>
+            <label></label>
+            <section>Account Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Correspondence Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Market Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Layout</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Accounting Terms</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Territory Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Layout (Partner)</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Territory Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Customer Layout Admin (no req)</layout>
+        <sections>
+            <label></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Accounting Terms</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Territory Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner &amp; HA Layout</layout>
+        <sections>
+            <label></label>
+            <section>Accounting Terms</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Selling and Source Entities</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping Terms</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner &amp; HA Layout (Partner)</layout>
+        <sections>
+            <label></label>
+            <section>Accounting Terms</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Selling and Source Entities</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping Terms</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner &amp; HA Layout (Partner) New</layout>
+        <sections>
+            <label></label>
+            <section>Selling and Source Entities</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Create_Opportunity</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Customer_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Parent_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Partner_House_Account</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Billing_Address_is_mandatory_on_customer</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Partners_cannot_edit_Partner_HA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Restrict_Partner_To_Update_Customer_Acnt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Restrict_Partner_To_Update_Rep_Code</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>BigMachines__iframe_resizing</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__Amend_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__Renew_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>pi__Send_To_Prospect_Insight</name>
+    </webLinks>
+</CustomObjectTranslation>

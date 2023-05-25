@@ -1,0 +1,30 @@
+Attribute__c,CDC_Ext_ID__c,Display_Order__c,Flag__c,Text_Description_of_AttributeValue__c,Value__c
+HCLASS,,40,,PN 10 DIN,0
+MCBODY,,40,,6-Derakane(R) 411-45,0
+MCBODY,,50,,7-Furan,0
+GPFACE,,20,,Flat Face,FF
+MCSEAT,,30,,6-Derakane(R) 411-45,6
+MCPALL,,40,,6-Derakane(R) 411-45,6
+GPTYPE,,20,,O-Ring,O-Ring
+MCPSGD,,40,,FKM O-Rings w/ Fluoropolymer Diaphragm,V-PilotSG
+MCWGHT,,10,,Lead,L
+MCDPHM,,10,,T-Fluoropolymer,T
+MCSPRG,,40,,Ph Stainless Steel,P
+MCFAST,,10,,316 SS,5
+MCSTMJ,,10,,None,0
+GPAINT,,10,,None,0
+MCCOTB,,10,,Polyester/PTFE (1 mil),COATY
+MCCOTB,,20,,ECTFE (15-20 mils),COATH
+GPAINT,,100,,Coating:  All Weather - Internal (except FA),COAT3F
+MCCOTB,,30,,ETFE (5-8 mils),COATE
+MCELMT,,10,,Aluminum,1
+VPRTOP,,20,,316 SS Bug Screen,V
+GPACT,,20,,Snap,Snap
+XRAY,,10,,None,N
+PMI,,30,,Perform Chemical Test,CHEMICAL
+LCP,,10,,None,N
+LDP,,40,,Wetted Components (see EDD-7002),WETTEDCOMP
+SHLTSTMETHBDY,,10,,Pneumatic Valve Body Shell Test,AIR
+ASSYLOCATION,,10,,No Restrictions (Default),0
+MATLSOURCE,,10,,No Restrictions (Default),0
+PMI,,10,,None,N

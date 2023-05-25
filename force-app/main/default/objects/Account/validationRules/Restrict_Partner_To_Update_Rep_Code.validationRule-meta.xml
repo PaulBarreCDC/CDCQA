@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Partner_To_Update_Rep_Code</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL($User.UserType,&quot;PowerPartner&quot;),
+ ISCHANGED( Rep_Code_Account__c )
+)</errorConditionFormula>
+    <errorDisplayField>Rep_Code_Account__c</errorDisplayField>
+    <errorMessage>If you plan to update rep code on account, please reach out to your salesforce admin</errorMessage>
+</ValidationRule>

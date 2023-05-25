@@ -1,0 +1,26 @@
+<apex:page showHeader="true">
+    <apex:includeLightning />
+    <div id="lwcDemo" />
+    <script>
+        alert("The URL of this page is: " + window.location.href);
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        console.log('valessss ',vars.id);
+        if(vars.id !== undefined){
+            $Lightning.use("c:lwcConfigureProductApp", function() {
+                $Lightning.createComponent("c:lwcRuptureDisc", {
+                    //pass parameter values to lwc js controller
+                    recordId : vars.id // optional parameter, I already declared value in lwc js controller.
+                },
+                "lwcDemo",
+                    function(component) {
+                    console.log("Lightning Web Component created Successfully!!");
+                    // extend the functionality as per your requirement
+                    }
+                );
+            });
+        }
+    </script>
+</apex:page>

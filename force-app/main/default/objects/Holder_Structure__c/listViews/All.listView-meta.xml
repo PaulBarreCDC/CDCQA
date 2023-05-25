@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Component_Part_Number__c</columns>
+    <columns>LeadtimeSchedule__c</columns>
+    <columns>INLETCOMPPTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>Testing_Code__c</columns>
+    <columns>Holder_Structure_Type__c</columns>
+    <columns>Qty_Per_Assembly__c</columns>
+    <columns>ROP__c</columns>
+    <columns>TubeCaseMatl__c</columns>
+    <columns>MatlCode__c</columns>
+    <columns>PTC__c</columns>
+    <columns>Desc__c</columns>
+    <columns>Component_Scrap__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

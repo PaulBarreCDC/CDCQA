@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotes_Returned_from_Engineering</fullName>
+    <columns>NAME</columns>
+    <columns>Brand__c</columns>
+    <columns>Inside_Sales_Approver__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Eng_Review_Status__c</columns>
+    <columns>Engineering_Approver__c</columns>
+    <columns>SBQQ__BillingName__c</columns>
+    <columns>End_User_Name__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,Partner Submitted</value>
+    </filters>
+    <filters>
+        <field>Eng_Review_Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>10/5/2020 12:00 AM</value>
+    </filters>
+    <label>Quotes Returned from Engineering</label>
+</ListView>

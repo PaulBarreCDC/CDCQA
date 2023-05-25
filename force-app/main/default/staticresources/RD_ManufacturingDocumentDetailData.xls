@@ -1,0 +1,5 @@
+DimA__c,DimB__c,DimC__c,DimD__c,DimE__c,DimF__c,Document_Type__c,DrawingID__c,DWGNO__c,NumVal1__c,NumVal2__c,NumVal3__c,Revision__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c
+,,,,,,IINO,GEP-7003,1000002,0,999,,,HPZ,A,NA,N,,,
+10.31 [262.0],8.00 [203.2],N/A,1.13 [28.7],,,AssyDwg,2002,1000002,,,,,HPZ,0108,NA,C1,3/8 BSPP,3/8 BSPP,
+10.31 [262.0],8.00 [203.2],N/A,1.13 [28.7],,,AssyDwg1,2002,1000002,,,,,HPZ,0108,FS,C1,3/8 BSPP,3/8 BSPP,
+,,,,,,IINO,GEP-7003,1000002,0,999,,,HPZ,A,FS,N,,,

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_postive_integer_only</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+				Product_material_options_flag__c = TRUE,
+				NOT(REGEX(Text(Quantity__c), &quot;^\\d+$&quot;)),
+				NOT(ISBLANK(Quantity__c))
+				)</errorConditionFormula>
+    <errorMessage>Quantity: Please enter a positive integer value greater than 0</errorMessage>
+</ValidationRule>

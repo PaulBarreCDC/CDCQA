@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V_Overpressure_Vacuum_Value__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter either the relieving vacuum or %overpressure vacuum. The % overpressure field is available after entering 0 for the relieving vacuum, and is overridden if the relieving vacuum is changed to a non-zero value</inlineHelpText>
+    <label>% Overpressure Vacuum Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>10</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

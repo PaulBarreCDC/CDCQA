@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>text</bucketType>
+        <developerName>BucketField_46726159</developerName>
+        <masterLabel>Internal or External</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity.SBQQ__Quotes2__r$Created_By_User_s_Profile__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>CDC Business Super User</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CDC Engineering</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CDC Inside Sales</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>CDC Prod. Planning</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>PT1</sourceValue>
+            </sourceValues>
+            <value>Internal User</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>CDC Partner Community Users Profile</sourceValue>
+            </sourceValues>
+            <value>External User</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_4997723</developerName>
+        <masterLabel>Win %</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Opportunity$StageName</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Closed Won</sourceValue>
+            </sourceValues>
+            <value>Won</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Discovery/Identified</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Solution Design</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>In Review</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Approved (Quote)</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Order Submitted</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Closed Lost</sourceValue>
+            </sourceValues>
+            <value>Other</value>
+        </values>
+    </buckets>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>RowCount</column>
+        </chartSummaries>
+        <chartType>Donut</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>Opportunity$Name</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_BOTTOM</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>true</showPercentage>
+        <showTotal>true</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>BucketField_46726159</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Created_By_User_s_Profile__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.SBQQ__Quotes2__r$Total_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Sales_Division__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Sourcing_Entity__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$IFS_Order_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$SBQQ__Status__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_4997723</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Project_Classification__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Rep_Code_District__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Inside_Sales_Approver__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Contract_Review_Date__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$CreatedBy.Profile</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Order_Number__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Project_Coordinator__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Contract_Reviewer__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Brand__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$Total_Amount__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>lessOrEqual</operator>
+            <value>USD 4999999</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Rep_Code_District__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>EAR</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.SBQQ__Quotes2__r$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Quote Activity - EAR -BP</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_W_Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

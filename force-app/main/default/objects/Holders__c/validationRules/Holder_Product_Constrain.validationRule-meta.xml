@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Holder_Product_Constrain</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISBLANK(TEXT(  Holder_Product__c  ))
+)&amp;&amp;
+( IsProductSelection__c = TRUE)</errorConditionFormula>
+    <errorMessage>Holder Product: Please select a Value</errorMessage>
+</ValidationRule>

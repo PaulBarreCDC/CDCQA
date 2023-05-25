@@ -1,0 +1,1510 @@
+<apex:page standardController="Rupture_Disc__c">
+    <!-- extensions="configureRuptureDiscProduct"
+        
+        
+        script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        function disableMedia() {
+        //var j$=jQuery.noConflict();
+        //j$.noConflict();
+        j$('.abc').attr('readonly', {!disableMediaValues});
+        // alert({!disableMediaValues});
+        //document.getElementById("j_id0:j_id2:j_id29:j_id94:j_id95:secMediaPAnel:MolecularWeight").readOnly = {!disableMediaValues};
+        //alert({!disableMediaValues});
+        document.getElementById('j_id0:j_id2:j_id29:j_id83:j_id84:secMediaPAnel:MolecularWeight').disabled = {!disableMediaValues};
+        document.getElementById('j_id0:j_id2:j_id29:j_id83:j_id84:secMediaPAnel:Compressibility').disabled = {!disableMediaValues};
+        document.getElementById('j_id0:j_id2:j_id29:j_id83:j_id84:secMediaPAnel:Specific').disabled = {!disableMediaValues}; 
+    }
+    window.onload=disableMedia();
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+    <style>
+    .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial,Verdana,sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+    }
+    
+    </style>
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:tabPanel switchType="client" selectedTab="name1" id="theTabPanel">
+            <apex:tab label="Calculation Parameters" name="name1" id="tabOne">
+               
+                                
+                            
+                <apex:pageBlock >
+                    <apex:pageBlock >
+                        <apex:pageBlockSection id="preset" title="Preset Unit of Measure" >
+                            
+                            <apex:inputField value="{!conProd.Flow_Rate_Units__c}">
+                                <apex:actionSupport event="onchange" action="{!applyDefaluts}" rerender="theTabPanel" />
+
+                            </apex:inputField>
+                            <apex:inputField value="{!conProd.Temperature_Units__c}">
+                                <apex:actionSupport event="onchange" action="{!applyDefaluts}" rerender="theTabPanel" />
+
+                            </apex:inputField>
+                            <apex:inputField value="{!conProd.Pressure_Units__c}">
+                                <apex:actionSupport event="onchange" action="{!applyDefaluts}" rerender="theTabPanel" />
+
+                            </apex:inputField>
+                        </apex:pageBlockSection>
+
+                    </apex:pageBlock>
+                    <apex:pageBlock >
+                        <apex:pageBlockSection >
+                            <apex:selectRadio value="{!conProd.Relief_Type__c}">
+                                <apex:selectOptions value="{!ReliefTypes}"></apex:selectOptions>
+                                <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections" />
+                            </apex:selectRadio>
+                            <br/>
+                        </apex:pageBlockSection>
+                        <apex:outputPanel layout="none" id="sections">
+                            <apex:pageBlockSection id="pressure" rendered="{!conProd.Relief_Type__c=='Pressure Relief'}" title="Pressure Relief" >
+                                 <apex:inputField value="{!conProd.Pressure_Setting__c}" ></apex:inputField>
+                                <apex:inputField value="{!conProd.Pressure_Setting_Units__c}">
+                                </apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Atmospheric_Pressure__c}"></apex:inputField>                              
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Pressure_Withstand__c  }">
+                                    <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections1" />
+                                </apex:inputField>
+                                <apex:outputPanel layout="none" id="sections1" >
+                                    <apex:pageBlockSection id="pressure1" rendered="{!showBackPressure}" >
+                                        <apex:inputField value="{!conProd.Back_Pressure_Value__c }"></apex:inputField>
+                                        <apex:inputField value="{!conProd.Back_Pressure_Units__c}"></apex:inputField>
+                                    </apex:pageBlockSection> 
+                                </apex:outputPanel>
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}" >
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                                               
+                                
+                                
+                                    <script type="text/javascript">
+                                        var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+                        </script>
+                            </apex:pageBlockSection>
+                            <apex:pageBlockSection id="pressure1" rendered="{!showVacuum}" title="Vaccum Relief">
+                                
+                                
+                                
+                                <apex:inputField value="{!conProd.Vacuum_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Withstand__c}">
+                                    <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections12" />
+                                </apex:inputField>
+                                <apex:outputPanel layout="none" id="sections12" >
+                                    <apex:pageBlockSection id="pressure1" rendered="{!showPositive}" >
+                                        
+                                        
+                                        
+                                    <apex:inputField value="{!conProd.Positive_Pressure_Value__c }"></apex:inputField>
+                                    <apex:inputField value="{!conProd.Positive_Pressure_Units__c}"></apex:inputField> 
+                                        
+                                        <script type="text/javascript">
+                                            var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+                                            </script>
+                                </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}" >
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                
+                                <script type="text/javascript">
+                                    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+                                    </script>
+                                
+                            </apex:pageBlockSection>
+                            <apex:pageBlockSection id="pressure2" rendered="{!showPressureVacuum}" title="Pressure & Vaccum Relief">
+                                
+                                    
+                                
+                                <apex:inputField value="{!conProd.Pressure_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Pressure_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Atmospheric_Pressure__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}" >
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Constrain_product_selection__c}" >
+                                </apex:inputField>
+                                
+                                 <script type="text/javascript">
+                                       var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+                                        </script>
+                           
+                                
+                            </apex:pageBlockSection>
+                            <apex:commandButton action="{!saveRelief}" value="Save & Continue" />
+                            <apex:commandButton value="Go Back" action="{!goBack}" ></apex:commandButton> 
+                        </apex:outputPanel>
+                        <script>
+                        disableMedia();
+                        </script>
+                    </apex:pageBlock>
+                    <apex:outputPanel id="secB"  >
+                        <apex:pageBlock rendered="{!showSecB}">
+                            <apex:pageBlockSection title=" Sizing/ Flow Area"  columns="1">
+                                <apex:inputField value="{!conProd.Evaluation_Type__c}">
+                                </apex:inputField>
+                                <apex:inputField value="{!conProd.Flow_Area__c}" html-disabled="disabled">
+                                </apex:inputField>
+                                <apex:inputField value="{!conProd.Evaluation_Per__c}">
+                                    <apex:actionSupport event="onchange" action="{!showEvalutionPerSec}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Media"></apex:outputLabel>
+                                     <apex:selectList value="{!conProd.Process_Media__c}" size="1" multiselect="false"   >
+                                         <apex:selectOptions value="{!MediaTypes}" />
+                                            <apex:actionSupport event="onchange" action="{!showSection}" rerender="secEvaluationPanel" />
+                                     </apex:selectList>
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:outputPanel id="secEvaluationPanel">
+                                    
+                                    <apex:outputPanel layout="none" id="secMedia">
+                                                <apex:pageBlockSection id="secMediaPAnel"  >
+                                                   
+                                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                                    <apex:actionSupport event="onchange" rerender="secMedia" status="load"/>
+                                                <apex:inputField value="{!conProd.Customer_Specified_Media__c}"  style="{!IF(OR(conProd.Process_Media__c == null,conProd.Process_Media__c == 'Customer Specified'),'','pointer-events: none;')}"/>
+                                                <apex:inputField value="{!conProd.Molecular_Weight__c}" id="mediaBased" style="{!IF(OR(conProd.Process_Media__c == null,conProd.Process_Media__c == 'Customer Specified'),'','pointer-events: none;')}" ></apex:inputField>
+                                                <apex:inputField value="{!conProd.Compressibility_Factor__c}" id="Compressibility"  style="{!IF(OR(conProd.Process_Media__c == null,conProd.Process_Media__c == 'Customer Specified'),'','pointer-events: none;')}"></apex:inputField>
+                                                <apex:inputField value="{!conProd.Ratio_of_Specific_Heats__c}" id="Specific"  style="{!IF(OR(conProd.Process_Media__c == null,conProd.Process_Media__c == 'Customer Specified'),'','pointer-events: none;')}"></apex:inputField>
+                                                
+                                        <script type="text/javascript">
+                                            var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+                                            </script>
+                                        </apex:pageBlockSection>
+                                            </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secASMEGas">
+                                        <apex:pageBlockSection id="secASMEGasPanel" columns="2" rendered="{!if(conProd.Evaluation_Per__c =='ASME Gas/Vapor',true,false)}">
+  
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                           <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            
+                                                                                      
+                                            <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secASMEWater">
+                                        <apex:pageBlockSection id="secASMEWaterPanel" rendered="{!if(conProd.Evaluation_Per__c =='ASME Water',true,false)}">
+                                            <apex:inputField value="{!conProd.Density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Density_units__c}"></apex:inputField>                                       
+                                            <apex:inputField value="{!conProd.Specific_Gravity__c}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                           <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            
+                                              <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                    
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                   <apex:outputPanel layout="none" id="secASMESteam">
+                                        <apex:pageBlockSection id="secASMESteamPanel" rendered="{!if(conProd.Evaluation_Per__c =='ASME Steam',true,false)}">
+                                            
+                                           
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                           
+                                            
+                                             <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secAPIGas">
+                                         <apex:pageBlockSection id="secAPIGasPanel" rendered="{!if(conProd.Evaluation_Per__c =='API Gas/Vapor',true,false)}">
+                                             
+                               
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                              <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+    <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                             
+                                                                                       <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                 
+                                             
+                                             
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secAPILiquid">
+                                        <apex:pageBlockSection id="secAPILiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='API Liquid',true,false)}">
+                                            
+ 
+                                            <apex:inputField value="{!conProd.Density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Density_units__c}"></apex:inputField> 
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                           <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                       <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                          
+                                             <apex:inputField value="{!conProd.Specific_Gravity__c}"></apex:inputField>
+                      
+                                            <apex:inputField value="{!conProd.Viscosity__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity_units__c}"></apex:inputField>
+                                            
+                                                                                       <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secAPISteam">
+                                        <apex:pageBlockSection id="secAPISteamPanel" rendered="{!if(conProd.Evaluation_Per__c =='API Steam',true,false)}"> 
+                                            
+
+                                            
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+   <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            
+                                                                                        <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });    
+                                            </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secISOGas">
+                                        <apex:pageBlockSection id="secISOGasPanel" rendered="{!if(conProd.Evaluation_Per__c =='ISO Gas/Vapor',true,false)}">
+                                            
+  
+                                            
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                         <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+   <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            
+                                                                                      <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secISOLiquid">
+                                        <apex:pageBlockSection id="secISOLiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='ISO Liquid',true,false)}">
+                                            
+                                           
+                                            <apex:inputField value="{!conProd.Density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Density_units__c}"></apex:inputField> 
+                                             <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+   <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Specific_Gravity__c}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!conProd.Viscosity__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity_units__c}"></apex:inputField>
+                                            
+                                             <script type="text/javascript">
+    var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secISODry">
+                                        <apex:pageBlockSection id="secISODryPanel" rendered="{!if(conProd.Evaluation_Per__c =='ISO Dry Steam',true,false)}">
+                                            
+                                           
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+   <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            
+                                             <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" id="secISOWet">
+                                        <apex:pageBlockSection id="secISOWetPanel" rendered="{!if(conProd.Evaluation_Per__c =='ISO Wet Steam',true,false)}">
+                                            
+                                            
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                      <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+    <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+   <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Dryness_of_Wet_Steam__c}"></apex:inputField>
+                                            
+                                            <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+                                     <apex:outputPanel layout="none" id="secAPIOmegaMethod2PhaseFlashingorNonflashing">
+                                        <apex:pageBlockSection id="secAPIOmegaMethod2PhaseFlashingorNonflashingPanel" rendered="{!if(conProd.Evaluation_Per__c =='API Omega Method 2 Phase Flashing or Nonflashing',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Density_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+   
+                                            <apex:inputField value="{!conProd.Specific_Volume__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_Units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_at_90_of_Inlet_Pressure__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_at_90_of_Inlet_Units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity_units__c}"></apex:inputField>
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+                                    
+ <apex:outputPanel layout="none" id="secAPIOmegaMethodSubcooledLiquid">
+                                        <apex:pageBlockSection id="secAPIOmegaMethodSubcooledLiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='API Omega Method Subcooled Liquid',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Saturation_Pressure_at_Inlet_Temperature__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Saturation_Pressure_at_inlet_temp_units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+   
+                                            <apex:inputField value="{!conProd.Specific_Volume__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_Units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_at_90_of_Inlet_Pressure__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Specific_Volume_at_90_of_Inlet_Units__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Viscosity_units__c}"></apex:inputField>
+                                            
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+
+ <apex:outputPanel layout="none" id="secFauske2PhaseGas-Liquid">
+                                        <apex:pageBlockSection id="secFauske2PhaseGas-LiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='Fauske 2 Phase Gas-Liquid',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+   
+                                            <apex:inputField value="{!conProd.Stagnation_gas_vapor_quality__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_density__c }"></apex:inputField>
+                                            
+                                            
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+<apex:outputPanel layout="none" id="secFauske2PhaseVapor-Liquid">
+                                        <apex:pageBlockSection id="secFauske2PhaseVapor-LiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='Fauske 2 Phase Vapor-Liquid',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+   
+                                            <apex:inputField value="{!conProd.Stagnation_gas_vapor_quality__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Stagnation_vapor_density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Latent_heat_of_vaporization__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_density__c }"></apex:inputField>
+                                            
+                                            
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+<apex:outputPanel layout="none" id="secFauske2PhaseHybridGas-Vapor-Liquid">
+                                        <apex:pageBlockSection id="secFauske2PhaseHybridGas-Vapor-LiquidPanel" rendered="{!if(conProd.Evaluation_Per__c =='Fauske 2 Phase Hybrid Gas-Vapor-Liquid',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Stagnation_gas_partial_pressure__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Vapor_pres_correspond_to_stagnation_temp__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Isentropic_coefficient_gas__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Isentropic_coefficient_vapor__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Molecular_Weight_gas__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Molecular_Weight_gas__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_specific_heat__c}"></apex:inputField>
+                                            
+                                            
+                                            <apex:inputField value="{!conProd.Stagnation_gas_vapor_quality__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Stagnation_vapor_density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Latent_heat_of_vaporization__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_density__c }"></apex:inputField>
+                                            
+                                            
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+<apex:outputPanel layout="none" id="secFauskeAllLiquidFlashing">
+                                        <apex:pageBlockSection id="secFauskeAllLiquidFlashingPanel" rendered="{!if(conProd.Evaluation_Per__c =='Fauske All Liquid Flashing',true,false)}">
+                                            
+                                            <apex:inputField value="{!conProd.Required_Flow_Rate__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Required_Flow_units__c}"></apex:inputField>
+                                
+                                            <apex:inputField value="{!conProd.Relieving_Pressure_at_Inlet__c}"> 
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+                                            </apex:inputField>
+                                            <apex:inputField value="{!conProd.Overpressure__c}" rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Burst_Pressure__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c!='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                             <apex:inputField value="{!conProd.Enter_Relieving_Pressure_Value__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+    
+                                            <apex:inputField value="{!conProd.Enter_Relieving_Pressure_units__c}"  rendered="{!if(conProd.Relieving_Pressure_at_Inlet__c=='Enter Relieving Pressure Value/ units',true,false)}"></apex:inputField>
+                                             <apex:inputField value="{!conProd.Pressure_Relieving_Temperature__c}">
+                                                <apex:actionSupport action="{!applyDefaluts}" event="onchange" reRender="secEvaluationPanel" />
+
+                                            </apex:inputField>
+                                          <apex:inputField value="{!conProd.Enter_Different_Temperature_Value__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                                
+                                            <apex:inputField value="{!conProd.Enter_Different_Temperature_Units__c}" rendered="{!if(conProd.Pressure_Relieving_Temperature__c!='Same As Temperature Setting',true,false)}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Stagnation_gas_partial_pressure__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Vapor_pres_correspond_to_stagnation_temp__c}"></apex:inputField>
+                                            
+                                        
+                                            <apex:inputField value="{!conProd.Stagnation_vapor_density__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Latent_heat_of_vaporization__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_specific_heat__c}"></apex:inputField>
+                                            <apex:inputField value="{!conProd.Liquid_density__c }"></apex:inputField>
+                                            
+                                            
+    
+   <script type="text/javascript">
+   var j$=jQuery.noConflict();
+    j$.noConflict();
+    j$(function() 
+      {
+          j$("input[type=text]").each(function()
+         {
+             console.log("id "+j$(this).val())
+             var enteredValue = j$(this).val();
+                if (!isNaN(enteredValue) && enteredValue !='')
+                 {
+                 enteredValue = parseFloat(enteredValue);
+                    // alert(enteredValue);
+                 var decimalValue = enteredValue - parseInt(enteredValue);
+                 var resetValue;
+                 if(decimalValue != 0)
+                 {
+                     resetValue = enteredValue;
+                 }
+                 else
+                 {
+                     resetValue = parseInt(enteredValue);
+                 }
+                 console.log('Entered value = '+enteredValue);
+                 console.log('Decimal value = '+decimalValue);
+                 console.log('Reset value = '+resetValue);
+                 if(resetValue != '' && resetValue != 'NaN')
+                 {
+                     j$(this).val(resetValue);
+                 }
+            }
+         });
+      });
+    </script>
+                                            
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    
+                                    
+                                </apex:outputPanel>
+                            </apex:pageBlockSection>
+                            <apex:commandButton action="{!saveSizing}" value="Save & Continue" />
+                            <apex:commandButton value="Go Back" action="{!goBack}" ></apex:commandButton>
+                        </apex:pageBlock> 
+                    </apex:outputPanel>
+                     <apex:outputPanel id="secC"  >
+                         <apex:pageBlock >
+                            <apex:pageBlockSection title="Certifications">
+                            <apex:inputField value="{!conProd.ASME_Section_VIII_Division_1__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.PED_2014_68_EU_CE_mark__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.China_Manufacturing_License__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.CSA_Marking_CRN_Number__c}">
+                                 <apex:actionSupport event="onchange" reRender="secC" action="{!defalutASME}"/>
+                                </apex:inputField>
+                            <apex:inputField value="{!conProd.Atex_Certificate__c}">
+                                <apex:actionSupport event="onchange" reRender="secC" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                
+                                 <apex:inputField value="{!conProd.Gas_Group__c}" rendered="{!(if(conProd.Atex_Certificate__c==true,true,false))}"></apex:inputField>
+                                 <apex:inputField value="{!conProd.Zone_0_2__c}" rendered="{!(if(conProd.Atex_Certificate__c==true,true,false))}"></apex:inputField>
+                                
+                            <apex:inputField value="{!conProd.KOSHA_Compliance__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.ASME_BPE__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.CU_TR__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.X3A_Sanitary_Standards__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.Comply_with_AD2000_Merkblat_A1__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.Comply_with_Regels_Voor_Tosellan_Oder_Dr__c}"></apex:inputField>
+                            <apex:inputField value="{!conProd.NACE__c}"></apex:inputField>
+                              <apex:selectRadio value="{!conProd.NACE__c}" >
+                                  <apex:selectOptions value="{!Types}"></apex:selectOptions>
+                                  <apex:actionSupport event="onchange" rerender="secC"/>
+                                </apex:selectRadio>
+                             </apex:pageBlockSection>
+                            <apex:commandButton action="{!saveCertificate}" value="Save & Continue" />
+                            <apex:commandButton value="Go Back" action="{!goBack}" ></apex:commandButton>
+
+            
+                            </apex:pageBlock>
+                    </apex:outputPanel>
+                    
+                </apex:pageBlock> 
+            </apex:tab> 
+            <apex:tab label="Product Narrowing" id="six" name="six">
+                <apex:outputPanel id="secD"  >
+                         <apex:pageBlock > 
+                             <apex:pageBlockSection title="Product Narrowing">
+                                 <apex:inputField value="{!conProd.Disc_Material_of_Construction__c}"></apex:inputField>
+                                 <apex:inputField value="{!conProd.Non_Fragmenting_Design_Required__c}"></apex:inputField>
+                                 <apex:inputField value="{!conProd.Operating_Pressure_Ratio__c}"></apex:inputField>
+                                 <apex:inputField value="{!conProd.Application_type__c}"></apex:inputField>
+                               </apex:pageBlockSection>
+                  
+                                 <apex:commandButton action="{!saveProductNarrowing}" value="Save & Continue" />
+                                 <apex:commandButton value="Back" action="{!goBack}" ></apex:commandButton> 
+
+                        </apex:pageBlock>
+                        <apex:pageBlock > 
+                            <apex:pageBlockSection title="Product Selection">
+                                
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Product"></apex:outputLabel>
+                                     <apex:selectList value="{!conProd.Product__c}" size="1" multiselect="false"   >
+                                         <apex:selectOptions value="{!ProductValues}" />
+                                     </apex:selectList>
+                                </apex:pageBlockSectionItem>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Seat"></apex:outputLabel>
+                                     <apex:selectList value="{!conProd.Seat__c}" size="1" multiselect="false"   >
+                                         <apex:selectOptions value="{!SeatValues}" />
+                                     </apex:selectList>
+                                </apex:pageBlockSectionItem>  
+                                 <apex:pageBlockSectionItem >
+                                    <apex:outputLabel value="Size"></apex:outputLabel>
+                                </apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Size_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Capacity__c}" html-disabled="disabled"></apex:inputField>
+                            </apex:pageBlockSection>
+
+                                <apex:commandButton action="{!saveProductSelection}" value="Save & Continue" />
+                                <apex:commandButton value="Back" action="{!goBack}" ></apex:commandButton> 
+                           
+                        </apex:pageBlock>
+                    <apex:pageBlock > 
+                            <apex:pageBlockSection title="Engineering Notes">
+                                <apex:inputField value="{!conProd.Engineering_Notes__c}" ></apex:inputField>
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>                    
+                    </apex:outputPanel>
+            </apex:tab>      
+        </apex:tabPanel>               
+    </apex:form-->
+</apex:page>

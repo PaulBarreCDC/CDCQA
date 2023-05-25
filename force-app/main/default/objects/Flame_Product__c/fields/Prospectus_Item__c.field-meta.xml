@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prospectus_Item__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND (  Lead_Time_Override__c = FALSE,  Quote_Line__r.Leadtime__c &lt; 4995), &quot;Prospectus &lt; 4995&quot; , &quot;Not Prospectus (4995)&quot;)</formula>
+    <label>Prospectus Item</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__Cleaning__c</columns>
+    <columns>cdcpc__Prod__c</columns>
+    <columns>cdcpc__SizeLL__c</columns>
+    <columns>cdcpc__SizeUL__c</columns>
+    <columns>cdcpc__SizeValueLL__c</columns>
+    <columns>cdcpc__SizeValueUL__c</columns>
+    <columns>cdcpc__QtyLL__c</columns>
+    <columns>cdcpc__QtyUL__c</columns>
+    <columns>cdcpc__PriceEach__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

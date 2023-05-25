@@ -1,0 +1,19 @@
+<apex:page standardController="Opportunity" extensions="PopulateProspectRepCodeOppController">
+    <apex:form >
+        <apex:pageBlock title="Rep Code">
+              <apex:pageMessages />
+            <apex:pageBlockSection >
+                
+                <apex:pageBlockSectionItem >
+                    <apex:selectList size="1" value="{!selectedRepCode}"> 
+                        <apex:selectOptions value="{!repCodeFields}"/>  
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!updateOpportunity}" title="Save" value="Save" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock> 
+    </apex:form>
+</apex:page>

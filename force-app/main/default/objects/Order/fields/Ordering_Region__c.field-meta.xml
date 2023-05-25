@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ordering_Region__c</fullName>
+    <externalId>false</externalId>
+    <label>Ordering Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AF1</fullName>
+                <default>false</default>
+                <label>AF1</label>
+            </value>
+            <value>
+                <fullName>D01</fullName>
+                <default>false</default>
+                <label>Domestic 1</label>
+            </value>
+            <value>
+                <fullName>D02</fullName>
+                <default>false</default>
+                <label>Domestic 2</label>
+            </value>
+            <value>
+                <fullName>D03</fullName>
+                <default>false</default>
+                <label>Domestic 3</label>
+            </value>
+            <value>
+                <fullName>D04</fullName>
+                <default>false</default>
+                <label>Domestic 4</label>
+            </value>
+            <value>
+                <fullName>D05</fullName>
+                <default>false</default>
+                <label>Domestic 5</label>
+            </value>
+            <value>
+                <fullName>D06</fullName>
+                <default>false</default>
+                <label>Domestic 6</label>
+            </value>
+            <value>
+                <fullName>DUPS</fullName>
+                <default>false</default>
+                <label>Domestic Upstream</label>
+            </value>
+            <value>
+                <fullName>E0</fullName>
+                <default>false</default>
+                <label>East 0</label>
+            </value>
+            <value>
+                <fullName>E1</fullName>
+                <default>false</default>
+                <label>East 1</label>
+            </value>
+            <value>
+                <fullName>E2</fullName>
+                <default>false</default>
+                <label>East 2</label>
+            </value>
+            <value>
+                <fullName>EU1</fullName>
+                <default>false</default>
+                <label>European Union 1</label>
+            </value>
+            <value>
+                <fullName>EU2</fullName>
+                <default>false</default>
+                <label>European Union 2</label>
+            </value>
+            <value>
+                <fullName>EU3</fullName>
+                <default>false</default>
+                <label>European Union 3</label>
+            </value>
+            <value>
+                <fullName>EU4</fullName>
+                <default>false</default>
+                <label>European Union 4</label>
+            </value>
+            <value>
+                <fullName>FR1</fullName>
+                <default>false</default>
+                <label>N France</label>
+            </value>
+            <value>
+                <fullName>LA1</fullName>
+                <default>false</default>
+                <label>Latin America 1</label>
+            </value>
+            <value>
+                <fullName>LA2</fullName>
+                <default>false</default>
+                <label>Latin America 2</label>
+            </value>
+            <value>
+                <fullName>LA3</fullName>
+                <default>false</default>
+                <label>Latin America 3</label>
+            </value>
+            <value>
+                <fullName>ME1</fullName>
+                <default>false</default>
+                <label>Middle East 1</label>
+            </value>
+            <value>
+                <fullName>ME2</fullName>
+                <default>false</default>
+                <label>Middle East 2</label>
+            </value>
+            <value>
+                <fullName>OC1</fullName>
+                <default>false</default>
+                <label>Oceania</label>
+            </value>
+            <value>
+                <fullName>FR2</fullName>
+                <default>false</default>
+                <label>S France</label>
+            </value>
+            <value>
+                <fullName>DOE3</fullName>
+                <default>false</default>
+                <label>DOE3</label>
+            </value>
+            <value>
+                <fullName>DDH1</fullName>
+                <default>false</default>
+                <label>DDH1</label>
+            </value>
+            <value>
+                <fullName>DOE2</fullName>
+                <default>false</default>
+                <label>DOE2</label>
+            </value>
+            <value>
+                <fullName>DNIH</fullName>
+                <default>false</default>
+                <label>DNIH</label>
+            </value>
+            <value>
+                <fullName>LOE1</fullName>
+                <default>false</default>
+                <label>LOE1</label>
+            </value>
+            <value>
+                <fullName>DOE1</fullName>
+                <default>false</default>
+                <label>DOE1</label>
+            </value>
+            <value>
+                <fullName>DLD</fullName>
+                <default>false</default>
+                <label>DLD</label>
+            </value>
+            <value>
+                <fullName>DHV</fullName>
+                <default>false</default>
+                <label>DHV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

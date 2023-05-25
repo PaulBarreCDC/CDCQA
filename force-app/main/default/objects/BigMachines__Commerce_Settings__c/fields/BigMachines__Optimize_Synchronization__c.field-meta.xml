@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Optimize_Synchronization__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This option is provided to support legacy integrations.  New implementations should check this box.  If this box is checked, the integration package will use an optimized approach to synchronize quotes.  If you check this box and Oracle CPQ Cloud is not using the correct XSLs, your opportunities will not be updated with the correct products from your quotes on the first save attempt.  Similarly, if you update your XSLs but do not check this box, when you delete products from Oracle CPQ Cloud, they will not be removed from Salesforce.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this box is checked, the integration package will use an optimized approach to synchronize quotes. In order for this approach to work, CPQ Cloud must be using optimizied XSLs. Do not check this box unless you are sure you are using the correct XSLs.</inlineHelpText>
+    <label>Optimize Synchronization</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

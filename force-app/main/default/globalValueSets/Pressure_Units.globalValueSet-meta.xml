@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>psig</fullName>
+        <default>false</default>
+        <label>psig</label>
+    </customValue>
+    <customValue>
+        <fullName>barg</fullName>
+        <default>false</default>
+        <label>barg</label>
+    </customValue>
+    <customValue>
+        <fullName>kgf/cm2</fullName>
+        <default>false</default>
+        <label>kgf/cm2</label>
+    </customValue>
+    <customValue>
+        <fullName>in. water</fullName>
+        <default>false</default>
+        <label>in. water</label>
+    </customValue>
+    <customValue>
+        <fullName>osig</fullName>
+        <default>false</default>
+        <label>osig</label>
+    </customValue>
+    <customValue>
+        <fullName>mbarg</fullName>
+        <default>false</default>
+        <label>mbarg</label>
+    </customValue>
+    <customValue>
+        <fullName>mm water</fullName>
+        <default>false</default>
+        <label>mm water</label>
+    </customValue>
+    <customValue>
+        <fullName>in. Hg</fullName>
+        <default>false</default>
+        <label>in. Hg</label>
+    </customValue>
+    <customValue>
+        <fullName>mm Hg</fullName>
+        <default>false</default>
+        <label>mm Hg</label>
+    </customValue>
+    <customValue>
+        <fullName>gf/cm2</fullName>
+        <default>false</default>
+        <label>gf/cm2</label>
+    </customValue>
+    <customValue>
+        <fullName>Pa</fullName>
+        <default>false</default>
+        <label>Pa</label>
+    </customValue>
+    <customValue>
+        <fullName>kPa</fullName>
+        <default>false</default>
+        <label>kPa</label>
+    </customValue>
+    <customValue>
+        <fullName>Mpa</fullName>
+        <default>false</default>
+        <label>Mpa</label>
+    </customValue>
+    <customValue>
+        <fullName>torr</fullName>
+        <default>false</default>
+        <label>torr</label>
+    </customValue>
+    <customValue>
+        <fullName>atmg</fullName>
+        <default>false</default>
+        <label>atmg</label>
+    </customValue>
+    <customValue>
+        <fullName>bard</fullName>
+        <default>false</default>
+        <label>bard</label>
+    </customValue>
+    <customValue>
+        <fullName>psid</fullName>
+        <default>false</default>
+        <label>psid</label>
+    </customValue>
+    <customValue>
+        <fullName>mbar abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>mbar abs.</label>
+    </customValue>
+    <customValue>
+        <fullName>psia</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>psia</label>
+    </customValue>
+    <customValue>
+        <fullName>kPa abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>kPa abs.</label>
+    </customValue>
+    <customValue>
+        <fullName>kgf/cm2 abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>kgf/cm2 abs.</label>
+    </customValue>
+    <customValue>
+        <fullName>bar abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>bar abs.</label>
+    </customValue>
+    <customValue>
+        <fullName>atm abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>atm abs.</label>
+    </customValue>
+    <customValue>
+        <fullName>Mpa abs.</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Mpa abs.</label>
+    </customValue>
+    <masterLabel>Pressure Units</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

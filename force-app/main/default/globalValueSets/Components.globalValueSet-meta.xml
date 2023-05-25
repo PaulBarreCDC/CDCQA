@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Outlet Gasket</fullName>
+        <default>false</default>
+        <label>Outlet Gasket</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet Gasket</fullName>
+        <default>false</default>
+        <label>Inlet Gasket</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet Ring</fullName>
+        <default>false</default>
+        <label>Inlet Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Arcuate Ring</fullName>
+        <default>false</default>
+        <label>Arcuate Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Outlet Ring</fullName>
+        <default>false</default>
+        <label>Outlet Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Middle Ring</fullName>
+        <default>false</default>
+        <label>Middle Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet Liner</fullName>
+        <default>false</default>
+        <label>Inlet Liner</label>
+    </customValue>
+    <customValue>
+        <fullName>Outlet Liner</fullName>
+        <default>false</default>
+        <label>Outlet Liner</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet Coating</fullName>
+        <default>false</default>
+        <label>Inlet Coating</label>
+    </customValue>
+    <customValue>
+        <fullName>Outlet Coating</fullName>
+        <default>false</default>
+        <label>Outlet Coating</label>
+    </customValue>
+    <customValue>
+        <fullName>Disc</fullName>
+        <default>false</default>
+        <label>Disc</label>
+    </customValue>
+    <customValue>
+        <fullName>Top Section</fullName>
+        <default>false</default>
+        <label>Top Section</label>
+    </customValue>
+    <customValue>
+        <fullName>Seal</fullName>
+        <default>false</default>
+        <label>Seal</label>
+    </customValue>
+    <customValue>
+        <fullName>Girdle</fullName>
+        <default>false</default>
+        <label>Girdle</label>
+    </customValue>
+    <customValue>
+        <fullName>Dent Protector</fullName>
+        <default>false</default>
+        <label>Dent Protector</label>
+    </customValue>
+    <customValue>
+        <fullName>Vacuum Support</fullName>
+        <default>false</default>
+        <label>Vacuum Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Handling Support</fullName>
+        <default>false</default>
+        <label>Handling Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet</fullName>
+        <default>false</default>
+        <label>Inlet</label>
+    </customValue>
+    <customValue>
+        <fullName>Outlet</fullName>
+        <default>false</default>
+        <label>Outlet</label>
+    </customValue>
+    <customValue>
+        <fullName>Holddown Ring</fullName>
+        <default>false</default>
+        <label>Holddown Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Inlet O-Ring</fullName>
+        <default>false</default>
+        <label>Inlet O-Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Armor Ring</fullName>
+        <default>false</default>
+        <label>Armor Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>Hi-Temp Assembly</fullName>
+        <default>false</default>
+        <label>Hi-Temp Assembly</label>
+    </customValue>
+    <masterLabel>Components</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

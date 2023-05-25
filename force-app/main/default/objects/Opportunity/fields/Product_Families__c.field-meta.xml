@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Families__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Families</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Brand__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HPX</fullName>
+                <default>false</default>
+                <label>HPX</label>
+            </value>
+            <value>
+                <fullName>Reverse Acting Discs</fullName>
+                <default>false</default>
+                <label>Reverse Acting Discs</label>
+            </value>
+            <value>
+                <fullName>Tension Acting Discs</fullName>
+                <default>false</default>
+                <label>Tension Acting Discs</label>
+            </value>
+            <value>
+                <fullName>Burst Indicators</fullName>
+                <default>false</default>
+                <label>Burst Indicators</label>
+            </value>
+            <value>
+                <fullName>Sanitary Products</fullName>
+                <default>false</default>
+                <label>Sanitary Products</label>
+            </value>
+            <value>
+                <fullName>Graphite Disc</fullName>
+                <default>false</default>
+                <label>Graphite Disc</label>
+            </value>
+            <value>
+                <fullName>Vent Panels</fullName>
+                <default>false</default>
+                <label>Vent Panels</label>
+            </value>
+            <value>
+                <fullName>Relief Valve</fullName>
+                <default>false</default>
+                <label>Relief Valve</label>
+            </value>
+            <value>
+                <fullName>Flame Arrestors</fullName>
+                <default>false</default>
+                <label>Flame Arrestors</label>
+            </value>
+            <value>
+                <fullName>BGRs</fullName>
+                <default>false</default>
+                <label>BGRs</label>
+            </value>
+            <value>
+                <fullName>Biogas Products</fullName>
+                <default>false</default>
+                <label>Biogas Products</label>
+            </value>
+            <value>
+                <fullName>Spares/Kits</fullName>
+                <default>false</default>
+                <label>Spares/Kits</label>
+            </value>
+            <value>
+                <fullName>Special Assemblies</fullName>
+                <default>false</default>
+                <label>Special Assemblies</label>
+            </value>
+            <value>
+                <fullName>Varies</fullName>
+                <default>false</default>
+                <label>Varies</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>HPX</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Reverse Acting Discs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Tension Acting Discs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Burst Indicators</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Sanitary Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Graphite Disc</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Special Assemblies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Varies</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Vent Panels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Relief Valve</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Flame Arrestors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>BGRs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Biogas Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <controllingFieldValue>LVA</controllingFieldValue>
+            <valueName>Spares/Kits</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

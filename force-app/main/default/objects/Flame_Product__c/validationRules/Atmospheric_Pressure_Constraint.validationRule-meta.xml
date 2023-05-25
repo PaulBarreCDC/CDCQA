@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Atmospheric_Pressure_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(  Atmospheric_Pressure__c ),
+Bypass__c = FALSE,
+Sizing_Flow_Area_flag__c=true
+				)</errorConditionFormula>
+    <errorDisplayField>Atmospheric_Pressure__c</errorDisplayField>
+    <errorMessage>Please Enter a Value</errorMessage>
+</ValidationRule>

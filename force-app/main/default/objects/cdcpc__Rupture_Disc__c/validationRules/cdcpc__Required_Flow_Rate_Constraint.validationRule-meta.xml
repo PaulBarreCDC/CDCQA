@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Required_Flow_Rate_Constraint</fullName>
+    <active>false</active>
+    <description>Required Flow Rate is a Mandatory filed to be entered by the User when Evaluation Type = &quot;Sizing&quot; OR Evaluation Type = Sizing &amp; Capacity&quot;</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Evaluation_Type__c  , &quot;Sizing&quot;)  || 
+ISPICKVAL( cdcpc__Evaluation_Type__c  , &quot;Sizing &amp; Capacity&quot;)||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ASME Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ASME Water&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ASME Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Dry Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Wet Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Omega Method Subcooled Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Gas-Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Vapor-Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Hybrid Gas-Vapor-Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske All Liquid Flashing&quot;),
+
+OR( 
+ISBLANK (  cdcpc__Required_Flow_Rate__c )
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Required_Flow_Rate__c</errorDisplayField>
+    <errorMessage>Required Flow Rate: Please Enter a Value</errorMessage>
+</ValidationRule>

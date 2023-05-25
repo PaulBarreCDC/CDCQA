@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Media_Constraint</fullName>
+    <active>true</active>
+    <description>Pressure media is a mandatory field.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+Atmospheric_Pressure__c &gt; 0,
+ISPICKVAL(Media_Type__c,&quot;Customer Specified&quot;),
+ISBLANK(Customer_Specified_Media_Name__c),
+Section_B_Flag__c  = TRUE)</errorConditionFormula>
+    <errorDisplayField>Media_Type__c</errorDisplayField>
+    <errorMessage>Customer Specified Media Name : Please enter a value</errorMessage>
+</ValidationRule>

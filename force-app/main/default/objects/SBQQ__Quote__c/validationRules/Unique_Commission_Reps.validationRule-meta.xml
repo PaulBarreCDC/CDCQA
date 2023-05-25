@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Commission_Reps</fullName>
+    <active>false</active>
+    <errorConditionFormula>((Sold_By_Rep__c ==  Destination_Rep__c) &amp;&amp;  NOT(ISNULL(Destination_Rep__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_2__c))) || 
+
+((Engineering_Rep_1__c == Engineering_Rep_2__c) &amp;&amp;  NOT(ISNULL(Engineering_Rep_1__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_2__c)))  || 
+
+((Sold_By_Rep__c ==  Engineering_Rep_1__c) &amp;&amp;  NOT(ISNULL(Sold_By_Rep__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_1__c)))  || 
+
+((Sold_By_Rep__c ==  Engineering_Rep_2__c)  &amp;&amp;  NOT(ISNULL(Sold_By_Rep__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_2__c)))  ||  
+
+((Engineering_Rep_1__c ==  Destination_Rep__c)  &amp;&amp;  NOT(ISNULL(Destination_Rep__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_1__c)))  ||  
+
+((Engineering_Rep_2__c ==  Destination_Rep__c) &amp;&amp;  NOT(ISNULL(Destination_Rep__c)) &amp;&amp; NOT(ISNULL(Engineering_Rep_2__c)))</errorConditionFormula>
+    <errorDisplayField>Destination_Rep__c</errorDisplayField>
+    <errorMessage>Commission Reps cannot belong to same rep code</errorMessage>
+</ValidationRule>

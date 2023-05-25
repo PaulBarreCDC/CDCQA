@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Braking &amp; Wheel Systems</fullName>
+        <default>false</default>
+        <label>Braking &amp; Wheel Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Cabin Pressurization  Systems</fullName>
+        <default>false</default>
+        <label>Cabin Pressurization  Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Emergency Oxygen Generators</fullName>
+        <default>false</default>
+        <label>Emergency Oxygen Generators</label>
+    </customValue>
+    <customValue>
+        <fullName>Flares to Evade Heat Seeking</fullName>
+        <default>false</default>
+        <label>Flares to Evade Heat Seeking</label>
+    </customValue>
+    <customValue>
+        <fullName>Inflatable Evacuation Slides</fullName>
+        <default>false</default>
+        <label>Inflatable Evacuation Slides</label>
+    </customValue>
+    <customValue>
+        <fullName>Control Coolant Gases on Laser Seeker</fullName>
+        <default>false</default>
+        <label>Control Coolant Gases on Laser Seeker</label>
+    </customValue>
+    <customValue>
+        <fullName>Hydraulic Guidance Systems</fullName>
+        <default>false</default>
+        <label>Hydraulic Guidance Systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Rocket Motor Hot Gas Ignition Generator</fullName>
+        <default>false</default>
+        <label>Rocket Motor Hot Gas Ignition Generator</label>
+    </customValue>
+    <customValue>
+        <fullName>Termination Gas Operated Guidance Systems Infrared</fullName>
+        <default>false</default>
+        <label>Termination Gas Operated Guidance Systems Infrared</label>
+    </customValue>
+    <masterLabel>Applications</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

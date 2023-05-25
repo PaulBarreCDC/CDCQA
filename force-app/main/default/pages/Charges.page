@@ -1,0 +1,52 @@
+<apex:page showHeader="false" sidebar="false" cache="false" contentType="text/xml" controller="DrawingsCtrl" action="{!init}" >  
+    <apex:outputPanel layout="none" rendered="{!lstCharge.size!=0}">
+        <block page-break-after="always"></block>
+        <block font-weight="bold" font-size="14" padding-bottom="2">Quote Charges:</block>
+        
+        <apex:variable value="{!1}" var="indx"/> 
+        <apex:variable value="{!0}" var="total"/>
+        <apex:variable value="{!0}" var="curr"/>
+        
+        <table border=".20mm solid">
+            <table-column border=".20mm solid" column-width="0.75in"/>
+            <table-column border=".20mm solid" column-width="2.5in"/>
+            <table-column border=".20mm solid" column-width="1.0in"/>
+            <table-column border=".20mm solid" column-width="1.25in"/>
+            <table-column border=".20mm solid" column-width="1.5in"/>
+            <table-body>
+                <table-row>
+                    <table-cell border=".20mm solid" padding-left="2mm" background-color="#DCDDDE"><block>Item</block></table-cell>
+                    <table-cell border=".20mm solid" padding-left="2mm" background-color="#DCDDDE"><block>Description</block></table-cell>
+                    <table-cell border=".20mm solid" padding-left="2mm" background-color="#DCDDDE"><block>Quantity</block></table-cell>
+                    <table-cell border=".20mm solid" padding-left="2mm" background-color="#DCDDDE"><block>Amount</block></table-cell>
+                    <table-cell border=".20mm solid" padding-left="2mm" background-color="#DCDDDE"><block>Total Price</block></table-cell>
+                </table-row>
+                <apex:repeat value="{!lstCharge}" var="charge">
+                    <table-row> 
+                        <table-cell border=".20mm solid" padding-left="2mm"><block>{!indx}</block></table-cell>
+                        <table-cell border=".20mm solid" padding-left="2mm" padding-right="2mm"><block>{!charge.Type__c}</block></table-cell>
+                        <table-cell border=".20mm solid" padding-right="2mm" text-align="right"><block>{!charge.Quantity__c}</block></table-cell>
+                        <table-cell border=".20mm solid" padding-right="2mm" text-align="right">
+                            <block>{!charge.Quote_Customer_Currency__c} {!charge.Amount__c }</block>
+                        </table-cell>
+                        <table-cell border=".20mm solid" padding-right="2mm" text-align="right">
+                            <block>{!charge.Quote_Customer_Currency__c} {!ROUND(charge.Total_Charge_Cust_Curr_Flow__c, 2)}</block>
+                        </table-cell>
+                    </table-row>
+                    <apex:variable value="{!indx+1}" var="indx"/>
+                    <apex:variable value="{!ROUND(total+charge.Total_Charge_Cust_Curr_Flow__c, 2)}" var="total"/>
+                    <apex:variable value="{!charge.Quote_Customer_Currency__c}" var="curr"/>
+                </apex:repeat>
+                <table-row>
+                    <table-cell  border=".20mm solid" number-columns-spanned="4" font-weight="bold" padding-right="4mm" text-align="right"><block>TOTAL</block></table-cell>
+                    <table-cell  border=".20mm solid" font-weight="bold" padding-right="2mm" text-align="right"><block>{!curr} {!total}</block></table-cell>
+                </table-row>
+            </table-body>
+        </table>
+        
+        <block margin-top="8mm">
+            <block>PRICES DO NOT INCLUDE ANY CHARGES FOR FREIGHT, TAX DUTIES, SHIPPING AND PACKAGING, OR PROCESSING FEES THAT MAY BE APPLICABLE UNLESS OTHERWISE STATED IN THE PROPOSAL</block>
+            <block margin-top="4mm">STANDARD TERMS NET 30 DAYS WITH APPROVED CREDIT</block>
+        </block>
+    </apex:outputPanel>
+</apex:page>

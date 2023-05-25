@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Pressure_must_be_between_5_to_200</fullName>
+    <active>true</active>
+    <description>The value for supply pressure must be between 5 to 200 - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				Bypass__c = FALSE,
+    Relief_flag__c = TRUE,
+				NOT(ISBLANK( Supply_Pressure__c )),
+				NOT(ISPICKVAL( Supply_Pressure_Units__c, &quot;&quot;)),
+				OR(
+				 Converted_Supply_Pressure__c &lt;= 4.9,
+     Converted_Supply_Pressure__c &gt;= 200.1
+				 )
+				)</errorConditionFormula>
+    <errorDisplayField>Supply_Pressure__c</errorDisplayField>
+    <errorMessage>The Valid values for Supply pressure should be in the range of 5.0 psig to 200 psig</errorMessage>
+</ValidationRule>

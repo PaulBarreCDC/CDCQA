@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection_Size_Constraint</fullName>
+    <active>false</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK( Connection_Size__c ),
+NOT(ISBLANK(Model__c)),  
+Bypass__c = FALSE,
+				
+Product_selection_flag__c=true
+)</errorConditionFormula>
+    <errorDisplayField>Connection_Size__c</errorDisplayField>
+    <errorMessage>Please Select any one of the following</errorMessage>
+</ValidationRule>

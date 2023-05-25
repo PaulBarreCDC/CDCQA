@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingReasons>
+        <label></label>
+        <name>Nebula__LoggedByUser</name>
+    </sharingReasons>
+    <webLinks>
+        <label></label>
+        <name>Nebula__MassDelete</name>
+    </webLinks>
+</CustomObjectTranslation>

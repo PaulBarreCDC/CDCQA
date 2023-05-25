@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>10</fullName>
+        <default>false</default>
+        <label>Liberty</label>
+    </customValue>
+    <customValue>
+        <fullName>20</fullName>
+        <default>false</default>
+        <label>Stafford</label>
+    </customValue>
+    <customValue>
+        <fullName>30</fullName>
+        <default>false</default>
+        <label>GCMPL</label>
+    </customValue>
+    <customValue>
+        <fullName>40</fullName>
+        <default>false</default>
+        <label>Europe</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Allowed</fullName>
+        <default>false</default>
+        <label>Not Allowed</label>
+    </customValue>
+    <masterLabel>Selling Entity</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

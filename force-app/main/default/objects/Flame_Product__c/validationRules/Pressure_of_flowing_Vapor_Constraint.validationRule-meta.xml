@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_of_flowing_Vapor_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(  Pressure_of_flowing_Vapor__c ),
+NOT(ISPICKVAL( Mounting__c, &quot;End-of-Line&quot;)),
+Bypass__c = FALSE,
+Sizing_Flow_Area_flag__c=true
+)</errorConditionFormula>
+    <errorDisplayField>Pressure_of_flowing_Vapor__c</errorDisplayField>
+    <errorMessage>Please Enter a Value</errorMessage>
+</ValidationRule>

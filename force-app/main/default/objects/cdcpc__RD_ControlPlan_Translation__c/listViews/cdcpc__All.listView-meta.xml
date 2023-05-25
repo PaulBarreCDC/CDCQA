@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>cdcpc__Test_OPNO__c</columns>
+    <columns>NAME</columns>
+    <columns>cdcpc__Text1__c</columns>
+    <columns>cdcpc__Text2__c</columns>
+    <columns>cdcpc__Text3__c</columns>
+    <columns>cdcpc__Text4__c</columns>
+    <columns>cdcpc__Text5__c</columns>
+    <columns>cdcpc__Text6__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__Test_OPNO__c</field>
+        <operation>equals</operation>
+        <value>9630</value>
+    </filters>
+    <label>All Records</label>
+</ListView>

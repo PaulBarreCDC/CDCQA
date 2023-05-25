@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>HOC__c</columns>
+    <columns>HIC__c</columns>
+    <columns>HIC_Desc__c</columns>
+    <columns>HOC_Desc__c</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>TempLL__c</columns>
+    <columns>TempUL__c</columns>
+    <columns>Max_Pressure__c</columns>
+    <columns>MaxRatingPSIG__c</columns>
+    <columns>Holder_Type__c</columns>
+    <columns>HCLASS__c</columns>
+    <columns>Brand__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Holder_Type__c</field>
+        <operation>contains</operation>
+        <value>7I Insert (L</value>
+    </filters>
+    <filters>
+        <field>HCLASS__c</field>
+        <operation>equals</operation>
+        <value>a3</value>
+    </filters>
+    <filters>
+        <field>SZC__c</field>
+        <operation>equals</operation>
+        <value>0300</value>
+    </filters>
+    <filters>
+        <field>TempLL__c</field>
+        <operation>equals</operation>
+        <value>-320</value>
+    </filters>
+    <label>All</label>
+</ListView>

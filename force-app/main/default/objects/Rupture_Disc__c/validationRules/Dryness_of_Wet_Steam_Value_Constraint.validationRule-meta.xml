@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dryness_of_Wet_Steam_Value_Constraint</fullName>
+    <active>true</active>
+    <description>Dryness of Wet Steam is Mandatory Field when  Evaluation Per = ISO Wet Steam is selcted</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Evaluation_Per__c , &quot;ISO Wet Steam&quot;),
+OR(
+ISBLANK ( Dryness_of_Wet_Steam__c)
+)
+)&amp;&amp; Bypass__c = FALSE &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Dryness_of_Wet_Steam__c</errorDisplayField>
+    <errorMessage>Dryness of Wet Steam: Please Enter a value</errorMessage>
+</ValidationRule>

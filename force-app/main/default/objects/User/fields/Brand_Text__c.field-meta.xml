@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES( Brand__c , &quot;CDC&quot; ), &quot;CDC&quot;, NULL) + &quot;|&quot; +
+IF(INCLUDES( Brand__c , &quot;Groth&quot; ), &quot;Groth&quot;, NULL) + &quot;|&quot; +
+IF(INCLUDES( Brand__c , &quot;LaMOT&quot; ), &quot;LaMOT&quot;, NULL) + &quot;|&quot; +
+IF(INCLUDES( Brand__c , &quot;LVA&quot; ), &quot;LVA&quot;, NULL) + &quot;|&quot;</formula>
+    <label>Brand_Text</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

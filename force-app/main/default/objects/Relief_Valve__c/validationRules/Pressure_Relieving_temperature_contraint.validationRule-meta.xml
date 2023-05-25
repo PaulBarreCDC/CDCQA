@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Relieving_temperature_contraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+Atmospheric_Pressure__c &gt; 0,
+OR(NOT(ISBLANK(Pressure_Relief_Req_Flow_Rate__c)),Pressure_Relief_Req_Flow_Rate__c &gt;= 0),
+(Pressure_Relieving_Temperature__c &lt; -459.67),
+Section_B_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Pressure_Relieving_Temperature__c</errorDisplayField>
+    <errorMessage>Pressure Relieving Temperature Value : Please enter value greater than or equal to -459.67</errorMessage>
+</ValidationRule>

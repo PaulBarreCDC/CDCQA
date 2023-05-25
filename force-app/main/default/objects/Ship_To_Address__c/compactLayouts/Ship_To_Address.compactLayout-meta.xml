@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ship_To_Address</fullName>
+    <fields>Name</fields>
+    <fields>Account__c</fields>
+    <fields>Ship_To_City__c</fields>
+    <fields>Ship_To_Country__c</fields>
+    <fields>Ship_To_Phone__c</fields>
+    <fields>Ship_To_State__c</fields>
+    <fields>Ship_To_Zip_Postal__c</fields>
+    <label>Ship To Address</label>
+</CompactLayout>

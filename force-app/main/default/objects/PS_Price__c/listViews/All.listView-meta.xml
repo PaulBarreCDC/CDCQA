@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ASSYPARTNO__c</columns>
+    <columns>QuantityLL__c</columns>
+    <columns>QuantityUL__c</columns>
+    <columns>Price__c</columns>
+    <columns>Discountable_Lot_Charge__c</columns>
+    <columns>Non_Discountable_Lot_Charge__c</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ASSYPARTNO__c</field>
+        <operation>equals</operation>
+        <value>CD51266A0001</value>
+    </filters>
+    <label>All</label>
+</ListView>

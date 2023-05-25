@@ -1,0 +1,21 @@
+ADMERK__c,ASME__c,CDC_Ext_ID__c,CE_Mark__c,Flag__c,KOSHA__c,PTC__c,RGRAT1__c,RGTYP1__c,RPVM084__c
+Y,Y,,N,,N,WMP,Rated,Special,N
+N,N,,N,,N,SRA,Rated,-10% (-5 Psig),N
+N,N,,Y,,N,EV2,Specified,Special,N
+N,N,,Y,,N,SRS,Specified,Special,N
+N,N,,Y,,N,SNX,Burst Pressure Min/Max.,Specify Reference Mfg Range,N
+Y,Y,,N,,N,RVT,Rated,Special,Y
+N,N,,Y,,Y,CDV,Specified,Zero,N
+N,N,,N,,N,STD,Specified,Special - 3/4 Reduced Range,N
+N,N,,N,,N,CAL,Burst Pressure Min/Max.,Specify Min,Y
+N,Y,,N,,N,HPZ,Rated,Special,N
+N,N,,Y,,Y,PCS,Specified,Zero,N
+Y,Y,,Y,,N,HPS,Rated,Zero,N
+N,N,,Y,,N,EV1,Burst Pressure Min/Max.,Specify Min,N
+Y,N,,N,,N,PCS,Burst Pressure Min/Max.,Specify Reference Mfg Range,N
+N,N,,Y,,N,HPS,Burst Pressure Min/Max.,Specify Min,N
+Y,N,,Y,,N,PAS,Start/Full Relief (Min/Max),,N
+N,Y,,N,,Y,PAS,Start/Full Relief (Min/Max),,N
+Y,Y,,N,,Y,CAL,Rated,Special,Y
+Y,Y,,N,,Y,CAL,Rated,Zero,Y
+Y,Y,,N,,Y,CAL,Burst Pressure Min/Max.,Specify Min,Y

@@ -1,0 +1,17 @@
+<apex:page showHeader="false"
+            sidebar="false"
+            contentType="text/xml" 
+            cache="false"
+            controller="CPQQuoteTemplateController"
+            action="{!init}" >
+        <!--apex:image rendered="{!quoteObj != null}"
+                    url="{!URLFOR($Resource.cdcOutput,backgroundURI)}"/-->
+
+  <block-container  background-image="{!backgroundURI}" position="absolute" background-position="left">
+   <!--block  content-height="scale-to-fit">
+      <block>||</block>
+      <block>{!backgroundURI}</block>
+    </block-->
+      <block />
+  </block-container>
+</apex:page>

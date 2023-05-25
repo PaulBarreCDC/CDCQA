@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FA_Output_Relation_Field__c</fullName>
+    <externalId>false</externalId>
+    <label>FA Output Relation Field</label>
+    <referenceTo>Flame_Product__c</referenceTo>
+    <relationshipLabel>FA Output</relationshipLabel>
+    <relationshipName>FA_Output</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

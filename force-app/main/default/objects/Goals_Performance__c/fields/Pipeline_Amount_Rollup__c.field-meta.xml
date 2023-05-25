@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pipeline_Amount_Rollup__c</fullName>
+    <externalId>false</externalId>
+    <label>Pipeline Amount (Rollup)</label>
+    <summarizedField>Opportunity_Pipeline_Amount__c.Amount_USD__c</summarizedField>
+    <summaryFilterItems>
+        <field>Opportunity_Pipeline_Amount__c.Opportunity_Closed__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Opportunity_Pipeline_Amount__c.Goals_Performance__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

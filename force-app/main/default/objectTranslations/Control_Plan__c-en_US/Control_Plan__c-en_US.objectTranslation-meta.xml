@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Control Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Control Plans</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Inner_Limits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Nominal_Value_Must_Be_Set</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Outer_Limits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Process_Characteristics_May_Be_Set</name>
+    </validationRules>
+</CustomObjectTranslation>

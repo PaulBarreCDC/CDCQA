@@ -1,0 +1,3 @@
+Descr__c,Operation__c,Outside_Operation_Item__c,ProdGroup__c,Standard_Operation_ID__c,SubGroup__c
+"Assemble, test & pack",10,,Valve,THASSY,Thief Hatch
+Final Inspect,30,,Valve,FINSP,Thief Hatch

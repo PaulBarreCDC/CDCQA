@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Setting_must_not_be_null</fullName>
+    <active>true</active>
+    <description>The Settings field should not be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISPICKVAL( Service_Type__c , &quot;Pressure&quot;),
+				ISBLANK(Setting__c),
+				Bypass__c = FALSE,
+				Relief_flag__c = TRUE
+			)</errorConditionFormula>
+    <errorMessage>Pressure Setting: Please Enter a Value</errorMessage>
+</ValidationRule>

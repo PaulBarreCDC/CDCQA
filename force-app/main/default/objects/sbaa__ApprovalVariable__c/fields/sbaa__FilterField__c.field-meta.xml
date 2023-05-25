@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sbaa__FilterField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Select the field to use when filtering items for inclusion in this approval variable.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the field to use when filtering items for inclusion in this approval variable.</inlineHelpText>
+    <label>Filter Field</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>sbaa__TargetObject__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Family</fullName>
+                <default>false</default>
+                <label>Product Family</label>
+            </value>
+            <value>
+                <fullName>Product_Code__c</fullName>
+                <default>false</default>
+                <label>Product Code</label>
+            </value>
+            <value>
+                <fullName>Order_Type__c</fullName>
+                <default>false</default>
+                <label>Order Type</label>
+            </value>
+            <value>
+                <fullName>Requires_Technical_Review__c</fullName>
+                <default>false</default>
+                <label>Requires Technical Review</label>
+            </value>
+            <value>
+                <fullName>SBQQ__Discount__c</fullName>
+                <default>false</default>
+                <label>SBQQ Discount</label>
+            </value>
+            <value>
+                <fullName>Sourcing_Restrictions__c</fullName>
+                <default>false</default>
+                <label>Sourcing Restrictions</label>
+            </value>
+            <value>
+                <fullName>Custom_T_C_Attached__c</fullName>
+                <default>false</default>
+                <label>Custom Terms And Conditions</label>
+            </value>
+            <value>
+                <fullName>Non_Discountable_List_Price__c</fullName>
+                <default>false</default>
+                <label>Non Discountable List Price</label>
+            </value>
+            <value>
+                <fullName>SBQQ__ListPrice__c</fullName>
+                <default>false</default>
+                <label>SBQQ List Price</label>
+            </value>
+            <value>
+                <fullName>Zero_Priced_Line__c</fullName>
+                <default>false</default>
+                <label>Zero Priced Line</label>
+            </value>
+            <value>
+                <fullName>Requires_Inside_Sales_Approval__c</fullName>
+                <default>false</default>
+                <label>Requires Inside Sales Approval</label>
+            </value>
+            <value>
+                <fullName>Requires_Sales_Director_Approval__c</fullName>
+                <default>false</default>
+                <label>Requires Sales Director Approval</label>
+            </value>
+            <value>
+                <fullName>Requires_Sales_Executive_Approval__c</fullName>
+                <default>false</default>
+                <label>Requires Sales Executive Approval</label>
+            </value>
+            <value>
+                <fullName>Discount_Greater_0__c</fullName>
+                <default>false</default>
+                <label>Discount &gt; 0</label>
+            </value>
+            <value>
+                <fullName>Discount_Greater_20__c</fullName>
+                <default>false</default>
+                <label>Discount &gt; 20%</label>
+            </value>
+            <value>
+                <fullName>Discount_Greater_30__c</fullName>
+                <default>false</default>
+                <label>Discount &gt; 30%</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Opportunity Product</controllingFieldValue>
+            <valueName>Product Family</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Opportunity Product</controllingFieldValue>
+            <valueName>Product_Code__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__Quote__c</controllingFieldValue>
+            <valueName>Order_Type__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__Quote__c</controllingFieldValue>
+            <valueName>Custom_T_C_Attached__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Requires_Technical_Review__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>SBQQ__Discount__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Sourcing_Restrictions__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Non_Discountable_List_Price__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>SBQQ__ListPrice__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Zero_Priced_Line__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Requires_Inside_Sales_Approval__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Requires_Sales_Director_Approval__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Requires_Sales_Executive_Approval__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Discount_Greater_0__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Discount_Greater_20__c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SBQQ__QuoteLine__c</controllingFieldValue>
+            <valueName>Discount_Greater_30__c</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

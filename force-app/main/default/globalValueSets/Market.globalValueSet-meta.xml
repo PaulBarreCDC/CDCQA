@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>OGUPS</fullName>
+        <default>false</default>
+        <label>Oil and Gas Upstream</label>
+    </customValue>
+    <customValue>
+        <fullName>OGDWN</fullName>
+        <default>false</default>
+        <label>Oil and Gas Downstream</label>
+    </customValue>
+    <customValue>
+        <fullName>CHEM</fullName>
+        <default>false</default>
+        <label>Chemical</label>
+    </customValue>
+    <customValue>
+        <fullName>PHARM</fullName>
+        <default>false</default>
+        <label>Pharmaceutical &amp; Biotech</label>
+    </customValue>
+    <customValue>
+        <fullName>FOOD</fullName>
+        <default>false</default>
+        <label>Food &amp; Beverage</label>
+    </customValue>
+    <customValue>
+        <fullName>AERO</fullName>
+        <default>false</default>
+        <label>Aircraft and Aerospace (Commercial)</label>
+    </customValue>
+    <customValue>
+        <fullName>DEF</fullName>
+        <default>false</default>
+        <label>Defense (Incl. Aircraft &amp; Aerospace)</label>
+    </customValue>
+    <customValue>
+        <fullName>OTHER</fullName>
+        <default>false</default>
+        <label>Other Industrial Markets</label>
+    </customValue>
+    <customValue>
+        <fullName>MNICP</fullName>
+        <default>false</default>
+        <label>Municipal</label>
+    </customValue>
+    <customValue>
+        <fullName>PULP</fullName>
+        <default>false</default>
+        <label>Pulp and Paper</label>
+    </customValue>
+    <customValue>
+        <fullName>POWUT</fullName>
+        <default>false</default>
+        <label>Power and Utilities</label>
+    </customValue>
+    <customValue>
+        <fullName>SALESFORCE</fullName>
+        <default>false</default>
+        <label>SALESFORCE</label>
+    </customValue>
+    <customValue>
+        <fullName>BIO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Biogas</label>
+    </customValue>
+    <customValue>
+        <fullName>Defense</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Defense</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmaceutical</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Pharmaceutical</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Aircraft and Aerospace</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Aircraft and Aerospace</label>
+    </customValue>
+    <masterLabel>Market</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,89 @@
+<apex:page showHeader="false" sidebar="false" cache="false" contentType="text/xml" controller="DrawingsCtrl" action="{!init}" >  
+    <apex:variable value="{!1}" var="indx"/> 
+    <apex:repeat value="{!lstQuoteLine}" var="ql">
+        <apex:outputPanel layout="none" rendered="{!ql.DrawingID__c!=null && mapImageData[ql.DrawingID__c]!=' '}">
+            <block page-break-after="always"></block>
+            <block border=".20mm solid">
+                <table>
+                    <table-column column-width="1.5in"/>
+                    <table-column column-width="1.5in"/>
+                    <table-body>
+                        <table-row >
+                            <table-cell padding-left="2mm" text-align="left" ><block>Quote #</block></table-cell>
+                            <table-cell padding-left="2mm" text-align="left" ><block>{!oQuote.Quote_Number__c}</block></table-cell>
+                        </table-row>
+                        <table-row >
+                            <table-cell padding-left="2mm" text-align="left" ><block>Line Item #</block></table-cell>
+                            <!-- table-cell padding-left="2mm" text-align="left" ><block>{!indx}</block></table-cell -->
+                            <table-cell padding-left="2mm" text-align="left" ><block>{!ql.SBQQ__Number__c}</block></table-cell>
+                        </table-row>
+                        <table-row >
+                            <table-cell padding-left="2mm" text-align="left" ><block>Revision #</block></table-cell>
+                            <table-cell padding-left="2mm" text-align="left" ><block>{!oQuote.Change_Order_No__c}</block></table-cell>
+                        </table-row>                        
+                    </table-body>
+                </table>
+                <block>
+                    <external-graphic content-height="scale-to-fit" height="6in" content-width="7.00in" scaling="uniform" src="{!mapImageData[ql.DrawingID__c]}"/>
+                </block>
+                
+                <block>
+                    <table border=".20mm solid">
+                        <table-column border=".20mm solid" column-width="1.1in"/>
+                        <table-column border=".20mm solid" column-width="1.5in"/>
+                        <table-column border=".20mm solid" column-width="*"/>
+                        <table-body>
+                            <table-row >
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimA__c!=null,'A','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimA__c}</block></table-cell>
+                                <table-cell number-rows-spanned="8" vertical-align="center" border=".20mm solid">
+                                    <apex:repeat value="{!mapDescription[ql.Id]}" var="desc">
+                                        <block>
+                                            <block text-align="left" margin-left="2mm" >{!desc}</block>
+                                        </block>
+                                    </apex:repeat>
+                                </table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimB__c!=null,'B','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimB__c}</block></table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimC__c!=null,'C','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimC__c}</block></table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimD__c!=null,'D','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimD__c}</block></table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimE__c!=null,'E','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimE__c}</block></table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding-left="2mm" text-align="center" border=".20mm solid"><block>{!If(ql.DimF__c!=null,'F','&nbsp;')}</block></table-cell>
+                                <table-cell padding-left="2mm" text-align="left" border=".20mm solid"><block>{!ql.DimF__c}</block></table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell number-rows-spanned="2" border=".20mm solid" text-align="center" vertical-align="middle">
+                                    <block display-align="center">
+                                    <external-graphic content-height="scale-to-fit" height="1in" content-width="1in" scaling="uniform" src="{!Logo}"/>
+                                    </block>
+                                </table-cell>
+                                <table-cell padding="1mm" font-size="7" border=".20mm solid">
+                                    <block>UNLESS OTHERWISE NOTED DIMENSIONS IN INCHES [MILLIMETERS]</block>
+                                </table-cell>
+                            </table-row>
+                            <table-row>
+                                <table-cell padding="1mm" font-size="7" border=".20mm solid">
+                                    <block>WE CERTIFY TO THE BEST OF OUR KNOWLEDGE THIS DRAWING MEETS THE SPECIFICATIONS SET FORTH</block>
+                                </table-cell>
+                            </table-row>
+                        </table-body>
+                    </table>
+                </block>
+            </block> 
+        </apex:outputPanel>
+        <apex:variable value="{!indx+1}" var="indx"/>
+    </apex:repeat>
+</apex:page>

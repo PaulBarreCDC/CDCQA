@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Set_Test_Case_Title</fullName>
+        <field>Test_Case_Title__c</field>
+        <formula>Test_Case__r.Title__c</formula>
+        <name>Set Test Case Title</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Set Test Case Title on Test Case Issues</fullName>
+        <actions>
+            <name>Set_Test_Case_Title</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Created this workflow rule to replace the formula field so a long text field could be used</description>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

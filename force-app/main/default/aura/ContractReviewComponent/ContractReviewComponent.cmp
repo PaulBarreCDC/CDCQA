@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+	<aura:attribute name="recordId" type="String"></aura:attribute>
+    <aura:attribute name="checkBox1" type="Boolean"></aura:attribute>
+    <aura:attribute name="checkBox2" type="Boolean"></aura:attribute>
+    <aura:attribute name="record" type="Object"></aura:attribute>
+    <aura:attribute name="simpleRecord" type="Object"></aura:attribute>
+    <aura:attribute name="recordError" type="String"></aura:attribute>
+    
+    <lightning:card title="Confirm Review">
+        <lightning:input type="checkbox" value="{!v.checkBox1}" name="myNumber" aura:id="checkBox1" label="1. I confirm the customers purchase order is attached." onchange="{!c.handleCheckBox1}"/><br/>
+        <lightning:input type="checkbox" value="{!v.checkBox2}" name="myNumber" aura:id="checkBox2" label="2. I have read the customers purchase order and it matches our quote offering without modification." onchange="{!c.handleCheckBox2}"/>
+        <br/>
+        <div class="slds-align_absolute-center">
+            <p><strong>I approve the purchase order and I am authorizing contract review per SP-1001-1 Contract Review Checklist.</strong></p><br/>
+            <lightning:button label="Approve/Authorize" variant="brand" disabled="{! not(v.checkBox1 &amp;&amp; v.checkBox2)}" onclick="{!c.clickAdd}"/>
+        </div>
+    
+    </lightning:card>
+	<force:recordData aura:id="recordHandler"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.record}"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      mode="EDIT"
+      />
+</aura:component>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>COC Q 007</label>
+    <protected>false</protected>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">Action:UpdateQuoteLines:Cancel:IFSOperations.cancelOrderIFS|Question:8;
+Action:UpdateQuoteLines:Cancel:IFSOperations.cancelOrderIFS|Question:8;
+Action:UpdateQuoteLines:Cancel:IFSOperations.cancelOrderIFS|Question:8;
+Action:UpdateQuoteLines:Cancel:IFSOperations.cancelOrderIFS|Question:8;
+Action:UpdateQuoteLines:Cancel:IFSOperations.cancelOrderIFS|Question:8</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Force_Next__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Option__c</field>
+        <value xsi:type="xsd:string">Change Order Processed, New Line Entered:CH ORD LIN;
+Customer Requested to Cancel Order:CUST REQ;
+Cancel Order Due to Internal Mistake:ERROR;
+Cancel Order Due to Lack of Payment By Customer:NON PMT;
+Cancel Order due to ORB Lead Time Change:LEAD TIME</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">7.0</value>
+    </values>
+    <values>
+        <field>Question_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question_Hint__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question__c</field>
+        <value xsi:type="xsd:string">Choose Reason for Cancelling Order Lines in IFS</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">QuoteLineGrid</value>
+    </values>
+</CustomMetadata>

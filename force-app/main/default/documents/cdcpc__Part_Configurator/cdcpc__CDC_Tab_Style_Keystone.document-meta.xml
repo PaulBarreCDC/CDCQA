@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Image for custom CDC tab style.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>Tab Style</keywords>
+    <name>CDC Tab Style Keystone</name>
+    <public>true</public>
+</Document>

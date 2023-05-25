@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size_Units_Constraints</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(AND(
+ISPICKVAL(Relief_Type__c, &quot;Pressure Relief&quot;),
+Relief_Flag__c = TRUE,
+ISPICKVAL( Size_Units__c, &quot;&quot;),
+NOT(ISPICKVAL( Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(Pressure_Setting__c)),
+Pressure_Setting__c &gt; 0,
+NOT(ISPICKVAL(Pressure_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(Temperature_Setting__c)),
+NOT(ISBLANK(Converted_Temperature_Setting__c )),
+NOT(ISPICKVAL(Temperature_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(TEXT(Vacuum_Withstand__c)))
+),
+AND(
+ISPICKVAL(Relief_Type__c, &quot;Vacuum Relief&quot;),
+Relief_Flag__c = TRUE,
+ISPICKVAL( Size_Units__c, &quot;&quot;),
+NOT(ISPICKVAL( Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(Vacuum_Setting__c)),
+Vacuum_Setting__c &gt; 0,
+NOT(ISPICKVAL(Vacuum_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(Temperature_Setting__c)),
+NOT(ISBLANK(Converted_Temperature_Setting__c )),
+NOT(ISPICKVAL(Temperature_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(TEXT(Pressure_Withstand__c)))
+),
+AND(
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum Relief&quot;),
+Relief_Flag__c = TRUE,
+ISPICKVAL( Size_Units__c, &quot;&quot;),
+NOT(ISPICKVAL( Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(Temperature_Setting__c)),
+NOT(ISBLANK(Converted_Temperature_Setting__c )),
+NOT(ISBLANK(Pressure_Setting__c)),
+Pressure_Setting__c &gt; 0,
+NOT(ISPICKVAL(Pressure_Setting_Units__c ,&quot;&quot;)),
+Vacuum_Setting__c &gt; 0,
+NOT(ISBLANK(Vacuum_Setting__c)),
+NOT(ISPICKVAL(Vacuum_Setting_Units__c ,&quot;&quot;)),
+NOT(ISPICKVAL(Temperature_Setting_Units__c ,&quot;&quot;))
+))</errorConditionFormula>
+    <errorDisplayField>Size_Units__c</errorDisplayField>
+    <errorMessage>Size Units: Please select a value</errorMessage>
+</ValidationRule>

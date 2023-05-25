@@ -1,0 +1,4 @@
+Num1__c,Num2__c,NumOpp1__c,NumOpp2__c,Text1__c,Text2__c,Text3__c,Text4__c,Text5__c,TextOpp1__c,TextOpp2__c,TextOpp3__c,TextOpp4__c,TextOpp5__c,Type__c
+BMRCHECK,BMRCHECK,<,>=,PTC,DSCVAR,SZC,MCD,WITHSTANDRDCOMP,=,=,=,=,=,B
+BMRCHECK,TMRCHECK,<=,>,PTC,DSCVAR,SZC,STC,MCD,=,=,=,=,=,C
+SizeVal,SizeVal,<=,>,PTC,DSCVAR,,,,=,=,,,,A

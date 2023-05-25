@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_value_cannot_be_negative</fullName>
+    <active>false</active>
+    <description>The Quantity field value cannot be a negative integer</description>
+    <errorConditionFormula>AND(
+Section_F_Flag__c  = TRUE,
+Quantity__c &lt;= 0,
+Quantity__c / 1==0
+)</errorConditionFormula>
+    <errorDisplayField>Quantity__c</errorDisplayField>
+    <errorMessage>Please enter a positive integer value greater than 0.</errorMessage>
+</ValidationRule>

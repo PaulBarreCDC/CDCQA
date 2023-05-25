@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Pressure_Units_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The Supply Pressure Units field cannot be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISPICKVAL(Supply_Pressure_Units__c, &quot;&quot;),
+				NOT(ISBLANK(Setting__c)),  
+				NOT(ISPICKVAL(Setting_Units__c, &quot;&quot;)),  
+				Bypass__c = FALSE,
+    Relief_flag__c = TRUE
+   )</errorConditionFormula>
+    <errorDisplayField>Supply_Pressure_Units__c</errorDisplayField>
+    <errorMessage>Supply Pressure Units: Please Select a Value from dropdown</errorMessage>
+</ValidationRule>

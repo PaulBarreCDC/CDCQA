@@ -1,0 +1,15 @@
+.tooltip_cls {
+    position: absolute; 
+    right: -106%;
+    top: -33px;
+    z-index: 999999;
+}
+.showToolTip {
+    display: block;
+}
+.hideToolTip {
+    display: none;
+}
+.utility_hvr {
+    cursor: hand;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_at_discharge_Units_Constraint</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Evaluation_Per__c,&quot;ASME Water&quot;),
+OR(
+ISBLANK ( TEXT(Pressure_at_Discharge_Units__c) )
+)
+)&amp;&amp;
+(Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Pressure_at_Discharge_Units__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

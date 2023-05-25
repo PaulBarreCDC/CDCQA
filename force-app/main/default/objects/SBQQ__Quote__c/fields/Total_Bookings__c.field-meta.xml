@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Bookings__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Bookings (USD)</label>
+    <summarizedField>Credits_and_Booking__c.Amount_USD__c</summarizedField>
+    <summaryFilterItems>
+        <field>Credits_and_Booking__c.Type__c</field>
+        <operation>equals</operation>
+        <value>Booking</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Credits_and_Booking__c.Quote__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

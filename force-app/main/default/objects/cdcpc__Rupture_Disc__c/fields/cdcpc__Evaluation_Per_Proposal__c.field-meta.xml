@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Evaluation_Per_Proposal__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>CASE(cdcpc__Evaluation_Per__c,
+  &quot;ASME Gas/Vapor&quot;, &quot;ASME Section VIII Division 1 – Gas/Vapor&quot;,
+  &quot;ASME Water&quot;, &quot;ASME Section VIII Division 1 – Water&quot;,
+  &quot;ASME Steam&quot;, &quot;ASME Section VIII Division 1 – Dry Saturated Steam&quot;,
+  &quot;API Gas/Vapor&quot;, &quot;API Standard 520 Part 1 – Gas/Vapor&quot;,
+  &quot;API Liquid&quot;, &quot;API Standard 520 Part 1 - Liquid&quot;,
+  &quot;API Steam&quot;, &quot;API Standard 520 Part 1 - Steam&quot;,
+  &quot;ISO Gas/Vapor&quot;, &quot;ISO 4126-6 – Gas/Vapor&quot;,
+  &quot;ISO Liquid&quot;, &quot;ISO 4126-6 - Liquid&quot;,
+  &quot;ISO Dry Steam&quot;, &quot;ISO 4126-6 - Steam&quot;,
+  &quot;ISO Wet Steam&quot;, &quot;ISO 4126-6 – Saturated Steam&quot;,
+  &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;, &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;,
+  &quot;API Omega Method Subcooled Liquid&quot;, &quot;API Omega Method Subcooled Liquid&quot;,
+  &quot;Fauske 2 Phase Gas-Liquid&quot;, &quot;Fauske 2 Phase Gas-Liquid&quot;,
+  &quot;Fauske 2 Phase Vapor-Liquid&quot;, &quot;Fauske 2 Phase Vapor-Liquid&quot;,
+  &quot;Fauske 2 Phase Hybrid Gas-Vapor-Liquid&quot;, &quot;Fauske 2 Phase Hybrid Gas-Vapor-Liquid&quot;,
+  &quot;Fauske All Liquid Flashing&quot;, &quot;Fauske All Liquid Flashing&quot;,
+  &quot;No Evaluation Specified&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Evaluation Per Proposal</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

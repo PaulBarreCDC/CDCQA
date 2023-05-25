@@ -1,0 +1,5 @@
+<apex:page contentType="text/xml">
+    <block-container background-image="https://contdisccorp--cpqproject--c.cs45.content.force.com/servlet/servlet.ImageServer?id=0158A000000KR8M&amp;oid=00D8A000000D67W&amp;lastMod=1592515691000">
+        <block></block>
+    </block-container>
+</apex:page>

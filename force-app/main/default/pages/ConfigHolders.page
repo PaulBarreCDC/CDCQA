@@ -1,0 +1,1443 @@
+<apex:page docType="html-5.0" standardController="Holders__c" extensions="ConfigHolderController" lightningStylesheets="true" action="{!redirectToErrorPageDuringError}">
+    <title>CDC - Holders Configuration</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <apex:includeScript value="{!$Resource.cdc_common}"/>
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial,Verdana,sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+        .output_txt_fld {
+        	border: 1px solid rgb(201, 199, 197);
+            padding: 6px 250px 6px 4px;
+            text-align: left;
+            border-radius: 4px;
+            background-color: rgb(236, 235, 234);
+            cursor: not-allowed;
+            user-select: none;
+        }
+        .custError {
+        	
+        	border: 1px solid red !important;
+        }
+        .label_required:after {
+        
+            content:" *";
+            color: red;
+        }
+        
+        input[type="number"], .slds-vf-scope input[type="number"] {
+            border: 1px solid rgb(221, 219, 218);
+            max-width: 100%;
+            border-radius: .25rem;
+            background-color: rgb(255, 255, 255);
+            color: rgb(8, 7, 7);
+            -webkit-transition: border .1s linear,background-color .1s linear;
+            transition: border .1s linear,background-color .1s linear;
+            display: inline-block;
+            padding: 0 1rem 0 .75rem;
+            min-height: calc(1.875rem + (1px * 2));
+            line-height: 1.875rem;
+        	width: 76%;
+        }
+        img.helpOrb {
+        	
+            display: none;
+        }
+        div.tooltipContainer span {
+            display: none;
+        }
+    
+    	div.tooltipContainer:hover span {
+        	display: block;
+            position:absolute;
+            top:1.25em;
+            padding:2px 5px;
+            left:-18em; 
+            width:20em;
+            z-index:100;
+            border:1px solid #000;
+            background-color:#FEFDB9;
+            color:black;
+            min-height: 50px;
+        }
+    
+        .tooltipContainer {
+            position:relative;
+            width: 8px;
+            height: 8px;
+            padding: 5px;
+            border-radius: 50%;
+            float: right;
+            top: 6px;
+            left: 4px;
+            color: #fff;
+            text-align: left;
+            font-size: 11px;
+         }
+    	img.helpOrb {
+        	
+            display: none;
+        }
+    	.pbSubsection1 {
+        	padding-bottom: 3.75rem !important;    
+        }
+    body .helpOrb1, .slds-vf-scope .helpOrb1 {
+        width: 0.8rem;
+        height: 0.8rem;
+        display: inline-block;
+        padding: 0.8rem 0.8rem 0 0;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: transparent;
+        background-size: 0.5rem;
+        background-image: url(/apexpages/slds/latest/assets/icons/utility/info_60.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% auto;
+        display: inline-block;
+        margin-top: -20px;
+        margin-left: -5px;
+    }
+    body .helpOrb1, .slds-vf-scope .helpOrb1 {
+        background-color: #54678d;
+        background-image: none;
+        background-size: auto;
+        -webkit-mask-image: url(/apexpages/slds/latest/assets/icons/utility/info.svg);
+        mask-image: url(/apexpages/slds/latest/assets/icons/utility/info.svg);
+        -webkit-mask-size: cover;
+        mask-size: cover;
+    }
+    </style>
+
+<style>
+    .btnCenter{
+        float: left;
+        left: 50%;
+    }
+    .slds-button_brand{
+     padding-left:1rem !important;
+     padding-right:1rem !important;
+     text-align:center !important;
+     vertical-align:middle !important;
+     -webkit-box-pack:center !important;
+         -ms-flex-pack:center !important;
+             justify-content:center !important;
+     border:1px solid #dddbda !important;
+     -webkit-transition:border 0.15s linear !important;
+     transition:border 0.15s linear !important;
+     background-color:#0070d2 !important;
+     border-color:#0070d2 !important;
+     color:white !important;
+     background:#0070d2 !important; 
+   }
+   
+   .slds-button_outline-brand{
+     padding-left:1rem !important;
+     padding-right:1rem !important;
+     text-align:center !important;
+     vertical-align:middle !important;
+     -webkit-box-pack:center !important;
+         -ms-flex-pack:center !important;
+             justify-content:center !important;
+     border:1px solid #dddbda !important;
+     -webkit-transition:border 0.15s linear !important;
+     transition:border 0.15s linear !important;
+     border-color:#dddbda !important;
+     background-color:white !important;
+     border-color:#0070d2 !important;
+   }
+   
+
+   slds-notify-container,
+.slds-notify_container{
+  position:fixed;
+  width:100%;
+  left:0;
+  top:0;
+  z-index:10000;
+  text-align:center;
+}
+ 
+.slds-is-relative{
+    position:relative;
+}
+.slds-notify_toast, .slds-notify--toast{
+  color:white;
+  display:-webkit-inline-box;
+  display:-ms-inline-flexbox;
+  display:inline-flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  position:relative;
+  background:#706e6b;
+  font-weight:300;
+  border-radius:0.25rem;
+  margin:0.5rem;
+  padding:.5rem 2rem .5rem .5rem;
+  min-width:30rem;
+  text-align:left;
+  -webkit-box-pack:start;
+      -ms-flex-pack:start;
+          justify-content:flex-start;
+}
+ 
+.slds-theme_warning, .slds-theme--warning{
+    background-color:#ffb75d;
+    color:#080707;
+}
+
+    </style>
+
+    <script type="text/javascript">
+    function isNumberKey(evt, obj)
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        var value = obj.value;
+        var dotcontains = value.indexOf(".") != -1;
+        if (dotcontains)
+            if (charCode == 46) return false;
+        if (charCode == 46) return true;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+
+    function isNumberKeyQ(evt, obj) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    </script>
+    <script type="text/javascript">
+    function keyAllowed(key) {
+      var keys = [8, 9, 13, 16, 17, 18, 19, 20, 27, 46, 48, 49, 50,
+        51, 52, 53, 54, 55, 56, 57, 91, 92, 93
+      ];
+      if (key && keys.indexOf(key) === -1)
+        return false;
+      else
+        return true;
+    }
+    
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function(){
+        
+        nonegativeValidation();
+        
+        addToolTipToElements();
+        
+        /*Added by Ashim for adding a css to the mandatory columns so that can display a star mark*/
+        addMandatorySign();
+        
+        makeElementsReadOnly();
+        
+        j$( ".cust_required" ).blur(function() {
+            
+            //alert(j$( this ).val());
+            j$(this).removeClass('custError');
+            
+            if(!j$( this ).val()) {
+            	
+                j$(this).addClass('custError');
+                
+            } else if(j$(this).val() <= 0) {
+            	
+                j$(this).addClass('custError');
+            }
+        });
+        
+        let rDiscBrustPressure =  j$('[id$=rDiscBrustPressureId]').val();
+        let rDiscBrustTemperature = j$('[id$=rDiscBrustTemperatureId]').val();
+        if(rDiscBrustPressure)
+            j$('[id$=rDiscBrustPressureId]').val(parseFloat(rDiscBrustPressure));
+        if(rDiscBrustTemperature)
+            j$('[id$=rDiscBrustTemperatureId]').val(parseFloat(rDiscBrustTemperature));
+
+        j$("select[id$='FinalAssemblyLocationRequirements']").each(function(){
+            j$(this).children('option').each(function(){
+                if(! j$(this).val()){
+                    j$(this).remove();
+                }
+            });
+        });
+
+        j$("select[id$='MaterialSourcingRequirements']").each(function(){
+            j$(this).children('option').each(function(){
+                if(! j$(this).val()){
+                    j$(this).remove();
+                }
+            });
+        });
+        var rDiscBrustPressureIdVal = '{!conHolder.Rupture_Disc_Burst_Pressure__c}';
+        var rDiscBrustTemperatureIdVal = '{!conHolder.Rupture_Disc_Burst_Temperature__c}';
+        if(rDiscBrustPressureIdVal){
+            j$('[id$=rDiscBrustPressureId]').val(parseFloat(rDiscBrustPressureIdVal));
+        }
+        if(rDiscBrustTemperatureIdVal){
+            j$('[id$=rDiscBrustTemperatureId]').val(parseFloat(rDiscBrustTemperatureIdVal));
+        }
+        
+    });
+    
+    function addToolTipToElements() {
+    	var classList, indx, classHlpTxt;
+        var label = j$('.labelCol label');
+        
+        j$( ".pbSubsection" ).first().css( "padding-bottom", "3.75rem" );
+        
+        j$.each(label, function() {
+          	
+            classList = j$(this).closest('th').next('td').find('input').attr("class");
+            if(classList) {
+            	
+                indx = classList.indexOf("HLPTXT_");
+                if(indx > 0) {
+                                            
+                    classHlpTxt = classList.substring(indx);
+                    classHlpTxt = classHlpTxt.replace('HLPTXT_', '');
+                    //alert(classList+' ## '+indx+' :: '+classHlpTxt);
+                    if(j$('#'+classHlpTxt).val()) {
+                        
+                        //j$(this + '.tooltipContainer').not(':last').remove();
+						j$(this).closest('th').find('div.tooltipContainer').remove();
+                        j$(this).after('<div class="tooltipContainer"><img src="/img/s.gif" alt="no img" class="helpOrb1" title=""><span>'+j$('#'+classHlpTxt).val()+'</span></div>');
+                    }
+                }
+            }
+        });
+    }
+	
+    function nonegativeValidation() {
+    	
+        j$( ".nonegative" ).keypress(function(e) {
+            
+            const ct = e.currentTarget;
+            var key = !isNaN(e.charCode) ? e.charCode : e.keyCode;
+            if (!keyAllowed(key))
+                e.preventDefault();
+        });
+        
+        j$( ".noZero" ).blur(function(e) {
+        	
+            if(this.value == 0) {
+            	
+                this.value = '';
+            }
+        });
+    }
+    
+    function myFunction() {
+        // debugger;
+        var sizeSecA = j$('[id$=size1]').val();
+        console.log(' calling ready function sizeSecA = '+sizeSecA);
+        if(sizeSecA){
+            //j$("[id$=size2] :input").prop("disabled",true);
+            //$('#size2 option[value=sizeSecA]').attr('selected','selected');
+            //$("#size2 > select > option[value=" + sizeSecA + "]").attr("selected",true);
+            //j$('[id$=size2]').attr("disabled","disabled");
+        }
+	}
+
+    function removeTrailingerosOnComplete(){
+        var rDiscBrustPressureIdVal = '{!conHolder.Rupture_Disc_Burst_Pressure__c}';
+        var rDiscBrustTemperatureIdVal = '{!conHolder.Rupture_Disc_Burst_Temperature__c}';
+        if(rDiscBrustPressureIdVal){
+            j$('[id$=rDiscBrustPressureId]').val(parseFloat(rDiscBrustPressureIdVal));
+        }
+        if(rDiscBrustTemperatureIdVal){
+            j$('[id$=rDiscBrustTemperatureId]').val(parseFloat(rDiscBrustTemperatureIdVal));
+        }
+    }
+
+    function removeTrailingeros(data){
+        if(data.value){
+            if(data.id.includes('rDiscBrustPressureId')){
+                j$('[id$=rDiscBrustPressureId]').val(parseFloat(data.value));
+            }else if(data.id.includes('rDiscBrustTemperatureId')){
+                j$('[id$=rDiscBrustTemperatureId]').val(parseFloat(data.value));
+            }
+
+        }
+    }
+    
+    function checkErrorDuringSubmit() {
+        
+        addMandatorySign();
+        nonegativeValidation();
+        addToolTipToElements();
+        
+        if(j$(".errorM3").html()) {
+        	
+            j$("html, body").animate({ scrollTop: 0 }, "slow");
+        }
+    }
+    
+    function addMandatorySign() {
+
+        j$(".cust_required").each(function(obj) {
+            var pn = j$(this).closest('td').prev('th');
+            j$(pn).addClass('label_required');
+        });
+        
+    }
+    
+    function validateFields(className) {
+    	
+        j$('#msgValidation_'+className).hide();
+        var inputsValid = true;
+        j$("."+className).removeClass('custError');
+        j$("."+className).each(function(obj) {
+           
+            if(!j$( this ).val()) {
+            	
+                j$(this).addClass('custError');
+                inputsValid = false;
+                
+            } else if(j$("."+className+'Zero').val() <= 0) {
+            	
+                j$("."+className+'Zero').addClass('custError');
+                inputsValid = false;
+            }
+        });
+        
+        return inputsValid;
+    }
+    
+    function validateMandatoryFields(className) {
+    	
+        var inputsValid = validateFields(className);
+        
+        if(inputsValid) {
+        	
+            saveProdSection();
+        } else {
+        	
+            j$('#msgValidation_'+className).show();
+            j$('#msgCont_'+className).html('Please enter all the mandatory fields');
+        }
+        return false;
+    }
+    function validateCertificateCSAMarks() {
+    	
+        if(j$(".csa_markings").is(":checked")) {
+            
+            j$(".asme_section_viii").prop('checked', true);
+        }        
+    }
+    function validatePressureInput(obj) {
+    	
+        if(obj.value < -320){
+        	
+           obj.value = 0;
+        }
+    }
+    
+    function validateFinishConfig(className) {
+    	
+        var inputsValid = validateFields(className);
+        
+        if(inputsValid) {
+        	
+            finishProdConfig();
+            
+        } else {
+        	
+            j$('.custError').first().focus();            
+        }
+        return false;
+    }
+
+   //added by piyush 
+    var bRuptureDiscSpecificationSaved = true;
+    var bCertificationsSaved = true;
+    var bProductSelectionSaved = true;
+    var bComponentMaterialandOptionSelectionSaved = true;
+    var bCleaningMarkingsandTestingSaved = true;
+
+
+    // section 1 change handler 
+    function RuptureDiscSpecificationChange(){
+        bRuptureDiscSpecificationSaved = false;
+    }
+
+    // section 2 change handler 
+    function CertificationsChange(){   
+        bCertificationsSaved = false;
+    }
+    // section 3 change handler 
+    function ProductSelectionChange(){
+       
+        bProductSelectionSaved = false;
+    }
+     // section 4 change handler 
+     function ComponentMaterialandOptionSelectionChange(){
+        
+        bComponentMaterialandOptionSelectionSaved = false;
+    }
+
+    // section 5 change handler 
+    function CleaningMarkingsandTestingChange(){
+        bCleaningMarkingsandTestingSaved = false;
+    }
+
+    
+    // after each section save @piyush
+    function onRDSpecifictaionComplete(event){
+        event.value = 'Save & Continue'; 
+        bRuptureDiscSpecificationSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+    
+    function onCertificationsComplete(event){
+        event.value = 'Save & Continue'; 
+        bCertificationsSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+
+    function onProductSelectionComplete(event){
+        event.value = 'Save & Continue'; 
+        bProductSelectionSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+
+     function onComponentMaterialandOptionSelectionComplete(event){
+        event.value = 'Save & Continue'; 
+        bComponentMaterialandOptionSelectionSaved = true;
+        document.getElementById("toastMsgText").innerHTML = '';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'none'; 
+        return false;
+    }
+
+
+    // on mouse over funtionlty for section @piyush
+    function onMouseInCertifications(){
+     if(bRuptureDiscSpecificationSaved == false){
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Rupture Disc Specification"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+     }
+    }
+
+    function onMouseInProductSelection(){
+     if(bCertificationsSaved == false){
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Certifications"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+
+
+     }
+        
+    }
+
+    function onMouseComponentMaterialAndOptionSelection(){
+     if(bProductSelectionSaved == false){
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Product Selection"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+     }
+        
+    }
+
+    function onMouseCleaningMarkingsandTesting(){
+     if(bComponentMaterialandOptionSelectionSaved == false){
+        document.getElementById("toastMsgText").innerHTML = 'Unsaved Changes on "Component Material and Option Selection"';
+        var elmnt = document.getElementById("notifyToast");
+        elmnt.style.display = 'inline-block'; 
+        elmnt.scrollIntoView();
+     }
+        
+    }
+
+    var oPopupPDF;
+    function openHolderReference(strURL){
+        if(strURL == ''){
+                return;
+        }
+
+        //window.open(strURL, '_blank' );
+        oPopupPDF = window.open(strURL , "", "width=500,height=500");
+    }
+
+        function goBackQLI(strURL){
+           
+            parent.location.href=strURL;
+        }
+
+        function goToProductReview(strURL,hasPortalUser){
+            //alert(strURL);
+            //alert(hasPortalUser);
+           // parent.location.href=strURL;
+                let encodeURI = '';
+                let sUrl = strURL;
+
+                if (hasPortalUser) {
+                    encodeURI = '/s/sfdcpage/' + encodeURIComponent(sUrl);
+                } else {
+                    encodeURI = sUrl;
+                }
+                parent.location.href = encodeURI;
+        }
+        
+    </script>
+    <c:UserProfileDetail />
+    <apex:actionStatus id="status">
+        <apex:facet name="start">
+            <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.65; z-index: 1000; background-color: black;">
+                &nbsp;
+            </div>
+            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 45%">
+                <!-- <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;"> -->
+                <img src="{!URLFOR($Resource.Loading)}" style="float: left; margin: 8px; width: 85px; width: 85px;" />
+                <!-- <img src="/img/slds_spinner_brand.gif" style="float: left; margin: 8px;" /> -->
+                <!-- <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span> -->
+                <!-- </div> -->
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    <apex:form id="theTabPanel">
+        <!-- <apex:pageMessages id="pageMessages"></apex:pageMessages>     -->
+        <!-- <apex:tabPanel switchType="client" id="theTabPanel"> -->
+            <!-- <apex:tab label="Sizing and Configuration" name="Configuration" id="configTab"> -->
+                <apex:actionRegion >
+                <apex:pageMessages id="pageMessages"></apex:pageMessages>
+                <apex:pageBlock id="pbTabOne">
+
+                    <div style="padding-bottom:20px;height:80px;">
+                     
+                        <div id="notifyToast" class="slds-notify_container slds-is-relative" style="display:none;width:auto;left:25%;">
+                            <div class="slds-notify slds-notify_toast slds-theme_warning" role="status">
+                                <div class="slds-notify__content">
+                                <h2 class="slds-text-heading_small" style="font-weight:100" id="toastMsgText">Unsaved Changes.</h2>
+                                </div>
+                            </div>
+                        </div>
+                         
+                          
+                    
+
+                    <apex:commandButton styleClass="slds-button_outline-brand" 
+                                        value="Return to Quote"
+                                        style="font-weight:bold;float:left;margin-top: 20px;"
+                                        rendered="{!bShowReturnToProductSelectionButton}"
+                                        oncomplete="goBackQLI('{!strURL}');"
+                                        action="{!goBack}" >
+                                        </apex:commandButton>
+
+                        <apex:commandButton styleClass="slds-button_brand" 
+                                             value="{!editModeLable}" 
+                                             action="{!EnableEditMode}"
+                                             style="font-weight:bold;float:right;margin-top: 20px;" 
+                                             reRender="theTabPanel" 
+                                             oncomplete="openHolderReference('{!strURL}');" 
+                                             rendered="{!bShowEditButton}">
+                        </apex:commandButton>
+
+                        <apex:commandButton styleClass="slds-button_brand" 
+                                             value="To Product Review" 
+                                             action="{!navigateToProductReview}"
+                                             style="font-weight:bold;float:right;margin-top: 20px;" 
+                                             oncomplete="goToProductReview('{!strURL}' , {!hasPortalUser});" 
+                                             rendered="{!conHolder.Finish_Configuration__c}">
+                        </apex:commandButton>
+                        
+                        </div>
+        
+                        <div style="float:none;">&nbsp;</div>
+                    
+                       <apex:pageBlock >
+                        <apex:pageBlockSection id="pDetails" title="Rupture Disc Specification">                                
+                            
+                            <apex:selectList disabled="{!disableButton}" value="{!holderSize}" label="Size" size="1" multiselect="false">
+                                <apex:actionSupport event="onchange" action="{!handleSZCChange}" reRender="RDProductPciklistId, pSelection, seatFieldId" status="status"
+                                 oncomplete="addMandatorySign();RuptureDiscSpecificationChange()" />
+                                <apex:selectOptions value="{!sizeOptions}"/>
+                            </apex:selectList>
+                            <apex:selectList disabled="{!disableButton}" value="{!ruptureDiscPr}" label="Rupture Disc Product" size="1" multiselect="false" id="RDProductPciklistId">
+                                <apex:actionSupport event="onchange" action="{!handleRDProductChange}" reRender="seatFieldId, pSelection" status="status" 
+                                oncomplete="addMandatorySign();RuptureDiscSpecificationChange()" />
+                                <apex:selectOptions value="{!ptcOptions}"/>
+                            </apex:selectList>
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedSeat}" label="Seat" size="1" multiselect="false" id="seatFieldId">
+                                <apex:actionSupport event="onchange" action="{!handleSeatChange}" reRender="pSelection" status="status" oncomplete="addMandatorySign();RuptureDiscSpecificationChange()" />
+                                <apex:selectOptions value="{!seatOptions}"/>
+                            </apex:selectList>
+                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                            
+                            <apex:inputField styleClass="nonegative  HLPTXT_Rupture_Disc_Burst_Pressure"
+                             html-min="0"
+                             onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode <= 46)" 
+                             value="{!conHolder.Rupture_Disc_Burst_Pressure__c}" 
+                             id="rDiscBrustPressureId" 
+                             onchange="removeTrailingeros(this);RuptureDiscSpecificationChange()"
+                              onblur="validatePressureInput(this)" rendered="{!!disableButton}" >
+                            </apex:inputField>
+
+                            <apex:outputField value="{!conHolder.Rupture_Disc_Burst_Pressure__c}"  rendered="{!disableButton}"/>
+
+
+                            <apex:inputField value="{!conHolder.Rupture_Disc_Burst_Pressure_Units__c}" 
+                            onchange="RuptureDiscSpecificationChange();" rendered="{!!disableButton}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Rupture_Disc_Burst_Pressure_Units__c}"  rendered="{!disableButton}"/>
+
+                            <apex:inputField html-min="0" styleClass=" HLPTXT_Rupture_Disc_Burst_Temperature" 
+                            onkeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode <= 46)" 
+                            value="{!conHolder.Rupture_Disc_Burst_Temperature__c}"
+                            id="rDiscBrustTemperatureId"
+                            onchange="removeTrailingeros(this);RuptureDiscSpecificationChange();"
+                            rendered="{!!disableButton}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Rupture_Disc_Burst_Temperature__c}"  rendered="{!disableButton}"/>
+
+                            
+                            <apex:inputField value="{!conHolder.Rupture_Disc_Burst_Temperature_Units__c}"
+                             onchange="RuptureDiscSpecificationChange();"
+                             rendered="{!!disableButton}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Rupture_Disc_Burst_Temperature_Units__c}" rendered="{!disableButton}"/>
+                        </apex:pageBlockSection>
+                        <div align="center" draggable="false" >   
+                        <!--<apex:pageBlockButtons location="bottom" styleClass="btn_first" >-->
+                            <apex:commandButton oncomplete="checkErrorDuringSubmit();onRDSpecifictaionComplete(this);" 
+                            action="{!saveRuptureDiscSpecification}" 
+                            rendered="{!!disableButton}"
+                            value="Save & Continue" status="status" 
+                            reRender="Certifications,pSelection, pageMessages, pDetails,pbTabOne"
+                            styleClass="slds-button_brand"
+                            />
+                       <!-- </apex:pageBlockButtons>-->
+                        </div>
+                       </apex:pageBlock>
+                    <apex:outputPanel id="secB">
+                       <apex:pageBlock onmouseover="onMouseInCertifications()">
+                        <apex:pageBlockSection id="Certifications" title="Certifications" >
+                            <apex:inputField value="{!conHolder.ASME_Section_VIII__c}" styleClass="asme_section_viii"
+                             onchange="CertificationsChange(); validateCertificateCSAMarks();"
+                               label="ASME Section VIII"
+                               rendered="{!!disableButton}"></apex:inputField>
+                            <apex:outputField label="ASME Section VIII" value="{!conHolder.ASME_Section_VIII__c}" rendered="{!disableButton}"/>
+
+                            <apex:inputField value="{!conHolder.CSA_Markings__c}" styleClass="csa_markings"
+                             onchange="CertificationsChange();validateCertificateCSAMarks();"
+                              label="CSA Markings"
+                              rendered="{!!disableButton}">
+                            </apex:inputField>
+                            <apex:outputField label="CSA Markings" value="{!conHolder.CSA_Markings__c}" rendered="{!disableButton}"/>
+
+                            <apex:inputField value="{!conHolder.ATEX_Certificate__c}" rendered="{!!disableButton}">
+                                <apex:actionSupport event="onchange" reRender="secB" oncomplete="addMandatorySign();CertificationsChange();"  />
+                            </apex:inputField>
+
+                            <apex:outputField value="{!conHolder.ATEX_Certificate__c}" rendered="{!disableButton}"/>
+
+                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                            
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.Gas_Group__c}" rendered="{! AND((if(conHolder.ATEX_Certificate__c==true,true,false)) ,!disableButton) }"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Gas_Group__c}" rendered="{! AND((if(conHolder.ATEX_Certificate__c==true,true,false)) , disableButton) }"/>
+
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.Zone_0_2__c}"  rendered="{! AND((if(conHolder.ATEX_Certificate__c==true,true,false)) ,!disableButton)}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Zone_0_2__c}" rendered="{! AND((if(conHolder.ATEX_Certificate__c==true,true,false)) , disableButton)}"/>
+
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.GOST_CUTR_Compliance__c}" rendered="{!!disableButton}" label="GOST / CUTR Compliance"></apex:inputField>
+                            <apex:outputField value="{!conHolder.GOST_CUTR_Compliance__c}" label="GOST / CUTR Compliance" rendered="{!disableButton}"/>
+
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.CE_PED_Compliance__c}" rendered="{!!disableButton}" label="CE & PED Compliance"></apex:inputField>
+                            <apex:outputField value="{!conHolder.CE_PED_Compliance__c}" label="CE & PED Compliance" rendered="{!disableButton}"/>
+
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.KOSHA_Compliance__c}" rendered="{!!disableButton}" label="KOSHA Compliance"></apex:inputField>
+                            <apex:outputField value="{!conHolder.KOSHA_Compliance__c}" label="KOSHA Compliance" rendered="{!disableButton}"/>
+
+                            <apex:inputField onchange="CertificationsChange();" value="{!conHolder.NACE_Compliance__c}" rendered="{!!disableButton}" label="NACE Compliance"></apex:inputField>
+                            <apex:outputField value="{!conHolder.NACE_Compliance__c}" label="NACE Compliance" rendered="{!disableButton}"/>
+                            <!-- <apex:selectRadio value="{!conHolder.NACE_Compliance__c}">
+                                <apex:selectOptions value="{!NACEComplianceOptions}"></apex:selectOptions>
+                            </apex:selectRadio> -->
+                            <apex:inputField rendered="{!!disableButton}" onchange="CertificationsChange();" value="{!conHolder.X3A_Sanitary_Standards__c}" label="3A Sanitary Standards"></apex:inputField>
+                            <apex:outputField value="{!conHolder.X3A_Sanitary_Standards__c}" label="3A Sanitary Standards" rendered="{!disableButton}"/>
+
+                            <apex:inputField rendered="{!!disableButton}" onchange="CertificationsChange();" value="{!conHolder.China_Manufacturing_License__c}" label="China Manufacturing License"></apex:inputField>
+                            <apex:outputField value="{!conHolder.China_Manufacturing_License__c}" label="China Manufacturing License" rendered="{!disableButton}"/>
+                            <!-- <apex:selectRadio value="{!conHolder.China_Manufacturing_License__c}">
+                                <apex:selectOptions value="{!ChinaManufacturingLicenseOptions}"></apex:selectOptions>
+                            </apex:selectRadio> -->
+                        </apex:pageBlockSection>
+                        <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}">-->
+                            <div align="center" draggable="false" >
+                            <apex:commandButton styleClass="slds-button_brand"
+                            oncomplete="checkErrorDuringSubmit();onCertificationsComplete(this)"  
+                            action="{!saveCertifications}" value="Save & Continue" rendered="{!!disableButton}"
+                             status="status" reRender="pSelection, pageMessages,pbTabOne"/>
+                            </div>
+                        <!--</apex:pageBlockButtons>-->
+                        </apex:pageBlock>
+                     </apex:outputPanel>
+                    <apex:pageBlock onmouseover="onMouseInProductSelection()">
+                        <div class="message" id="msgValidation_prodSecMand" style="display: none; background-color: rgb(194, 57, 52)!important" role="alert">
+                            <div class="messageText">
+                                <img alt="ERROR" class="msgIcon" src="/s.gif" title="ERROR" style="font-weight: bold; margin-right: 5px !important;" />
+                                <span id="msgCont_prodSecMand" style="color:#fff">Error: Please enter all the mandatory fields</span>
+                            </div>
+                        </div>
+                        
+                        <apex:pageBlockSection id="pSelection" title="Product Selection">
+                            <!--
+                            <apex:pageBlockSectionItem >
+                                <div style="overflow: hidden;">
+                                    <p style="float: left; color: red; font-size: large; font-weight: bolder; margin-top: -5px;">'*'&nbsp; </p>
+                                    <p style="float: left;"> <i>Indicates Required Components</i></p>
+                                </div>
+                            </apex:pageBlockSectionItem>
+							-->
+                            
+                            <!-- <apex:inputField value="{!conHolder.Brand__c}" label="Brand"></apex:inputField> Backend value -->
+                            <apex:inputField rendered="{!!disableButton}" onchange="ProductSelectionChange()" styleClass="prodSecMand cust_required"  value="{!conHolder.Size_Unit__c}" label="Size Units"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Size_Unit__c}" label="Size Units" rendered="{!disableButton}"/>
+
+                            <!--<apex:inputField  value="{!conHolder.Size__c}" label="Size" id="size22" html-disabled="true" rendered="{!NOT(OR(ISNULL(holderSize),ISBLANK(holderSize)))}"></apex:inputField>
+							-->
+                            <!-- The below line is added by Ashim and on the above line just added display:none so that it doesn't break any system flow -->
+                            <apex:outputText value="{!sizeOptionsMap[conHolder.Size__c]}" label="Size" styleClass="output_txt_fld" id="size22_tmp" html-disabled="true" rendered="{!NOT(OR(ISNULL(holderSize),ISBLANK(holderSize)))}"></apex:outputText>
+                            
+                            <!-- <apex:selectList value="{!size2}" label="Size" size="1" multiselect="false" rendered="{!ISNULL(holderSize)}">
+                                <apex:actionSupport event="onchange" action="{!handleSZC2Change}" reRender="pSelection" oncomplete="addMandatorySign();" />
+                                <apex:selectOptions value="{!size2Options}"/>
+                            </apex:selectList> -->
+                            <!-- <script>
+                                document.getElementById("{!$Component.BrnadPicklist}").hidden=true;
+                            </script> -->
+                            <!-- <apex:inputField styleClass="prodSecMand cust_required" value="{!conHolder.Brand_Dependent_Size__c}"  id="BrnadSizePicklist" rendered="{!ISNULL(holderSize)}">
+                                <apex:actionSupport event="onchange" action="{!handleSZC2Change}" reRender="pSelection" status="status" oncomplete="addMandatorySign();" />
+                            </apex:inputField> -->
+                            <apex:selectList disabled="{!disableButton}" styleClass="prodSecMand cust_required" value="{!size2}" label="Size" size="1" multiselect="false" id="BrnadSizePicklist" rendered="{!ISNULL(holderSize)}">
+                                <apex:actionSupport event="onchange" action="{!handleSZC2Change}" reRender="pSelection" status="status" oncomplete="addMandatorySign();ProductSelectionChange()" />
+                                <apex:selectOptions value="{!brandDependentSizeOptions}"/>
+                            </apex:selectList>
+                            <!-- <apex:inputField value="{!conHolder.Size__c}" label="Size Pick" id="size3" rendered="{!ISNULL(holderSize)}"></apex:inputField> -->
+
+                            <apex:selectList disabled="{!disableButton}" styleClass="prodSecMand cust_required" value="{!selectedHolderProduct}" label="Holder Product" size="1" multiselect="false">
+                                <apex:actionSupport event="onchange" action="{!handleHolderProductChange}" reRender="pSelection" status="status" oncomplete="addMandatorySign();ProductSelectionChange()" />
+                                <apex:selectOptions value="{!holderProductOptions}"/>
+                            </apex:selectList>
+                            <!-- <apex:inputField value="{!conHolder.Holder_Product__c}" label="Holder Product"></apex:inputField> -->
+
+                            <!-- <apex:inputText value="{!selectedBoltingClassReadOnly}" label="Bolting Class" disabled="true" rendered="{!NOT(OR(ISNULL(selectedSeat),ISBLANK(selectedSeat)))}"></apex:inputText> -->
+                            <apex:selectList disabled="{!disableButton}" styleClass="prodSecMand cust_required" value="{!selectedBotingClass}" label="Bolting Class" size="1" multiselect="false">
+                                <!-- rendered="{!OR( ISNULL(selectedSeat), ISBLANK(selectedSeat))}" -->
+                                <apex:actionSupport event="onchange" action="{!handleSTC2Change}" reRender="pSelection" status="status" oncomplete="addMandatorySign();ProductSelectionChange()" />
+                                <apex:selectOptions value="{!boltingClassOptions}"/>
+                            </apex:selectList>
+
+                            <!-- <apex:inputField value="{!conHolder.Bolting_Class__c}" label="Bolting Class"></apex:inputField> -->
+                            <!-- <apex:inputField value="{!conHolder.Inlet_Connection__c}" label="Inlet Connection"></apex:inputField> -->
+                            <apex:selectList disabled="{!disableButton}" styleClass="prodSecMand1 cust_required" value="{!selectedInletConnection}" label="Inlet Connection" size="1" multiselect="false">
+                                <apex:actionSupport oncomplete="ProductSelectionChange();addMandatorySign();" event="onchange" action="{!handleInletChange}" reRender="pSelection" status="status"/>
+                                <apex:selectOptions value="{!inletConnectionOptions}"/>
+                            </apex:selectList>
+
+                            <!-- <apex:inputField value="{!conHolder.Outlet_Connection__c}" label="Outlet Connection"></apex:inputField> -->
+                            <apex:selectList disabled="{!disableButton}" styleClass="prodSecMand1 cust_required" value="{!selectedOutletConnection}" label="Outlet Connection" size="1" multiselect="false">
+                                <apex:actionSupport event="onchange" action="{!handleOutletChange}" reRender="pSelection" status="status" oncomplete="addMandatorySign();ProductSelectionChange()" />
+                                <apex:selectOptions value="{!outletConnectionOptions}"/>
+                            </apex:selectList>
+
+                            <apex:inputField rendered="{!!disableButton}" onchange="ProductSelectionChange()" styleClass="prodSecMand cust_required" value="{!conHolder.Holder_Max_Pressure_Units__c}" label="Holder Max Pressure Units"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Holder_Max_Pressure_Units__c}" label="Holder Max Pressure Units" rendered="{!disableButton}"/>
+                            <!-- <apex:inputField value="{!conHolder.Holder_Max_Pressure__c}" label="Holder Max Pressure"></apex:inputField> -->
+                            <!-- <apex:inputField value="{!conHolder.Converted_Holder_Max_Pressure__c}" label="Converted Holder Max Pressure">
+                            </apex:inputField>                         -->
+
+                            <apex:inputField onchange="ProductSelectionChange()" 
+                                             styleClass="prodSecMand cust_required prodSecMandZero"
+                                             value="{!conHolder.Quantity__c}"
+                                             rendered="{!!disableButton}"
+                                             onkeypress="return isNumberKeyQ(event,this)">
+                            </apex:inputField>
+                           <apex:outputField value="{!conHolder.Quantity__c}" rendered="{!disableButton}"/>
+
+                            <apex:outputPanel style="display:none;">
+                                <apex:inputField onchange="ProductSelectionChange()"
+                                                 value="{!conHolder.Brand__c}"
+                                                 id="BrnadPicklist"
+                                                 rendered="{!AND(!disableButton , ISNULL(holderSize))}" />
+                               <apex:outputField value="{!conHolder.Brand__c}" rendered="{!AND(disableButton , ISNULL(holderSize))}"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSection>
+                        <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}">-->
+                            <div align="center" draggable="false" >
+                            <apex:commandButton value="Save & Continue"
+                            rendered="{!!disableButton}"
+                            styleClass="slds-button_brand"
+                            status="status" 
+                            onclick="return validateMandatoryFields('prodSecMand');" 
+                            rerender="cmoBlock, pageMessages,pbTabOne" />
+                            </div>
+                            <apex:inputHidden value="{!conHolder.Size__c}" id="size22" rendered="{!NOT(OR(ISNULL(holderSize),ISBLANK(holderSize)))}" />
+							
+                            <apex:actionFunction oncomplete="addMandatorySign(); checkErrorDuringSubmit();onProductSelectionComplete(this)" name="saveProdSection" status="status" action="{!saveProductSelection}" rerender="cmoBlock, pageMessages,pbTabOne"/>
+                            
+                      <!--  </apex:pageBlockButtons>-->
+                    </apex:pageBlock>
+
+                    <apex:pageBlock title="Component Material and Option Selection" id="cmoBlock" onmouseover="onMouseComponentMaterialAndOptionSelection()">
+                        <!-- {!outletSetcionFlag} -->
+                        <!-- ***************** Companion Flange Section ***************** -->
+                        <apex:pageBlockSection id="cfSelection" title="Companion Flange" rendered="{!CmpFlangeSectionFlag}">
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedCompanionFlangeMaterial}" label="Companion Flange Material" size="1" multiselect="false">
+                                <!-- rendered="{!isRequiredCmpFlange}" -->
+                                <apex:actionSupport event="onchange" action="{!handleCompanionFlangeMaterialChange}"
+                                 reRender="cfSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange();" />
+                                <apex:selectOptions value="{!companionFlangeMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Companion_Flange_Material__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedBore}" label="Bore" size="1" multiselect="false" rendered="{!AND(isCompanionFlangeMaterialSelected, boreFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleboreOptionsChange}" reRender="cfSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange();" />
+                                <apex:selectOptions value="{!boreOptions}"/>
+                            </apex:selectList>
+                            <!-- Bore__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedjackscrewDrilling}" label="Jackscrew Drilling" size="1" multiselect="false"
+                                rendered="{!AND(isCompanionFlangeMaterialSelected, jackscrewDrillingFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handlejackscrewDrillingChange}" reRender="cfSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange();" />
+                                <apex:selectOptions value="{!jackscrewDrillingOptions}"/>
+                            </apex:selectList>
+                            <!-- Jackscrew_Drilling__c -->
+                        </apex:pageBlockSection>
+                        <div align="center" draggable="false" style="margin-bottom: 15px;">  
+                            <apex:outputPanel layout="none" rendered="{! and(isCompanionFlangeMaterialSelected, CmpFlangeSectionFlag) }">
+                                <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" value="Clear" action="{!clearCFMSection}" reRender="cfSelection,pageMessages" status="status"/>
+                            </apex:outputPanel>
+                        </div>
+
+                        <!-- ***************** Gasket Section ***************** -->
+                        <apex:pageBlockSection id="gsSection" title="Gasket" rendered="{!gasketSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedGasketMaterial}" label="Gasket Material" size="1" multiselect="false">
+                                <!-- rendered="{!isRequiredGasket}" -->
+                                <!-- <apex:actionSupport event="onchange" action="{!handleGasketMaterialChange}" reRender="cmoBlock" status="status"/> -->
+                                <apex:selectOptions value="{!gasketMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Gasket_Material__c -->
+                        </apex:pageBlockSection>
+
+                        <!-- ***************** Spacer Ring Section ***************** -->
+                        <apex:pageBlockSection id="sprSelection" title="Spacer Ring" rendered="{!spacerRingSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedSpacerRing}" label="Spacer Ring Material" size="1" multiselect="false">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleSpacerRingChange}" reRender="cmoBlock" status="status"/> -->
+                                <apex:selectOptions value="{!spacerRingOptions}"/>
+                            </apex:selectList>
+                            <!-- Spacer_Ring_Material__c -->
+                        </apex:pageBlockSection>
+
+                        <!-- ***************** Outlet Section ***************** -->
+                        <apex:pageBlockSection id="oSelection" title="Outlet" rendered="{!outletSetcionFlag}">
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedOutletMaterial}" label="Outlet Material" size="1" multiselect="false">
+                                <apex:actionSupport event="onchange" action="{!handleOutletMaterialChange}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!outletMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Outlet_Material__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedKnifebladeMaterial}" label="Knifeblade Material" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, isKnifebladeMaterialFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleKnifebladeMaterialChange}" reRender="cmoBlock"
+                                 status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!KnifebladeMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Knifeblade_Material__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedGaugeTap}" label="Gauge Tap" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, gaugeTapFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleGaugeTapChange}" reRender="cmoBlock" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!gaugeTapOptions}"/>
+                            </apex:selectList>
+                            <!-- Gauge_Tap__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedEyeboltsOutlet}" label="Eyebolts Outlet" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, eyeboltsOutletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleEyeboltsOutletChange}" reRender="cmoBlock" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!eyeboltsOutletOptions}"/>
+                            </apex:selectList>
+                            <!-- Eyebolts_Outlet__c -->
+
+                            <apex:outputText label="Eyebolt Material Outlet" value="{!eyeboltMaterialOutlet}" id="eyeboltMaterialOutletId"
+                                rendered="{!NOT(ISNULL(eyeboltMaterialOutlet))}">
+                            </apex:outputText>
+
+                            <!-- How to handle "Eyebolt Material Outlet" -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedFacing}" label="Facing" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, facingFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleFacingChange}" reRender="cmoBlock" status="status"
+                                oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!facingOptions}"/>
+                            </apex:selectList>
+                            <!-- Facing_Outlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedCoating}" label="Coating" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, CoatingFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleCoatingChange}" reRender="cmoBlock" status="status" 
+                                oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!coatingOptions}"/>
+                            </apex:selectList>
+                            <!-- Coating__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedLining}" label="Lining" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, LiningFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleLiningChange}" reRender="cmoBlock" status="status" 
+                                oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!LiningOptions}"/>
+                            </apex:selectList>
+                            <!-- Lining__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedJackscrewDrilling2}" label="Jackscrew Drilling" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, jackscrewDrillingFlag2)}">
+                                <apex:actionSupport event="onchange" action="{!handleJackscrewDrilling2Change}" reRender="cmoBlock" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!jackscrewDrillingOptions2}"/>
+                            </apex:selectList>
+                            <!-- Jackscrew_Drilling2__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedBore2}" label="Bore" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, bore2Flag)}">
+                                <apex:actionSupport event="onchange" action="{!handleBore2Change}" reRender="cmoBlock" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!bore2Options}"/>
+                            </apex:selectList>
+                            <!-- Bore2__c -->
+
+                            <!-- <apex:pageBlockSectionItem rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected)}"></apex:pageBlockSectionItem> -->
+                            <!-- <apex:pageBlockTable rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected)}" value="{!dummyList}" var="test">
+                                <apex:facet name="header">Table 1</apex:facet>
+                            </apex:pageBlockTable> -->
+
+
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1" id="gaugeSectionHeaderId" rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected)}">
+                            <apex:pageBlockTable value="{!dummyList}" var="test">
+                                <apex:facet name="header">Gauge Related Section</apex:facet>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="2" id="gaugeRelatedFieldSection" rendered="{!isOutletMaterialSelected}">
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedNipple2}" label="Nipple" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, nipple2Flag)}">
+                                <apex:actionSupport event="onchange" action="{!handleNipple2Change}" 
+                                reRender="oSelection, gaugeRelatedFieldSection" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!nipple2Options}"/>
+                            </apex:selectList>
+                            <!-- Nipple2__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedTee2}" label="Tee" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, tee2Flag)}">
+                                <apex:actionSupport event="onchange" action="{!handleTee2Change}" reRender="oSelection, gaugeRelatedFieldSection" 
+                                status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange();" />
+                                <apex:selectOptions value="{!tee2Options}"/>
+                            </apex:selectList>
+                            <!-- Tee2__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange();" value="{!selectedReducingBushing}" label="Reducing Bushing" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, reducingBushingFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleReducingBushingChange}" reRender="oSelection, gaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!reducingBushingOptions}"/>
+                            </apex:selectList>
+                            <!-- Reducing_Bushing__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedExcessFlowValve}" label="Excess Flow Valve" size="1" multiselect="false"
+                                rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, excessFlowValveFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleExcessFlowValveChange}" reRender="pressureGaugeSetId, gaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!excessFlowValveOptions}"/>
+                            </apex:selectList>
+                            <!-- Excess_Flow_Valve__c -->
+
+                                <apex:selectList disabled="{!disableButton}" value="{!selectedUOMPressRange}" label="Select UOM/ Press Range" size="1" multiselect="false"
+                                    rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, pressureGaugeFlag)}">
+                                    <apex:actionSupport event="onchange" action="{!handleUOMPressRangeChange}" reRender="gaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                    <apex:selectOptions value="{!UOMPressRangeOptions}"/>
+                                </apex:selectList>
+                                <!-- Select_UOM_Press_Range__c -->
+
+                                <apex:selectList disabled="{!disableButton}" value="{!selectedPhysicalProperties}" label="Select Physical Properties" size="1" multiselect="false"
+                                    rendered="{!AND(isselectedUOMPressRange,isOutletMaterialSelected, isGaugeTapSelected, pressureGaugeFlag)}">
+                                    <apex:actionSupport event="onchange" action="{!handlePhysicalPropertiesChange}" reRender="gaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                    <apex:selectOptions value="{!physicalPropertiesOptions}"/>
+                                </apex:selectList>
+                                <!-- Select_Physical_Properties__c -->
+
+                                <apex:selectList disabled="{!disableButton}" value="{!selectedTubeCaseMaterial}" label="Select Tube/ Case Material" size="1" multiselect="false"
+                                    rendered="{!AND(isselectedUOMPressRange, isselectedPhysicalProperties, isOutletMaterialSelected, isGaugeTapSelected, pressureGaugeFlag)}">
+                                    <apex:actionSupport event="onchange" action="{!handleTubeCaseMaterialChange}" reRender="gaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                    <apex:selectOptions value="{!tubeCaseMaterialOptions}"/>
+                                </apex:selectList>
+                                <!-- Select_Tube_Case_Material__c -->
+                                <apex:pageBlockSectionItem rendered="{!AND(isOutletMaterialSelected, isGaugeTapSelected, pressureGaugeFlag)}"></apex:pageBlockSectionItem>
+                                
+                        </apex:pageBlockSection>
+
+                        <div align="center" draggable="false" style="margin-bottom: 15px;" >    
+                            <apex:outputPanel layout="none" rendered="{!and(isOutletMaterialSelected, isOutletMaterialSelected)}">
+                                <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" value="Clear" action="{!clearOutletSection}" reRender="cmoBlock,pageMessages" status="status" oncomplete="addMandatorySign();" />
+                            </apex:outputPanel>
+                            </div>
+
+
+
+                        <!-- ***************** Mid Flange Section ***************** -->
+                        <apex:pageBlockSection id="mfSelection" title="Mid Flange" rendered="{!midFlangeSectionFlag}">
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedMidFlangeMaterial}" label="Mid Flange Material" size="1" multiselect="false">
+                                <!-- rendered="{!midFlangeMaterialFlag}" -->
+                                <apex:actionSupport event="onchange" action="{!handleMidFlangeMaterialChange}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!midFlangeMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Mid_Flange_Material__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedGaugeTap2}" label="Gauge Tap" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, gaugeTap2Flag)}">
+                                <apex:actionSupport event="onchange" action="{!handleGaugeTap2Change}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!gaugeTap2Options}"/>
+                            </apex:selectList>
+                            <!-- Gauge_Tap2__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedEyeboltsDrillingMFLG}" label="Eyebolts Drilling Midflange" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, eyeboltsDrillingMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleEyeboltsDrillingMFLGChange}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!eyeboltsDrillingMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Eyebolts_Drilling_Midflange__c -->
+
+                            <apex:outputText label="Eyebolt Material Midflange" value="{!eyeboltMaterialMDFLG}" id="eyeboltMaterialMDFLGId"
+                                rendered="{!NOT(ISNULL(eyeboltMaterialMDFLG))}">
+                            </apex:outputText>
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedCoatingMFLG}" label="Coating" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, coatingMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleCoatingMFLGChange}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!coatingMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Coating_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedLiningMFLG}" label="Lining" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, liningMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleLiningMFLGChange}" reRender="cmoBlock" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!LiningMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Lining_Mid_Flange__c -->
+
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1" id="gaugeMFLGSectionHeaderId" rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected)}">
+                            <apex:pageBlockTable value="{!dummyList}" var="test">
+                                <apex:facet name="header">Gauge Related Section</apex:facet>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="2" id="midFlangeGaugeRelatedFieldSection" rendered="{!isMidFlangeMaterialSelected}">
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedNippleMFLG}" label="Nipple" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, nippleMFLGFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleNippleMFLGChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!nippleMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- 	Nipple_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedTeeMFLG}" label="Tee" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, teeMFLGFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleTeeMFLGChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!teeMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Tee_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedReducingBushingMFLG}" label="Reducing Bushing" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, reducingBushingMFLGFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleReducingBushingMFLGChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!reducingBushingMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Reducing_Bushing_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedExcessFlowMFLGValve}" label="Excess Flow Valve" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, excessFlowMFLGValveFlag)}">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleExcessFlowMFLGValveChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status"/> -->
+                                <apex:selectOptions value="{!excessFlowMFLGValveOptions}"/>
+                            </apex:selectList>
+                            <!-- 	Excess_Flow_Valve_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedUOMPressMFLGRange}" label="Select UOM/ Press Range" size="1" multiselect="false"
+                                rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, pressureGaugeMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleUOMPressRangeMFLGChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!UOMPressRangeMFLGOptions}"/>
+                            </apex:selectList>
+                            <!-- Select_UOM_Press_Range_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedPhysicalMFLGProperties}" label="Select Physical Properties" size="1" multiselect="false"
+                                rendered="{!AND(isselectedUOMPressMFLGRange, isMidFlangeMaterialSelected, isGaugeTap2Selected, pressureGaugeMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handlePhysicalMFLGPropertiesChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!physicalMFLGPropertiesOptions}"/>
+                            </apex:selectList>
+                            <!-- Select_Physical_Properties_Mid_Flange__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedTubeCaseMFLGMaterial}" label="Select Tube/ Case Material" size="1" multiselect="false"
+                                rendered="{!AND(isselectedUOMPressMFLGRange, isselectedPhysicalMFLGProperties, isMidFlangeMaterialSelected, isGaugeTap2Selected, pressureGaugeMFLGFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleTubeCaseMFLGMaterialChange}" reRender="midFlangeGaugeRelatedFieldSection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!tubeCaseMFLGMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- 	Select_Tube_Case_Material_Mid_Flange__c -->
+                            <apex:pageBlockSectionItem rendered="{!AND(isMidFlangeMaterialSelected, isGaugeTap2Selected, pressureGaugeMFLGFlag)}"></apex:pageBlockSectionItem>
+                           
+                        </apex:pageBlockSection>
+
+                        <div align="center" draggable="false" style="margin-bottom: 15px;">  
+                            <apex:outputPanel layout="none" rendered="{!and(isMidFlangeMaterialSelected,isMidFlangeMaterialSelected )}">
+                                <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" value="Clear" action="{!clearMidFlangeSection}" reRender="cmoBlock,pageMessages" status="status"/>
+                            </apex:outputPanel>
+                        </div>
+
+                        <!-- ***************** Nut Section ***************** -->
+                        <apex:pageBlockSection id="nSelection" title="Nut" rendered="{!nutSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedNutMaterial}" label="Nut Material" size="1" multiselect="false">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleNutMaterialChange}" reRender="nSelection" status="status"/> -->
+                                <apex:selectOptions value="{!nutMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Nut_Material__c -->
+                        </apex:pageBlockSection>
+
+                        <!-- ***************** Clamp Section ***************** -->
+                        <apex:pageBlockSection id="clmpSelection" title="Clamp" rendered="{!clampSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedClampMaterial}" label="Clamp Material" size="1" multiselect="false" onchange="ComponentMaterialandOptionSelectionChange()">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleClampMaterialChange}" reRender="nSelection" status="status"/> -->
+                                <apex:selectOptions value="{!clampMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Clamp_Material__c -->
+                        </apex:pageBlockSection>
+
+                        <!-- ***************** Holddown Ring Section ***************** -->
+                        <!-- holddownRingSectionFlag--{holddownRingSectionFlag} -->
+                        <apex:pageBlockSection id="ringSelection" title="Holddown Ring" rendered="{!holddownRingSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedHolddownRingMaterial}" label="Holddown Ring Material" size="1" multiselect="false">
+                                <!-- <apex:actionSupport event="onchange" action="{!handleHolddownRingMaterialChange}" reRender="nSelection" status="status"/> -->
+                                <apex:selectOptions value="{!holddownRingMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Holddown_Ring_Material__c -->
+                        </apex:pageBlockSection>
+
+                        <!-- ***************** Inlet Section ***************** -->
+                        <apex:pageBlockSection id="inletSelection" title="Inlet" rendered="{!inletSectionFlag}">
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedInletMaterial}" label="Inlet Material" size="1" multiselect="false">
+                                <apex:actionSupport event="onchange" action="{!handleInletMaterialChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()"  />
+                                <apex:selectOptions value="{!inletMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Inlet_Material__c -->
+
+                            <apex:selectList value="{!selectedKnifebladeMaterialInlet}" label="Knifeblade Material" id="KnifebladeMaterialInletId" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, knifebladeMaterialInletFlag)}" disabled="{!disableButton}">
+                                <apex:actionSupport event="onchange" action="{!handleKnifebladeMaterialInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!knifebladeMaterialInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Knifeblade_Material_Inlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedGaugeTapInlet}" label="Gauge Tap" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, gaugeTapInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleGaugeTapInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!gaugeTapInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Gauge_Tap_Inlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedEyeboltsDrillingInlet}" label="Eyebolts Drilling" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, eyeboltsDrillingInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleEyeboltsDrillingInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!eyeboltsDrillingInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Eyebolts_Drilling_Inlet__c -->
+
+                            <apex:outputText label="Eyebolt Material Inlet" value="{!eyeboltMaterialInlet}" id="eyeboltMaterialInletId"
+                                rendered="{!NOT(ISNULL(eyeboltMaterialInlet))}">
+                            </apex:outputText>
+
+                            <!-- How to handle "Eyebolt Material Outlet" -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedjHook}" label="J-Hook" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, jHookFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handlejHookChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!jHookOptions}"/>
+                            </apex:selectList>
+                            <!-- J_Hook__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedFacingInlet}" label="Facing" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, facingInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleFacingInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!facingInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Facing_Inlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedCoatingInlet}" label="Coating" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, coatingInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleCoatingInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!coatingInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Coating_Inlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedLiningInlet}" label="Lining" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, liningInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleLiningInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!liningInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Lining_Inlet__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedBoreInlet}" label="Bore" size="1" multiselect="false"
+                                rendered="{!AND(isInletMaterialSelected, boreInletFlag)}">
+                                <apex:actionSupport event="onchange" action="{!handleBoreInletChange}" reRender="inletSelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()" />
+                                <apex:selectOptions value="{!boreInletOptions}"/>
+                            </apex:selectList>
+                            <!-- Bore_Inlet__c -->
+                            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                           
+
+                        </apex:pageBlockSection>
+
+                        <div align="center" draggable="false" style="margin-bottom: 15px;">  
+                            <apex:outputPanel layout="none" rendered="{!and(inletSectionFlag,isInletMaterialSelected)}">
+                                <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" value="Clear" action="{!clearInletSection}" reRender="inletSelection,pageMessages" status="status"/>
+                            </apex:outputPanel>
+                            </div>
+
+                        <!-- ***************** Body Section ***************** -->
+                        <apex:pageBlockSection id="bodySelection" title="Body" rendered="{!bodySectionFlag}">
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedBodyMaterial}" label="Body Material" size="1" multiselect="false">
+                                <!-- rendered="{!bodyMaterialFlag}" -->
+                                <apex:actionSupport event="onchange" action="{!handlebodyMaterialChange}" reRender="bodySelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()"  />
+                                <apex:selectOptions value="{!bodyMaterialOptions}"/>
+                            </apex:selectList>
+                            <!-- Body_Material__c -->
+
+                            <apex:selectList disabled="{!disableButton}" value="{!selectedCoatingBody}" label="Coating" size="1" multiselect="false" rendered="{!isBodyMaterialSelected}">
+                                <!-- rendered="{!coatingBodyFlag}" -->
+                                <apex:actionSupport event="onchange" action="{!handleCoatingBodyChange}" reRender="bodySelection" status="status" oncomplete="addMandatorySign();ComponentMaterialandOptionSelectionChange()"  />
+                                <apex:selectOptions value="{!coatingBodyOptions}"/>
+                            </apex:selectList>
+                            <!-- Coating_Body__c -->
+                           
+                        </apex:pageBlockSection>
+
+                        <div align="center" draggable="false" style="margin-bottom: 15px;">  
+                            <apex:outputPanel layout="none" rendered="{!and(bodySectionFlag,isBodyMaterialSelected)}">
+                                <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" value="Clear" action="{!clearBodySection}" reRender="bodySelection,pageMessages" status="status"/>
+                            </apex:outputPanel>
+
+                            </div>
+
+                        <!-- ***************** Additional Accessories Section ***************** -->
+                        <apex:pageBlockSection id="acSelection" title="Additional Accessories">
+                            <!-- rendered="{!additionalAccessoriesSectionFlag}" -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedStudsandNuts}" label="Studs and Nuts" size="1" multiselect="false"  rendered="{!studsandNutsFlag}">
+                                <!-- required="{!isStudsandNutsRequired}" -->
+                                <!-- <apex:actionSupport event="onchange" action="{!handleStudsandNutsChange}" reRender="acSelection" status="status"/> -->
+                                <apex:selectOptions value="{!studsandNutsOptions}"/>
+                            </apex:selectList>
+                            <!-- Studs_and_Nuts__c -->
+
+                            <apex:selectList disabled="{!disableButton}" onchange="ComponentMaterialandOptionSelectionChange()" value="{!selectedJackscrewsAdditional}" label="Jackscrews" size="1" multiselect="false" rendered="{!jackscrewsAdditionalFlag}">
+                                <!-- required="{!isJackscrewsAdditionalRequired}" -->
+                                <!-- <apex:actionSupport event="onchange" action="{!handleJackscrewsAdditionalChange}" reRender="acSelection" status="status"/> -->
+                                <apex:selectOptions value="{!jackscrewsAdditionalOptions}"/>
+                            </apex:selectList>
+                            <!-- Jackscrews_Additional__c -->
+
+                        </apex:pageBlockSection>
+
+                        <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}">-->
+                            <div align="center" draggable="false" >
+                            <apex:commandButton styleClass="slds-button_brand"
+                             oncomplete="checkErrorDuringSubmit();onComponentMaterialandOptionSelectionComplete(this)" 
+                            action="{!saveComponentMaterialOptionSelection}" value="Save & Continue" 
+                            reRender="pageMessages,pbTabOne" status="status"
+                            rendered="{!!disableButton}"
+                             /></div>
+                        <!--</apex:pageBlockButtons>-->
+
+                    </apex:pageBlock>
+
+                    <apex:pageBlock onmouseover="onMouseCleaningMarkingsandTesting()">
+                        <apex:pageBlockSection id="cmt" title="Cleaning, Markings and Testing">
+                            <apex:inputField rendered="{!!disableButton}" onchange="CleaningMarkingsandTestingChange()" id="FinalAssemblyLocationRequirements" value="{!conHolder.Final_Assembly_Location_Requirements__c}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Final_Assembly_Location_Requirements__c}" rendered="{!disableButton}"/>
+
+                            <apex:inputField rendered="{!!disableButton}" onchange="CleaningMarkingsandTestingChange()" id="MaterialSourcingRequirements" value="{!conHolder.Material_Sourcing_Requirements__c}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Material_Sourcing_Requirements__c}" rendered="{!disableButton}"/>
+
+                            <apex:inputField rendered="{!!disableButton}" onchange="CleaningMarkingsandTestingChange()" value="{!conHolder.Cleaning_Markings__c}" id="cleaningId"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Cleaning_Markings__c}" rendered="{!disableButton}"/>
+
+                            <!-- <apex:inputField value="{!conHolder.Examination_and_Test_Options__c}"></apex:inputField> -->
+                            <apex:inputField rendered="{!!disableButton}" onchange="CleaningMarkingsandTestingChange()" value="{!conHolder.Shell_Testing__c}"></apex:inputField>
+                            <apex:outputField value="{!conHolder.Shell_Testing__c}" rendered="{!disableButton}"/>
+
+                            <apex:inputField rendered="{!!disableButton}" onchange="CleaningMarkingsandTestingChange()" value="{!conHolder.PMI__c}" label="PMI"></apex:inputField>
+                            <apex:outputField value="{!conHolder.PMI__c}" rendered="{!disableButton}"/>
+
+                        </apex:pageBlockSection>
+                        <!--<apex:pageBlockButtons location="bottom" rendered="{!!disableButton}" >-->
+                            <div align="center" draggable="false" >   
+                                   <apex:commandButton rendered="{!!disableButton}"  styleClass="slds-button_brand" onclick="return validateFinishConfig('prodSecMand');" action="{!saveCleaningMarkingsTesting}" value="Finish Configuration" status="status" reRender="pageMessages" />
+                        	</div>
+                            <apex:actionFunction oncomplete="checkErrorDuringSubmit();" name="finishProdConfig" status="status" action="{!saveCleaningMarkingsTesting}" rerender="pageMessages"/>
+
+                        <!--</apex:pageBlockButtons>-->
+                    </apex:pageBlock>
+                    <script type="text/javascript">
+        (function(){
+            var e = document.querySelectorAll('[id$="cleaningId"]')[0];
+            if (e && !e[0].value) {e.remove(0);}
+        })();
+                    
+        </script>
+             <!--        <apex:pageBlock >
+                        <apex:pageBlockSection id="eto" title="Examination and Test Options" >
+                            <apex:inputField value="{!conHolder.Shell_Testing__c}" label="Shell Testing">
+                            </apex:inputField>
+                            <apex:inputField value="{!conHolder.PMI__c}" label="PMI">
+                            </apex:inputField>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockButtons location="bottom" >
+                            <apex:commandButton action="{!saveSecH}" value="Save & Continue" />
+                        </apex:pageBlockButtons>
+                    </apex:pageBlock>  -->
+                    </apex:pageBlock>
+                    </apex:actionRegion>
+            <!-- </apex:tab> -->
+        <!-- </apex:tabPanel> -->
+
+    </apex:form>
+    
+    <apex:repeat value="{!HoldersFieldHelpText}" var="key">
+        <input type="hidden" id="{!key}" value="{!HoldersFieldHelpText[key]}" />
+    </apex:repeat>
+    
+</apex:page>

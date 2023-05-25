@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sec1dFlow_Rate_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(Flow_Rate__c )
+)&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Process_Parameters_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Flow Rate : Please Enter a value</errorMessage>
+</ValidationRule>

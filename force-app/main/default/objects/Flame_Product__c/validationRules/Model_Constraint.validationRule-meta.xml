@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(Model__c ),
+Product_selection_flag__c=true
+)</errorConditionFormula>
+    <errorDisplayField>Model__c</errorDisplayField>
+    <errorMessage>Model with Connection and Element Sizes: Please Select any one of the following</errorMessage>
+</ValidationRule>

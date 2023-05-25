@@ -1,0 +1,11 @@
+<apex:component >
+    <apex:attribute name="myValue" description="This is the value for the component."
+                    type="List" required="true"/>
+     <apex:attribute name="objName" description="This is the value for the component."
+                    type="sObject" required="true"/>
+    <apex:repeat value="{!myValue}" var="FieldName" >
+            <apex:outputLabel value="{!FieldName}" />
+            <apex:inputField value="{!objName['PTC__C']}" />
+    </apex:repeat>
+    
+</apex:component>

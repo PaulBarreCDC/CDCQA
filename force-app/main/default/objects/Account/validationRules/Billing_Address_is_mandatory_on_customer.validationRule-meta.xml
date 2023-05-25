@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Address_is_mandatory_on_customer</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordType.Name = &apos;Customer Account&apos;,
+(ISBLANK(BillingCity) || ISBLANK(BillingStreet) || ISBLANK(BillingCountry))
+) &amp;&amp; NOT(OR($Profile.Name = &quot;System Administrator&quot;, $Profile.Name = &quot;CDC Standard User&quot; ))</errorConditionFormula>
+    <errorDisplayField>BillingStreet</errorDisplayField>
+    <errorMessage>Please provide complete billing address. Street, City, State (if applicable), Country and Postal Code are mandatory</errorMessage>
+</ValidationRule>

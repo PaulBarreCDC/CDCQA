@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>GuidlineSeq__c</columns>
+    <columns>ATEX__c</columns>
+    <columns>CUTR__c</columns>
+    <columns>CSA__c</columns>
+    <columns>XRAY__c</columns>
+    <columns>PMI__c</columns>
+    <columns>Operation__c</columns>
+    <columns>Description__c</columns>
+    <columns>Text__c</columns>
+    <columns>Type__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

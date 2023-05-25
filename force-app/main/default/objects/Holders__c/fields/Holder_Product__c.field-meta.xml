@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Holder_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Holder Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CAL-VAC Insert</fullName>
+                <default>false</default>
+                <label>CAL-VAC Insert</label>
+            </value>
+            <value>
+                <fullName>CAL-VAC Sanitary Fitting</fullName>
+                <default>false</default>
+                <label>CAL-VAC Sanitary Fitting</label>
+            </value>
+            <value>
+                <fullName>Union (UL)</fullName>
+                <default>false</default>
+                <label>Union (UL)</label>
+            </value>
+            <value>
+                <fullName>Clean Sweep (FS) (w/ Spacer Ring)</fullName>
+                <default>false</default>
+                <label>Clean Sweep (FS) (w/ Spacer Ring)</label>
+            </value>
+            <value>
+                <fullName>Clean Sweep (FS) (W/O spacer ring)</fullName>
+                <default>false</default>
+                <label>Clean Sweep (FS) (W/O spacer ring)</label>
+            </value>
+            <value>
+                <fullName>Clean Sweep (LL)</fullName>
+                <default>false</default>
+                <label>Clean Sweep (LL)</label>
+            </value>
+            <value>
+                <fullName>UNISERT Double Disc Holder</fullName>
+                <default>false</default>
+                <label>UNISERT Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>7I Insert (LL) Double Disc Holder</fullName>
+                <default>false</default>
+                <label>7I Insert (LL) Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>RHI Insert</fullName>
+                <default>false</default>
+                <label>RHI Insert</label>
+            </value>
+            <value>
+                <fullName>UNISERT</fullName>
+                <default>false</default>
+                <label>UNISERT</label>
+            </value>
+            <value>
+                <fullName>7I Insert (HL)</fullName>
+                <default>false</default>
+                <label>7I Insert (HL)</label>
+            </value>
+            <value>
+                <fullName>Bolted (LL)</fullName>
+                <default>false</default>
+                <label>Bolted (LL)</label>
+            </value>
+            <value>
+                <fullName>7I Insert (LL)</fullName>
+                <default>false</default>
+                <label>7I Insert (LL)</label>
+            </value>
+            <value>
+                <fullName>Sanitary Fitting</fullName>
+                <default>false</default>
+                <label>Sanitary Fitting</label>
+            </value>
+            <value>
+                <fullName>Clean Sweep Sanitary Fitting (LL)</fullName>
+                <default>false</default>
+                <label>Clean Sweep Sanitary Fitting (LL)</label>
+            </value>
+            <value>
+                <fullName>RHI Double Disc Holder</fullName>
+                <default>false</default>
+                <label>RHI Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>7I Insert (HL) Double Disc Holder</fullName>
+                <default>false</default>
+                <label>7I Insert (HL) Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>Bolted (HL)</fullName>
+                <default>false</default>
+                <label>Bolted (HL)</label>
+            </value>
+            <value>
+                <fullName>Clean Sweep Sanitary Fitting (FS)</fullName>
+                <default>false</default>
+                <label>Clean Sweep Sanitary Fitting (FS)</label>
+            </value>
+            <value>
+                <fullName>Screw Type</fullName>
+                <default>false</default>
+                <label>Screw Type</label>
+            </value>
+            <value>
+                <fullName>Vent Frame - Circular</fullName>
+                <default>false</default>
+                <label>Vent Frame - Circular</label>
+            </value>
+            <value>
+                <fullName>Vent Frame - Rectangular</fullName>
+                <default>false</default>
+                <label>Vent Frame - Rectangular</label>
+            </value>
+            <value>
+                <fullName>Vent Frame - Square</fullName>
+                <default>false</default>
+                <label>Vent Frame - Square</label>
+            </value>
+            <value>
+                <fullName>FA Insert</fullName>
+                <default>false</default>
+                <label>FA Insert</label>
+            </value>
+            <value>
+                <fullName>RA Insert</fullName>
+                <default>false</default>
+                <label>RA Insert</label>
+            </value>
+            <value>
+                <fullName>HPX-RH Insert</fullName>
+                <default>false</default>
+                <label>HPX-RH Insert</label>
+            </value>
+            <value>
+                <fullName>HPX-PT Pre-Torqued</fullName>
+                <default>false</default>
+                <label>HPX-PT Pre-Torqued</label>
+            </value>
+            <value>
+                <fullName>HPX-PT-RH Pre-Torqued</fullName>
+                <default>false</default>
+                <label>HPX-PT-RH Pre-Torqued</label>
+            </value>
+            <value>
+                <fullName>HPX Insert</fullName>
+                <default>false</default>
+                <label>HPX Insert</label>
+            </value>
+            <value>
+                <fullName>HPX Insert Double Disc Holder</fullName>
+                <default>false</default>
+                <label>HPX Insert Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>KBA Insert</fullName>
+                <default>false</default>
+                <label>KBA Insert</label>
+            </value>
+            <value>
+                <fullName>FA Insert (LaMOT)</fullName>
+                <default>false</default>
+                <label>FA Insert (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Screw Type (LaMOT)</fullName>
+                <default>false</default>
+                <label>Screw Type (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Insert (HL) (LaMOT)</fullName>
+                <default>false</default>
+                <label>Insert (HL) (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Insert (LL) (LaMOT)</fullName>
+                <default>false</default>
+                <label>Insert (LL) (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Bolted (LL) (LaMOT)</fullName>
+                <default>false</default>
+                <label>Bolted (LL) (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Union (UL) (LaMOT w/ Wing Nut)</fullName>
+                <default>false</default>
+                <label>Union (UL) (LaMOT w/ Wing Nut)</label>
+            </value>
+            <value>
+                <fullName>Union (UL) (LaMOT w/ Hex Nut)</fullName>
+                <default>false</default>
+                <label>Union (UL) (LaMOT w/ Hex Nut)</label>
+            </value>
+            <value>
+                <fullName>Bolted (HL) (LaMOT)</fullName>
+                <default>false</default>
+                <label>Bolted (HL) (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LOTRX Insert</fullName>
+                <default>false</default>
+                <label>LOTRX Insert</label>
+            </value>
+            <value>
+                <fullName>Insert (LL) Double Disc Holder (LaMOT)</fullName>
+                <default>false</default>
+                <label>Insert (LL) Double Disc Holder (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>Union (UH) (LaMOT w/ Hex Nut)</fullName>
+                <default>false</default>
+                <label>Union (UH) (LaMOT w/ Hex Nut)</label>
+            </value>
+            <value>
+                <fullName>MX-9T Double Disc Holder</fullName>
+                <default>false</default>
+                <label>MX-9T Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>MX-9T-RH Insert</fullName>
+                <default>false</default>
+                <label>MX-9T-RH Insert</label>
+            </value>
+            <value>
+                <fullName>MX-9T Insert</fullName>
+                <default>false</default>
+                <label>MX-9T Insert</label>
+            </value>
+            <value>
+                <fullName>MINTRX Insert</fullName>
+                <default>false</default>
+                <label>MINTRX Insert</label>
+            </value>
+            <value>
+                <fullName>MINTRX Insert Double Disc Holder</fullName>
+                <default>false</default>
+                <label>MINTRX Insert Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>POS-A-SET Insert</fullName>
+                <default>false</default>
+                <label>POS-A-SET Insert</label>
+            </value>
+            <value>
+                <fullName>POS-A-SET Sanitary Fitting</fullName>
+                <default>false</default>
+                <label>POS-A-SET Sanitary Fitting</label>
+            </value>
+            <value>
+                <fullName>RCS Insert Double Disc Holder</fullName>
+                <default>false</default>
+                <label>RCS Insert Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>RCS Insert</fullName>
+                <default>false</default>
+                <label>RCS Insert</label>
+            </value>
+            <value>
+                <fullName>RCS Pre-Torqued</fullName>
+                <default>false</default>
+                <label>RCS Pre-Torqued</label>
+            </value>
+            <value>
+                <fullName>SRA Screw Type</fullName>
+                <default>false</default>
+                <label>SRA Screw Type</label>
+            </value>
+            <value>
+                <fullName>SRA Union (UF)</fullName>
+                <default>false</default>
+                <label>SRA Union (UF)</label>
+            </value>
+            <value>
+                <fullName>Union (UH)</fullName>
+                <default>false</default>
+                <label>Union (UH)</label>
+            </value>
+            <value>
+                <fullName>STAR X Insert</fullName>
+                <default>false</default>
+                <label>STAR X Insert</label>
+            </value>
+            <value>
+                <fullName>ULTRX Insert Double Disc Holder</fullName>
+                <default>false</default>
+                <label>ULTRX Insert Double Disc Holder</label>
+            </value>
+            <value>
+                <fullName>ULTRX Insert</fullName>
+                <default>false</default>
+                <label>ULTRX Insert</label>
+            </value>
+            <value>
+                <fullName>VRD Insert</fullName>
+                <default>false</default>
+                <label>VRD Insert</label>
+            </value>
+            <value>
+                <fullName>ZAP Insert (w/ Welded-In Blade)</fullName>
+                <default>false</default>
+                <label>ZAP Insert (w/ Welded-In Blade)</label>
+            </value>
+            <value>
+                <fullName>ZAP Insert</fullName>
+                <default>false</default>
+                <label>ZAP Insert</label>
+            </value>
+            <value>
+                <fullName>Unmatched</fullName>
+                <default>false</default>
+                <label>Unmatched</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

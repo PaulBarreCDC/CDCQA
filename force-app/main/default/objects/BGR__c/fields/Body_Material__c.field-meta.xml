@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Body_Material__c</fullName>
+    <externalId>false</externalId>
+    <label>Body Material</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>5</fullName>
+                <default>true</default>
+                <label>316 SS</label>
+            </value>
+            <value>
+                <fullName>Aluminium</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Aluminium</label>
+            </value>
+            <value>
+                <fullName>Metal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Metal</label>
+            </value>
+            <value>
+                <fullName>Steel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Steel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

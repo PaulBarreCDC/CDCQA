@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Custom_Body_Message_2__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( Brand_Order_Type__c , &apos;Groth&apos;),TRUE,
+IF( ISPICKVAL( Brand_Order_Type__c , &apos;LVA&apos;), TRUE, FALSE))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Display Custom Body Message 2</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

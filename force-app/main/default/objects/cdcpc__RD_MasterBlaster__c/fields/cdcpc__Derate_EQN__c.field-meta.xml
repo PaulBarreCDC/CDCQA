@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Derate_EQN__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Derate EQN</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>METL</fullName>
+                <default>false</default>
+                <label>METL</label>
+            </value>
+            <value>
+                <fullName>COMM</fullName>
+                <default>false</default>
+                <label>COMM</label>
+            </value>
+            <value>
+                <fullName>COMA</fullName>
+                <default>false</default>
+                <label>COMA</label>
+            </value>
+            <value>
+                <fullName>COMT</fullName>
+                <default>false</default>
+                <label>COMT</label>
+            </value>
+            <value>
+                <fullName>0</fullName>
+                <default>false</default>
+                <label>0</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

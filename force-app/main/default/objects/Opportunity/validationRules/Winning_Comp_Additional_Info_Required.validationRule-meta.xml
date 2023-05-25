@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Winning_Comp_Additional_Info_Required</fullName>
+    <active>true</active>
+    <description>A value is needed in Winning Comp Additional Info when a user selects &apos;Other&apos; in Winning Competition</description>
+    <errorConditionFormula>ISPICKVAL( Winning_Competition__c , &apos;Other&apos;) &amp;&amp;
+ISBLANK(Winning_Comp_Additional_Info__c)</errorConditionFormula>
+    <errorDisplayField>Winning_Comp_Additional_Info__c</errorDisplayField>
+    <errorMessage>If you select &apos;Other&apos; in Winning Competition, then additional info is needed in Winning Comp Additional Info</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ATEX_certifcation_cannot_be_selected</fullName>
+    <active>true</active>
+    <description>The Atex certification cannot be selected if  CU TR is selected</description>
+    <errorConditionFormula>AND(
+				 ISPICKVAL(Atex__c, &quot;Y&quot;),
+				 Certifications_flag__c = true,
+				 ISPICKVAL(GOST_CU_Tr_010_2011__c, &quot;Y&quot;)
+				)</errorConditionFormula>
+    <errorDisplayField>Atex__c</errorDisplayField>
+    <errorMessage>Please select CU TR or ATEX, both cannot be selected</errorMessage>
+</ValidationRule>

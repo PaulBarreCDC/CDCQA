@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Viscosity_Units_Constraint</fullName>
+    <active>true</active>
+    <description>Viscosity Units is a Mandatory field to be entered by the User based on certain Evaluation Per Selections.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Liquid&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Liquid&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;API Omega Method Subcooled Liquid&quot;), 
+OR( 
+ISBLANK ( TEXT( cdcpc__Viscosity_units__c ) ) 
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Viscosity_units__c</errorDisplayField>
+    <errorMessage>Viscosity units: Please select a value from the drop down</errorMessage>
+</ValidationRule>

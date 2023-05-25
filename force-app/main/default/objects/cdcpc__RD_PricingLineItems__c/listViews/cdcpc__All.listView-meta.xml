@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__Rupture_Disc__c</columns>
+    <columns>cdcpc__QuantityLowerLimit__c</columns>
+    <columns>cdcpc__QuantityUpperLimit__c</columns>
+    <columns>cdcpc__Quantity_Discount_Multiplier__c</columns>
+    <columns>cdcpc__Price_Test_Quantity__c</columns>
+    <columns>cdcpc__Price_Total_Test_Quantity__c</columns>
+    <columns>cdcpc__Price_Total__c</columns>
+    <columns>cdcpc__Price_Discountable_LotPrice__c</columns>
+    <columns>cdcpc__Price_Discountable_TestLotPrice__c</columns>
+    <columns>cdcpc__Price_NonDiscountable_LotCharge__c</columns>
+    <columns>cdcpc__Price_NonDiscountable_LotChargeAdder__c</columns>
+    <columns>cdcpc__Price_NonDiscountable_TestLotCharge__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

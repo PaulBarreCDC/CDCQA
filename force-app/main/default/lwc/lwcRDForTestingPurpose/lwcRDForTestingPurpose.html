@@ -1,0 +1,95 @@
+<template>
+    <div class="slds-scrollable_y">
+        <div class="fxheader slds-p-vertical_large">
+            <lightning-layout horizontal-align="centre" multiple-rows="true" >
+                <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+                    <article class="slds-card" style="margin-top: auto;margin-bottom: auto;">
+                        <div class="slds-grid slds-page-header slds-card__header" style="padding:0;">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                <lightning-icon icon-name="utility:left" alternative-text="" size="xx-small"></lightning-icon>
+                                <button class="slds-button" onclick={navigateToProductView}>Back</button>
+                                </div>
+                                <div class="slds-size_2-of-4 slds-medium-size_1-of-3">
+                                <h3 class="slds-section slds-section__title">
+                                    Rupture Disc
+                                </h3>
+                                </div>
+                            </header>
+                            <div class="slds-einstein-header__actions">
+                                <!-- <lightning-button-stateful label-when-off="Vent Size Calculator" label-when-on="Vent Size Calculator" label-when-hover="Vent Size Calculator" icon-name-when-off="utility:apps" variant="base">
+                                </lightning-button-stateful> -->
+                            </div>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner">
+                            <lightning-layout vertical-align="stretch" multiple-rows="true" class="medium">
+                                <lightning-layout-item flexibility="auto" class="custom-box" style="z-index: 1;width:100%;">
+                                <div class="mycontainer">
+                                    <ul class="progressbarcss">
+                                        <li class="active RELIEFTYPECls" data-id="reliefType" onclick={focusProductNarrowing}>RELIEF TYPE</li>
+                                        <li class="RELIEFPARAMETERSCls" data-id="reliefParameters" onclick={focusProductNarrowing}>RELIEF PARAMETERS</li>
+                                        <li class="SIZINGFLOWAREACls" data-id="sizingFlowArea" onclick={focusProductNarrowing}>SIZING FLOW AREA</li>
+                                        <li class="CERTIFICATIONSCls" data-id="certifications" onclick={focusProductNarrowing}>CERTIFICATIONS</li>
+                                        <li class="PRODUCTNARROWINGcls" data-id="productNarrowing" onclick={focusProductNarrowing}>PRODUCT NARROWING</li>
+                                    </ul>
+                                </div>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </article>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div> 
+        <lightning-layout horizontal-align="center" multiple-rows="true">
+            <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+                <main class="main mainSection" style="padding-top: 110px;">
+                    <div class="section-1">
+                        <article class="slds-card" style="background-color: #fafbfc;">
+                            <div class="slds-grid slds-card__header" style="background-color:white;">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                    <h3 class="slds-section slds-section__title">
+                                        Relief Type
+                                    </h3>
+                                </div>
+                                </header>
+                                <div class="slds-einstein-header__actions">
+                                </div>
+                            </div>
+                            <div class="slds-card__body slds-card__body_inner slds-p-around_medium">
+                                <lightning-layout horizontal-align="spread" multiple-rows="true">
+                                <lightning-layout-item flexibility="grow" size="2" small-device-size="3" medium-device-size="3">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        <lightning-icon icon-name="utility:info" alternative-text="Utility" size="x-small"></lightning-icon>
+                                        Type of Relief Required
+                                    </label>
+                                </lightning-layout-item>
+                                <lightning-layout-item flexibility="grow" size="10" small-device-size="9" medium-device-size="9">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <template for:each={reliefTypeOptions} for:item="item">
+                                            <fieldset key={item.value} style="display: block; float: left;">
+                                                <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input name="radiogroup1" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleReliefTypeSelected}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                </div>
+                                            </fieldset>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </lightning-layout-item>
+                                <lightning-layout-item flexibility="grow" size="4"></lightning-layout-item>
+                                </lightning-layout>
+                            </div>
+                        </article>
+                    </div>
+                </main> 
+            </lightning-layout-item>
+        </lightning-layout>      
+    </div>
+</template>

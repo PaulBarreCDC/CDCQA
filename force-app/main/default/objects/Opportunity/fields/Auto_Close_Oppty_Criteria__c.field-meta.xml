@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto_Close_Oppty_Criteria__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used in Process Builder for Oppty auto closure. For quotes that are old in the system, that we didn&apos;t want to close via auto closure. Used data loader tool to update all Oppty&apos;s to have value of TRUE.
+
+Criteria will look for Oppty&apos;s that are set to FALSE, which will be all net new Opptys</description>
+    <externalId>false</externalId>
+    <label>Auto Close Oppty Criteria</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

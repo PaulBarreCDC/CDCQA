@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Configurator_Configured_Part__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Related RD Configurator Configured Part Record Type</description>
+    <externalId>false</externalId>
+    <label>Rupture Disc Configured Part</label>
+    <referenceTo>Rupture_Disc__c</referenceTo>
+    <relationshipLabel>Rupture_Disc_Configurator_Configured_Part</relationshipLabel>
+    <relationshipName>RuptureDisc</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

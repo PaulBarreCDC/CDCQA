@@ -1,0 +1,2 @@
+CATEGORY_ID__c,Data_Point__c,DATA_TYPE__c,Flag__c,INNER_MAX__c,INNER_MIN__c,INSPECTION_CODE__c,NOMINAL_VALUE__c,NORM_TYPE__c,NumVal1__c,NumVal2__c,Operation_Number__c,OUTER_MAX__c,OUTER_MIN__c,Process_Characteristic__c,SAMPLE_PERCENT__c,SQLKEY__c,TEST_OPERATION_DESC__c,Test_OPNO__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Tool_ID__c
+,8320,Variable,,,,A,[GVRSC1],PRESSURE (INWC),,,8320,[GVRSC1],[VacValveLeakMin],,100,1390,Vacuum Seat Leak Test #1 @ 20 SCFH,8320,1221B Fiberglass,,,,DIGITAL PRESSURE GAGE

@@ -1,0 +1,4 @@
+AssySeat__c,CDC_Ext_ID__c,Desc__c,Flag__c,PartSeat__c,SeatGroup__c,SizeLL__c,SizeUL__c,Sort_Order__c
+D1,10,PN 6 DIN Bolting,,D1,G9,0.5,41,
+FS,24,(FS) Flat Seat,,FS,G3,0,100,
+NA,84,(NA) NovAseptic NA-Connect,,SF,G7,0,100,

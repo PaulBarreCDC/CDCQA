@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>NamespacePrefix</columns>
+    <columns>Active__c</columns>
+    <columns>Change_Order_Option__c</columns>
+    <columns>Change_Type__c</columns>
+    <columns>Field_API__c</columns>
+    <columns>Field_Label__c</columns>
+    <columns>Order__c</columns>
+    <columns>Section_Description__c</columns>
+    <columns>Section_Header__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Agriculture</fullName>
+        <default>false</default>
+        <label>Agriculture</label>
+    </customValue>
+    <customValue>
+        <fullName>Aircraft Braking</fullName>
+        <default>false</default>
+        <label>Aircraft Braking</label>
+    </customValue>
+    <customValue>
+        <fullName>Animal Health</fullName>
+        <default>false</default>
+        <label>Animal Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive</fullName>
+        <default>false</default>
+        <label>Automotive</label>
+    </customValue>
+    <customValue>
+        <fullName>Automotive Batteries</fullName>
+        <default>false</default>
+        <label>Automotive Batteries</label>
+    </customValue>
+    <customValue>
+        <fullName>Biogas</fullName>
+        <default>false</default>
+        <label>Biogas</label>
+    </customValue>
+    <customValue>
+        <fullName>Braking systems</fullName>
+        <default>false</default>
+        <label>Braking systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Compressor equipment/systems</fullName>
+        <default>false</default>
+        <label>Compressor equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Contractor</fullName>
+        <default>false</default>
+        <label>Contractor</label>
+    </customValue>
+    <customValue>
+        <fullName>Cooling/refridgeration/aircon equipment/systems</fullName>
+        <default>false</default>
+        <label>Cooling/refridgeration/aircon equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Dairy</fullName>
+        <default>false</default>
+        <label>Dairy</label>
+    </customValue>
+    <customValue>
+        <fullName>Defense</fullName>
+        <default>false</default>
+        <label>Defense</label>
+    </customValue>
+    <customValue>
+        <fullName>Digesters</fullName>
+        <default>false</default>
+        <label>Digesters</label>
+    </customValue>
+    <customValue>
+        <fullName>Downhole</fullName>
+        <default>false</default>
+        <label>Downhole</label>
+    </customValue>
+    <customValue>
+        <fullName>Down hole oil tools &amp; well testing equipment</fullName>
+        <default>false</default>
+        <label>Down hole oil tools &amp; well testing equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>DSM Chemicals</fullName>
+        <default>false</default>
+        <label>DSM Chemicals</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronics</fullName>
+        <default>false</default>
+        <label>Electronics</label>
+    </customValue>
+    <customValue>
+        <fullName>Fertilizer</fullName>
+        <default>false</default>
+        <label>Fertilizer</label>
+    </customValue>
+    <customValue>
+        <fullName>Filtration equipment/systems</fullName>
+        <default>false</default>
+        <label>Filtration equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Fire Suppression</fullName>
+        <default>false</default>
+        <label>Fire Suppression</label>
+    </customValue>
+    <customValue>
+        <fullName>Flare equipment/systems</fullName>
+        <default>false</default>
+        <label>Flare equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Flotation systems</fullName>
+        <default>false</default>
+        <label>Flotation systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Food and Beverage</fullName>
+        <default>false</default>
+        <label>Food and Beverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Fuel tanks and systems</fullName>
+        <default>false</default>
+        <label>Fuel tanks and systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Gas cylinders/vessels/processing equipment</fullName>
+        <default>false</default>
+        <label>Gas cylinders/vessels/processing equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Geothermal equipment/systems</fullName>
+        <default>false</default>
+        <label>Geothermal equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>GIS Switchgear/electrical transformers</fullName>
+        <default>false</default>
+        <label>GIS Switchgear/electrical transformers</label>
+    </customValue>
+    <customValue>
+        <fullName>High pressure water jetting equipment</fullName>
+        <default>false</default>
+        <label>High pressure water jetting equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Hydraulic equipment/systems</fullName>
+        <default>false</default>
+        <label>Hydraulic equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Hydroelectric Power</fullName>
+        <default>false</default>
+        <label>Hydroelectric Power</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrial Gases</fullName>
+        <default>false</default>
+        <label>Industrial Gases</label>
+    </customValue>
+    <customValue>
+        <fullName>Instrumentation/measurement/control equipment</fullName>
+        <default>false</default>
+        <label>Instrumentation/measurement/control equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>LNG</fullName>
+        <default>false</default>
+        <label>LNG</label>
+    </customValue>
+    <customValue>
+        <fullName>LNG equipment/systems</fullName>
+        <default>false</default>
+        <label>LNG equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical equipment</fullName>
+        <default>false</default>
+        <label>Medical equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Metals and Minerals</fullName>
+        <default>false</default>
+        <label>Metals and Minerals</label>
+    </customValue>
+    <customValue>
+        <fullName>Mixers</fullName>
+        <default>false</default>
+        <label>Mixers</label>
+    </customValue>
+    <customValue>
+        <fullName>MRI Machine</fullName>
+        <default>false</default>
+        <label>MRI Machine</label>
+    </customValue>
+    <customValue>
+        <fullName>Nuclear</fullName>
+        <default>false</default>
+        <label>Nuclear</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (Other OEM)</fullName>
+        <default>false</default>
+        <label>Other (Other OEM)</label>
+    </customValue>
+    <customValue>
+        <fullName>Other (TC)</fullName>
+        <default>false</default>
+        <label>Other (TC)</label>
+    </customValue>
+    <customValue>
+        <fullName>Oxygen systems/breathing apparatus</fullName>
+        <default>false</default>
+        <label>Oxygen systems/breathing apparatus</label>
+    </customValue>
+    <customValue>
+        <fullName>Packaging</fullName>
+        <default>false</default>
+        <label>Packaging</label>
+    </customValue>
+    <customValue>
+        <fullName>Pharmaceutical</fullName>
+        <default>false</default>
+        <label>Pharmaceutical</label>
+    </customValue>
+    <customValue>
+        <fullName>Process modules/skids/equipment/systems</fullName>
+        <default>false</default>
+        <label>Process modules/skids/equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Production machinery</fullName>
+        <default>false</default>
+        <label>Production machinery</label>
+    </customValue>
+    <customValue>
+        <fullName>Pumps and transfer equipment/systems</fullName>
+        <default>false</default>
+        <label>Pumps and transfer equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Rail Car</fullName>
+        <default>false</default>
+        <label>Rail Car</label>
+    </customValue>
+    <customValue>
+        <fullName>Refrigeration</fullName>
+        <default>false</default>
+        <label>Refrigeration</label>
+    </customValue>
+    <customValue>
+        <fullName>Scientific equipment</fullName>
+        <default>false</default>
+        <label>Scientific equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Semiconductor</fullName>
+        <default>false</default>
+        <label>Semiconductor</label>
+    </customValue>
+    <customValue>
+        <fullName>Shipping Foam</fullName>
+        <default>false</default>
+        <label>Shipping Foam</label>
+    </customValue>
+    <customValue>
+        <fullName>Stainless steel tanks/vessels</fullName>
+        <default>false</default>
+        <label>Stainless steel tanks/vessels</label>
+    </customValue>
+    <customValue>
+        <fullName>Sterilisation equipment/systems</fullName>
+        <default>false</default>
+        <label>Sterilisation equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Sugar</fullName>
+        <default>false</default>
+        <label>Sugar</label>
+    </customValue>
+    <customValue>
+        <fullName>Supplier - Foundry</fullName>
+        <default>false</default>
+        <label>Supplier - Foundry</label>
+    </customValue>
+    <customValue>
+        <fullName>Switchgear</fullName>
+        <default>false</default>
+        <label>Switchgear</label>
+    </customValue>
+    <customValue>
+        <fullName>Systems Integrator</fullName>
+        <default>false</default>
+        <label>Systems Integrator</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank Builder</fullName>
+        <default>false</default>
+        <label>Tank Builder</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank Container</fullName>
+        <default>false</default>
+        <label>Tank Container</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container cleaning depot</fullName>
+        <default>false</default>
+        <label>Tank container cleaning depot</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container equipment OEM</fullName>
+        <default>false</default>
+        <label>Tank container equipment OEM</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container lease/rental</fullName>
+        <default>false</default>
+        <label>Tank container lease/rental</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container OEM</fullName>
+        <default>false</default>
+        <label>Tank container OEM</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container operator</fullName>
+        <default>false</default>
+        <label>Tank container operator</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container owner</fullName>
+        <default>false</default>
+        <label>Tank container owner</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank container repair &amp; maintenance</fullName>
+        <default>false</default>
+        <label>Tank container repair &amp; maintenance</label>
+    </customValue>
+    <customValue>
+        <fullName>Tank farm/terminal</fullName>
+        <default>false</default>
+        <label>Tank farm/terminal</label>
+    </customValue>
+    <customValue>
+        <fullName>Tanks and storage vessels</fullName>
+        <default>false</default>
+        <label>Tanks and storage vessels</label>
+    </customValue>
+    <customValue>
+        <fullName>Thermal process equipment/systems</fullName>
+        <default>false</default>
+        <label>Thermal process equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Turbine equipment/systems</fullName>
+        <default>false</default>
+        <label>Turbine equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Vacuum</fullName>
+        <default>false</default>
+        <label>Vacuum</label>
+    </customValue>
+    <customValue>
+        <fullName>Valve manufacturer</fullName>
+        <default>false</default>
+        <label>Valve manufacturer</label>
+    </customValue>
+    <customValue>
+        <fullName>Water</fullName>
+        <default>false</default>
+        <label>Water</label>
+    </customValue>
+    <customValue>
+        <fullName>Water purification equipment/systems</fullName>
+        <default>false</default>
+        <label>Water purification equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Water treatment equipment/systems</fullName>
+        <default>false</default>
+        <label>Water treatment equipment/systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Weapons systems</fullName>
+        <default>false</default>
+        <label>Weapons systems</label>
+    </customValue>
+    <customValue>
+        <fullName>Wind Turbine</fullName>
+        <default>false</default>
+        <label>Wind Turbine</label>
+    </customValue>
+    <description>Third Tier of Market/Sub-Market picklist on Accont</description>
+    <masterLabel>Third Tier</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

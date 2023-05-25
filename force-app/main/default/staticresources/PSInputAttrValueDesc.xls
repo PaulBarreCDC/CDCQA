@@ -1,0 +1,12 @@
+Attribute__c,Display_Order__c,ProdGroup__c,SubGroup__c,Text_Description_of_Attribute_Value__c,Value__c
+VacSetCode,10,Valve,Thief Hatch,0.4 osig,4
+MCBODY,10,Valve,Thief Hatch,Aluminum,1
+HCLASS,10,Valve,Thief Hatch,API 12,D
+MCDPHM,20,Valve,Thief Hatch,HNBR,H
+MCENVG,10,Valve,Thief Hatch,Fluorosilicone,F
+PosSetCode,10,Valve,Thief Hatch,4 osig,4
+MCSPRG,10,Valve,Thief Hatch,Galvanized Steel,G
+GENOPT,10,Valve,Thief Hatch,None,0
+SZC,10,Valve,Thief Hatch,"8""",8
+PTC,10,Valve,Thief Hatch,Thief Hatch,12-TH
+PTC,670,Replacement Parts,Soft Goods,6100 Gauge Hatch,6100

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Saturation_Pressure_at_inlet_temp_units__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Saturation Pressure at inlet temp units</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>cdcpc__Pressure_Units</valueSetName>
+    </valueSet>
+</CustomField>

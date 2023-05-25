@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Object_Mapping_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( BigMachines__Object_Mapping__c , &apos;&apos;)</errorConditionFormula>
+    <errorDisplayField>BigMachines__Object_Mapping__c</errorDisplayField>
+    <errorMessage>You may not select &quot;None&quot; for the value of Object Mapping</errorMessage>
+</ValidationRule>

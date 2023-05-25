@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Weight_Material_Constraint</fullName>
+    <active>true</active>
+    <description>Weight Material is a mandatory field.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISBLANK(Weight_Material__c  ),
+(Section_F_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Weight_Material__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

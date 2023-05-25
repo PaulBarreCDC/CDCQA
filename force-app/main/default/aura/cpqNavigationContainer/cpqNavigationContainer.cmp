@@ -1,0 +1,7 @@
+<aura:component implements="lightning:isUrlAddressable">
+	<aura:attribute name="id" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/>
+    <lightning:navigation aura:id="navService"/>
+    <!-- <cdcpc:partConfiguratorLauncher onfinish="{!c.navigateToCpq}"/> will be landing page but does not currently exist in QA environment.-->
+</aura:component>

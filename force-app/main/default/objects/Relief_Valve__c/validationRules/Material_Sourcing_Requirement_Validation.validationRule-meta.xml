@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Material_Sourcing_Requirement_Validation</fullName>
+    <active>true</active>
+    <description>Material Sourcing Requirements is mandatory</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISPICKVAL(Material_Sourcing_Requirements__c ,&apos;&apos;),
+(Section_H_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Material_Sourcing_Requirements__c</errorDisplayField>
+    <errorMessage>Material Sourcing Requirements : Pleases select a value</errorMessage>
+</ValidationRule>

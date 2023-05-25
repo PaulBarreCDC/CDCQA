@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_Dependent_Size__c</fullName>
+    <externalId>false</externalId>
+    <label>Size</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Brand__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0008</fullName>
+                <default>false</default>
+                <label>1/2&quot; (13mm)</label>
+            </value>
+            <value>
+                <fullName>0011</fullName>
+                <default>false</default>
+                <label>11/16&quot;</label>
+            </value>
+            <value>
+                <fullName>0012</fullName>
+                <default>false</default>
+                <label>3/4&quot; (20mm)</label>
+            </value>
+            <value>
+                <fullName>0100</fullName>
+                <default>false</default>
+                <label>1&quot; (25mm)</label>
+            </value>
+            <value>
+                <fullName>0108</fullName>
+                <default>false</default>
+                <label>1-1/2&quot; (40mm)</label>
+            </value>
+            <value>
+                <fullName>0200</fullName>
+                <default>false</default>
+                <label>2&quot; (50mm)</label>
+            </value>
+            <value>
+                <fullName>0208</fullName>
+                <default>false</default>
+                <label>2-1/2&quot; (65mm)</label>
+            </value>
+            <value>
+                <fullName>0300</fullName>
+                <default>false</default>
+                <label>3&quot; (80mm)</label>
+            </value>
+            <value>
+                <fullName>0400</fullName>
+                <default>false</default>
+                <label>4&quot; (100mm)</label>
+            </value>
+            <value>
+                <fullName>0600</fullName>
+                <default>false</default>
+                <label>6&quot; (150mm)</label>
+            </value>
+            <value>
+                <fullName>0800</fullName>
+                <default>false</default>
+                <label>8&quot; (200mm)</label>
+            </value>
+            <value>
+                <fullName>1000</fullName>
+                <default>false</default>
+                <label>10&quot; (250mm)</label>
+            </value>
+            <value>
+                <fullName>1200</fullName>
+                <default>false</default>
+                <label>12&quot; (300mm)</label>
+            </value>
+            <value>
+                <fullName>1212</fullName>
+                <default>false</default>
+                <label>12&quot; x 12&quot;</label>
+            </value>
+            <value>
+                <fullName>1218</fullName>
+                <default>false</default>
+                <label>12&quot; x 18&quot;</label>
+            </value>
+            <value>
+                <fullName>1224</fullName>
+                <default>false</default>
+                <label>12&quot; x 24&quot;</label>
+            </value>
+            <value>
+                <fullName>1400</fullName>
+                <default>false</default>
+                <label>14&quot; (350mm)</label>
+            </value>
+            <value>
+                <fullName>1600</fullName>
+                <default>false</default>
+                <label>16&quot; (400mm)</label>
+            </value>
+            <value>
+                <fullName>1800</fullName>
+                <default>false</default>
+                <label>18&quot; (450mm)</label>
+            </value>
+            <value>
+                <fullName>1818</fullName>
+                <default>false</default>
+                <label>18&quot; x 18&quot;</label>
+            </value>
+            <value>
+                <fullName>1824</fullName>
+                <default>false</default>
+                <label>18&quot; x 24&quot;</label>
+            </value>
+            <value>
+                <fullName>1830</fullName>
+                <default>false</default>
+                <label>18&quot; x 30&quot;</label>
+            </value>
+            <value>
+                <fullName>1835</fullName>
+                <default>false</default>
+                <label>18&quot; x 35&quot;</label>
+            </value>
+            <value>
+                <fullName>2000</fullName>
+                <default>false</default>
+                <label>20&quot; (500mm)</label>
+            </value>
+            <value>
+                <fullName>2400</fullName>
+                <default>false</default>
+                <label>24&quot; (600mm)</label>
+            </value>
+            <value>
+                <fullName>2424</fullName>
+                <default>false</default>
+                <label>24&quot; x 24&quot;</label>
+            </value>
+            <value>
+                <fullName>2430</fullName>
+                <default>false</default>
+                <label>24&quot; x 30&quot;</label>
+            </value>
+            <value>
+                <fullName>2436</fullName>
+                <default>false</default>
+                <label>24&quot; x 36&quot;</label>
+            </value>
+            <value>
+                <fullName>2444</fullName>
+                <default>false</default>
+                <label>24&quot; x 44&quot;</label>
+            </value>
+            <value>
+                <fullName>2600</fullName>
+                <default>false</default>
+                <label>26&quot; (650mm)</label>
+            </value>
+            <value>
+                <fullName>2800</fullName>
+                <default>false</default>
+                <label>28&quot; (700mm)</label>
+            </value>
+            <value>
+                <fullName>3000</fullName>
+                <default>false</default>
+                <label>30&quot; (750mm)</label>
+            </value>
+            <value>
+                <fullName>3030</fullName>
+                <default>false</default>
+                <label>30&quot; x 30&quot;</label>
+            </value>
+            <value>
+                <fullName>3036</fullName>
+                <default>false</default>
+                <label>30&quot; x 36&quot;</label>
+            </value>
+            <value>
+                <fullName>3044</fullName>
+                <default>false</default>
+                <label>30&quot; x 44&quot;</label>
+            </value>
+            <value>
+                <fullName>3200</fullName>
+                <default>false</default>
+                <label>32&quot; (800mm)</label>
+            </value>
+            <value>
+                <fullName>3400</fullName>
+                <default>false</default>
+                <label>34&quot; (850mm)</label>
+            </value>
+            <value>
+                <fullName>3600</fullName>
+                <default>false</default>
+                <label>36&quot; (900mm)</label>
+            </value>
+            <value>
+                <fullName>3636</fullName>
+                <default>false</default>
+                <label>36&quot; x 36&quot;</label>
+            </value>
+            <value>
+                <fullName>3644</fullName>
+                <default>false</default>
+                <label>36&quot; x 44&quot;</label>
+            </value>
+            <value>
+                <fullName>4000</fullName>
+                <default>false</default>
+                <label>40&quot; (102cm)</label>
+            </value>
+            <value>
+                <fullName>4200</fullName>
+                <default>false</default>
+                <label>42&quot; (107 cm)</label>
+            </value>
+            <value>
+                <fullName>4400</fullName>
+                <default>false</default>
+                <label>44&quot; (112cm)</label>
+            </value>
+            <value>
+                <fullName>4444</fullName>
+                <default>false</default>
+                <label>44&quot; x 44&quot;</label>
+            </value>
+            <value>
+                <fullName>4469</fullName>
+                <default>false</default>
+                <label>44&quot; x 69&quot;</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0008</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0012</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0100</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0108</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0300</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>1400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>1600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>1800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>2000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>2400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>2600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>2800</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>3000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>3200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>3600</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>4200</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0011</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>0208</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1212</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1218</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1224</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1818</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1824</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1830</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>1835</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>2424</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>2430</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>2436</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>2444</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3030</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3036</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3044</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3636</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>3644</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>4000</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>4400</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>4444</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>4469</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

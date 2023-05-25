@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1UR</fullName>
+        <default>false</default>
+        <label>Alton S.A. - Uruguay | 1UR</label>
+    </customValue>
+    <customValue>
+        <fullName>V3</fullName>
+        <default>false</default>
+        <label>Abgurt - Pakistan | V3</label>
+    </customValue>
+    <customValue>
+        <fullName>AK2</fullName>
+        <default>false</default>
+        <label>Alaska Roteq - Alaska | AK2</label>
+    </customValue>
+    <customValue>
+        <fullName>1DN1</fullName>
+        <default>false</default>
+        <label>Alflow Scandinavia A/S - Denmark, Iceland | 1DN1</label>
+    </customValue>
+    <customValue>
+        <fullName>IL1</fullName>
+        <default>false</default>
+        <label>Allied Valve - Illinois | IL1</label>
+    </customValue>
+    <customValue>
+        <fullName>IA02</fullName>
+        <default>false</default>
+        <label>Allied Valve - Iowa | IA02</label>
+    </customValue>
+    <customValue>
+        <fullName>MN5</fullName>
+        <default>false</default>
+        <label>Allied Valve - Minnesota | MN5</label>
+    </customValue>
+    <customValue>
+        <fullName>SD1</fullName>
+        <default>false</default>
+        <label>Allied Valve - North &amp; South Dakota | SD1</label>
+    </customValue>
+    <customValue>
+        <fullName>WI5</fullName>
+        <default>false</default>
+        <label>Allied Valve - Wisconsin/Michigan | WI5</label>
+    </customValue>
+    <customValue>
+        <fullName>44</fullName>
+        <default>false</default>
+        <label>Al Rogers Co - Pennsylvania | 44</label>
+    </customValue>
+    <customValue>
+        <fullName>1IRA</fullName>
+        <default>false</default>
+        <label>Al-Usool Engineering Services Company Ltd. - Iraq | 1IRA</label>
+    </customValue>
+    <customValue>
+        <fullName>1AR3</fullName>
+        <default>false</default>
+        <label>American Supply &amp; Service, C.A. (AMESUP) - Aruba, Curacao, Venezuela | 1AR3</label>
+    </customValue>
+    <customValue>
+        <fullName>1GM1</fullName>
+        <default>false</default>
+        <label>Askia GmbH - Germany | 1GM1</label>
+    </customValue>
+    <customValue>
+        <fullName>1UAS</fullName>
+        <default>false</default>
+        <label>Assentech Limited - UK | 1UAS</label>
+    </customValue>
+    <customValue>
+        <fullName>UCN1</fullName>
+        <default>false</default>
+        <label>AWC (Upstream) Process Solutions Ltd - Canada | UCN1</label>
+    </customValue>
+    <customValue>
+        <fullName>CN1</fullName>
+        <default>false</default>
+        <label>AWC Process Solutions Ltd - Canada | CN1</label>
+    </customValue>
+    <customValue>
+        <fullName>1CH1</fullName>
+        <default>false</default>
+        <label>Bickel &amp; Wolf - Czech Republic | 1CH1</label>
+    </customValue>
+    <customValue>
+        <fullName>1AU2</fullName>
+        <default>false</default>
+        <label>Bickel &amp; Wolf GmbH - Austria | 1AU2</label>
+    </customValue>
+    <customValue>
+        <fullName>1HU1</fullName>
+        <default>false</default>
+        <label>Bickel &amp; Wolf - Hungary | 1HU1</label>
+    </customValue>
+    <customValue>
+        <fullName>1RM2</fullName>
+        <default>false</default>
+        <label>Bickel &amp; Wolf - Romania | 1RM2</label>
+    </customValue>
+    <customValue>
+        <fullName>1SL1</fullName>
+        <default>false</default>
+        <label>Bickel &amp; Wolf - Slovakia | 1SL1</label>
+    </customValue>
+    <customValue>
+        <fullName>B4</fullName>
+        <default>false</default>
+        <label>Blair Martin Co - S. California (Groth Only) | B4</label>
+    </customValue>
+    <customValue>
+        <fullName>1SR1</fullName>
+        <default>false</default>
+        <label>Blass Zvi Co. Ltd. - Israel | 1SR1</label>
+    </customValue>
+    <customValue>
+        <fullName>UAR1</fullName>
+        <default>false</default>
+        <label>Bob Davis Sales, Inc. - Arkansas | UAR1</label>
+    </customValue>
+    <customValue>
+        <fullName>UTX1</fullName>
+        <default>false</default>
+        <label>Bob Herbert &amp; Associates - Texas | UTX1</label>
+    </customValue>
+    <customValue>
+        <fullName>VA2</fullName>
+        <default>false</default>
+        <label>Carotek, Inc - Virginia | VA2</label>
+    </customValue>
+    <customValue>
+        <fullName>90</fullName>
+        <default>false</default>
+        <label>CDC Netherlands | 90</label>
+    </customValue>
+    <customValue>
+        <fullName>CA4</fullName>
+        <default>false</default>
+        <label>CFM San Diego (CDC Only) | CA4</label>
+    </customValue>
+    <customValue>
+        <fullName>UTX2</fullName>
+        <default>false</default>
+        <label>Control Equipment - Texas | UTX2</label>
+    </customValue>
+    <customValue>
+        <fullName>1PO1</fullName>
+        <default>false</default>
+        <label>COROL Spolka - Poland | 1PO1</label>
+    </customValue>
+    <customValue>
+        <fullName>AL4</fullName>
+        <default>false</default>
+        <label>Cross Instrument - Alabama | AL4</label>
+    </customValue>
+    <customValue>
+        <fullName>FL2</fullName>
+        <default>false</default>
+        <label>Cross Instrument - Florida | FL2</label>
+    </customValue>
+    <customValue>
+        <fullName>H3</fullName>
+        <default>false</default>
+        <label>Cross Instrument - Georgia | H3</label>
+    </customValue>
+    <customValue>
+        <fullName>37</fullName>
+        <default>false</default>
+        <label>Cross Instrument - Knoxville | 37</label>
+    </customValue>
+    <customValue>
+        <fullName>N10</fullName>
+        <default>false</default>
+        <label>Cross Instrument - North Carolina | N10</label>
+    </customValue>
+    <customValue>
+        <fullName>S3</fullName>
+        <default>false</default>
+        <label>Cross Instrument - S. Carolina | S3</label>
+    </customValue>
+    <customValue>
+        <fullName>CA7</fullName>
+        <default>false</default>
+        <label>CTi Controltech - N. California | CA7</label>
+    </customValue>
+    <customValue>
+        <fullName>1NZ</fullName>
+        <default>false</default>
+        <label>Custom Controls - New Zealand | 1NZ</label>
+    </customValue>
+    <customValue>
+        <fullName>UN7</fullName>
+        <default>false</default>
+        <label>CV Control (Upstream) - Argentina | UN7</label>
+    </customValue>
+    <customValue>
+        <fullName>N7</fullName>
+        <default>false</default>
+        <label>CV Control - Argentina | N7</label>
+    </customValue>
+    <customValue>
+        <fullName>NY5</fullName>
+        <default>false</default>
+        <label>Dave Heiner &amp; Associates - New York | NY5</label>
+    </customValue>
+    <customValue>
+        <fullName>NH1</fullName>
+        <default>false</default>
+        <label>David F. Sullivan &amp; Associates, Inc. - Boston | NH1</label>
+    </customValue>
+    <customValue>
+        <fullName>1TK2</fullName>
+        <default>false</default>
+        <label>Delta Vana - Turkey | 1TK2</label>
+    </customValue>
+    <customValue>
+        <fullName>WI4</fullName>
+        <default>false</default>
+        <label>Energenecs | WI4</label>
+    </customValue>
+    <customValue>
+        <fullName>IR2</fullName>
+        <default>false</default>
+        <label>Energomash - Russia | IR2</label>
+    </customValue>
+    <customValue>
+        <fullName>1AF1</fullName>
+        <default>false</default>
+        <label>Engineering Products &amp; Services Srl - West Africa | 1AF1</label>
+    </customValue>
+    <customValue>
+        <fullName>1NE</fullName>
+        <default>false</default>
+        <label>EOH Engineering AS - Norway | 1NE</label>
+    </customValue>
+    <customValue>
+        <fullName>63</fullName>
+        <default>false</default>
+        <label>Erichs Armatur AB - Sweden | 63</label>
+    </customValue>
+    <customValue>
+        <fullName>1DE1</fullName>
+        <default>false</default>
+        <label>Errand Enterprises - India | 1DE1</label>
+    </customValue>
+    <customValue>
+        <fullName>U10</fullName>
+        <default>false</default>
+        <label>ESI Process (UK) Ltd. - United Kingdom | U10</label>
+    </customValue>
+    <customValue>
+        <fullName>U9</fullName>
+        <default>false</default>
+        <label>ESI Technologies - Ireland | U9</label>
+    </customValue>
+    <customValue>
+        <fullName>1SC1</fullName>
+        <default>false</default>
+        <label>ESI Technologies - Scotland | 1SC1</label>
+    </customValue>
+    <customValue>
+        <fullName>NC2</fullName>
+        <default>false</default>
+        <label>EW2 Environmental, Inc. - North &amp; South Carolina | NC2</label>
+    </customValue>
+    <customValue>
+        <fullName>1CN1</fullName>
+        <default>false</default>
+        <label>Flo-Crest - Manitoba | 1CN1</label>
+    </customValue>
+    <customValue>
+        <fullName>1FR4</fullName>
+        <default>false</default>
+        <label>Fluides Precision - France | 1FR4</label>
+    </customValue>
+    <customValue>
+        <fullName>TX2</fullName>
+        <default>false</default>
+        <label>FLW Process Solutions - Texas, Louisiana, Alabama | TX2</label>
+    </customValue>
+    <customValue>
+        <fullName>GCIR</fullName>
+        <default>false</default>
+        <label>Groth Continental India Ltd | GCIR</label>
+    </customValue>
+    <customValue>
+        <fullName>1PR1</fullName>
+        <default>false</default>
+        <label>GR Tech, S.A.C. - Peru | 1PR1</label>
+    </customValue>
+    <customValue>
+        <fullName>1BL1</fullName>
+        <default>false</default>
+        <label>Grupo Larcos Industrial Ltda. - Bolivia | 1BL1</label>
+    </customValue>
+    <customValue>
+        <fullName>1NR</fullName>
+        <default>false</default>
+        <label>Haland Instrumentering AS - Norway | 1NR</label>
+    </customValue>
+    <customValue>
+        <fullName>1SA1</fullName>
+        <default>false</default>
+        <label>Heaton Valves - South Africa | 1SA1</label>
+    </customValue>
+    <customValue>
+        <fullName>1NL3</fullName>
+        <default>false</default>
+        <label>Heleon B.V. - Netherlands | 1NL3</label>
+    </customValue>
+    <customValue>
+        <fullName>1CN3</fullName>
+        <default>false</default>
+        <label>Holyawards H. K. Co., Ltd. - China | 1CN3</label>
+    </customValue>
+    <customValue>
+        <fullName>HADU</fullName>
+        <default>false</default>
+        <label>House Accounts - Domestic Upstream | HADU</label>
+    </customValue>
+    <customValue>
+        <fullName>HAF0</fullName>
+        <default>false</default>
+        <label>House East 0 | HAF0</label>
+    </customValue>
+    <customValue>
+        <fullName>HAF1</fullName>
+        <default>false</default>
+        <label>House East 1 | HAF1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAF2</fullName>
+        <default>false</default>
+        <label>House East 2 | HAF2</label>
+    </customValue>
+    <customValue>
+        <fullName>HAM1</fullName>
+        <default>false</default>
+        <label>House Middle East 1 | HAM1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAM2</fullName>
+        <default>false</default>
+        <label>House Middle East 2 | HAM2</label>
+    </customValue>
+    <customValue>
+        <fullName>HAA1</fullName>
+        <default>false</default>
+        <label>House Region AF1 | HAA1</label>
+    </customValue>
+    <customValue>
+        <fullName>HA1</fullName>
+        <default>false</default>
+        <label>House Region D01 | HA1</label>
+    </customValue>
+    <customValue>
+        <fullName>HA2</fullName>
+        <default>false</default>
+        <label>House Region D02 | HA2</label>
+    </customValue>
+    <customValue>
+        <fullName>HA3</fullName>
+        <default>false</default>
+        <label>House Region D03 | HA3</label>
+    </customValue>
+    <customValue>
+        <fullName>HA4</fullName>
+        <default>false</default>
+        <label>House Region D04 | HA4</label>
+    </customValue>
+    <customValue>
+        <fullName>HA5</fullName>
+        <default>false</default>
+        <label>House Region D05 | HA5</label>
+    </customValue>
+    <customValue>
+        <fullName>HA6</fullName>
+        <default>false</default>
+        <label>House Region D06 | HA6</label>
+    </customValue>
+    <customValue>
+        <fullName>HAH1</fullName>
+        <default>false</default>
+        <label>House Region DDH1 | HAH1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAOT</fullName>
+        <default>false</default>
+        <label>House Region DNIH | HAOT</label>
+    </customValue>
+    <customValue>
+        <fullName>HAX1</fullName>
+        <default>false</default>
+        <label>House Region DOE1 | HAX1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAX2</fullName>
+        <default>false</default>
+        <label>House Region DOE2 | HAX2</label>
+    </customValue>
+    <customValue>
+        <fullName>HAX3</fullName>
+        <default>false</default>
+        <label>House Region DOE3 | HAX3</label>
+    </customValue>
+    <customValue>
+        <fullName>HAE1</fullName>
+        <default>false</default>
+        <label>House Region EU1 | HAE1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAE2</fullName>
+        <default>false</default>
+        <label>House Region EU2 | HAE2</label>
+    </customValue>
+    <customValue>
+        <fullName>HAE3</fullName>
+        <default>false</default>
+        <label>House Region EU3 | HAE3</label>
+    </customValue>
+    <customValue>
+        <fullName>HAE4</fullName>
+        <default>false</default>
+        <label>House Region EU4 | HAE4</label>
+    </customValue>
+    <customValue>
+        <fullName>HAR1</fullName>
+        <default>false</default>
+        <label>House Region FR1 | HAR1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAL1</fullName>
+        <default>false</default>
+        <label>House Region LA1 | HAL1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAL2</fullName>
+        <default>false</default>
+        <label>House Region LA2 | HAL2</label>
+    </customValue>
+    <customValue>
+        <fullName>HAL3</fullName>
+        <default>false</default>
+        <label>House Region LA3 | HAL3</label>
+    </customValue>
+    <customValue>
+        <fullName>HAZ1</fullName>
+        <default>false</default>
+        <label>House Region LOE1 | HAZ1</label>
+    </customValue>
+    <customValue>
+        <fullName>HAO1</fullName>
+        <default>false</default>
+        <label>House Region OC1 | HAO1</label>
+    </customValue>
+    <customValue>
+        <fullName>1GM</fullName>
+        <default>false</default>
+        <label>Huckauf Ingenieure GmbH - Germany | 1GM</label>
+    </customValue>
+    <customValue>
+        <fullName>K8</fullName>
+        <default>false</default>
+        <label>Hughes Machinery - Missouri, Kansas, Nebraska | K8</label>
+    </customValue>
+    <customValue>
+        <fullName>78</fullName>
+        <default>false</default>
+        <label>Iberfluid - Spain / Portugal | 78</label>
+    </customValue>
+    <customValue>
+        <fullName>A2</fullName>
+        <default>false</default>
+        <label>Incoel S.R.L. - Paraguay | A2</label>
+    </customValue>
+    <customValue>
+        <fullName>INS</fullName>
+        <default>false</default>
+        <label>INS</label>
+    </customValue>
+    <customValue>
+        <fullName>1BZ</fullName>
+        <default>false</default>
+        <label>Instruval - Brazil | 1BZ</label>
+    </customValue>
+    <customValue>
+        <fullName>1CR2</fullName>
+        <default>false</default>
+        <label>INTEROP (Operaciones Internacionales, S.A.) - Costa Rica | 1CR2</label>
+    </customValue>
+    <customValue>
+        <fullName>CA3</fullName>
+        <default>false</default>
+        <label>JBI Biogas - N California | CA3</label>
+    </customValue>
+    <customValue>
+        <fullName>GC2</fullName>
+        <default>false</default>
+        <label>JK Fluid &amp; System - India | GC2</label>
+    </customValue>
+    <customValue>
+        <fullName>PA1</fullName>
+        <default>false</default>
+        <label>Joos Equipment - Pennsylvania | PA1</label>
+    </customValue>
+    <customValue>
+        <fullName>1GR1</fullName>
+        <default>false</default>
+        <label>Kaminco Process Management S.A. - Greece | 1GR1</label>
+    </customValue>
+    <customValue>
+        <fullName>VRKM</fullName>
+        <default>false</default>
+        <label>Kampen Valve Care - Netherlands | VRKM</label>
+    </customValue>
+    <customValue>
+        <fullName>IKG</fullName>
+        <default>false</default>
+        <label>Kanoo Group Commercial LLC - Oman | IKG</label>
+    </customValue>
+    <customValue>
+        <fullName>1KE</fullName>
+        <default>false</default>
+        <label>KC Global Procurement LLC - Kenya | 1KE</label>
+    </customValue>
+    <customValue>
+        <fullName>NY1</fullName>
+        <default>false</default>
+        <label>Koester Associates - New York | NY1</label>
+    </customValue>
+    <customValue>
+        <fullName>W7</fullName>
+        <default>false</default>
+        <label>L S &amp; P - Belgium | W7</label>
+    </customValue>
+    <customValue>
+        <fullName>1SA3</fullName>
+        <default>false</default>
+        <label>LVSA Group - South Africa | 1SA3</label>
+    </customValue>
+    <customValue>
+        <fullName>47</fullName>
+        <default>false</default>
+        <label>M.R. Franceschini, Inc - Puerto Rico | 47</label>
+    </customValue>
+    <customValue>
+        <fullName>11</fullName>
+        <default>false</default>
+        <label>MA Olson | 11</label>
+    </customValue>
+    <customValue>
+        <fullName>H4</fullName>
+        <default>false</default>
+        <label>Maritime &amp; Mercantile - Kuwait | H4</label>
+    </customValue>
+    <customValue>
+        <fullName>J3</fullName>
+        <default>false</default>
+        <label>Matheson Valves - Ontario | J3</label>
+    </customValue>
+    <customValue>
+        <fullName>J4</fullName>
+        <default>false</default>
+        <label>Matheson Valves - Quebec | J4</label>
+    </customValue>
+    <customValue>
+        <fullName>GC1</fullName>
+        <default>false</default>
+        <label>Maxworth Industrial Services - Gujarat, India | GC1</label>
+    </customValue>
+    <customValue>
+        <fullName>75</fullName>
+        <default>false</default>
+        <label>Measurement Solutions - Australia | 75</label>
+    </customValue>
+    <customValue>
+        <fullName>UWY1</fullName>
+        <default>false</default>
+        <label>MPI Warehouse Specialty Co - Wyoming | UWY1</label>
+    </customValue>
+    <customValue>
+        <fullName>1NL4</fullName>
+        <default>false</default>
+        <label>Multimetaal B.V. - Netherlands | 1NL4</label>
+    </customValue>
+    <customValue>
+        <fullName>IC4</fullName>
+        <default>false</default>
+        <label>New Sun International Engineering - China, Beijing | IC4</label>
+    </customValue>
+    <customValue>
+        <fullName>1JP1</fullName>
+        <default>false</default>
+        <label>Nihon Koso Co., Ltd. - Japan | 1JP1</label>
+    </customValue>
+    <customValue>
+        <fullName>1JO1</fullName>
+        <default>false</default>
+        <label>NIJMEH CONTROLS - Jordan | 1JO1</label>
+    </customValue>
+    <customValue>
+        <fullName>NM1</fullName>
+        <default>false</default>
+        <label>Northwest Instruments &amp; Controls - Arizona, New Mexico | NM1</label>
+    </customValue>
+    <customValue>
+        <fullName>CO4</fullName>
+        <default>false</default>
+        <label>Northwest Instruments &amp; Controls - Colorado | CO4</label>
+    </customValue>
+    <customValue>
+        <fullName>MT2</fullName>
+        <default>false</default>
+        <label>Northwest Instruments &amp; Controls - Montana | MT2</label>
+    </customValue>
+    <customValue>
+        <fullName>1JP2</fullName>
+        <default>false</default>
+        <label>OHTORY K.K. - Japan | 1JP2</label>
+    </customValue>
+    <customValue>
+        <fullName>1PR3</fullName>
+        <default>false</default>
+        <label>ONPA Corporation S.A.C. - Peru | 1PR3</label>
+    </customValue>
+    <customValue>
+        <fullName>UOK1</fullName>
+        <default>false</default>
+        <label>OPECO, Inc. - Oklahoma | UOK1</label>
+    </customValue>
+    <customValue>
+        <fullName>1CO</fullName>
+        <default>false</default>
+        <label>OP Power Oil &amp; Gas - Colombia, Ecuador | 1CO</label>
+    </customValue>
+    <customValue>
+        <fullName>1MX</fullName>
+        <default>false</default>
+        <label>P&amp;V Control Devices, S. de R.L. de C.V. - Mexico | 1MX</label>
+    </customValue>
+    <customValue>
+        <fullName>CA8</fullName>
+        <default>false</default>
+        <label>Patten Systems - S. California (CDC Only) | CA8</label>
+    </customValue>
+    <customValue>
+        <fullName>WA7</fullName>
+        <default>false</default>
+        <label>Pedroni Biogas - Washington | WA7</label>
+    </customValue>
+    <customValue>
+        <fullName>U5</fullName>
+        <default>false</default>
+        <label>Pentair Valves and Controls - New Zealand | U5</label>
+    </customValue>
+    <customValue>
+        <fullName>1QA2</fullName>
+        <default>false</default>
+        <label>Petrofac Qatar W.L.L. - Qatar | 1QA2</label>
+    </customValue>
+    <customValue>
+        <fullName>UPA1</fullName>
+        <default>false</default>
+        <label>Phoenix Specialty Inc. - Pennsylvannia | UPA1</label>
+    </customValue>
+    <customValue>
+        <fullName>NE1</fullName>
+        <default>false</default>
+        <label>Pioneer Industrial - Nebraska | NE1</label>
+    </customValue>
+    <customValue>
+        <fullName>MO1</fullName>
+        <default>false</default>
+        <label>Pioneer Industrial - St Louis | MO1</label>
+    </customValue>
+    <customValue>
+        <fullName>1BL2</fullName>
+        <default>false</default>
+        <label>PMA Heleon NV - Belgium | 1BL2</label>
+    </customValue>
+    <customValue>
+        <fullName>1AU3</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Australia (Brisbane) | 1AU3</label>
+    </customValue>
+    <customValue>
+        <fullName>1AU4</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Australia (Melbourne) | 1AU4</label>
+    </customValue>
+    <customValue>
+        <fullName>1AU6</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Australia (Perth) | 1AU6</label>
+    </customValue>
+    <customValue>
+        <fullName>1AU5</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Australia (Sydney) | 1AU5</label>
+    </customValue>
+    <customValue>
+        <fullName>1BN1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Bangladesh | 1BN1</label>
+    </customValue>
+    <customValue>
+        <fullName>1CA1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Cambodia | 1CA1</label>
+    </customValue>
+    <customValue>
+        <fullName>1IN1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Indonesia | 1IN1</label>
+    </customValue>
+    <customValue>
+        <fullName>1LA1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Laos | 1LA1</label>
+    </customValue>
+    <customValue>
+        <fullName>Y9</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Malaysia | Y9</label>
+    </customValue>
+    <customValue>
+        <fullName>1MY1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Myanmar | 1MY1</label>
+    </customValue>
+    <customValue>
+        <fullName>1PH1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Philippines | 1PH1</label>
+    </customValue>
+    <customValue>
+        <fullName>81</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Singapore | 81</label>
+    </customValue>
+    <customValue>
+        <fullName>1SK1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - South Korea | 1SK1</label>
+    </customValue>
+    <customValue>
+        <fullName>1TA1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Taiwan | 1TA1</label>
+    </customValue>
+    <customValue>
+        <fullName>1TH1</fullName>
+        <default>false</default>
+        <label>PNR Engineering Systems - Thailand | 1TH1</label>
+    </customValue>
+    <customValue>
+        <fullName>Z7</fullName>
+        <default>false</default>
+        <label>Polytechnology - Thailand | Z7</label>
+    </customValue>
+    <customValue>
+        <fullName>VA3</fullName>
+        <default>false</default>
+        <label>Portersville PRD - Virginia | VA3</label>
+    </customValue>
+    <customValue>
+        <fullName>E2</fullName>
+        <default>false</default>
+        <label>PRD Technologies, LLC - Pittsburgh | E2</label>
+    </customValue>
+    <customValue>
+        <fullName>E3</fullName>
+        <default>false</default>
+        <label>PRD Technologies - Charleston | E3</label>
+    </customValue>
+    <customValue>
+        <fullName>E4</fullName>
+        <default>false</default>
+        <label>PRD Technologies - Cleveland | E4</label>
+    </customValue>
+    <customValue>
+        <fullName>1BE2</fullName>
+        <default>false</default>
+        <label>Prodim - Belgium &amp; Luxembourg | 1BE2</label>
+    </customValue>
+    <customValue>
+        <fullName>1TL1</fullName>
+        <default>false</default>
+        <label>PromoFluid Srl - Italy | 1TL1</label>
+    </customValue>
+    <customValue>
+        <fullName>NY6</fullName>
+        <default>false</default>
+        <label>R.M. Headlee Co., Inc. - Upper New York | NY6</label>
+    </customValue>
+    <customValue>
+        <fullName>1BR</fullName>
+        <default>false</default>
+        <label>RE 13 Eireli - Brazil | 1BR</label>
+    </customValue>
+    <customValue>
+        <fullName>1AR2</fullName>
+        <default>false</default>
+        <label>Representaciones Barcan, C.A. - Venezuela, Aruba, Curacao | 1AR2</label>
+    </customValue>
+    <customValue>
+        <fullName>1PR2</fullName>
+        <default>false</default>
+        <label>RESERTEC - Peru | 1PR2</label>
+    </customValue>
+    <customValue>
+        <fullName>1FR3</fullName>
+        <default>false</default>
+        <label>RTI Paris SAS - France/Algeria | 1FR3</label>
+    </customValue>
+    <customValue>
+        <fullName>1IT2</fullName>
+        <default>false</default>
+        <label>RTI S.p.A. - Italy | 1IT2</label>
+    </customValue>
+    <customValue>
+        <fullName>CA9</fullName>
+        <default>false</default>
+        <label>Saddleback Environmental - Nevada, California | CA9</label>
+    </customValue>
+    <customValue>
+        <fullName>P2</fullName>
+        <default>false</default>
+        <label>Seepil - Brazil | P2</label>
+    </customValue>
+    <customValue>
+        <fullName>LA3</fullName>
+        <default>false</default>
+        <label>Setpoint - Baton Rouge | LA3</label>
+    </customValue>
+    <customValue>
+        <fullName>LA7</fullName>
+        <default>false</default>
+        <label>Setpoint - Broussard | LA7</label>
+    </customValue>
+    <customValue>
+        <fullName>TX11</fullName>
+        <default>false</default>
+        <label>Setpoint - Corpus Christi | TX11</label>
+    </customValue>
+    <customValue>
+        <fullName>TX7</fullName>
+        <default>false</default>
+        <label>Setpoint - Kilgore | TX7</label>
+    </customValue>
+    <customValue>
+        <fullName>TX9</fullName>
+        <default>false</default>
+        <label>Setpoint - La Porte | TX9</label>
+    </customValue>
+    <customValue>
+        <fullName>LA4</fullName>
+        <default>false</default>
+        <label>Setpoint - Luling | LA4</label>
+    </customValue>
+    <customValue>
+        <fullName>LA6</fullName>
+        <default>false</default>
+        <label>Setpoint - Monroe | LA6</label>
+    </customValue>
+    <customValue>
+        <fullName>TX8</fullName>
+        <default>false</default>
+        <label>Setpoint - Port Arthur | TX8</label>
+    </customValue>
+    <customValue>
+        <fullName>TX10</fullName>
+        <default>false</default>
+        <label>Setpoint - Richwood | TX10</label>
+    </customValue>
+    <customValue>
+        <fullName>TN1</fullName>
+        <default>false</default>
+        <label>Setpoint - Tennessee | TN1</label>
+    </customValue>
+    <customValue>
+        <fullName>LA5</fullName>
+        <default>false</default>
+        <label>Setpoint - Westlake | LA5</label>
+    </customValue>
+    <customValue>
+        <fullName>1CN2</fullName>
+        <default>false</default>
+        <label>Shanghai EK Controls Co., LTD - China | 1CN2</label>
+    </customValue>
+    <customValue>
+        <fullName>IC5</fullName>
+        <default>false</default>
+        <label>Shanghai KeyPoint Controls - China/Shanghai | IC5</label>
+    </customValue>
+    <customValue>
+        <fullName>1CH3</fullName>
+        <default>false</default>
+        <label>Shanghai Rowsen - China | 1CH3</label>
+    </customValue>
+    <customValue>
+        <fullName>IC3</fullName>
+        <default>false</default>
+        <label>ShanXi / Xi&apos;an Sunangel Industrial Co - China | IC3</label>
+    </customValue>
+    <customValue>
+        <fullName>62</fullName>
+        <default>false</default>
+        <label>Shing Chung Hong Co. - Taiwan | 62</label>
+    </customValue>
+    <customValue>
+        <fullName>1EG1</fullName>
+        <default>false</default>
+        <label>Shotec - Egypt | 1EG1</label>
+    </customValue>
+    <customValue>
+        <fullName>1CR3</fullName>
+        <default>false</default>
+        <label>Sistemas Industriales Y Ambientales (SIASA) - El Salvador | 1CR3</label>
+    </customValue>
+    <customValue>
+        <fullName>L7</fullName>
+        <default>false</default>
+        <label>Smith Instrument - Michigan | L7</label>
+    </customValue>
+    <customValue>
+        <fullName>K6</fullName>
+        <default>false</default>
+        <label>Soltex - Chile | K6</label>
+    </customValue>
+    <customValue>
+        <fullName>U8</fullName>
+        <default>false</default>
+        <label>South United Agencies Company Ltd. - Trinidad | U8</label>
+    </customValue>
+    <customValue>
+        <fullName>ULA1</fullName>
+        <default>false</default>
+        <label>Specialty Equipment Sales - Louisiana | ULA1</label>
+    </customValue>
+    <customValue>
+        <fullName>A8</fullName>
+        <default>false</default>
+        <label>State Instruments - Florida | A8</label>
+    </customValue>
+    <customValue>
+        <fullName>G9</fullName>
+        <default>false</default>
+        <label>TEMCO - Ohio/Kentucky | G9</label>
+    </customValue>
+    <customValue>
+        <fullName>1DM1</fullName>
+        <default>false</default>
+        <label>Thurne Teknik AB - Denmark | 1DM1</label>
+    </customValue>
+    <customValue>
+        <fullName>1FN1</fullName>
+        <default>false</default>
+        <label>Thurne Teknik AB - Finland | 1FN1</label>
+    </customValue>
+    <customValue>
+        <fullName>1BA1</fullName>
+        <default>false</default>
+        <label>Thurne Teknik AB - Sweden (Baltics) | 1BA1</label>
+    </customValue>
+    <customValue>
+        <fullName>1SW2</fullName>
+        <default>false</default>
+        <label>Thurne Teknik AB - Sweden | 1SW2</label>
+    </customValue>
+    <customValue>
+        <fullName>OK2</fullName>
+        <default>false</default>
+        <label>Total Valve Systems - Oklahoma, Kansas, Texas, Arkansas | OK2</label>
+    </customValue>
+    <customValue>
+        <fullName>F4</fullName>
+        <default>false</default>
+        <label>Tri-State Tech - Baltimore | F4</label>
+    </customValue>
+    <customValue>
+        <fullName>F3</fullName>
+        <default>false</default>
+        <label>Tri-State Tech - New York | F3</label>
+    </customValue>
+    <customValue>
+        <fullName>F2</fullName>
+        <default>false</default>
+        <label>Tri-State Tech - Philadelphia | F2</label>
+    </customValue>
+    <customValue>
+        <fullName>IN2</fullName>
+        <default>false</default>
+        <label>Trivaco - Indiana | IN2</label>
+    </customValue>
+    <customValue>
+        <fullName>1FR2</fullName>
+        <default>false</default>
+        <label>Tubes Technologies - France | 1FR2</label>
+    </customValue>
+    <customValue>
+        <fullName>UIC1</fullName>
+        <default>false</default>
+        <label>Tundra (Upstream) Controls - Calgary | UIC1</label>
+    </customValue>
+    <customValue>
+        <fullName>IC1</fullName>
+        <default>false</default>
+        <label>Tundra Controls - Calgary | IC1</label>
+    </customValue>
+    <customValue>
+        <fullName>2UA</fullName>
+        <default>false</default>
+        <label>UAE - Abu Dhabi | 2UA</label>
+    </customValue>
+    <customValue>
+        <fullName>Z1</fullName>
+        <default>false</default>
+        <label>Valcon Valves - South Africa | Z1</label>
+    </customValue>
+    <customValue>
+        <fullName>1CH2</fullName>
+        <default>false</default>
+        <label>Valve Control Technology (Shanghai) Co. - China | 1CH2</label>
+    </customValue>
+    <customValue>
+        <fullName>MO2</fullName>
+        <default>false</default>
+        <label>Valve Sales Inc. (VSI) - Missouri, E Kansas | MO2</label>
+    </customValue>
+    <customValue>
+        <fullName>OK3</fullName>
+        <default>false</default>
+        <label>Valve Sales Inc. (VSI) - Oklahoma, W Kansas, Arkansas, Texas - OK3</label>
+    </customValue>
+    <customValue>
+        <fullName>1NL2</fullName>
+        <default>false</default>
+        <label>Van der Ende Valve Services - Netherlands | 1NL2</label>
+    </customValue>
+    <customValue>
+        <fullName>73</fullName>
+        <default>false</default>
+        <label>Vapor Askia AG - Switzerland | 73</label>
+    </customValue>
+    <customValue>
+        <fullName>1CH</fullName>
+        <default>false</default>
+        <label>Waylook Industry Technology Co - China | 1CH</label>
+    </customValue>
+    <customValue>
+        <fullName>F6</fullName>
+        <default>false</default>
+        <label>Western Engineering | F6</label>
+    </customValue>
+    <customValue>
+        <fullName>1SA2</fullName>
+        <default>false</default>
+        <label>Yusuf Bin - Bahrain | 1SA2</label>
+    </customValue>
+    <customValue>
+        <fullName>60</fullName>
+        <default>false</default>
+        <label>Yusuf Bin - Saudi Arabia | 60</label>
+    </customValue>
+    <customValue>
+        <fullName>CO3</fullName>
+        <default>false</default>
+        <label>z INACTIVE - Bay Valve - Colorado | CO3</label>
+    </customValue>
+    <customValue>
+        <fullName>HW2</fullName>
+        <default>false</default>
+        <label>z INACTIVE - D&amp;M Industrial - Hawaii | HW2</label>
+    </customValue>
+    <customValue>
+        <fullName>L5</fullName>
+        <default>false</default>
+        <label>z INACTIVE - Frew Process Group - Indianapolis | L5</label>
+    </customValue>
+    <customValue>
+        <fullName>E5</fullName>
+        <default>false</default>
+        <label>z INACTIVE - Hesse Ind. Sales - Upper New York | E5</label>
+    </customValue>
+    <customValue>
+        <fullName>1EC3</fullName>
+        <default>false</default>
+        <label>z INACTIVE - Importexa Oil Equipment Supply - Ecuador | 1EC3</label>
+    </customValue>
+    <customValue>
+        <fullName>1NL1</fullName>
+        <default>false</default>
+        <label>z INACTIVE - Romynox B.V. - Netherlands | 1NL1</label>
+    </customValue>
+    <customValue>
+        <fullName>WA2</fullName>
+        <default>false</default>
+        <label>WA2</label>
+    </customValue>
+    <customValue>
+        <fullName>1IT3</fullName>
+        <default>false</default>
+        <label>Precision Fluid Controls Srl. - Italy | 1IT3</label>
+    </customValue>
+    <customValue>
+        <fullName>1PA1</fullName>
+        <default>false</default>
+        <label>1PA1</label>
+    </customValue>
+    <customValue>
+        <fullName>NY2</fullName>
+        <default>false</default>
+        <label>NY2</label>
+    </customValue>
+    <customValue>
+        <fullName>1BE1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>TMS Industrial Services NV - Belgium | 1BE1</label>
+    </customValue>
+    <customValue>
+        <fullName>AZ2</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Instrumentation and Controls - Arizona/New Mexico | AZ2</label>
+    </customValue>
+    <customValue>
+        <fullName>J5</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bay Valve - Washington | J5</label>
+    </customValue>
+    <customValue>
+        <fullName>J6</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bay Valve - Oregon | J6</label>
+    </customValue>
+    <customValue>
+        <fullName>MT1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bay Valve - Montana | MT1</label>
+    </customValue>
+    <customValue>
+        <fullName>J7</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Bay Valve - Alaska | J7</label>
+    </customValue>
+    <customValue>
+        <fullName>OR1</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Control Factors Portland, Inc. - Oregon, Washington, Idaho | OR1</label>
+    </customValue>
+    <masterLabel>Rep Codes</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

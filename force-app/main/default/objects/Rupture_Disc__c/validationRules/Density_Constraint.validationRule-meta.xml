@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Density_Constraint</fullName>
+    <active>false</active>
+    <description>Density is a Mandatory field based on certain Evaluation Per Selections.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL(  Evaluation_Per__c , &quot;API Liquid&quot;) || 
+ISPICKVAL( Evaluation_Per__c , &quot;ISO Liquid&quot;) || 
+ISPICKVAL( Evaluation_Per__c , &quot;ASME Water&quot;) || 
+ISPICKVAL( Evaluation_Per__c, &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;), 
+OR( 
+ISBLANK (Density__c)
+) 
+)&amp;&amp; 
+( Bypass__c = FALSE)&amp;&amp; 
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Density__c</errorDisplayField>
+    <errorMessage>Please Enter a Value</errorMessage>
+</ValidationRule>

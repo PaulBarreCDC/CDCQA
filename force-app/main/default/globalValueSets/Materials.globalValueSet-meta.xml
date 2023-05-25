@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>01</fullName>
+        <default>false</default>
+        <label>Aluminum</label>
+    </customValue>
+    <customValue>
+        <fullName>02</fullName>
+        <default>false</default>
+        <label>Alloy 400</label>
+    </customValue>
+    <customValue>
+        <fullName>03</fullName>
+        <default>false</default>
+        <label>Alloy 600</label>
+    </customValue>
+    <customValue>
+        <fullName>04</fullName>
+        <default>false</default>
+        <label>Nickel</label>
+    </customValue>
+    <customValue>
+        <fullName>05</fullName>
+        <default>false</default>
+        <label>316 SS</label>
+    </customValue>
+    <customValue>
+        <fullName>06</fullName>
+        <default>false</default>
+        <label>Alloy B</label>
+    </customValue>
+    <customValue>
+        <fullName>07</fullName>
+        <default>false</default>
+        <label>Alloy C276</label>
+    </customValue>
+    <customValue>
+        <fullName>08</fullName>
+        <default>false</default>
+        <label>Tantalum</label>
+    </customValue>
+    <customValue>
+        <fullName>09</fullName>
+        <default>false</default>
+        <label>Titanium</label>
+    </customValue>
+    <customValue>
+        <fullName>10</fullName>
+        <default>false</default>
+        <label>Gold</label>
+    </customValue>
+    <customValue>
+        <fullName>11</fullName>
+        <default>false</default>
+        <label>Platinum</label>
+    </customValue>
+    <customValue>
+        <fullName>12</fullName>
+        <default>false</default>
+        <label>Silver</label>
+    </customValue>
+    <customValue>
+        <fullName>20</fullName>
+        <default>false</default>
+        <label>Carbon Steel</label>
+    </customValue>
+    <customValue>
+        <fullName>22</fullName>
+        <default>false</default>
+        <label>Brass</label>
+    </customValue>
+    <customValue>
+        <fullName>26</fullName>
+        <default>false</default>
+        <label>FDA Grade Clear Silicone</label>
+    </customValue>
+    <customValue>
+        <fullName>35</fullName>
+        <default>false</default>
+        <label>Black Buna-N</label>
+    </customValue>
+    <customValue>
+        <fullName>43</fullName>
+        <default>false</default>
+        <label>Graphite</label>
+    </customValue>
+    <customValue>
+        <fullName>45</fullName>
+        <default>false</default>
+        <label>Polyethylene</label>
+    </customValue>
+    <customValue>
+        <fullName>47</fullName>
+        <default>false</default>
+        <label>Acetal</label>
+    </customValue>
+    <customValue>
+        <fullName>50</fullName>
+        <default>false</default>
+        <label>316L SS</label>
+    </customValue>
+    <customValue>
+        <fullName>51</fullName>
+        <default>false</default>
+        <label>304 SS</label>
+    </customValue>
+    <customValue>
+        <fullName>54</fullName>
+        <default>false</default>
+        <label>303 SS</label>
+    </customValue>
+    <customValue>
+        <fullName>59</fullName>
+        <default>false</default>
+        <label>17-7 SS</label>
+    </customValue>
+    <customValue>
+        <fullName>70</fullName>
+        <default>false</default>
+        <label>Fluoropolymer</label>
+    </customValue>
+    <customValue>
+        <fullName>71</fullName>
+        <default>false</default>
+        <label>PTFE</label>
+    </customValue>
+    <customValue>
+        <fullName>72</fullName>
+        <default>false</default>
+        <label>PFA</label>
+    </customValue>
+    <customValue>
+        <fullName>73</fullName>
+        <default>false</default>
+        <label>FEP</label>
+    </customValue>
+    <customValue>
+        <fullName>76</fullName>
+        <default>false</default>
+        <label>Black FKM</label>
+    </customValue>
+    <customValue>
+        <fullName>77</fullName>
+        <default>false</default>
+        <label>Black Chemfilm(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>80</fullName>
+        <default>false</default>
+        <label>Non-Asbestos</label>
+    </customValue>
+    <customValue>
+        <fullName>81</fullName>
+        <default>false</default>
+        <label>Alloy C22</label>
+    </customValue>
+    <customValue>
+        <fullName>B6</fullName>
+        <default>false</default>
+        <label>Blue-Gard(R) 3200</label>
+    </customValue>
+    <customValue>
+        <fullName>B9</fullName>
+        <default>false</default>
+        <label>Gylon(R) 3500</label>
+    </customValue>
+    <customValue>
+        <fullName>D1</fullName>
+        <default>false</default>
+        <label>White EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>E1</fullName>
+        <default>false</default>
+        <label>Gylon(R) 3504</label>
+    </customValue>
+    <customValue>
+        <fullName>J8</fullName>
+        <default>false</default>
+        <label>FDA Grade White Viton(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>K1</fullName>
+        <default>false</default>
+        <label>ASME Brass</label>
+    </customValue>
+    <customValue>
+        <fullName>K3</fullName>
+        <default>false</default>
+        <label>Blue-Gard(R) 3000</label>
+    </customValue>
+    <customValue>
+        <fullName>L4</fullName>
+        <default>false</default>
+        <label>FDA Grade Black Viton(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>L5</fullName>
+        <default>false</default>
+        <label>FDA Grade White Buna-N</label>
+    </customValue>
+    <customValue>
+        <fullName>L6</fullName>
+        <default>false</default>
+        <label>FDA Grade Black EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>L7</fullName>
+        <default>false</default>
+        <label>FDA Grade White EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>L8</fullName>
+        <default>false</default>
+        <label>FDA Grade PTFE</label>
+    </customValue>
+    <customValue>
+        <fullName>M4</fullName>
+        <default>false</default>
+        <label>Flexible Graphite</label>
+    </customValue>
+    <customValue>
+        <fullName>M6</fullName>
+        <default>false</default>
+        <label>Cork Elastomer</label>
+    </customValue>
+    <customValue>
+        <fullName>N1</fullName>
+        <default>false</default>
+        <label>FDA Grade Platinum Cured Silicone</label>
+    </customValue>
+    <customValue>
+        <fullName>N5</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI Steel Reinforced PTFE</label>
+    </customValue>
+    <customValue>
+        <fullName>N8</fullName>
+        <default>false</default>
+        <label>FDA Grade Black Buna-N</label>
+    </customValue>
+    <customValue>
+        <fullName>P6</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI Peroxide Cured Silicone</label>
+    </customValue>
+    <customValue>
+        <fullName>P7</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI Black Viton(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>P8</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI Black EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>P9</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI White EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>Q1</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI PTFE</label>
+    </customValue>
+    <customValue>
+        <fullName>Q2</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI Platinum Cured Silicone</label>
+    </customValue>
+    <customValue>
+        <fullName>R5</fullName>
+        <default>false</default>
+        <label>FDA Grade/USP Class VI White Viton(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>V2</fullName>
+        <default>false</default>
+        <label>V2</label>
+    </customValue>
+    <customValue>
+        <fullName>44</fullName>
+        <default>false</default>
+        <label>Black Neoprene</label>
+    </customValue>
+    <customValue>
+        <fullName>Material_of_Dent_Protector</fullName>
+        <default>false</default>
+        <label>Material of Dent Protector</label>
+    </customValue>
+    <customValue>
+        <fullName>Enter Values in Global Value Set</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Enter Values in Global Value Set</label>
+    </customValue>
+    <masterLabel>Materials</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

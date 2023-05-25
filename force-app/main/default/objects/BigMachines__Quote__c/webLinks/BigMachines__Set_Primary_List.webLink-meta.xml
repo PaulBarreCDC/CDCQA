@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Set_Primary_List</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Set as Primary</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/apex.js&quot;)}
+
+var records = {!GETRECORDIDS($ObjectType.BigMachines__Quote__c)};
+var isOpp = &apos;{!Opportunity.Id}&apos;.length &gt; 0;
+
+var setAsPrimary = false;
+if (records == null || records.length == 0) {
+	alert(&quot;Please check the box next to the quote that you would like to be the primary quote before clicking the &apos;Set as Primary&apos; button.&quot;);
+} else if (records.length &gt; 1) {
+	alert(&quot;Please select only one quote to be the primary quote.&quot;);
+} else if (sforce.apex.execute(&apos;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&apos;, &apos;canEditQuote&apos;, {quoteId:records[0]}) != &apos;true&apos;) {
+	alert(&apos;You do not have permission to set that quote as primary.  Please contact your system administrator.&apos;);
+} else if ((sforce.apex.execute(&apos;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&apos;, &apos;opportunityOfAccountHasLineItems&apos;, {quoteId:records[0]}) == &apos;true&apos;)) {
+	if (isOpp) {
+		setAsPrimary = confirm(&quot;Setting a new quote as the primary quote will delete all of the opportunity products on this opportunity which are associated with the current primary quote.  Do you want to continue?&quot;);
+	} else {
+		setAsPrimary = confirm(&quot;Setting a new quote as the primary quote will delete all of the opportunity products on the opportunity that this quote belongs to which are associated with the current primary quote.  Do you want to continue?&quot;);
+	}
+} else {
+	setAsPrimary = true;
+}
+
+if (setAsPrimary) {
+	var result = sforce.apex.execute(&quot;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&quot;, &quot;setQuoteAsPrimary&quot;, {quoteId:records[0]});
+	var hrefVal = window.parent.location.href;
+	var hashIndex = hrefVal.indexOf(&apos;#&apos;);
+	if (hashIndex &gt; -1) {
+		hrefVal = hrefVal.substr(0, hashIndex);
+	}
+	window.parent.location.href = hrefVal;
+}</url>
+</WebLink>

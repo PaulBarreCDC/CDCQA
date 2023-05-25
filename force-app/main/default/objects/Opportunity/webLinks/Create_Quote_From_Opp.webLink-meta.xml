@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Quote_From_Opp</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Create Quote From Opp</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteCreate?oppId={!Opportunity.Id}</url>
+</WebLink>

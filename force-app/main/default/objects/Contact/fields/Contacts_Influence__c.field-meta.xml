@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contacts_Influence__c</fullName>
+    <externalId>false</externalId>
+    <label>Contact&apos;s Influence</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commercial influencer</fullName>
+                <default>false</default>
+                <label>Commercial influencer</label>
+            </value>
+            <value>
+                <fullName>Commercial decider</fullName>
+                <default>false</default>
+                <label>Commercial decider</label>
+            </value>
+            <value>
+                <fullName>Technical influencer</fullName>
+                <default>false</default>
+                <label>Technical influencer</label>
+            </value>
+            <value>
+                <fullName>Technical decider</fullName>
+                <default>false</default>
+                <label>Technical decider</label>
+            </value>
+            <value>
+                <fullName>AVL influencer</fullName>
+                <default>false</default>
+                <label>AVL influencer</label>
+            </value>
+            <value>
+                <fullName>AVL decider</fullName>
+                <default>false</default>
+                <label>AVL decider</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

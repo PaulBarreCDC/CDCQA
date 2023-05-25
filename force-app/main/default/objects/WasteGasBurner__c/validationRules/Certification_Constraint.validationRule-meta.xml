@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certification_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+  ISPICKVAL(Certification__c,&apos;&apos;)
+)&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Certifications_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Certification : Please Select any one of the following</errorMessage>
+</ValidationRule>

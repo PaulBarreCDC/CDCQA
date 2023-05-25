@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__GasFlowRateTo__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Gas Flow Rate To</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>cdcpc__Flow_Rate_Units</valueSetName>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Connection__c</fullName>
+    <description>DO NOT CHANGE THE &quot;API&quot; NAMES FOR THE PICKLIST VALUES</description>
+    <externalId>false</externalId>
+    <label>Connection</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Size__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>o</fullName>
+                <default>false</default>
+                <label>1/2&quot; FNPT</label>
+            </value>
+            <value>
+                <fullName>e</fullName>
+                <default>false</default>
+                <label>1/2&quot; 150# ANSI RF Flange</label>
+            </value>
+            <value>
+                <fullName>D</fullName>
+                <default>false</default>
+                <label>1&quot; 150# ANSI RF Flange on 1/2&quot; Valve</label>
+            </value>
+            <value>
+                <fullName>f</fullName>
+                <default>false</default>
+                <label>DN 15 (1/2&quot;) PN 10/16 DIN RF Flange</label>
+            </value>
+            <value>
+                <fullName>g</fullName>
+                <default>false</default>
+                <label>DN 25 (1&quot;) PN 10/16 DIN RF on 1/2&quot; Valve</label>
+            </value>
+            <value>
+                <fullName>s</fullName>
+                <default>false</default>
+                <label>1/2&quot; Sanitary Connections</label>
+            </value>
+            <value>
+                <fullName>q</fullName>
+                <default>false</default>
+                <label>1/2&quot; Quick Couplings</label>
+            </value>
+            <value>
+                <fullName>n</fullName>
+                <default>false</default>
+                <label>1&quot; FNPT</label>
+            </value>
+            <value>
+                <fullName>a</fullName>
+                <default>false</default>
+                <label>1&quot; 150# ANSI RF Flange</label>
+            </value>
+            <value>
+                <fullName>t</fullName>
+                <default>false</default>
+                <label>2&quot; 150# ANSI RF Flange on 1&quot; Valve</label>
+            </value>
+            <value>
+                <fullName>c</fullName>
+                <default>false</default>
+                <label>DN 25 (1&quot;) PN 10/16 DIN RF Flange</label>
+            </value>
+            <value>
+                <fullName>b</fullName>
+                <default>false</default>
+                <label>DN 50 (2&quot;) PN 10/16 DIN RF on 1&quot; Valve</label>
+            </value>
+            <value>
+                <fullName>r</fullName>
+                <default>false</default>
+                <label>1&quot; Sanitary Connections</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>o</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>e</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>D</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>f</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>g</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>s</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>5</controllingFieldValue>
+            <valueName>q</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>n</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>a</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>t</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>c</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>b</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>1</controllingFieldValue>
+            <valueName>r</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

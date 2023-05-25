@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Id_gen__c</fullName>
+    <externalId>false</externalId>
+    <formula>Rep_Code__c + &quot;-&quot; + Text(Fiscal_Year__c) + &quot;-&quot; + Text(Fiscal_Month__c) + &quot;-&quot; +  Text(Brands__c)</formula>
+    <label>Unique Id (GEN)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

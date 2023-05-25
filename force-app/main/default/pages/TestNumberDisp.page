@@ -1,0 +1,118 @@
+<apex:page standardController="Rupture_Disc__c" >
+ <!--
+     extensions="configureRuptureDiscProduct"
+    
+    
+    script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+    $(function() 
+    {
+    $("input[type=text]").each(function()
+        {
+          console.log("id "+$(this).val())
+          var enteredValue = $(this).val();
+            enteredValue = parseFloat(enteredValue);
+            var decimalValue = enteredValue - parseInt(enteredValue);
+            var resetValue;
+            if(decimalValue != 0)
+           {
+                resetValue = enteredValue;
+           }
+           else
+           {
+               resetValue = parseInt(enteredValue);
+           }
+            console.log('Entered value = '+enteredValue);
+            console.log('Decimal value = '+decimalValue);
+            console.log('Reset value = '+resetValue);
+            if(resetValue != '' && resetValue != 'NaN')
+          {
+             $(this).val(resetValue);
+          }
+        });
+    });
+   
+</script>
+    <apex:form >
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:tabPanel switchType="client" selectedTab="name1" id="theTabPanel">
+            <apex:tab label="Calculation Parameters" name="name1" id="tabOne">
+                <apex:pageBlock >
+                    <apex:pageBlock >
+                        <apex:pageBlockSection >
+                            <apex:inputField id="relief" value="{!conProd.Relief_Type__c}"> 
+                            <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections" />
+                        </apex:inputField>
+                        </apex:pageBlockSection>
+                        <apex:outputPanel layout="none" id="sections">
+                            <apex:pageBlockSection id="pressure" rendered="{!showPressure}" title="Pressure Relief" >
+                                <apex:inputField value="{!conProd.Pressure_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Pressure_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Atmospheric_Pressure__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>           
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}">
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Constrain_product_selection__c}"/>
+                                <apex:inputField value="{!conProd.Pressure_Withstand__c  }">
+                                    <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections1" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:outputPanel layout="none" id="sections1" >
+                                    <apex:pageBlockSection id="pressure1" rendered="{!showBackPressure}" >
+                                        <apex:inputField value="{!conProd.Back_Pressure_Value__c }"></apex:inputField>
+                                        <apex:inputField value="{!conProd.Back_Pressure_Units__c}"></apex:inputField>
+                                    </apex:pageBlockSection>                                
+                                </apex:outputPanel>
+                            </apex:pageBlockSection>
+                            <apex:pageBlockSection id="pressure1" rendered="{!showVacuum}" title="Vaccum Relief">
+                                <apex:inputField value="{!conProd.Vacuum_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Withstand__c}">
+                                    <apex:actionSupport event="onchange" action="{!showSection}" rerender="sections12" />
+                                </apex:inputField>
+                                <apex:outputPanel layout="none" id="sections12" >
+                                    <apex:pageBlockSection id="pressure1" rendered="{!showPositive}" >
+                                    <apex:inputField value="{!conProd.Positive_Pressure_Value__c }"></apex:inputField>
+                                    <apex:inputField value="{!conProd.Positive_Pressure_Units__c}"></apex:inputField> 
+                                </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}">
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:inputField value="{!conProd.Constrain_product_selection__c}"/>
+                            </apex:pageBlockSection>
+                            <apex:pageBlockSection id="pressure2" rendered="{!showPressureVacuum}" title="Pressure & Vaccum Relief">
+                                <apex:inputField value="{!conProd.Pressure_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Pressure_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Vacuum_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Temperature_Setting_Units__c}"></apex:inputField>
+                                <apex:inputField value="{!conProd.Atmospheric_Pressure__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Is_there_a_liquid_relief_scenario__c}"></apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.constrain_product_selection_by_flow__c}">
+                                    <apex:actionSupport event="onchange" action="{!showSectionB}" rerender="secB" />
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:inputField value="{!conProd.Constrain_product_selection__c}">
+                                </apex:inputField>
+ 
+                            </apex:pageBlockSection>
+                            <apex:commandButton action="{!saveRelief}" value="Save & Continue" />
+                        </apex:outputPanel>
+                    </apex:pageBlock>
+                </apex:pageBlock> 
+            </apex:tab>          
+        </apex:tabPanel>
+    </apex:form-->
+</apex:page>

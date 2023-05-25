@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flowing_media_Constraint</fullName>
+    <active>false</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(TEXT( Max_Allowable_Pressure_Drop__c ))),
+NOT(ISBLANK(TEXT( Max_Allowable_Pressure_Drop_Units__c ))),
+NOT(ISBLANK( Required_Flow_Rate__c )),
+NOT(ISBLANK(TEXT( Required_Flow_Rate_Units__c ))),
+ISBLANK(TEXT(  Flowing_Media__c )),
+Sizing_Flow_Area_flag__c=true)</errorConditionFormula>
+    <errorDisplayField>Flowing_Media__c</errorDisplayField>
+    <errorMessage>Flowing Media: Please Select any one of the following</errorMessage>
+</ValidationRule>

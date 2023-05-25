@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PS_Input_Field_Labels__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>PS Input Field Labels</label>
+    <referenceTo>PS_Input_Field_Labels__c</referenceTo>
+    <relationshipLabel>PS Input Attr Value Desc</relationshipLabel>
+    <relationshipName>PS_Input_Attr_Value_Desc</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

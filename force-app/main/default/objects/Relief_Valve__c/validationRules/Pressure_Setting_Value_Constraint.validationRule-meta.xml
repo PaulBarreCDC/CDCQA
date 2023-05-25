@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Setting_Value_Constraint</fullName>
+    <active>true</active>
+    <description>Pressure Setting is a Mandatory field to be entered by the user.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+OR(ISBLANK(Pressure_Setting__c),Pressure_Setting__c &lt;= 0),
+(Section_A_Flag__c  = TRUE))</errorConditionFormula>
+    <errorDisplayField>Pressure_Setting__c</errorDisplayField>
+    <errorMessage>Pressure Setting : Please enter a Value</errorMessage>
+</ValidationRule>

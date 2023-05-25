@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship__c</fullName>
+    <externalId>false</externalId>
+    <label>Relationship</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Suspect (unqualified)</fullName>
+                <default>false</default>
+                <label>Suspect (unqualified)</label>
+            </value>
+            <value>
+                <fullName>Prospect (qualified)</fullName>
+                <default>false</default>
+                <label>Prospect (qualified)</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>Partner (rep)</fullName>
+                <default>false</default>
+                <label>Partner (rep)</label>
+            </value>
+            <value>
+                <fullName>Colleague</fullName>
+                <default>false</default>
+                <label>Colleague</label>
+            </value>
+            <value>
+                <fullName>Personal</fullName>
+                <default>false</default>
+                <label>Personal</label>
+            </value>
+            <value>
+                <fullName>Left company</fullName>
+                <default>false</default>
+                <label>Left company</label>
+            </value>
+            <value>
+                <fullName>Disqualified</fullName>
+                <default>false</default>
+                <label>Disqualified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

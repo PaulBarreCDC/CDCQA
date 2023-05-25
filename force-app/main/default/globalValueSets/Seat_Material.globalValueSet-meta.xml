@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1</fullName>
+        <default>false</default>
+        <label>1-Aluminum</label>
+    </customValue>
+    <customValue>
+        <fullName>5</fullName>
+        <default>false</default>
+        <label>5-316 SS</label>
+    </customValue>
+    <customValue>
+        <fullName>6</fullName>
+        <default>false</default>
+        <label>6-Derakane(R) 411-45</label>
+    </customValue>
+    <customValue>
+        <fullName>7</fullName>
+        <default>false</default>
+        <label>7-Furan</label>
+    </customValue>
+    <customValue>
+        <fullName>9</fullName>
+        <default>false</default>
+        <label>9-Derakane(R) 470-36</label>
+    </customValue>
+    <customValue>
+        <fullName>A</fullName>
+        <default>false</default>
+        <label>A-Aluminum (Replaceable)</label>
+    </customValue>
+    <customValue>
+        <fullName>F</fullName>
+        <default>false</default>
+        <label>F-Kynar(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>G</fullName>
+        <default>false</default>
+        <label>G-Chlorinated Polyvinyl Chloride</label>
+    </customValue>
+    <customValue>
+        <fullName>H</fullName>
+        <default>false</default>
+        <label>H-High Density Polyethylene</label>
+    </customValue>
+    <customValue>
+        <fullName>J</fullName>
+        <default>false</default>
+        <label>J-Polypropylene</label>
+    </customValue>
+    <customValue>
+        <fullName>R</fullName>
+        <default>false</default>
+        <label>R-316 SS (Replaceable)</label>
+    </customValue>
+    <masterLabel>Seat Material</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

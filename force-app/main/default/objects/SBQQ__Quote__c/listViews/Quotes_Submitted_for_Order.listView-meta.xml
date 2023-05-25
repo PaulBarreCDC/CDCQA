@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotes_Submitted_for_Order</fullName>
+    <columns>NAME</columns>
+    <columns>Brand__c</columns>
+    <columns>Sales_Division__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Sales_Group__c</columns>
+    <columns>SBQQ__SalesRep__c</columns>
+    <columns>Sold_By_Rep__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Customer_s_PO_Number__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <label>Quotes Submitted for Order</label>
+</ListView>

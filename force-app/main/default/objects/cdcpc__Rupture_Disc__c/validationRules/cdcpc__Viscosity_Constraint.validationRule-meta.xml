@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Viscosity_Constraint</fullName>
+    <active>true</active>
+    <description>Viscosity is a Mandatory field based on certain Evaluation Per Selections.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Liquid&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Liquid&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;API Omega Method Subcooled Liquid&quot;), 
+OR( 
+ISBLANK ( cdcpc__Viscosity__c ) 
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Viscosity__c</errorDisplayField>
+    <errorMessage>Viscosity: Please Enter a Value</errorMessage>
+</ValidationRule>

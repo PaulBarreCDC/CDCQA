@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sec1eFlow_Rate_Units_Validations</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Flow_Rate_Units__c, &apos;&apos;)
+)&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Process_Parameters_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Flow Rate Units : Please select a value from the drop down</errorMessage>
+</ValidationRule>

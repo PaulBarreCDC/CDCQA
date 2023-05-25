@@ -1,0 +1,75 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="RegenerationRequestController" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <ltng:require styles="{!$Resource.multilineToastCSS}" />
+
+    <!--component attributs -->
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    <aura:attribute name="request_pending" type="boolean" default="FALSE"/>
+    <aura:attribute name="current_request_details" type="List" default=""/>
+    <aura:attribute name="request_color" type="String" default="green"/>
+    <aura:attribute name="completed_regeneration" type="Integer" default="0"/>
+    <aura:attribute name="product_options" type="List" default=""/>
+    
+    <aura:attribute name="product" type="String" default=""/>
+    <aura:attribute name="quoteId" type="String" default=""/>
+    
+    <!--loading spinner start-->
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    <!-- Loading spinner end-->  
+    
+    <div class="slds-page-header bgwhite">
+        <div class="slds-page-header__row ">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                            <lightning:icon iconName="standard:account" alternativeText="Regeneration" title="Regeneration" />
+                            <span class="slds-assistive-text">Regeneration</span>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate" title="">Regeneration</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta" style="font-weight: bold;">
+                            <span style="font-size: 13px;">Today's Status:</span><br/>
+                            <span style="{!'color:' + v.request_color +'; padding-left: 10px;'}">Active: {!v.current_request_details.length}</span><br/>
+                            <span style="color: green;  padding-left: 10px;">Completed: {!v.completed_regeneration}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slds-media__body cust_section">
+        <div class="slds-form-element slds">
+            <lightning:select aura:id="fieldId" value="{!v.product}" name="product" label="Product" required="true">
+                <option value="">-Select Product-</option>
+                <aura:iteration items="{!v.product_options}" var="s">
+                    <option value="{!s}">{!s}</option>
+                </aura:iteration> 
+            </lightning:select>
+        </div>
+        
+        <div class="slds-form-element slds" style="margin-top: 10px;">
+            <lightning:input aura:id="fieldId" value="{!v.quoteId}" name="quoteId" label="Quote No." placeholder="Quote No." />
+        </div>
+        
+        <div class="slds-form-element slds" style="margin-top: 10px;">
+        	<lightning:button variant="brand" label="Submit" title="Submit" onclick="{! c.handleClick }"/>
+        </div>
+    </div>
+</aura:component>

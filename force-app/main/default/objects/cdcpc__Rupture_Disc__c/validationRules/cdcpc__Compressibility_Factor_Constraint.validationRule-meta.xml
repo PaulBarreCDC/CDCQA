@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Compressibility_Factor_Constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT (ISBLANK(  cdcpc__Compressibility_Factor__c  )), 
+OR( 
+cdcpc__Compressibility_Factor__c&lt; 0.8, 
+cdcpc__Compressibility_Factor__c&gt; 1.1 
+) 
+) &amp;&amp; cdcpc__Bypass__c = FALSE &amp;&amp; 
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Compressibility_Factor__c</errorDisplayField>
+    <errorMessage>Compressibility Factor: Please enter positive Integer Value between 0.8 and 1.1</errorMessage>
+</ValidationRule>

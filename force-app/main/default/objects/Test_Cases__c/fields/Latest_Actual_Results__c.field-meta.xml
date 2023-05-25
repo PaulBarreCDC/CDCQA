@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Latest_Actual_Results__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the test results were not as expected, please describe why. What step were you on? Did you get an error message? If the test passed, please provide confirmation of expected results</inlineHelpText>
+    <label>Latest Actual Results</label>
+    <length>30000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

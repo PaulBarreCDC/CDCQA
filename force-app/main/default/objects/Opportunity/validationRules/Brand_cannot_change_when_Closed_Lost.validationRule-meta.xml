@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brand_cannot_change_when_Closed_Lost</fullName>
+    <active>true</active>
+    <description>Brand had to be in the Key Fields of the Closed Lost Path in order for us to filter down Winning Competition</description>
+    <errorConditionFormula>ISCHANGED(Brand__c )  &amp;&amp;  ISPICKVAL(StageName , &quot;Closed Lost&quot;)</errorConditionFormula>
+    <errorDisplayField>Brand__c</errorDisplayField>
+    <errorMessage>Brand cannot be changed in the Closed Lost stage</errorMessage>
+</ValidationRule>

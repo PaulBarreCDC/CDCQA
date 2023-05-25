@@ -1,0 +1,5 @@
+<apex:page standardController="Rupture_Disc__c"
+           docType="html-5.0"
+           extensions="ConfigureRD" lightningStylesheets="true" action="{!getDiaData}">
+    
+</apex:page>

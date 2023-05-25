@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Results_Needed_For_Fail</fullName>
+    <active>true</active>
+    <description>When updating Test Case Status to &quot;Pending Issue&quot;, Actual Results are required.</description>
+    <errorConditionFormula>And (
+        ISPICKVAL(Status__c,&apos;Pending Issue&apos;),   
+        ISBLANK(Latest_Actual_Results__c)
+)</errorConditionFormula>
+    <errorDisplayField>Latest_Actual_Results__c</errorDisplayField>
+    <errorMessage>If Test Case Status is PENDING ISSUE, you must add the Actual Results</errorMessage>
+</ValidationRule>

@@ -1,0 +1,201 @@
+Multiplier__c,Adder__c,Pressure_UOM_From__c,Pressure_UOM_To__c
+0.068046,0,psig,atmg
+1,0,psig,psig
+14.5038,0,barg,psig
+0.986923,0,barg,atmg
+0.980665,0,kgf/cm2,barg
+1000,0,kgf/cm2,gf/cm2
+28.959,0,kgf/cm2,in. Hg
+394.09,0,kgf/cm2,in. water
+1,0,kgf/cm2,kgf/cm2
+1,1.03323,kgf/cm2,kgf/cm2 abs.
+98.0665,0,kgf/cm2,kPa
+98.0665,101.325,kgf/cm2,kPa abs.
+980.665,1013.25,kgf/cm2,mbar abs.
+980.665,0,kgf/cm2,mbarg
+735.559,0,kgf/cm2,mm Hg
+10009.9,0,kgf/cm2,mm water
+0.0980665,0,kgf/cm2,MPa
+0.0980665,0.101325,kgf/cm2,MPa abs.
+227.574,0,kgf/cm2,osig
+98066.5,0,kgf/cm2,Pa
+98066.5,101325,kgf/cm2,Pa abs.
+14.2233,14.6959,kgf/cm2,psia
+14.2233,0,kgf/cm2,psid
+14.2233,0,kgf/cm2,psig
+735.559,0,kgf/cm2,torr
+0.967841,0,kgf/cm2 abs.,atm abs.
+0.967841,-1,kgf/cm2 abs.,atmg
+0.980665,0,kgf/cm2 abs.,bar abs.
+0.980665,-1.01325,kgf/cm2 abs.,bard
+0.980665,-1.01325,kgf/cm2 abs.,barg
+1000,-1033.23,kgf/cm2 abs.,gf/cm2
+28.959,-29.9213,kgf/cm2 abs.,in. Hg
+394.09,-407.184,kgf/cm2 abs.,in. water
+1,-1.03323,kgf/cm2 abs.,kgf/cm2
+1,0,kgf/cm2 abs.,kgf/cm2 abs.
+98.0665,-101.325,kgf/cm2 abs.,kPa
+98.0665,0,kgf/cm2 abs.,kPa abs.
+980.665,0,kgf/cm2 abs.,mbar abs.
+980.665,-1013.25,kgf/cm2 abs.,mbarg
+735.559,-760,kgf/cm2 abs.,mm Hg
+10009.9,-10342.5,kgf/cm2 abs.,mm water
+0.0980665,-0.101325,kgf/cm2 abs.,MPa
+0.0980665,0,kgf/cm2 abs.,MPa abs.
+227.574,-235.135,kgf/cm2 abs.,osig
+98066.5,-101325,kgf/cm2 abs.,Pa
+98066.5,0,kgf/cm2 abs.,Pa abs.
+14.2233,0,kgf/cm2 abs.,psia
+14.2233,-14.6959,kgf/cm2 abs.,psid
+14.2233,-14.6959,kgf/cm2 abs.,psig
+735.559,-760,kgf/cm2 abs.,torr
+0.00986923,1,kPa,atm abs.
+0.00986923,0,kPa,atmg
+0.01,1.01325,kPa,bar abs.
+0.01,0,kPa,bard
+0.01,0,kPa,barg
+10.1972,0,kPa,gf/cm2
+0.2953,0,kPa,in. Hg
+4.0186,0,kPa,in. water
+0.0101972,0,kPa,kgf/cm2
+0.0101972,1.03323,kPa,kgf/cm2 abs.
+1,0,kPa,kPa
+1,101.325,kPa,kPa abs.
+10,1013.25,kPa,mbar abs.
+10,0,kPa,mbarg
+7.50062,0,kPa,mm Hg
+102.072,0,kPa,mm water
+0.001,0,kPa,MPa
+0.001,0.101325,kPa,MPa abs.
+2.3206,0,kPa,osig
+1000,0,kPa,Pa
+1000,101325,kPa,Pa abs.
+0.145038,14.6959,kPa,psia
+0.145038,0,kPa,psid
+0.145038,0,kPa,psig
+7.50062,0,kPa,torr
+0.00986923,0,kPa abs.,atm abs.
+0.00986923,-1,kPa abs.,atmg
+0.01,0,kPa abs.,bar abs.
+0.01,-1.01325,kPa abs.,bard
+0.01,-1.01325,kPa abs.,barg
+10.1972,-1033.23,kPa abs.,gf/cm2
+0.2953,-29.9213,kPa abs.,in. Hg
+4.0186,-407.184,kPa abs.,in. water
+0.0101972,-1.03323,kPa abs.,kgf/cm2
+0.0101972,0,kPa abs.,kgf/cm2 abs.
+1,-101.325,kPa abs.,kPa
+1,0,kPa abs.,kPa abs.
+10,0,kPa abs.,mbar abs.
+10,-1013.25,kPa abs.,mbarg
+7.50062,-760,kPa abs.,mm Hg
+102.072,-10342.5,kPa abs.,mm water
+0.001,-0.101325,kPa abs.,MPa
+0.001,0,kPa abs.,MPa abs.
+2.3206,-235.135,kPa abs.,osig
+1000,-101325,kPa abs.,Pa
+1000,0,kPa abs.,Pa abs.
+0.145038,0,kPa abs.,psia
+0.145038,-14.6959,kPa abs.,psid
+0.145038,-14.6959,kPa abs.,psig
+7.50062,-760,kPa abs.,torr
+9.87E-04,0,mbar abs.,atm abs.
+9.87E-04,-1,mbar abs.,atmg
+0.001,0,mbar abs.,bar abs.
+0.001,-1.01325,mbar abs.,bard
+0.001,-1.01325,mbar abs.,barg
+1.01972,-1033.23,mbar abs.,gf/cm2
+0.02953,-29.9213,mbar abs.,in. Hg
+0.40186,-407.184,mbar abs.,in. water
+0.00101972,-1.03323,mbar abs.,kgf/cm2
+0.00101972,0,mbar abs.,kgf/cm2 abs.
+0.1,-101.325,mbar abs.,kPa
+0.1,0,mbar abs.,kPa abs.
+1,0,mbar abs.,mbar abs.
+1,-1013.25,mbar abs.,mbarg
+0.750062,-760,mbar abs.,mm Hg
+10.2072,-10342.5,mbar abs.,mm water
+1.00E-04,-0.101325,mbar abs.,MPa
+1.00E-04,0,mbar abs.,MPa abs.
+0.23206,-235.135,mbar abs.,osig
+100,-101325,mbar abs.,Pa
+100,0,mbar abs.,Pa abs.
+0.0145038,0,mbar abs.,psia
+0.0145038,-14.6959,mbar abs.,psid
+0.0145038,-14.6959,mbar abs.,psig
+0.750062,-760,mbar abs.,torr
+9.87E-04,1,mbarg,atm abs.
+9.87E-04,0,mbarg,atmg
+0.001,1.01325,mbarg,bar abs.
+0.001,0,mbarg,bard
+0.001,0,mbarg,barg
+1.01972,0,mbarg,gf/cm2
+0.02953,0,mbarg,in. Hg
+0.40186,0,mbarg,in. water
+0.00101972,0,mbarg,kgf/cm2
+0.00101972,1.03323,mbarg,kgf/cm2 abs.
+0.1,0,mbarg,kPa
+0.1,101.325,mbarg,kPa abs.
+1,1013.25,mbarg,mbar abs.
+1,0,mbarg,mbarg
+0.750062,0,mbarg,mm Hg
+10.2072,0,mbarg,mm water
+1.00E-04,0,mbarg,MPa
+1.00E-04,0.101325,mbarg,MPa abs.
+0.23206,0,mbarg,osig
+100,0,mbarg,Pa
+100,101325,mbarg,Pa abs.
+0.0145038,14.6959,mbarg,psia
+0.0145038,0,mbarg,psid
+0.0145038,0,mbarg,psig
+0.750062,0,mbarg,torr
+0.00131579,1,mm Hg,atm abs.
+0.00131579,0,mm Hg,atmg
+0.00133322,1.01325,mm Hg,bar abs.
+0.00133322,0,mm Hg,bard
+0.00133322,0,mm Hg,barg
+1.35951,0,mm Hg,gf/cm2
+0.0393701,0,mm Hg,in. Hg
+0.535769,0,mm Hg,in. water
+0.00135951,0,mm Hg,kgf/cm2
+0.00135951,1.03323,mm Hg,kgf/cm2 abs.
+0.133322,0,mm Hg,kPa
+0.133322,101.325,mm Hg,kPa abs.
+1.33322,1013.25,mm Hg,mbar abs.
+1.33322,0,mm Hg,mbarg
+1,0,mm Hg,mm Hg
+13.6085,0,mm Hg,mm water
+1.33E-04,0,mm Hg,MPa
+1.33E-04,0.101325,mm Hg,MPa abs.
+0.309388,0,mm Hg,osig
+133.322,0,mm Hg,Pa
+133.322,101325,mm Hg,Pa abs.
+0.0193368,14.6959,mm Hg,psia
+0.0193368,0,mm Hg,psid
+0.0193368,0,mm Hg,psig
+1,0,mm Hg,torr
+9.67E-05,1,mm water,atm abs.
+9.67E-05,0,mm water,atmg
+9.80E-05,1.01325,mm water,bar abs.
+9.80E-05,0,mm water,bard
+9.80E-05,0,mm water,barg
+0.0999013,0,mm water,gf/cm2
+0.00289304,0,mm water,in. Hg
+0.0393701,0,mm water,in. water
+9.99E-05,0,mm water,kgf/cm2
+9.99E-05,1.03323,mm water,kgf/cm2 abs.
+0.00979697,0,mm water,kPa
+0.00979697,101.325,mm water,kPa abs.
+0.0979697,1013.25,mm water,mbar abs.
+0.0979697,0,mm water,mbarg
+0.0734833,0,mm water,mm Hg
+1,0,mm water,mm water
+9.80E-06,0,mm water,MPa
+9.80E-06,0.101325,mm water,MPa abs.
+0.0227349,0,mm water,osig
+9.79697,0,mm water,Pa
+9.79697,101325,mm water,Pa abs.
+0.00142093,14.6959,mm water,psia
+0.00142093,0,mm water,psid
+0.00142093,0,mm water,psig
+0.0734833,0,mm water,torr

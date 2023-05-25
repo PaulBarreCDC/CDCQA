@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Ben Requests a lot of things... i try so hard to appease him</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Quote_Sent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Ben&apos;s Additional Permissions</label>
+    <license>Salesforce</license>
+</PermissionSet>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DOCUMENTATION</fullName>
+                <default>false</default>
+                <label>Order Document Charge</label>
+            </value>
+            <value>
+                <fullName>FIELD SERVICE</fullName>
+                <default>false</default>
+                <label>Field Service Charge</label>
+            </value>
+            <value>
+                <fullName>FLOW LAB</fullName>
+                <default>false</default>
+                <label>Flow Lab Testing Charge</label>
+            </value>
+            <value>
+                <fullName>PROCESSING CHARGE</fullName>
+                <default>false</default>
+                <label>Product Processing Charge</label>
+            </value>
+            <value>
+                <fullName>REDBALL FEE</fullName>
+                <default>false</default>
+                <label>Expedited Service Charge</label>
+            </value>
+            <value>
+                <fullName>RESTOCK</fullName>
+                <default>false</default>
+                <label>Restock Charge For Returned Material</label>
+            </value>
+            <value>
+                <fullName>SHIPPING</fullName>
+                <default>false</default>
+                <label>Shipping Charge</label>
+            </value>
+            <value>
+                <fullName>CANCELLATION</fullName>
+                <default>false</default>
+                <label>Cancellation Charge</label>
+            </value>
+            <value>
+                <fullName>START UP</fullName>
+                <default>false</default>
+                <label>Start Up Charge</label>
+            </value>
+            <value>
+                <fullName>NUCLEAR</fullName>
+                <default>false</default>
+                <label>Nuclear Charge</label>
+            </value>
+            <value>
+                <fullName>ITAR CHARGE</fullName>
+                <default>false</default>
+                <label>ITAR Charge</label>
+            </value>
+            <value>
+                <fullName>EAR CHARGE</fullName>
+                <default>false</default>
+                <label>EAR Charge</label>
+            </value>
+            <value>
+                <fullName>SPECIAL PACKING</fullName>
+                <default>false</default>
+                <label>Special Packing Charge</label>
+            </value>
+            <value>
+                <fullName>SET UP</fullName>
+                <default>false</default>
+                <label>Set Up Charge</label>
+            </value>
+            <value>
+                <fullName>WARRANTY</fullName>
+                <default>false</default>
+                <label>Warranty Charge</label>
+            </value>
+            <value>
+                <fullName>DEVELOPMENT</fullName>
+                <default>false</default>
+                <label>Development Charge</label>
+            </value>
+            <value>
+                <fullName>STORAGE</fullName>
+                <default>false</default>
+                <label>Storage Charges</label>
+            </value>
+            <value>
+                <fullName>ATTESTATION</fullName>
+                <default>false</default>
+                <label>Document Attestation Charge</label>
+            </value>
+            <value>
+                <fullName>CHANGE</fullName>
+                <default>false</default>
+                <label>Change Order Charge</label>
+            </value>
+            <value>
+                <fullName>INSPECTION</fullName>
+                <default>false</default>
+                <label>Source Inspection Charge</label>
+            </value>
+            <value>
+                <fullName>CERTIFICATION</fullName>
+                <default>false</default>
+                <label>Certification Charge</label>
+            </value>
+            <value>
+                <fullName>HANDLING</fullName>
+                <default>false</default>
+                <label>Handling Charge</label>
+            </value>
+            <value>
+                <fullName>BOND</fullName>
+                <default>false</default>
+                <label>Bank Bonds</label>
+            </value>
+            <value>
+                <fullName>MISC</fullName>
+                <default>false</default>
+                <label>Miscellaneous Charge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

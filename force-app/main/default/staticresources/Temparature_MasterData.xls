@@ -1,0 +1,17 @@
+Multiplier__c,Adder__c,Divider__c,Temperature_UOM_From__c,Temperature_UOM_To__c
+1,0,1,Deg C,Deg C
+1.8,32,1,Deg C,Deg F
+1,273.15,1,Deg C,Deg K
+1.8,491.67,1,Deg C,Deg R
+1,-32,1.8,Deg F,Deg C
+1,0,1,Deg F,Deg F
+1,459.67,1.8,Deg F,Deg K
+1,459.67,1,Deg F,Deg R
+1,-273.15,1,Deg K,Deg C
+1.8,-459.67,1,Deg K,Deg F
+1,0,1,Deg K,Deg K
+1.8,0,1,Deg K,Deg R
+1,-491.67,1.8,Deg R,Deg C
+1,-459.67,1,Deg R,Deg F
+1,0,1.8,Deg R,Deg K
+1,0,1,Deg R,Deg R

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimum_reqrd_flw_capacity_cant_be_null</fullName>
+    <active>true</active>
+    <description>The field Minimum required flow capacity cannot be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				NOT(ISBLANK(Customer_Specified_Media__c)),
+    NOT(ISBLANK(Molecular_Weight__c)),
+    NOT(ISBLANK(Compressibility_Factor__c)),
+				NOT(ISBLANK(Ratio_of_Specific_Heats__c)),
+				ISBLANK( Minimum_Required_Flow_Capacity__c ),
+				Bypass__c = FALSE,
+				Narrow_selection_on_flow_requirements__c = true,
+    Section_B_flag__c = TRUE
+				)</errorConditionFormula>
+    <errorMessage>Minimum Required Flow Capacity: Please Enter a Value</errorMessage>
+</ValidationRule>

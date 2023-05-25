@@ -1,0 +1,9 @@
+Num1__c,Num2__c,NumOpp1__c,NumOpp2__c,Operation__c,Text1__c,Text2__c,Text3__c,Text4__c,Text5__c,Text6__c,Text7__c,TextOpp1__c,TextOpp2__c,TextOpp3__c,TextOpp4__c,TextOpp5__c,TextOpp6__c,TextOpp7__c
+,,,,0040,PTC,GPAINT,,,,,,=ORDASH,=,,,,,
+,,,,0004,,,,,,,,,,,,,,
+,,,,0025,PTC,GPAINT,,,,,,=ORDASH,=,,,,,
+,,,,0030,PTC,GPAINT,,,,,,=ORDASH,=,,,,,
+,,,,0040,PTC,GPAINT,,,,,,=ORDASH,=,,,,,
+,,,,0050,PTC,SZC,MCBODY,GOUTOP_OptA,GPAINT,,,=,=,=,=ORDASH,=ORDASH,,
+,,,,0070,PTC,SZC,MCBODY,GPAINT,,,,=,=,=,=,,,
+,,,,0080,,,,,,,,,,,,,,

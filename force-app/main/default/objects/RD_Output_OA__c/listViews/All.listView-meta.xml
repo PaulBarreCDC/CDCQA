@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>DSCVAR__c</columns>
+    <columns>HCLASS__c</columns>
+    <columns>STC__c</columns>
+    <columns>CSSUM__c</columns>
+    <columns>DPM__c</columns>
+    <columns>COIN__c</columns>
+    <columns>COOUT__c</columns>
+    <columns>LABDSC__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>OA__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CDC_Ext_ID__c</field>
+        <operation>equals</operation>
+        <value>92182</value>
+    </filters>
+    <label>All</label>
+</ListView>

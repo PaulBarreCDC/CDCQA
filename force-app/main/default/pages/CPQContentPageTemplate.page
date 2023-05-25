@@ -1,0 +1,112 @@
+<apex:page showHeader="false" sidebar="false"
+ contentType="text/xml" cache="false"  controller="CPQContentPageController" 
+ action="{!init}">
+    
+ 
+   
+<!--<block-container  background-image="https://contdisccorp--cpqproject--c.cs45.content.force.com/servlet/servlet.ImageServer?id=0158A000000HTD1&oid=00D8A000000D67W&lastMod=1582695243000">-->
+<block-container>
+    <block  content-height="scale-to-fit">
+        
+       <!-- <block color="black" text-align="left">{!quoteLineObj}
+        </block>-->
+        <block>
+            <table table-layout="fixed" width="100%" margin-bottom="10px">
+            <table-column column-width="12%"/>
+            <table-column column-width="12%"/>
+            <table-column column-width="26%"/>
+            <table-column column-width="10%"/>
+            <table-column column-width="10%"/>
+            <table-column column-width="10%"/>
+        
+           <table-body>
+                <table-row>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="Quote Name"/>
+                        </block>
+                    </table-cell>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="Product Name"/>
+                        </block>
+                    </table-cell>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="Quote Line Item"/>
+                        </block>
+                    </table-cell>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="List Price"/>
+                        </block>
+                    </table-cell>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="Lead Time"/>
+                        </block>
+                    </table-cell>
+                    <table-cell  border="solid 1px #00000F" text-align="center" padding-top="2px" padding-bottom="2px" font-size="10px">
+                        <block>
+                             <apex:outputtext value="Quantity"/>
+                        </block>
+                    </table-cell>
+                </table-row>  
+                 
+               <apex:repeat var="quoteLineRecord" value="{!quoteLineObj}">
+                    <table-row  table-layout="fixed" border-top="solid 1px #00000F">
+                     
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px">
+                                    <apex:outputText value="{!HTMLENCODE(quoteLineRecord.SBQQ__OriginalQuoteLineId__c)}"/>
+                            </block>
+                        </table-cell>
+                        
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px">
+                                    <apex:outputText value="{!HTMLENCODE(quoteLineRecord.SBQQ__ProductName__c)}"/>
+                            </block>
+                        </table-cell>
+                        
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px"> 
+                                    <apex:outputText value="{!quoteLineRecord.id}"/>
+                            </block>
+                        </table-cell>
+                        
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px"> 
+                                    <apex:outputText value="{!quoteLineRecord.SBQQ__ListPrice__c}"/>
+                            </block>
+                        </table-cell>
+                        
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px">
+                                    <apex:outputtext value="{!quoteLineRecord.Leadtime__c}"/>
+                            </block>
+                        </table-cell>
+                        
+                        <table-cell border="solid 1px #00000F" text-align="center" font-size="10px">
+                            <block padding-top="2px" padding-bottom="2px">
+                                    <apex:outputtext value="{!quoteLineRecord.SBQQ__Quantity__c}"/>
+                            </block>
+                        </table-cell>
+                        
+                        
+                    </table-row>
+              </apex:repeat>
+                
+                
+            </table-body>
+        </table>
+                
+        </block>
+        
+        
+        
+        <!--external-graphic src="https://contdisccorp--cpqproject--c.cs45.content.force.com/servlet/servlet.ImageServer?id=0158A000000HTD1&oid=00D8A000000D67W&lastMod=1582197096000"  content-height="scale-to-fit" height="1.5in"  content-width="8.00in" scaling="non-uniform">Test</external-graphic-->
+    </block>
+    
+        
+    </block-container>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The validation is triggered if there is no model narrowed down</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISPICKVAL( Model__c, &quot;&quot;),
+Bypass__c = FALSE,
+Product_selection_flag__c = TRUE
+)</errorConditionFormula>
+    <errorDisplayField>Model__c</errorDisplayField>
+    <errorMessage>There is no Model available for the above configurations</errorMessage>
+</ValidationRule>

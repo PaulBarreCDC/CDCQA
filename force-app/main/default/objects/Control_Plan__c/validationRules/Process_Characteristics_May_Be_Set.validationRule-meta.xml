@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Characteristics_May_Be_Set</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  NOT(
+    TEXT(Data_Type__c) = &apos;Variable&apos;
+  ),
+  NOT(
+    AND(
+      ISBLANK(Process_Characteristics__c),
+      ISNULL(Process_Characteristics__c)
+    )
+  )
+)</errorConditionFormula>
+    <errorMessage>Process Characteristics may only be set if the Data Type is set to &quot;Variable&quot;</errorMessage>
+</ValidationRule>

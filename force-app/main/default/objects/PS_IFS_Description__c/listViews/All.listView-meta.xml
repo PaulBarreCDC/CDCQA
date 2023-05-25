@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ASSYPARTNO__c</columns>
+    <columns>OA__c</columns>
+    <columns>OB__c</columns>
+    <columns>ORP__c</columns>
+    <columns>ORV__c</columns>
+    <columns>OW__c</columns>
+    <columns>CUSTOMS_STAT_NO__c</columns>
+    <columns>HSN_SAC_CODE__c</columns>
+    <columns>INV_SERIAL_TRACKING__c</columns>
+    <columns>PLANNER__c</columns>
+    <columns>CHAR_TEMPLATE__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ASSYPARTNO__c</field>
+        <operation>equals</operation>
+        <value>SC12351A0102</value>
+    </filters>
+    <label>All</label>
+</ListView>

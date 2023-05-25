@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>OEM Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Autoclaves/Reactors</fullName>
+                <default>false</default>
+                <label>Autoclaves/Reactors</label>
+            </value>
+            <value>
+                <fullName>Down hole oil tools/Oilfield equipment</fullName>
+                <default>false</default>
+                <label>Down hole oil tools/Oilfield equipment</label>
+            </value>
+            <value>
+                <fullName>Electrical switchgear</fullName>
+                <default>false</default>
+                <label>Electrical switchgear</label>
+            </value>
+            <value>
+                <fullName>Gas processing equipment and systems</fullName>
+                <default>false</default>
+                <label>Gas processing equipment and systems</label>
+            </value>
+            <value>
+                <fullName>HVAC</fullName>
+                <default>false</default>
+                <label>HVAC</label>
+            </value>
+            <value>
+                <fullName>Hydraulic equipment and systems</fullName>
+                <default>false</default>
+                <label>Hydraulic equipment and systems</label>
+            </value>
+            <value>
+                <fullName>Industrial machinery</fullName>
+                <default>false</default>
+                <label>Industrial machinery</label>
+            </value>
+            <value>
+                <fullName>Instrumentation &amp; control equipment</fullName>
+                <default>false</default>
+                <label>Instrumentation &amp; control equipment</label>
+            </value>
+            <value>
+                <fullName>Medical &amp; scientific equipment</fullName>
+                <default>false</default>
+                <label>Medical &amp; scientific equipment</label>
+            </value>
+            <value>
+                <fullName>Military equipment and systems</fullName>
+                <default>false</default>
+                <label>Military equipment and systems</label>
+            </value>
+            <value>
+                <fullName>Oxygen &amp; breathing aparatus</fullName>
+                <default>false</default>
+                <label>Oxygen &amp; breathing aparatus</label>
+            </value>
+            <value>
+                <fullName>Process modules and equipment</fullName>
+                <default>false</default>
+                <label>Process modules and equipment</label>
+            </value>
+            <value>
+                <fullName>Pump and valve equipment</fullName>
+                <default>false</default>
+                <label>Pump and valve equipment</label>
+            </value>
+            <value>
+                <fullName>Vehicles - On road, offroad, rail</fullName>
+                <default>false</default>
+                <label>Vehicles - On road, offroad, rail</label>
+            </value>
+            <value>
+                <fullName>Ships and ocean going vessels</fullName>
+                <default>false</default>
+                <label>Ships and ocean going vessels</label>
+            </value>
+            <value>
+                <fullName>Tank container &amp; trailers</fullName>
+                <default>false</default>
+                <label>Tank container &amp; trailers</label>
+            </value>
+            <value>
+                <fullName>Tanks &amp; vessels</fullName>
+                <default>false</default>
+                <label>Tanks &amp; vessels</label>
+            </value>
+            <value>
+                <fullName>Turbine equipment &amp; systems</fullName>
+                <default>false</default>
+                <label>Turbine equipment &amp; systems</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

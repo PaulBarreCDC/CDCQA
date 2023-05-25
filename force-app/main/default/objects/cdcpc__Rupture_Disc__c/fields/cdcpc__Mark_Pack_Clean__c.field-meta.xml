@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Mark_Pack_Clean__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Mark/Pack/Clean</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>M2</fullName>
+                <default>false</default>
+                <label>Clean with Blue Gold ® Cleaner, Individually package, and Label Each Package and Box</label>
+            </value>
+            <value>
+                <fullName>M3</fullName>
+                <default>false</default>
+                <label>Clean with Liquid Oxygen, Individually package, and Label Each Package and Box</label>
+            </value>
+            <value>
+                <fullName>M4</fullName>
+                <default>false</default>
+                <label>Standard Cleaning and Pack in Labeled Bag</label>
+            </value>
+            <value>
+                <fullName>M5</fullName>
+                <default>false</default>
+                <label>Standard Cleaning, Pack in Labeled Bag, and Individually Package</label>
+            </value>
+            <value>
+                <fullName>M1</fullName>
+                <default>false</default>
+                <label>Mark tag number on each tag and Individually Package</label>
+            </value>
+            <value>
+                <fullName>Sanitary Requirements per MP-8001</fullName>
+                <default>false</default>
+                <label>Sanitary Service Disc</label>
+            </value>
+            <value>
+                <fullName>Mfg per MP-8002</fullName>
+                <default>false</default>
+                <label>Sanitary Requirements for Merck</label>
+            </value>
+            <value>
+                <fullName>No metal seals or slot covers</fullName>
+                <default>false</default>
+                <label>No metal seals or slot covers</label>
+            </value>
+            <value>
+                <fullName>N</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>N</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

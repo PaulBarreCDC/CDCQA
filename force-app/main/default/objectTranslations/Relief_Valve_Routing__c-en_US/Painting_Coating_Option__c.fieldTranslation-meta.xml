@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Painting_Coating_Option__c</name>
+    <picklistValues>
+        <masterLabel>Coating: All Weather - External</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coating: All Weather - Internal (except FA)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coating: All Weather - Internal (except FA) &amp; External</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coating: Corrosion Control - All Surfaces (no FA Internal)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Coating: Corrosion Protection - Internal (except FA)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Painting: Corrosion Resistant (Off Shore)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Painting: Corrosion Resistant (On Shore)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Painting: Temp Resistant (450 Deg F)</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

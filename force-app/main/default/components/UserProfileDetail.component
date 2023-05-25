@@ -1,0 +1,4 @@
+<apex:component >
+    <input type="hidden" id="user_profile" value="{!$Profile.Name}" />
+    <input type="hidden" id="read_only_profile" value="{!$Label.CDC_ReadOnly_Profile}" />
+</apex:component>

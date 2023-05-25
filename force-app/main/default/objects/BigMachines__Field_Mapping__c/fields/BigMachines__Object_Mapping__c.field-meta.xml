@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Object_Mapping__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Object Mapping</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Quote -&gt; Opportunity</fullName>
+                <default>true</default>
+                <label>Quote -&gt; Opportunity</label>
+            </value>
+            <value>
+                <fullName>Quote Product -&gt; Opportunity Product</fullName>
+                <default>false</default>
+                <label>Quote Product -&gt; Opportunity Product</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

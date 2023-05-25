@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A6Thermocouple_Material_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISBLANK(TEXT(  Thermocouple_Material__c ))
+)&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Product_Material_and_Options_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Thermocouple Material : Please select a value from the drop down</errorMessage>
+</ValidationRule>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MRFC_for_Carbon_Dioxide</fullName>
+    <active>false</active>
+    <description>This validation rule is to check the value range for Minimum required flow capacity field for Carbon Dioxide gas</description>
+    <errorConditionFormula>AND(
+			  NOT(ISNEW()),
+				 ISPICKVAL( Supply_Gas__c ,&quot;Carbon Dioxide&quot;),
+					Bypass__c = FALSE,
+     Section_B_flag__c = TRUE,
+				OR(
+								 Converted_Flow_Capacity__c &lt; 2160,
+								 Converted_Flow_Capacity__c &gt; 74900
+								)
+				)</errorConditionFormula>
+    <errorDisplayField>Minimum_Required_Flow_Capacity__c</errorDisplayField>
+    <errorMessage>The valid values for Minimum Required Flow Capacity for the selected Gas Carbon Dioxide should be in range of 2160 to 74900 SCFH</errorMessage>
+</ValidationRule>

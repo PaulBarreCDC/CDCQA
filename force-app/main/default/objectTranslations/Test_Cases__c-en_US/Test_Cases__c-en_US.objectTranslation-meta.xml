@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Test Cases</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Test Cases</value>
+    </caseValues>
+    <layouts>
+        <layout>Test Case (Classic)</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Results</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Test Case Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Test Case Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Results</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Test Case Template Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Production Validation</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Test Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Test Results</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Fail_Test</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Fail_Test_Case</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Feedback_Enhancement_Request</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Pass_Test_Case</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Results</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Master_Test_Cases</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Test_Cases</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Test_Cases_Classic</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Actual_Results_Needed_For_Fail</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Results_with_Not_Started_status</name>
+    </validationRules>
+</CustomObjectTranslation>

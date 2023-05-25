@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Value_at_discharge_Constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(Evaluation_Per__c,&quot;ASME Water&quot;),
+OR(
+ISBLANK (Pressure_Value_at_discharge__c)
+)
+)&amp;&amp;
+(Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Pressure_Value_at_discharge__c</errorDisplayField>
+    <errorMessage>Please Enter a value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+Descr__c,Outside_Operation_Item__c,Positive_Material_Identification__c,Standard_Operation_Id__c
+Pack & Final Shipping,,-,PACK
+Final Inspect,,-,FINSP
+PMI,[ASSYPARTNO]C,CHEMICAL,OS-COAT
+Assemble & Test & Tag,,-,ASSY-TST-TAG
+PMI,,CONFIRM,PMI
+Pull and Issue Parts,,-,PICK

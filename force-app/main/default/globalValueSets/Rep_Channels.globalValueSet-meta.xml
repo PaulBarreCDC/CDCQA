@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>House</fullName>
+        <default>false</default>
+        <label>House</label>
+    </customValue>
+    <customValue>
+        <fullName>Domestic</fullName>
+        <default>false</default>
+        <label>Domestic</label>
+    </customValue>
+    <customValue>
+        <fullName>International</fullName>
+        <default>false</default>
+        <label>International</label>
+    </customValue>
+    <customValue>
+        <fullName>Biogas</fullName>
+        <default>false</default>
+        <label>Biogas</label>
+    </customValue>
+    <customValue>
+        <fullName>LVA</fullName>
+        <default>false</default>
+        <label>LVA</label>
+    </customValue>
+    <masterLabel>Rep Channels</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

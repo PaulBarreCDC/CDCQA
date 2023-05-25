@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loss_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Loss Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Closed / Opened as New / Revised Quote</fullName>
+                <default>false</default>
+                <label>Closed / Opened as New / Revised Quote</label>
+            </value>
+            <value>
+                <fullName>No Budget / Lost Funding</fullName>
+                <default>false</default>
+                <label>No Budget / Lost Funding</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Lost on Price</label>
+            </value>
+            <value>
+                <fullName>Lost on Delivery Time</fullName>
+                <default>false</default>
+                <label>Lost on Delivery Time</label>
+            </value>
+            <value>
+                <fullName>Lost on Time to Quote</fullName>
+                <default>false</default>
+                <label>Lost on Time to Quote</label>
+            </value>
+            <value>
+                <fullName>Lost on Relationship</fullName>
+                <default>false</default>
+                <label>Lost on Relationship</label>
+            </value>
+            <value>
+                <fullName>Unable to Meet Specification</fullName>
+                <default>false</default>
+                <label>Unable to Meet Specification</label>
+            </value>
+            <value>
+                <fullName>Unable to Offer a Product / Solution</fullName>
+                <default>false</default>
+                <label>Unable to Offer a Product / Solution</label>
+            </value>
+            <value>
+                <fullName>No Decision / Non-Responsive</fullName>
+                <default>false</default>
+                <label>No Decision / Non-Responsive</label>
+            </value>
+            <value>
+                <fullName>Loss via Auto-Close</fullName>
+                <default>false</default>
+                <label>Loss via Auto-Close</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Closed / Opened as New / Revised Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>No Budget / Lost Funding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost on Delivery Time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost on Time to Quote</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Lost on Relationship</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Unable to Meet Specification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Unable to Offer a Product / Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>No Decision / Non-Responsive</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed Lost</controllingFieldValue>
+            <valueName>Loss via Auto-Close</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

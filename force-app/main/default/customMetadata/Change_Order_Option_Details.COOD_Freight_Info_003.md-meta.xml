@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>COOD Freight Info 003</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Change_Order_Option__c</field>
+        <value xsi:type="xsd:string">Freight Info</value>
+    </values>
+    <values>
+        <field>Change_Type__c</field>
+        <value xsi:type="xsd:string">Commercial</value>
+    </values>
+    <values>
+        <field>Field_API__c</field>
+        <value xsi:type="xsd:string">Wanted_Delivery_Date__c</value>
+    </values>
+    <values>
+        <field>Field_Label__c</field>
+        <value xsi:type="xsd:string">Wanted Delivery Date</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">13.0</value>
+    </values>
+    <values>
+        <field>Section_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Section_Header__c</field>
+        <value xsi:type="xsd:string">Freight Info</value>
+    </values>
+</CustomMetadata>

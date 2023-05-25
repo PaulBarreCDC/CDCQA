@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_Size_Constraint</fullName>
+    <active>false</active>
+    <description>Model &amp; Size is a mandatory field.</description>
+    <errorConditionFormula>ISBLANK(  Model_Size__c  )
+&amp;&amp;
+(Section_E_Flag__c= TRUE)</errorConditionFormula>
+    <errorDisplayField>Model_Size__c</errorDisplayField>
+    <errorMessage>Please select a value.</errorMessage>
+</ValidationRule>

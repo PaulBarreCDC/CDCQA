@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Requirements</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Requirements</value>
+    </caseValues>
+    <layouts>
+        <layout>Customer Requirements Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Engineering Docs</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>FINAL DOCS</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Finance</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>General</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Procedures</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Product Docs</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quality Docs</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>SUBMITTAL DOCS</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Shipping Docs</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>TERMS</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>THIRD PARTY INSPECTION</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

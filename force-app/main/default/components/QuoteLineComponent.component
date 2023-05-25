@@ -1,0 +1,19 @@
+<apex:component controller="QuoteLineComponentController" access="global">
+  <apex:attribute name="quote_Id" description="Quote Id" type="Id" assignTo="{!quoteId}"/>
+    <table border="1">
+            <tr>
+                <th> Name </th>
+                <th> Quantity </th>
+                <th> Product Name </th>
+                <th> Unit Price </th> 
+            </tr>
+            <apex:repeat var="ql" value="{!quotelines}">
+                 <tr>
+                    <th> {!ql.Name} </th>
+                    <th> {!ql.SBQQ__Quantity__c} </th>
+                    <th> {!ql.SBQQ__ProductName__c} </th>
+                    <th> {!ql.SBQQ__ListPrice__c} </th> 
+                </tr>
+            </apex:repeat>
+        </table>
+</apex:component>

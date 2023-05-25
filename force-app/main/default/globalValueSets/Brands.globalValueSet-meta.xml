@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CDC</fullName>
+        <default>false</default>
+        <label>CDC</label>
+    </customValue>
+    <customValue>
+        <fullName>Groth</fullName>
+        <default>false</default>
+        <label>Groth</label>
+    </customValue>
+    <customValue>
+        <fullName>LaMOT</fullName>
+        <default>false</default>
+        <label>LaMOT</label>
+    </customValue>
+    <customValue>
+        <fullName>LVA</fullName>
+        <default>false</default>
+        <label>LVA</label>
+    </customValue>
+    <masterLabel>Brands</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

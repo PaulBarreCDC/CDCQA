@@ -1,0 +1,14 @@
+Num1__c,Num2__c,Num3__c,Num4__c,NumOpp1__c,NumOpp2__c,NumOpp3__c,NumOpp4__c,Operation_No__c,Text1__c,Text2__c,Text3__c,Text4__c,Text5__c,TextOpp1__c,TextOpp2__c,TextOpp3__c,TextOpp4__c,TextOpp5__c
+,,,,,,,,0080,PMI,,,,,=,,,,
+,,,,,,,,0090,,,,,,,,,,
+,,,,,,,,0050,PTC,,,,,=,,,,
+,,,,,,,,0015,NACE,,,,,=,,,,
+,,,,,,,,0008,PTC,addIntegralBDI,StripMatlCode,,,=,=,=,,
+,,,,,,,,0005,,,,,,,,,,
+,,,,,,,,0010,PTC,DSCVAR,SZC,PartSeat,,=,=,=,=,
+SizeValue,SizeValue,DiscTopThick,DiscTopThick,<=,>,<=,>=,0002,PTC,,,,,=,,,,
+,,,,,,,,0040,PTC,addIntegralBDI,BCT,BEC,,=,=,=,=,=
+,,,,,,,,0045,,,,,,,,,,
+,,,,,,,,0020,ADMERK,RPVM084,,,,=,,,,
+,,,,,,,,0030,PTC,DSCVAR,SZC,PartSeat,,=,=,=,=,
+,,,,,,,,0100,,,,,,,,,,

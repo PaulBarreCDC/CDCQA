@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Charge_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Charge Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Documentation</fullName>
+                <default>false</default>
+                <label>Documentation</label>
+            </value>
+            <value>
+                <fullName>Field Service</fullName>
+                <default>false</default>
+                <label>Field Service</label>
+            </value>
+            <value>
+                <fullName>Flow Lab Testing</fullName>
+                <default>false</default>
+                <label>Flow Lab Testing</label>
+            </value>
+            <value>
+                <fullName>Processing Charge</fullName>
+                <default>false</default>
+                <label>Processing Charge</label>
+            </value>
+            <value>
+                <fullName>Redball Fee</fullName>
+                <default>false</default>
+                <label>Redball Fee</label>
+            </value>
+            <value>
+                <fullName>Restock Fee</fullName>
+                <default>false</default>
+                <label>Restock Fee</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

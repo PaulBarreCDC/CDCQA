@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>PartNumber__c</fields>
+    <fields>Site__c</fields>
+    <fields>QtyLL__c</fields>
+    <fields>QtyUL__c</fields>
+    <fields>InsideCost__c</fields>
+    <fields>OutsideCost__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

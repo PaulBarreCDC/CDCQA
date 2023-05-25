@@ -1,0 +1,7 @@
+<aura:component access="global" implements="forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,lightning:isUrlAddressable" >
+  <aura:handler name="init" value="{!this}" action="{!c.init}"/>  
+  <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+<aura:attribute name="configId" type="String" />
+<aura:attribute name="quoteId" type="String" />
+  <c:lwcRuptureDisc recordId="{!v.configId}" quoteId="{!v.quoteId}"></c:lwcRuptureDisc>  
+</aura:component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Errors_on_Quote_Processing__c</fullName>
+    <deprecated>false</deprecated>
+    <description>CC - Text area to place any errors that may occur when processing Sizing Request into Salesforce CPQ Quote record.</description>
+    <externalId>false</externalId>
+    <label>Errors on Quote Processing</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

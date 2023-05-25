@@ -1,0 +1,42 @@
+<apex:page showHeader="true" sidebar="false" controller="CustomErrorController">
+    <head>
+        <title>{!$Label.CDC_Error_Encountered_Heading}</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <apex:slds />
+        <style>
+        .btn-pd {
+            border: 1px solid #4176ba !important;
+            background: #2e8ec9 !important;
+            background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#2789c7), color-stop(100%,#3f9fd9)) !important;
+            background: -webkit-linear-gradient(bottom, #2789c7 0%,#3f9fd9 100%) !important;
+            font-size: 13pt !important;
+            text-shadow: 0px -1px 0px rgba(0,0,0,0.3) !important;
+            font-weight: 300;
+            color: #fff !important;
+            padding: 8px !important;
+            width: 15% !important;
+        }
+        </style>
+    </head>
+    
+    <body class="slds-scope">
+        <div class="slds-p-vertical--xx-large slds-m-top--large slds-align--absolute-center slds-grid--vertical slds-text-align--center slds-text-color_weak">
+            <div class="slds-media__figure">
+                <apex:image url="{!$Resource.SBQQ__NoAccessSimplified}" />
+            </div>
+            <div class="slds-text-heading--large slds-p-bottom--large">{!$Label.CDC_Error_Encountered_Heading}</div>
+            <div class="slds-text-heading--medium">{!$Label.CDC_Error_Encountered_Message}</div>
+        </div>
+        
+        <div class="user-info" style="text-align: center;">
+            <apex:form >
+                <apex:commandButton value="Return to home page" styleClass="btn-pd" action="{!redirectHome}" id="redirectHome" reRender="none" />
+            </apex:form>
+        </div>
+        
+    </body>
+    
+</apex:page>

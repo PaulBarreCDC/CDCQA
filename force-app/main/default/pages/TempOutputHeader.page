@@ -1,0 +1,24 @@
+<apex:page applyHtmlTag="false" applyBodyTag="false" contentType="text/html" showHeader="false" controller="CPQQuoteTemplateController">
+<div id="background" >
+  <img src="https://contdisccorp--cpqproject--c.cs45.content.force.com/servlet/servlet.ImageServer?id=0158A000000KR8M&oid=00D8A000000D67W&lastMod=1592515691000" style="width: 100%; z-index:0; position:absolute; top: 0; left: 0;" />
+</div>
+<div id="foreground" style="width: 100%; z-index:1; position:absolute; top: 0; left: 0;">
+  <table style="font-size: 10px; height: 130px; width: 100%;">
+    <tbody>
+      <tr>
+        <td id="address" style="width: 80%;">
+        <p>{!quoteObj.End_User_Name__c}</p>
+
+        <p>{!quoteObj.End_User_Street__c}</p>
+
+        <p>{!quoteObj.End_User_City__c}, {!quoteObj.End_User_State__c}, {!quoteObj.End_User_PostalCode__c}</p>
+
+        <p>{!quoteObj.End_User_Country__c}</p>
+        </td>
+        <td id="patner_logo">LOGO</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</apex:page>

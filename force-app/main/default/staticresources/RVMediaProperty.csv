@@ -1,0 +1,3 @@
+BGRDisp__c,BGR__c,BoilingPoint__c,CDC_Ext_ID__c,CompressFactor__c,Density__c,Flag__c,FlameDisp__c,FlashPoint__c,LatentHeat__c,Media_Phase__c,Media__c,MolecularWeight__c,RDGasDisp__c,RDLiquidDisp__c,RDSteamDisp__c,SpecificHeatRatio__c,SpGRelToAir__c,SpGRelToWater__c,ValveDisp__c
+0,No,-317.6,,1,53.39,,0,,92,Gas/Vapor,Air,28.964,4,0,0,1.4,1,0.856,4
+0,No,31.1,,1,36.45,,7,-76,165.65,Gas/Vapor,Butane-n,58.14,9,0,0,1.11,2.007,0.5844,9

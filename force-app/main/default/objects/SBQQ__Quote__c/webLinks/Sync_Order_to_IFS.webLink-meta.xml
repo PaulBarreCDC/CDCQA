@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sync_Order_to_IFS</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Sync Order to IFS</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+sforce.apex.execute(&quot;IFSOperations&quot;,&quot;syncPartsClassic&quot;,{accountId:&quot;{!SBQQ__Quote__c.SBQQ__AccountId__c}&quot;,quoteId:&quot;{!SBQQ__Quote__c.Id}&quot;});
+alert(&quot;syncParts is successful&quot;);
+sforce.apex.execute(&quot;IFSOperations&quot;,&quot;syncOrderClassic&quot;,{accountId:&quot;{!SBQQ__Quote__c.SBQQ__AccountId__c}&quot;,quoteId:&quot;{!SBQQ__Quote__c.Id}&quot;});
+alert(&quot;syncOrder is successful&quot;);</url>
+</WebLink>

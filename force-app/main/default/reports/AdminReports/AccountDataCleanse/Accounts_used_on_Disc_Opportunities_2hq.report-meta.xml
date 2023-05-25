@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Account.OEM__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account.OEM_Category__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account.OEM_Sales_Channel__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$End_User__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$End_User__c.OEM__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$End_User__c.OEM_Category__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$End_User__c.OEM_Sales_Channel__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>This report can be used for tracking Accounts that are currently on our Transactions. These are the Accounts we have to KEEP for the data cleanse. Will need to search this list for duplicate Ship To and End User Accounts</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Brand__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>CDC,LaMOT</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Accounts used on Disc Opportunities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_on_Opportunities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_PREVFY</interval>
+    </timeFrameFilter>
+</Report>

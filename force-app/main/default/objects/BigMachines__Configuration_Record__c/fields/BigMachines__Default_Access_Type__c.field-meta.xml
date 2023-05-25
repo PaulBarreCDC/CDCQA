@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Default_Access_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Default value for Oracle_User__c.Allow_Quote_Creation__c for new users associated with this CPQ Site.</description>
+    <externalId>false</externalId>
+    <label>Default Access Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FullAccess</fullName>
+                <default>false</default>
+                <label>FullAccess</label>
+            </value>
+            <value>
+                <fullName>SalesAgent</fullName>
+                <default>false</default>
+                <label>SalesAgent</label>
+            </value>
+            <value>
+                <fullName>ChannelAgent</fullName>
+                <default>false</default>
+                <label>ChannelAgent</label>
+            </value>
+            <value>
+                <fullName>BuyAccess</fullName>
+                <default>false</default>
+                <label>BuyAccess</label>
+            </value>
+            <value>
+                <fullName>RestrictedAccess</fullName>
+                <default>false</default>
+                <label>RestrictedAccess</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

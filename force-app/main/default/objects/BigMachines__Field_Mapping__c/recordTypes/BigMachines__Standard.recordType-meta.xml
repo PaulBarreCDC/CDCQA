@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Standard</fullName>
+    <active>true</active>
+    <label>Standard</label>
+    <picklistValues>
+        <picklist>BigMachines__Object_Mapping__c</picklist>
+        <values>
+            <fullName>Quote -%3E Opportunity</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Quote Product -%3E Opportunity Product</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

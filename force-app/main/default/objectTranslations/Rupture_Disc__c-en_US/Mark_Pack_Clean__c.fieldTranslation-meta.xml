@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Mark_Pack_Clean__c</name>
+    <picklistValues>
+        <masterLabel>Clean with Blue Gold ® Cleaner, Individually package, and Label Each Package and Box</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clean with Liquid Oxygen, Individually package, and Label Each Package and Box</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mark tag number on each tag and Individually Package</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No metal seals or slot covers</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary Requirements for Merck</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanitary Service Disc</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Cleaning and Pack in Labeled Bag</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Cleaning, Pack in Labeled Bag, and Individually Package</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

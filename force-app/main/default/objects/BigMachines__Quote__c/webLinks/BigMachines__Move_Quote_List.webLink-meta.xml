@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Move_Quote_List</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Move Quote</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/22.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+var records = {!GETRECORDIDS($ObjectType.BigMachines__Quote__c)};
+
+var moveQuote = false;
+if (records == null || records.length == 0) {
+	alert(&quot;Please check the box next to the quote that you would like to move before clicking the &apos;Move&apos; button.&quot;);
+} else if (records.length &gt; 1) {
+	alert(&quot;Please select only one quote to move.&quot;);
+} else if (sforce.apex.execute(&apos;{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Dot_Prefix__c}BigMachinesFunctionLibrary&apos;, &apos;canEditQuote&apos;, {quoteId:records[0]}) != &apos;true&apos;) {
+	alert(&apos;You do not have permission to move that quote.  Please contact your system administrator.&apos;);
+} else {
+	var result = sforce.connection.query(&quot;Select {!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}Is_Primary__c from {!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}Quote__c where Id = &apos;&quot; + records[0] + &quot;&apos;&quot;);
+	var quote = result.getArray(&quot;records&quot;);
+	if (quote[0].Is_Primary__c == &apos;true&apos;) {
+		moveQuote = confirm(&quot;This quote is marked as the primary quote for its current opportunity. Moving this quote will remove the associated opportunity products from the opportunity and may affect the value of the opportunity. Do you want to continue to move the quote and remove the associated opportunity products from the current opportunity?&quot;);
+	} else {
+		moveQuote = true;
+	}
+}
+
+if (moveQuote) {
+	window.parent.location.href = &quot;{!URLFOR($Site.Prefix)}/apex/{!$Setup.BigMachines__NamespaceSettings__c.BigMachines__Underscore_Prefix__c}QuoteMove?id=&quot; + records[0] + &quot;&amp;from_list=true&quot;; 
+}</url>
+</WebLink>

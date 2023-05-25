@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Arrester_for_Detonation_or_Deflagration__c</name>
+    <picklistValues>
+        <masterLabel>Both</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deflagration</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Detonation</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

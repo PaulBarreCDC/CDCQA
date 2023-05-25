@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All_PartLeadTimeLevel_Records</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__ConfiguredPart__c</columns>
+    <columns>cdcpc__QuantityLowerLimit__c</columns>
+    <columns>cdcpc__QuantityUpperLimit__c</columns>
+    <columns>cdcpc__Site_10__c</columns>
+    <columns>cdcpc__Site_20__c</columns>
+    <columns>cdcpc__Site_30__c</columns>
+    <columns>cdcpc__Site_40__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Part Lead Time Level Records</label>
+</ListView>

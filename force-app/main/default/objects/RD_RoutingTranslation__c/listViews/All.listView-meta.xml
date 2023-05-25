@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Operation_No__c</columns>
+    <columns>Text1__c</columns>
+    <columns>Text2__c</columns>
+    <columns>Text3__c</columns>
+    <columns>Text4__c</columns>
+    <columns>Text5__c</columns>
+    <columns>TextOpp1__c</columns>
+    <columns>TextOpp2__c</columns>
+    <columns>TextOpp3__c</columns>
+    <columns>TextOpp4__c</columns>
+    <columns>TextOpp5__c</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

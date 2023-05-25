@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Withstand_Constraint</fullName>
+    <active>true</active>
+    <description>Pressure Withstand is a Mandatory field if Pressure Relief is selected in Relief type</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Relief_Type__c, &quot;Vacuum Relief&quot;),
+Relief_Flag__c = TRUE,
+ISPICKVAL(Pressure_Withstand__c ,&quot;&quot;),
+NOT(ISBLANK(Vacuum_Setting__c)),
+Vacuum_Setting__c &gt; 0,
+NOT(ISPICKVAL(Vacuum_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(Temperature_Setting__c)),
+NOT(ISBLANK(Converted_Temperature_Setting__c )),
+NOT(ISPICKVAL(Temperature_Setting_Units__c ,&quot;&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Pressure_Withstand__c</errorDisplayField>
+    <errorMessage>Withstand: Please select a value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,1151 @@
+<template>
+    <div onscroll={onScrollMain} class="slds-scrollable_y">
+        <div class="fxheader slds-p-vertical_large">
+            <lightning-layout horizontal-align="center" multiple-rows="true">
+                <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+                <article class="slds-card" style="margin-top: auto;margin-bottom: auto;">
+                    <div class="slds-grid slds-page-header slds-card__header" style="padding:0;">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                                   
+                            <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                <template if:false={bHideReturnToQuote}>      
+                                <lightning-icon icon-name="utility:left" alternative-text="" size="xx-small"></lightning-icon>
+                            <button class="slds-button" onclick={navigateToProductView}>Return To Quote</button>
+                        </template>
+                            </div>
+                            
+                            <div class="slds-size_2-of-4 slds-medium-size_1-of-3">
+                            <h3 class="slds-section slds-section__title">
+                                Rupture Disc
+                            </h3>
+                            </div>
+                        </header>
+                        <div class="slds-einstein-header__actions">
+                            <template if:true={bShowEditBtn}>
+                                <lightning-button class="slds-m-right_x-small" variant="brand" label={sEditBtnLabel} onclick={enableEditMode}> </lightning-button> 
+                              </template>
+                              <template if:true={bShowProductReviewLink}>
+                            <!-- <lightning-button variant="brand" label="To Product Recommendation" onclick={navToProdSelClick} class="slds-m-left_x-small"></lightning-button>-->
+
+                             &nbsp;&nbsp;
+                              <button class="slds-button" onclick={navToProdSelClick}>To Product Recommendation</button>
+                              <lightning-icon icon-name="utility:right" alternative-text="" size="xx-small"></lightning-icon>
+
+                               &nbsp;&nbsp;
+                              <button class="slds-button" onclick={navigateToProductReview}>To Product Review</button>
+                              <lightning-icon icon-name="utility:right" alternative-text="" size="xx-small"></lightning-icon>
+                            </template>
+
+                        </div>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <lightning-layout vertical-align="stretch" multiple-rows="true" class="medium">
+                            <lightning-layout-item flexibility="auto" class="custom-box" style="z-index: 1;width:100%;">
+                            <div class="mycontainer">
+                                <ul class="progressbarcss">
+                                    <li class="active RELIEFTYPECls" data-id="reliefType" onclick={focusProductNarrowing}>RELIEF TYPE</li>
+                                    <template if:true={showSizingFlowAreaSection}>
+                                        <li class="SIZINGFLOWAREACls" data-id="sizingFlowArea" onclick={focusProductNarrowing}>SIZING FLOW AREA</li>
+                                    </template>                                    
+                                    <li class="CERTIFICATIONSCls" data-id="certifications" onclick={focusProductNarrowing}>CERTIFICATIONS</li>
+                                    <li class="PRODUCTNARROWINGcls" data-id="productNarrowing" onclick={focusProductNarrowing}>PRODUCT NARROWING</li>
+                                </ul>
+                            </div>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </article>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <lightning-layout horizontal-align="center" multiple-rows="true">
+            <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+                <main class="main mainSection" style="padding-top: 110px;">
+                <!--Section 1-->
+                <div class="section-1" data-id="reliefType">
+                    <lightning-record-edit-form object-api-name="Rupture_Disc__c" onsubmit={handleSavePresetUnitOfMeasure} onsuccess={handlePresetUnitOfMeasureSuccess} class="PresetUnitOfMeasureForm" record-id={recordId}>
+                        <lightning-messages></lightning-messages>
+                        <article class="slds-card" style="background-color: #fafbfc;">
+                            <template if:true={isErrorSection0}>
+                                <div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+                                    <h2 class="slds-text-heading_small ">
+                                        {section0ErrorMessage}
+                                    </h2>
+                                </div>                               
+                            </template>
+                            <div class="section0 slds-grid slds-card__header" style="background-color:white;">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                    <h3 class="slds-section slds-section__title">
+                                        Relief Type
+                                    </h3>
+                                </div>
+                                </header>
+                                <div class="slds-einstein-header__actions">
+                                </div>
+                            </div>
+
+
+                            <div class="section0 slds-card__body slds-card__body_inner slds-p-around_medium">
+                                <div class="slds-form">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-size_1-of-1">
+                                            <div class="slds-form-element slds-form-element_horizontal">
+                                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                    <lightning-icon icon-name="utility:info" alternative-text="Utility" size="x-small"></lightning-icon>
+                                                    Relief Type
+                                                </label>
+                                                <div class="slds-form-element__control">
+                                                    <template for:each={reliefTypeOptions} for:item="item">
+                                                        <fieldset key={item.value} style="display: block; float: left;">
+                                                            <div class="slds-form-element__control">
+                                                                <span class="slds-radio">
+                                                                <input disabled={sDisabled} name="radiogroup1" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleReliefTypeSelected}/>
+                                                                <label class="slds-radio__label" for={item.value}>
+                                                                <span class="slds-radio_faux"></span>
+                                                                <span class="slds-form-element__label">{item.label}</span>
+                                                                </label>
+                                                                </span>
+                                                            </div>
+                                                        </fieldset>
+                                                    </template>
+                                                </div>
+                                            </div>
+                                        </div>                
+                                    </div>
+                                </div>                                
+                            </div>
+                            <template if:true={selectedReliefType}>
+                                <article class="slds-card" style="background-color: #fafbfc;">
+                                    <template if:true={isErrorSection1}>
+                                        <div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+                                            <h2 class="slds-text-heading_small ">
+                                                {section1ErrorMessage}
+                                            </h2>
+                                        </div>                                       
+                                    </template>
+                                    <div class="section1 slds-grid slds-card__header" style="background-color:white;">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                            <h3 class="slds-section slds-section__title">
+                                                {selectedReliefType}
+                                            </h3>
+                                        </div>
+                                        </header>
+                                        <div class="slds-einstein-header__actions"></div>
+                                    </div>
+                                    <div class="section1 slds-card__body slds-card__body_inner">
+                                        <div class="slds-form">
+                                            <div class="slds-grid slds-wrap">
+                                                <!-- Pressure Relief Section  -->
+                                                <template if:true={isPressureSelected}>
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Pressure Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input disabled={sDisabled} onchange={handleRelifTypeChange} name="pressureSetting" type="number" class="slds-input"  variant="label-hidden" value={pressureSetting} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field field-name="Pressure_Setting__c"  class="slds-hide" value={pressureSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Pressure Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Pressure_Setting_Units__c" value={PressureSettingUnitsVal} onfocusout={handlePressureSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>                
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input disabled={sDisabled} onchange={handleRelifTypeChange} name="temperatureSetting" type="number" class="slds-input"  variant="label-hidden" value={temperatureSetting} min="0" onkeydown={restrictNonNumericalValuesWithoutNegative} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field  field-name="Temperature_Setting__c"  class="slds-hide" value={temperatureSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Temperature_Setting_Units__c" onfocusout={handleTemperatureSettingUnits} variant="label-hidden"></lightning-input-field>                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>                                                    
+                
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Withstand
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={vacuumWithstandOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup4" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleVacuumWithstandOptions}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <template if:true={showRbackPressureInputs}>
+                                                        <div class="slds-size_1-of-2">
+                                                            <div class="slds-form-element slds-form-element_horizontal">
+                                                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                    Back Pressure Value
+                                                                </label>
+                                                                <div class="slds-form-element__control">
+                                                                        <input disabled={sDisabled} onchange={handleRelifTypeChange} name="backPressure" type="number" class="slds-input"  variant="label-hidden" value={backPressure} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>
+                                                                        <lightning-input-field field-name="Back_Pressure_Value__c" class="slds-hide" value={backPressure}></lightning-input-field>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="slds-size_1-of-2">
+                                                            <div class="slds-form-element slds-form-element_horizontal">
+                                                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                    Back Pressure Units
+                                                                </label>
+                                                                <div class="slds-form-element__control">
+                                                                        <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Back_Pressure_Units__c" onfocusout={handleBackPressureUnits} variant="label-hidden"></lightning-input-field>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </template> 
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Is there a liquid relief scenario?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={isThereLiquidReliefScenarioOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup2" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleisThereLiquidReliefScenarioOptions}/>
+                                                                        <label class="slds-radio__label" for={item.dummyVal}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Size Units
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={sizeUnitsOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="SizeUnitsRB" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleSizeUnits}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Do you want to constrain product selection by flow?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={constrainProductSelectionByFlowOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup3" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleisconstrainProductSelectionByFlowOptions}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </template>
+
+                                                <!-- Vacuum Relief Section  -->
+                                                <template if:true={isVacuumSelected}>
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Vacuum Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input disabled={sDisabled} onchange={handleRelifTypeChange} name="vacuumSetting" type="number" class="slds-input"  variant="label-hidden" value={vacuumSetting} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field field-name="Vacuum_Setting__c"  class="slds-hide" value={vacuumSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Vacuum Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Vacuum_Setting_Units__c" onfocusout={handleVacuumSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input onchange={handleRelifTypeChange} disabled={sDisabled} name="temperatureSetting" type="number" class="slds-input"  variant="label-hidden" value={temperatureSetting} min="0" onkeydown={restrictNonNumericalValuesWithoutNegative} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field field-name="Temperature_Setting__c"  class="slds-hide" value={temperatureSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Temperature_Setting_Units__c" onfocusout={handleTemperatureSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Withstand
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={pressureWithstandOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input name="radiogroup6"  disabled={sDisabled} id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handlePressureWithstandOptions}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>                                                                 
+                                                    <template if:true={showVpossitivePressureFields}> 
+                                                        <div class="slds-size_1-of-2">
+                                                            <div class="slds-form-element slds-form-element_horizontal">
+                                                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                    Positive Pressure Value
+                                                                </label>
+                                                                <div class="slds-form-element__control">
+                                                                        <input disabled={sDisabled} onchange={handleRelifTypeChange} name="positivePressure" type="number" class="slds-input"  variant="label-hidden" value={positivePressure} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                      
+                                                                        <lightning-input-field field-name="Positive_Pressure_Value__c"  class="slds-hide" value={positivePressure}></lightning-input-field>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="slds-size_1-of-2">
+                                                            <div class="slds-form-element slds-form-element_horizontal">
+                                                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                    Positive Pressure Units
+                                                                </label>
+                                                                <div class="slds-form-element__control">
+                                                                    <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Positive_Pressure_Units__c" onfocusout={handlePositivePressureUnits} variant="label-hidden"></lightning-input-field>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Is there a liquid relief scenario?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={isThereLiquidReliefScenarioOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup7" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleisThereLiquidReliefScenarioOptions}/>
+                                                                        <label class="slds-radio__label" for={item.dummyVal}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Size Units
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={sizeUnitsOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="SizeUnitsRB" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleSizeUnits}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                            Do you want to constrain product selection by flow?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={constrainProductSelectionByFlowOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup8" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleisconstrainProductSelectionByFlowOptions}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>                                                    
+                                                    
+                                                </template>
+
+                                                <!-- Pressure & Vaccum Relief Section  -->
+                                                <template if:true={isVacuumAndPressureSelected}>                                                    
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Pressure Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input disabled={sDisabled} onchange={handleRelifTypeChange} name="pressureSetting" type="number" class="slds-input"  variant="label-hidden" value={pressureSetting} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field field-name="Pressure_Setting__c"  class="slds-hide" value={pressureSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Pressure Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Pressure_Setting_Units__c" value={PressureSettingUnitsVal} onfocusout={handlePressureSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Vacuum Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input disabled={sDisabled} name="vacuumSetting" type="number" class="slds-input"  variant="label-hidden" value={vacuumSetting} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} onchange={handleRelifTypeChange}></input>                      
+                                                                    <lightning-input-field field-name="Vacuum_Setting__c"  class="slds-hide" value={vacuumSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Vacuum Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <!--<lightning-icon icon-name="utility:info" alternative-text="Utility" size="x-small"></lightning-icon>-->
+                                                                    <lightning-input-field disabled={bDisabled} onchange={handleRelifTypeChange} field-name="Vacuum_Setting_Units__c" onfocusout={handleVacuumSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                                    <input onchange={handleRelifTypeChange} disabled={sDisabled} name="temperatureSetting" type="number" class="slds-input"  variant="label-hidden" value={temperatureSetting} min="0" onkeydown={restrictNonNumericalValuesWithoutNegative} onfocusout={RemoveDecimal} ></input>                      
+                                                                    <lightning-input-field field-name="Temperature_Setting__c"  class="slds-hide" value={temperatureSetting}></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                
+                                                    <div class="slds-size_1-of-2">
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Temperature Setting Units
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+																<lightning-input-field disabled={bDisabled} field-name="Temperature_Setting_Units__c" onchange={handleRelifTypeChange} onfocusout={handleTemperatureSettingUnits} variant="label-hidden"></lightning-input-field>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Is there a liquid relief scenario?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={isThereLiquidReliefScenarioOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup10" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleisThereLiquidReliefScenarioOptions}/>
+                                                                        <label class="slds-radio__label" for={item.dummyVal}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                        Size Units
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={sizeUnitsOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="SizeUnitsRB" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleSizeUnits}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="slds-form-element slds-form-element_horizontal">
+                                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                            Do you want to constrain product selection by flow?
+                                                        </label>
+                                                        <div class="slds-form-element__control">
+                                                        <lightning-layout>
+                                                            <lightning-layout-item size="9">
+                                                                <template for:each={constrainProductSelectionByFlowOptions} for:item="item">
+                                                                    <fieldset key={item.value} style="display: block; float: left;">
+                                                                    <div class="slds-form-element__control">
+                                                                        <span class="slds-radio">
+                                                                        <input disabled={sDisabled} name="radiogroup11" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleisconstrainProductSelectionByFlowOptions}/>
+                                                                        <label class="slds-radio__label" for={item.value}>
+                                                                        <span class="slds-radio_faux"></span>
+                                                                        <span class="slds-form-element__label">{item.label}</span>
+                                                                        </label>
+                                                                        </span>
+                                                                    </div>
+                                                                    </fieldset>
+                                                                </template>
+                                                            </lightning-layout-item>
+                                                        </lightning-layout>
+                                                        </div>
+                                                    </div>
+                                                    <template if:true={isVPAndProdSelByFlowNoSelected}>
+                                                        <div class="slds-form-element slds-form-element_horizontal">
+                                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                                Do you want to constrain product selection?
+                                                            </label>
+                                                            <div class="slds-form-element__control">
+                                                            <lightning-layout>
+                                                                <lightning-layout-item size="9">
+                                                                    <template for:each={constrainProductSelectionOptions} for:item="item">
+                                                                        <fieldset key={item.value} style="display: block; float: left;">
+                                                                        <div class="slds-form-element__control">
+                                                                            <span class="slds-radio">
+                                                                            <input disabled={sDisabled} name="radiogroup12" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handleConstrainProductSelectionOptions}/>
+                                                                            <label class="slds-radio__label" for={item.value}>
+                                                                            <span class="slds-radio_faux"></span>
+                                                                            <span class="slds-form-element__label">{item.label}</span>
+                                                                            </label>
+                                                                            </span>
+                                                                        </div>
+                                                                        </fieldset>
+                                                                    </template>
+                                                                </lightning-layout-item>
+                                                            </lightning-layout>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+
+                                                    
+                                                </template>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </template>
+
+                            <footer class="slds-card__footer">
+                                <!--<div class="slds-clearfix">
+                                    <div class="slds-float_left">
+                                        <lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                                    </div>
+                                </div>-->
+                                <template if:false={bDisabled}>
+                                <div class="slds-align_absolute-center" style="height:5rem"> 
+                                   <lightning-button variant="brand" 
+                                                     type="submit"
+                                                      name="Save & Continue" label="Save & Continue"></lightning-button>
+                                </div>
+                                </template>
+
+                            </footer>
+
+                        </article>
+                    </lightning-record-edit-form>
+                </div>
+
+                <div data-id="sizingFlowArea" class="section-2" onmouseover={onSizingFlowAreaFormOver}>
+                    <!--  Sizing/ Flow Area Section  -->
+                    <template if:true={showSizingFlowAreaSection}>
+                        <c-lwc-r-d-sizing-flow-area 
+                            record-id={recordId}
+                            sel-constrain-prod={selectedConstrainProductSelection}
+                            selected-relief-type={selectedReliefType}
+                            onsavesizingarea={handleSaveSizingArea}
+                            onanyfieldupdate={handleChildCmpFieldUpdate}
+                            onaftersuccess={handleSizingFlowAreaSuccess}
+                            s-disabled={sDisabled}
+                            b-disabled={bDisabled}
+                            >
+                        </c-lwc-r-d-sizing-flow-area>
+                    </template>
+                </div>
+                <div data-id="certifications" class="section-3" onmouseover={onCertificationOver}>
+                    <!--  Certifications Section  -->
+                    <lightning-record-edit-form object-api-name="Rupture_Disc__c" onsubmit={handleSaveCertifications} onsuccess={handleCertificationOnSuccess} class="CertificationsForm" record-id={recordId}>
+                        <lightning-messages></lightning-messages>
+                        <article class="slds-card" style="background-color: #fafbfc;">
+                            <template if:true={isErrorSection3}>
+                                <div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+                                    <h2 class="slds-text-heading_small ">
+                                        {section3ErrorMessage}
+                                    </h2>
+                                </div>                               
+                            </template>
+                            <div class="section3 slds-grid slds-card__header" style="background-color:white;">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                        <h3 class="slds-section slds-section__title">
+                                            Certifications
+                                        </h3>
+                                    </div>
+                                </header>
+                                <div class="slds-einstein-header__actions">
+                                </div>
+                            </div>
+                            <div class="section3 slds-card__body slds-card__body_inner">
+                            <div class="slds-form">
+                                <div class="slds-grid slds-wrap">                                    
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        CSA Marking (CRN Number)
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input disabled={bDisabled} class="CSAMarkingCRNNumberInputCls" type="checkbox" 
+                                            value={CSAMarkingCRNNumber} variant="label-hidden" 
+                                            onchange={handleCSAMarkingCRNNumber}></lightning-input>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        ASME Section VIII Division 1
+                                        </label>
+                                        <div class="slds-form-element__control">
+
+                                            <template if:false={bDisabled}>
+                                                <lightning-input class="ASMESectionVIIIDivision1InputCls"
+                                                disabled={disableASME} type="checkbox"
+                                                 value={ASMESectionVIIIDivision1} variant="label-hidden"
+                                                  onchange={handleASMESectionVIIIDivision1}></lightning-input>
+                                            </template>
+                                            
+                                            <template if:true={bDisabled}>
+                                                <lightning-input class="ASMESectionVIIIDivision1InputCls"
+                                                             disabled="disabled" type="checkbox"
+                                                 value={ASMESectionVIIIDivision1} variant="label-hidden"
+                                                 ></lightning-input>
+                                            </template>
+
+                                            
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        KOSHA Compliance
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                                                                    
+                                        <template if:false={bDisabled}>
+                                            <lightning-input-field field-name="KOSHA_Compliance__c"
+                                            disabled={disableKOSHACB} value={KOSHACompliance}
+                                            variant="label-hidden" onchange={handleKOSHACompliance}></lightning-input-field>
+                                        </template>
+
+                                        <template if:true={bDisabled}>
+                                            <lightning-input-field field-name="KOSHA_Compliance__c"
+                                                                                    disabled="disabled" 
+                                                                                    value={KOSHACompliance}
+                                                                                    variant="label-hidden" 
+                                                                                    ></lightning-input-field>
+                                        </template>
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="slds-size_1-of-2">
+                                        <lightning-input-field variant="label-inline" onchange={handleKOSHACompliance} field-name="KOSHA_Compliance__c"></lightning-input-field>
+                                    </div> -->
+                                        
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        CU TR
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field onchange={onCertificateFieldUpdate} disabled={bDisabled} 
+                                            field-name="CU_TR__c" value={cutrCertificate} variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        3A Sanitary Standards
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field onchange={onCertificateFieldUpdate} disabled={bDisabled} field-name="X3A_Sanitary_Standards__c" value={aSanitaryStandards} variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Comply with AD2000-Merkblat A1
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template if:false={bDisabled}>
+                                                <lightning-input-field field-name="Comply_with_AD2000_Merkblat_A1__c"
+                                                variant="label-hidden" value={ComplywithAD2000MerkblatA1}
+                                                 disabled={disableCheckbox} 
+                                                 onchange={handleComplywithAD2000MerkblatA1}
+                                                  class="ComplywithAD2000MerkblatA1"></lightning-input-field>
+                                            </template>
+                                            
+                                            <template if:true={bDisabled}>
+                                                <lightning-input-field field-name="Comply_with_AD2000_Merkblat_A1__c"
+                                                variant="label-hidden" value={ComplywithAD2000MerkblatA1}
+                                                 disabled="disabled"
+                                                 
+                                                  class="ComplywithAD2000MerkblatA1"></lightning-input-field>
+                                            </template>
+
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Regels Voor Tosellan Oder Druk M084/78-10
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template if:false={bDisabled}>
+                                                <lightning-input-field field-name="Comply_with_Regels_Voor_Tosellan_Oder_Dr__c"
+                                                value={ComplywithRegelsVoorTosellanOderDr}
+                                                 variant="label-hidden" 
+                                                 disabled={disableCheckbox} 
+                                                 onchange={handleRegelsVoorTosellanOderDr}
+                                                  class="RegelsVoorTosellanOderDr"></lightning-input-field>
+                                            </template>
+                                            
+                                            <template if:true={bDisabled}>
+                                                <lightning-input-field field-name="Comply_with_Regels_Voor_Tosellan_Oder_Dr__c"
+                                                value={ComplywithRegelsVoorTosellanOderDr}
+                                                 variant="label-hidden" 
+                                                 disabled="disabled"
+                                                
+                                                  class="RegelsVoorTosellanOderDr"></lightning-input-field>
+                                            </template>
+
+                                            
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Atex Certificate
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input class="atexCertificateInputCls"
+                                             type="checkbox"
+                                             disabled={bDisabled}
+                                              value={atexCertificate} 
+                                              variant="label-hidden"
+                                               onchange={handleAtexCertificate}></lightning-input>
+                                        </div>
+                                        <div class="slds-size_1-of-2"></div>
+                                        </div>
+                                    </div>
+                                    <template if:true={atexCertificate}>
+                                        <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Gas Group
+                                            </label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-input-field onchange={onCertificateFieldUpdate} disabled={bDisabled}
+                                                 field-name="Gas_Group__c" variant="label-hidden"></lightning-input-field>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Zone (0-2)
+                                            </label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-input-field onchange={onCertificateFieldUpdate} disabled={bDisabled} field-name="Zone_0_2__c" variant="label-hidden"></lightning-input-field>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+                                    </template>
+                                    
+                                    <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        NACE
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template for:each={nACEOptions} for:item="item">
+                                                <fieldset key={item.value} style="display: block; float: left;">
+                                                    <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input disabled={sDisabled} name="radiogroup18" class={item.generatedId} id={item.value}
+                                                     type="radio" value={item.value} onchange={handlenACEOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        PED 2014/68/EU (CE mark)
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template for:each={pED_2014_68_EU_CEmarkOptions} for:item="item">
+                                                <fieldset key={item.value} style="display: block; float: left;">
+                                                    <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input disabled={sDisabled} name="radiogroup16" class={item.generatedId}
+                                                     id={item.value} 
+                                                    type="radio" value={item.value}
+                                                     onchange={handlePED_2014_68_EU_CEmarkOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        China Manufacturing License
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template for:each={chinaManufacturingLicenseOptions} for:item="item">
+                                                <fieldset key={item.value} style="display: block; float: left;">
+                                                    <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input disabled={sDisabled} name="radiogroup17" class={item.generatedId} id={item.value}
+                                                     type="radio" value={item.value} 
+                                                     onchange={handleChinaManufacturingLicenseOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <footer class="slds-card__footer">
+                            <!--<div class="slds-clearfix">
+                                <div class="slds-float_left">
+                                    <lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                                </div>
+                            </div>-->
+                            <template if:false={bDisabled}>
+                            <div class="slds-align_absolute-center" style="height:5rem"> 
+
+                                <lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                            
+                            </div>
+                            </template>
+                            </footer>
+                        </article>
+                    </lightning-record-edit-form>
+                </div>
+                <div class="section-4" data-id="productNarrowing"  onmouseover={onProductNarrowingOver}>
+                    <!-- Product Narrowing Section  -->
+                    <lightning-record-edit-form object-api-name="Rupture_Disc__c" onsubmit={handleSaveProductNarrowing} onsuccess={handleProductNarrowingOnSuccess} class="ProductNarrowingForm" record-id={recordId}>
+                        <lightning-messages></lightning-messages>
+                        <article class="slds-card" style="background-color: #fafbfc;">                            
+                            <div class="slds-grid slds-card__header" style="background-color:white;">
+                                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                    <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                                        <h3 class="slds-section slds-section__title">
+                                            Product Narrowing
+                                        </h3>
+                                    </div>
+                                </header>
+                                <div class="slds-einstein-header__actions">
+                                </div>
+                            </div>
+                            <div class="slds-card__body slds-card__body_inner">
+                            <div class="slds-form">
+                                <div class="slds-grid slds-wrap">
+                                    
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Non-Fragmenting Design Required
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Non_Fragmenting_Design_Required__c"  
+                                            value={nonFragmnetingDesignRequired}
+                                            disabled={bDisabled}  variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01"></label>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        	Do you have an operating to burst pressure requirement?
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template for:each={operatingPressureRatioOptions} for:item="item">
+                                                <fieldset key={item.value} style="display: block; float: left;">
+                                                    <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input name="radiogroup19" disabled={sDisabled} id={item.value} type="radio"
+                                                     class={item.generatedId} value={item.value}
+                                                      onchange={handleOperatingPressureRatioOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01"></label>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Application type
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <template for:each={applicationTypeOptions} for:item="item">
+                                                <fieldset key={item.value} style="display: block; float: left;">
+                                                    <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                    <input name="radiogroup20" disabled={sDisabled} class={item.generatedId} id={item.value}
+                                                     type="radio" value={item.value} 
+                                                     onchange={handleApplicationTypeOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                    <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                    </div>
+                                                </fieldset>
+                                            </template>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01"></label>
+                                        </div>
+                                    </div>
+                                    <div class="slds-size_1-of-2 slds-p-bottom_medium">
+                                        <div class="slds-form-element slds-form-element_horizontal">
+                                            <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                                Disc Material of Construction      
+                                            </label>
+                                            <div class="slds-form-element__control">
+                                                <lightning-combobox 
+                                                    name="Disc_Material_of_Construction" 
+                                                    variant="label-hidden" 
+                                                    value={discMaterialOfConstruction} 
+                                                    disabled={bDisabled}
+                                                    options={discMaterialOfConstructionOptions} 
+                                                    onchange={handleMaterialOfDisc}>
+                                                </lightning-combobox>
+                                            </div>                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            <footer class="slds-card__footer">
+                                <template if:false={bDisabled}>
+                                <div class="slds-align_absolute-center" style="height:5rem"> 
+                                    <lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                                   <!-- <lightning-button variant="brand" disabled={navToProd} label="Next without Save" onclick={navToProdSelClick} class="slds-m-left_x-small"></lightning-button>-->
+                               </div>
+                                </template>
+                            </footer>
+                        </article>
+                    </lightning-record-edit-form>
+                    
+                </div>
+                <div style="height:300px;background-color:white;">
+
+                </div>
+            </main>
+        </lightning-layout-item>
+         </lightning-layout>
+        <!--</lightning-record-edit-form>-->
+    </div>
+</template>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sec1cPressure_Units_Val</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Pressure_Setting_Units__c, &apos;&apos;)
+)&amp;&amp;
+( Bypass__c = FALSE)&amp;&amp;
+(Process_Parameters_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Pressure Setting Units : Please select a value from the drop down</errorMessage>
+</ValidationRule>

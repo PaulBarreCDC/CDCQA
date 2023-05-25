@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pallet_Material_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(Pallet_Material__c),
+Bypass__c = FALSE,
+Product_Material_and_Options_flag__c=true
+)</errorConditionFormula>
+    <errorMessage>Pallet Material : Please select a value from the drop down</errorMessage>
+</ValidationRule>

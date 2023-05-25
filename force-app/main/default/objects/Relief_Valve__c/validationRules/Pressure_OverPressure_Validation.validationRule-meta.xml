@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_OverPressure_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+Atmospheric_Pressure__c &gt; 0,
+OR(NOT(ISBLANK(Pressure_Relief_Req_Flow_Rate__c)),Pressure_Relief_Req_Flow_Rate__c &gt;= 0),
+NOT(ISPICKVAL(Pressure_Relief_Req_Flow_Units__c,&quot;&quot;)),
+ISBLANK(Enter_Relieving_Pressure_Value__c),
+Overpressure__c &lt; 10,
+Section_B_Flag__c  = TRUE)</errorConditionFormula>
+    <errorDisplayField>Overpressure__c</errorDisplayField>
+    <errorMessage>% Overpressure Value : Please enter a value greater than 10</errorMessage>
+</ValidationRule>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approved_Quotes</fullName>
+    <columns>Brand__c</columns>
+    <columns>NAME</columns>
+    <columns>Inside_Sales_Approver__c</columns>
+    <columns>Regional_Manager__c</columns>
+    <columns>Sales_Director__c</columns>
+    <columns>Sales_Executive__c</columns>
+    <columns>AccountName__c</columns>
+    <columns>End_User_Name__c</columns>
+    <columns>End_User_State__c</columns>
+    <columns>ApprovalStatus__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Sales_Division__c</columns>
+    <columns>Total_Charges__c</columns>
+    <columns>Total_Bookings__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Approved</value>
+    </filters>
+    <label>Approved Quotes</label>
+</ListView>

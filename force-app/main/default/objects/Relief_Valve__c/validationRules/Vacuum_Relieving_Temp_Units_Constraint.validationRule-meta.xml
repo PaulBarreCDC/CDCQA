@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vacuum_Relieving_Temp_Units_Constraint</fullName>
+    <active>true</active>
+    <description>Vacuum Relieving Temperature Units is a mandatory field.</description>
+    <errorConditionFormula>OR(
+	AND(
+		ISPICKVAL(Relief_Type__c, &quot;Vacuum&quot;),
+		Atmospheric_Pressure__c &gt; 0,
+		OR(NOT(ISBLANK(Vacuum_Relief_Req_Flow__c)),Vacuum_Relief_Req_Flow__c &gt;= 0),
+		NOT(ISBLANK(V_Vacuum_Relieving_Temperature__c)),
+		ISPICKVAL(V_Vacuum_Relieving_Temperature_Units__c,&quot;&quot;),
+		Section_B_Flag__c  = TRUE),
+	AND(
+		ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;),
+		Atmospheric_Pressure__c &gt; 0,
+		OR(NOT(ISBLANK(Pressure_Relief_Req_Flow_Rate__c)),Pressure_Relief_Req_Flow_Rate__c &gt;= 0),
+		NOT(ISBLANK(Pressure_Relieving_Temperature__c)),
+		OR(NOT(ISBLANK(Vacuum_Relief_Req_Flow__c)),Vacuum_Relief_Req_Flow__c &gt;= 0),
+		NOT(ISBLANK(V_Vacuum_Relieving_Temperature__c)),
+		ISPICKVAL(V_Vacuum_Relieving_Temperature_Units__c,&quot;&quot;),
+		Section_B_Flag__c  = TRUE
+	)
+
+)</errorConditionFormula>
+    <errorDisplayField>V_Vacuum_Relieving_Temperature_Units__c</errorDisplayField>
+    <errorMessage>Vacuum Relieving Temperature UOM : Please select a value from the drop down</errorMessage>
+</ValidationRule>

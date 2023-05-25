@@ -1,0 +1,19 @@
+Comp__c,OWDesc__c,Text1Val__c,Text2Val__c
+15,PMI Test Per QCF-6001-2,CONFIRM,-
+16,15 microinch or better surface finish on process side only,15,-
+16,0.26 micrometer or better surface finish on process side only,0.26,-
+16,0.5 micrometer or better surface finish on process side only,0.5,-
+18,Clean with Blue Gold® cleaner,C1,-
+14,[OW050],HPN,Y
+16,0.4 micrometer or better surface finish on process side only,0.4,-
+14,[OW050],HPX,Y
+1,Comply with ASME Section VIII Division 1 \n[OW040]\n[OW0403]\n[OW0405]\n[OW041]\n[OW042],8,-
+16,12 microinch or better surface finish on process side only,12,-
+14,[OW050],HPZ,Y
+2,CE mark Reqd. Manufacture per MP-7007 4.2.1 A,CET,-
+15,PMI Test Per QCF-TBA,CHEMICAL,-
+16,10 microinch or better surface finish on process side only,10,-
+21,Temperature Test per ASME Section VIII Div 1,8,
+16,20 microinch or better surface finish on process side only,20,-
+16,0.35 micrometer or better surface finish on process side only,0.35,-
+14,[OW050],HPH,Y

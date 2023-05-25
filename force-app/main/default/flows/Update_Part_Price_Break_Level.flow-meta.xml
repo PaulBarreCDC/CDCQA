@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <environments>Default</environments>
+    <interviewLabel>Update Part Price Break Level {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Part Price Break Level</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Part_Price_Break_Level</name>
+        <label>Update Part Price Break Level</label>
+        <locationX>1011</locationX>
+        <locationY>429</locationY>
+        <inputAssignments>
+            <field>Configured_Part_Output__c</field>
+            <value>
+                <elementReference>$Record.cdcpc__ConfiguredPart__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>890</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Update_Part_Price_Break_Level</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>cdcpc__ConfiguredPart__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </filters>
+        <object>cdcpc__PartPriceBreakLevel__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

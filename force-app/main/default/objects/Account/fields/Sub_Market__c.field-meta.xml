@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sub_Market__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If applicable, select a sub-market that further defines the Account. Note, not all markets have sub-markets available.</inlineHelpText>
+    <label>Sub-Market</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Market__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Submarket</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Distributor - Authorized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <controllingFieldValue>MNICP</controllingFieldValue>
+            <controllingFieldValue>POWUT</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Industrial Gases</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Instrumentation/measurement/control equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Metals and Minerals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <valueName>Other (F&amp;B)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Process modules/skids/equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Pumps and transfer equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Refining &amp; Processing Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Stainless steel tanks/vessels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Sterilisation equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Tank Container and Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Tanks and storage vessels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FOOD</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Thermal process equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Braking systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <controllingFieldValue>PULP</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Distributor - Unauthorized</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Flotation systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Fuel tanks and systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <valueName>Other (Aero)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>AERO</controllingFieldValue>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Oxygen systems/breathing apparatus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <controllingFieldValue>MNICP</controllingFieldValue>
+            <controllingFieldValue>POWUT</controllingFieldValue>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Contractor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Other (DEF)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>DEF</controllingFieldValue>
+            <valueName>Weapons systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>MNICP</controllingFieldValue>
+            <controllingFieldValue>POWUT</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Alternative Fuels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>POWUT</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>LNG</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Compressor equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Downhole</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Down hole oil tools &amp; well testing equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Exploration and Drilling</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Extraction &amp; Recovery Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Field Machinery &amp; Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Field-type Drilling Machinery &amp; Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Flare equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Gas Well Machinery &amp; Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Other (OGU)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Petroleum Refining</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Raw Material Storage &amp; Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <valueName>Surface</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Tank farm/terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Tank Terminals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGUPS</controllingFieldValue>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Terminals and Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Crude Oil Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Finished Product Storage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>LNG equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>LNG Processing Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Other (OGD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Pipelines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OGDWN</controllingFieldValue>
+            <valueName>Transportation Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <valueName>Electronics/Semiconductors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <valueName>General Chemicals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <valueName>Other (CHEM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CHEM</controllingFieldValue>
+            <valueName>Paints and Coatings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Agricultural</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Biofuels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Food &amp; Beverage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Mining (Except Oil &amp; Gas)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Pharmaceutical &amp; Biotech</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OTHER</controllingFieldValue>
+            <valueName>Railroad - Rolling Stock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PHARM</controllingFieldValue>
+            <valueName>Other (Pharma)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vacuum_Setting_Validation</fullName>
+    <active>true</active>
+    <description>Vacuum Setting should be greater than 0.</description>
+    <errorConditionFormula>AND((Vacuum_Setting__c    &lt;=   0),
+(  Section_A_Flag__c  = TRUE))</errorConditionFormula>
+    <errorDisplayField>Vacuum_Setting__c</errorDisplayField>
+    <errorMessage>Please enter Vacuum Setting value greater than 0.</errorMessage>
+</ValidationRule>

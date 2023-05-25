@@ -1,0 +1,40 @@
+<template>
+    <template if:false={showAddProduct}>
+        <template if:false={dataWithScroll}>
+            <lightning-datatable 
+                data={data} 
+                columns={columns} 
+                key-field="Id" class="myclssss" onrowaction={handleRowAction} hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={dataWithScroll}> 
+            <div style="height: 25rem;">
+                <lightning-datatable 
+                    data={data} 
+                    columns={columns} 
+                    key-field="Id" class="myclssss" onrowaction={handleRowAction} hide-checkbox-column>
+                </lightning-datatable>
+            </div>
+        </template>
+        
+        <br/>
+        <div class="slds-clearfix">
+            <div class="slds-float_left">
+                <!-- <lightning-button variant="brand-outline" onclick={handleAddProduct} name="Add Product" label="Add Product"></lightning-button> (Added only for testing, will remove later) -->
+            </div>
+        </div>
+    </template>
+
+    <template if:true={showAddProduct}>
+        <c-lwc-product-selection record-id={recordId} onproductadd={handleAddProductFromParent}>
+
+        </c-lwc-product-selection>
+        <br/>
+        <div class="slds-clearfix">
+                <div class="slds-float_left">
+                    <lightning-button variant="brand-outline" onclick={handleAddProductCancel} name="Back" label="Back"></lightning-button>
+                </div>
+            </div>
+    </template>
+</template>

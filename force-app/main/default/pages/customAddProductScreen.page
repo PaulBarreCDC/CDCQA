@@ -1,0 +1,13 @@
+<apex:page standardController="Product2" lightningStylesheets="true" extensions="customAddProductScreen">
+    <apex:form >
+    <apex:pageBlock title="Product Selection">
+        <apex:pageBlockTable value="{!selectedProductList}" var="pdLine">
+            <apex:column ><apex:inputCheckbox value="{!pdLine.isSelected}"/></apex:column>
+            <apex:column value="{!pdLine.p.ProductCode}"/>
+            <apex:column value="{!pdLine.p.Name }"/>
+            <apex:column value="{!pdLine.p.Description}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+        <apex:commandButton value="Select" action="{!addProduct}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PartNumber_Base_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+LEN(Part_Number_Base__c )&lt;&gt;19,
+PartNumberBase_Checkbox__c=true
+)</errorConditionFormula>
+    <errorMessage>ASSYPARTNOBASE should be 19 characters</errorMessage>
+</ValidationRule>

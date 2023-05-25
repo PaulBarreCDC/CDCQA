@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__IsArchived__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Specifies if the part revision should be archived to signal a new revision be calculated.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Specifies if the part revision should be archived to signal a new revision be calculated.</inlineHelpText>
+    <label>Is Archived</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

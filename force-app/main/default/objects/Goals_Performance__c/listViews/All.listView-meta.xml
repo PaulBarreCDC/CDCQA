@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Partner_Org__c</columns>
+    <columns>Brands__c</columns>
+    <columns>Fiscal_Year__c</columns>
+    <columns>Fiscal_Month__c</columns>
+    <columns>Region__c</columns>
+    <columns>Goal__c</columns>
+    <columns>OEM_Goal__c</columns>
+    <columns>Booking_Amount__c</columns>
+    <columns>Credit_Amount__c</columns>
+    <columns>Variance__c</columns>
+    <columns>Pipeline_Amount_Rollup__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Fiscal_Year__c</field>
+        <operation>equals</operation>
+        <value>2022</value>
+    </filters>
+    <filters>
+        <field>Partner_Org__c</field>
+        <operation>contains</operation>
+        <value>1br</value>
+    </filters>
+    <label>All</label>
+</ListView>

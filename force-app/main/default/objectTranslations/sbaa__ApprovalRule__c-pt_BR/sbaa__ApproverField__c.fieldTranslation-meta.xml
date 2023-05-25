@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Usado com Aprovações dinâmicas, o campo contendo o valor do Aprovador usado para essa Regra</help>
+    <label></label>
+    <name>sbaa__ApproverField__c</name>
+    <picklistValues>
+        <masterLabel>Created By</masterLabel>
+        <translation>Criado por</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Engineering_Approver__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inside_Sales_Approver__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Production_Planning_Approver__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales_Director__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales_Executive__c</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

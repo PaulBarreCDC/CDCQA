@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Van der Ende Valve Services - Netherlands | 1NL2 Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Van der Ende Valve Services - Netherlands | 1NL2 Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>VanderEndeValveServicesNetherlands1NL2PartnerManager</parentRole>
+</Role>

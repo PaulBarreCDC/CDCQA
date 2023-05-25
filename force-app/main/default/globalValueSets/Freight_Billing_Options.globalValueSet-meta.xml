@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>UPS</fullName>
+        <default>false</default>
+        <label>UPS</label>
+    </customValue>
+    <customValue>
+        <fullName>FedEx</fullName>
+        <default>false</default>
+        <label>FedEx</label>
+    </customValue>
+    <description>Options for freight billing accounts and shipment carrier options</description>
+    <masterLabel>Freight Billing Options</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

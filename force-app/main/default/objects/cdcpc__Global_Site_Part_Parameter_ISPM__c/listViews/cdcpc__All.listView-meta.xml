@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__SITE__c</columns>
+    <columns>cdcpc__LeadTimeLL__c</columns>
+    <columns>cdcpc__LeadTimeUL__c</columns>
+    <columns>cdcpc__SERIALTRACKCODE__c</columns>
+    <columns>cdcpc__InventorySite__c</columns>
+    <columns>cdcpc__InventoryPartType__c</columns>
+    <columns>cdcpc__InventoryPartTemplate_ID__c</columns>
+    <columns>cdcpc__SalesSite__c</columns>
+    <columns>cdcpc__Sourcing_Option__c</columns>
+    <columns>cdcpc__PurchaseSite__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

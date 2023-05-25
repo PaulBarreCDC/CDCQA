@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Relief_Req_Flow_Rate_Validation</fullName>
+    <active>true</active>
+    <description>Value must be greater than 0.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+
+IF(ISPICKVAL(Media_Type__c,&quot;Customer Specified&quot;),AND(NOT(ISBLANK(Customer_Specified_Media_Name__c)),
+NOT(ISBLANK (Ratio_of_Specific_Heats__c )),
+NOT(ISBLANK (Molecular_Weight__c)),
+NOT(ISBLANK(Compressibility_Factor__c))),TRUE),
+
+
+Atmospheric_Pressure__c &gt; 0,
+OR(ISBLANK(Pressure_Relief_Req_Flow_Rate__c),Pressure_Relief_Req_Flow_Rate__c &lt; 0),
+Section_B_Flag__c  = TRUE)</errorConditionFormula>
+    <errorDisplayField>Pressure_Relief_Req_Flow_Rate__c</errorDisplayField>
+    <errorMessage>Pressure Relief Required Flow Rate  : Please enter a value</errorMessage>
+</ValidationRule>

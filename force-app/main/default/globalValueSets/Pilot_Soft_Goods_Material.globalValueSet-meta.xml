@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>NA</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>B-PilotSG</fullName>
+        <default>false</default>
+        <label>Buna-N O-Rings w/ Fluoropolymer (Tef) Diaphragm</label>
+    </customValue>
+    <customValue>
+        <fullName>E-PilotSG</fullName>
+        <default>false</default>
+        <label>EPDM O-Rings w/ Fluoropolymer (Tef) Diaphragm</label>
+    </customValue>
+    <customValue>
+        <fullName>K-PilotSG</fullName>
+        <default>false</default>
+        <label>Kalrez(R) O-Rings w/ Fluoropolymer (Tef) Diaphragm</label>
+    </customValue>
+    <customValue>
+        <fullName>V-PilotSG</fullName>
+        <default>false</default>
+        <label>FKM O-Rings w/ Fluoropolymer (Tef) Diaphragm</label>
+    </customValue>
+    <masterLabel>Pilot Soft Goods Material</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

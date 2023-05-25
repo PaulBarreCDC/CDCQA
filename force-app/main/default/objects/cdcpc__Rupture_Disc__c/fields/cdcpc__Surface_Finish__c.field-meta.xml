@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Surface_Finish__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Surface Finish</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>20</fullName>
+                <default>false</default>
+                <label>20 microinch or better surface finish [20]</label>
+            </value>
+            <value>
+                <fullName>15</fullName>
+                <default>false</default>
+                <label>15 microinch or better surface finish [15]</label>
+            </value>
+            <value>
+                <fullName>12</fullName>
+                <default>false</default>
+                <label>12 microinch or better surface finish [12]</label>
+            </value>
+            <value>
+                <fullName>10</fullName>
+                <default>false</default>
+                <label>10 microinch or better surface finish [10]</label>
+            </value>
+            <value>
+                <fullName>0.5</fullName>
+                <default>false</default>
+                <label>0.5 micrometer or better surface finish [0.5]</label>
+            </value>
+            <value>
+                <fullName>0.4</fullName>
+                <default>false</default>
+                <label>0.4 micrometer or better surface finish [0.4]</label>
+            </value>
+            <value>
+                <fullName>0.35</fullName>
+                <default>false</default>
+                <label>0.35 micrometer or better surface finish [0.35]</label>
+            </value>
+            <value>
+                <fullName>0.26</fullName>
+                <default>false</default>
+                <label>0.26 micrometer or better surface finish [0.26]</label>
+            </value>
+            <value>
+                <fullName>N</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

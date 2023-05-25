@@ -1,0 +1,99 @@
+.slds-form-element__label{
+	z-index: 0;
+}
+
+.slds-box{
+	border: 2px solid red;
+}
+
+.fxheader {
+	width: 100%;
+	height: 190px;
+   /* padding: 5.5rem;
+	/*background-color: #eee;*/
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    z-index: 1;
+    padding-top: 7.4rem;
+    /*padding-right: 115px;
+	padding-left: 100px;*/
+	padding-left: 10px;
+	padding-right: 0.8rem;
+	z-index: 3;
+
+}
+
+.mycontainer{
+	width:100%;
+}
+.progressbarcss {
+	counter-reset: step;
+}
+
+.progressbarcss li{
+	list-style-type:none;
+	float:left;
+	width:20%;
+	position:relative;
+	text-align:center;
+	cursor: pointer;
+}
+.progressbarcss li:before {
+	content:counter(step);
+	counter-increment:step;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	border: 1px solid #ddd;
+	display:block;
+	text-align:center;
+	margin:0 auto 10px auto;
+	border-radius:50%;
+	background-color: white;
+}
+.progressbarcss li:after{
+	content:'';
+	position:absolute;
+	width:100%;
+	height:1px;
+	background-color: #ddd;
+	top: 15px;
+	left: -50%;
+	z-index: -1;
+}
+
+.progressbarcss li:first-child:after{
+	content:none;
+}
+
+.progressbarcss li.active{
+	color:#00338D;
+}
+
+.progressbarcss li.active:before {
+    border-color: #00338D;
+    background-color: #00338D;
+    color: #fff;
+}
+
+
+@media(max-width: 768px){
+	.fxheader {
+		padding-top: 160px;
+	}
+	.mainSection {
+		padding-top: 86px;
+	}
+}
+/*
+
+@media(max-width: 900px){
+	.fxheader {
+		padding-top: 223px;
+	}
+	.mainSection {
+		padding-top: 119px;
+	}
+}*/

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_QL_Edit_Internals_Pending_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>Text($User.UserType) = &apos;Standard&apos; &amp;&amp;  $Profile.Name &lt;&gt; &apos;System Administrator&apos; &amp;&amp; 
+(
+(Text(SBQQ__Quote__r.SBQQ__Status__c) &lt;&gt; &apos;Pending&apos;) &amp;&amp;
+(Text(SBQQ__Quote__r.SBQQ__Status__c) &lt;&gt; &apos;Change Order&apos;) &amp;&amp;
+(Text(SBQQ__Quote__r.SBQQ__Status__c) &lt;&gt; &apos;Partner Submitted&apos;) &amp;&amp;
+(Text(SBQQ__Quote__r.SBQQ__Status__c) &lt;&gt; &apos;Pending Approvals&apos;)
+) &amp;&amp;
+(IsChanged(Discount__c) &amp;&amp; IsChanged(Discount_Amount__c) &amp;&amp; IsChanged(Customer_Leadtime__c) &amp;&amp; IsChanged(Sourcing_Entity__c))</errorConditionFormula>
+    <errorMessage>Quote is in the approval process. If Quote is already not Approved, please Revise Approval to make further edits.</errorMessage>
+</ValidationRule>

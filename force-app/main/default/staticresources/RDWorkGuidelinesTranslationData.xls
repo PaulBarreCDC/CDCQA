@@ -1,0 +1,16 @@
+Operation__c,Test__c,Text1__c,TextOpp1__c
+0090,Electropolish,ELECTROPOL,=
+0090,3A,D3ASRV,=
+0090,ATEX Certificate,ATEX,=
+0020,Merkblatt,ADMERK,=
+0090,China ML,CHINAMFG,=
+0090,CSA Marking,CSA,=
+0090,KOSHA,KOSHA,=
+0090,CU TR,CUTR,=
+0080,Positive Material ID,PMI,=
+0090,NACE Evaluation,NACE,=
+0090,Surface Finish,SURFFINISH,=
+0020,Regels,RPVM084,=
+0090,Shell Test,SHELLTEST,=
+0090,CEMark,PED,=
+0090,Cleaning Requirement,CLEAN,=

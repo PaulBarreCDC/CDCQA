@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__ConstrainProductSelectionFlow_Constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(AND(
+ISPICKVAL(cdcpc__Relief_Type__c, &quot;Pressure Relief&quot;),
+cdcpc__Relief_Flag__c = TRUE,
+ISPICKVAL( cdcpc__constrain_product_selection_by_flow__c , &quot;&quot;),
+NOT(ISPICKVAL( cdcpc__Size_Units__c, &quot;&quot;)),
+NOT(ISPICKVAL( cdcpc__Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(cdcpc__Pressure_Setting__c)),
+cdcpc__Pressure_Setting__c &gt; 0,
+NOT(ISPICKVAL(cdcpc__Pressure_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(cdcpc__Temperature_Setting__c)),
+NOT(ISBLANK(cdcpc__Converted_Temperature_Setting__c )),
+NOT(ISPICKVAL(cdcpc__Temperature_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(TEXT(cdcpc__Vacuum_Withstand__c)))
+),
+AND(
+ISPICKVAL(cdcpc__Relief_Type__c, &quot;Vacuum Relief&quot;),
+cdcpc__Relief_Flag__c = TRUE,
+ISPICKVAL( cdcpc__constrain_product_selection_by_flow__c , &quot;&quot;),
+NOT(ISPICKVAL( cdcpc__Size_Units__c, &quot;&quot;)),
+NOT(ISPICKVAL( cdcpc__Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(cdcpc__Vacuum_Setting__c)),
+cdcpc__Vacuum_Setting__c &gt; 0,
+NOT(ISPICKVAL(cdcpc__Vacuum_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(cdcpc__Temperature_Setting__c)),
+NOT(ISBLANK(cdcpc__Converted_Temperature_Setting__c )),
+NOT(ISPICKVAL(cdcpc__Temperature_Setting_Units__c ,&quot;&quot;)),
+NOT(ISBLANK(TEXT(cdcpc__Pressure_Withstand__c)))
+),
+AND(
+ISPICKVAL(cdcpc__Relief_Type__c, &quot;Pressure &amp; Vacuum Relief&quot;),
+cdcpc__Relief_Flag__c = TRUE,
+ISPICKVAL( cdcpc__constrain_product_selection_by_flow__c , &quot;&quot;),
+NOT(ISPICKVAL( cdcpc__Size_Units__c, &quot;&quot;)),
+NOT(ISPICKVAL( cdcpc__Is_there_a_liquid_relief_scenario__c , &quot;&quot;)),
+NOT(ISBLANK(cdcpc__Temperature_Setting__c)),
+NOT(ISBLANK(cdcpc__Converted_Temperature_Setting__c )),
+NOT(ISBLANK(cdcpc__Pressure_Setting__c)),
+cdcpc__Pressure_Setting__c &gt; 0,
+NOT(ISPICKVAL(cdcpc__Pressure_Setting_Units__c ,&quot;&quot;)),
+cdcpc__Vacuum_Setting__c &gt; 0,
+NOT(ISBLANK(cdcpc__Vacuum_Setting__c)),
+NOT(ISPICKVAL(cdcpc__Vacuum_Setting_Units__c ,&quot;&quot;)),
+NOT(ISPICKVAL(cdcpc__Temperature_Setting_Units__c ,&quot;&quot;))
+))</errorConditionFormula>
+    <errorDisplayField>cdcpc__constrain_product_selection_by_flow__c</errorDisplayField>
+    <errorMessage>Do you want to constrain product selection by flow?: Please select a value</errorMessage>
+</ValidationRule>

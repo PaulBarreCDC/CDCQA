@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Production_Planning_Requires_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>SBQQ__Quote__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Commission_Amount__c</columns>
+    <columns>Product_Planning_Status__c</columns>
+    <columns>Engineering_Status__c</columns>
+    <columns>Discountable_List_Price__c</columns>
+    <columns>Non_Discountable_List_Price__c</columns>
+    <columns>Net_Price_Each__c</columns>
+    <columns>PARTNUMBER__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Planning_Status__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>Sourcing_Entity__c</field>
+        <operation>equals</operation>
+        <value>20</value>
+    </filters>
+    <label>Production Planning - Stafford</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

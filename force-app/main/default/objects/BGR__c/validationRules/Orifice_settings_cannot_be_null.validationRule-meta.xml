@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Orifice_settings_cannot_be_null</fullName>
+    <active>false</active>
+    <description>The Orifice settings field must have atleast one value - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISPICKVAL( Orifice_Setting__c, &quot;&quot;),
+				Bypass__c = FALSE,
+    Product_selection_flag__c = TRUE
+				)</errorConditionFormula>
+    <errorDisplayField>Orifice_Setting__c</errorDisplayField>
+    <errorMessage>Please Select a value from the dropdown</errorMessage>
+</ValidationRule>

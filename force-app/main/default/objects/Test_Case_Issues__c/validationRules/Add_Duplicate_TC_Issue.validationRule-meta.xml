@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Duplicate_TC_Issue</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ OR(
+ISPICKVAL(Issue_Status__c, &quot;Duplicate&quot;),
+ISPICKVAL(Disposition__c , &quot;Duplicate&quot;)), 
+ ISBLANK(Duplicate_Of__c )   
+)</errorConditionFormula>
+    <errorDisplayField>Duplicate_Of__c</errorDisplayField>
+    <errorMessage>If this is a Duplicate Test Case Issue, link original Test Case Issue in the &quot;Duplicate of&quot; field.</errorMessage>
+</ValidationRule>

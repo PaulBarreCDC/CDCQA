@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Request_Types__c</fullName>
+    <externalId>false</externalId>
+    <label>Update Request Types</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>Change_Order_Request__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cancel Entire Order due to change in plan</fullName>
+                <default>false</default>
+                <label>Cancel Entire Order due to change in plan</label>
+            </value>
+            <value>
+                <fullName>Halt Current Production Process (Block Order)</fullName>
+                <default>false</default>
+                <label>Halt Current Production Process (Block Order)</label>
+            </value>
+            <value>
+                <fullName>Commercial Update of Active Order</fullName>
+                <default>false</default>
+                <label>Commercial Update of Active Order</label>
+            </value>
+            <value>
+                <fullName>Product Update of any kind for an existing order</fullName>
+                <default>false</default>
+                <label>Product Update of any kind for an existing order</label>
+            </value>
+            <value>
+                <fullName>Adjust Charges</fullName>
+                <default>false</default>
+                <label>Adjust Charges</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Update Order</controllingFieldValue>
+            <valueName>Halt Current Production Process (Block Order)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Update Order</controllingFieldValue>
+            <valueName>Commercial Update of Active Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Update Order</controllingFieldValue>
+            <valueName>Product Update of any kind for an existing order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Update Order</controllingFieldValue>
+            <valueName>Adjust Charges</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cancel Entire Order</controllingFieldValue>
+            <valueName>Cancel Entire Order due to change in plan</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

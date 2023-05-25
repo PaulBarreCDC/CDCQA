@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>A3Pedestal_Connection_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISPICKVAL(Pedestal_Connection__c ,&apos;&apos; ),
+Bypass__c = FALSE,
+Product_Material_and_Options_Flag__c= TRUE
+)</errorConditionFormula>
+    <errorMessage>Pedestal Connection : Please select a value from the drop down</errorMessage>
+</ValidationRule>

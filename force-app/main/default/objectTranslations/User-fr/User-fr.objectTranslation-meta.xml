@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label></label>
+        <name>PersonalInfo_EPIM</name>
+    </fieldSets>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Defaults</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Selling &amp; Sourcing Entities (Internal Only)</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Profile Layout</layout>
+        <layoutType>UserAlt</layoutType>
+        <sections>
+            <label></label>
+            <section>About</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Contact</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>BigMachines__BigMachines_Association_to_Organization</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>BigMachines__BigMachines_First_Name</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>BigMachines__BigMachines_Linked_Username</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>BigMachines__BigMachines_Login</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>BigMachines__BigMachines_Partner_Users</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__Select_Theme</name>
+    </webLinks>
+</CustomObjectTranslation>

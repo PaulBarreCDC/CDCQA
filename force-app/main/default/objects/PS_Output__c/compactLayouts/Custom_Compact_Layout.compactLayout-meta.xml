@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Disountable_Lot_Charge_Override__c</fields>
+    <fields>Non_Disountable_Lot_Charge_Override__c</fields>
+    <fields>Price_Override__c</fields>
+    <fields>isPriceOverride__c</fields>
+    <fields>Price_Total__c</fields>
+    <fields>Lead_Time_10__c</fields>
+    <fields>Lead_Time_20__c</fields>
+    <fields>Lead_Time_30__c</fields>
+    <fields>Lead_Time_40__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

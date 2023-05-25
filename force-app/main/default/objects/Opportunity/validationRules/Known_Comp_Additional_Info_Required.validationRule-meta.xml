@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Known_Comp_Additional_Info_Required</fullName>
+    <active>true</active>
+    <description>If the Known Competition value is set to &apos;Other&apos; then we require some form of data in the Additional info field</description>
+    <errorConditionFormula>INCLUDES(  Known_Competition2__c  , &apos;Other&apos;) &amp;&amp; 
+ISBLANK(KnownCompAdditionalInfo__c )</errorConditionFormula>
+    <errorDisplayField>KnownCompAdditionalInfo__c</errorDisplayField>
+    <errorMessage>If you select &apos;Other&apos; in the Known Competition field, then you need to provide info in the Known Comp Additional Info field.</errorMessage>
+</ValidationRule>

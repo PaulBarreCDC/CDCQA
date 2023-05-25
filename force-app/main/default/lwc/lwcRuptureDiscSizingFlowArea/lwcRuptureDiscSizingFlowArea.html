@@ -1,0 +1,840 @@
+<template>    
+    <lightning-record-edit-form object-api-name="Rupture_Disc__c" onsubmit={handleSaveSizingFlowArea} onsuccess={handleSizingFlowAreaSuccess} class="SizingFlowAreaForm" record-id={recordId}>
+        <article class="slds-card" style="background-color: #fafbfc;">
+            <div class="slds-grid slds-card__header" style="background-color:white;">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+                        <h3 class="slds-section slds-section__title">Sizing/ Flow Area</h3>
+                    </div>
+                </header>
+                <div class="slds-einstein-header__actions"></div>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">    
+                <div class="slds-form">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Evaluation Type</label>
+                                <div class="slds-form-element__control">
+                                    <template for:each={evaluationTypeOptions} for:item="item">
+                                        <fieldset key={item.value} style="display: block; float: left;">
+                                            <div class="slds-form-element__control">
+                                                <span class="slds-radio">
+                                                    <input name="radiogroup13" id={item.value} value={item.value} class={item.generatedId} type="radio" onchange={handleEvaluationTypeOptions}/>
+                                                    <label class="slds-radio__label" for={item.value}>
+                                                        <span class="slds-radio_faux"></span>
+                                                <span class="slds-form-element__label">{item.label}</span>
+                                                </label>
+                                                </span>
+                                            </div>
+                                        </fieldset>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Evaluation Per</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field field-name="Evaluation_Per__c" variant="label-hidden" onchange={handleEvaluationPerChange}></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Media</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-combobox name="progress" variant="label-hidden" value={selectedProcessMedia} options={processMediaOptions} onchange={handleMediaChange}></lightning-combobox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Customer Specified Media</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field read-only={notCustomerSpecified} field-name="Customer_Specified_Media__c" value={customerSpecifiedMedia} variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Molecular Weight</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field data-id="Molecular_Weight__c" read-only={notCustomerSpecified} field-name="Molecular_Weight__c" value={molecularWeight} variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                    Compressibility Factor
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field disabled={notCustomerSpecified} field-name="Compressibility_Factor__c" value={CompressibilityFactor} variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                    Ratio of Specific Heats
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field read-only={notCustomerSpecified} field-name="Ratio_of_Specific_Heats__c" value={ratioOfSpecificHeats} variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- section for ASME Gas/Vapor and API Gas/Vapor  Evaluation_Per__c -->
+                        <template if:true={showASMEGasVaporSection}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>  
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+    
+                            <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relieving Temperature
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <template for:each={pressureRelievingTemperatureOptions} for:item="item">
+                                            <fieldset key={item.value} style="display: block; float: left;">
+                                                <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                                                            <input name="radiogroup15" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handlePressureRelievingTemperatureOptions}/>
+                                                                                            <label class="slds-radio__label" for={item.value}>
+                                                                                                <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                </div>
+                                            </fieldset>
+                                        </template>
+                                        <!-- <lightning-input-field field-name="Pressure_Relieving_Temperature__c" variant="label-hidden"></lightning-input-field> -->
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <template if:true={hideDiffTemperatureSettings}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Different Temperature Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Different_Temperature_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Different Temperature Units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Different_Temperature_Units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+    
+                        <!-- section for ASME Water  Evaluation_Per__c -->
+                        <template if:true={showASMEWaterSection}>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_Specific_Volume_Specific_Gravity__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity Units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_SpecificVolume_SpcfcGravityUnits__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Density at Inlet</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_at_Inlet__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Density at Inlet Units</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_at_Inlet_Units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+    
+                        </template>
+    
+                       <!-- ASME Steam Section -->
+                       <template if:true={showASMESteamSection}>                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                            
+                            <div class="slds-size_1-of-1 slds-p-bottom_medium">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Pressure Relieving Temperature
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <template for:each={pressureRelievingTemperatureOptions} for:item="item">
+                                            <fieldset key={item.value} style="display: block; float: left;">
+                                                <div class="slds-form-element__control">
+                                                    <span class="slds-radio">
+                                                                                            <input name="radiogroup15" id={item.value} type="radio" value={item.value} class={item.generatedId} onchange={handlePressureRelievingTemperatureOptions}/>
+                                                                                            <label class="slds-radio__label" for={item.value}>
+                                                                                                <span class="slds-radio_faux"></span>
+                                                    <span class="slds-form-element__label">{item.label}</span>
+                                                    </label>
+                                                    </span>
+                                                </div>
+                                            </fieldset>
+                                        </template>
+                                        <!-- <lightning-input-field field-name="Pressure_Relieving_Temperature__c" variant="label-hidden"></lightning-input-field> -->
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <template if:true={hideDiffTemperatureSettings}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Different Temperature Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Different_Temperature_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Different Temperature Units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Different_Temperature_Units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </template>
+
+                        <!-- API Liquid Section  -->
+                        <template if:true={showAPILiquidSection}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_Specific_Volume_Specific_Gravity__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity Units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_SpecificVolume_SpcfcGravityUnits__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Density at Inlet</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_at_Inlet__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Density at Inlet Units</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_at_Inlet_Units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Viscosity
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Viscosity__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Viscosity units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Viscosity_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </template>
+
+                        <!-- ISO Liquid Section  -->
+                        <template if:true={showISOLiquidSection}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_Specific_Volume_Specific_Gravity__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Density Special Volume Special Gravity Units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Density_SpecificVolume_SpcfcGravityUnits__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Special Volume at Inlet</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Specific_Volume_at_inlet__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">Special Volume at Inlet Units</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Specific_Volume_at_Inlet_Units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>  
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Viscosity
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Viscosity__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Viscosity units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Viscosity_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </template>
+
+                        <!-- ISO Wet Steam Section  -->
+                        <template if:true={showISOWetSteamSection}>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow Rate
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_Rate__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Required Flow units
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Required_Flow_units__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Relieving Pressure at Inlet
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <select class="slds-select" onchange={handleRelievingPressureatInletOptions}>
+                                            <template for:each = {relievingPressureatInletOptions} for:item="item">
+                                               <option key={item.value} value={item.value} class={item.generatedId} >{item.label}</option>
+                                            </template>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label"></label>
+                                    <div class="slds-form-element__control"></div>
+                                </div>
+                            </div>
+        
+                            <template if:true={showEnterRelievingPressureValueunits}>
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure Value
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_Value__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="slds-size_1-of-2">
+                                    <div class="slds-form-element slds-form-element_horizontal">
+                                        <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                            Enter Relieving Pressure units
+                                        </label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input-field field-name="Enter_Relieving_Pressure_units__c" variant="label-hidden"></lightning-input-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                            <div class="slds-size_1-of-2">
+                                <div class="slds-form-element slds-form-element_horizontal">
+                                    <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                        Dryness of Wet Steam
+                                    </label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-field field-name="Dryness_of_Wet_Steam__c" variant="label-hidden"></lightning-input-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </template>
+
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">Flow Area</label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field disabled field-name="Flow_Area__c" variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                    Required Flow Area Units
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field field-name="Required_Flow_Area_Units__c" variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="slds-size_1-of-2">
+                            <div class="slds-form-element slds-form-element_horizontal">
+                                <label class="slds-form-element__label" for="horizontal-input-id-01">
+                                    Output Required Flow Area
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <lightning-input-field disabled field-name="Output_Required_Flow_Area__c" variant="label-hidden"></lightning-input-field>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>    
+            </div>
+            <lightning-messages></lightning-messages>
+            <footer class="slds-card__footer">
+                <div class="slds-clearfix">
+                    <div class="slds-float_left">
+                        <lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+                        <lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+    
+                </div>
+            </footer>
+        </article>
+    </lightning-record-edit-form>
+</template>

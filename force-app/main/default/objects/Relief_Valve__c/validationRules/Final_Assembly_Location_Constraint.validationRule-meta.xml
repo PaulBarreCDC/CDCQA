@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Assembly_Location_Constraint</fullName>
+    <active>true</active>
+    <description>Final Assembly Location Requirements</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISPICKVAL(Final_Assembly_Location_Requirements__c,&apos;&apos;),
+(Section_H_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Final_Assembly_Location_Requirements__c</errorDisplayField>
+    <errorMessage>Final Assembly Location Requirements :  Please select a value</errorMessage>
+</ValidationRule>

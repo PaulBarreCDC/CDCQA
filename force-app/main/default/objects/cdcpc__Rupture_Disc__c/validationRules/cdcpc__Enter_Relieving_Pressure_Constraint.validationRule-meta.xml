@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Enter_Relieving_Pressure_Constraint</fullName>
+    <active>false</active>
+    <description>Enter Relieving Pressure is Mandatory field if it  is selected in Relieving Pressure at Inlet</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Relieving_Pressure_at_Inlet__c , &quot;Enter Relieving Pressure Value/ units&quot;), 
+OR( 
+ISBLANK( cdcpc__Enter_Relieving_Pressure_Value__c )
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE)&amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Enter_Relieving_Pressure_Value__c</errorDisplayField>
+    <errorMessage>Enter Relieving Pressure Value: Please Enter a Value</errorMessage>
+</ValidationRule>

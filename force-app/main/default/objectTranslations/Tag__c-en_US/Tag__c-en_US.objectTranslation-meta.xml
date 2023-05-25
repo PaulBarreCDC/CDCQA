@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tag</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tags</value>
+    </caseValues>
+    <layouts>
+        <layout>Tag All/Individually Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instructions &amp; Box Label</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Tag Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Tag Each Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Instructions &amp; Box Label</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Tag Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Tag Layout</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label></label>
+        <name>Tag_All</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Tag_Each</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>Tag_Individually</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Record_Types_Available_by_Brand</name>
+    </validationRules>
+</CustomObjectTranslation>

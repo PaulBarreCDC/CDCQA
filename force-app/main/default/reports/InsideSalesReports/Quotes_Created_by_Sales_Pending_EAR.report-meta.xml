@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Brand__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$SBQQ__Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Inside_Sales_Approver__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Eng_Review_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$Prod_Planning_Status__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Opportunity$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.SBQQ__Quotes2__r$AccountName__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$SBQQ__Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Pending,Change Order,Pending Approvals</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Rep_Code_District__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>contains</operator>
+            <value>EAR</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Hans Vierhout</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>David Butler</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Linnette Munoz</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Simone Beckmann</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Dennis van den Brink</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.SBQQ__Quotes2__r$CreatedBy</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Therese Koene</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Quotes Created by Sales - Pending - EAR</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opps_w_Quotes_w_Quote_Lines_v2__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>Opportunity.SBQQ__Quotes2__r$Name</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

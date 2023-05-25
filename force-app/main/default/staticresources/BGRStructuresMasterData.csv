@@ -1,0 +1,6 @@
+Component_part__c,Component_Scrap__c,ConnectionCode__c,Line_Item_No__c,Qty_per_Assembly__c,Scrap_Factor__c,SettingLL__c,SettingUL__c,SoftGoods__c,Sourcing__c,SpringCode__c
+MGCON6B005000500BGF000,0,T,20,1,0,0,9999,B,-,N
+MGCON6A005000500BGQ000,0,Q,20,1,0,0,9999,-,-,N
+MGASH6B005000500F04512,0,-,10,1,0,0,9999,V,-,N
+MGASH6D010000500F02A24,0,T,10,1,0,0,9999,B,-,N
+SPR600107M0500BS7000,0,-,30,1,0,0,9999,-,-,N

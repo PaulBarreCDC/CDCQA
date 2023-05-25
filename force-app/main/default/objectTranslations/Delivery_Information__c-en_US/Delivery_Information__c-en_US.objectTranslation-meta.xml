@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Delivery Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Delivery Information</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Del_Qty_Cannot_Exceed_QLI_Qty</name>
+    </validationRules>
+</CustomObjectTranslation>

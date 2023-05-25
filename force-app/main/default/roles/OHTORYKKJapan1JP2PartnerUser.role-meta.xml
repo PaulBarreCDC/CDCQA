@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>OHTORY K.K. - Japan | 1JP2 Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>OHTORY K.K. - Japan | 1JP2 Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>OHTORYKKJapan1JP2PartnerManager</parentRole>
+</Role>

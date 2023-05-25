@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Active_Archive_Check</fullName>
+    <active>true</active>
+    <description>Cannot be Archived and Active.</description>
+    <errorConditionFormula>cdcpc__IsArchived__c  =  True &amp;&amp; cdcpc__IsActive__c  = True</errorConditionFormula>
+    <errorMessage>Part cannot be Active and Archived</errorMessage>
+</ValidationRule>

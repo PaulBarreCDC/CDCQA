@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>TopSectionPartNumber__c</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>STC__c</columns>
+    <columns>TestingCode__c</columns>
+    <columns>OptionCode__c</columns>
+    <columns>ThckCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Leadtime__c</field>
+        <operation>equals</operation>
+        <value>RA</value>
+    </filters>
+    <label>All</label>
+</ListView>

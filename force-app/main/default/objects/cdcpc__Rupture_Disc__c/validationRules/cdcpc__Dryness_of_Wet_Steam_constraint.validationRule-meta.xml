@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Dryness_of_Wet_Steam_constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(  cdcpc__Dryness_of_Wet_Steam__c  )), 
+OR( 
+cdcpc__Dryness_of_Wet_Steam__c &lt; 90, 
+cdcpc__Dryness_of_Wet_Steam__c &gt; 100 
+) 
+) &amp;&amp; cdcpc__Bypass__c = FALSE &amp;&amp; 
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Dryness_of_Wet_Steam__c</errorDisplayField>
+    <errorMessage>Dryness of Wet Steam: Please enter positive Integer Value greater than or equal to 90 and less than 100</errorMessage>
+</ValidationRule>

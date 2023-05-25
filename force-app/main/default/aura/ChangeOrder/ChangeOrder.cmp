@@ -1,0 +1,104 @@
+<aura:component controller="QuoteCommentController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="record" type="Object"></aura:attribute>
+    <aura:attribute name="quoteRecord" type="Object"></aura:attribute>
+    <aura:attribute name="recordError" type="String"></aura:attribute>
+    
+    <aura:attribute name="new_commentId" type="Id"/>
+    <aura:attribute name="commentId" type="Id"/>
+    <aura:attribute name="new_commentValue" type="String"/>    
+    <aura:attribute name="commentValue" type="String"/>    
+    
+    <aura:attribute name="comments" type="List"/>
+    <aura:attribute name="showNew" type="Boolean"/>
+    <aura:attribute name="path" type="object"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    
+    <aura:html tag="style">
+        .modal-container {
+        min-width: 80rem !important;
+        }
+        .modal-footer {
+        display:none;
+        }
+    </aura:html>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--c:LightningPath path="{!v.path}"></c:LightningPath-->
+        <aura:if isTrue= "{!v.showSpinner}">
+        <lightning:spinner alternativeText="Loading" size="large" />
+        </aura:if>
+    
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+            <aura:if isTrue="{!v.showNew}">
+                <lightning:recordEditForm aura:id="commentForm"
+                                          density= "comfy"
+                                          onload="{!c.handleLoad}"
+                                          onsubmit="{!c.handleSubmit}"
+                                          onsuccess="{!c.handleSuccess}"
+                                          objectApiName="Comment_Log__c">
+                    <lightning:messages />
+                    <lightning:inputField class="slds-hide" aura:id="Quote__c" fieldName="Quote__c" value="{!v.recordId}" />
+                    <lightning:inputField class="slds-hide" aura:id="Type__c" fieldName="Type__c" value="Change Order" />
+                    <lightning:inputField required="true" aura:id="Comments__c" fieldName="Comments__c" value="{!v.commentValue}"/>
+                </lightning:recordEditForm>
+                
+                <aura:set attribute="else">
+                    <lightning:recordEditForm aura:id="commentEditForm"
+                                              density= "comfy"
+                                              onload="{!c.handleLoad}"
+                                              onsubmit="{!c.handleSubmit}"
+                                              onsuccess="{!c.handleSuccess}"
+                                              recordId="{!v.commentId}"
+                                              objectApiName="Comment_Log__c">
+                        <lightning:messages />
+                        <lightning:inputField class="slds-hide" aura:id="Quote__c" fieldName="Quote__c" value="{!v.recordId}" />
+                        <lightning:inputField class="slds-hide" aura:id="Type__c" fieldName="Type__c" value="Change Order" />
+                        <lightning:inputField required="true" aura:id="Comments__c" fieldName="Comments__c" value="{!v.commentValue}"/>
+                    </lightning:recordEditForm>
+                </aura:set>
+            </aura:if>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <div Class="slds-box slds-box_xx-small">
+                <div class="slds-scrollable_y" style="height:320px">
+                    <table class="slds-table">
+                        <aura:iteration items="{!v.comments}" var="comment">
+                            <tr class="slds-border_bottom">
+                                <td>
+                                    {!comment.CreatedBy.Name}
+                                </td>
+                                <td>
+                                    <lightning:formattedDatetime value="{!comment.CreatedDate}"></lightning:formattedDatetime>
+                                </td>
+                                <td>
+                                    <lightning:formattedRichText value="{!comment.Comments__c}"/> 
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="slds-m-top_medium">
+            <div class="slds-align_absolute-center">
+                   <lightning:button variant="brand" type="submit" name="save" label="Continue" onclick="{!c.handleSave}"/>
+                <lightning:button variant="brand" name="save" label="Cancel" onclick="{!c.handleCloseReview}"/>
+            </div>
+        </div>
+    </div>
+        <force:recordData aura:id="recordHandler"
+                          recordId="{!v.recordId}"
+                          fields="Max_Lead_Time__c,Planned_Delivery_Date__c,Finalized_Delivery_Date__c,Eng_Review_Status__c"
+                          targetRecord="{!v.record}"
+                          targetFields="{!v.quoteRecord}"
+                          targetError="{!v.recordError}"
+                          mode="EDIT"
+                          recordUpdated="{!c.handleRecordUpdated}"
+                      />
+    
+
+  
+</aura:component>

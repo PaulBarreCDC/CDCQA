@@ -1,0 +1,271 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 12-07-2020
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   08-09-2020   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+  1.1   23-02-2021   Rohini Hathi                         Service Ticket# 163022
+-->
+<template>
+  <div style="width: 100%;overflow-y: scroll;min-height:400px">
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th>
+                <div class="slds-truncate">
+                   Action
+                </div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Line #</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Line Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Quantity</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Product Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Customer Currency</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Total List Price (Cust. Curr)</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Discount. (%)</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Discount Amount</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Net Price Each (Cust Curr)</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Ext Net Price (Cust Curr)</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Leadtime</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Customer Leadtime</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">PP Leadtime</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Expiration Date</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Drawings Status</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Requires Technical Review</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Engineering Status</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Requires PP Review</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Size</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Part Number</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate">Line Status</div>
+            </th>
+            <th class="" scope="col"> <!--Service Ticket# 163022-->
+              <div class="slds-truncate">Change Order Status</div>
+            </th>
+            
+          </tr>
+        </thead>
+        
+        <tbody>
+         <template for:each={qlineItems} for:item="ql" for:index="idx">
+          <tr class="slds-hint-parent" key={ql.ql.Id}>
+            <td>
+              <lightning-button-menu name={ql.ql.Id} data-outputurl={ql.OutputURL} onselect={configProd} alternative-text="Show menu" variant="border-filled" icon-name="utility:settings">
+                <lightning-menu-item value="Configure" label="Configure"></lightning-menu-item>
+                <lightning-menu-item value="Output" label="Output"></lightning-menu-item>
+                
+                <template for:each={metaDataAction} for:item="action" for:index="idx">
+                  <lightning-menu-item key={action.Id} value={action.Action_Name__c} label={action.Action_Name__c}></lightning-menu-item>  
+                </template>
+             </lightning-button-menu>
+
+
+                <!--<lightning-button-icon icon-name="utility:settings"
+                                       alternative-text="Settings" title="Settings"
+                                       onclick={configProd}
+                                       
+                                        ></lightning-button-icon>-->
+                &nbsp;&nbsp;
+                <lightning-button-icon icon-name="utility:save"
+                                       alternative-text="save"
+                                       name={ql.ql.Id}
+                                       onclick={saveRow}
+                                       title="save"></lightning-button-icon>
+                &nbsp;&nbsp;
+                <lightning-button-icon onclick={undoRow} name={ql.ql.Id} icon-name="utility:undo"  alternative-text="undo" title="undo"></lightning-button-icon>
+
+                
+            </td>
+            <td data-label={ql.ql.SBQQ__Number__c}>
+              <div class="slds-truncate" title={ql.ql.SBQQ__Number__c}>
+                {ql.ql.SBQQ__Number__c}
+              </div>
+            </td>
+            <td >
+              <div class="slds-truncate" title={ql.ql.Name}>
+                <a data-label={ql.ql.Id} href="#" onclick={navigateToQL} data-reroutng={ql.disableLineItem}>{ql.ql.Name}</a>
+              </div>
+            </td>
+            <td data-label={ql.ql.SBQQ__Quantity__c}>
+              <div class="slds-truncate" title={ql.ql.SBQQ__Quantity__c}>
+                {ql.ql.SBQQ__Quantity__c}
+              </div>
+            </td>
+            <td data-label={ql.ql.Product_Name__c}>
+              <div class="slds-truncate" title={ql.ql.Product_Name__c}>{ql.ql.Product_Name__c}</div>
+            </td>
+            <td data-label={ql.ql.Customer_Currency__c}>
+              <div class="slds-truncate" title={ql.ql.Customer_Currency__c}>{ql.ql.Customer_Currency__c}</div>
+            </td>
+            <td data-label={ql.ql.Total_List_Price_Cust_Curr__c}>
+              <div class="slds-truncate" title={ql.ql.Total_List_Price_Cust_Curr__c}>{ql.ql.Total_List_Price_Cust_Curr__c}</div>
+            </td>
+            <td data-label={ql.ql.Discount__c}>
+              <div class="slds-truncate" title={ql.ql.Discount__c}>
+                <lightning-input type="number" variant="label-hidden" name={ql.ql.Id} label="" 
+                value={ql.ql.Discount__c} formatter="percent-fixed" step="0.1" onblur={onDiscountUpdate}>
+                </lightning-input>
+                </div>
+            </td>
+            <td data-label={ql.ql.Discount_Amount__c}>
+              <div class="slds-truncate" title={ql.ql.Discount_Amount__c}>{ql.ql.Discount_Amount__c}</div>
+            </td>
+            <!--td data-label={ql.ql.Discount_Amount__c}>
+              <div class="slds-truncate" title={ql.ql.Discount_Amount__c}>
+                <lightning-input type="number" name={ql.ql.Id} label=""  variant="label-hidden" 
+                value={ql.ql.Discount_Amount__c} formatter="currency" step="0.01"
+                onblur={onDiscountAmountUpdate}></lightning-input>  
+                </div>
+            </td-->
+            <td data-label={ql.ql.Net_Price_Each_Cust_Curr__c}>
+              <div class="slds-truncate" title={ql.ql.Net_Price_Each_Cust_Curr__c}>{ql.ql.Net_Price_Each_Cust_Curr__c}</div>
+            </td>
+            <td data-label={ql.ql.Regular_Total_Price_Cust_Curr__c}>
+              <div class="slds-truncate" title={ql.ql.Regular_Total_Price_Cust_Curr__c}>{ql.ql.Regular_Total_Price_Cust_Curr__c}</div>
+            </td>
+            <td data-label={ql.ql.Leadtime__c}>
+              <div class="slds-truncate" title={ql.ql.Leadtime__c}>{ql.ql.Leadtime__c}</div>
+            </td>
+            <td data-label={ql.ql.Customer_Leadtime__c}>
+              <div class="slds-truncate" title={ql.ql.Customer_Leadtime__c}>
+                <lightning-input type="number" name={ql.ql.Id} variant="label-hidden" label=""
+                 value={ql.ql.Customer_Leadtime__c} onblur={onCustomerLeadTimeUpdate}></lightning-input>
+            </div>
+            </td>
+            <td data-label={ql.ql.Production_Planning_Leadtime__c}>
+              <div class="slds-truncate" title={ql.ql.Production_Planning_Leadtime__c}>{ql.ql.Production_Planning_Leadtime__c}</div>
+            </td>
+            <td data-label={ql.ql.Expiration_Date__c}>
+              <div class="slds-truncate" title={ql.ql.Expiration_Date__c}><lightning-formatted-date-time value={ql.ql.Expiration_Date__c}></lightning-formatted-date-time></div>
+            </td>
+            <td data-label={ql.ql.Drawings_Status__c}>
+              <div class="slds-truncate" title={ql.ql.Drawings_Status__c}>{ql.ql.Drawings_Status__c}</div>
+            </td>
+            <td data-label={ql.ql.Requires_Technical_Review__c}>
+              <div class="slds-truncate" title={ql.ql.Requires_Technical_Review__c}>{ql.ql.Requires_Technical_Review__c}</div>
+            </td>
+            
+            <td data-label={ql.ql.Engineering_Status__c}>
+              <div class="slds-truncate" title={ql.ql.Engineering_Status__c}>{ql.ql.Engineering_Status__c}</div>
+            </td>
+
+            <td data-label={ql.ql.Product_Planning_Status__c}>
+              <div class="slds-truncate" title={ql.ql.Product_Planning_Status__c}>{ql.ql.Product_Planning_Status__c}</div>
+            </td>
+
+            <td data-label={ql.rD.Size__c}>
+              <div class="slds-truncate" title={ql.rD.Size__c}>{ql.rD.Size__c}</div>
+            </td>
+
+            <td data-label={ql.rD.Part_Number__c}>
+              <div class="slds-truncate" title={ql.rD.Part_Number__c}>{ql.rD.Part_Number__c}</div>
+            </td>
+            <td data-label={ql.ql.Line_Status__c}>
+              <div class="slds-truncate" title={ql.ql.Line_Status__c}>{ql.ql.Line_Status__c}</div>
+            </td>
+            <td data-label={ql.ql.Change_Order_Status__c}> <!--Service Ticket # 163022-->
+              <div class="slds-truncate" title={ql.ql.Change_Order_Status__c}>{ql.ql.Change_Order_Status__c}</div>
+            </td>
+            
+          </tr>
+          
+          </template>
+        </tbody>
+      </table>
+    </div>  
+
+    <!-- modal start -->        
+   <template if:true={bShowModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+       <div class="slds-modal__container">
+          <!-- modal header start -->
+          <header class="slds-modal__header">
+             <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                <lightning-icon icon-name="utility:close"
+                   alternative-text="close"
+                   variant="inverse"
+                   size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+             </button>
+             <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{selectedActionName}</h2>
+          </header>
+          <!-- modal body start -->
+          <lightning-record-edit-form record-id={selectedQlId} object-api-name="SBQQ__QuoteLine__c" onsuccess={handleSuccess}>
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="height:500px">
+            
+              <lightning-layout multiple-rows>
+                <template for:each={lstActionQuoteLineFields} for:item="fld" for:index="idx">
+                  <lightning-layout-item size="10" padding="around-small" key={fld.fldApi}>
+                    <template if:false={fld.isEmptySpace}>
+                    <template if:true={fld.isReadOnly}>
+                      <lightning-output-field field-name={fld.fldApi} ></lightning-output-field>
+                    </template>
+                    <template if:false={fld.isReadOnly}>
+                      <lightning-input-field field-name={fld.fldApi} ></lightning-input-field>
+                    </template>    
+                  </template>              
+                  </lightning-layout-item>
+                  
+                </template>
+                </lightning-layout>
+
+        
+          </div>
+          <!-- modal footer start-->
+          <footer class="slds-modal__footer">
+            <lightning-button class="slds-m-around_small" onclick={closeModal} variant="neutral" name="Cancel" label="Cancel"> </lightning-button>
+            
+            <lightning-button class="slds-m-around_small" variant="brand" type="submit" name="update" label="Update"> </lightning-button>
+          </footer>
+        </lightning-record-edit-form>
+       </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+ </template>
+ <!-- modal end -->
+
+
+</template>

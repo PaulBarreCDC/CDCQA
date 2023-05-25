@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <booleanFilter>1 OR 2</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Pricing_Element__c</columns>
+    <columns>Price__c</columns>
+    <columns>Text1Val__c</columns>
+    <columns>Text2Val__c</columns>
+    <columns>Text3Val__c</columns>
+    <columns>Text4Val__c</columns>
+    <columns>Text5Val__c</columns>
+    <columns>Text6Val__c</columns>
+    <columns>Text7Val__c</columns>
+    <columns>NumVal1__c</columns>
+    <columns>NumVal2__c</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Pricing_Element__c</field>
+        <operation>equals</operation>
+        <value>WeightPressure</value>
+    </filters>
+    <filters>
+        <field>Pricing_Element__c</field>
+        <operation>equals</operation>
+        <value>WeightVacuum</value>
+    </filters>
+    <label>All</label>
+</ListView>

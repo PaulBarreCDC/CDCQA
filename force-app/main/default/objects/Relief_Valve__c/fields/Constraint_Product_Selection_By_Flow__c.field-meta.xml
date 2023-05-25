@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Constraint_Product_Selection_By_Flow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <label>Filter Product Selection by Flow</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,8 @@
+Id,Num1__c,Num2__c,NumOpp1__c,NumOpp2__c,Operation__c,Text1__c,Text2__c,Text3__c,Text4__c,Text5__c,TextOpp1__c,TextOpp2__c,TextOpp3__c,TextOpp4__c,TextOpp5__c
+a6h8A000000I8xoQAC,,,,,0005,,,,,,,,,,
+a6h8A000000I8xpQAC,,,,,0080,PMI,,,,,=,,,,
+a6h8A000000I8xrQAC,,,,,0020,CLEAN,,,,,=,,,,
+a6h8A000000I8xsQAC,,,,,0030,CLEAN,,,,,=,,,,
+a6h8A000000I8xuQAC,,,,,0050,,,,,,,,,,
+a6h8A000000I8xvQAC,,,,,0090,,,,,,,,,,
+a6h8A000000I8xwQAC,,,,,0100,,,,,,,,,,

@@ -1,0 +1,28 @@
+<apex:page standardController="SBQQ__Quote__c" lightningStylesheets="true" extensions="customQuoteLineController">
+    <apex:form >
+    <apex:pageBlock title="Quote Lines">         
+       <apex:pageBlockTable value="{!quoteLineList}" var="quoteLine">
+           <apex:column value="{!quoteLine.ql.Name}"/>                        
+          <apex:column value="{!quoteLine.ql.SBQQ__Quote__c}"/> 
+          <apex:column value="{!quoteLine.ql.SBQQ__Product__c}"/>
+          <apex:column headerValue="Product Config Ref"><apex:outputlink value="/{!quoteLine.rD['id']}">{!quoteLine.rD['Name']}</apex:outputlink></apex:column>
+          <!--<apex:column value="{!quoteLine.ql.SBQQ__Discount__c}"/>
+           <apex:column value="{!quoteLine.rD['Discountable_Price__c']}"/>
+           <apex:column value="{!quoteLine.rD['Non_Discountable_Price__c']}"/>-->
+           <apex:column value="{!quoteLine.rD['Size__c']}"/>
+           <apex:column value="{!quoteLine.rD['Part_Number__c']}"/>
+           <!--<apex:column value="{!quoteLine.rD.Engineering_Notes__c}"/>-->
+           <apex:column >In Progress </apex:column>
+          <apex:column ><apex:outputlink value="/apex/ConfigureProductScreen?qid={!quoteLine.ql.id}" rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='RD'}">Configure</apex:outputlink>
+           <apex:outputlink value="/apex/ConfigBGR?qid={!quoteLine.ql.id}"  rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='BGR'}">Configure</apex:outputlink>
+           <apex:outputlink value="/apex/RVConfig?qid={!quoteLine.ql.id}"  rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='RLFVLV'}">Configure</apex:outputlink>
+            <apex:outputlink value="/apex/ConfigFLAME?qid={!quoteLine.ql.id}"  rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='FlameProducts'}">Configure</apex:outputlink>
+              <apex:outputlink value="/apex/ConfigWGBProduct?qid={!quoteLine.ql.id}"  rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='WGB'}">Configure</apex:outputlink>         
+              <apex:outputlink value="/apex/ConfigHolders?qid={!quoteLine.ql.id}"  rendered="{!quoteLine.ql.SBQQ__ProductCode__c=='HLD'}">Configure</apex:outputlink>
+           </apex:column>
+       </apex:pageBlockTable>
+    </apex:pageBlock>
+            <apex:commandButton value="Add Product" action="{!addProduct}" ></apex:commandButton>
+            <apex:commandButton value="Back" action="{!goBack}" ></apex:commandButton>
+</apex:form>
+</apex:page>

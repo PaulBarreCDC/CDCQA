@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>cdcpc__Specific_Volume_at_Inlet_Units__c</name>
+    <picklistValues>
+        <masterLabel>ft3/lb</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>m3/kg</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

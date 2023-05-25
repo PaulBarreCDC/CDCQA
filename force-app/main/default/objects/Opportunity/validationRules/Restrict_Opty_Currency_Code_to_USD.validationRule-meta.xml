@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Opty_Currency_Code_to_USD</fullName>
+    <active>true</active>
+    <errorConditionFormula>(DATEVALUE(CreatedDate) &gt; DATE(2020, 07, 11) || isNEW()) &amp;&amp;  NOT(ISPICKVAL(CurrencyIsoCode, &apos;USD&apos;))</errorConditionFormula>
+    <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+    <errorMessage>This is config currency code. Please limit the selection to USD. For converted prices, please choose your preference on Customer Currency field above</errorMessage>
+</ValidationRule>

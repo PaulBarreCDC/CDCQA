@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Relieving_Pressure_at_Inlet__c</name>
+    <picklistValues>
+        <masterLabel>% Overpressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enter Relieving Pressure Value/ units</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

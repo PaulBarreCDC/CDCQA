@@ -1,0 +1,258 @@
+<apex:page showHeader="false" sidebar="false" cache="false" contentType="pdf" controller="SizingsCtrl" action="{!init}">
+    <apex:variable value="{!1}" var="indx"/>
+    <apex:repeat value="{!lstQuoteLine}" var="ql">
+        <apex:outputPanel layout="none" rendered="{!ql.Rupture_Discs__r.size>0}">
+            <block page-break-after="always"></block>
+            <apex:variable value="{!SUBSTITUTE(ql.Rupture_Discs__r[0].Evaluation_Type__c,'&','-')}" var="Evaluation_Type"/>
+            <apex:variable value="{!SUBSTITUTE(ql.Rupture_Discs__r[0].Evaluation_Per__c,'/','/')}" var="Evaluation_Per"/>
+            <!--apex:variable value="{!ql.Rupture_Discs__r[0].Evaluation_Per__c}" var="Evaluation_Per"/-->
+            <apex:variable value="{!mapRDImageName[Evaluation_Type + '-' + Evaluation_Per]}" var="imageName"/>
+            <!--<block>{!Evaluation_Type + '-' + Evaluation_Per}</block>
+            <block>{!imageName}</block>
+            <block>{!SUBSTITUTE(mapImageData[imageName],'&','&amp;')}</block>
+            <block>{!ql.Rupture_Discs__r[0].Id + ' ' + ql.Rupture_Discs__r[0].Name}</block>-->            
+            <table>
+                <table-column column-width="4in"/>
+                <table-column column-width=".10in"/>
+                <table-column column-width="1.25in"/>
+                <table-column column-width="2.15in"/>
+                <table-body>
+                    <table-row>
+                        <table-cell number-rows-spanned="6" vertical-align="middle">
+                            <block>
+                                <external-graphic content-height="scale-to-fit" height="1in" content-width="1in" scaling="uniform" src="{!logo}"/>
+                            </block>
+                        </table-cell>
+                        <table-cell number-rows-spanned="6" display-align="after" font-weight="bold"><block>&nbsp;</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left"><block>Customer Ref</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left"><block>{!ql.SBQQ__Quote__r.SBQQ__Account__r.Name}</block></table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-left="2mm" text-align="left"><block>Quotation #</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left"><block>{!ql.SBQQ__Quote__r.QuoteNumberWithRevision__c}</block></table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-left="2mm" text-align="left"><block>Quotation Date</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left">
+                            <block>
+                                <apex:outputText value="{0,date,MMMM dd,yyyy}" >
+                                    <apex:param value="{!TODAY}" />
+                                </apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-left="2mm" text-align="left"><block>Valid Until</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left">
+                            <block>
+                                <apex:outputText value="{0,date,MMMM dd,yyyy}" >
+                                    <apex:param value="{!ql.SBQQ__Quote__r.SBQQ__ExpirationDate__c}" />
+                                </apex:outputText>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-left="2mm" text-align="left"><block>Issued By</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left"><block>{!oUser.Name}</block></table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-left="2mm" text-align="left"><block>Shipment</block></table-cell>
+                        <table-cell padding-left="2mm" text-align="left">
+                            <block>{!SUBSTITUTE(ql.SBQQ__Quote__r.Max_Lead_Time_in_Weeks__c,'&','&amp;')}</block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell number-columns-spanned="4" padding-top="3mm" text-align="center" font-weight="bold" font-size="14" >
+                            <block>Rupture Disc {!IF(Evaluation_Type ='Capacity','Capacity','Sizing')}</block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <!--table-cell padding-left="2mm" text-align="left"><block>Line #:{!indx}</block></table-cell-->
+                        <table-cell padding-left="2mm" text-align="left"><block>Line #:{!ql.SBQQ__Number__c}</block></table-cell>
+                        <table-cell number-columns-spanned="3" padding-left="2mm" text-align="left"><block>&nbsp;</block></table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-top="4mm" padding-left="2mm" text-align="left" >
+                            <block font-weight="bold" font-size="11" color="#27B7DB">INPUT</block>
+                            <block>
+                                <inline>Evaluation Per:</inline>
+                                <inline>{!Evaluation_Per}</inline>
+                            </block>
+                            <block>
+                                <inline>Media:</inline>
+                                <inline>{!If(ql.Rupture_Discs__r[0].Process_Media__c='Customer Specified','Customer Specified ' + ql.Rupture_Discs__r[0].Customer_Specified_Media__c,ql.Rupture_Discs__r[0].Customer_Specified_Media__c)}</inline>
+                            </block>
+                            <apex:variable value="" var="bBurstPressure">
+                                <apex:outputPanel layout="none" rendered="{!ql.Rupture_Discs__r[0].Pressure_Setting__c!=null}">                                    
+                                    <block>
+                                        <inline>Burst Pressure:</inline>
+                                        <inline>
+                                            <apex:outputText value="{0,number,#0.00##}">    
+                                                <apex:param value="{!ql.Rupture_Discs__r[0].Pressure_Setting__c}"/>
+                                            </apex:outputText>
+                                        </inline>
+                                        <inline>{!ql.Rupture_Discs__r[0].Pressure_Setting_Units__c}</inline>
+                                    </block>
+                                </apex:outputPanel>
+                            </apex:variable>
+                            <apex:variable value="" var="bOverpressure">
+                                <apex:outputPanel layout="none" rendered="{!ql.Rupture_Discs__r[0].Relieving_Pressure_at_Inlet__c!=null}">                                    
+                                    <block>
+                                        <inline>Overpressure:</inline>
+                                        <inline>{!ql.Rupture_Discs__r[0].Relieving_Pressure_at_Inlet__c}</inline>
+                                    </block>
+                                </apex:outputPanel>
+                            </apex:variable>
+                            <apex:variable value="" var="bRequiredFlowRate">
+                                <apex:outputPanel layout="none" rendered="{!ql.Rupture_Discs__r[0].Required_Flow_Rate__c!=null}">
+                                    <block>
+                                        <inline>Required Flow Rate:</inline>
+                                        <inline>
+                                            <apex:outputText value="{0,number,#0.00##}">    
+                                                <apex:param value="{!ql.Rupture_Discs__r[0].Required_Flow_Rate__c}"/>
+                                            </apex:outputText>
+                                        </inline>
+                                        <inline>{!ql.Rupture_Discs__r[0].Required_Flow_units__c}</inline>
+                                    </block>
+                                </apex:outputPanel>
+                            </apex:variable>
+                            <block>
+                                <inline>Relieving Temperature:</inline>
+                                <inline>
+                                    <apex:outputText value="{0,number,#0.00##}">    
+                                        <apex:param value="{!IF(ql.Rupture_Discs__r[0].Pressure_Relieving_Temperature__c='Enter Different Temperature/ units',ql.Rupture_Discs__r[0].Enter_Different_Temperature_Value__c,ql.Rupture_Discs__r[0].Temperature_Setting__c)}"/>
+                                    </apex:outputText>                                    
+                                </inline>
+                            </block>
+                            <apex:variable value="" var="bMolecularWeight">
+                                <apex:outputPanel layout="none" rendered="{!ql.Rupture_Discs__r[0].Molecular_Weight__c!=null}">
+                                    <block>
+                                        <inline>Molecular Weight:</inline>
+                                        <inline>
+                                            <apex:outputText value="{0,number,#0.00##}">    
+                                                <apex:param value="{!ql.Rupture_Discs__r[0].Molecular_Weight__c}"/>
+                                            </apex:outputText>
+                                        </inline>
+                                    </block>
+                                </apex:outputPanel>
+                            </apex:variable>
+                            <block>
+                                <inline>Compressibility Factor:</inline>
+                                <inline>
+                                    <apex:outputText value="{0,number,#0.00##}">    
+                                        <apex:param value="{!ql.Rupture_Discs__r[0].Compressibility_Factor__c}"/>
+                                    </apex:outputText>
+                                </inline>
+                            </block>
+                            <block>
+                                <inline>Discharge Coefficient:</inline>
+                                <inline>{!ql.Rupture_Discs__r[0].Coefficient_of_Discharge__c}</inline>
+                            </block>                            
+                        </table-cell>
+                        
+                        <table-cell number-rows-spanned="2" border-right=".20mm solid">
+                            <block>&nbsp;</block>
+                        </table-cell>
+                        
+                        <table-cell number-rows-spanned="2" number-columns-spanned="2" padding-left="2mm" text-align="left">
+                            <block>
+                                <external-graphic content-height="scale-to-fit" height="4in" content-width="3.5in" scaling="uniform" src="{!mapImageData[imageName]}"/>
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell padding-top="4mm" padding-left="2mm" text-align="left" >
+                            <block font-weight="bold" font-size="11" color="#27B7DB">OUTPUT</block>
+                            <block>
+                                <inline>Required Flow Area:</inline>
+                                <inline>
+                                    <apex:outputText value="{0,number,#0.00##}">    
+                                        <apex:param value="{!ql.Rupture_Discs__r[0].Output_Required_Flow_Area__c}"/>
+                                    </apex:outputText>
+                                </inline>
+                            </block>
+                            <block>
+                                <inline>Rupture Disc Size and Type:</inline>
+                                <!--inline>{!ql.Rupture_Discs__r[0].Size__c}</inline>
+                                <inline>{!ql.Rupture_Discs__r[0].Size_Units__c}</inline>
+                                <inline>&nbsp;{!ql.Rupture_Discs__r[0].Product__c}</inline-->
+                                <inline>{!ql.Rupture_Discs__r[0].SizeDesc__c}</inline>
+                            </block>
+                            <block>
+                                <inline>Rupture Disc Minimum Net Flow Area:</inline>
+                                <inline>
+                                    <apex:outputText value="{0,number,#0.00##}">    
+                                        <apex:param value="{!ql.Rupture_Discs__r[0].MNFA__c}"/>
+                                    </apex:outputText>
+                                </inline>
+                                <inline>{!ql.Rupture_Discs__r[0].Required_Flow_Area_Units__c}</inline>
+                            </block>
+                            <block>
+                                <inline>Rupture Disc Flow Capacity:</inline>
+                                <inline>
+                                    <apex:outputText value="{0,number,#0.00##}">    
+                                        <apex:param value="{!ql.Rupture_Discs__r[0].Product_Flow_Capacity_Value__c}"/>
+                                    </apex:outputText>
+                                </inline>
+                                <inline>{!ql.Rupture_Discs__r[0].Rupture_Disc_Flow_Capacity_Units__c}</inline>
+                            </block>
+                        </table-cell>
+                    </table-row>                   
+                    <table-row>
+                        <table-cell  padding-left="2mm" padding-top="8mm" text-align="left" number-columns-spanned="4"  font-size="8">
+                            <block>
+                                References to "Standard" conditions are at 14.6959 psia and 60 deg F, "Normal" conditions are at 101.325 kPa abs. and 0 deg C. 62.371 lb/ft3 is used as the weight density of water at standard conditions.
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell  padding-left="2mm" padding-top="6mm" text-align="left" number-columns-spanned="4"  font-size="8">
+                            <block>
+                                Continental Disc Corporation disclaims all warranties concerning this sizing program, including implied warranties of merchantability and fitness for a particular purpose.  Continental Disc Corporation does not warrant 
+                                that the sizing formulas used in this program will meet your requirements or that the operation of this program will be error free.  
+                                While every effort has been made by Continental Disc Corporation to make this program useful and error free, 
+                                Continental Disc Corporation disclaims liability for any and all losses or damages, including consequential damages, 
+                                arising from the use of this program.  The output values were determined by solving the equation based on the input values.  
+                                It is the customer's responsibility to confirm that the input values are representative of their relieving condition, 
+                                that this evaluation is valid for their application, and that the product/specifications indicated (output) are suitable for the intended use.
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell  padding-left="2mm" padding-top="6mm" text-align="left" number-columns-spanned="4"  font-size="8">
+                            <block>
+                                {!IF(Evaluation_Per='ASME Gas/Vapor','The  above  rupture  disc  verification  is  based  on  ASME  Section  VIII,  Division  1  in  accordance  with  paragraph  UG-127  (a)  (2)  (a)  (1).    If  the  pressure  relief  system exceeds the limitations listed in paragraph UG-127 (a) (2) (a) (1), then the total relief system capacity should be evaluated in accordance with paragraph UG-127 (a) (2) (a) (2)  using  a  certified  flow  resistance  Krgl  value  of  9.59  for  Continental  Disc  Corporation  type  STD  (FS)    rupture  disc  device,  National  Board  CertificationNumber 75327 .','')}
+                                {!IF(Evaluation_Per='ASME Water'    ,'The  above  rupture  disc  verification  is  based  on  ASME  Section  VIII,  Division  1  in  accordance  with  paragraph  UG-127  (a)  (2)  (a)  (1).    If  the  pressure  relief  system exceeds the limitations listed in paragraph UG-127 (a) (2) (a) (1), then the total relief system capacity should be evaluated in accordance with paragraph UG-127 (a) (2) (a) (2)  using  a  certified  flow  resistance  Krgl  value  of  9.59  for  Continental  Disc  Corporation  type  STD  (FS)    rupture  disc  device,  National  Board  CertificationNumber 75327 .','')}
+                                {!IF(Evaluation_Per='ASME Steam'    ,'The  above  rupture  disc  verification  is  based  on  ASME  Section  VIII,  Division  1  in  accordance  with  paragraph  UG-127  (a)  (2)  (a)  (1).    If  the  pressure  relief  system exceeds the limitations listed in paragraph UG-127 (a) (2) (a) (1), then the total relief system capacity should be evaluated in accordance with paragraph UG-127 (a) (2) (a) (2)  using  a  certified  flow  resistance  Krgl  value  of  9.59  for  Continental  Disc  Corporation  type  STD  (FS)    rupture  disc  device,  National  Board  CertificationNumber 75327 .','')}
+                                {!IF(Evaluation_Per='API Gas/Vapor' ,'The above rupture disc verification is based on API Recommended Practice 520 Part I in accordance with Section 5.11.1.2.  If the pressure relief system exceeds the limitations listed in Section 5.11.1.1, then the total relief system capacity should be evaluated in accordance with Section 5.11.1.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585.','')}
+                                {!IF(Evaluation_Per='API Liquid'    ,'The above rupture disc verification is based on API Recommended Practice 520 Part I in accordance with Section 5.11.1.2.  If the pressure relief system exceeds the limitations listed in Section 5.11.1.1, then the total relief system capacity should be evaluated in accordance with Section 5.11.1.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585.','')}
+                                {!IF(Evaluation_Per='API Steam'     ,'The above rupture disc verification is based on API Recommended Practice 520 Part I in accordance with Section 5.11.1.2.  If the pressure relief system exceeds the limitations listed in Section 5.11.1.1, then the total relief system capacity should be evaluated in accordance with Section 5.11.1.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585.','')}
+                                {!IF(Evaluation_Per='ISO Gas/Vapor' ,'The above rupture disc verification is based on ISO 4126-6 in accordance with Annex C, Section C.2.  If the pressure relief system exceeds the limitations listed in Annex C, Section C.2, then the total relief system capacity should be evaluated in accordance with Annex C, Section C.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585 .','')}
+                                {!IF(Evaluation_Per='ISO Liquid'    ,'The above rupture disc verification is based on ISO 4126-6 in accordance with Annex C, Section C.2.  If the pressure relief system exceeds the limitations listed in Annex C, Section C.2, then the total relief system capacity should be evaluated in accordance with Annex C, Section C.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585 .','')}
+                                {!IF(Evaluation_Per='ISO Dry Steam' ,'The above rupture disc verification is based on ISO 4126-6 in accordance with Annex C, Section C.2.  If the pressure relief system exceeds the limitations listed in Annex C, Section C.2, then the total relief system capacity should be evaluated in accordance with Annex C, Section C.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585 .','')}
+                                {!IF(Evaluation_Per='ISO Wet Steam' ,'The above rupture disc verification is based on ISO 4126-6 in accordance with Annex C, Section C.2.  If the pressure relief system exceeds the limitations listed in Annex C, Section C.2, then the total relief system capacity should be evaluated in accordance with Annex C, Section C.3 using a certified flow resistance  Krg value of 0.29  for Continental Disc Corporation type HPX-90 (FS)  rupture disc device, National Board Certification Number 75585 .','')}
+                            </block>
+                        </table-cell>
+                    </table-row>
+                    <table-row>
+                        <table-cell  padding-left="2mm" padding-top="6mm" text-align="left" number-columns-spanned="4" font-size="8">
+                            <block>
+                                {!IF(Evaluation_Per='ASME Gas/Vapor','<block>Basic Limitations of paragraph UG-127 (a) (2) (a) (1) (refer to the code/standard for all associated limitations)</block><blcok>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</blcok><blcok>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</blcok><blcok>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</blcok><blcok>•  The rupture disc device discharges directly to atmosphere</blcok><blcok>•  The fluid relieving condition is single phase, non-flashing</blcok><blcok>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</blcok>','')}
+                                {!IF(Evaluation_Per='ASME Water'    ,'<block>Basic Limitations of paragraph UG-127 (a) (2) (a) (1) (refer to the code/standard for all associated limitations)</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='ASME Steam'    ,'<block>Basic Limitations of paragraph UG-127 (a) (2) (a) (1) (refer to the code/standard for all associated limitations)</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='API Gas/Vapor' ,'<block>Basic Limitations of Section 5.11.1.1 (refer to the code/standard for all associated limitations)</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='API Liquid'    ,'<block>Basic Limitations of Section 5.11.1.1 (refer to the code/standard for all associated limitations)</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='API Steam'     ,'<block>Basic Limitations of Section 5.11.1.1 (refer to the code/standard for all associated limitations)</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='ISO Gas/Vapor' ,'<block>Basic Limitations of Annex C, Section C.2 (refer to the code/standard for all associated limitations)</block> <block>•  The nozzle configuration is within the limits outlined in Annex C, Section C.2</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The rupture disc device flow area is not less than 50% of the inlet discharge piping area</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='ISO Liquid'    ,'<block>Basic Limitations of Annex C, Section C.2 (refer to the code/standard for all associated limitations)</block> <block>•  The nozzle configuration is within the limits outlined in Annex C, Section C.2</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The rupture disc device flow area is not less than 50% of the inlet discharge piping area</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='ISO Dry Steam' ,'<block>Basic Limitations of Annex C, Section C.2 (refer to the code/standard for all associated limitations)</block> <block>•  The nozzle configuration is within the limits outlined in Annex C, Section C.2</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The rupture disc device flow area is not less than 50% of the inlet discharge piping area</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                                {!IF(Evaluation_Per='ISO Wet Steam' ,'<block>Basic Limitations of Annex C, Section C.2 (refer to the code/standard for all associated limitations)</block> <block>•  The nozzle configuration is within the limits outlined in Annex C, Section C.2</block> <block>•  The rupture disc device is installed within 8 pipe diameters of the vessel nozzle entry</block> <block>•  The inlet and outlet discharge piping has an equal or larger nominal diameter than the rupture disc device</block> <block>•  The rupture disc device flow area is not less than 50% of the inlet discharge piping area</block> <block>•  The discharge pipe following the rupture disc device is no longer than 5 pipe diameters</block> <block>•  The rupture disc device discharges directly to atmosphere</block> <block>•  The fluid relieving condition is single phase, non-flashing</block> <block>•  The relieving system does not include any additional devices upstream or downstream of the rupture disc device</block>','')}
+                            </block>
+                        </table-cell>
+                    </table-row>
+                </table-body>
+            </table>
+        </apex:outputPanel>
+        <apex:variable value="{!indx+1}" var="indx"/>
+    </apex:repeat>
+</apex:page>

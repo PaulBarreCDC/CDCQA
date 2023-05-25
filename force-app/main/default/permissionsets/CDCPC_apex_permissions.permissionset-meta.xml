@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>IFSOperations</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IFS_ConstructCustReqCPQ</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IFS_ConstructOrderReqCPQ</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IFS_ConstructPartReqWithBatchCPQ</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IFS_GeneratePartNumWithBatchCPQ</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>IFS_MakeHTTPCall</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PartnerCommunityController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Access to Apex classes used in Salesforce CPQ.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CDCPC apex permissions</label>
+    <license>Salesforce</license>
+</PermissionSet>

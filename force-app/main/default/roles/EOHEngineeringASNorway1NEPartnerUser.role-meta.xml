@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>EOH Engineering AS - Norway | 1NE Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>EOH Engineering AS - Norway | 1NE Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>EOHEngineeringASNorway1NEPartnerManager</parentRole>
+</Role>

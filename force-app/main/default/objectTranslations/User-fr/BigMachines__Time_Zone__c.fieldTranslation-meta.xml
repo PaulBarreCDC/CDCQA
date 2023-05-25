@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>BigMachines__Time_Zone__c</name>
+    <picklistValues>
+        <masterLabel>(GMT+0:00 GMT+0:00) GMT</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+0:00 GMT+1:00) London</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+10:00 GMT+10:00) Queensland</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+10:00 GMT+11:00) Vladivostok</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+10:30 GMT+9:30) Adelaide</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:00 GMT+10:00) Canberra</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:00 GMT+10:00) Sydney</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:00 GMT+10:30) Lord Howe</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:00 GMT+11:00) Ponape</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:00 GMT+12:00) Magadan</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+11:30 GMT+11:30) Norfolk</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+12:00 GMT+12:00) Fiji</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+12:00 GMT+13:00) Kamchatka</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+13:00 GMT+12:00) Auckland</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+13:00 GMT+13:00) Enderbury</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+13:45 GMT+12:45) Chatham</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+1:00 GMT+1:00) Algiers</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+1:00 GMT+2:00) Amsterdam</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+2:00 GMT+1:00) Windhoek</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+2:00 GMT+2:00) Tripoli</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+2:00 GMT+3:00) Israel</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+3:00 GMT+3:00) Nairobi</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+3:00 GMT+4:00) Moscow</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+3:30 GMT+4:30) Tehran</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+4:00 GMT+4:00) Dubai</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+4:00 GMT+5:00) Oral</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+4:30 GMT+4:30) Kabul</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+5:00 GMT+5:00) Karachi</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+5:00 GMT+6:00) Yekaterinburg</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+5:30 GMT+5:30) Calcutta</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+5:45 GMT+5:45) Katmandu</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+6:00 GMT+6:00) Dhaka</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+6:00 GMT+7:00) Novosibirsk</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+6:30 GMT+6:30) Rangoon</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+7:00 GMT+7:00) Bangkok</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+7:00 GMT+8:00) Krasnoyarsk</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+8:00 GMT+8:00) Perth</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+8:00 GMT+8:00) Taipei</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+8:00 GMT+9:00) Irkutsk</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+9:00 GMT+10:00) Yakutsk</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+9:00 GMT+9:00) Seoul</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT+9:30 GMT+9:30) Darwin</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-10:00 GMT-10:00) Hawaii</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-10:00 GMT-9:00) Aleutian</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-11:00 GMT-11:00) Samoa</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-1:00 GMT+0:00) Azores</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-1:00 GMT-1:00) Cape Verde</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-2:00 GMT-2:00) Brazil/DeNoronha</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-2:00 GMT-3:00) Sao Paulo</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-3:00 GMT-3:00) Buenos Aires</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-3:00 GMT-4:00) Chile</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-3:30 GMT-2:30) Newfoundland</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-4:00 GMT-3:00) Canada Atlantic Time</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-4:00 GMT-4:00) Puerto Rico</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-5:00 GMT-4:00) US Eastern Time</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-5:00 GMT-5:00) Indianapolis</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-6:00 GMT-5:00) US Central Time</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-6:00 GMT-6:00) Saskatchewan</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-7:00 GMT-6:00) Mountain</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-7:00 GMT-7:00) Arizona</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-8:00 GMT-7:00) US Pacific Time</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-8:00 GMT-8:00) Pitcairn</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-9:00 GMT-8:00) Alaska</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-9:00 GMT-9:00) Gambier</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>(GMT-9:30 GMT-9:30) Marquesas</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GMT+11:00 GMT+10:00) Melbourne</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

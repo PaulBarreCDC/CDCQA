@@ -1,0 +1,9 @@
+Operation__c,Text1Val__c,Text2Val__c,Text3Val__c,Text4Val__c,Text5Val__c,Text6Val__c,Text7Val__c,NumVal1__c,NumVal2__c,Standard_Operation_ID__c,Outside_Operation_Item__c,Descr__c
+0040,-,PAINT3,,,,,,,,0040_00_120_0_0_OCTP_PaintingOutsideService,[ASSYPARTNO]OCTP,Painting - Outside Service
+0004,,,,,,,,,,0004_00_4_0_0_WHSE_PullAndIssueParts,[ASSYPARTNO]OCTP,Pull and Issue Parts
+0025,-,COAT4,,,,,,,,0025_00_4_0_0_304_PickOrBuildFlameBankAssy,[ASSYPARTNO]OCTP,Pick or Build Flame Bank Assy
+0030,-,COAT4,,,,,,,,0030_00_4_0_0_610_InspectionForOutsideService,[ASSYPARTNO]OCTP,Inspection for Outside Service
+0040,-,PAINT3,,,,,,,,0040_00_120_0_0_OCTP_PaintingOutsideService,[ASSYPARTNO]OCTP,Painting - Outside Service
+0050,7588,02,1,0,-,,,,,"0050_00_40_0_1.33_304_Assemble, Test & Tag",[ASSYPARTNO]OCTP,"Assemble, Test & Tag"
+0070,7758A,12,3,0,,,,,,0070_00_0_0_1_208_Paint-Tag,[ASSYPARTNO]OCTP,Paint - Tag
+0080,,,,,,,,,,0080_00_8_0_0_700_FinalInspect,[ASSYPARTNO]OCTP,Final Inspect

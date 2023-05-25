@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:attribute name="recordId" type="String"></aura:attribute>
+    <aura:attribute name="checkBox1" type="Boolean"></aura:attribute>
+    <aura:attribute name="checkBox2" type="Boolean"></aura:attribute>
+    <aura:attribute name="checkBox3" type="Boolean"></aura:attribute>
+    <aura:attribute name="checkBox4" type="Boolean"></aura:attribute>
+    <aura:attribute name="record" type="Object"></aura:attribute>
+    <aura:attribute name="simpleRecord" type="Object"></aura:attribute>
+    <aura:attribute name="recordError" type="String"></aura:attribute>
+
+    <aura:attribute name="selectedCheckbox" type="String"></aura:attribute>
+    
+    <lightning:card title="Confirm Review">
+        <lightning:input type="radio" value="{!v.checkBox1}" name="myNumber" aura:id="checkBox1" label="1. Rep order, CDC Terms and Conditions apply" onchange="{!c.handleCheckBox1}"/><br/>
+        <lightning:input type="radio" value="{!v.checkBox2}" name="myNumber" aura:id="checkBox2" label="2. Customer order, CDC Terms and Conditions apply" onchange="{!c.handleCheckBox2}"/><br/>
+        <lightning:input type="radio" value="{!v.checkBox3}" name="myNumber" aura:id="checkBox3" label="3. Customer order, Negotiated Terms and Conditions apply and are attached in Salesforce" onchange="{!c.handleCheckBox3}"/><br/>
+        <lightning:input type="radio" value="{!v.checkBox4}" name="myNumber" aura:id="checkBox4" label="4. Customer order, customer Terms and Conditions apply and are attached in Salesforce" onchange="{!c.handleCheckBox4}"/>
+        <br/>
+        <div class="slds-align_absolute-center">
+            <p><strong>"I have obtained appropriate leadership approval of the customer T&amp;C’s and I approve them as a condition of accepting this order</strong></p><br/>
+            <lightning:button label="Approve/Authorize" variant="brand" disabled="{! not(v.checkBox1 || v.checkBox2 || v.checkBox3 || v.checkBox4)}" onclick="{!c.clickAdd}"/>
+        </div>
+        
+    </lightning:card>
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      fields="Terms_and_Conditions_Reviewer__c,Terms_and_Conditions_Review_Date__c,Terms_and_Conditions_Review__c"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      targetError="{!v.recordError}"
+                      mode="EDIT"
+                      />
+</aura:component>

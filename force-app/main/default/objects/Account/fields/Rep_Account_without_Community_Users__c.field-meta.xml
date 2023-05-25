@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rep_Account_without_Community_Users__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to help in reporting to get Contacts at rep firms for mailing list.</description>
+    <externalId>false</externalId>
+    <label>Rep Account without Community Users</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

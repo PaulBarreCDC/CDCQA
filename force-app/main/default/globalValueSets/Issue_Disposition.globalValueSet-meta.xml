@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Logged Not Investigated</fullName>
+        <default>false</default>
+        <label>Logged Not Investigated</label>
+    </customValue>
+    <customValue>
+        <fullName>New Configurator Error Only (Defect)</fullName>
+        <default>false</default>
+        <label>New Configurator Error Only (Defect)</label>
+    </customValue>
+    <customValue>
+        <fullName>Legacy Configurator Error (Enhancement)</fullName>
+        <default>false</default>
+        <label>Legacy Configurator Error (Enhancement)</label>
+    </customValue>
+    <customValue>
+        <fullName>Helper Data Issue (CDC Owned)</fullName>
+        <default>false</default>
+        <label>Helper Data Issue (CDC Owned)</label>
+    </customValue>
+    <customValue>
+        <fullName>Neither Codebase Matches Expected Result (Enhancement)</fullName>
+        <default>false</default>
+        <label>Neither Codebase Matches Expected Result (Enhancement)</label>
+    </customValue>
+    <customValue>
+        <fullName>Training/Question</fullName>
+        <default>false</default>
+        <label>Training/Question</label>
+    </customValue>
+    <customValue>
+        <fullName>Duplicate</fullName>
+        <default>false</default>
+        <label>Duplicate</label>
+    </customValue>
+    <customValue>
+        <fullName>Enhancement</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Enhancement</label>
+    </customValue>
+    <customValue>
+        <fullName>Defect</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Defect</label>
+    </customValue>
+    <description>Used for categorizing Test Case Issues</description>
+    <masterLabel>Issue Disposition</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

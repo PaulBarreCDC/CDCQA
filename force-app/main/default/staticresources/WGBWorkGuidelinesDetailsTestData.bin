@@ -1,0 +1,2 @@
+"Description__c","Guidline_Seq__c","Inspection_Sign_Off_Required__c","Operation__c","Outside_Operation_Item__c","Sign_Off__c","Standard_Operation_ID__c","Text1Val__c","Text2Val__c","Text__c","Type__c"
+"Comply with UL","1","Not Required","70","","Required to Close Operation","FINSP","U","","Supply UL Certification documentation.","Subtask"

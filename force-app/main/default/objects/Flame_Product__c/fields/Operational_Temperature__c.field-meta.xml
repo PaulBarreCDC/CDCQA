@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Operational_Temperature__c</fullName>
+    <defaultValue>&quot;-4 F to 140 F (-20 C to 60 C)&quot;</defaultValue>
+    <externalId>false</externalId>
+    <label>Operational Temperature</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>-4°F to 140°F (-20°C to 60°C)</fullName>
+                <default>true</default>
+                <label>-4°F to 140°F (-20°C to 60°C)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

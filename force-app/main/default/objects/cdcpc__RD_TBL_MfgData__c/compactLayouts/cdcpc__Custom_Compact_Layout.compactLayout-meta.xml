@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>cdcpc__update_action__c</fields>
+    <fields>cdcpc__WorkorderNo__c</fields>
+    <fields>cdcpc__SerialNo__c</fields>
+    <fields>cdcpc__PTC__c</fields>
+    <fields>cdcpc__SZC__c</fields>
+    <fields>cdcpc__STC__c</fields>
+    <fields>cdcpc__MCD__c</fields>
+    <fields>cdcpc__AMBIENT_AVG__c</fields>
+    <fields>cdcpc__TEMP_VAL__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

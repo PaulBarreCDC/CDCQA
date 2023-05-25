@@ -1,0 +1,4 @@
+<apex:page standardController="Rupture_Disc__c"
+           docType="html-5.0"
+            lightningStylesheets="true">
+</apex:page>

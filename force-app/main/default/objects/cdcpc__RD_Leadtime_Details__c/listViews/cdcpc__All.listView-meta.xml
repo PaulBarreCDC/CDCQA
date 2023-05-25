@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__Text1Val__c</columns>
+    <columns>cdcpc__Text2Val__c</columns>
+    <columns>cdcpc__Text3Val__c</columns>
+    <columns>cdcpc__QueueTimeSchedule__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>cdcpc__RunTimeSchedule__c</columns>
+    <columns>cdcpc__Lead_Time_Item__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__Lead_Time_Item__c</field>
+        <operation>equals</operation>
+        <value>Base</value>
+    </filters>
+    <filters>
+        <field>cdcpc__Text1Val__c</field>
+        <operation>equals</operation>
+        <value>HPN</value>
+    </filters>
+    <filters>
+        <field>cdcpc__Text2Val__c</field>
+        <operation>equals</operation>
+        <value>0400</value>
+    </filters>
+    <label>All</label>
+</ListView>

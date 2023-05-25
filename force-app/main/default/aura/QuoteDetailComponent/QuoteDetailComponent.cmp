@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="quoteRec" type="SBQQ__Quote__c"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+        <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="SBQQ__Quote__c">
+        <lightning:card title="Quote Details">
+            <p class="slds-p-horizontal_small">
+                <div class="slds-grid">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning:outputField fieldName="Name" />    
+                        <lightning:outputField fieldName="Revision__c" />    
+                        <lightning:outputField fieldName="Reference_Number__c" /> 
+                        <lightning:outputField fieldName="Company__c" /> 
+                        <lightning:outputField fieldName="OwnerId" /> 
+                        <lightning:outputField fieldName="Salesman__c" />
+                        <lightning:outputField fieldName="SBQQ__Type__c" />
+                        <lightning:outputField fieldName="Max_Lead_Time__c" />
+                        <lightning:outputField fieldName="Change_Order_No__c" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning:outputField fieldName="SBQQ__Status__c" />    
+                        <lightning:outputField fieldName="CreatedDate" />    
+                        <lightning:outputField fieldName="SBQQ__ExpirationDate__c" />    
+                        <lightning:outputField fieldName="Division__c" />   
+                        <lightning:outputField fieldName="Regional_Manager__c" /> 
+                        <lightning:outputField fieldName="Ordering_Region__c" /> 
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning:outputField fieldName="Customer_Contact__c" />    
+                        <lightning:outputField fieldName="SBQQ__Opportunity2__c	" />    
+                        <lightning:outputField fieldName="Reference_Number__c" />    
+                        <lightning:outputField fieldName="SubmittedDate__c" /> 
+                        <lightning:outputField fieldName="SBQQ__SalesRep__c" /> 
+                        
+                        
+                    </div>
+                </div>
+            </p>
+        </lightning:card>        
+    </lightning:recordViewForm>
+</aura:component>

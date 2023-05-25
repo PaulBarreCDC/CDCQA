@@ -1,0 +1,1074 @@
+<apex:page docType="html-5.0" standardController="Part_Selector__c" extensions="configurePartSelector" 
+           lightningStylesheets="true" standardStylesheets="true" action="{!updateQLAsync}">
+    
+    <apex:includeLightning />
+    
+    <div id="lightning" />
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial, Verdana, sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84, 105, 141) 20px, rgba(84, 105, 141, .97) 20px, rgba(84, 105, 141, .97) 40px);
+        }
+        
+        .hidePricingBody tbody {
+        
+        }
+        
+        .overrideFloat {
+        float: right;
+        }
+        
+        .pbHeader,
+        .slds-vf-scope .pbHeader {
+        font-family: Arial, Verdana, sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84, 105, 141) 20px, rgba(84, 105, 141, .97) 20px, rgba(84, 105, 141, .97) 40px);
+        }
+        
+        .hidePricingBody tbody {
+        display: none;
+        }
+        
+        .overrideFloat {
+        float: right;
+        }
+        
+        .messageCell {
+        display: inline-block;
+        }
+        
+        .messageText,
+        .slds-vf-scope .messageText {
+        display: flex;
+        }
+    </style>
+    
+    <style>
+        .btnCenter{
+            float: left;
+            left: 50%;
+        }
+        .slds-button_brand{
+         padding-left:1rem !important;
+         padding-right:1rem !important;
+         text-align:center !important;
+         vertical-align:middle !important;
+         -webkit-box-pack:center !important;
+             -ms-flex-pack:center !important;
+                 justify-content:center !important;
+         border:1px solid #dddbda !important;
+         -webkit-transition:border 0.15s linear !important;
+         transition:border 0.15s linear !important;
+         background-color:#0070d2 !important;
+         border-color:#0070d2 !important;
+         color:white !important;
+         background:#0070d2 !important; 
+       }
+       
+       .slds-button_outline-brand{
+         padding-left:1rem !important;
+         padding-right:1rem !important;
+         text-align:center !important;
+         vertical-align:middle !important;
+         -webkit-box-pack:center !important;
+             -ms-flex-pack:center !important;
+                 justify-content:center !important;
+         border:1px solid #dddbda !important;
+         -webkit-transition:border 0.15s linear !important;
+         transition:border 0.15s linear !important;
+         border-color:#dddbda !important;
+         background-color:white !important;
+         border-color:#0070d2 !important;
+       }
+       
+    
+       slds-notify-container,
+    .slds-notify_container{
+      position:fixed;
+      width:100%;
+      left:0;
+      top:0;
+      z-index:10000;
+      text-align:center;
+    }
+     
+    .slds-is-relative{
+        position:relative;
+    }
+    .slds-notify_toast, .slds-notify--toast{
+      color:white;
+      display:-webkit-inline-box;
+      display:-ms-inline-flexbox;
+      display:inline-flex;
+      -webkit-box-align:center;
+          -ms-flex-align:center;
+              align-items:center;
+      position:relative;
+      background:#706e6b;
+      font-weight:300;
+      border-radius:0.25rem;
+      margin:0.5rem;
+      padding:.5rem 2rem .5rem .5rem;
+      min-width:30rem;
+      text-align:left;
+      -webkit-box-pack:start;
+          -ms-flex-pack:start;
+              justify-content:flex-start;
+    }
+     
+    .slds-theme_warning, .slds-theme--warning{
+        background-color:#ffb75d;
+        color:#080707;
+    }
+    
+        </style>
+    
+    
+    <script type="text/javascript">
+    function isNumberKey(evt, obj) 
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode  
+        var value = obj.value;
+        var dotcontains = value.indexOf(".") != -1;
+        if (dotcontains)
+            if (charCode == 46) return false;
+        if (charCode == 46) return true;
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    
+    function isNumberKeyQ(evt, obj) {
+        
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
+    </script> 
+    <script>
+    function goBackQLI(strURL){
+        parent.location.href=strURL;
+    }  
+    
+    var oPopupPDF;
+    function openPSReference(strURL){
+        if(strURL == ''){
+            return;
+        }
+        
+        //window.open(strURL, '_blank' );
+        oPopupPDF = window.open(strURL , "", "width=500,height=500");
+    }
+    
+    function validateConfigs(event,tabName){
+        //alert(varConfiguration_Complete);
+        if(varConfiguration_Complete == false){
+            alert('Please complete your changes by clicking Finish Configuration before leaving the page');
+            event.preventDefault();
+           return false ;
+        }
+       
+    }
+
+    </script>
+    <apex:actionStatus id="status">
+        <apex:facet name="start">
+            <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.65; z-index: 1000; background-color: black;">
+                &nbsp;
+            </div>
+            <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 45%">
+                <!-- <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;"> -->
+                <img src="{!URLFOR($Resource.Loading)}" style="float: left; margin: 8px; width: 85px; width: 85px;" />
+                <!-- <img src="/img/slds_spinner_brand.gif" style="float: left; margin: 8px;" /> -->
+                <!-- <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span> -->
+                <!-- </div> -->
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+    <apex:form >
+        
+        <apex:pageMessages id="error_msg"></apex:pageMessages>
+        
+        <apex:tabPanel switchType="client" id="theTabPanel" selectedTab="{!selectedTab}" value="{!selectedTab}"> 
+            <apex:tab label="Product Configuration" name="Sizing" id="tabOne">
+                <apex:outputpanel id="pnltabOne">
+                    <div style="padding-bottom: 20px;padding-left: 20px;padding-right: 20px">
+                        <apex:commandButton styleClass="slds-button_outline-brand"  value="Return To Quote" action="{!goBack}" oncomplete="goBackQLI('{!strURL}');" style="font-weight:bold"></apex:commandButton> 
+                        
+                        <apex:commandButton styleClass="slds-button_brand" 
+                                            value="{!editModeLable}" status="status"
+                                            action="{!EnableEditMode}"
+                                            style="font-weight:bold;float:right;" 
+                                            reRender="theTabPanel" 
+                                            oncomplete="openPSReference('{!strURL}');" 
+                                            rendered="{!bShowEditButton}"></apex:commandButton>
+                        
+                    </div>
+                    <apex:pageBlock id="pb">
+                        <apex:variable var="col" value="{!0}"/>
+                        <apex:pageBlockSection id="Product" title="Product Selection" columns="2">
+                            <!-- <apex:outputField value="{!PS.Brand_picklist__c}" />-->
+                            <!--<apex:outputField value="{!PS.Brand__c}" />
+<apex:pageblocksectionitem />-->
+                            
+                            <apex:pageblocksectionitem >
+                                <apex:outputLabel >Product Group </apex:outputLabel>
+                                <apex:outputPanel >
+                                    <apex:selectList size="1" id="PDgroup" value="{!PDgroup}"  disabled="{!disableButton}">
+                                        <apex:actionSupport event="onchange" rerender="pnltabOne" action="{!specifyPDGroup}" status="status"/>
+                                        <apex:selectOptions value="{!PrdList}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem />
+                            
+                            <apex:pageblocksectionitem rendered="{!PDgroup!='Enter Part Number'}">
+                                <apex:outputlabel >Sub Group </apex:outputlabel>
+                                <apex:outputPanel id="pnlSubGroupSelect">
+                                    <apex:selectList size="1" disabled="{! PDgroup=='' || disableButton }" id="subPDgroup" value="{!subPDgroup}" >
+                                        <apex:actionSupport event="onchange" rerender="pnltabOne" action="{!fetchfieldsList}" status="status" />
+                                        <apex:selectOptions value="{!SubPrdctList}"></apex:selectOptions>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem rendered="{!PDgroup!='Enter Part Number'}"/>
+                            
+                            <apex:pageblocksectionitem rendered="{!PDgroup=='Enter Part Number'}">
+                                <apex:outputlabel >Part Number </apex:outputlabel>
+                                <apex:outputPanel >
+                                    <apex:inputtext value="{!partNumber}" disabled="{!disableButton}"></apex:inputtext>
+                                    <!--<apex:commandButton action="{!searchQuoteLineItem}" value="Search" reRender="pgSec" onclick="this.value = 'Processing'" style="font-weight:bold"/>-->
+                                    <apex:commandButton rendered="{!!disableButton}" styleClass="slds-button_brand" action="{!searchQuoteLineItem}" value="Search" reRender="pnltabOne,tabthree,tabsix,tabtwo,tabfive" style="font-weight:bold" status="status"/>
+                                    
+                                    <apex:outputPanel layout="block" style="color:#c00;font-weight:bold" rendered="{!nPartNumberFoundStatus ==0}">Part Number not found for the selected Brand.</apex:outputPanel>
+                                    <apex:outputPanel layout="block" style="color:green;font-weight:bold" rendered="{!nPartNumberFoundStatus==1}">Part Number found.</apex:outputPanel>
+                                    
+                                </apex:outputPanel>
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem rendered="{!PDgroup=='Enter Part Number'}"/>
+                            
+                            <apex:pageblocksectionitem >
+                                <apex:outputlabel >Quantity </apex:outputlabel>
+                                <apex:outputPanel id="pnlQuantity">
+                                    <apex:inputField value="{!PS.Quantity__c}" id="qtty3" onkeypress="return isNumberKeyQ(event,this)"  rendered="{! (!disableButton)}"/>
+                                    <apex:outputField value="{!PS.Quantity__c}" rendered="{!disableButton}" />
+                                </apex:outputPanel>
+                            </apex:pageblocksectionitem>                        
+                        </apex:pageBlockSection>
+                        
+                        <!-- <apex:pageBlockSection >
+                            <apex:pageblocksectionitem rendered="{!PDgroup=='Enter Part Number'}" dataStyle="left: 45%; float :left;position: absolute;">
+                                <apex:commandButton action="{!saveProdPartNumber}" rendered="{!!disableButton}"
+                                 styleClass="slds-button_brand" value="Finish Configuration" 
+                                 reRender="psQuoteTable,tabone,tabtwo,tabthree,tabfour,tabsix,error_msg,pnlQuantity,tabfive"
+                                  status="status" disabled="{!disableButton}"/>
+                            </apex:pageblocksectionitem>
+                        </apex:pageBlockSection> -->
+                        
+                        <apex:commandButton action="{!saveProdPartNumber}" rendered="{!AND(!disableButton,PDgroup=='Enter Part Number')}"
+                                 styleClass="slds-button_brand" value="Finish Configuration" style="left: 45%;"
+                                 reRender="psQuoteTable,tabone,tabtwo,tabthree,tabfour,tabsix,error_msg,pnlQuantity,tabfive"
+                                  status="status" disabled="{!disableButton}"/>
+
+                        <apex:pageBlockSection title="Product-Specific Attributes" id="pbs_PSA" 
+                                               rendered="{!PDgroup!='' && PDgroup!='Enter Part Number' && subPDgroup!=''}"
+                                                columns="2">
+                            
+                            <apex:repeat value="{!listField}" var="imp">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel >{!imp.fieldName}</apex:outputLabel> 
+                                    <apex:outputPanel >
+                                        <apex:selectList styleClass="{!imp.key}" size="1" value="{!imp.sValue}" disabled="{! imp.lstSelectOption.size==1 || disableButton}" onchange="handleApplyFilterOnPSA(this,{!col});">
+                                            <apex:selectOptions value="{!imp.lstSelectOption}" />
+                                        </apex:selectList>
+                                        <apex:variable var="col" value="{!col+1}"/>
+                                       
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                            </apex:repeat>
+                            
+                        </apex:pageblocksection>
+                        
+                        <div style="text-align:center;height:16px;">
+                            <apex:actionstatus id="loadStatus">
+                                <apex:facet name="start"> 
+                                    <img src="/img/loading.gif" alt="" />
+                                </apex:facet>
+                            </apex:actionstatus>    
+                        </div>
+                        
+                        <!-- <apex:pageBlockSection rendered="{!PDgroup != 'Enter Part Number'}">
+                            <apex:pageBlockSectionItem id="pbsi" dataStyle="float: right;left: 121px;position: relative;">
+                                <apex:outputPanel rendered="{!!disableButton}">
+                                    <apex:commandButton style="left: 15%;" styleClass="slds-button_brand" 
+                                    value="Finish Configuration" reRender="theTabPanel,pnlQuantity,error_msg" 
+                                    action="{!saveProdSpecificAttr}" status="status" disabled="{!disableButton}" rendered="{!!disableButton}"/>                                 
+                                                     
+                               </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection> -->
+                        <apex:commandButton style="left: 45%;" styleClass="slds-button_brand" 
+                                    value="Finish Configuration" reRender="theTabPanel,pnlQuantity,error_msg" 
+                                    action="{!saveProdSpecificAttr}" status="status" disabled="{!disableButton}" rendered="{!AND(!disableButton, (PDgroup != 'Enter Part Number'))}"/>
+                    </apex:pageBlock>
+                </apex:outputpanel>
+                
+                <apex:actionFunction action="{!applyFilterOnPSA}" name="applyFilterOnPSA" rerender="theTabPanel" status="status">
+                    <apex:param assignTo="{!psaSelectedCol}" name="psaSelectedCol" value="" />
+                    <apex:param assignTo="{!psaAllColSelection}" name="psaAllColSelection" value="" />
+                </apex:actionFunction>
+                <!--
+<apex:actionFunction name="saveProdSpecificAttr" action="{!saveProdSpecificAttr}" reRender="tabsix,tabthree,tabtwo,tabfour,psQuoteTable"  status="saveProdSpecificAttrStatus" oncomplete="finishSaveProdSpecificAttr();"/>
+<apex:actionFunction name="finishSaveProdSpecificAttr" action="{!saveProdSpecificAttr}" reRender="tabsix,tabthree,tabtwo,tabfour,psQuoteTable"  status="saveProdSpecificAttrStatus"/>
+-->
+            </apex:tab>
+            
+            <apex:tab label="Product Review" name="ProductReview" id="tabtwo" ontabenter="validateConfigs('productReview')">
+                
+                <apex:pageBlock >
+                    <div style="padding-bottom: 20px;padding-left: 20px;padding-right: 20px">
+                        <apex:commandButton styleClass="slds-button_outline-brand"  
+                                            value="Return To Quote"
+                                            action="{!goBack}" status="status"
+                                            oncomplete="goBackQLI('{!strURL}');"
+                                            style="font-weight:bold"></apex:commandButton> 
+                    </div>
+                    <apex:pageBlockSection title="List Price Each (USD)" id="psPrice" columns="2">
+                        <apex:pageBlockTable value="{!Pricinglist}" var="ppsw">
+                            
+                            <apex:column >
+                                
+                                <apex:facet name="header"> Pricing Element </apex:facet>
+                                
+                                {!ppsw.sType}
+                                
+                            </apex:column>
+                            
+                            <apex:column >
+                                
+                                <apex:facet name="header"> List Price Each (USD) </apex:facet>
+                                
+                                ${!IF(PS.Price_Engineer_Override__c,ppsw.nOverrideListValue,ppsw.nListValue)}
+                                
+                            </apex:column>
+                            
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                
+                
+                <apex:pageBlock >
+                    <apex:pageBlockSection title="Lead-time (Working Days)" id="LeadTimeSummary" columns="2">
+                        <!-- Service Ticket #203757, reading data from PS record -->
+                        <apex:pageBlockTable value="{!LeadTimeRecs}" var="RecLDT" id="pbLeadTable">                            
+                            <apex:column >
+                                <apex:facet name="header"> LT 10 </apex:facet>
+                                {!PS.Lead_Time_10_Override__c}
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 20 </apex:facet>
+                                {!PS.Lead_Time_20_Override__c} 
+                            </apex:column>                            
+                            <apex:column >
+                                <apex:facet name="header"> LT 30 </apex:facet>
+                                {!PS.Lead_Time_30_Override__c} 
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> LT 40 </apex:facet>
+                                {!PS.Lead_Time_40_Override__c} 
+                            </apex:column> 
+                        </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                
+                <apex:pageBlock >
+                    <apex:pageBlockSection title="Product Description" id="Quotedes" columns="1">
+                        <apex:repeat value="{!quoteDescriptionList}" var="quoteData">
+                            <apex:repeat value="{!quoteData.overridedescriptionList}" var="quoteOverrideData">
+                                {!quoteOverrideData}
+                            </apex:repeat>
+                            <br/>
+                        </apex:repeat>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="Product Image" name="Product Image" id="productImage" ontabenter="validateConfigs('Product Image')">
+                <apex:pageBlock id="diaTable1">
+                    <apex:pageBlockSection columns="1" title="Product Diagram">
+                        <apex:variable var="imageVar" value="{!diagramURL}"/>
+                        <apex:image url="{!URLFOR($Resource.RDDiagrams1, imageVar)}" width="500" height="500" rendered="{!showDia1}" />
+                        <apex:image url="{!URLFOR($Resource.RDDiagrams2, imageVar)}" width="500" height="500" rendered="{!showDia2}"/>
+                    </apex:pageBlockSection>  
+                </apex:pageBlock>
+                <apex:pageBlock >
+                    <apex:actionRegion id="diaLoad">
+                        <div class="slds-grid">
+                            <apex:pageBlockSection columns="2" title="Diagram Info">
+                                <apex:outputField value="{!PS.Diagram_Override__c}" 
+                                                  rendered="{!bReadOnlyChceckBoxImage}" />       
+                                <apex:inputField value="{!PS.Diagram_Override__c}" rendered="{!!bReadOnlyChceckBoxImage}"> 
+                                    <apex:actionSupport event="onchange" action="{!applyDefalutsDiagrams}" rerender="diaTable1,diaTable" status="status"/>
+                                </apex:inputField>
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:outputField value="{!PS.Drawing_Outside_Config__c}" 
+                                                  rendered="{!bReadOnlyChceckBoxImage}" />  
+                                <apex:inputField value="{!PS.Drawing_Outside_Config__c}"  rendered="{!!bReadOnlyChceckBoxImage}" >
+                                    <apex:actionSupport event="onchange" action="{!applyDefalutsDiagrams}" rerender="diaLoad,diaTable1,diaTable" status="status"/>
+                                </apex:inputField>
+                                
+                                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                <apex:pageBlockSection columns="5" id="diaTable">
+                                    <apex:variable var="stlCSS" value="{!disabledCSS}"/>
+                                    
+                                    <apex:pageBlockSectionItem >
+                                        <label >DrawingID</label>
+                                    </apex:pageBlockSectionItem>
+                                    
+                                    <apex:pageBlockSectionItem >
+                                        <apex:outputPanel rendered="{!showvalue}">
+                                            <apex:inputField value="{!psDiagram.DrawingID__c}" label="" html-disabled="disabled"  style="width:50px;"  />
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!showvalue1}">
+                                            <apex:inputField value="{!previousDrawiningobj.DrawingID__c}" label="" html-disabled="disabled" style="width:50px;" />
+                                        </apex:outputPanel>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.Drawing_id_override__c}" label="" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}"/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimA</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimA__c}" html-disabled="disabled" label="" rendered="{!showvalue}" />
+                                        <apex:inputField value="{!previousDrawiningobj.DimA__c}" html-disabled="disabled" label="" rendered="{!showvalue1}" />
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimA_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                        
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimB</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimB__c}" html-disabled="disabled" label="" rendered="{!showvalue}" />
+                                        <apex:inputField value="{!previousDrawiningobj.DimB__c}" html-disabled="disabled" label=""  rendered="{!showvalue1}" />
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimB_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimC</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimC__c}" html-disabled="disabled" label="" rendered="{!showvalue}"/>
+                                        <apex:inputField value="{!previousDrawiningobj.DimC__c}" html-disabled="disabled" label="" rendered="{!showvalue1}"/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimC_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimD</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimD__c}" html-disabled="disabled" label="" rendered="{!showvalue}"/>
+                                        <apex:inputField value="{!previousDrawiningobj.DimD__c}" html-disabled="disabled" label="" rendered="{!showvalue1}"/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimD_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimE</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimE__c}" html-disabled="disabled" label="" rendered="{!showvalue}"/>
+                                        <apex:inputField value="{!previousDrawiningobj.DimE__c}" html-disabled="disabled" label="" rendered="{!showvalue1}"/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimE_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <label >DimF</label>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!psDiagram.DimF__c}" html-disabled="disabled" label="" rendered="{!showvalue}"/>
+                                        <apex:inputField value="{!previousDrawiningobj.DimF__c}" html-disabled="disabled" label="" rendered="{!showvalue1}"/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem >
+                                        <apex:inputField value="{!PS.DimF_Override__c}" style="{!IF(PS.Diagram_Override__c == false,stlCSS,'width:80px;')}" label=""/>
+                                    </apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                                    <apex:pageBlockSectionItem dataStyle="left:50%;padding-top: 20px;position: absolute;">
+                                        <apex:commandButton rendered="{!bShowEditButtonImage}" reRender="diaLoad" styleClass="slds-button_brand" status="status" action="{!saveDiagrams}" value="Save" style="font-weight:bold"/>
+                                    </apex:pageBlockSectionItem>
+                                </apex:pageBlockSection>
+                                
+                            </apex:pageBlockSection>
+                        </div>
+                    </apex:actionRegion>
+                </apex:pageBlock>
+            </apex:tab>
+            
+            <apex:tab label="Price, LT & Cost" name="Price, LT & Cost" id="tabthree" rendered="{!showsales}" ontabenter="validateConfigs('Price, LT & Cost')">
+                <apex:pageBlock >
+                    <apex:pageBlockSection title="List Price Each (USD)" columns="1" >
+                        <apex:outputField value="{!PS.Price_Engineer_Override__c}" style="width: 15px"
+                                          label="Pricing Override" rendered="{!bReadOnlyChceckBox}" />      
+                        <apex:inputField label="Pricing Override" value="{!PS.Price_Engineer_Override__c}" rendered="{!!bReadOnlyChceckBox}">
+                            <apex:actionSupport event="onchange" action="{!ApplyDefaultPricing}" rerender="pricingTable" status="status"/>
+                          
+                        </apex:inputField>                       
+                        
+                        <apex:pageBlockTable value="{!Pricinglist}" var="ppsw" id="pricingTable" columnsWidth="25%">
+                            <apex:column >
+                                <apex:facet name="header"> Pricing Element </apex:facet>
+                                {!ppsw.sType}
+                                <apex:facet name="footer">  
+                                    <div>
+                                        Quantity: {!PS.Quantity__c}<br/>
+                                    </div>
+                                    <div>
+                                        Total Price: ${!IF(PS.Price_Engineer_Override__c, TotalPSPriceOverride, TotalPSPrice)} 
+                                    </div>
+                                </apex:facet>    
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> List Price Each (USD) </apex:facet>
+                                {!ppsw.nListValue}
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> Pricing Override </apex:facet> 
+                                <apex:inputText value="{!ppsw.nOverrideListValue}" style="{!IF(PS.Price_Engineer_Override__c == false,'width:100px;pointer-events: none;','width:100px;')}" onkeypress="return isNumberKey(event,this)"/>
+                                <!-- <apex:facet name="footer"> {!TotalBGRPriceOverride} </apex:facet>  -->
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlockSectionItem >
+                            <apex:commandButton rendered="{!bShowEditButton}" style="left: 40%;z-index:9999;position: relative;" styleClass="slds-button_brand" value="Save" action="{!SavePriceOverride}" rerender="pricingTable,psPrice" status="status"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection title="Lead-Time (Working Days)" id="LeadTime" columns="1">
+                        <apex:outputField value="{!PS.Lead_Time_Engineer_Override__c}" style="width: 15px"
+                                          label="Lead-Time Override" rendered="{!bReadOnlyChceckBox}" /> <!--Service Ticket #203757, label correction -->
+                        
+                        <apex:inputField value="{!PS.Lead_Time_Engineer_Override__c}" label="Lead-Time Override" rendered="{!!bReadOnlyChceckBox}">
+                            <apex:actionSupport event="onchange" action="{!ApplyDefaultLeadtime}" rerender="pbLeadTable" status="status"/>
+                        </apex:inputField>
+                        
+                        
+                        <apex:pageBlockTable value="{!LeadTimeRecs}" var="RecLDT" id="pbLeadTable">
+                            
+                            <!--<apex:column >
+<apex:facet name="header"> ||*{!oPSAssyPartDefinition.ASSYPARTNO__c}*|| </apex:facet>
+||*{!oPSAssyPartDefinition.ASSYPARTNO__c}*||
+</apex:column>
+-->
+                            
+                            <apex:column >
+                                <apex:facet name="header"> LT 10 </apex:facet>
+                                <!-- Service Ticket #203757, reading from PS record -->
+                                {!PS.Lead_Time_Site_10__c} 
+                                <!--<apex:facet name="footer"> {!Total10} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 10 Ovrrd </apex:facet>
+                                <apex:inputField value="{!PS.Lead_Time_10_Override__c}" style="{!IF(PS.Lead_Time_Engineer_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <!--<apex:facet name="footer"> {!Total10Override} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 20 </apex:facet>
+                                {!PS.Lead_Time_Site_20__c}
+                                <!--    <apex:facet name="footer"> {!Total20} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 20 Ovrrd </apex:facet>
+                                <apex:inputField value="{!PS.Lead_Time_20_Override__c}" style="{!IF(PS.Lead_Time_Engineer_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <!--<apex:facet name="footer"> {!Total20Override} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 30 </apex:facet>
+                                {!PS.Lead_Time_Site_30__c}
+                                <!--<apex:facet name="footer"> {!Total30} </apex:facet> -->
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> LT 30 Ovrrd </apex:facet>
+                                <apex:inputField value="{!PS.Lead_Time_30_Override__c}" style="{!IF(PS.Lead_Time_Engineer_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <!--<apex:facet name="footer"> {!Total30Override} </apex:facet> -->
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header"> LT 40 </apex:facet>
+                                {!PS.Lead_Time_Site_40__c}
+                                <!--<apex:facet name="footer"> {!Total40} </apex:facet> -->
+                            </apex:column> 
+                            <apex:column >
+                                <apex:facet name="header"> LT 40 Ovrrd </apex:facet>
+                                <apex:inputField value="{!PS.Lead_Time_40_Override__c}" style="{!IF(PS.Lead_Time_Engineer_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                <!--<apex:facet name="footer"> {!Total40Override} </apex:facet> -->
+                            </apex:column>
+                        </apex:pageBlockTable>
+                        <apex:pageBlockSectionItem >
+                            <!-- <apex:commandButton value="Apply Default" action="{!ApplyDefaultLeadtime}"  onclick="this.value = 'Processing'" rerender="LeadTime"/> -->
+                            <apex:commandButton rendered="{!bShowEditButton}" style="left: 40%;z-index:9999;position: relative;" styleClass="slds-button_brand" value="Save" action="{!SaveLeadTimeOverride}" rerender="LeadTime,LeadTimeSummary" status="status"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                </apex:pageBlock>
+                
+                <apex:pageBlock >
+                    <apex:pageBlockSection title="Cost" id="PSCost" columns="1" >
+                    <apex:outputField value="{!PS.Build_Cost_Override__c}" label="Cost Override" rendered="{!bReadOnlyChceckBox}" /> 
+
+                        <apex:inputField value="{!PS.Build_Cost_Override__c}" label="Cost Override" rendered="{!!bReadOnlyChceckBox}" >
+                                <apex:actionSupport event="onchange" action="{!ApplyDefaultCost}" rerender="PSCost" status="loadingstatusmsg"/>
+                                <apex:actionStatus startText="Please wait..." id="loadingstatusmsg"/>
+                            </apex:inputField>
+                       
+                            <apex:pageBlockSection title="Assembly Cost"  columns="1" id="PSCostSection">
+                                <apex:pageBlockTable value="{!assembleCost}" var="cst" id="CostTable">
+                                    <apex:column >
+                                        <apex:facet name="header"> Standard Operation</apex:facet>
+                                        {!cst.Part_Number__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins</apex:facet>
+                                        {!cst.Inside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_10__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Out</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Out Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_10__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_20__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Out</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Out Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_20__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_30__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Out</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Out Ovrrd</apex:facet>
+                                         <apex:inputField value="{!cst.Outside_Cost_Override_30__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;','width:80px;')}"/>
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:pageBlockSection>
+                        
+                            <apex:pageBlockSection title="Build Cost" columns="1" >
+                                <apex:pageBlockTable value="{!buildCost}" var="cst" id="CostTable">
+                                    <apex:column >
+                                        <apex:facet name="header">Cost Type</apex:facet>
+                                        {!cst.Cost_Sub_Type__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> Standard Operation</apex:facet>
+                                        {!cst.Part_Number__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header">10 Ins</apex:facet>
+                                        {!cst.Inside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_10__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                     {!cst.Inside_Cost_Override_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_10__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_10__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_20__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                        {!cst.Inside_Cost_Override_20__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_20__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_20__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Inside_Cost_Override_30__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                        {!cst.Inside_Cost_Override_30__c} 
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs.Ovrrd</apex:facet>
+                                        <apex:inputField value="{!cst.Outside_Cost_Override_30__c}" style="{!IF(PS.Build_Cost_Override__c == false,'width:80px;pointer-events: none;',IF(assembleCost.size != 0,'width:80px;pointer-events: none;','width:80px;'))}"/>
+                                         {!cst.Outside_Cost_Override_30__c} 
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                    	</apex:pageBlockSection>
+
+                  <apex:pageBlockSection title="Overridden">
+                        <apex:pageBlockTable value="{!overridenCost}" var="cst" id="OverridenTable">
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Ins.Ovrrd</apex:facet>
+                                        <apex:outputText value="{!cst.Inside_Cost_10__c}" style="padding-inline-end: 10px;"></apex:outputText>
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 10 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_10__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Ins.Ovrrd</apex:facet>
+                                        {!cst.Inside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 20 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_20__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Ins.Ovrrd</apex:facet>
+                                        {!cst.Inside_Cost_30__c}
+                                    </apex:column>
+                                    <apex:column >
+                                        <apex:facet name="header"> 30 Outs.Ovrrd</apex:facet>
+                                        {!cst.Outside_Cost_30__c}
+                                    </apex:column>
+                                </apex:pageBlockTable>
+                    </apex:pageBlockSection>
+                        <!--dataStyle="float: right;left: 50%;"-->
+                    <apex:pageBlockSectionItem >
+                                    <apex:commandButton style="left: 40%;z-index:9999;position: relative;" rendered="{!bShowEditButton}" styleClass="slds-button_brand" value="Save" action="{!saveCosting}" onclick="this.value = 'Processing'" rerender="PSCost"/>
+                                </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    
+                </apex:pageBlock>
+            </apex:tab>  
+            
+            <apex:tab label="Engineering Specials" name="Engineering Specials" id="tabfour" ontabenter="validateConfigs('Engineering Specials')"  rendered="{!showsales}">
+                <apex:pageBlock id="page1" >
+                    <apex:outputPanel id="EngSpecial">
+                        <apex:pageBlockSection title="Part Number" id="PartNumber" columns="1">
+                            <style type="text/css">
+                                .myClass { width: 300px; }                        
+                            </style>
+                            <apex:inputField value="{!PS.Part_Number_Base__c}" style="{!IF( OR (PS.Quote_Description_Engineer_Override__c == false,PS.NEWSPCLPARTNOBASE__c != NULL) ,'pointer-events: none;','')}" styleClass="myClass"/>
+                            <apex:inputField value="{!PS.Existing_partnumber__c}" label="ASSYPARTEXISTING" style="width: 230px" html-disabled="true" />           
+                            <apex:inputField value="{!PS.NEWSPCLPARTNOBASE__c}" style="{!IF(PS.Quote_Description_Engineer_Override__c == false,'pointer-events: none;','')}">
+                                
+                                <apex:actionSupport event="onchange" action="{!onSpecialPartNoChange}" rerender="PartNumber,page1" oncomplete=""
+                                                    status="status" />
+                            </apex:inputField>
+                            
+                            <apex:outputPanel rendered="{!PS.Quote_Description_Engineer_Override__c}" id="test1">    
+                                <apex:commandButton rendered="{!bShowEditButton}" reRender="page1" styleClass="slds-button_brand" status="status" value="Save" onclick="this.value = 'Processing'" action="{!savePartNumber}" style="float:left;left:45%;position: relative;" />
+                            </apex:outputPanel> 
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Product Description" id="Quote" columns="1">
+                            <apex:outputField value="{!PS.Quote_Description_Engineer_Override__c}"
+                                              label="Description Override" rendered="{!bReadOnlyChceckBox}" /> 
+                            
+                            <apex:inputField value="{!PS.Quote_Description_Engineer_Override__c}" label="Description Override" rendered="{!!bReadOnlyChceckBox}">
+                                <apex:actionSupport event="onchange" action="{!ApplyDefaultQuoteDescription}" rerender="PartNumber,psQuoteTable,tabOnen" oncomplete="callNext1()"
+                                                    status="status" reRender="page1" />
+                                <apex:actionFunction name="callNext1" rerender="EngSpecial" />
+                            </apex:inputField>
+                            <apex:pageBlockTable value="{!quoteDescriptionList}" var="RecQD" id="psQuoteTable">
+                                <apex:column >
+                                    <apex:facet name="header"> Attribute </apex:facet>
+                                    <apex:outputText value="{!RecQD.quotes}" id="quotes" />
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description </apex:facet>
+                                    <apex:repeat value="{!RecQD.descriptionList}" var="descriptionItem">
+                                        <apex:outputText value="{!descriptionItem}" />
+                                        <br/>
+                                    </apex:repeat>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description Override </apex:facet>
+                                    <apex:inputTextarea value="{!RecQD.overrideDescription}" id="quoteDescriptionOverride" style="{!IF(PS.Quote_Description_Engineer_Override__c == false,'width:450px;pointer-events: none;','width:450px;')}">
+                                    </apex:inputTextarea>
+                                    <script>
+                                    var noOfRecords = {!RecQD.descriptionList.size};
+                                    if (noOfRecords > 2) {
+                                        var setHeight = (23 * noOfRecords);
+                                        setHeight = setHeight + 'px';
+                                        var quoteOverrideId = '{!$Component.quoteDescriptionOverride}';
+                                        document.getElementById(quoteOverrideId).style.height = setHeight;
+                                    }
+                                    </script>
+                                </apex:column>
+                            </apex:pageBlockTable>
+                            
+                            <apex:commandButton rendered="{!bShowEditButton}" status="status" 
+                            styleClass="slds-button_brand" style="float:left;left:45%;position: relative;" value="Save" action="{!SaveQuoteDescriptionOverride}" onclick="this.value = 'Processing'" rerender="Quote,Quotedes"/>
+                            
+                        </apex:pageBlockSection>
+                        
+                        
+                        <apex:pageBlockSection title="Engineering Notes" columns="1" id="Notes">
+                            <apex:inputField value="{!PS.Engineering_Notes__c}" style="resize:none; height:300px;width:200px;"/>
+                            <apex:commandButton status="status" reRender="Notes" rendered="{!bShowEditButton}" style="float:left;left:45%;position: relative;" styleClass="slds-button_brand" action="{!saveNotes}" value="Save"  onclick="this.value = 'Processing'"/>
+                        </apex:pageBlockSection>
+                        
+                        <apex:pageBlockSection title="Additional Documents" columns="1" id="testdoc">
+                            <apex:inputTextarea value="{!PS .Document_IDs__c}" style="resize:none; height:200px;width:200px;"/>
+                            <apex:commandButton rendered="{!bShowEditButton}" status="status" style="float:left;left:45%;position: relative;" styleClass="slds-button_brand" value="Save" action="{!SaveDocID}" onclick="this.value = 'Processing'" rerender="testdoc"/>                              
+                            
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab ontabenter="validateConfigs('Manufacturing')" label="Manufacturing Outputs" name="Manufacturing Outputs" id="tabfive" rendered="{!isManagedinSalesforce}">
+                <apex:pageBlock rendered="{!isValidPartNumber}" >
+                    <div class="slds-grid">
+                        <apex:pageBlockSection title="Structure Details" columns="1">
+                            <apex:pageBlockTable value="{!Structure}" var="strc">
+                                <apex:column >
+                                    <apex:facet name="header"> Line Item No </apex:facet>
+                                    {!strc.LineItemNo}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Component Part </apex:facet>
+                                    {!strc.ComponentPart}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">  PartNumber </apex:facet>
+                                    {!strc.PartNumber}
+                                </apex:column>
+                                <!--<apex:column >
+<apex:facet name="header"> SpringCode </apex:facet>
+{!strc.SpringCode}
+</apex:column>-->
+                                <apex:column >
+                                    <apex:facet name="header"> Qty per Assembly </apex:facet>
+                                    {!strc.Qty}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Scrap Factor(%) </apex:facet>
+                                    {!strc.ScrapFactor}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Component Scrap </apex:facet>
+                                    {!strc.ComponentScrap}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Routing Steps" id="RS" columns="1">
+                            <apex:pageBlockTable value="{!RoutingDetails}" var="RecR">
+                                <apex:column >
+                                    <apex:facet name="header"> Operation </apex:facet>
+                                    {!RecR.Operation}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Standard Operation ID </apex:facet>
+                                    {!RecR.StandardOperationID}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Outside Operation Item </apex:facet>
+                                    {!RecR.OutsideOperationIdD}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description </apex:facet>
+                                    {!RecR.Descr}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        
+                        <apex:pageBlockSection title="Control Plan Details" id="CP" columns="1">
+                            <apex:pageBlockTable value="{!ControlPlanDetails}" var="RecCP">
+                                <apex:column >
+                                    <apex:facet name="header"> Test Operation No </apex:facet> 
+                                    {!RecCP.Test_OPNO}
+                                </apex:column>                                                                        
+                                <apex:column >
+                                    <apex:facet name="header"> TEST OPERATION DESC </apex:facet>
+                                    {!RecCP.TEST_OPERATION_DESC}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> NORM TYPE </apex:facet>
+                                    {!RecCP.NORM_TYPE}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Operation Number </apex:facet>
+                                    {!RecCP.OperationNumber}
+                                </apex:column>
+                                <!--apex:column >
+<apex:facet name="header"> DATA TYPE </apex:facet>
+{!RecCP.DATA_TYPE}
+</apex:column>
+<apex:column >
+<apex:facet name="header"> CATEGORY ID </apex:facet>
+{!RecCP.CATEGORY_ID}
+</apex:column>
+<apex:column >
+<apex:facet name="header"> INSPECTION CODE </apex:facet>
+{!RecCP.INSPECTION_CODE}
+</apex:column-->
+                                <apex:column >
+                                    <apex:facet name="header"> OUTER MIN </apex:facet>
+                                    {!RecCP.OUTER_MIN}
+                                </apex:column>                                     
+                                <apex:column >
+                                    <apex:facet name="header"> NOMINAL VALUE </apex:facet>
+                                    {!RecCP.NOMINALVALUE}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> OUTER MAX </apex:facet>
+                                    {!RecCP.OUTER_MAX}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection title="Work Guidelines" columns="1">
+                            <apex:pageBlockTable value="{!Guildeline}" var="WD">
+                                <apex:column >
+                                    <apex:facet name="header"> GuidlineSeq </apex:facet>
+                                    {!WD.GuidlineSeq}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Operation </apex:facet>
+                                    {!WD.Operation}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Description </apex:facet>
+                                    {!WD.Description}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Text </apex:facet>
+                                    {!WD.Text}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        
+                        <apex:pageBlockSection title="Product Documents" columns="1">
+                            <apex:pageBlockTable value="{!ProDoc}" var="PD">
+                                <apex:column >
+                                    <apex:facet name="header"> Document </apex:facet>
+                                    {!PD.Document}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Document ID </apex:facet>
+                                    {!PD.DocumentID}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header"> Revision </apex:facet>
+                                    {!PD.Revision}
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                        
+                        <apex:pageBlockSection title="Interface Attributes" columns="2">
+                            <apex:repeat value="{!IFSAttributes}" var="RecQD" id="QuoteTable">
+                                <tr>
+                                    <td >{!RecQD.Key}</td>
+                                    <td >{!RecQD.Values}</td>
+                                </tr>                            
+                            </apex:repeat> 
+                        </apex:pageBlockSection>
+                    </div>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab ontabenter="validateConfigs('Troubleshooting')" label="Troubleshooting" name="Troubleshooting" id="tabsix"  rendered="{!isManagedinSalesforce}">
+                
+                <apex:pageBlock rendered="{!isValidPartNumber}" >
+                    <apex:pageBlockSection title="Troubleshooting Fields" columns="2">
+                        <!-- PS AssyPartNumber Lookup  : <span style="font-weight:bold">{!oPSAssyPartDefinition.ASSYPARTNO__c}</span> -->                        
+                        <apex:repeat value="{!PSTroubleshooting}" var="RecQD" id="QuoteTable">
+                            <tr>
+                                <td >{!RecQD.Key}</td>
+                                <td >{!RecQD.Values}</td>
+                            </tr>                            
+                        </apex:repeat> 
+                        
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+        </apex:tabPanel>
+        <apex:outputPanel id="pnlScriptData">
+            <script type="text/javascript">
+              var varConfiguration_Complete = {!PS.Finish_Configuration_Flag__c};
+            </script>
+            </apex:outputPanel>
+    </apex:form>
+    
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+    <script type="text/javascript">
+    let $j = jQuery.noConflict( true );
+    </script>
+    <script type="text/javascript">
+    function handleApplyFilterOnPSA(currentElement,psaSelectedCol){
+        console.log('handleApplyFilterOnPSA');
+        console.log('currentElement'+':' + currentElement);
+        console.log('psaSelectedCol'+':' + psaSelectedCol);
+        
+        var pbs_PSASelectedValues = '';
+        $j( "div[id$='pbs_PSA'] select" ).each(function(idx){
+            console.log(this);
+            pbs_PSASelectedValues += (idx) + ':' + $j(this).attr('class') + ':' + $j(this).val()+';';
+        });
+        console.log('=====> ' + pbs_PSASelectedValues);
+        applyFilterOnPSA(psaSelectedCol,pbs_PSASelectedValues);
+    }
+    </script>
+
+     
+
+</apex:page>

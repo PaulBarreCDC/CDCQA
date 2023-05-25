@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prototype_Sales_Sample__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Prototype = Is this an initial product design that is being used for customer evaluation? 
+Sales Sample = Is this item being used to promote further sales of this item?</inlineHelpText>
+    <label>Prototype / Sales Sample</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prototype</fullName>
+                <default>false</default>
+                <label>Prototype</label>
+            </value>
+            <value>
+                <fullName>Sales Sample</fullName>
+                <default>false</default>
+                <label>Sales Sample</label>
+            </value>
+            <value>
+                <fullName>Production Run</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Production Run</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

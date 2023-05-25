@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Body_material_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The Body material field cannot be null - Created by Vinayak 11/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+  		ISBLANK(Body_Material_dynamic__c),
+				Bypass__c = FALSE,
+    Product_material_options_flag__c = TRUE
+				)</errorConditionFormula>
+    <errorDisplayField>Body_Material__c</errorDisplayField>
+    <errorMessage>Please select a value from the dropdown</errorMessage>
+</ValidationRule>

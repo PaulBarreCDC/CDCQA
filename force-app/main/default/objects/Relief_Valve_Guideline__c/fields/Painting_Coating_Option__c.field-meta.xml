@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Painting_Coating_Option__c</fullName>
+    <externalId>false</externalId>
+    <label>Painting/Coating Option</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Painting: Temp Resistant (450 Deg F)</fullName>
+                <default>false</default>
+                <label>Painting: Temp Resistant (450 Deg F)</label>
+            </value>
+            <value>
+                <fullName>Painting: Corrosion Resistant (Off Shore)</fullName>
+                <default>false</default>
+                <label>Painting: Corrosion Resistant (Off Shore)</label>
+            </value>
+            <value>
+                <fullName>Painting: Corrosion Resistant (On Shore)</fullName>
+                <default>false</default>
+                <label>Painting: Corrosion Resistant (On Shore)</label>
+            </value>
+            <value>
+                <fullName>Coating: Corrosion Protection - Internal (except FA)</fullName>
+                <default>false</default>
+                <label>Coating: Corrosion Protection - Internal (except FA)</label>
+            </value>
+            <value>
+                <fullName>Coating: Corrosion Control - All Surfaces (no FA Internal)</fullName>
+                <default>false</default>
+                <label>Coating: Corrosion Control - All Surfaces (no FA Internal)</label>
+            </value>
+            <value>
+                <fullName>Coating: All Weather - Internal (except FA)</fullName>
+                <default>false</default>
+                <label>Coating: All Weather - Internal (except FA)</label>
+            </value>
+            <value>
+                <fullName>Coating: All Weather - External</fullName>
+                <default>false</default>
+                <label>Coating: All Weather - External</label>
+            </value>
+            <value>
+                <fullName>Coating: All Weather - Internal (except FA) &amp; External</fullName>
+                <default>false</default>
+                <label>Coating: All Weather - Internal (except FA) &amp; External</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

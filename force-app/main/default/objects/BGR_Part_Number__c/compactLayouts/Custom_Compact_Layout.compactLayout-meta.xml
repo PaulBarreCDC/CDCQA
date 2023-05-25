@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>PartNumber__c</fields>
+    <fields>PartRevision__c</fields>
+    <fields>SERVICE__c</fields>
+    <fields>RTPRS1__c</fields>
+    <fields>RTPRSU__c</fields>
+    <fields>ATEX__c</fields>
+    <fields>CUTR__c</fields>
+    <fields>CSA__c</fields>
+    <fields>PTC__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

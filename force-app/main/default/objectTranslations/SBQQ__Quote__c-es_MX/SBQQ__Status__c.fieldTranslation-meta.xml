@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Estado que indica el punto en el que se encuentra el presupuesto en su ciclo de vida.</help>
+    <label></label>
+    <name>SBQQ__Status__c</name>
+    <picklistValues>
+        <masterLabel>Approved</masterLabel>
+        <translation>Aprobado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blocked</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cancel</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Change Order</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Submitted</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partner Submitted</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending Approvals</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation>Rechazado</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unblock</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

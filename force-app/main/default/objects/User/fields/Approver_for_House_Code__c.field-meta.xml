@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approver_for_House_Code__c</fullName>
+    <externalId>false</externalId>
+    <label>Approver for House Code</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>DOE1</fullName>
+                <default>false</default>
+                <label>DOE1</label>
+            </value>
+            <value>
+                <fullName>DOE2</fullName>
+                <default>false</default>
+                <label>DOE2</label>
+            </value>
+            <value>
+                <fullName>DOE3</fullName>
+                <default>false</default>
+                <label>DOE3</label>
+            </value>
+            <value>
+                <fullName>DDH1</fullName>
+                <default>false</default>
+                <label>DDH1</label>
+            </value>
+            <value>
+                <fullName>DNIH</fullName>
+                <default>false</default>
+                <label>DNIH</label>
+            </value>
+            <value>
+                <fullName>LOE1</fullName>
+                <default>false</default>
+                <label>LOE1</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

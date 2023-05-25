@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Test_Case_Issues</fullName>
+    <columns>NAME</columns>
+    <columns>Test_Case__c</columns>
+    <columns>Test_Case_Title__c</columns>
+    <columns>Category__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Disposition__c</columns>
+    <columns>Old_Issue_Disposition__c</columns>
+    <columns>Feedback_Enhancement_Request__c</columns>
+    <columns>Tester__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Resolution_Assigned_To__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

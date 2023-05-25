@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>SZC__c</columns>
+    <columns>PalletDesign__c</columns>
+    <columns>BackpressureLL__c</columns>
+    <columns>BackpressureUL__c</columns>
+    <columns>PalletType__c</columns>
+    <columns>PalletMatlCode__c</columns>
+    <columns>SettingLL__c</columns>
+    <columns>SpacerYN__c</columns>
+    <columns>SettingUL__c</columns>
+    <columns>WeightMatlCode__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PTC__c</field>
+        <operation>equals</operation>
+        <value>1200A</value>
+    </filters>
+    <label>All</label>
+</ListView>

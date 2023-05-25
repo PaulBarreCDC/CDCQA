@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Vapor Askia AG - Switzerland | 73 Partner User</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Vapor Askia AG - Switzerland | 73 Partner User</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>VaporAskiaAGSwitzerland73PartnerManager</parentRole>
+</Role>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quotes_Submitted_by_Rep_for_Assistance</fullName>
+    <columns>NAME</columns>
+    <columns>AccountName__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Partner Submitted</value>
+    </filters>
+    <filters>
+        <field>Eng_Review_Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started,On Hold - Sales,Completed</value>
+    </filters>
+    <filters>
+        <field>Prod_Planning_Status__c</field>
+        <operation>equals</operation>
+        <value>Not Started,Completed</value>
+    </filters>
+    <label>Inside Sales - Submitted for Asssistance</label>
+</ListView>

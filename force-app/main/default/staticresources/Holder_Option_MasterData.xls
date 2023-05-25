@@ -1,0 +1,4 @@
+IsDeleted,JackscrewDrilling__c,JHook__c,Knifeblade_Material__c,Lining__c,Nipple__c,OptionCode__c,Pressure_Gauge__c,Reducing_Bushing__c,ScreenSelect__c,Tee__c,Excess_Flow_Valve__c,GaugeTap__c,Bore__c,Id,EyeboltDrilling__c,Facing__c,Coating__c
+FALSE,None,None,None,None,TRUE,1,TRUE,TRUE,"- 1/4"" FPT [01]",TRUE,TRUE,"1/4"" FPT",None,a5o8A0000005iXYQAY,None,None,None
+FALSE,None,None,None,None,TRUE,2,TRUE,TRUE,"- 3/8"" FPT [02]",TRUE,TRUE,"3/8"" FPT",None,a5o8A0000005iXZQAY,None,None,None
+FALSE,None,None,None,None,TRUE,3,TRUE,TRUE,"- 1/2"" FPT [03]",TRUE,TRUE,"1/2"" FPT",None,a5o8A0000005iXaQAI,None,None,None

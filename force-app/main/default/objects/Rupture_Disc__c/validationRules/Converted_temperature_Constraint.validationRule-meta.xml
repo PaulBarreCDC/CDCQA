@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Converted_temperature_Constraint</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+	AND(
+		ISPICKVAL(Relief_Type__c, &quot;Pressure Relief&quot;),
+		Relief_Flag__c = TRUE,
+		OR(Converted_Temperature_Setting__c &lt; -320,Converted_Temperature_Setting__c &gt; 1000),
+		NOT(ISBLANK(Pressure_Setting__c)),
+		Pressure_Setting__c &gt; 0,
+		NOT(ISPICKVAL(Pressure_Setting_Units__c ,&quot;&quot;))		
+	),
+	AND(
+		ISPICKVAL(Relief_Type__c, &quot;Vacuum Relief&quot;),
+		Relief_Flag__c = TRUE,
+		OR(Converted_Temperature_Setting__c &lt; -320,Converted_Temperature_Setting__c &gt; 1000),
+		NOT(ISBLANK(Vacuum_Setting__c)),
+		Vacuum_Setting__c &gt; 0,
+		NOT(ISPICKVAL(Vacuum_Setting_Units__c ,&quot;&quot;))	
+	),	
+	AND(
+		ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum Relief&quot;),
+		Relief_Flag__c = TRUE,
+		OR(Converted_Temperature_Setting__c &lt; -320,Converted_Temperature_Setting__c &gt; 1000),
+		NOT(ISBLANK(Pressure_Setting__c)),
+		Pressure_Setting__c &gt; 0,
+		NOT(ISBLANK(Vacuum_Setting__c)),
+		Vacuum_Setting__c &gt; 0,
+		NOT(ISPICKVAL(Pressure_Setting_Units__c ,&quot;&quot;)),
+		NOT(ISPICKVAL(Vacuum_Setting_Units__c ,&quot;&quot;))	
+	)
+)</errorConditionFormula>
+    <errorDisplayField>Temperature_Setting__c</errorDisplayField>
+    <errorMessage>Temperature Setting: Please enter a value between -320 F and less than 1000 F</errorMessage>
+</ValidationRule>

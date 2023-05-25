@@ -1,0 +1,8 @@
+"ATEX__c","BRAND__c","CUTR__c","Description__c","FA_Combo__c","Flag__c","GasGroup__c","MaxMAWP__c","NACE__c","OP_Percent__c","PED__c","PosCMethod__c","PosDir__c","PosEffDia__c","PosFullOP__c","PosIntMethod__c","PosLoad__c","PosMinOP__c","PTC__c","SZC__c","VacCMethod__c","VacDir__c","VacEffDia__c","VacFullOP__c","VacIntMethod__c","VacLoad__c","VacMinOP__c","Venting__c"
+"Y","Groth","Y","2"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","2.07","100.0","Power","S","20.0","1221B Fiberglass","02","C3","Y","2.07","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","3"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","3.06","100.0","Power","S","20.0","1221B Fiberglass","03","C3","Y","3.06","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","4"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","4.06","100.0","Power","S","20.0","1221B Fiberglass","04","C3","Y","4.06","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","6"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","6.06","100.0","Power","S","20.0","1221B Fiberglass","06","C3","Y","6.06","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","8"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","8.0","100.0","Power","S","20.0","1221B Fiberglass","08","C3","Y","8.0","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","10"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","10.0","100.0","Power","S","20.0","1221B Fiberglass","10","C3","Y","10.0","100.0","Power","F","10.0","PA"
+"Y","Groth","Y","12"" 1221B Fiberglass","N","","6.0","30.0","N","100.0","N","C1","Y","12.0","100.0","Power","S","20.0","1221B Fiberglass","12","C3","Y","12.0","100.0","Power","F","10.0","PA"

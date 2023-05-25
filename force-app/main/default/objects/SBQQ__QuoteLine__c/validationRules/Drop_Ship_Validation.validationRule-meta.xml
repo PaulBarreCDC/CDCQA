@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drop_Ship_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>DATEVALUE(CreatedDate) &gt;= DATE(2020, 07, 01) &amp;&amp;  Text( Sourcing_Entity__c ) = Text( SBQQ__Quote__r.Sales_Division__c ) &amp;&amp; NOT(ISPICKVAL(Drop_Ship__c,&quot;#N/A&quot;)) &amp;&amp; isChanged (Drop_Ship__c) &amp;&amp; NOT(isNEW())</errorConditionFormula>
+    <errorDisplayField>Drop_Ship__c</errorDisplayField>
+    <errorMessage>When selling entity and sourcing entity are the same, then drop ship can not be changed to Yes or No</errorMessage>
+</ValidationRule>

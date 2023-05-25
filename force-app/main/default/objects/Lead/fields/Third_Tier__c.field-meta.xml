@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Third_Tier__c</fullName>
+    <externalId>false</externalId>
+    <label>Third Tier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Submarket__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Third_Tier</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Other (TC)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container cleaning depot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container equipment OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container lease/rental</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container operator</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container owner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tank Container/Road &amp; Rail Tankers</controllingFieldValue>
+            <valueName>Tank container repair &amp; maintenance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Braking systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Compressor equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Cooling/refridgeration/aircon equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Digesters</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Down hole oil tools &amp; well testing equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Filtration equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Flare equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Flotation systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Fuel tanks and systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Gas cylinders/vessels/processing equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Geothermal equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>GIS Switchgear/electrical transformers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>High pressure water jetting equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Hydraulic equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Instrumentation/measurement/control equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>LNG equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Medical equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Other (Other OEM)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Oxygen systems/breathing apparatus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Process modules/skids/equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Production machinery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Pumps and transfer equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Scientific equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Stainless steel tanks/vessels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Sterilisation equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Tank farm/terminal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Tanks and storage vessels</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Thermal process equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Transportation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Turbine equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Valve manufacturer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Water purification equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Water treatment equipment/systems</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM - Specific OEM Type</controllingFieldValue>
+            <valueName>Weapons systems</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

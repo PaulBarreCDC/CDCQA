@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Deg C</fullName>
+        <default>false</default>
+        <label>Deg C</label>
+    </customValue>
+    <customValue>
+        <fullName>Deg F</fullName>
+        <default>false</default>
+        <label>Deg F</label>
+    </customValue>
+    <customValue>
+        <fullName>Deg K</fullName>
+        <default>false</default>
+        <label>Deg K</label>
+    </customValue>
+    <customValue>
+        <fullName>Deg R</fullName>
+        <default>false</default>
+        <label>Deg R</label>
+    </customValue>
+    <masterLabel>Temperature Units</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

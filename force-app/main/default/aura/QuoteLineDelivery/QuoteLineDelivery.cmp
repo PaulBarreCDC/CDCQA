@@ -1,0 +1,119 @@
+<aura:component access="global"
+                controller="QuoteLineOperations"
+                implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" >
+  <aura:attribute name="recordId"
+                  type="Id"/>
+  <aura:attribute name="record"
+                  type="Object" />
+  <aura:attribute name="quoteRecord"
+                  type="Object" />
+  <aura:attribute name="recordError"
+                  type="String" />
+  <aura:attribute name="deliveryList"
+                  type="Object"
+                  description="List of current deliveries" />
+  <aura:attribute name="columns"
+                  type="List"
+                  description="List of current deliveries" />
+  <aura:attribute name="originalQty"
+                  type="Integer"
+                  description="Original Quote Line Quantity" />
+  <aura:attribute name="originalQuoteLine"
+                  type="String"
+                  description="Original Quote Line Quantity" />
+  
+  
+  <aura:html tag="style">
+      .modal-container {
+        min-width: 80rem !important;
+      }
+      .modal-footer {
+        display:none;
+      }
+      .header-unit {
+        height: 5rem;
+      }
+      .button_margin_fix > button {
+        margin-top: 1.2rem;
+      }
+  </aura:html>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+  <div class="slds-grid slds-gutters">
+    <!-- <lightning:datatable data="{! v.deliveryList }"
+        columns="{! v.columns }"
+        keyField="Id" 
+        hideCheckboxColumn="true"
+        onrowaction="{! c.deleteInfo }"/> -->
+        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center header-unit">
+          Quote Line: {!v.originalQuoteLine}
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-align_absolute-center header-unit">
+          Original Quantity: {!v.originalQty}
+        </div>
+  </div>
+  <div class="slds-grid slds-gutters">
+    <div class="slds-col slds-size_3-of-3">
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Delivery No">Delivery No</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Quantity">Quantity</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Planned Delivery Date">Planned Delivery Date</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Action">Action</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{!v.deliveryList}"
+                          var="deliveryLine"
+                          indexVar="deliveryNo">                          
+          <tr class="slds-hint-parent">
+            <td data-label="Delivery Number">
+              <lightning:input name="Delivery Number"
+                                type="number"
+                                value="{!deliveryLine.Delivery_Number__c}" />
+            </td>
+            <td data-label="Quantity">
+              <lightning:input name="Quantity"
+                                type="number"
+                                value="{!deliveryLine.SBQQ__Quantity__c}" />
+            </td>
+            <td data-label="Planned Delivery Date">
+              <lightning:input name="Planned Delivery Date"
+                                type="date"
+                                value="{!deliveryLine.Planned_Delivery_Date__c}" />
+            </td>
+            <td data-label="Action" class="button_margin_fix">
+              <aura:if isTrue="{!deliveryLine.Name != v.originalQuoteLine}">
+                <lightning:button label="Delete"
+                                  title="Delete"
+                                  onclick="{! c.deleteInfo }"
+                                  name="{!deliveryNo}"
+                                  value="{!deliveryNo}"
+                                  variant="destructive-text" />
+              </aura:if>
+            </td>
+          </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="slds-grid slds-gutters slds-align_absolute-center">
+    <lightning:button label="Add Delivery"
+                      title="Add Delivery"
+                      onclick="{! c.addInfo }"
+                      variant="brand" />
+    <lightning:button label="Save"
+                      title="Neutral action"
+                      onclick="{! c.saveInfo }"
+                      variant="brand-outline" />
+  </div>
+</aura:component>

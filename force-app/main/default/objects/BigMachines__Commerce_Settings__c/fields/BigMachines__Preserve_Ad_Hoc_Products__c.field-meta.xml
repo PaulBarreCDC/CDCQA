@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Preserve_Ad_Hoc_Products__c</fullName>
+    <defaultValue>true</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this box is checked, any products that have been added directly to the opportunity will not be removed when syncing a quote.  If this box is unchecked, the products on the opportunity will always be an exact match of the products on the primary quote.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this box is checked, any products that have been added directly to the opportunity will not be removed when syncing a quote.  If this box is unchecked, the products on the opportunity will always be an exact match of the products on the primary quote.</inlineHelpText>
+    <label>Preserve Ad Hoc Products</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

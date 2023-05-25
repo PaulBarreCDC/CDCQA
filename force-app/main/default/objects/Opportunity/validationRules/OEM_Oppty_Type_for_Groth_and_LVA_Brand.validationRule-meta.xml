@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Oppty_Type_for_Groth_and_LVA_Brand</fullName>
+    <active>true</active>
+    <description>The Opportunity Type field cannot be either OEM option if the Brand is set to Groth or LVA</description>
+    <errorConditionFormula>AND(OR( ISPICKVAL(Type, &quot;OEM – New Business&quot;), ISPICKVAL(Type, &quot;OEM – Existing CDC Business&quot;)),OR( ISPICKVAL(Brand__c, &quot;Groth&quot;),ISPICKVAL(Brand__c,&quot;LVA&quot;)))</errorConditionFormula>
+    <errorDisplayField>Type</errorDisplayField>
+    <errorMessage>OEM selections cannot be chosen with Brand set to Groth or LVA</errorMessage>
+</ValidationRule>

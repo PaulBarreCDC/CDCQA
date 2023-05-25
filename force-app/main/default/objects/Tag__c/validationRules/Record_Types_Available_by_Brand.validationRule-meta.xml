@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Types_Available_by_Brand</fullName>
+    <active>true</active>
+    <description>Only the Tag Individually should be used for Groth and LVA branded lines</description>
+    <errorConditionFormula>AND(OR(Quote_Line_Brand__c = &quot;Groth&quot;, Quote_Line_Brand__c = &quot;LVA&quot;), OR( RecordType.Name =&quot;Tag All (CDC/LaMOT Only)&quot;,RecordType.Name =&quot;Tag Each (CDC/LaMOT Only)&quot;))</errorConditionFormula>
+    <errorMessage>Groth and LVA brand Quote Lines can only be tagged with the &quot;Tag Individually&quot; option. Please go back and select &quot;Tag Individually&quot; upon Tag creation.</errorMessage>
+</ValidationRule>

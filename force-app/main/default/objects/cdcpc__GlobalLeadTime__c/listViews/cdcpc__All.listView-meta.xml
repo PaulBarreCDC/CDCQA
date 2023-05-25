@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>cdcpc__CDC_Ext_ID__c</columns>
+    <columns>NAME</columns>
+    <columns>cdcpc__Schedule__c</columns>
+    <columns>cdcpc__QtyLL__c</columns>
+    <columns>cdcpc__QtyUL__c</columns>
+    <columns>cdcpc__X10__c</columns>
+    <columns>cdcpc__X20__c</columns>
+    <columns>cdcpc__X30__c</columns>
+    <columns>cdcpc__X40__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__Schedule__c</field>
+        <operation>contains</operation>
+        <value>DA-0-50</value>
+    </filters>
+    <label>All Global Lead Times</label>
+</ListView>

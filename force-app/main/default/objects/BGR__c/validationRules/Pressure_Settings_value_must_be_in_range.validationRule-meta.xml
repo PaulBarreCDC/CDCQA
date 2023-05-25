@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Settings_value_must_be_in_range</fullName>
+    <active>true</active>
+    <description>The value for Settings must be in the rage with that of the in.water units, this also depends on the Service type field value</description>
+    <errorConditionFormula>AND(
+				ISPICKVAL( Service_Type__c, &quot;Pressure&quot;),
+				OR(
+        Converted_Setting__c &lt; 0.5,
+								Converted_Setting__c &gt;415.6
+							)
+				)</errorConditionFormula>
+    <errorDisplayField>Setting__c</errorDisplayField>
+    <errorMessage>The Valid values for Pressure Setting should be in the range of 0.5 in. water to 415.6 in. water</errorMessage>
+</ValidationRule>

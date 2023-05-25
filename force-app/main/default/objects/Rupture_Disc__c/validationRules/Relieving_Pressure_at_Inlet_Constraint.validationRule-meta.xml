@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relieving_Pressure_at_Inlet_Constraint</fullName>
+    <active>true</active>
+    <description>Relieving Pressure at Inlet is a Mandatory field to be entered by the user.</description>
+    <errorConditionFormula>AND( 
+ISBLANK(TEXT(  Relieving_Pressure_at_Inlet__c )) 
+)&amp;&amp; 
+( Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Relieving_Pressure_at_Inlet__c</errorDisplayField>
+    <errorMessage>Relieving Pressure at Inlet: Please select a value from the drop down</errorMessage>
+</ValidationRule>

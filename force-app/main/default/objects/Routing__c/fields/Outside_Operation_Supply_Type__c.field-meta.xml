@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outside_Operation_Supply_Type__c</fullName>
+    <description>The outside operation supply type designates the type of 3rd party supplier.  A part is either made (&quot;Make&quot;) or purchased (&quot;Buy&quot;) from the 3rd party supplier.</description>
+    <externalId>false</externalId>
+    <label>Outside Operation Supply Type</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

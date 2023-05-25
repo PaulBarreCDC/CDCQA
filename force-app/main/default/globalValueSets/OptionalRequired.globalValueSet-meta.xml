@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Optional</fullName>
+        <default>false</default>
+        <label>Optional</label>
+    </customValue>
+    <customValue>
+        <fullName>Required</fullName>
+        <default>false</default>
+        <label>Required</label>
+    </customValue>
+    <masterLabel>OptionalRequired</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

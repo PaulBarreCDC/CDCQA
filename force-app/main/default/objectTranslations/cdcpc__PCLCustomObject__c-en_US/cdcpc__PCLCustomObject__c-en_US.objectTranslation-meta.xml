@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <label></label>
+        <name>cdcpc__Configured_Part</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>cdcpc__Part_Configurator_Instance</name>
+    </recordTypes>
+    <recordTypes>
+        <label></label>
+        <name>cdcpc__Sizing_Request</name>
+    </recordTypes>
+</CustomObjectTranslation>

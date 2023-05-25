@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ligne de devis</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Lignes de devis</value>
+    </caseValues>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__ConsumptionSchedule</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__LineEditor</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__NonCurrentQuoteLineLockedFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__SegmentedLineEditor</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__SegmentedLineEditorSummary</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__StandardLineItemDrawer</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__SummaryFields</name>
+    </fieldSets>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Engineering</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Engineering</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Recalculating</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales</layout>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Engineering</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Recalculating</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Production Planning</layout>
+        <sections>
+            <label></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Config Info</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Description Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Engineering Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing Information</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Production Planning</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Recalculating</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Nom de la ligne</nameFieldLabel>
+    <quickActions>
+        <label></label>
+        <name>Add_Delivery</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Approve_Engineering</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Approve_Production_Planning</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Clone_this_quote_line</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Re_Run_Config_Rules</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Release_Engineering_Hold</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Release_Prod_Planning_Hold</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Update_Delivery_Info</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Block_QL_Edit_Internals_Pending_Approval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Block_QL_Edit_by_Partners_after_Pending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_Edit_Customer_Lead_Time</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Cannot_Edit_Discount_or_Discount_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Drop_Ship_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Additional_discount_percent_or_amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Invalid_Subscription_Term</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Markup_percent_or_amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__RecurringChargeTypeMustHaveBillingType</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Validate_billing_frequency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Validate_billing_type</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Conga_Composer_Generate_Sizing_Flow_Sheet_from_QL</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__CalculateQuoteFromQuoteLine</name>
+    </webLinks>
+</CustomObjectTranslation>

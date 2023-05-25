@@ -1,0 +1,4 @@
+<design:component label="Pick List">
+   <design:attribute name="pval1" label="p1" />
+   <design:attribute name="pval2" label="p2" />
+</design:component>

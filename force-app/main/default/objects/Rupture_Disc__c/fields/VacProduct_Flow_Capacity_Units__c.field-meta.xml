@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VacProduct_Flow_Capacity_Units__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Flow Capacity Units</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>kg/h</fullName>
+                <default>false</default>
+                <label>kg/h</label>
+            </value>
+            <value>
+                <fullName>kg/min</fullName>
+                <default>false</default>
+                <label>kg/min</label>
+            </value>
+            <value>
+                <fullName>lb/h</fullName>
+                <default>false</default>
+                <label>lb/h</label>
+            </value>
+            <value>
+                <fullName>lb/min</fullName>
+                <default>false</default>
+                <label>lb/min</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

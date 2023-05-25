@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Call_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Call Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Targeted Change Out Call</fullName>
+                <default>false</default>
+                <label>Targeted Change Out Call</label>
+            </value>
+            <value>
+                <fullName>Project Call</fullName>
+                <default>false</default>
+                <label>Project Call</label>
+            </value>
+            <value>
+                <fullName>Field Call</fullName>
+                <default>false</default>
+                <label>Field Call</label>
+            </value>
+            <value>
+                <fullName>Quote Follow-Up</fullName>
+                <default>false</default>
+                <label>Quote Follow-Up</label>
+            </value>
+            <value>
+                <fullName>Investigative Call</fullName>
+                <default>false</default>
+                <label>Investigative Call</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

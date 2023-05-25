@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inside_Sales_Returned_Prod_Planning</fullName>
+    <columns>Prod_Planning_Status__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Inside_Sales_Approver__c</columns>
+    <columns>Eng_Review_Status__c</columns>
+    <columns>NAME</columns>
+    <columns>SBQQ__Account__c</columns>
+    <columns>SBQQ__Opportunity2__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>SBQQ__Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Prod_Planning_Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,Change Order,Partner Submitted</value>
+    </filters>
+    <filters>
+        <field>Eng_Review_Status__c</field>
+        <operation>notEqual</operation>
+        <value>In Review,On Hold - Sales</value>
+    </filters>
+    <label>Inside Sales - Returned Prod Planning</label>
+</ListView>

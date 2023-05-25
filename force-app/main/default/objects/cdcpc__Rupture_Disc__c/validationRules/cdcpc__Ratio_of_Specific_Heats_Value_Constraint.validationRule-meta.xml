@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Ratio_of_Specific_Heats_Value_Constraint</fullName>
+    <active>true</active>
+    <description>Ratio of Specific Heats is a Mandatory field based on certain Evaluation Per Selections.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ASME Gas/Vapor&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Gas/Vapor&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Gas/Vapor&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;Fauske 2 Phase Gas-Liquid&quot;) || 
+ISPICKVAL( cdcpc__Evaluation_Per__c, &quot;Fauske 2 Phase Vapor-Liquid&quot;), 
+OR( 
+ISBLANK ( cdcpc__Ratio_of_Specific_Heats__c ) 
+) 
+)&amp;&amp; 
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Ratio_of_Specific_Heats__c</errorDisplayField>
+    <errorMessage>Ratio of Specific Heats: Please Enter a Value</errorMessage>
+</ValidationRule>

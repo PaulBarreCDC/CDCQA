@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pallet_Fastener_Coating_Validation</fullName>
+    <active>true</active>
+    <description>Pallet/Fastener Coating Material is mandatory</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISBLANK(Pallet_Fastener_Coating_Material__c ),
+(Section_F_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Pallet_Fastener_Coating_Material__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

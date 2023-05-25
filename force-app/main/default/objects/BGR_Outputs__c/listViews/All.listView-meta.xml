@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Adder_Lead_Time_40__c</columns>
+    <columns>Adder_Lead_Time_10__c</columns>
+    <columns>Adder_Lead_Time_20__c</columns>
+    <columns>Adder_Lead_Time_30__c</columns>
+    <columns>ATEX__c</columns>
+    <columns>AssyLocation__c</columns>
+    <columns>BGR_Outputs_Relation_Field__c</columns>
+    <columns>Connection__c</columns>
+    <columns>OA_Override__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

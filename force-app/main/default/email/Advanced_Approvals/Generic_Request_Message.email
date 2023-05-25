@@ -1,0 +1,32 @@
+<messaging:emailTemplate subject="Approval Request for Quote" recipientType="Contact" relatedToType="sbaa__Approval__c">
+<!-- https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_email_templates_intro.htm -->
+  <!-- <messaging:plainTextEmailBody >
+    Congratulations!
+  </messaging:plainTextEmailBody> -->
+  <messaging:htmlEmailBody >
+    <html>
+      <body>
+        <p>Hello {!recipient.name}--</p>
+        <p>Your approval is requested for Quote {!relatedTo.Quote__r.name}</p>
+        <p> Here's a link to your quote: https://contdisccorp--cpqproject.cs45.my.salesforce.com/{!relatedTo.Quote__r.Id}</p>
+        <p>Here is a list of the quote lines we currently have for quote {!relatedTo.Quote__r.name}:</p>
+        <c:QuoteLineComponent quote_Id="{!relatedTo.Quote__r.Id}" />
+      </body>
+    </html>
+  </messaging:htmlEmailBody>
+
+  <messaging:attachment renderas="pdf" filename="QuoteLines.pdf">
+    <html>
+      <body>
+        <h3>Here is a list of the quote lines we currently have for quote {!relatedTo.Quote__r.name}:</h3>
+        <c:QuoteLineComponent quote_Id="{!relatedTo.Quote__r.Id}" />
+      </body>
+    </html>
+  </messaging:attachment>
+
+  <!-- <messaging:attachment filename="quoteLines.csv" >
+    <apex:repeat var="ql" value="{!relatedTo.QuoteLines}">
+    {!ql.Name}, {!ql.SBQQ__Quantity__c}, {!ql.SBQQ__Discount__c}, {!ql.Engineering_Notes__c}
+    </apex:repeat>
+  </messaging:attachment> -->
+</messaging:emailTemplate>

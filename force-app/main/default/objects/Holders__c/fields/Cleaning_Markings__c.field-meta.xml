@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cleaning_Markings__c</fullName>
+    <externalId>false</externalId>
+    <label>Cleaning/Markings</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N</fullName>
+                <default>false</default>
+                <label>Standard Cleaning</label>
+            </value>
+            <value>
+                <fullName>C1</fullName>
+                <default>false</default>
+                <label>Blue Gold ® MP-4005</label>
+            </value>
+            <value>
+                <fullName>C2</fullName>
+                <default>false</default>
+                <label>Clean with Acetone</label>
+            </value>
+            <value>
+                <fullName>C3</fullName>
+                <default>false</default>
+                <label>Dry Chlorine MP-4003</label>
+            </value>
+            <value>
+                <fullName>C4</fullName>
+                <default>false</default>
+                <label>Fluorine SC-12654</label>
+            </value>
+            <value>
+                <fullName>C5</fullName>
+                <default>false</default>
+                <label>LOX MP-4003</label>
+            </value>
+            <value>
+                <fullName>C6</fullName>
+                <default>false</default>
+                <label>OX MP-4003</label>
+            </value>
+            <value>
+                <fullName>M2</fullName>
+                <default>false</default>
+                <label>SC 10214 Blue Gold® MP-4005</label>
+            </value>
+            <value>
+                <fullName>M1</fullName>
+                <default>false</default>
+                <label>SC 10210</label>
+            </value>
+            <value>
+                <fullName>M3</fullName>
+                <default>false</default>
+                <label>SC 10214 OX/LOX MP-4003</label>
+            </value>
+            <value>
+                <fullName>M4</fullName>
+                <default>false</default>
+                <label>SC 14611</label>
+            </value>
+            <value>
+                <fullName>M5</fullName>
+                <default>false</default>
+                <label>SC 14611/ SC 10210</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>ATEX__c</columns>
+    <columns>BodyMatlCode__c</columns>
+    <columns>Brand__c</columns>
+    <columns>CalculatedFlowUOM__c</columns>
+    <columns>CUTR__c</columns>
+    <columns>Deflagration_Detonation__c</columns>
+    <columns>ElemMatlCode__c</columns>
+    <columns>ElemSizeCode__c</columns>
+    <columns>GasGroupLevel__c</columns>
+    <columns>HousingMatlCode__c</columns>
+    <columns>OffsetBases__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>NACE__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

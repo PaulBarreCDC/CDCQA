@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mounting__c</fullName>
+    <externalId>false</externalId>
+    <label>Mounting</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In-Line Straight Pipe</fullName>
+                <default>false</default>
+                <label>In-Line Straight Pipe</label>
+            </value>
+            <value>
+                <fullName>In-Line Pipe with Bend</fullName>
+                <default>false</default>
+                <label>In-Line Pipe with Bend</label>
+            </value>
+            <value>
+                <fullName>End-of-Line</fullName>
+                <default>false</default>
+                <label>End-of-Line</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

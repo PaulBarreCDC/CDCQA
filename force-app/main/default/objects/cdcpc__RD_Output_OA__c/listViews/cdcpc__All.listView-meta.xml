@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__PTC__c</columns>
+    <columns>cdcpc__SZC__c</columns>
+    <columns>cdcpc__DSCVAR__c</columns>
+    <columns>cdcpc__HCLASS__c</columns>
+    <columns>cdcpc__STC__c</columns>
+    <columns>cdcpc__CSSUM__c</columns>
+    <columns>cdcpc__DPM__c</columns>
+    <columns>cdcpc__COIN__c</columns>
+    <columns>cdcpc__COOUT__c</columns>
+    <columns>cdcpc__LABDSC__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>cdcpc__OA__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

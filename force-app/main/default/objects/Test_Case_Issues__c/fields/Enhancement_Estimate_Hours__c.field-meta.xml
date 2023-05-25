@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enhancement_Estimate_Hours__c</fullName>
+    <description>The estimated number of hours to complete the enhancement needed to resolve the Issue</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The estimated number of hours to complete the enhancement needed to resolve the Issue</inlineHelpText>
+    <label>Enhancement Estimate (Hours)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+"Document__c","Num1__c","Num2__c","NumOpp1__c","NumOpp2__c","Text1__c","Text2__c","Text3__c","Text4__c","Text5__c","Text6__c","Text7__c","Text8__c","Text9__c","Text10__c","TextOpp1__c","TextOpp2__c","TextOpp3__c","TextOpp4__c","TextOpp5__c","TextOpp6__c","TextOpp7__c","TextOpp8__c","TextOpp9__c","TextOpp10__c"
+"IOM-Eng","","","","","BRAND","PTC","ATEX","CUTR","USCG","","","","","","=","=","=ORDASH","=ORDASH","=ORDASH","","","","",""
+"IOM-Rus","","","","","BRAND","PTC","CUTR","","","","","","","","=","=","=","","","","","","",""
+"IOM-Eng-USCG","","","","","BRAND","PTC","USCG","","","","","","","","=","=","=","","","","","","",""
+"IOM-Eng-ATEX","","","","","BRAND","PTC","ATEX","CUTR","","","","","","","=","=","=","=","","","","","",""
+"IOM-Rus-ATEX","","","","","BRAND","PTC","CUTR","","","","","","","","=","=","=","","","","","","",""

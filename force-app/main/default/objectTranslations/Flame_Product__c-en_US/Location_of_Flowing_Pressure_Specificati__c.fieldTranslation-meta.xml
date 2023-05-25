@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Location_of_Flowing_Pressure_Specificati__c</name>
+    <picklistValues>
+        <masterLabel>Inlet</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outlet</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

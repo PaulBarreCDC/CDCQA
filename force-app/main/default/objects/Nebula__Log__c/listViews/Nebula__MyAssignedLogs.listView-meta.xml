@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nebula__MyAssignedLogs</fullName>
+    <columns>NAME</columns>
+    <columns>Nebula__LoggedByUsernameLink__c</columns>
+    <columns>Nebula__StartTime__c</columns>
+    <columns>Nebula__Priority__c</columns>
+    <columns>Nebula__Status__c</columns>
+    <columns>Nebula__TransactionId__c</columns>
+    <columns>Nebula__TotalLimitsCpuTimeUsed__c</columns>
+    <columns>Nebula__TotalLogEntries__c</columns>
+    <columns>Nebula__TotalERRORLogEntries__c</columns>
+    <columns>Nebula__TotalWARNLogEntries__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Assigned Logs</label>
+</ListView>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Use_Opportunity_Currency__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this box is checked, the integration package will send the currency ISO code of the opportunity to Oracle CPQ Cloud when creating new quotes. If this box is checked and the currency that is sent to Oracle CPQ Cloud is not enabled, you will get an error when creating new quotes.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this box is checked, the integration package will send the currency ISO code of the opportunity to Oracle CPQ Cloud when creating new quotes. Do not check this box unless you are sure that all necessary currencies are enabled in Oracle CPQ Cloud.</inlineHelpText>
+    <label>Use Opportunity Currency</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

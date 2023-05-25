@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Operation__c</columns>
+    <columns>Descr__c</columns>
+    <columns>Standard_Operation_ID__c</columns>
+    <columns>Text1Val__c</columns>
+    <columns>Text2Val__c</columns>
+    <columns>Text3Val__c</columns>
+    <columns>Text4Val__c</columns>
+    <columns>Text5Val__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Operation__c</field>
+        <operation>equals</operation>
+        <value>180</value>
+    </filters>
+    <filters>
+        <field>Text1Val__c</field>
+        <operation>equals</operation>
+        <value>1660A</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>CDC_Ext_ID__c</columns>
+    <columns>ProdGroup__c</columns>
+    <columns>SubGroup__c</columns>
+    <columns>Attribute__c</columns>
+    <columns>Text__c</columns>
+    <columns>Value__c</columns>
+    <columns>Text1Val__c</columns>
+    <columns>Text2Val__c</columns>
+    <columns>Text3Val__c</columns>
+    <columns>Text4Val__c</columns>
+    <columns>Text5Val__c</columns>
+    <columns>Text6Val__c</columns>
+    <columns>Text7Val__c</columns>
+    <columns>Text8Val__c</columns>
+    <columns>OnAttrList__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SubGroup__c</field>
+        <operation>equals</operation>
+        <value>pvrv</value>
+    </filters>
+    <filters>
+        <field>Attribute__c</field>
+        <operation>equals</operation>
+        <value>gpds05</value>
+    </filters>
+    <label>All</label>
+</ListView>

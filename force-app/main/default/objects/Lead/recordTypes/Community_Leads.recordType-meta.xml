@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Community_Leads</fullName>
+    <active>true</active>
+    <businessProcess>CDC Lead Process</businessProcess>
+    <description>This Record type is available for Partner  Community users to create New Leads</description>
+    <label>Community Leads</label>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>GROTH Sizing Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot Form</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PecWeb</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Mining_Tool__c</picklist>
+        <values>
+            <fullName>D%2EB%2E Hoovers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FedBizOpps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PecWeb %28IIR%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Market__c</picklist>
+        <values>
+            <fullName>AERO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CHEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DEF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FOOD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MNICP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGDWN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OGUPS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OTHER</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PHARM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>POWUT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PULP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SALESFORCE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>Dr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mrs%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ms%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prof%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Submarket__c</picklist>
+        <values>
+            <fullName>Agricultural</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agriculture%2FFarming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alternative Fuels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive%2FTransportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bio Ethers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biobutanol %28biogasoline%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biodiesel %28Green Diesel%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bioethanol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biofuels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biogas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Braking systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cellulosic Ethanol</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compressor equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Crude Oil Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digesters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor - Authorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributor - Unauthorized</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Down hole oil tools %26 well testing equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downhole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics%2FSemiconductors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ethyl Alcohol Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exploration and Drilling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extraction %26 Recovery Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Machinery %26 Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field-type Drilling Machinery %26 Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finished Product Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flare equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flotation systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel tanks and systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gas Well Machinery %26 Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Gases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrumentation%2Fmeasurement%2Fcontrol equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNG Processing Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNG equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical%2FHealthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metals and Minerals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mining %28Except Oil %26 Gas%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mining%2C Minerals%2C Aggregates</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM - Specific OEM Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Aero%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28BG%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28CHEM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28DEF%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28F%26B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28OGD%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28OGU%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28OID%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Pharma%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxygen systems%2Fbreathing apparatus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paints and Coatings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paper%2C Pulp%2C Wood</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Petroleum Refining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmaceutical %26 Biotech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipelines</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process modules%2Fskids%2Fequipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pumps and transfer equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Railroad - Rolling Stock</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Raw Material Storage %26 Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refining %26 Processing Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solid Biofuels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialist Equipment Manufacturer for Biofuels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stainless steel tanks%2Fvessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sterilisation equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surface</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Syngas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Container and Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Container%2FRoad %26 Rail Tankers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Terminals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank farm%2Fterminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanks and storage vessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terminals and Storage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermal process equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation Equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weapons systems</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Third_Tier__c</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aircraft Braking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive Batteries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biogas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Braking systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compressor equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contractor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cooling%2Frefridgeration%2Faircon equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DSM Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dairy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Defense</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digesters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Down hole oil tools %26 well testing equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Downhole</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fertilizer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filtration equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fire Suppression</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flare equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flotation systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food and Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fuel tanks and systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GIS Switchgear%2Felectrical transformers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gas cylinders%2Fvessels%2Fprocessing equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geothermal equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High pressure water jetting equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydraulic equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hydroelectric Power</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industrial Gases</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instrumentation%2Fmeasurement%2Fcontrol equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNG</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LNG equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MRI Machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medical equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metals and Minerals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mixers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nuclear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Other OEM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28TC%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oxygen systems%2Fbreathing apparatus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Packaging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pharmaceutical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Process modules%2Fskids%2Fequipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Production machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pumps and transfer equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rail Car</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refrigeration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scientific equipment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Semiconductor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping Foam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stainless steel tanks%2Fvessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sterilisation equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sugar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier - Foundry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switchgear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Systems Integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Builder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank Container</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container cleaning depot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container equipment OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container lease%2Frental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container operator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container owner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank container repair %26 maintenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tank farm%2Fterminal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanks and storage vessels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thermal process equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turbine equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vacuum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Valve manufacturer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water purification equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water treatment equipment%2Fsystems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weapons systems</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wind Turbine</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

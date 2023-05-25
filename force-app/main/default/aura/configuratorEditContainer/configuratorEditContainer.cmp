@@ -1,0 +1,6 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}"/>
+    <aura:attribute name="quoteId" type="String"/>
+    <c:configuratorEdit quoteId="{!v.quoteId}"></c:configuratorEdit>
+</aura:component>

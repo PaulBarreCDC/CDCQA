@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>Lead_Time_Item_No__c</columns>
+    <columns>Text1__c</columns>
+    <columns>Text2__c</columns>
+    <columns>Text3__c</columns>
+    <columns>Text4__c</columns>
+    <columns>Text5__c</columns>
+    <columns>Text6__c</columns>
+    <columns>Text7__c</columns>
+    <columns>TextOpp1__c</columns>
+    <columns>TextOpp2__c</columns>
+    <columns>TextOpp3__c</columns>
+    <columns>TextOpp4__c</columns>
+    <columns>TextOpp5__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

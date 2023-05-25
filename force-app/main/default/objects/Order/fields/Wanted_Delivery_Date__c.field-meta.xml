@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wanted_Delivery_Date__c</fullName>
+    <defaultValue>ADDMONTHS( TODAY() ,2)</defaultValue>
+    <description>Date customer requests delivery</description>
+    <externalId>false</externalId>
+    <label>Wanted Delivery Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

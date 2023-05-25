@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>cdcpc__SITE__c</fields>
+    <fields>cdcpc__LeadTimeLL__c</fields>
+    <fields>cdcpc__LeadTimeUL__c</fields>
+    <fields>cdcpc__SERIALTRACKCODE__c</fields>
+    <fields>cdcpc__InventorySite__c</fields>
+    <fields>cdcpc__InventoryPartType__c</fields>
+    <fields>cdcpc__InventoryPartTemplate_ID__c</fields>
+    <fields>cdcpc__SalesSite__c</fields>
+    <fields>cdcpc__Sourcing_Option__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <choices>
+        <name>AerospaceandDefenseChoice</name>
+        <choiceText>Aerospace and Defense</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Aerospace and Defense</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>China Quality License</description>
+        <name>ChinaQualityLicenseChoice</name>
+        <choiceText>China Quality License</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>China Quality License</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>GovernmentContractsChoice</name>
+        <choiceText>Government Contracts (FAR/DFAR)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Government Contracts (FAR/DFAR)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoneChoice</name>
+        <choiceText>None</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>None</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NuclearChoice</name>
+        <choiceText>Nuclear</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Nuclear</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>OEMChoice</name>
+        <choiceText>OEM</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>OEM</stringValue>
+        </value>
+    </choices>
+    <formulas>
+        <name>OrderType</name>
+        <dataType>String</dataType>
+        <expression>IF( {!Quality_Standards} == &apos;None&apos;, 
+	IF({!UsedInMilitry},&apos;EXP&apos;,
+		IF({!quoteForProduct},&apos;CON&apos;,
+			IF({!quoteForPaid},&apos;SEO&apos;,
+				IF({!quoteForWarranty},&apos;CP&apos;,
+					IF({!quoteForProject},&apos;PRO&apos;, 
+					&apos;&apos;
+					)
+				)
+			)
+		)
+	)
+ ,&apos;QCF&apos;)</expression>
+    </formulas>
+    <interviewLabel>Order Questions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Order Questions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordUpdates>
+        <name>UpdateQuote</name>
+        <label>UpdateQuote</label>
+        <locationX>580</locationX>
+        <locationY>73</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Order_Type__c</field>
+            <value>
+                <elementReference>OrderType</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SBQQ__Quote__c</object>
+    </recordUpdates>
+    <screens>
+        <name>Order_Questions</name>
+        <label>Order Questions</label>
+        <locationX>304</locationX>
+        <locationY>66</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>UpdateQuote</targetReference>
+        </connector>
+        <fields>
+            <name>Quality_Standards</name>
+            <choiceReferences>NuclearChoice</choiceReferences>
+            <choiceReferences>AerospaceandDefenseChoice</choiceReferences>
+            <choiceReferences>GovernmentContractsChoice</choiceReferences>
+            <choiceReferences>ChinaQualityLicenseChoice</choiceReferences>
+            <choiceReferences>OEMChoice</choiceReferences>
+            <choiceReferences>NoneChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Quality Standards</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>UsedInMilitry</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Will this product be used in a military or dual use (commercial &amp; military application?  ITAR or EAR controlled?  ECCN number?  Foreign Military?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>quoteForProduct</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Is this quote for a product which is already on a contract (blanket) order with a customer?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>quoteForPaid</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Is this a quote for a Paid Service? (customer Paid repair, upgrade, change)</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>quoteForWarranty</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Is this a quote for a Warranty Rework? (free of charge to the customer)</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>quoteForProject</name>
+            <dataType>Boolean</dataType>
+            <fieldText>Is this quote for a Project Order?</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Order_Questions</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

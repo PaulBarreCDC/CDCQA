@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rupture_Disc_Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Rupture Disc Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CAL</fullName>
+                <default>false</default>
+                <label>CAL-VAC</label>
+            </value>
+            <value>
+                <fullName>CDC</fullName>
+                <default>false</default>
+                <label>CDC</label>
+            </value>
+            <value>
+                <fullName>CDG</fullName>
+                <default>false</default>
+                <label>CDCV-G</label>
+            </value>
+            <value>
+                <fullName>CDV</fullName>
+                <default>false</default>
+                <label>CDCV</label>
+            </value>
+            <value>
+                <fullName>CFC</fullName>
+                <default>false</default>
+                <label>Composite Formed Circular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>CFR</fullName>
+                <default>false</default>
+                <label>Composite Formed Rectangular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>CFS</fullName>
+                <default>false</default>
+                <label>Composite Formed Square Vent Panel</label>
+            </value>
+            <value>
+                <fullName>CPC</fullName>
+                <default>false</default>
+                <label>Composite Flat Circular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>CPR</fullName>
+                <default>false</default>
+                <label>Composite Flat Rectangular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>CPS</fullName>
+                <default>false</default>
+                <label>Composite Flat Square Vent Panel</label>
+            </value>
+            <value>
+                <fullName>FCM</fullName>
+                <default>false</default>
+                <label>CM</label>
+            </value>
+            <value>
+                <fullName>FCV</fullName>
+                <default>false</default>
+                <label>CMV</label>
+            </value>
+            <value>
+                <fullName>FFA</fullName>
+                <default>false</default>
+                <label>FA</label>
+            </value>
+            <value>
+                <fullName>FFS</fullName>
+                <default>false</default>
+                <label>FAS</label>
+            </value>
+            <value>
+                <fullName>FFV</fullName>
+                <default>false</default>
+                <label>FAV</label>
+            </value>
+            <value>
+                <fullName>FRS</fullName>
+                <default>false</default>
+                <label>RAS</label>
+            </value>
+            <value>
+                <fullName>HPN</fullName>
+                <default>false</default>
+                <label>HPX-90</label>
+            </value>
+            <value>
+                <fullName>HPT</fullName>
+                <default>false</default>
+                <label>HPX-Ta</label>
+            </value>
+            <value>
+                <fullName>HPX</fullName>
+                <default>false</default>
+                <label>HPX-95</label>
+            </value>
+            <value>
+                <fullName>KBA</fullName>
+                <default>false</default>
+                <label>KBA</label>
+            </value>
+            <value>
+                <fullName>LCM</fullName>
+                <default>false</default>
+                <label>CM (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LCV</fullName>
+                <default>false</default>
+                <label>CMV (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LDG</fullName>
+                <default>false</default>
+                <label>LDV-G (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LDS</fullName>
+                <default>false</default>
+                <label>LDV-G in Screw Type (L)</label>
+            </value>
+            <value>
+                <fullName>LDV</fullName>
+                <default>false</default>
+                <label>LDV (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LFA</fullName>
+                <default>false</default>
+                <label>FA (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LFV</fullName>
+                <default>false</default>
+                <label>FAV (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LLD</fullName>
+                <default>false</default>
+                <label>LD (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LOX</fullName>
+                <default>false</default>
+                <label>LOTRX</label>
+            </value>
+            <value>
+                <fullName>LPL</fullName>
+                <default>false</default>
+                <label>PL</label>
+            </value>
+            <value>
+                <fullName>LPV</fullName>
+                <default>false</default>
+                <label>LPLV (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LSD</fullName>
+                <default>false</default>
+                <label>STD (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LSS</fullName>
+                <default>false</default>
+                <label>STD in Screw Type (L)</label>
+            </value>
+            <value>
+                <fullName>M9T</fullName>
+                <default>false</default>
+                <label>MX-9T</label>
+            </value>
+            <value>
+                <fullName>MCX</fullName>
+                <default>false</default>
+                <label>MICRO X</label>
+            </value>
+            <value>
+                <fullName>MNX</fullName>
+                <default>false</default>
+                <label>MINTRX</label>
+            </value>
+            <value>
+                <fullName>PAS</fullName>
+                <default>false</default>
+                <label>POS-A-SET</label>
+            </value>
+            <value>
+                <fullName>PLL</fullName>
+                <default>false</default>
+                <label>LPL (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>PLV</fullName>
+                <default>false</default>
+                <label>PLV</label>
+            </value>
+            <value>
+                <fullName>RCS</fullName>
+                <default>false</default>
+                <label>RCS</label>
+            </value>
+            <value>
+                <fullName>SFC</fullName>
+                <default>false</default>
+                <label>Standard Formed Circular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>SRA</fullName>
+                <default>false</default>
+                <label>SRA in Tite-Seal</label>
+            </value>
+            <value>
+                <fullName>SRU</fullName>
+                <default>false</default>
+                <label>SRA</label>
+            </value>
+            <value>
+                <fullName>STD</fullName>
+                <default>false</default>
+                <label>STANDARD</label>
+            </value>
+            <value>
+                <fullName>STX</fullName>
+                <default>false</default>
+                <label>STAR X</label>
+            </value>
+            <value>
+                <fullName>SXP</fullName>
+                <default>false</default>
+                <label>STAR X HP</label>
+            </value>
+            <value>
+                <fullName>ULH</fullName>
+                <default>false</default>
+                <label>ULTRX HP</label>
+            </value>
+            <value>
+                <fullName>ULX</fullName>
+                <default>false</default>
+                <label>ULTRX</label>
+            </value>
+            <value>
+                <fullName>VPC</fullName>
+                <default>false</default>
+                <label>Flat Circular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>VPR</fullName>
+                <default>false</default>
+                <label>Flat Rectangular Vent Panel</label>
+            </value>
+            <value>
+                <fullName>VPS</fullName>
+                <default>false</default>
+                <label>Flat Square Vent Panel</label>
+            </value>
+            <value>
+                <fullName>VRD</fullName>
+                <default>false</default>
+                <label>VRD</label>
+            </value>
+            <value>
+                <fullName>ZAP</fullName>
+                <default>false</default>
+                <label>ZAP</label>
+            </value>
+            <value>
+                <fullName>EV1</fullName>
+                <default>false</default>
+                <label>ENVIRO-SEAL I</label>
+            </value>
+            <value>
+                <fullName>EV2</fullName>
+                <default>false</default>
+                <label>ENVIRO-SEAL II</label>
+            </value>
+            <value>
+                <fullName>EV3</fullName>
+                <default>false</default>
+                <label>ENVIRO-SEAL III</label>
+            </value>
+            <value>
+                <fullName>GFS</fullName>
+                <default>false</default>
+                <label>GRAFSERT</label>
+            </value>
+            <value>
+                <fullName>HP2</fullName>
+                <default>false</default>
+                <label>SANITRX HPX II-95</label>
+            </value>
+            <value>
+                <fullName>HPH</fullName>
+                <default>false</default>
+                <label>SANITRX HPX II-90</label>
+            </value>
+            <value>
+                <fullName>HPS</fullName>
+                <default>false</default>
+                <label>SANITRX HPX-95</label>
+            </value>
+            <value>
+                <fullName>HPZ</fullName>
+                <default>false</default>
+                <label>SANITRX HPX-90</label>
+            </value>
+            <value>
+                <fullName>LI1</fullName>
+                <default>false</default>
+                <label>IS1 (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LI2</fullName>
+                <default>false</default>
+                <label>IS2 (LaMOT)</label>
+            </value>
+            <value>
+                <fullName>LPX</fullName>
+                <default>false</default>
+                <label>SANITRX LPX</label>
+            </value>
+            <value>
+                <fullName>PCS</fullName>
+                <default>false</default>
+                <label>PC-SERT</label>
+            </value>
+            <value>
+                <fullName>RSD</fullName>
+                <default>false</default>
+                <label>RSD</label>
+            </value>
+            <value>
+                <fullName>RSW</fullName>
+                <default>false</default>
+                <label>RSDW</label>
+            </value>
+            <value>
+                <fullName>SLS</fullName>
+                <default>false</default>
+                <label>SEALSERT</label>
+            </value>
+            <value>
+                <fullName>SNL</fullName>
+                <default>false</default>
+                <label>SANITRX LP</label>
+            </value>
+            <value>
+                <fullName>SNX</fullName>
+                <default>false</default>
+                <label>SANITRX</label>
+            </value>
+            <value>
+                <fullName>SRS</fullName>
+                <default>false</default>
+                <label>SRS</label>
+            </value>
+            <value>
+                <fullName>SXM</fullName>
+                <default>false</default>
+                <label>SANITRX MP</label>
+            </value>
+            <value>
+                <fullName>TKS</fullName>
+                <default>false</default>
+                <label>TANKSERT</label>
+            </value>
+            <value>
+                <fullName>VIP</fullName>
+                <default>false</default>
+                <label>VIP</label>
+            </value>
+            <value>
+                <fullName>WMP</fullName>
+                <default>false</default>
+                <label>WMP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

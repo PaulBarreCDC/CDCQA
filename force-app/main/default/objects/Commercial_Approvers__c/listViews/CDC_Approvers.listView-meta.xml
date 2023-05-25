@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CDC_Approvers</fullName>
+    <columns>NAME</columns>
+    <columns>External_ID__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Partner_Rep_Code_Account__c</columns>
+    <columns>Inside_Sales_Approver__c</columns>
+    <columns>Regional_Manager__c</columns>
+    <columns>Sales_Director_Approver__c</columns>
+    <columns>Sales_Executive_Approver__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Brand__c</field>
+        <operation>equals</operation>
+        <value>CDC</value>
+    </filters>
+    <label>CDC Approvers</label>
+</ListView>

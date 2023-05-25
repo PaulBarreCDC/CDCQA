@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Block_Q_Edit_by_Partners_after_Pending</fullName>
+    <active>false</active>
+    <errorConditionFormula>Text($User.UserType) = &apos;PowerPartner&apos; &amp;&amp;  Text(SBQQ__Status__c) &lt;&gt; &apos;Pending&apos;</errorConditionFormula>
+    <errorMessage>Quote is submitted for approval. If Quote is already not Approved, please Revise Approval to make further edits.</errorMessage>
+</ValidationRule>

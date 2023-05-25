@@ -1,0 +1,938 @@
+<template>
+	<div onscroll={onScrollMain} class="slds-scrollable_y" style="overflow: auto;">
+		<!--<lightning-record-edit-form object-api-name="BGR__c" onsubmit ={handleSubmit} >
+				<lightning-messages></lightning-messages> -->
+		<div class="fxheader slds-p-vertical_large">
+			
+												 
+			
+			<lightning-layout horizontal-align="center" multiple-rows="true">
+				<lightning-layout-item class="slds-p-left_small slds-p-right_small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+					<article class="slds-card" style="margin-top: auto;margin-bottom: auto;">
+						
+						<div class="slds-grid slds-page-header slds-card__header" style="padding:0;">
+							<header class="slds-media slds-media_center slds-has-flexi-truncate">
+							 
+								<div class="slds-grid slds-grid_vertical-align-center slds-size_2-of-7 slds-medium-size_-of-8">
+									<template if:false={bHideReturnToQuote}>
+									<lightning-icon icon-name="utility:left" alternative-text="" size="xx-small"></lightning-icon>
+									<button class="slds-button" onclick={navigateToProductView}>Return To Quote</button>
+								</template>	
+								</div>
+						
+								<div class="slds-size_2-of-5 slds-medium-size_1-of-3">
+									<h3 class="slds-section slds-section__title">
+									<div class="slds-text-align_center">
+										Blanket Gas Regulator
+									</div>
+								</h3>
+								</div>
+							</header>
+							<div class="slds-einstein-header__actions">
+								<!-- <lightning-button-stateful label-when-off="Vent Size Calculator" label-when-on="Vent Size Calculator" label-when-hover="Vent Size Calculator" icon-name-when-off="utility:apps" variant="base">
+								</lightning-button-stateful> -->
+
+								<template if:true={bShowEditBtn}>
+									<lightning-button variant="brand" label={sEditBtnLabel} onclick={enableEditMode}> </lightning-button>
+								  </template>
+								  <template if:true={bShowProductReviewLink}>
+								   &nbsp;&nbsp;
+								  <button class="slds-button" onclick={navigateToProductReview}>To Product Review</button>
+								  <lightning-icon icon-name="utility:right" alternative-text="" size="xx-small"></lightning-icon>
+								</template>
+
+							</div>
+						</div>
+						<div class="slds-card__body slds-card__body_inner">
+							<lightning-layout vertical-align="stretch" multiple-rows="true" class="medium">
+								<lightning-layout-item flexibility="auto" class="custom-box" style="z-index: 1;width:100%;">
+									<div class="mycontainer">
+										<ul class="progressbarcss">
+											<li class="active PRESSURESETTINGSCls" data-id="section-1" onclick={focusSection}>PRESSURE SETTINGS</li>
+											<template if:true={isNarrowSelectionOnFlowRequirements}>
+												<li class="FLOWCALCULATIONSCls" data-id="section-2" onclick={focusSection}>FLOW CALCULATIONS</li>
+											</template>
+											<li class="CERTIFICATIONSCls" data-id="section-3" onclick={focusSection}>CERTIFICATIONS</li>
+											<li class="PRODUCTSELECTIONcls" data-id="section-4" onclick={focusSection}>PRODUCT SELECTION</li>
+											<!-- <li class="PRODUCTMATERIALcls" data-id="productMaterialOptionsSelection" onclick={focusProductNarrowing}>PRODUCT MATERIAL AND OPTIONS</li> -->
+										</ul>
+									</div>
+								</lightning-layout-item>
+							</lightning-layout>
+						</div>
+					</article>
+				</lightning-layout-item>
+			</lightning-layout>
+		</div>
+		<lightning-layout horizontal-align="center" multiple-rows="true">
+			<lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="12" large-device-size="10">
+				<main class="main mainSection" style="padding-top: 6rem;">
+					<div class="section-1">
+					
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handlePressureSettings} onsuccess={handlePressureSettingsOnSuccess} class="pressureSettingsForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+
+								<template if:true={isErrorSection1}>
+									<div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+										<h2 class="slds-text-heading_small ">
+											{section1ErrorMessage}
+										</h2>
+									</div>
+								   
+								</template>
+								<div class="section1 slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+												Pressure / Vacuum Settings
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+								<div class="slds-card__body slds-card__body_inner slds-p-around_medium">
+									<lightning-layout horizontal-align="spread" multiple-rows="true">
+										<lightning-layout-item flexibility="grow" size="2" small-device-size="3" medium-device-size="2">
+											<label class="slds-form-element__label" for="horizontal-input-id-01">
+												Service Type
+											</label>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="10" small-device-size="9" medium-device-size="10">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<template for:each={serviceTypeOptions} for:item="item">
+														<fieldset key={item.value} style="display: block; float: left;">
+															<div class="slds-form-element__control">
+																<span class="slds-radio">
+															<input name="radiogroup1" disabled={sDisabled} id={item.value} type="radio" value={item.value} class={item.value} onchange={handleServiceTypeOptions}/>
+															<label class="slds-radio__label" for={item.value}>
+															<span class="slds-radio_faux"></span>
+																<span class="slds-form-element__label">{item.label}</span>
+																</label>
+																</span>
+															</div>
+														</fieldset>
+													</template>
+												</div>
+											</div>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="4"></lightning-layout-item>
+									</lightning-layout>
+								</div>
+								<div class="section1 slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														{selectedTypeOption} Setting
+													</label>
+													<div class="slds-form-element__control">
+														<!--<lightning-input-field field-name="Setting__c" variant="label-hidden" onchange={handleSetting} ></lightning-input-field>
+														 <lightning-input-field field-name="Setting__c" variant="label-hidden" required></lightning-input-field> -->
+														 <input disabled={sDisabled} name="setting"  onchange={onPressureVacuumSettingsUpdate} type="number" class="slds-input"  variant="label-hidden" value={settings} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                   
+														 <lightning-input-field onchange={onPressureVacuumSettingsUpdate} field-name="Setting__c"  class="slds-hide" value={settings}></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														{selectedTypeOption} Setting Units
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field disabled={bDisabled} field-name="Setting_Units__c" variant="label-hidden" onchange={handleSettingUnits} ></lightning-input-field>
+														<!-- <lightning-input-field field-name="Setting_Units__c" variant="label-hidden" required></lightning-input-field> -->
+													</div>
+												</div>
+											</div>
+											
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Supply Pressure
+													</label>
+													<div class="slds-form-element__icon">
+														<div class="lgc-bg">
+															<lightning-helptext content="Enter a Supply Pressure b/w:
+																5 psig to 200 psig, 0.3447 barg and 13.79 barg, 0.351535 kgf/cm2 and 14.06 kgf/cm2, 138.6 in. 
+																and 5541 in. water, 80 osig and 3200 osig, 344.7 mbarg and 13790 mbarg, 3519 mm water 
+																and 140800 mm water, 10.18 in. Hg and 407.2 in. Hg, 258.6 mm Hg and 10340 mm Hg, 351.5 gf/cm2 
+																and 14060 gf/cm2, 34470 Pa and 1379000 Pa, 34.47 kPa and 1379 kPa, 0.03447 MPa and 1.379 MPa, 258.6 
+																torr and 10340 torr, 0.3402 atmg and 13.61 atmg, 0.3447 bard and 13.79 bard, 5 psid and 200 psid">
+															</lightning-helptext>
+														</div>
+													</div>
+													
+													<!-- <div class="slds-form-element__icon">
+														<button class="slds-button slds-button_icon" aria-describedby="help">
+															<lightning-icon icon-name="utility:info" size="x-small" alternative-text="Approved" title="Approved"></lightning-icon>
+														  <span class="slds-assistive-text">Help</span>
+														</button>
+														<div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left" role="tooltip" id="help" style="position:absolute;top:-45px;left:-15px;width:170px">
+														  <div class="slds-popover__body">Some helpful information</div>
+														</div>
+													  </div> -->
+													<div class="slds-form-element__control">
+														<!--<lightning-input-field field-name="Supply_Pressure__c" variant="label-hidden" onchange={handleSupplyPressure} ></lightning-input-field>
+														 <lightning-input-field field-name="Supply_Pressure__c" variant="label-hidden" required></lightning-input-field> -->
+														<input disabled={sDisabled} name="supplyPressure" onchange={onPressureVacuumSettingsUpdate} min="0" type="number" class="slds-input"  variant="label-hidden" value={supplyPressure} onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                   
+														 <lightning-input-field field-name="Supply_Pressure__c"  class="slds-hide" value={supplyPressure}></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Supply Pressure Units
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field disabled={bDisabled} field-name="Supply_Pressure_Units__c" variant="label-hidden" onchange={handleSupplyPressureUnits} ></lightning-input-field>
+														<!-- <lightning-input-field field-name="Supply_Pressure_Units__c" variant="label-hidden" required></lightning-input-field> -->
+													</div>
+												</div>
+											</div>
+
+											<!-- <div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Atmospheric Pressure
+													</label> -->
+													<!-- <div class="slds-form-element__control">
+														
+														 <lightning-input-field field-name="Atmospheric_Pressure__c" variant="label-hidden"></lightning-input-field> -->
+														<!-- <input name="atmosphericPressure" type="number" class="slds-input"  variant="label-hidden" value={atmosphericPressure} onfocusout={RemoveDecimal} ></input>                   
+														 <lightning-input-field field-name="Atmospheric_Pressure__c"  class="slds-hide" value={atmosphericPressure}></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Atmospheric Pressure Units
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Atmospheric_Pressure_Units__c" variant="label-hidden" onchange={handleAtmosphericPressureUnits}></lightning-input-field>
+														<lightning-input-field field-name="Atmospheric_Pressure_Units__c" variant="label-hidden"></lightning-input-field> -->
+													<!-- </div> -->
+												<!-- </div>
+											</div>
+											 -->
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Do you want to narrow selection based on flow requirements?
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input disabled={bDisabled} type="checkbox" variant="label-hidden" name="Narrow_selection_on_flow_requirements" class="narrowSelectionFlow"  onchange={handleNarrowSelection}></lightning-input>
+														<!-- <lightning-input-field field-name="Narrow_selection_on_flow_requirements__c" class="narrowSelectionFlow" variant="label-hidden" onchange={handleNarrowSelection}></lightning-input-field>-->
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<template if:false={bDisabled}>
+									<div class="slds-align_absolute-center" style="height:5rem">
+											<lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<!-- <lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button> -->
+									
+									</div>
+									</template>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+					</div>
+					
+					<!-- section B-->
+					<div class="section-2" onmouseover={onFlowCalculationsClick}>
+						<template if:true={isNarrowSelectionOnFlowRequirements}>
+					
+							<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSectionB} onsuccess={handleSectionBOnSuccess} class="sectionBForm" record-id={recordId}>
+								<lightning-messages></lightning-messages>
+								<article class="slds-card" style="background-color: #fafbfc;">
+									<template if:true={isErrorSection2}>
+										<div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+											<h2 class="slds-text-heading_small ">
+												{section2ErrorMessage}
+											</h2>
+										</div>							   
+									</template>
+									<div class="section2 slds-grid slds-card__header" style="background-color:white;">
+										<header class="slds-media slds-media_center slds-has-flexi-truncate">
+											<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+												<h3 class="slds-section slds-section__title">
+													Flow Calculations
+											</h3>
+											</div>
+										</header>
+										<div class="slds-einstein-header__actions">
+										</div>
+									</div>
+									<div class="section2 slds-card__body slds-card__body_inner">
+										<div class="slds-form">
+											<div class="slds-grid slds-wrap">
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Supply Gas
+														</label>
+														<div class="slds-form-element__control">
+															<lightning-input-field disabled={bDisabled} field-name="Supply_Gas__c" value={supplyGasVal} onchange={handleSupplyGasChange} variant="label-hidden" ></lightning-input-field>
+															
+														</div>
+													</div>
+												</div>
+												<div class="slds-size_1-of-2"></div>
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+															Media Name
+														</label>
+														<div class="slds-form-element__control">
+															<template if:false={bDisabled}>
+															<lightning-input-field onblur={onFlowCalculationUpdate} field-name="Customer_Specified_Media__c" value={customerSpecifiedMedia} variant="label-hidden" disabled={disableForNonCustomerSpecified}></lightning-input-field>
+															</template>
+															<template if:true={bDisabled}>
+																<lightning-input-field disabled={bDisabled} field-name="Customer_Specified_Media__c" value={customerSpecifiedMedia} variant="label-hidden"></lightning-input-field>
+															</template>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Molecular Weight
+														</label>
+														<div class="slds-form-element__control">
+															<template if:false={bDisabled}>
+															<!--<lightning-input-field field-name="Molecular_Weight__c" value={molecularWeight} variant="label-hidden" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+															<input name="molecularWeight" onblur={onFlowCalculationUpdate} type="number" class="slds-input"  variant="label-hidden" value={molecularWeight} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified}></input>                   
+															<lightning-input-field field-name="Molecular_Weight__c"  class="slds-hide" value={molecularWeight}></lightning-input-field>
+														</template>	
+															<template if:true={bDisabled}>
+																<input type="number" class="slds-input" value={molecularWeight} disabled="disabled"></input>                   
+															  </template>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-2551">
+																Compressibility Factor	
+														</label>
+														<div class="slds-form-element__control">
+															<template if:false={bDisabled}>
+															<!--<lightning-input-field field-name="Compressibility_Factor__c" value={compressibilityFactor} variant="label-hidden" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+															<input onblur={onFlowCalculationUpdate} name="compressibilityFactor" type="number" class="slds-input"  variant="label-hidden" value={compressibilityFactor} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified} ></input>                   
+															<lightning-input-field field-name="Compressibility_Factor__c"  class="slds-hide" value={compressibilityFactor}></lightning-input-field>
+														   </template>	
+															<template if:true={bDisabled}>
+																<input type="number" class="slds-input"  value={compressibilityFactor} disabled="disabled" ></input>                   
+															</template>	
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Ratio of Specific Heats	
+														</label>
+														<div class="slds-form-element__control">
+															<template if:false={bDisabled}>
+															<!--<lightning-input-field field-name="Ratio_of_Specific_Heats__c" value={ratioOfSpecificHeats} variant="label-hidden" disabled={disableForNonCustomerSpecified}></lightning-input-field>-->
+															<input onblur={onFlowCalculationUpdate} name="ratioOfSpecificHeats" type="number" class="slds-input"  variant="label-hidden" value={ratioOfSpecificHeats} min="0" onkeydown={restrictNonNumericalValues}  onfocusout={RemoveDecimal} disabled={disableForNonCustomerSpecified} ></input>                   
+															<lightning-input-field field-name="Ratio_of_Specific_Heats__c"  class="slds-hide" value={ratioOfSpecificHeats}></lightning-input-field>
+															</template>	
+															<template if:true={bDisabled}>
+																<input  type="number" class="slds-input"   value={ratioOfSpecificHeats}  disabled="disabled" ></input>                   
+															</template>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Supply Gas Temperature	
+														</label>
+														<div class="slds-form-element__control">
+															<!--<lightning-input-field field-name="Supply_Gas_Temperature__c" value={SupplyGasTemperature} variant="label-hidden" ></lightning-input-field>-->
+															<input disabled={sDisabled} onblur={onFlowCalculationUpdate} name="SupplyGasTemperature" type="number" class="slds-input"  variant="label-hidden" value={SupplyGasTemperature} onkeydown={restrictNonNumericalValuesTemp} onfocusout={RemoveDecimal} ></input>                   
+															<lightning-input-field field-name="Supply_Gas_Temperature__c"  class="slds-hide" value={SupplyGasTemperature}></lightning-input-field>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Supply Gas Temperature Units	
+														</label>
+														<div class="slds-form-element__control">
+															<lightning-input-field disabled={bDisabled} onblur={onFlowCalculationUpdate} field-name="Supply_Gas_Temperature_Units__c" value={SupplyGasTemperatureUnits} variant="label-hidden" ></lightning-input-field>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Minimum Required Flow Capacity	
+														</label>
+														<div class="slds-form-element__control">
+															<!--<lightning-input-field field-name="Minimum_Required_Flow_Capacity__c" value={MinimumRequiredFlowCapacity} variant="label-hidden" ></lightning-input-field>-->
+															<input disabled={sDisabled} onblur={onFlowCalculationUpdate} name="MinimumRequiredFlowCapacity" type="number" class="slds-input"  variant="label-hidden" value={MinimumRequiredFlowCapacity} min="0" onkeydown={restrictNonNumericalValues} onfocusout={RemoveDecimal} ></input>                   
+															<lightning-input-field field-name="Minimum_Required_Flow_Capacity__c"  class="slds-hide" value={MinimumRequiredFlowCapacity}></lightning-input-field>
+														</div>
+													</div>
+												</div>
+
+												<div class="slds-size_1-of-2">
+													<div class="slds-form-element slds-form-element_horizontal">
+														<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Flow Units	
+														</label>
+														<div class="slds-form-element__control">
+															<lightning-input-field disabled={bDisabled} onblur={onFlowCalculationUpdate} field-name="Flow_Units__c" value={flowUnits} variant="label-hidden" ></lightning-input-field>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<footer class="slds-card__footer">
+										<template if:false={bDisabled}>
+										<div class="slds-align_absolute-center" style="height:5rem">
+												<lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+												<!-- <lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button> -->
+										</div>
+										</template>
+									</footer>
+								</article>
+							</lightning-record-edit-form>
+						
+						</template>
+					</div>
+					<!--  Certifications Section  -->
+					<div class="section-3" onmouseover={onCertificationClick}>
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSaveCertifications} onsuccess={handleCertificationOnSuccess} class="CertificationsForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+								<template if:true={isErrorSection3}>
+									<div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+										<h2 class="slds-text-heading_small ">
+											{section3ErrorMessage}
+										</h2>
+									</div>							   
+								</template>
+								<div class="section3 slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+											Certifications
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+								<div class="section3 slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+											<div class="slds-size_1-of-2">
+											
+												<div class="slds-card__body slds-card__body_inner slds-p-around_small">
+													<lightning-layout horizontal-align="spread" multiple-rows="true">
+														<lightning-layout-item flexibility="grow" size="4" small-device-size="4" medium-device-size="4">
+															<label class="slds-form-element__label" for="horizontal-input-id-01">
+																Atex
+															</label>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="8" small-device-size="8" medium-device-size="8">
+															<div class="slds-form-element">
+																<div class="slds-form-element__control">
+																	<template for:each={atexOptions} for:item="item">
+																		<fieldset key={item.value} style="display: block; float: left;">
+																			<div class="slds-form-element__control">
+																				<span class="slds-radio">
+																			<input disabled={sDisabled} name="radiogroup4" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleAtexOptions}/>
+																			<label class="slds-radio__label" for={item.dummyVal}>
+																			<span class="slds-radio_faux"></span>
+																				<span class="slds-form-element__label">{item.label}</span>
+																				</label>
+																				</span>
+																			</div>
+																		</fieldset>
+																	</template>
+																</div>
+															</div>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="4"></lightning-layout-item>
+													</lightning-layout>
+												</div>
+
+												<div class="slds-card__body slds-card__body_inner slds-p-around_small">
+													<lightning-layout horizontal-align="spread" multiple-rows="true">
+														<lightning-layout-item flexibility="grow" size="4" small-device-size="4" medium-device-size="4">
+															<label class="slds-form-element__label" for="horizontal-input-id-01">
+																	CU TR
+															</label>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="8" small-device-size="8" medium-device-size="8">
+															<div class="slds-form-element">
+																<div class="slds-form-element__control">
+																	<template for:each={gOST_CU_Tr_010_2011Options} for:item="item">
+																		<fieldset key={item.value} style="display: block; float: left;">
+																			<div class="slds-form-element__control">
+																				<span class="slds-radio">
+																			<input disabled={sDisabled} name="radiogroup2" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleGOST_CU_Tr_010_2011Options}/>
+																			<label class="slds-radio__label" for={item.dummyVal}>
+																			<span class="slds-radio_faux"></span>
+																				<span class="slds-form-element__label">{item.label}</span>
+																				</label>
+																				</span>
+																			</div>
+																		</fieldset>
+																	</template>
+																</div>
+															</div>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="4"></lightning-layout-item>
+													</lightning-layout>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+											
+												<div class="slds-card__body slds-card__body_inner slds-p-around_small">
+													<lightning-layout horizontal-align="spread" multiple-rows="true">
+														<lightning-layout-item flexibility="grow" size="4" small-device-size="4" medium-device-size="4">
+															<label class="slds-form-element__label" for="horizontal-input-id-01">
+																	CSA Markings
+															</label>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="8" small-device-size="8" medium-device-size="8">
+															<div class="slds-form-element">
+																<div class="slds-form-element__control">
+																	<template for:each={cSA_MarkingsOptions} for:item="item">
+																		<fieldset key={item.value} style="display: block; float: left;">
+																			<div class="slds-form-element__control">
+																				<span class="slds-radio">
+																			<input disabled={sDisabled} name="radiogroup3" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleCSA_MarkingsOptions}/>
+																			<label class="slds-radio__label" for={item.dummyVal}>
+																			<span class="slds-radio_faux"></span>
+																				<span class="slds-form-element__label">{item.label}</span>
+																				</label>
+																				</span>
+																			</div>
+																		</fieldset>
+																	</template>
+																</div>
+															</div>
+														</lightning-layout-item>
+														<lightning-layout-item flexibility="grow" size="4"></lightning-layout-item>
+													</lightning-layout>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<template if:false={bDisabled}>
+									<div class="slds-align_absolute-center" style="height:5rem">
+											<lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<!-- <lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button> -->
+										
+									</div>
+									</template>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+						
+					</div>
+
+					<!-- Product Narrowing Section  -->
+					<div class="section-4"  onmouseover={onProductSelectionClick}>
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSaveProductSelection} onsuccess={handleProductSelectionOnSuccess} class="ProductSelectionForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+								<template if:true={isErrorSection4}>
+									<div class="slds-notify slds-notify_toast slds-theme_error slds-notify__content">
+										<h2 class="slds-text-heading_small ">
+											{section4ErrorMessage}
+										</h2>
+									</div>							   
+								</template>
+								<div class="section4 slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+											Product Selection
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+								<div class="section4 slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+											
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+															Orifice Setting	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-combobox
+															name="Combo_Orifice_Setting"
+															value={comboOrificeSettingVal}
+															placeholder="Select Orifice Setting"
+															options={comboOrificeSettingOptions}
+															onchange={handleComboOrificeSettingChange} 
+															disabled={bDisabled}
+															variant="label-hidden">
+														</lightning-combobox>
+														<!--<lightning-input-field field-name="Combo_Orifice_Setting__c" variant="label-hidden"></lightning-input-field>-->
+													</div>
+												</div>
+											</div>
+
+											<!-- <div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+															Size	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-combobox
+																name="dummySize"
+																variant="label-hidden"
+																value={sizeVal}
+																options={sizeOptions}
+																disabled
+																dropdown-alignment="bottom-left"
+														></lightning-combobox>
+														<lightning-input-field field-name="Size__c" value={sizeVal} variant="label-hidden" disabled></lightning-input-field> -->
+													<!-- </div>
+												</div>
+											</div> -->
+											<!-- 
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Connection		
+													</label>
+													<div class="slds-form-element__control">
+														<template if:true={renderConnection}>
+															<lightning-input-field field-name="Connection__c" value={connectionVal} onchange={handleConnectionChange}  variant="label-hidden"></lightning-input-field>
+														</template>
+														<template if:false={renderConnection}>
+															<lightning-input-field field-name="Connection__c" value={connectionVal} onchange={handleConnectionChange} variant="label-hidden"></lightning-input-field>
+														</template>
+														
+													</div>
+												</div>
+											</div> -->
+											
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<template if:false={bDisabled}>
+									<div class="slds-align_absolute-center" style="height:5rem">
+											<lightning-button variant="brand" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<!-- <lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button> -->
+										</div>
+									</template>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+						
+					</div>
+					<div style="height:300px;background-color:white;">
+
+                    </div>
+
+				<!--<div class="section-4 slds-p-top_xxx-small">
+				
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSaveProductMaterialOptions} onsuccess={handleProductMaterialOptionsOnSuccess} class="ProductMaterialOptionsForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+								<div class="slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+											Product Material and Options
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+								<div class="slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Quantity	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Quantity__c" variant="label-hidden" required></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Body Material	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Body_Material__c" variant="label-hidden" required></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Soft Goods Material	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Soft_Goods_Material__c" value={SoftGoodsMaterialVal} onchange={handleSoftGoodMaterialChange} variant="label-hidden" required></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<div class="slds-clearfix">
+										<div class="slds-float_left">
+											<lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button>
+										</div>
+									</div>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSaveValveExaminationOption} onsuccess={handleValveExaminationOptionOnSuccess} class="ValveExaminationOptionForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+								<div class="slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+												Valve Examination Option
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+
+								<div class="slds-card__body slds-card__body_inner slds-p-around_medium">
+									
+									<lightning-layout horizontal-align="spread" multiple-rows="true">
+										
+										<lightning-layout-item flexibility="grow" size="2" small-device-size="2" medium-device-size="2" class="slds-p-around_small">
+											<label class="slds-form-element__label" for="horizontal-input-id-01">
+													Radiography
+											</label>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="10" small-device-size="10" medium-device-size="10" class="slds-p-around_small">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<template for:each={radiographyOptions} for:item="item">
+														<fieldset key={item.value} style="display: block; float: left;">
+															<div class="slds-form-element__control">
+																<span class="slds-radio">
+															<input name="radiogroup10" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleRadiographyOptions}/>
+															<label class="slds-radio__label" for={item.dummyVal}>
+															<span class="slds-radio_faux"></span>
+																<span class="slds-form-element__label">{item.label}</span>
+																</label>
+																</span>
+															</div>
+														</fieldset>
+													</template>
+												</div>
+											</div>
+										</lightning-layout-item>
+
+										<lightning-layout-item flexibility="grow" size="2" small-device-size="2" medium-device-size="2" class="slds-p-around_small">
+											<label class="slds-form-element__label" for="horizontal-input-id-01">
+													Positive Material Identification
+											</label>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="10" small-device-size="10" medium-device-size="10" class="slds-p-around_small">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<template for:each={PositiveMaterialIdentificationOptions} for:item="item">
+														<fieldset key={item.value} style="display: block; float: left;">
+															<div class="slds-form-element__control">
+																<span class="slds-radio">
+															<input name="radiogroup11" id={item.value} type="radio" value={item.value} class={item.value} onchange={handlePositiveMaterialIdentificationOptions}/>
+															<label class="slds-radio__label" for={item.value}>
+															<span class="slds-radio_faux"></span>
+																<span class="slds-form-element__label">{item.label}</span>
+																</label>
+																</span>
+															</div>
+														</fieldset>
+													</template>
+												</div>
+											</div>
+										</lightning-layout-item>
+
+										<lightning-layout-item flexibility="grow" size="2" small-device-size="2" medium-device-size="2" class="slds-p-around_small">
+											<label class="slds-form-element__label" for="horizontal-input-id-01">
+													Shell Test - Actuator	
+											</label>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="10" small-device-size="10" medium-device-size="10" class="slds-p-around_small">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<template for:each={ShellTestOptions} for:item="item">
+														<fieldset key={item.value} style="display: block; float: left;">
+															<div class="slds-form-element__control">
+																<span class="slds-radio">
+															<input name="radiogroup12" id={item.dummyVal} type="radio" value={item.value} class={item.generatedId} onchange={handleShellTestOptions}/>
+															<label class="slds-radio__label" for={item.dummyVal}>
+															<span class="slds-radio_faux"></span>
+																<span class="slds-form-element__label">{item.label}</span>
+																</label>
+																</span>
+															</div>
+														</fieldset>
+													</template>
+												</div>
+											</div>
+										</lightning-layout-item>
+
+
+										<lightning-layout-item flexibility="grow" size="2" small-device-size="2" medium-device-size="2" class="slds-p-around_small">
+											<label class="slds-form-element__label" for="horizontal-input-id-01">
+												Shell Test - Valve Body	
+											</label>
+										</lightning-layout-item>
+										<lightning-layout-item flexibility="grow" size="10" small-device-size="10" medium-device-size="10" class="slds-p-around_small">
+											<div class="slds-form-element">
+												<div class="slds-form-element__control">
+													<template for:each={ShellTestValveBodyOptions} for:item="item">
+														<fieldset key={item.value} style="display: block; float: left;">
+															<div class="slds-form-element__control">
+																<span class="slds-radio">
+															<input name="radiogroup13" id={item.value} type="radio" value={item.value} class={item.value} onchange={handleShellTestValveBodyOptions}/>
+															<label class="slds-radio__label" for={item.value}>
+															<span class="slds-radio_faux"></span>
+																<span class="slds-form-element__label">{item.label}</span>
+																</label>
+																</span>
+															</div>
+														</fieldset>
+													</template>
+												</div>
+											</div>
+										</lightning-layout-item>
+
+										
+									</lightning-layout>
+								</div>
+
+								<div class="slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+										
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<div class="slds-clearfix">
+										<div class="slds-float_left">
+											<lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button>
+										</div>
+									</div>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+
+
+						<lightning-record-edit-form object-api-name="BGR__c" onsubmit={handleSaveDocSourcing} onsuccess={handleProductNarrowingOnSuccess} class="handleSaveDocSourcingForm" record-id={recordId}>
+							<lightning-messages></lightning-messages>
+							<article class="slds-card" style="background-color: #fafbfc;">
+								<div class="slds-grid slds-card__header" style="background-color:white;">
+									<header class="slds-media slds-media_center slds-has-flexi-truncate">
+										<div class="slds-grid slds-grid_vertical-align-center slds-size_3-of-6 slds-medium-size_-of-8">
+											<h3 class="slds-section slds-section__title">
+												Certificate Document Or Sourcing Requirements
+										</h3>
+										</div>
+									</header>
+									<div class="slds-einstein-header__actions">
+									</div>
+								</div>
+
+								<div class="slds-card__body slds-card__body_inner">
+									<div class="slds-form">
+										<div class="slds-grid slds-wrap">
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Final Assembly Location Requirements	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Final_Assembly_Location_Requirements__c" variant="label-hidden"></lightning-input-field>
+													</div>
+												</div>
+											</div>
+
+											<div class="slds-size_1-of-2">
+												<div class="slds-form-element slds-form-element_horizontal">
+													<label class="slds-form-element__label" for="horizontal-input-id-01">
+														Material Sourcing Requirements	
+													</label>
+													<div class="slds-form-element__control">
+														<lightning-input-field field-name="Material_Sourcing_Requirements__c" variant="label-hidden"></lightning-input-field>
+													</div>
+												</div>
+											</div> 	
+										</div>
+									</div>
+								</div>
+								<footer class="slds-card__footer">
+									<div class="slds-clearfix">
+										<div class="slds-float_left">
+											<lightning-button variant="brand-outline" type="submit" name="Save & Continue" label="Save & Continue"></lightning-button>
+											<lightning-button variant="brand-outline" label="Go Back" title="" onclick={navigateToProductView} class="slds-m-left_x-small"></lightning-button>
+										</div>
+									</div>
+								</footer>
+							</article>
+						</lightning-record-edit-form>
+					
+					</div> -->
+				</main>
+			</lightning-layout-item>
+		</lightning-layout>
+		<!--</lightning-record-edit-form>-->
+	</div>
+</template>

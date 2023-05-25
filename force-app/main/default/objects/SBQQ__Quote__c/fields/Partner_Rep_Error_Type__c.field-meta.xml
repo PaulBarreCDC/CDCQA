@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partner_Rep_Error_Type__c</fullName>
+    <description>users can identify the type of error that occurred</description>
+    <externalId>false</externalId>
+    <label>Partner Rep Error Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Commercial Issue</fullName>
+                <default>false</default>
+                <label>Commercial Issue</label>
+            </value>
+            <value>
+                <fullName>Technical Issue</fullName>
+                <default>false</default>
+                <label>Technical Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

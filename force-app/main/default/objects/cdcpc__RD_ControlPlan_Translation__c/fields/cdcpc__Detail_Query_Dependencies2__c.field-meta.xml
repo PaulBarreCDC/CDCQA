@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Detail_Query_Dependencies2__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>&quot;{&quot; +
+    &quot;\&quot;Criteria\&quot;:\&quot;&quot; +
+
+
+        cdcpc__Filter_Text5__c +
+        cdcpc__Filter_Text6__c +
+        cdcpc__Filter_Text7__c +
+        cdcpc__Filter_Text8__c +
+        cdcpc__Filter_Text9__c +
+        cdcpc__Filter_Text10__c +
+        cdcpc__Filter_Num1__c +
+        cdcpc__Filter_Num2__c +
+        cdcpc__Filter_Num3__c +
+        cdcpc__Filter_Num4__c +
+        cdcpc__Filter_Num5__c +
+        cdcpc__Filter_Num6__c +
+
+    &quot;\&quot;&quot; +
+&quot;}&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Detail Query Dependencies 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

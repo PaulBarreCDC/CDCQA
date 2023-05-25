@@ -1,0 +1,8 @@
+modalHeight {
+    height: 640px;
+}
+
+.slds-modal__container {
+    width: 100%;
+    max-width: 100%;
+}

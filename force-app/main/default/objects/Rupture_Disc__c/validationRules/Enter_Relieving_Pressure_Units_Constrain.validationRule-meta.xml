@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enter_Relieving_Pressure_Units_Constrain</fullName>
+    <active>false</active>
+    <description>Enter Relieving Pressure Units is a Mandatory field if it is selected in Relieving Pressure at Inlet</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Relieving_Pressure_at_Inlet__c , &quot;Enter Relieving Pressure Value/ units&quot;), 
+OR( 
+ISBLANK(TEXT (  Enter_Relieving_Pressure_units__c )) 
+) 
+)&amp;&amp; 
+( Bypass__c = FALSE)&amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Enter_Relieving_Pressure_units__c</errorDisplayField>
+    <errorMessage>Enter Relieving Pressure units: Please select a value from the drop down</errorMessage>
+</ValidationRule>

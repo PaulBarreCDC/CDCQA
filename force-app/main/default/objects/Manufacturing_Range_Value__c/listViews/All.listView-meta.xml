@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>RGEMAXLL__c</columns>
+    <columns>RGEMAXUL__c</columns>
+    <columns>RTPRS1LL__c</columns>
+    <columns>RTPRS1UL__c</columns>
+    <columns>MinMfgRngMulti__c</columns>
+    <columns>MinMfgRngAdder__c</columns>
+    <columns>MaxMfgRngMulti__c</columns>
+    <columns>MaxMfgRngAdder__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RGRAT1__c</field>
+        <operation>equals</operation>
+        <value>Rated</value>
+    </filters>
+    <filters>
+        <field>RGTYP1__c</field>
+        <operation>equals</operation>
+        <value>Standard</value>
+    </filters>
+    <label>All</label>
+</ListView>

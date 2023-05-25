@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ASSYPARTNO__c</columns>
+    <columns>BRAND__c</columns>
+    <columns>Configurator__c</columns>
+    <columns>PartRevision__c</columns>
+    <columns>ProdGroup__c</columns>
+    <columns>SubGroup__c</columns>
+    <columns>Managed_In__c</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ASSYPARTNO__c</field>
+        <operation>equals</operation>
+        <value>12TH081VVX0404E</value>
+    </filters>
+    <label>All</label>
+</ListView>

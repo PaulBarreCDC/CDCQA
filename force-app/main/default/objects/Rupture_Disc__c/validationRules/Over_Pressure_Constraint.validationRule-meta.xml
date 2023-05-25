@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Over_Pressure_Constraint</fullName>
+    <active>false</active>
+    <description>Over Pressure  is a Mandatory field if %Over Pressure is selected in Relieving Pressure at Inlet</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Relieving_Pressure_at_Inlet__c , &quot;% Overpressure&quot;), 
+OR( 
+ISBLANK(TEXT ( Overpressure__c )) 
+) 
+)&amp;&amp; 
+( Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Overpressure__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_admins_cannot_update_Goals</fullName>
+    <active>true</active>
+    <errorConditionFormula>isChanged( Partner_Org__c ) &amp;&amp;  $UserRole.Name &lt;&gt; &apos;System_Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>Partner_Org__c</errorDisplayField>
+    <errorMessage>Only System User can update Goals &amp; Performance. Pls reach out to your admin user</errorMessage>
+</ValidationRule>

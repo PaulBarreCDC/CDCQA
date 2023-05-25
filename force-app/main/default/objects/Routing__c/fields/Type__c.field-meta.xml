@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Routings can either be steps in production process or Guideline for test/evaluations</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Routing</fullName>
+                <default>true</default>
+                <label>Routing</label>
+            </value>
+            <value>
+                <fullName>Guideline</fullName>
+                <default>false</default>
+                <label>Guideline</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

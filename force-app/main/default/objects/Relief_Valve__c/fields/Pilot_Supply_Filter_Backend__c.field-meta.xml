@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pilot_Supply_Filter_Backend__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Pilot_Supply_Filter__c,&apos;Y&apos;,&apos;N&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pilot Supply Filter Backend</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

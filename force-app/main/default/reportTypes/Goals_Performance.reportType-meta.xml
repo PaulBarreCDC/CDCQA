@@ -1,0 +1,2863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Goals_Performance__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Goals &amp; Performance</description>
+    <join>
+        <outerJoin>true</outerJoin>
+        <relationship>Credits_and_Bookings__r</relationship>
+    </join>
+    <label>Goals &amp; Performance</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Booking__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Credits__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CurrencyIsoCode</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>District__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Fiscal_Month__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Fiscal_Year__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Goal__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastActivityDate</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Net_Bookings_Result_Rollup__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Pipeline__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Products__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Region__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Rep_Code__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Director</displayNameOverride>
+            <field>Partner_Org__c.Owner.Manager</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>VP of Sales</displayNameOverride>
+            <field>Partner_Org__c.Owner.Manager.Manager</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>RSM</displayNameOverride>
+            <field>Partner_Org__c.Owner</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Variance__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Brands__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Booking_Amount__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Credit_Amount__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Pipeline_Amount_Rollup__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Unique_Id_gen__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Unique_ID__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org__c.District__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org__c.Region__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org__c.Rep_Code__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>OEM_Goal__c</field>
+            <table>Goals_Performance__c</table>
+        </columns>
+        <masterLabel>Goals &amp; Performance</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Amount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Amount_USD__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Auto_OEMSalesChannel__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Brand_from_Quote__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Charge_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Comments__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Contract__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Created_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Id</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Name</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>CurrencyIsoCode</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>External_Id__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Goals_Performance__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>LastModifiedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org_from_Opportunity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Partner_Org_ID_from_Opp__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Primary__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Primary_Quote__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote_External_Id__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Manual_Month__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>Credits and Bookings</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Account</displayNameOverride>
+            <field>Quote__c.SBQQ__Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Account Name</displayNameOverride>
+            <field>Quote__c.AccountName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Additional Disc. (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__CustomerDiscount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Addl. Disc. Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__AdditionalDiscountAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Approval Status</displayNameOverride>
+            <field>Quote__c.ApprovalStatus__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Approver External ID</displayNameOverride>
+            <field>Quote__c.Approver_External_ID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Assigned Estimator</displayNameOverride>
+            <field>Quote__c.Assigned_Estimator1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Assigned Estimator_</displayNameOverride>
+            <field>Quote__c.Assigned_Estimator__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Avg. Customer Disc. (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__AverageCustomerDiscount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Avg. Partner Disc. (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__AveragePartnerDiscount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Backorder Option</displayNameOverride>
+            <field>Quote__c.Backorder_Option__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Base Commission Amount</displayNameOverride>
+            <field>Quote__c.Base_Commission_Amount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Billing Account</displayNameOverride>
+            <field>Quote__c.Billing_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Billing Address Id</displayNameOverride>
+            <field>Quote__c.Billing_Address_Id__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Billing Frequency</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingFrequency__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Billing Website</displayNameOverride>
+            <field>Quote__c.Billing_Website__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To City</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingCity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To Country</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingCountry__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To Name</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To Postal Code</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingPostalCode__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To State</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingState__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bill To Street</displayNameOverride>
+            <field>Quote__c.SBQQ__BillingStreet__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bookings Assignment 1</displayNameOverride>
+            <field>Quote__c.Bookings_Assignment_1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bookings Assignment 2</displayNameOverride>
+            <field>Quote__c.Bookings_Assignment_2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bookings Assignment 3</displayNameOverride>
+            <field>Quote__c.Bookings_Assignment_3__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Bookings Assignment 4</displayNameOverride>
+            <field>Quote__c.Bookings_Assignment_4__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Brand</displayNameOverride>
+            <field>Quote__c.Brand__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Brand\*</displayNameOverride>
+            <field>Quote__c.Brand_Order_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Brand Backend</displayNameOverride>
+            <field>Quote__c.Brand_Backend__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Calculating Field</displayNameOverride>
+            <field>Quote__c.CalculatingField__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Change Order Comments</displayNameOverride>
+            <field>Quote__c.Change_Order_Comments__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Change Order Log</displayNameOverride>
+            <field>Quote__c.Change_Order_Log__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Change Order No</displayNameOverride>
+            <field>Quote__c.Change_Order_No__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Change Order Reason</displayNameOverride>
+            <field>Quote__c.CO_Clause__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Change Order Status</displayNameOverride>
+            <field>Quote__c.Change_Order_Status__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Amount (Dest Rep)</displayNameOverride>
+            <field>Quote__c.Destination_Rep_Commission_Split__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Amount (Eng Rep 1)</displayNameOverride>
+            <field>Quote__c.Eng_Rep_1_Commission_Split__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Amount (Eng Rep 2)</displayNameOverride>
+            <field>Quote__c.Eng_Rep_2_Commission_Split__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Amount (Sold By Rep)</displayNameOverride>
+            <field>Quote__c.Sold_By_Commission_Split__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Calculation Base</displayNameOverride>
+            <field>Quote__c.Commission_Calculation_Base__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Split (Dest Rep)</displayNameOverride>
+            <field>Quote__c.Commission_Split_Dest_Rep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Split (Eng Rep 1)</displayNameOverride>
+            <field>Quote__c.Commission_Split_Eng_Rep_1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Split (Eng Rep 2)</displayNameOverride>
+            <field>Quote__c.Commission_Split_Eng_Rep_2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Commission Split (Sold By Rep)</displayNameOverride>
+            <field>Quote__c.Commission_Split_Sold_By_Rep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Company</displayNameOverride>
+            <field>Quote__c.Company__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Company B</displayNameOverride>
+            <field>Quote__c.Company_B__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Company C</displayNameOverride>
+            <field>Quote__c.Company_C__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Consumption Rate Override</displayNameOverride>
+            <field>Quote__c.SBQQ__ConsumptionRateOverride__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Contracting Method</displayNameOverride>
+            <field>Quote__c.SBQQ__ContractingMethod__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Contract Review Date</displayNameOverride>
+            <field>Quote__c.Contract_Review_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Contract Reviewer</displayNameOverride>
+            <field>Quote__c.Contract_Reviewer__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Conversion Rate</displayNameOverride>
+            <field>Quote__c.Conversion_Rate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Created By</displayNameOverride>
+            <field>Quote__c.CreatedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Created By User\&apos;s Profile</displayNameOverride>
+            <field>Quote__c.Created_By_User_s_Profile__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Created Date</displayNameOverride>
+            <field>Quote__c.CreatedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Created Date\*</displayNameOverride>
+            <field>Quote__c.Created_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Credit Limit</displayNameOverride>
+            <field>Quote__c.Credit_Limit__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Currency</displayNameOverride>
+            <field>Quote__c.CurrencyIsoCode</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer\&apos;s PO Number</displayNameOverride>
+            <field>Quote__c.Customer_s_PO_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__CustomerAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Approval Req. Before Shipment?</displayNameOverride>
+            <field>Quote__c.Customer_Shipment_Approval_Required__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Contact</displayNameOverride>
+            <field>Quote__c.Customer_Contact__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Currency</displayNameOverride>
+            <field>Quote__c.Currency__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Group</displayNameOverride>
+            <field>Quote__c.Customer_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Requirements</displayNameOverride>
+            <field>Quote__c.Customer_Requirements__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Stat Group</displayNameOverride>
+            <field>Quote__c.Customer_Stat_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Customer Type</displayNameOverride>
+            <field>Quote__c.Customer_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Custom T &amp; C\&apos;s Attached</displayNameOverride>
+            <field>Quote__c.Custom_T_C_Attached__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Days Quote Open</displayNameOverride>
+            <field>Quote__c.SBQQ__DaysQuoteOpen__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Default Billing Account</displayNameOverride>
+            <field>Quote__c.Default_Billing_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Default Template</displayNameOverride>
+            <field>Quote__c.SBQQ__DefaultTemplate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery District</displayNameOverride>
+            <field>Quote__c.Delivery_District__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery Market</displayNameOverride>
+            <field>Quote__c.Delivery_Market__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery Method</displayNameOverride>
+            <field>Quote__c.SBQQ__DeliveryMethod__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery Region</displayNameOverride>
+            <field>Quote__c.Delivery_Region__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery Terms</displayNameOverride>
+            <field>Quote__c.Delivery_Terms__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Delivery Terms Location</displayNameOverride>
+            <field>Quote__c.Delivery_Terms_Location__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Denied Party Screening Date</displayNameOverride>
+            <field>Quote__c.Denied_Party_Screening_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Denied Party Screening User</displayNameOverride>
+            <field>Quote__c.Denied_Party_Screening_User__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Destination Rep (Account)</displayNameOverride>
+            <field>Quote__c.Destination_Rep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Destination Rep (Account) Name</displayNameOverride>
+            <field>Quote__c.DestinationRepAccountName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Destination Rep Commission Percent</displayNameOverride>
+            <field>Quote__c.Destination_Rep_Commission_Percent__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display Body Custom Message 1</displayNameOverride>
+            <field>Quote__c.Display_Body_Custom_Message_1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display Body Custom Message 2</displayNameOverride>
+            <field>Quote__c.Display_Body_Custom_Message_2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display Body Standard Message</displayNameOverride>
+            <field>Quote__c.Display_Body_Standard_Message__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display CDC Logo</displayNameOverride>
+            <field>Quote__c.DisplayCDCLogo__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display Groth Continental Logo</displayNameOverride>
+            <field>Quote__c.DisplayGrothContinentalLogo__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display Groth Logo</displayNameOverride>
+            <field>Quote__c.DisplayGrothLogo__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display LaMot Logo</displayNameOverride>
+            <field>Quote__c.DisplayLaMotLogo__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Display LVA Logo</displayNameOverride>
+            <field>Quote__c.DisplayLVALogo__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Distributor</displayNameOverride>
+            <field>Quote__c.SBQQ__Distributor__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Distributor Discount</displayNameOverride>
+            <field>Quote__c.SBQQ__DistributorDiscount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Document Class</displayNameOverride>
+            <field>Quote__c.Document_Class__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Document Class Description</displayNameOverride>
+            <field>Quote__c.Document_Class_Description__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Document Currency Symbol</displayNameOverride>
+            <field>Quote__c.DocumentCurrencySymbol__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Document Status</displayNameOverride>
+            <field>Quote__c.SBQQ__DocumentStatus__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Do Not Ship Before</displayNameOverride>
+            <field>Quote__c.Do_Not_Ship_Before__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Drawings Attached</displayNameOverride>
+            <field>Quote__c.Drawings_Attached__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: E-Mail for Freight/Tracking Notification</displayNameOverride>
+            <field>Quote__c.E_Mail_for_Freight_Tracking_Notification__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Email Template Id</displayNameOverride>
+            <field>Quote__c.SBQQ__EmailTemplateId__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End Date</displayNameOverride>
+            <field>Quote__c.SBQQ__EndDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End Use</displayNameOverride>
+            <field>Quote__c.End_Use__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End Use Application</displayNameOverride>
+            <field>Quote__c.End_Use_Application__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User Account</displayNameOverride>
+            <field>Quote__c.End_User__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User City</displayNameOverride>
+            <field>Quote__c.End_User_City__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User Country</displayNameOverride>
+            <field>Quote__c.End_User_Country__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User Name</displayNameOverride>
+            <field>Quote__c.End_User_Name__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User Postal Code</displayNameOverride>
+            <field>Quote__c.End_User_PostalCode__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User State</displayNameOverride>
+            <field>Quote__c.End_User_State__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: End User Street</displayNameOverride>
+            <field>Quote__c.End_User_Street__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Approver</displayNameOverride>
+            <field>Quote__c.Engineering_Approver__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Quote Header Comments</displayNameOverride>
+            <field>Quote__c.Engineering_Quote_Header_Comments__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Rep 1</displayNameOverride>
+            <field>Quote__c.Engineering_Rep_1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Rep 1 Commission Percent</displayNameOverride>
+            <field>Quote__c.Eng_Rep_1_Commission_Percent__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Rep 2</displayNameOverride>
+            <field>Quote__c.Engineering_Rep_2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Rep 2 Commission Percent</displayNameOverride>
+            <field>Quote__c.Eng_Rep_2_Commission_Percent__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Review Date</displayNameOverride>
+            <field>Quote__c.Engineering_Review_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Engineering Rush Request</displayNameOverride>
+            <field>Quote__c.Engineering_Rush_Request__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Eng Rep 1(Account)</displayNameOverride>
+            <field>Quote__c.Eng_Rep_1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Eng Rep 2(Account)</displayNameOverride>
+            <field>Quote__c.Eng_Rep_2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Eng Review Status</displayNameOverride>
+            <field>Quote__c.Eng_Review_Status__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Expires On</displayNameOverride>
+            <field>Quote__c.SBQQ__ExpirationDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Expires On\*</displayNameOverride>
+            <field>Quote__c.Expires_On__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: External Id</displayNameOverride>
+            <field>Quote__c.External_Id__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Finalized Delivery Date</displayNameOverride>
+            <field>Quote__c.Finalized_Delivery_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: First Segment Term End Date</displayNameOverride>
+            <field>Quote__c.SBQQ__FirstSegmentTermEndDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Entity</displayNameOverride>
+            <field>Quote__c.Freight_Entity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Account</displayNameOverride>
+            <field>Quote__c.Freight_Info_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Billing Info</displayNameOverride>
+            <field>Quote__c.Freight_Info_Billing_Info__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Default Billing Option</displayNameOverride>
+            <field>Quote__c.Freight_Info_Default_Billing_Option__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Email</displayNameOverride>
+            <field>Quote__c.Freight_Info_Email__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Phone</displayNameOverride>
+            <field>Quote__c.Freight_Info_Phone__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info/Shipping Notes</displayNameOverride>
+            <field>Quote__c.Freight_Info_Shipping_Notes__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Info Account</displayNameOverride>
+            <field>Quote__c.Freight_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Freight Information</displayNameOverride>
+            <field>Quote__c.Freight_Information__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Generate Contracted Price</displayNameOverride>
+            <field>Quote__c.SBQQ__GenerateContractedPrice__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Group Line Items</displayNameOverride>
+            <field>Quote__c.SBQQ__LineItemsGrouped__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Historical Only</displayNameOverride>
+            <field>Quote__c.Historical_Only__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: IFS Order Status</displayNameOverride>
+            <field>Quote__c.IFS_Order_Status__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Inside Sales Approver</displayNameOverride>
+            <field>Quote__c.Inside_Sales_Approver__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Inside Sales Approver E-mail</displayNameOverride>
+            <field>Quote__c.Inside_Sales_Approver_E_mail__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Introduction</displayNameOverride>
+            <field>Quote__c.SBQQ__Introduction__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Invalid Quote Line Item Count</displayNameOverride>
+            <field>Quote__c.Invalid_Quote_Line_Item_Count__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Key</displayNameOverride>
+            <field>Quote__c.SBQQ__Key__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Last Activity Date</displayNameOverride>
+            <field>Quote__c.LastActivityDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Last Calculated On</displayNameOverride>
+            <field>Quote__c.SBQQ__LastCalculatedOn__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Last Modified By</displayNameOverride>
+            <field>Quote__c.LastModifiedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Last Modified Date</displayNameOverride>
+            <field>Quote__c.LastModifiedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Last Saved On</displayNameOverride>
+            <field>Quote__c.SBQQ__LastSavedOn__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Lead Time (Max)</displayNameOverride>
+            <field>Quote__c.Lead_Time_Max__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Line Item Count</displayNameOverride>
+            <field>Quote__c.SBQQ__LineItemCount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: List Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__ListAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Markup (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__MarkupRate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Master Contract</displayNameOverride>
+            <field>Quote__c.SBQQ__MasterContract__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Master Evergreen Contract</displayNameOverride>
+            <field>Quote__c.SBQQ__MasterEvergreenContract__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Maximum Commission</displayNameOverride>
+            <field>Quote__c.Maximum_Commission__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Max Lead Time (in Weeks)</displayNameOverride>
+            <field>Quote__c.Max_Lead_Time_in_Weeks__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Migration ID</displayNameOverride>
+            <field>Quote__c.Migration_ID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Net Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__NetAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Notes</displayNameOverride>
+            <field>Quote__c.SBQQ__Notes__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Number of Charges</displayNameOverride>
+            <field>Quote__c.Number_of_Charges__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Opportunity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Opportunity Name</displayNameOverride>
+            <field>Quote__c.OpportunityName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order By</displayNameOverride>
+            <field>Quote__c.SBQQ__OrderBy__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order By Quote Line Group</displayNameOverride>
+            <field>Quote__c.SBQQ__OrderByQuoteLineGroup__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ordered</displayNameOverride>
+            <field>Quote__c.SBQQ__Ordered__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Group ID</displayNameOverride>
+            <field>Quote__c.SBQQ__OrderGroupID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ordering District</displayNameOverride>
+            <field>Quote__c.Ordering_District__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ordering Region</displayNameOverride>
+            <field>Quote__c.Ordering_Region__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Number</displayNameOverride>
+            <field>Quote__c.Order_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Priority</displayNameOverride>
+            <field>Quote__c.Order_Priority__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Priority\*</displayNameOverride>
+            <field>Quote__c.Order_Priority2__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Submitted</displayNameOverride>
+            <field>Quote__c.Order_Submitted__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Order Type</displayNameOverride>
+            <field>Quote__c.Order_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Original Quote</displayNameOverride>
+            <field>Quote__c.SBQQ__OriginalQuote__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Original Quote Number</displayNameOverride>
+            <field>Quote__c.Quote_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Output Language</displayNameOverride>
+            <field>Quote__c.Output_Language__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Owner</displayNameOverride>
+            <field>Quote__c.Owner</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Paper Size</displayNameOverride>
+            <field>Quote__c.SBQQ__PaperSize__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Partner</displayNameOverride>
+            <field>Quote__c.SBQQ__Partner__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Partner Discount</displayNameOverride>
+            <field>Quote__c.SBQQ__PartnerDiscount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Payment Method</displayNameOverride>
+            <field>Quote__c.Payment_Method__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Payment Terms</displayNameOverride>
+            <field>Quote__c.SBQQ__PaymentTerms__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Pending Engineering Review Count</displayNameOverride>
+            <field>Quote__c.Pending_Engineering_Review_Count__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Pending Production Planning Review Count</displayNameOverride>
+            <field>Quote__c.Pending_Production_Planning_Review_Count__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Phone No To Customer Shipping Contact</displayNameOverride>
+            <field>Quote__c.Customer_Ship_Contact_Phone_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Planned Delivery Date</displayNameOverride>
+            <field>Quote__c.Planned_Delivery_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Price Book</displayNameOverride>
+            <field>Quote__c.SBQQ__PriceBook__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Pricebook ID</displayNameOverride>
+            <field>Quote__c.SBQQ__PricebookId__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Price Group</displayNameOverride>
+            <field>Quote__c.Price_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Primary</displayNameOverride>
+            <field>Quote__c.SBQQ__Primary__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Primary Contact</displayNameOverride>
+            <field>Quote__c.SBQQ__PrimaryContact__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Print Line Items</displayNameOverride>
+            <field>Quote__c.SBQQ__LineItemsPrinted__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Priority</displayNameOverride>
+            <field>Quote__c.Priority__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Prod Planning Status</displayNameOverride>
+            <field>Quote__c.Prod_Planning_Status__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Production Planning Approver</displayNameOverride>
+            <field>Quote__c.Production_Planning_Approver__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Project Approval Required</displayNameOverride>
+            <field>Quote__c.Project_Approval_Required__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Project Classification</displayNameOverride>
+            <field>Quote__c.Project_Classification__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Project Coordinator</displayNameOverride>
+            <field>Quote__c.Project_Coordinator__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Proposal Sections</displayNameOverride>
+            <field>Quote__c.Proposal_Sections__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Proration Day Of Month</displayNameOverride>
+            <field>Quote__c.SBQQ__ProrationDayOfMonth__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Purchasing Site</displayNameOverride>
+            <field>Quote__c.Purchasing_Site__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Date (Today)</displayNameOverride>
+            <field>Quote__c.QuoteDateToday__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote ID</displayNameOverride>
+            <field>Quote__c.Id</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Language</displayNameOverride>
+            <field>Quote__c.SBQQ__QuoteLanguage__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Number</displayNameOverride>
+            <field>Quote__c.Name</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Number</displayNameOverride>
+            <field>Quote__c.QuoteNumberHyperlink__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Number with Revision #</displayNameOverride>
+            <field>Quote__c.QuoteNumberWithRevision__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Process Id</displayNameOverride>
+            <field>Quote__c.SBQQ__QuoteProcessId__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Product Group</displayNameOverride>
+            <field>Quote__c.Quote_Product_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Status Code</displayNameOverride>
+            <field>Quote__c.Quote_Status_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Template Id</displayNameOverride>
+            <field>Quote__c.SBQQ__QuoteTemplateId__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Quote Type</displayNameOverride>
+            <field>Quote__c.Quote_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Record Type</displayNameOverride>
+            <field>Quote__c.RecordType</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Reference Number</displayNameOverride>
+            <field>Quote__c.Reference_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Reference Secondary Contact</displayNameOverride>
+            <field>Quote__c.Reference_Secondary_Contact1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Region\*</displayNameOverride>
+            <field>Quote__c.Rep_Code_Region__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Regional Manager</displayNameOverride>
+            <field>Quote__c.Regional_Manager__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Regular Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__RegularAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Renewal Term</displayNameOverride>
+            <field>Quote__c.SBQQ__RenewalTerm__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Renewal Uplift (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__RenewalUpliftRate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Rep Code</displayNameOverride>
+            <field>Quote__c.Rep_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Revision</displayNameOverride>
+            <field>Quote__c.Revision__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Revision Reason</displayNameOverride>
+            <field>Quote__c.Revision_Reason__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sales Director</displayNameOverride>
+            <field>Quote__c.Sales_Director__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sales Executive</displayNameOverride>
+            <field>Quote__c.Sales_Executive__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sales Group</displayNameOverride>
+            <field>Quote__c.Sales_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sales Rep</displayNameOverride>
+            <field>Quote__c.SBQQ__SalesRep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Selling Entity</displayNameOverride>
+            <field>Quote__c.Sales_Division__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Selling Entity (User)</displayNameOverride>
+            <field>Quote__c.Selling_Entity_User__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Shipment Creation</displayNameOverride>
+            <field>Quote__c.Shipment_Creation__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Shipment Type</displayNameOverride>
+            <field>Quote__c.Shipment_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Shipping Account</displayNameOverride>
+            <field>Quote__c.Shipping_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Shipping Instructions</displayNameOverride>
+            <field>Quote__c.Shipping_Instructions__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To City</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingCity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To Country</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingCountry__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To Name</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To Postal Code</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingPostalCode__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To State</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingState__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship To Street</displayNameOverride>
+            <field>Quote__c.SBQQ__ShippingStreet__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Ship Via</displayNameOverride>
+            <field>Quote__c.Ship_Via__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Alternate Lines</displayNameOverride>
+            <field>Quote__c.Show_Alternate_Lines__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Charges</displayNameOverride>
+            <field>Quote__c.Show_Charges__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Commercial Item Comments</displayNameOverride>
+            <field>Quote__c.ShowCommercialItemComments__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Drawings</displayNameOverride>
+            <field>Quote__c.Show_Drawings__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Introduction</displayNameOverride>
+            <field>Quote__c.ShowIntroduction__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show List Price on Proposal</displayNameOverride>
+            <field>Quote__c.Show_List_Price__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Show Sizings</displayNameOverride>
+            <field>Quote__c.Show_Sizings__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sizing and Capacity</displayNameOverride>
+            <field>Quote__c.Sizing_and_Capacity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sold By Rep (Account)</displayNameOverride>
+            <field>Quote__c.Sold_By_Rep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sold By Rep (Account) Name</displayNameOverride>
+            <field>Quote__c.SoldByRepAccountName__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sold By Rep Commission Percent</displayNameOverride>
+            <field>Quote__c.Sold_By_Commission_Percent__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sold by Representative</displayNameOverride>
+            <field>Quote__c.Sold_by_Representative__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Source</displayNameOverride>
+            <field>Quote__c.SBQQ__Source__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Sourcing Entity</displayNameOverride>
+            <field>Quote__c.Sourcing_Entity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Standard Delivery Date</displayNameOverride>
+            <field>Quote__c.Standard_Delivery_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Standard Terms (Manual)</displayNameOverride>
+            <field>Quote__c.Standard_Terms_Manual__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Start Date</displayNameOverride>
+            <field>Quote__c.SBQQ__StartDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Start Quote-To-Order Process</displayNameOverride>
+            <field>Quote__c.Start_Quote_To_Order_Process__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Status</displayNameOverride>
+            <field>Quote__c.SBQQ__Status__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Status Code</displayNameOverride>
+            <field>Quote__c.Status_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Status Reason</displayNameOverride>
+            <field>Quote__c.Status_Reason__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Submitted Date</displayNameOverride>
+            <field>Quote__c.SubmittedDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Submitted User</displayNameOverride>
+            <field>Quote__c.SubmittedUser__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Subscription Term</displayNameOverride>
+            <field>Quote__c.SBQQ__SubscriptionTerm__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Target Customer Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__TargetCustomerAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Tax Code</displayNameOverride>
+            <field>Quote__c.Tax_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Terms and Conditions</displayNameOverride>
+            <field>Quote__c.Terms_and_Conditions__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Terms and Conditions Review</displayNameOverride>
+            <field>Quote__c.Terms_and_Conditions_Review__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Terms and Conditions Review Date</displayNameOverride>
+            <field>Quote__c.Terms_and_Conditions_Review_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Terms and Conditions Reviewer</displayNameOverride>
+            <field>Quote__c.Terms_and_Conditions_Reviewer__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Timestamp</displayNameOverride>
+            <field>Quote__c.Timestamp__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total # of Alternate Lines</displayNameOverride>
+            <field>Quote__c.Total_of_Alternate_Lines__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Amount</displayNameOverride>
+            <field>Quote__c.Total_Amount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Bookings (USD)</displayNameOverride>
+            <field>Quote__c.Total_Bookings__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Charges</displayNameOverride>
+            <field>Quote__c.Total_Charges__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Charges (Cust. Curr.)</displayNameOverride>
+            <field>Quote__c.Total_Charges_Cust_Curr__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Credits (USD)</displayNameOverride>
+            <field>Quote__c.Total_Credits__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Customer Disc. Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__TotalCustomerDiscountAmount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total of all Primary QL Ext. Net Price</displayNameOverride>
+            <field>Quote__c.Total_Quote_Line_Bookings__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total Proposal Value (Cust. Curr)</displayNameOverride>
+            <field>Quote__c.Total_Proposal_Value_Cust_Curr__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Total QL Ext. Net Price (Cust Curr)</displayNameOverride>
+            <field>Quote__c.Total_Quote_Line_Bookings_Cust_Curr__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Type</displayNameOverride>
+            <field>Quote__c.SBQQ__Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Uncalculated</displayNameOverride>
+            <field>Quote__c.SBQQ__Uncalculated__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Unopened</displayNameOverride>
+            <field>Quote__c.SBQQ__Unopened__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Use Custom Terms</displayNameOverride>
+            <field>Quote__c.Use_Custom_Terms__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Use Standard Terms</displayNameOverride>
+            <field>Quote__c.Use_Standard_Terms__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Wanted Delivery Date</displayNameOverride>
+            <field>Quote__c.Wanted_Delivery_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote: Watermark Shown</displayNameOverride>
+            <field>Quote__c.SBQQ__WatermarkShown__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>Quote Fields</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride># of Quotes</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.of_Quotes__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account DataLoadID</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Account_DataLoadID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Name</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Account</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account Rep Code</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Account_Rep_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Amended Contract</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__AmendedContract__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Amount</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Amount (USD)</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Amount_USD__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Applications</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Applications__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Approval Status</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__ApprovalStatus__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Approval Step</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__ApprovalStep__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Approver</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__Approver__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>AVL (Approved Vendor List)</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.AVL_Approved_Vendor_List__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Brand</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Brand__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Budget Confirmed</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Budget_Confirmed__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Closed</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.IsClosed</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Close Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.CloseDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contact</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Contact</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contract</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Contract</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Contracted</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__Contracted__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Country of Origin Restrictions</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Country_of_Origin_Restrictions__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Create Contracted Prices</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__CreateContractedPrices__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Created By</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.CreatedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Created Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.CreatedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Contact</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Customer_Contact__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Contact</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Contact__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Customer Currency</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Customer_Currency__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Quality Description</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Data_Quality_Description__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Data Quality Score</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Data_Quality_Score__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Days Opportunity is Open</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Days_Opp_Open__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Description</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Description</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Discovery Completed</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Discovery_Completed__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>District\*</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Rep_Code_District__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Division</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Territory__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Use</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.End_Use__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End Use Application</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.End_Use_Application__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Account</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.End_User__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>EPC Firm Involved</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.EPC_Firm_Involved__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>EPC Firm Name</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.EPC_Firm_Name__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Expected Revenue</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.ExpectedRevenue</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Forecast Category</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.ForecastCategoryName</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Has Line Item</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.HasOpportunityLineItem</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Integration Message Counter</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Integration_Message_Counter__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Is it a Project?</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Is_it_a_Project__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Known Competition</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Known_Competition__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Last Activity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.LastActivityDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Last Modified By</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.LastModifiedBy</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Last Modified Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.LastModifiedDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Last Stage Change Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.LastStageChangeDate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Lead Source</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.LeadSource</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Line Items</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.BigMachines__Line_Items__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Loss Reason</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Loss_Reason__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Market</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Market__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Migration ID</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Migration_ID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Next Step</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.NextStep</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: OEM \*DNU\*</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.OEM__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>OEM Production Run Information</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.OEM_Production_Run_Information__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Currency</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.CurrencyIsoCode</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Detail</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Opportunity_Detail__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity ID</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Id</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Name</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Name</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity Owner</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Owner</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opp Rep Code</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Opp_Rep_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Ordered</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__Ordered__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Order Group ID</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__OrderGroupID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Parent_Opportunity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Parent_Opportunity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Partner Account</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.PartnerAccount</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Partner Rep Code</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Partner_Rep_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride> PecWeb Project ID</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.PecWeb_Project_ID__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Pre-Project Assessment Form</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Pre_Project_Assessment_Form__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Price Book</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Pricebook2</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary Campaign Source</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Campaign</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary Partner Account</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.PrimaryPartnerAccount</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Primary Quote</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__PrimaryQuote__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Private</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.IsPrivate</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Probability</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Probability__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Probability (%)</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Probability</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Group</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Product_Group__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Group(s)</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Product_Group_s__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Product Lead Time</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Product_Lead_Time__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Project Classification</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Project_Classification__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Prototype / Sales Sample</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Prototype_Sales_Sample__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Push Count</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.PushCount</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quantity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.TotalOpportunityQuantity</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quoted by REP?</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quoted_by_REP__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quote Number</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quote_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Quote Pricebook Id</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__QuotePricebookId__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quote Sent</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quote_Sent__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quote Total</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quote_Total__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quote Total Amount</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quote_Total_Amount__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Quote Type</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Quote_Type__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference Customer Inquiry Number</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Customer_Ref_Test__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Reference Secondary Contact</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Reference_Secondary_Contact__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Region\*</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Rep_Code_Region__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Renewal</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__Renewal__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Renewed Contract</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SBQQ__RenewedContract__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rep Channel</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Rep_Channel__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Rep Code</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Rep_Code__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Requested Ship Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Requested_Ship_Date__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>ROI Analysis Completed</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.ROI_Analysis_Completed__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Sales Division Del</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Sales_Division1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Salesperson</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Salesperson__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Salesperson</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Salespersonold__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Salesperson_Del</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Salesperson1__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Selling Entity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Sales_Division__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Account</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Shipping_Account__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Ship To Address</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Ship_To_Address__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Sourcing Entity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Sourcing_Entity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stage</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.StageName</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Stage Sort Order</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.StageSortOrder</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Step Approved</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__StepApproved__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Submarket</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Submarket__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Submitted Date</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__SubmittedDate__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Submitted User</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.sbaa__SubmittedUser__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Synced Quote</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.SyncedQuote</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Third Tier</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Third_Tier__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>This is a Parent Opportunity</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.This_is_a_Parent_Opportunity__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Total Bookings (USD)</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Total_Bookings_USD__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Type</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.Type</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Opportunity: Won</displayNameOverride>
+            <field>Quote__c.SBQQ__Opportunity2__c.IsWon</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>Opportunity Fields</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account: Account Number\*</displayNameOverride>
+            <field>Quote__c.SBQQ__Account__c.Account_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Account: OEM</displayNameOverride>
+            <field>Quote__c.SBQQ__Account__c.OEM__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c.SBQQ__Account__c.OEM_Sales_Channel__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>Bill To Account</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Account: Account Number\*</displayNameOverride>
+            <field>Quote__c.Shipping_Account__c.Account_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Shipping Account: OEM</displayNameOverride>
+            <field>Quote__c.Shipping_Account__c.OEM__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c.Shipping_Account__c.OEM_Sales_Channel__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>Shipping Account</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Account: Account Number\*</displayNameOverride>
+            <field>Quote__c.End_User__c.Account_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Account: OEM</displayNameOverride>
+            <field>Quote__c.End_User__c.OEM__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Quote__c.End_User__c.OEM_Sales_Channel__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>End User Account</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Parent Account: Account Name</displayNameOverride>
+            <field>Quote__c.End_User__c.Parent.Name</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Parent Account: Account Number\*</displayNameOverride>
+            <field>Quote__c.End_User__c.Parent.Account_Number__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Parent Account: Market</displayNameOverride>
+            <field>Quote__c.End_User__c.Parent.Market__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Parent Account: Sub-Market</displayNameOverride>
+            <field>Quote__c.End_User__c.Parent.Sub_Market__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>End User Parent Account: Third Tier</displayNameOverride>
+            <field>Quote__c.End_User__c.Parent.Third_Tier__c</field>
+            <table>Goals_Performance__c.Credits_and_Bookings__r</table>
+        </columns>
+        <masterLabel>End User Parent Account</masterLabel>
+    </sections>
+</ReportType>

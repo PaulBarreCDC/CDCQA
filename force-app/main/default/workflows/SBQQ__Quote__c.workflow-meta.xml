@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Partner_Submission</fullName>
+        <description>Partner Submission</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Inside_Sales_Approver_E_mail__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Sales_Approval_Required</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Set_Inside_Sales_Approver</fullName>
+        <description>This is only for demo purposes; Remove after trigger is created.</description>
+        <field>Inside_Sales_Approver__c</field>
+        <lookupValue>suraj.aluru@apexit.com</lookupValue>
+        <lookupValueType>User</lookupValueType>
+        <name>Set Inside Sales Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Key_Value</fullName>
+        <description>Sets the SBQQ__Key__c to External_Id__c format; We may be able to get rid of the External Id field altogether.</description>
+        <field>SBQQ__Key__c</field>
+        <formula>Name +  Status_Code__c + TEXT(Revision__c)</formula>
+        <name>Set Key Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Quote_Introduction</fullName>
+        <description>set introduction paragraph</description>
+        <field>SBQQ__Introduction__c</field>
+        <formula>&quot;Greetings &quot; +
+BLANKVALUE(SBQQ__PrimaryContact__r.FirstName, TRIM(SBQQ__Account__r.Name))+&quot;,&quot;
++br()+br()+br()+&quot;Enclosed is the proposal I promised you.&quot;+br()+br()+&quot;I also want to take this opportunity to thank you for all your help. Designing a suitable solution required that I become familiar with your products and your industry. As a result, your help and guidance proved to be invaluable and ultimately resulted in a better, more cost effective solution for your organization.&quot;+br()+br()+&quot;I will call you next week to discuss this proposal. As always, please don’t hesitate to call me if you have questions or if I can be of further assistance.&quot;+br()+br()+&quot;I hope we can continue working together into the future.&quot;+br()+br()+br()+br()+br()+&quot;With best regards,&quot; + br()+br()
++$User.FirstName + &quot; &quot; + $User.LastName + br() +
+$User.Title + br() + $User.Email</formula>
+        <name>Set Quote Introduction</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>set_calc_field_to_false</fullName>
+        <field>CalculatingField__c</field>
+        <literalValue>0</literalValue>
+        <name>set calc field to false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>set_calc_field_to_true</fullName>
+        <field>CalculatingField__c</field>
+        <literalValue>1</literalValue>
+        <name>set calc field to true</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Set Account on Quote</fullName>
+        <active>false</active>
+        <formula>True</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Calculating Field to FALSE on Update</fullName>
+        <actions>
+            <name>set_calc_field_to_false</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>if( CalculatingField__c, true, false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Calculating Field to TRUE on Update</fullName>
+        <actions>
+            <name>set_calc_field_to_true</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>if( !CalculatingField__c, true, false)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Introduction</fullName>
+        <actions>
+            <name>Set_Quote_Introduction</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>ISBLANK(SBQQ__Introduction__c )</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Quote Fields</fullName>
+        <actions>
+            <name>Set_Key_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <formula>NOT(ISBLANK(Name))</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

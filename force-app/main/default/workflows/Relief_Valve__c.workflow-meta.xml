@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Reset_Gas_Group</fullName>
+        <field>Gas_Group__c</field>
+        <name>Reset Gas Group</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Zone</fullName>
+        <field>Zone__c</field>
+        <name>Reset Zone</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Certification Value Reset</fullName>
+        <actions>
+            <name>Reset_Gas_Group</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Reset_Zone</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Relief_Valve__c.Section_C_Flag__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Relief_Valve__c.Atex_Certificate__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>This workflow will reset picklist values of gas group and zone to default, on unchecking and saving Atex certificate.</description>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

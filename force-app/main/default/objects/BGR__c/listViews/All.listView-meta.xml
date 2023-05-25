@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Quote_Line__c</columns>
+    <columns>Lead_Time_Site_10__c</columns>
+    <columns>ASSYPARTNOBASE__c</columns>
+    <columns>Lead_Time_Site_20__c</columns>
+    <columns>Lead_Time_Site_30__c</columns>
+    <columns>Lead_Time_Site_40__c</columns>
+    <columns>Schedule__c</columns>
+    <columns>Schedule_2__c</columns>
+    <columns>Lead_Time_Adder__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Narrow_selection_on_flow_requirements__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Processed_to_quote__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>CC - This checkbox will represent this sizing request having been successfully processed into a Salesforce CPQ Quote record.</description>
+    <externalId>false</externalId>
+    <label>Processed to quote</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

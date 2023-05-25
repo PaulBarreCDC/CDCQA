@@ -1,0 +1,11 @@
+Attribute_Code__c,Attribute_Text_Description__c,Display_Priority__c,ProdGroup__c,SubGroup__c
+GENOPT,Option:,10,Valve,Thief Hatch
+HCLASS,Connection:,3,Valve,Thief Hatch
+MCDPHM,Vacuum Diaphragm Material:,6,Valve,Thief Hatch
+MCENVG,Envelope Gasket Material:,5,Valve,Thief Hatch
+MCSPRG,Spring Material:,7,Valve,Thief Hatch
+PosSetCode,Pressure Setting:,8,Valve,Thief Hatch
+PTC,Model:,1,Valve,Thief Hatch
+SZC,Size:,2,Valve,Thief Hatch
+VacSetCode,Vacuum Setting:,9,Valve,Thief Hatch
+MCBODY,Body Material:,4,Valve,Thief Hatch

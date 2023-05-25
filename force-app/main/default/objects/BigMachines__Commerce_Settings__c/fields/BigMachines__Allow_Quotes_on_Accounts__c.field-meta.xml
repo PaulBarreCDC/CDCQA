@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Allow_Quotes_on_Accounts__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If this box is checked, users will be allowed to create Quotes through the Salesforce UI that are linked directly to an Account without an Opportunity.  If this box is unchecked, users will not be allowed to create quotes on an account without also attaching them to an opportunity.  This checkbox has no impact on Quotes created through Oracle CPQ Cloud Unplugged or through the Salesforce Data Loader.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If this box is checked, users may create Quotes through the Salesforce UI that are linked directly to an Account.  If this box is unchecked, users will not be allowed to create quotes on an account without also attaching them to an opportunity.</inlineHelpText>
+    <label>Allow Quotes on Accounts</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

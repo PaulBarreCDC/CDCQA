@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>B</fullName>
+        <default>false</default>
+        <label>B-Buna-N</label>
+    </customValue>
+    <customValue>
+        <fullName>B-Oring</fullName>
+        <default>false</default>
+        <label>B-Buna-N O-Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>BT</fullName>
+        <default>false</default>
+        <label>B-Buna-N w/ Fluoropolymer (Tef) Backup</label>
+    </customValue>
+    <customValue>
+        <fullName>E</fullName>
+        <default>false</default>
+        <label>E-EPDM</label>
+    </customValue>
+    <customValue>
+        <fullName>E-Oring</fullName>
+        <default>false</default>
+        <label>E-EPDM O-Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>ET</fullName>
+        <default>false</default>
+        <label>E-EPDM w/ Fluoropolymer (Tef) Backup</label>
+    </customValue>
+    <customValue>
+        <fullName>K</fullName>
+        <default>false</default>
+        <label>K-Kalrez(R)</label>
+    </customValue>
+    <customValue>
+        <fullName>K-Oring</fullName>
+        <default>false</default>
+        <label>K-Kalrez(R) O-Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>NT</fullName>
+        <default>false</default>
+        <label>N-Neoprene w/ Fluoropolymer (Tef) Backup</label>
+    </customValue>
+    <customValue>
+        <fullName>T</fullName>
+        <default>false</default>
+        <label>T-Fluoropolymer (Tef)</label>
+    </customValue>
+    <customValue>
+        <fullName>V</fullName>
+        <default>false</default>
+        <label>V-FKM</label>
+    </customValue>
+    <customValue>
+        <fullName>V-Oring</fullName>
+        <default>false</default>
+        <label>V-FKM O-Ring</label>
+    </customValue>
+    <customValue>
+        <fullName>VT</fullName>
+        <default>false</default>
+        <label>V-FKM w/ Fluoropolymer (Tef) Backup</label>
+    </customValue>
+    <masterLabel>Diaphragm Material</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

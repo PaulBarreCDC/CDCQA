@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Viscosity_Constraint</fullName>
+    <active>true</active>
+    <description>Viscosity is a Mandatory field based on certain Evaluation Per Selections.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Evaluation_Per__c , &quot;API Liquid&quot;) || 
+ISPICKVAL( Evaluation_Per__c , &quot;ISO Liquid&quot;) || 
+ISPICKVAL( Evaluation_Per__c, &quot;API Omega Method 2 Phase Flashing or Nonflashing&quot;) || 
+ISPICKVAL( Evaluation_Per__c, &quot;API Omega Method Subcooled Liquid&quot;), 
+OR( 
+ISBLANK ( Viscosity__c ) 
+) 
+)&amp;&amp; 
+( Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Viscosity__c</errorDisplayField>
+    <errorMessage>Viscosity: Please Enter a Value</errorMessage>
+</ValidationRule>

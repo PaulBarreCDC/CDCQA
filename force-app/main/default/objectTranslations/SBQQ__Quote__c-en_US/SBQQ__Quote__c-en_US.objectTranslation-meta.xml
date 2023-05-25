@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__CalculatingFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__LineEditor</name>
+    </fieldSets>
+    <fieldSets>
+        <label></label>
+        <name>SBQQ__NonCurrentQuoteLockedFields</name>
+    </fieldSets>
+    <layouts>
+        <layout>Copy of Inside Sales Approved (Mick)</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Calculation Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inside Sales Approved (New)</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inside Sales Order Submitted (New)</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Calculation Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inside Sales Partner Submitted</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Calculate Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inside Sales Pending</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Calculation Status</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Inside Sales Pending Approval (New)</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales Approved</layout>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales Approved (Mick)</layout>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales Order Submitted</layout>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales Pending</layout>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Sales Pending Approvals</layout>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Submitted</layout>
+        <sections>
+            <label></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Read Only Layout</layout>
+        <sections>
+            <label></label>
+            <section>Admin Info (PLEASE IGNORE)</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Approvals</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Billing/Shipping/End User</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Commissions</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Delivery and Freight</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Order Details</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Output Document</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Pricing and Financials</section>
+        </sections>
+        <sections>
+            <label></label>
+            <section>Quote Header</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label></label>
+        <name>Add_Quote_Line_Pilot</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Cancel_Order_Order_Line</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Change_Order</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Contract_Review</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Create_Charge</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Create_Line_Item</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Denied_Party_Screening</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Eng_Review</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Initiate_Change_Order</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Order_Leading_Questions</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Preview_ApprovalCMP</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Prod_Planning</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Quote_Attachment</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Review_and_Approve_T_C</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Revise</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Revise_Approval</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Submit_For_ApprovalCMP</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Sync_Customer_to_IFS</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Sync_Order_to_IFS</name>
+    </quickActions>
+    <quickActions>
+        <label></label>
+        <name>Sync_Parts_to_IFS</name>
+    </quickActions>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Approved</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Lock_Order</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Order_Submitted</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Partner_Submitted</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Pending</name>
+    </recordTypes>
+    <recordTypes>
+        <description></description>
+        <label></label>
+        <name>Pending_Approval</name>
+    </recordTypes>
+    <sharingReasons>
+        <label></label>
+        <name>Share_Quote_With_Engineering_Users</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label></label>
+        <name>Share_Quote_With_Production_Plan_Users</name>
+    </sharingReasons>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Block_Q_Edit_by_Internals_after_Pending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Block_Q_Edit_by_Partners_after_Pending</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Contains_Nonpriced_Lines</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Quote_Net_Amount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__End_Date_Before_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Invalid_First_Segment_Term_End_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>SBQQ__Invalid_Subscription_Term</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Sum_of_Commission_Splits</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Test</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Unique_Commission_Reps</name>
+    </validationRules>
+    <webLinks>
+        <label></label>
+        <name>Cancel_Order_Order_Line</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>ChangeOrder_custom</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Change_Order</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Custom_Edit_Lines</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Deep_Clone</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Preview_Approval</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Revise_Approval</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__CalculateQuote</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__CloneWithRelated</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__CloneWithRelatedClassic</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__CreateOrderFromQuote</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__EditLines</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__GenerateDocument</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__ImportLines</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__IncludeDocument</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__ModifyQuoteTerms</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__PreviewDocument</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__RefreshMultiplePrices</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SBQQ__RefreshPrices</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Submit_Order_To_IFS</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>SyncOrder</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Sync_Order_to_IFS</name>
+    </webLinks>
+    <webLinks>
+        <label></label>
+        <name>Sync_Parts_to_IFS</name>
+    </webLinks>
+</CustomObjectTranslation>

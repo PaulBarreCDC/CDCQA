@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Setting_Value_Validation</fullName>
+    <active>false</active>
+    <description>The pressure itself should be non zero and positive.</description>
+    <errorConditionFormula>AND((Pressure_Setting__c    &lt;=   0),
+(  Section_A_Flag__c  = TRUE))</errorConditionFormula>
+    <errorDisplayField>Pressure_Setting__c</errorDisplayField>
+    <errorMessage>Please enter Pressure Setting value greater than 0.</errorMessage>
+</ValidationRule>

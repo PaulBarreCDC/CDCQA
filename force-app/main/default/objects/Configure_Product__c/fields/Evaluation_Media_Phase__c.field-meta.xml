@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Evaluation_Media_Phase__c</fullName>
+    <externalId>false</externalId>
+    <label>Evaluation Media Phase</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Gas/Vapor (MW, k, Z)</fullName>
+                <default>false</default>
+                <label>Gas/Vapor (MW, k, Z)</label>
+            </value>
+            <value>
+                <fullName>Liquid (Density/SG)</fullName>
+                <default>false</default>
+                <label>Liquid (Density/SG)</label>
+            </value>
+            <value>
+                <fullName>Dry &amp; Saturated Steam</fullName>
+                <default>false</default>
+                <label>Dry &amp; Saturated Steam</label>
+            </value>
+            <value>
+                <fullName>Dry &amp; Saturated, or Super Heated Steam</fullName>
+                <default>false</default>
+                <label>Dry &amp; Saturated, or Super Heated Steam</label>
+            </value>
+            <value>
+                <fullName>Homogenous Wet Steam of Dryness 90% or Over</fullName>
+                <default>false</default>
+                <label>Homogenous Wet Steam of Dryness 90% or Over</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

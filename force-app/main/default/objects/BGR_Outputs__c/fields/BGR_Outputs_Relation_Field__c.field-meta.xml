@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BGR_Outputs_Relation_Field__c</fullName>
+    <externalId>false</externalId>
+    <label>BGR Outputs Relation Field</label>
+    <referenceTo>BGR__c</referenceTo>
+    <relationshipLabel>BGR Outputs</relationshipLabel>
+    <relationshipName>BGR_Outputs</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

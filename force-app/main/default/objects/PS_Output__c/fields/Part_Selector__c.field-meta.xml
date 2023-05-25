@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_Selector__c</fullName>
+    <externalId>false</externalId>
+    <label>Part Selector</label>
+    <referenceTo>Part_Selector__c</referenceTo>
+    <relationshipLabel>PS_Output</relationshipLabel>
+    <relationshipName>PS_Output</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

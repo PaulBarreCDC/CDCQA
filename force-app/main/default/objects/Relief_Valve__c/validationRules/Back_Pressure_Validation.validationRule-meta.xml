@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Back_Pressure_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+OR(Pressure_Setting__c &gt; 0,NOT(ISBLANK(Pressure_Setting__c ))),
+Back_Pressure__c &lt; 0,
+(Section_A_Flag__c = TRUE))</errorConditionFormula>
+    <errorDisplayField>Back_Pressure__c</errorDisplayField>
+    <errorMessage>Back Pressure : Please enter a positive Integer Value</errorMessage>
+</ValidationRule>

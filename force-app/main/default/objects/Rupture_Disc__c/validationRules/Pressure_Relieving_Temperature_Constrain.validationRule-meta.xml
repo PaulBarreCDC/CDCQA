@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Relieving_Temperature_Constrain</fullName>
+    <active>true</active>
+    <description>Pressure Relieving Temperature is Mandatory field to be selected by the User</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( Evaluation_Per__c , &quot;ASME Gas/Vapor&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;API Gas/Vapor&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;API Steam&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;ISO Gas/Vapor&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;ISO Dry Steam&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;Fauske 2 Phase Gas-Liquid&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;Fauske 2 Phase Vapor-Liquid&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;Fauske All Liquid Flashing&quot;) ||
+ISPICKVAL( Evaluation_Per__c , &quot;Fauske 2 Phase Hybrid Gas-Vapor-Liquid&quot;),
+OR(
+ISBLANK(TEXT(  Pressure_Relieving_Temperature__c ))
+)
+)&amp;&amp;
+( Bypass__c = FALSE) &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Pressure_Relieving_Temperature__c</errorDisplayField>
+    <errorMessage>Pressure Relieving Temperature: Please select a value from the drop down</errorMessage>
+</ValidationRule>

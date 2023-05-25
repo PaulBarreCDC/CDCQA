@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNULL(Quantity__c), Product_Selection_Flag__c)</errorConditionFormula>
+    <errorMessage>Quantity: Please Enter a Value</errorMessage>
+</ValidationRule>

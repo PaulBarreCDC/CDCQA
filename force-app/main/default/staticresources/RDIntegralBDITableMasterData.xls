@@ -1,0 +1,2 @@
+BTC__c,CableLength__c,CompSTC__c,EndConnection__c,GasketMatlCode__c,Interface__c,LeadtimeSchedule__c,ModulePN__c,OrderDesc1__c,OrderDesc2__c,OrderDesc3__c,OrderDesc4__c,OrderDesc5__c,OrderDesc6__c,OutRingOnOff__c,Seal_Thickness__c,StripMatlCode__c,SubAssyUsed__c,SZC__c,Type__c,WireType__c,Wiring_Configuration__c,PTC__c
+BDG,10 ft (3m),NA,Plug End,0B6,-,BDIA,BDG0600A2B62407,,Blue-Gard 3200 B.D.I. Gaskets,Copper B.D.I. Strip,FEP B.D.I. Membrane,6m (20 ft) Blue Shielded Cable,w/ Standard Plug B.D.I. Connection,Off,-,024,Not Used,0108,Integral BDI,Blue Shielded Cable,Test,HPZ

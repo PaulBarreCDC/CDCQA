@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>cdcpc__Operation_No__c</columns>
+    <columns>NAME</columns>
+    <columns>cdcpc__Text1Val__c</columns>
+    <columns>cdcpc__Text2Val__c</columns>
+    <columns>cdcpc__Text3Val__c</columns>
+    <columns>cdcpc__Text4Val__c</columns>
+    <columns>cdcpc__Text5Val__c</columns>
+    <columns>cdcpc__Standard_Operation_ID__c</columns>
+    <columns>cdcpc__CDC_Ext_ID__c</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__Text1Val__c</field>
+        <operation>equals</operation>
+        <value>WMP</value>
+    </filters>
+    <filters>
+        <field>cdcpc__Text3Val__c</field>
+        <operation>equals</operation>
+        <value>0004</value>
+    </filters>
+    <label>All</label>
+</ListView>

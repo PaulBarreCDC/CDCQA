@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductGroup__c</fullName>
+    <externalId>false</externalId>
+    <label>ProductGroup</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Brand_picklist__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sanitary Accessories</fullName>
+                <default>false</default>
+                <label>Sanitary Accessories</label>
+            </value>
+            <value>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+                <label>Accessories</label>
+            </value>
+            <value>
+                <fullName>BDI Accessories</fullName>
+                <default>false</default>
+                <label>BDI Accessories</label>
+            </value>
+            <value>
+                <fullName>Flame Check</fullName>
+                <default>false</default>
+                <label>Flame Check</label>
+            </value>
+            <value>
+                <fullName>Fluid-Trol</fullName>
+                <default>false</default>
+                <label>Fluid-Trol</label>
+            </value>
+            <value>
+                <fullName>Free Vent</fullName>
+                <default>false</default>
+                <label>Free Vent</label>
+            </value>
+            <value>
+                <fullName>Manometer</fullName>
+                <default>false</default>
+                <label>Manometer</label>
+            </value>
+            <value>
+                <fullName>Pipe Accessories</fullName>
+                <default>false</default>
+                <label>Pipe Accessories</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>Replacement Parts</fullName>
+                <default>false</default>
+                <label>Replacement Parts</label>
+            </value>
+            <value>
+                <fullName>Tank Hatch</fullName>
+                <default>false</default>
+                <label>Tank Hatch</label>
+            </value>
+            <value>
+                <fullName>Trap</fullName>
+                <default>false</default>
+                <label>Trap</label>
+            </value>
+            <value>
+                <fullName>Valve</fullName>
+                <default>false</default>
+                <label>Valve</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>Sanitary Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>BDI Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <valueName>Fluid-Trol</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Pipe Accessories</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CDC</controllingFieldValue>
+            <controllingFieldValue>LaMOT</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Flame Check</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Free Vent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Manometer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Replacement Parts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Tank Hatch</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Trap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Groth</controllingFieldValue>
+            <valueName>Valve</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

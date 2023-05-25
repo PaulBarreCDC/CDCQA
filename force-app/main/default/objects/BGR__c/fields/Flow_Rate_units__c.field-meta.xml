@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_Rate_units__c</fullName>
+    <externalId>false</externalId>
+    <label>Flow Rate Units</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(Imperial) gallon/h</fullName>
+                <default>false</default>
+                <label>(Imperial) gallon/h</label>
+            </value>
+            <value>
+                <fullName>(Imperial) gallon/min</fullName>
+                <default>false</default>
+                <label>(Imperial) gallon/min</label>
+            </value>
+            <value>
+                <fullName>(U.S.) gallon/h</fullName>
+                <default>false</default>
+                <label>(U.S.) gallon/h</label>
+            </value>
+            <value>
+                <fullName>(U.S.) gallon/min</fullName>
+                <default>false</default>
+                <label>(U.S.) gallon/min</label>
+            </value>
+            <value>
+                <fullName>barrel/h</fullName>
+                <default>false</default>
+                <label>barrel/h</label>
+            </value>
+            <value>
+                <fullName>ft3/h</fullName>
+                <default>false</default>
+                <label>ft3/h</label>
+            </value>
+            <value>
+                <fullName>ft3/min</fullName>
+                <default>false</default>
+                <label>ft3/min</label>
+            </value>
+            <value>
+                <fullName>kg/h</fullName>
+                <default>false</default>
+                <label>kg/h</label>
+            </value>
+            <value>
+                <fullName>kg/min</fullName>
+                <default>false</default>
+                <label>kg/min</label>
+            </value>
+            <value>
+                <fullName>L/h</fullName>
+                <default>false</default>
+                <label>L/h</label>
+            </value>
+            <value>
+                <fullName>L/min</fullName>
+                <default>false</default>
+                <label>L/min</label>
+            </value>
+            <value>
+                <fullName>lb/h</fullName>
+                <default>false</default>
+                <label>lb/h</label>
+            </value>
+            <value>
+                <fullName>lb/min</fullName>
+                <default>false</default>
+                <label>lb/min</label>
+            </value>
+            <value>
+                <fullName>m3/h</fullName>
+                <default>false</default>
+                <label>m3/h</label>
+            </value>
+            <value>
+                <fullName>m3/min</fullName>
+                <default>false</default>
+                <label>m3/min</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

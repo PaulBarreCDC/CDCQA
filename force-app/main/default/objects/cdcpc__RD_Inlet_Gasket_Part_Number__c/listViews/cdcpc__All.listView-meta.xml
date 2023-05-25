@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>cdcpc__PTC__c</columns>
+    <columns>cdcpc__STC__c</columns>
+    <columns>cdcpc__SZC__c</columns>
+    <columns>cdcpc__TempLL__c</columns>
+    <columns>cdcpc__TempUL__c</columns>
+    <columns>cdcpc__InletGasketPartNumber__c</columns>
+    <columns>cdcpc__AssyThickLL__c</columns>
+    <columns>cdcpc__AssyThickUL__c</columns>
+    <columns>cdcpc__DiscThckLL__c</columns>
+    <columns>cdcpc__DiscThckUL__c</columns>
+    <columns>cdcpc__DSCVAR__c</columns>
+    <columns>cdcpc__MCIG__c</columns>
+    <columns>cdcpc__TefSealThickLL__c</columns>
+    <columns>cdcpc__SourceCode__c</columns>
+    <columns>cdcpc__TefSealThickUL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__MCIG__c</field>
+        <operation>equals</operation>
+        <value>070</value>
+    </filters>
+    <label>All</label>
+</ListView>

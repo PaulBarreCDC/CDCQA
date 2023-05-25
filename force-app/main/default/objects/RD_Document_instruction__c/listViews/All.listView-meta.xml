@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>DSCVAR__c</columns>
+    <columns>SizeLL__c</columns>
+    <columns>SizeUL__c</columns>
+    <columns>Seat__c</columns>
+    <columns>Document__c</columns>
+    <columns>Document_No__c</columns>
+    <columns>addIntegralBDI__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

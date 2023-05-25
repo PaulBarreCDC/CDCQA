@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Standard Lead-Time</fullName>
+        <default>false</default>
+        <label>Standard Lead-Time</label>
+    </customValue>
+    <customValue>
+        <fullName>Shortest possible lead-time needed</fullName>
+        <default>false</default>
+        <label>Shortest possible lead-time needed</label>
+    </customValue>
+    <customValue>
+        <fullName>A specific product ship date has been specified</fullName>
+        <default>false</default>
+        <label>A specific date product should leave factory has been specified</label>
+    </customValue>
+    <masterLabel>Product Lead Time</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Result_Cont__c</fullName>
+    <description>Overflow if expected results exceeds excel field length</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Overflow if expected results exceeds excel field length</inlineHelpText>
+    <label>Expected Result Cont.</label>
+    <length>1000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

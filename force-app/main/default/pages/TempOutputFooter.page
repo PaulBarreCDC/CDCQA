@@ -1,0 +1,13 @@
+<apex:page showHeader="false"
+            sidebar="false"
+            contentType="text/xml" 
+            cache="false"
+            controller="CPQQuoteTemplateController"
+            action="{!init}" >
+        <!--img src="{!URLFOR($Resource.cdcOutput,shortBackgroundURI)}"/-->
+
+  <block-container  background-image="url({!URLFOR($Resource.cdcOutput,shortBackgroundURI)})" background-repeat="no-repeat" background-position="center">
+      <block />
+      <external-graphic src="url({!URLFOR($Resource.cdcOutput,shortBackgroundURI)})"></external-graphic>
+  </block-container>
+</apex:page>

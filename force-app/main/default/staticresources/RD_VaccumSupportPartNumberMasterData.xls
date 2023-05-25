@@ -1,0 +1,3 @@
+CapHt__c,Component_Scrap__c,DSCVAR__c,Leadtime__c,MCVS__c,OptionCode__c,PartSeat__c,Part_Code__c,PressLL__c,PressUL__c,PTC__c,Qty_Per_Assembly__c,Scrap_Factor__c,SourceCode__c,STC__c,SZC__c,TestingCode__c,ThckCode__c,Thickness__c,VacuumSupportPartNumber__c
+A,0,A,RD,001,000,NA,HPZ,1,500,HPZ,1,0,00,NA,0108,000,120,0.9,VLB020000600LL0120000000
+A,0,A,RD,002,000,NA,HPZ,1,500,HPZ,1,0,00,NA,0108,000,100,0.9,VLB010000600SF0100000000

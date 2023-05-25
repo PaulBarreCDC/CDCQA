@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>MODEL__c</columns>
+    <columns>SIZECODE__c</columns>
+    <columns>Size_label__c</columns>
+    <columns>ORIFICE__c</columns>
+    <columns>SERVICE__c</columns>
+    <columns>SUPPLYPRESSURELL__c</columns>
+    <columns>SUPPLYPRESSUREUL__c</columns>
+    <columns>SETTINGLL__c</columns>
+    <columns>SETTINGUL__c</columns>
+    <columns>ATEX__c</columns>
+    <columns>CUTR__c</columns>
+    <columns>SelectionOK__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>MODEL__c</field>
+        <operation>equals</operation>
+        <value>3011HP</value>
+    </filters>
+    <label>All Records</label>
+</ListView>

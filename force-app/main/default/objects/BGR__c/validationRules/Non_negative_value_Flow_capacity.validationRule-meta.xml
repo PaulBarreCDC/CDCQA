@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_negative_value_Flow_capacity</fullName>
+    <active>true</active>
+    <description>No negative value can be entered for Minimum required flow capacity</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+NOT(ISBLANK(Customer_Specified_Media__c)),
+NOT(ISBLANK(Molecular_Weight__c)),
+NOT(ISBLANK(Compressibility_Factor__c)),
+NOT(ISBLANK(Ratio_of_Specific_Heats__c)),
+NOT(ISBLANK( Minimum_Required_Flow_Capacity__c )),
+				 Minimum_Required_Flow_Capacity__c &lt; 0,
+Bypass__c = FALSE,
+Narrow_selection_on_flow_requirements__c = true,
+Section_B_flag__c = TRUE
+)</errorConditionFormula>
+    <errorDisplayField>Minimum_Required_Flow_Capacity__c</errorDisplayField>
+    <errorMessage>Minimum Required Flow Capacity: Please Enter Positive Valid value</errorMessage>
+</ValidationRule>

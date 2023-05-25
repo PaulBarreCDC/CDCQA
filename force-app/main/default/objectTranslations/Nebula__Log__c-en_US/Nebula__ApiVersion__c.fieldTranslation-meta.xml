@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help></help>
+    <label></label>
+    <name>Nebula__ApiVersion__c</name>
+    <picklistValues>
+        <masterLabel>v51.0 - Spring &apos;21 Release</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>v52.0 - Summer &apos;21 Release</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>v53.0 - Winter &apos;22 Release</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

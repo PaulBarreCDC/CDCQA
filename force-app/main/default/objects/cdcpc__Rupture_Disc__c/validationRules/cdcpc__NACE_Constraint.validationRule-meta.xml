@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__NACE_Constraint</fullName>
+    <active>true</active>
+    <description>NACE is a Mandatory field to be entered by the user.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( cdcpc__NACE__c , &quot;&quot;),
+cdcpc__Certificate_of_Origin__c = True
+)</errorConditionFormula>
+    <errorDisplayField>cdcpc__NACE__c</errorDisplayField>
+    <errorMessage>NACE: Please select a value from the drop down</errorMessage>
+</ValidationRule>

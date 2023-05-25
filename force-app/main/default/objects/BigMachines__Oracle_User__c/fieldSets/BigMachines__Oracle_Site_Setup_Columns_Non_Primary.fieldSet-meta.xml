@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FieldSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Oracle_Site_Setup_Columns_Non_Primary</fullName>
+    <description>Each CPQ Cloud Site (listed under that tab &quot;Oracle CPQ Cloud Site Setup) contains a table of Oracle Users.  The values in this Field Set constitute the colums in that table for CPQ Cloud Sites that are not a primary commerce process.</description>
+    <displayedFields>
+        <field>BigMachines__Salesforce_User__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <displayedFields>
+        <field>BigMachines__Allow_Quote_Creation__c</field>
+        <isFieldManaged>false</isFieldManaged>
+        <isRequired>false</isRequired>
+    </displayedFields>
+    <label>Oracle Site Setup Columns Non-Primary</label>
+</FieldSet>

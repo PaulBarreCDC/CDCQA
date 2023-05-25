@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>CDC%2FGroth Inside Sales Lead Assignment</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>tkaleta@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.Comments__c</field>
+                <operation>contains</operation>
+                <value>CLICK HERE</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>dvandenbrink@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 OR 2 OR 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Turkey,Spain,Portugal,Greece,Netherlands,Belgium,Czech Republic,Slovakia,Austria,Hungary,Romania,Poland,Russia,Germany,Italy,Estonia,Latvia,Lithuania,Switzerland,Denmark,Iceland,United Kingdom,Israel,Norway,Sweden,Ireland</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Scotland,Jordan,Egypt,Finland,South Africa,Kenya,Algeria,Angola,Benin,Botswana,Burkina Faso,Burundi,Cabo Verde,Cameroon,Chad,Comoros,Congo,Cote d&apos;Ivoire,Djibouti,Eritrea,Eswatini,Ethiopia,Gabon,Gambia,Ghana,Guinea,Guinea-Bissau</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Lesotho,Liberia,Libya,Madagascar,Malawi,Mali,Mauritania,Mauritius,Morocco,Mozambique,Namibia,Niger,Nigeria,Rwanda,Senegal,Seychelles,Sierra Leone,Somalia,South Sudan,Sudan,Tanzania,Togo,Tunisia,Uganda,Zambia,Zimbabwe</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>anorberto@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>LaMOT Web</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>mberry@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Delaware,Maryland,New Jersey</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Canada,Costa Rica,El Salvador,Uruguay,Venezuela,Aruba,Curacao,Argentina,Peru,Bolivia,Paraguay,Columbia,Ecuador,Trinidad and Tobago,Brazil</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>kleber@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Alabama,Alaska,Arizona,California,Georgia,Colorado,Hawaii,Idaho,Kansas,Montana,Nebraska,New Mexico,Nevada,North Carolina,Oklahoma,Oregon,South Dakota,Utah,Washington,Wyoming</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Chile</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>mberry@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Connecticut,Indiana,Maine,Massachusetts,New Hampshire,South Carolina,Vermont,Virginia,West Virginia,Tennessee</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>nbirkenholz@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Canada,Argentina,Bolivia,Brazil,Chile,Colombia,Costa Rica,Dominican Republic,Ecuador,Guyana,Puerto Rico,Suriname,Uruguay,Mexico,El Salvador,Peru,Paraguay,Aruba,Curacao,Trinidad and Tobago</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>ktestorff@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Illinois,Florida,Michigan,Minnesota,North Dakota,Wisconsin</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Mexico,Guatemala,Honduras,Puerto Rico,Dominican Republic,US Virgin Islands</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>azasadny@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>CDC Web</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Texas,Louisiana,Mississippi</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>emack@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND 2 AND 3</booleanFilter>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>GrothCorp.com Website Tracking</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Alaska,Delaware,Louisiana,Maine,Maryland,Massachusetts,New Hampshire,New Jersey,New York,Vermont,Connecticut,Kentucky,Ohio,Pennsylvania,Texas,Virginia,West Virginia,Alabama,Georgia,Michigan,North Carolina,South Carolina,Tennessee</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Canada</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>bcornejo@grothcorp.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>GrothCorp.com Website Tracking</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Arizona,Idaho,Illinois,Indiana,Iowa,Kansas,Minnesota,Missouri,Nebraska,Nevada,New Mexico,North Dakota,Oregon,South Dakota,Utah,Wisconsin,Wyoming</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Argentina,Bolivia,Brazil,Chile,Colombia,Costa Rica,Dominican Republic,Ecuador,Guyana,Mexico,Paraguay,Peru,Puerto Rico,Suriname,Trinidad  and Tobago,Uruguay</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jburton@grothcorp.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>GrothCorp.com Website Tracking</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Colorado,Hawaii,Montana,Oklahoma,Washington</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>mberry@contdisc.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Arkansas,Kentucky,Missouri,Ohio,Pennsylvania</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>notEqual</operation>
+                <value>Delaware,Maryland,New Jersey,Alabama,Alaska,Arizona,California,Georgia,Colorado,Hawaii,Idaho,Kansas,Montana,Nebraska,Nevada,North Carolina,Oklahoma,Oregon,South Dakota,Utah,Washington,Wyoming,Connecticut,Indiana,Maine,Massachusetts,New Hampshire</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>notEqual</operation>
+                <value>South Carolina,Vermont,Virginia,West Virginia,Tennessee,Illinois,Florida,Michigan,Minnesota,North Dakota,Wisconsin,Texas,Louisiana,Mississippi</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>notEqual</operation>
+                <value>Canada,Argentina,Bolivia,Brazil,Chile,Colombia,Costa Rica,Dominican Republic,Ecuador,Guyana,Puerto Rico,Suriname,Uruguay,Mexico,El Salvador,Peru,Paraguay,Aruba,Curacao,Trinidad and Tabago,Panama</value>
+            </criteriaItems>
+            <template>unfiled$public/LeadsNewassignmentnotificationSAMPLE</template>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Groth Test</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <assignedTo>bcornejo@grothcorp.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>GrothCorp.com Website Tracking</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Arizona,Idaho,Illinois,Indiana,Iowa,Kansas,Minnesota,Missouri,Nebraska,Nevada,New Mexico,North Dakota,Oregon,South Dakota,Utah,Wisconsin,Wyoming</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.Country</field>
+                <operation>equals</operation>
+                <value>Argentina,Bolivia,Brazil,Chile,Colombia,Costa Rica,Dominican Republic,Ecuador,Guyana,Mexico,Paraguay,Peru,Puerto Rico,Suriname,Trinidad  and Tobago,Uruguay</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>jburton@grothcorp.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Lead.pi__campaign__c</field>
+                <operation>equals</operation>
+                <value>GrothCorp.com Website Tracking</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.State</field>
+                <operation>equals</operation>
+                <value>Colorado,Hawaii,Montana,Oklahoma,Washington</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+    <assignmentRule>
+        <fullName>Test Rule 1</fullName>
+        <active>false</active>
+    </assignmentRule>
+</AssignmentRules>

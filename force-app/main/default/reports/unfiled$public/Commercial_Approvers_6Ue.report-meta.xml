@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.External_ID__c</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.Brand__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.Inside_Sales_Approver__c</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.Regional_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.Sales_Director_Approver__c</field>
+    </columns>
+    <columns>
+        <field>Commercial_Approvers__c.Sales_Executive_Approver__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Commercial Approvers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$Commercial_Approvers__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>DUE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

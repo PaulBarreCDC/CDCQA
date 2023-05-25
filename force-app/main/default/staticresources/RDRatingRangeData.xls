@@ -1,0 +1,11 @@
+PTC__c,RGRAT1__c,RGTYP1__c,VGRAT1__c,VGTYP1__c
+CAL,Rated,Zero,,
+CAL,Specified,Zero,,
+CAL,,,Rated,Zero
+CAL,Rated,Special - 1/2 Reduced Range,,
+CAL,Burst Pressure Min/Max.,Specify Min,,
+CAL,Specified,Special,,
+CAL,Rated,-10% (-5 Psig),,
+CAL,Rated,Zero,,
+CAL,Specified,Special - 3/4 Reduced Range,,
+CAL,,,Rated,Standard

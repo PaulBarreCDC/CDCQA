@@ -1,0 +1,14 @@
+<aura:component access="global" implements="forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:isUrlAddressable,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome">
+    <aura:html tag="style">
+        .slds-modal__container{
+            width: 80% !important;
+            max-width: 80% !important;
+        }
+    </aura:html>  
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>  
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.reInit}" />
+    <aura:attribute name="recordId" type="String" />
+
+   <!-- <c:lwcProductSelection recordId="{!v.recordId}"/> -->
+    <c:lwcCustomQuoteLinePage recordId="{!v.recordId}"/>
+</aura:component>

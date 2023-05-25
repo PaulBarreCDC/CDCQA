@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pressure_Settings_units_cannot_be_null</fullName>
+    <active>true</active>
+    <description>The Setting units field cannot be null - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISPICKVAL( Service_Type__c, &quot;Pressure&quot;),
+				NOT(ISBLANK(Setting__c)),  
+				ISPICKVAL( Setting_Units__c, &quot;&quot;),
+				Bypass__c = FALSE,
+    Relief_flag__c = TRUE
+   )</errorConditionFormula>
+    <errorDisplayField>Setting_Units__c</errorDisplayField>
+    <errorMessage>Pressure Setting Units: Please Select a Value from dropdown</errorMessage>
+</ValidationRule>

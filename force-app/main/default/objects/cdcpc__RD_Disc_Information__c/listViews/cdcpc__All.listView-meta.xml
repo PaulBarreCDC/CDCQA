@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__OutLinerMatl__c</columns>
+    <columns>cdcpc__OutLinerThck__c</columns>
+    <columns>cdcpc__SealMatl__c</columns>
+    <columns>cdcpc__SealThck__c</columns>
+    <columns>cdcpc__SecondSealMatl__c</columns>
+    <columns>cdcpc__SlotCovMatl__c</columns>
+    <columns>cdcpc__SlotCovThck__c</columns>
+    <columns>cdcpc__SZC__c</columns>
+    <columns>cdcpc__SCStripThck__c</columns>
+    <columns>cdcpc__TempLL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__PTC__c</field>
+        <operation>equals</operation>
+        <value>PLV</value>
+    </filters>
+    <filters>
+        <field>cdcpc__SZC__c</field>
+        <operation>equals</operation>
+        <value>0600</value>
+    </filters>
+    <filters>
+        <field>cdcpc__MfgRngLL__c</field>
+        <operation>lessOrEqual</operation>
+        <value>106</value>
+    </filters>
+    <filters>
+        <field>cdcpc__MfgRngUL__c</field>
+        <operation>greaterThan</operation>
+        <value>106</value>
+    </filters>
+    <label>All</label>
+</ListView>

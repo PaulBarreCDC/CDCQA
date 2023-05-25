@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_Zone_on_ATEX</fullName>
+    <active>true</active>
+    <description>Make Required Zone (0-2) if ATEX is true</description>
+    <errorConditionFormula>AND(  ATEX_Certificate__c , ISBLANK( TEXT (  Zone_0_2__c  ) ) )</errorConditionFormula>
+    <errorMessage>Please select Zone (0-2)</errorMessage>
+</ValidationRule>

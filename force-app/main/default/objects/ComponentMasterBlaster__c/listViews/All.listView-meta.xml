@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>PTC__c</columns>
+    <columns>DSCVAR__c</columns>
+    <columns>Size_LL__c</columns>
+    <columns>Size_UL__c</columns>
+    <columns>Inlet_Option_Code__c</columns>
+    <columns>Outlet_Option_Code__c</columns>
+    <columns>Outlet__c</columns>
+    <columns>Holdown_Ring__c</columns>
+    <columns>Arcuate_Ring__c</columns>
+    <columns>Armor_Ring_SLS__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Master_Test_Case__c.of_Passed_Test_Cases__c:SUM/Master_Test_Case__c.of_Valid_Test_Cases__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Passed</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_17559730</developerName>
+        <masterLabel>Test Case Status Sub-Total</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Test_Cases__c.Status__c</sourceColumnName>
+        <useOther>false</useOther>
+    </buckets>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_25511888</developerName>
+        <masterLabel>Unique Status Count</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>Test_Cases__c.Status__c</sourceColumnName>
+        <useOther>false</useOther>
+    </buckets>
+    <columns>
+        <aggregateTypes>Unique</aggregateTypes>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_17559730</field>
+    </columns>
+    <columns>
+        <field>Test_Cases__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>BucketField_25511888</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Master_Test_Case__c.of_Passed_Test_Cases__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Master_Test_Case__c.of_Valid_Test_Cases__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>% of Test Cases Completed Passed.V2</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Master_Test_Case__c$Test_Cases__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>CHILD_NAME</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

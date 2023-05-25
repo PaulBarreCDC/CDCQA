@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Process_Pressure_Validation</fullName>
+    <active>true</active>
+    <description>Max Process Pressure must be greater than or equal to zero</description>
+    <errorConditionFormula>OR(
+	AND(
+	ISPICKVAL(Relief_Type__c, &quot;Vacuum&quot;),
+	Max_Process_Pressure__c &lt; 0,
+	(Section_A_Flag__c  = TRUE),
+	OR(Vacuum_Setting__c &gt; 0,NOT(ISBLANK(Vacuum_Setting__c )))
+	),
+	AND(
+	ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;),
+	Max_Process_Pressure__c &lt; 0,
+	(Section_A_Flag__c  = TRUE),
+	OR(Vacuum_Setting__c &gt; 0,NOT(ISBLANK(Vacuum_Setting__c ))),
+	OR(Pressure_Setting__c &gt; 0,NOT(ISBLANK(Pressure_Setting__c )))
+	)	
+)</errorConditionFormula>
+    <errorDisplayField>Max_Process_Pressure__c</errorDisplayField>
+    <errorMessage>Max Process : Pressure enter a value</errorMessage>
+</ValidationRule>

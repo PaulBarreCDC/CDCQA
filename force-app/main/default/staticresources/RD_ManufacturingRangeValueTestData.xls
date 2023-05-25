@@ -1,0 +1,79 @@
+CDC_Ext_ID__c,Flag__c,MaxMfgRngAdder__c,MaxMfgRngMulti__c,MinMfgRngAdder__c,MinMfgRngMulti__c,RGEMAXLL__c,RGEMAXUL__c,RGRAT1__c,RGTYP1__c,RTPRS1LL__c,RTPRS1UL__c
+,,0,1.03,0,0.985,517.5,1030000,Specified,Special - 1/2 Reduced Range,500,1000000
+,,0,1.2,0,0.8,0,9.6,Rated,Special - 1/2 Reduced Range,0,8
+,,0,1,0,0.95,50,1000000,Specified,-5% (-2.5 Psig),50,1000000
+,,0,1.045,0,0.9775,526.25,1045000,Rated,Special - 3/4 Reduced Range,500,1000000
+,,0,1,0,0.95,6,1000000,Rated,-5% (-0.3 Psig),6,1000000
+,,0,1.07,0,0.96,110,535,Specified,Standard,100,500
+,,0,1,-5,1,0,50,Rated,-10% (-5 Psig),0,50
+,,0,1.035,0,0.99,19.95,51.75,Specified,Special - 1/4 Reduced Range,19,50
+,,0,1,-0.6,1,0,6,Specified,-10% (-0.6 Psig),0,6
+,,0,1.1,0,0.95,13.8,20.9,Rated,Special - 1/2 Reduced Range,12,19
+,,0,1.3,0,0.7,0,10.4,Specified,Special - 3/4 Reduced Range,0,8
+,,0,1.0525,0,0.97,107.5,526.25,Specified,Special - 3/4 Reduced Range,100,500
+,,0,1.3,0,0.7,11.2,15.6,Rated,Standard,8,12
+,,0,1.105,0,0.97,21.85,55.25,Rated,Special - 3/4 Reduced Range,19,50
+,,0,1,-0.6,1,0,6,Rated,-10% (-0.6 Psig),0,6
+,,0,1.045,0,0.9775,526.25,1045000,Specified,Special - 3/4 Reduced Range,500,1000000
+,,0,1.07,0,0.98,20.9,53.5,Rated,Special - 1/2 Reduced Range,19,50
+,,0,1,0,0.9,50,1000000,Rated,-10% (-5 Psig),50,1000000
+,,0,1.05,0,0.98,53.5,105,Rated,Special - 1/2 Reduced Range,50,100
+,,0,1.105,0,0.97,21.85,55.25,Specified,Special - 3/4 Reduced Range,19,50
+,,0,1.075,0,0.97,55.25,107.5,Rated,Special - 3/4 Reduced Range,50,100
+,,0,1.2,0,0.9,15.6,22.8,Specified,Standard,12,19
+,,0,1.025,0,0.99,51.75,102.5,Specified,Special - 1/4 Reduced Range,50,100
+,,0,1,0,0.95,0,1000000,Specified,-5%,0,1000000
+,,0,1,-2.5,1,0,50,Rated,-5% (-2.5 Psig),0,50
+,,0,1,-0.3,1,0,6,Specified,-5% (-0.3 Psig),0,6
+,,0,1.03,0,0.985,517.5,1030000,Rated,Special - 1/2 Reduced Range,500,1000000
+,,0,1.035,0,0.99,19.95,51.75,Rated,Special - 1/4 Reduced Range,19,50
+,,0,1,0,0.9,0,1000000,Rated,-10%,0,1000000
+,,0,1,-2.5,1,0,50,Specified,-5% (-2.5 Psig),0,50
+,,0,1.05,0,0.975,12.9,19.95,Specified,Special - 1/4 Reduced Range,12,19
+,,0,1.015,0,0.9925,508.75,1015000,Specified,Special - 1/4 Reduced Range,500,1000000
+,,0,1,-0.3,1,0,6,Rated,-5% (-0.3 Psig),0,6
+,,0,1.4,0,0.6,0,11.2,Specified,Standard,0,8
+,,0,1,-5,1,0,50,Specified,-10% (-5 Psig),0,50
+,,0,1.2,0,0.9,15.6,22.8,Rated,Standard,12,19
+,,0,1.1,0,0.95,13.8,20.9,Specified,Special - 1/2 Reduced Range,12,19
+,,0,1.15,0,0.85,9.6,13.8,Specified,Special - 1/2 Reduced Range,8,12
+,,0,1.06,0,0.97,535,1060000,Specified,Standard,500,1000000
+,,0,1.06,0,0.97,535,1060000,Rated,Standard,500,1000000
+,,0,1.05,0,0.975,12.9,19.95,Rated,Special - 1/4 Reduced Range,12,19
+,,0,1,0,0.95,6,1000000,Specified,-5% (-0.3 Psig),6,1000000
+,,0,1.15,0,0.85,9.6,13.8,Rated,Special - 1/2 Reduced Range,8,12
+,,0,1.05,0,0.98,53.5,105,Specified,Special - 1/2 Reduced Range,50,100
+,,0,1.0525,0,0.97,107.5,526.25,Rated,Special - 3/4 Reduced Range,100,500
+,,0,1,0,0.95,0,1000000,Rated,-5%,0,1000000
+,,0,1,0,0.9,6,1000000,Specified,-10% (-0.6 Psig),6,1000000
+,,0,1.14,0,0.96,22.8,57,Rated,Standard,19,50
+,,0,1.225,0,0.775,10.4,14.7,Specified,Special - 3/4 Reduced Range,8,12
+,,0,1.1,0,0.9,0,8.8,Specified,Special - 1/4 Reduced Range,0,8
+,,0,1.075,0,0.925,8.8,12.9,Rated,Special - 1/4 Reduced Range,8,12
+,,0,1.2,0,0.8,0,9.6,Specified,Special - 1/2 Reduced Range,0,8
+,,0,1,0,0.9,50,1000000,Specified,-10% (-5 Psig),50,1000000
+,,0,1.035,0,0.98,105,517.5,Rated,Special - 1/2 Reduced Range,100,500
+,,0,1.1,0,0.96,57,110,Rated,Standard,50,100
+,,0,1.0175,0,0.99,102.5,508.75,Rated,Special - 1/4 Reduced Range,100,500
+,,0,1.075,0,0.925,8.8,12.9,Specified,Special - 1/4 Reduced Range,8,12
+,,0,1.3,0,0.7,11.2,15.6,Specified,Standard,8,12
+,,0,1.3,0,0.7,0,10.4,Rated,Special - 3/4 Reduced Range,0,8
+,,0,1.4,0,0.6,0,11.2,Rated,Standard,0,8
+,,0,1.07,0,0.96,110,535,Rated,Standard,100,500
+,,0,1.1,0,0.96,57,110,Specified,Standard,50,100
+,,0,1.035,0,0.98,105,517.5,Specified,Special - 1/2 Reduced Range,100,500
+,,0,1.075,0,0.97,55.25,107.5,Specified,Special - 3/4 Reduced Range,50,100
+,,0,1.14,0,0.96,22.8,57,Specified,Standard,19,50
+,,0,1,0,1,0,1000000,Rated,Zero,0,1000000
+,,0,1,0,0.9,0,1000000,Specified,-10%,0,1000000
+,,0,1.15,0,0.925,14.7,21.85,Specified,Special - 3/4 Reduced Range,12,19
+,,0,1,0,0.95,50,1000000,Rated,-5% (-2.5 Psig),50,1000000
+,,0,1.015,0,0.9925,508.75,1015000,Rated,Special - 1/4 Reduced Range,500,1000000
+,,0,1,0,0.9,6,1000000,Rated,-10% (-0.6 Psig),6,1000000
+,,0,1.15,0,0.925,14.7,21.85,Rated,Special - 3/4 Reduced Range,12,19
+,,0,1.0175,0,0.99,102.5,508.75,Specified,Special - 1/4 Reduced Range,100,500
+,,0,1.07,0,0.98,20.9,53.5,Specified,Special - 1/2 Reduced Range,19,50
+,,0,1.025,0,0.99,51.75,102.5,Rated,Special - 1/4 Reduced Range,50,100
+,,0,1.225,0,0.775,10.4,14.7,Rated,Special - 3/4 Reduced Range,8,12
+,,0,1,0,1,0,1000000,Specified,Zero,0,1000000
+,,0,1.1,0,0.9,0,8.8,Rated,Special - 1/4 Reduced Range,0,8

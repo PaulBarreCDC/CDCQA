@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OEM_Quotes_in_Eng_or_Prod_Planning</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7) AND (8 OR 9)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>SBQQ__Account__c</columns>
+    <columns>SBQQ__Opportunity2__c</columns>
+    <columns>Eng_Review_Status__c</columns>
+    <columns>Prod_Planning_Status__c</columns>
+    <columns>SBQQ__Status__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SBQQ__Status__c</field>
+        <operation>equals</operation>
+        <value>Pending,Change Order</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Ben Strickfaden</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Christian Janota</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>David Conrow</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Joe Lee</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Ken Grossl</value>
+    </filters>
+    <filters>
+        <field>CREATEDBY_USER</field>
+        <operation>equals</operation>
+        <value>Mitch Berry</value>
+    </filters>
+    <filters>
+        <field>Eng_Review_Status__c</field>
+        <operation>equals</operation>
+        <value>In Review,In Process,On Hold - Sales,On Hold - Config Issue</value>
+    </filters>
+    <filters>
+        <field>Prod_Planning_Status__c</field>
+        <operation>equals</operation>
+        <value>In Review</value>
+    </filters>
+    <label>OEM Quotes in Eng or Prod Planning</label>
+    <sharedTo>
+        <group>OEM_Full_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pilot_Valves_option__c</fullName>
+    <externalId>false</externalId>
+    <label>Pilot  Valves option</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Manual Blowdown</fullName>
+                <default>false</default>
+                <label>Manual Blowdown</label>
+            </value>
+            <value>
+                <fullName>Remote Sense</fullName>
+                <default>false</default>
+                <label>Remote Sense</label>
+            </value>
+            <value>
+                <fullName>Pilot Exhaust Piped to Discharge Header</fullName>
+                <default>false</default>
+                <label>Pilot Exhaust Piped to Discharge Header</label>
+            </value>
+            <value>
+                <fullName>Field Test Connection</fullName>
+                <default>false</default>
+                <label>Field Test Connection</label>
+            </value>
+            <value>
+                <fullName>Pilot Supply Filter</fullName>
+                <default>false</default>
+                <label>Pilot Supply Filter</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

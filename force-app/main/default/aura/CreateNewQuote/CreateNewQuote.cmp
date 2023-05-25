@@ -1,0 +1,13 @@
+<aura:component controller="CreateQuoteController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    
+<div class="slds-is-relative">
+    <aura:if isTrue= "{!v.showSpinner}">
+        <lightning:spinner alternativeText="Loading" size="small" />
+    </aura:if>
+    </div>
+
+</aura:component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gas_Group_Validation</fullName>
+    <active>true</active>
+    <description>Must select a value.</description>
+    <errorConditionFormula>AND( 
+Atex_Certificate__c = TRUE,
+ISPICKVAL(Gas_Group__c,&quot;&quot;),
+Section_C_Flag__c = TRUE
+)</errorConditionFormula>
+    <errorDisplayField>Gas_Group__c</errorDisplayField>
+    <errorMessage>Gas Group : Please select a value from the drop down</errorMessage>
+</ValidationRule>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Set_External_ID_Value</fullName>
+        <description>SBQQ__Quote__r.SBQQ__Key__c + TEXT(SBQQ__Number__c) + Del_No__c</description>
+        <field>SBQQ__OriginalQuoteLineId__c</field>
+        <formula>Id</formula>
+        <name>Set External ID Value</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Intl_Price_Adj</fullName>
+        <field>Intl_Price_Adjustment__c</field>
+        <formula>If( Text(SBQQ__Quote__r.Sales_Division__c) = &apos;40&apos; &amp;&amp; IsNew(),1.16,1)</formula>
+        <name>Set Intl. Price Adj.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Planned_Delivery_Date</fullName>
+        <field>Planned_Delivery_Date__c</field>
+        <formula>If(ISBLANK( Planned_Delivery_Date__c ), SBQQ__Quote__r.Planned_Delivery_Date__c,Planned_Delivery_Date__c)</formula>
+        <name>Set Planned Delivery Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Wanted_Delivery_Date</fullName>
+        <field>Wanted_Delivery_Date__c</field>
+        <formula>If(ISBLANK(Wanted_Delivery_Date__c), SBQQ__Quote__r.Wanted_Delivery_Date__c,Wanted_Delivery_Date__c)</formula>
+        <name>Set Wanted Delivery Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Wanted_Delivery_Date</fullName>
+        <field>Wanted_Delivery_Date__c</field>
+        <formula>Leadtime__c +  TODAY()</formula>
+        <name>Update Wanted Delivery Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+        <targetObject>SBQQ__Quote__c</targetObject>
+    </fieldUpdates>
+    <rules>
+        <fullName>PartNumber to ProductCode</fullName>
+        <active>false</active>
+        <formula>PARTNUMBER__c &lt;&gt; NULL &amp;&amp; PRIORVALUE(PARTNUMBER__c) &lt;&gt; PARTNUMBER__c</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Set Ext%2E ID Value %2B Intl Price adj%2E</fullName>
+        <actions>
+            <name>Set_External_ID_Value</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Planned_Delivery_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Set_Wanted_Delivery_Date</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>SBQQ__QuoteLine__c.Quote_Name__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Invalid Quote Line Flag</fullName>
+        <active>false</active>
+        <description>This Rule is fire on the day of quote Expiration Date and Check if Today is Greater Than</description>
+        <formula>TODAY() &gt;= Expiration_Date__c</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <offsetFromField>SBQQ__QuoteLine__c.Expiration_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+</Workflow>

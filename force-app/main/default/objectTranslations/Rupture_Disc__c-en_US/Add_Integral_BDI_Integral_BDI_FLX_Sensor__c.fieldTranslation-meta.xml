@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Add_Integral_BDI_Integral_BDI_FLX_Sensor__c</name>
+    <picklistValues>
+        <masterLabel>Integral BDI</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Integral BDI-FLX</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

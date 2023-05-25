@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Viscosity_UOM_To__c</name>
+    <picklistValues>
+        <masterLabel>Pa.s</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>centipoise</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>poise</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

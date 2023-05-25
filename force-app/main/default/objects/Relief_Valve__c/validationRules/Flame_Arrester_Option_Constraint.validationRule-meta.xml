@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flame_Arrester_Option_Constraint</fullName>
+    <active>true</active>
+    <description>This field is mandatory.</description>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISBLANK(Flame_Arrester_Option__c ),
+(Section_F_Flag__c = TRUE)
+)</errorConditionFormula>
+    <errorDisplayField>Flame_Arrester_Option__c</errorDisplayField>
+    <errorMessage>Please select a value from the drop down</errorMessage>
+</ValidationRule>

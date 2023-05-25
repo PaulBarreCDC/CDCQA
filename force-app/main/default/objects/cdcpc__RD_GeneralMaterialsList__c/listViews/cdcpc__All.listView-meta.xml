@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__MatlCode__c</columns>
+    <columns>cdcpc__Matl__c</columns>
+    <columns>cdcpc__SealUpperTemp__c</columns>
+    <columns>cdcpc__UpperTemp__c</columns>
+    <columns>cdcpc__Density__c</columns>
+    <columns>cdcpc__OBSOLETE__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__MatlCode__c</field>
+        <operation>equals</operation>
+        <value>F86</value>
+    </filters>
+    <label>All</label>
+</ListView>

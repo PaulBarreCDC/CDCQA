@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Document_Class_Description__c</fullName>
+    <externalId>false</externalId>
+    <label>Document Class Description</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Document_Class__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Quotes</fullName>
+                <default>false</default>
+                <label>Customer Quotes</label>
+            </value>
+            <value>
+                <fullName>Denied Party Screening Results</fullName>
+                <default>false</default>
+                <label>Denied Party Screening Results</label>
+            </value>
+            <value>
+                <fullName>Customer Purchase Orders</fullName>
+                <default>false</default>
+                <label>Customer Purchase Orders</label>
+            </value>
+            <value>
+                <fullName>Liberty (Discs) Contract Review Checklist</fullName>
+                <default>false</default>
+                <label>Liberty (Discs) Contract Review Checklist</label>
+            </value>
+            <value>
+                <fullName>Stafford (Valves) Contract Review Checklist</fullName>
+                <default>false</default>
+                <label>Stafford (Valves) Contract Review Checklist</label>
+            </value>
+            <value>
+                <fullName>Customer Specifications</fullName>
+                <default>false</default>
+                <label>Customer Specifications</label>
+            </value>
+            <value>
+                <fullName>Customer Procedures</fullName>
+                <default>false</default>
+                <label>Customer Procedures</label>
+            </value>
+            <value>
+                <fullName>Customer Order Requirements from SalesForce</fullName>
+                <default>false</default>
+                <label>Customer Order Requirements from SalesForce</label>
+            </value>
+            <value>
+                <fullName>Terms and Conditions</fullName>
+                <default>false</default>
+                <label>Terms and Conditions</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SALES-100</controllingFieldValue>
+            <valueName>Customer Quotes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-110</controllingFieldValue>
+            <valueName>Denied Party Screening Results</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-120</controllingFieldValue>
+            <valueName>Customer Purchase Orders</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-130</controllingFieldValue>
+            <valueName>Liberty (Discs) Contract Review Checklist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-140</controllingFieldValue>
+            <valueName>Stafford (Valves) Contract Review Checklist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-150</controllingFieldValue>
+            <valueName>Customer Specifications</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-160</controllingFieldValue>
+            <valueName>Customer Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-200</controllingFieldValue>
+            <valueName>Customer Order Requirements from SalesForce</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SALES-210</controllingFieldValue>
+            <valueName>Terms and Conditions</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

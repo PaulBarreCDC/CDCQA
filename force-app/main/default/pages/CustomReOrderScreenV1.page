@@ -1,0 +1,203 @@
+<apex:page standardController="SBQQ__Quote__c"  lightningStylesheets="true" extensions="CustomReOrderController" standardStylesheets="true">
+<apex:includeLightning />
+    <div id="lightning" />
+    <script>
+        function productAction(elem){
+            //alert('selected : ' + elem.value); 
+            if(elem.value === 'Config' || elem.value === 'config'){
+                //console.log('@@In here');
+                /*
+                var myQuoteId = "{!quoteId}";
+                    $Lightning.use("c:myLightningApp", function() {
+                $Lightning.createComponent(
+                    "c:myLightningComponent",
+                    { UserContext: myQuoteId },
+                    "myDivId",
+                    function(cmp) {
+                        console.log('component created');
+                        console.log(cmp);
+                    });
+                });*/
+                var myQuoteId = "{!quoteId}";
+                //alert('myQuoteId : ' + myQuoteId);
+                $Lightning.use("c:lwcProductSelectionApp", function() {
+                    $Lightning.createComponent("c:lwcProductSelection", {
+                        recordId: myQuoteId
+                    },
+                    "lightning",
+                        function(cmp) {
+                            console.log("LWC component was created");
+                            // do some stuff
+                        }
+                    );
+                });
+                callHidePanel();
+            }else{
+                callActionSup();
+            }
+        }
+    </script>
+    <style>
+        .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader {
+        font-family: Arial,Verdana,sans-serif;
+        border-top: 0;
+        color: white;
+        /* background-color: #54678d; */
+        background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+        .overrideFloat
+        {
+            float:right;
+        }
+        .pbHeader, .slds-vf-scope .pbHeader {
+            font-family: Arial,Verdana,sans-serif;
+            border-top: 0;
+            color: white;
+            /* background-color: #54678d; */
+            background: repeating-linear-gradient(45deg, #54678d, rgb(84,105,141) 20px, rgba(84,105,141,.97) 20px, rgba(84,105,141,.97) 40px);
+        }
+        .hidePricingBody tbody
+        {
+        display:none;
+        }
+        .overrideFloat
+        {
+            float:right;
+        }
+        .messageCell {
+            display:inline-block;
+        }
+        .messageText, .slds-vf-scope .messageText {
+            display: flex;
+        }
+    </style>
+    
+    
+    <apex:actionStatus id="status">
+    <apex:facet name="start">
+    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.65; z-index: 1000; background-color: black;">
+        &nbsp;
+    </div>
+    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 45%">
+        <!-- <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;"> -->
+            <img src="{!URLFOR($Resource.Loading)}" style="float: left; margin: 8px; width: 85px; width: 85px;" />
+            <!-- <img src="/img/slds_spinner_brand.gif" style="float: left; margin: 8px;" /> -->
+            <!-- <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span> -->
+        <!-- </div> -->
+    </div>
+    </apex:facet>
+</apex:actionStatus>
+    
+    
+    <apex:form id="form">
+        <!--<apex:pageMessage severity="Error" id="partNumError" rendered="showPartNumError" escape="false" summary="art Number not found. Please re-enter Part Number or Configure New Product" strength="3"></apex:pageMessage>
+        <apex:pageMessage severity="Error" id="mfttNumError" rendered="showMfttNumError" escape="false" summary="<b>MFG#/Serial Number not found.</b> Please re-enter MFG#/Serial Number or Configure New Product" strength="3"></apex:pageMessage>
+        <apex:pageMessage severity="Error" id="partBlankError" rendered="showPartBlankError" escape="false" summary="First Error message on page" strength="3"></apex:pageMessage>
+        -->
+        <apex:actionFunction name="callActionSup" action="{!actionSup}" rerender="form"/>
+        <apex:actionFunction name="callHidePanel" action="{!hidePanel}" rerender="form"/>
+        
+        <apex:pageBlock id="userInputPanel" rendered="{!showReorder}">
+            <apex:pageMessages escape="false" id="errormsg"></apex:pageMessages>
+            <apex:pageBlockSection title="Select Option to Add Quote Line" columns="1" >
+            <apex:pageBlocksection columns="1">
+                <apex:pageblocksectionitem >  
+                    <apex:panelGrid columns="1" id="theGrid">
+                        <apex:selectRadio value="{!selectedProduct}" onchange="productAction(this);" >
+                            <apex:selectOptions value="{!Items}"/>   
+                            <!-- <apex:actionSupport event="onchange" action="{!actionSup}" rerender="form"/>                      -->
+                        </apex:selectRadio> 
+                    </apex:panelGrid>
+                </apex:pageblocksectionitem>
+            </apex:pageBlocksection>
+            
+                <apex:outputPanel rendered="{!showPart}">
+                    <apex:pageBlocksection columns="1">
+                <apex:pageblocksectionitem >
+                    <apex:outputLabel >Enter Part Number </apex:outputLabel>
+                    <apex:inputText label="Enter Part Number" value="{!strPartNumber}">                    
+                    </apex:inputText>
+                    
+                </apex:pageblocksectionitem>
+                <apex:pageblocksectionitem >
+                <apex:outputLabel >Quantity </apex:outputLabel>
+                    <apex:inputText label="Quantity"   value="{!Quantity}">                    
+                    </apex:inputText>
+                </apex:pageblocksectionitem> 
+                <apex:pageblocksectionitem >
+                    <apex:outputlabel value="Please allow 2-3 minutes for output to be generated for items ordered by part number"
+                     id="sec" style="text-align:center;color:red;Font-style:italic;margin-left: 300px; margin-right: auto;"/>                
+            	</apex:pageblocksectionitem>
+                <apex:commandButton value="Reorder" onclick="this.value = 'Processing'" status="status" oncomplete="goBackQLI('{!strURL}');"  action="{!search}" rerender="errormsg,userInputPanel"/>
+                <script>
+                    function goBackQLI(strURL){
+                        if(strURL!= 'error'){
+                        console.log(strURL);
+                        parent.location.href=strURL;
+                        }
+                    }
+                </script>
+            </apex:pageBlocksection>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!showMft}">
+                <apex:pageBlocksection columns="1">
+            <apex:pageblocksectionitem >
+                <apex:outputLabel >Enter MFG Number </apex:outputLabel>
+                <apex:inputText label="Enter Part Number"  value="{!strMfgNumber}">                    
+                </apex:inputText>
+                
+            </apex:pageblocksectionitem>
+            <apex:pageblocksectionitem >
+            <apex:outputLabel >Quantity </apex:outputLabel>
+                <apex:inputText label="Quantity" value="{!Quantity}">                    
+                </apex:inputText>
+            </apex:pageblocksectionitem>  
+			<apex:pageblocksectionitem >
+                    <apex:outputlabel value="Please allow 2-3 minutes for output to be generated for items ordered by MFG#/Serial Number"
+                     id="sec" style="text-align:center;color:red;Font-style:italic;margin-left: 300px; margin-right: auto;"/>                
+            	</apex:pageblocksectionitem>                    
+            <apex:commandButton value="Reorder" onclick="this.value = 'Processing'" status="status" oncomplete="goBackQLI('{!strURL}');" action="{!search}" rerender="errormsg"/>
+            <script>
+                function goBackQLI(strURL){
+                    if(strURL!= 'error'){
+                    console.log(strURL);
+                    parent.location.href=strURL;
+                    }
+                }
+            </script>
+        </apex:pageBlocksection>
+        </apex:outputPanel>
+        </apex:pageBlockSection>
+        
+            
+        </apex:pageBlock>
+        <!-- <apex:pageBlock rendered="{! IF(selectedOrderWraper.size > 0, true, false)}">
+            <apex:pageBlockSection title="Search Result" columns="1">
+                <apex:pageBlockSectionItem >
+        <apex:pageBlockTable value="{!selectedOrderWraper}" var="pdLine">
+            <strong rendered="{!(selectedOrderWraper.size == 0)}"><font color="#ff0000">cjhvcjfh</font></strong>>
+            <apex:column ><apex:inputCheckbox disabled="true" value="{!pdLine.isSelected}"/></apex:column>
+            <apex:column headervalue="Part Number" value="{!pdLine.strPartNumber}"/>
+            <!--  <apex:column headervalue="Quote Line Number" value="{!pdLine.strQuoteLine }"/>
+            <apex:column headervalue="Product Name" value="{!pdLine.strProduct }"/>
+            <apex:column value="{!pdLine.p['Configurator__c']}"/>
+            <apex:column value="{!pdLine.p['BRAND__c']}"/>
+            <apex:column value="{!pdLine.p['Managed_In__c']}"/>
+            <apex:column value="{!pdLine.p['Field1__c']}"/>
+            <apex:column title="Service" value="{!pdLine.p['Field2__c']}"/>
+                <apex:column value="{!pdLine.p['Field3__c']}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSectionItem>
+            <br/>
+        <apex:pageBlockSectionItem >
+                <apex:commandButton value="Reorder" action="{!reOrderProduct}"/>
+                <apex:commandButton value="Skip & Add New Product" action="{!reOrderProduct}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+    </apex:pageBlock> -->
+    </apex:form>
+</apex:page>

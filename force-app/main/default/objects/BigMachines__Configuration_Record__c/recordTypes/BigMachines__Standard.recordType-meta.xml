@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BigMachines__Standard</fullName>
+    <active>true</active>
+    <label>Standard</label>
+    <picklistValues>
+        <picklist>BigMachines__Default_Access_Type__c</picklist>
+        <values>
+            <fullName>BuyAccess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ChannelAgent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FullAccess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RestrictedAccess</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SalesAgent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Association_to_Organization__c</picklist>
+        <values>
+            <fullName>Internal User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner User</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Currency_Preference__c</picklist>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Date_Time_Format__c</picklist>
+        <values>
+            <fullName>MM%2Fdd%2Fyyyy HH%3Amm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MM%2Fdd%2Fyyyy h%3Amm a</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>dd%2EMM%2Eyyyy HH%3Amm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>dd%2FMM%2Fyyyy HH%3Amm</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>yyyy%2FMM%2Fdd HH%3Amm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Language_Preference__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Number_Format__c</picklist>
+        <values>
+            <fullName>%23%23%23%23%2C%23%23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%23%23%23%23%2E%23%23</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Time_Zone__c</picklist>
+        <values>
+            <fullName>%28GMT%2B0%3A00 GMT%2B0%3A00%29 GMT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B0%3A00 GMT%2B1%3A00%29 London</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B1%3A00 GMT%2B1%3A00%29 Algiers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B1%3A00 GMT%2B2%3A00%29 Amsterdam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A00 GMT%2B10%3A00%29 Queensland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A00 GMT%2B11%3A00%29 Vladivostok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B10%3A30 GMT%2B9%3A30%29 Adelaide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00 GMT%2B10%3A00%29 Canberra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00 GMT%2B10%3A00%29 Sydney</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00 GMT%2B10%3A30%29 Lord Howe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00 GMT%2B11%3A00%29 Ponape</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A00 GMT%2B12%3A00%29 Magadan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B11%3A30 GMT%2B11%3A30%29 Norfolk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B12%3A00 GMT%2B12%3A00%29 Fiji</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B12%3A00 GMT%2B13%3A00%29 Kamchatka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B13%3A00 GMT%2B12%3A00%29 Auckland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B13%3A00 GMT%2B13%3A00%29 Enderbury</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B13%3A45 GMT%2B12%3A45%29 Chatham</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B2%3A00 GMT%2B1%3A00%29 Windhoek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B2%3A00 GMT%2B2%3A00%29 Tripoli</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B2%3A00 GMT%2B3%3A00%29 Israel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B3%3A00 GMT%2B3%3A00%29 Nairobi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B3%3A00 GMT%2B4%3A00%29 Moscow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B3%3A30 GMT%2B4%3A30%29 Tehran</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B4%3A00 GMT%2B4%3A00%29 Dubai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B4%3A00 GMT%2B5%3A00%29 Oral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B4%3A30 GMT%2B4%3A30%29 Kabul</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B5%3A00 GMT%2B5%3A00%29 Karachi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B5%3A00 GMT%2B6%3A00%29 Yekaterinburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B5%3A30 GMT%2B5%3A30%29 Calcutta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B5%3A45 GMT%2B5%3A45%29 Katmandu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B6%3A00 GMT%2B6%3A00%29 Dhaka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B6%3A00 GMT%2B7%3A00%29 Novosibirsk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B6%3A30 GMT%2B6%3A30%29 Rangoon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B7%3A00 GMT%2B7%3A00%29 Bangkok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B7%3A00 GMT%2B8%3A00%29 Krasnoyarsk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B8%3A00 GMT%2B8%3A00%29 Perth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B8%3A00 GMT%2B8%3A00%29 Taipei</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B8%3A00 GMT%2B9%3A00%29 Irkutsk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B9%3A00 GMT%2B10%3A00%29 Yakutsk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B9%3A00 GMT%2B9%3A00%29 Seoul</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT%2B9%3A30 GMT%2B9%3A30%29 Darwin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-1%3A00 GMT%2B0%3A00%29 Azores</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-1%3A00 GMT-1%3A00%29 Cape Verde</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-10%3A00 GMT-10%3A00%29 Hawaii</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-10%3A00 GMT-9%3A00%29 Aleutian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-11%3A00 GMT-11%3A00%29 Samoa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-2%3A00 GMT-2%3A00%29 Brazil%2FDeNoronha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-2%3A00 GMT-3%3A00%29 Sao Paulo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-3%3A00 GMT-3%3A00%29 Buenos Aires</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-3%3A00 GMT-4%3A00%29 Chile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-3%3A30 GMT-2%3A30%29 Newfoundland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-4%3A00 GMT-3%3A00%29 Canada Atlantic Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-4%3A00 GMT-4%3A00%29 Puerto Rico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-5%3A00 GMT-4%3A00%29 US Eastern Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-5%3A00 GMT-5%3A00%29 Indianapolis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-6%3A00 GMT-5%3A00%29 US Central Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-6%3A00 GMT-6%3A00%29 Saskatchewan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-7%3A00 GMT-6%3A00%29 Mountain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-7%3A00 GMT-7%3A00%29 Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-8%3A00 GMT-7%3A00%29 US Pacific Time</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-8%3A00 GMT-8%3A00%29 Pitcairn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-9%3A00 GMT-8%3A00%29 Alaska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-9%3A00 GMT-9%3A00%29 Gambier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%28GMT-9%3A30 GMT-9%3A30%29 Marquesas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3EGMT%2B11%3A00 GMT%2B10%3A00%29 Melbourne</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_Unit_System__c</picklist>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metric</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BigMachines__Default_User_Groups__c</picklist>
+        <values>
+            <fullName>Standard</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>a100kparts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quantity_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK( Quantity__c )),
+    Quantity__c &lt;= 0
+)&amp;&amp;
+( IsProductSelection__c = TRUE)</errorConditionFormula>
+    <errorMessage>Quantity: Please Enter a Value greater than 0</errorMessage>
+</ValidationRule>

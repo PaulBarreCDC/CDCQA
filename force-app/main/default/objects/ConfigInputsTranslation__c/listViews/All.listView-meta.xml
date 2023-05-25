@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Configurator__c</columns>
+    <columns>Field1__c</columns>
+    <columns>Field2__c</columns>
+    <columns>Field3__c</columns>
+    <columns>Field4__c</columns>
+    <columns>Field5__c</columns>
+    <columns>Field6__c</columns>
+    <columns>Field7__c</columns>
+    <columns>Field8__c</columns>
+    <columns>Field9__c</columns>
+    <columns>Field101__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Records</label>
+</ListView>

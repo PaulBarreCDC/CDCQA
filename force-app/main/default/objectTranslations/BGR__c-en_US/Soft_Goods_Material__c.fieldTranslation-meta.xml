@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Soft_Goods_Material__c</name>
+    <picklistValues>
+        <masterLabel>Buna-N O-Rings w/ Fluoropolymer Diaphragm</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chemraz(R) O-Rings w/ Fluoropolymer Diaphragm</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EPDM O-Rings w/ Fluoropolymer Diaphragm</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FKM O-Rings w/ Fluoropolymer Diaphragm</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

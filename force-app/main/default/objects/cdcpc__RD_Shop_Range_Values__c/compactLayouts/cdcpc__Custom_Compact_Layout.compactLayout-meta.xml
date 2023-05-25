@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Custom_Compact_Layout</fullName>
+    <fields>Name</fields>
+    <fields>cdcpc__PTC__c</fields>
+    <fields>cdcpc__ShopRngPressLL__c</fields>
+    <fields>cdcpc__ShopRngPressUL__c</fields>
+    <fields>cdcpc__ShopRngBottomMulti__c</fields>
+    <fields>cdcpc__ShopRngTopMulti__c</fields>
+    <fields>cdcpc__ShopRngBottomAdd__c</fields>
+    <fields>cdcpc__ShopRngTopAdd__c</fields>
+    <label>Custom Compact Layout</label>
+</CompactLayout>

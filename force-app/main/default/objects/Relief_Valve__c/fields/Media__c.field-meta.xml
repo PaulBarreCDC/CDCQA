@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media__c</fullName>
+    <externalId>false</externalId>
+    <label>Media</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Specified</fullName>
+                <default>false</default>
+                <label>Customer Specified</label>
+            </value>
+            <value>
+                <fullName>Acetone</fullName>
+                <default>false</default>
+                <label>Acetone</label>
+            </value>
+            <value>
+                <fullName>Acetylene</fullName>
+                <default>false</default>
+                <label>Acetylene</label>
+            </value>
+            <value>
+                <fullName>Air</fullName>
+                <default>false</default>
+                <label>Air</label>
+            </value>
+            <value>
+                <fullName>Ammonia</fullName>
+                <default>false</default>
+                <label>Ammonia</label>
+            </value>
+            <value>
+                <fullName>Benzene</fullName>
+                <default>false</default>
+                <label>Benzene</label>
+            </value>
+            <value>
+                <fullName>Butadiene-1.2</fullName>
+                <default>false</default>
+                <label>Butadiene-1.2</label>
+            </value>
+            <value>
+                <fullName>Butadiene-1.3</fullName>
+                <default>false</default>
+                <label>Butadiene-1.3</label>
+            </value>
+            <value>
+                <fullName>Butane-n</fullName>
+                <default>false</default>
+                <label>Butane-n</label>
+            </value>
+            <value>
+                <fullName>Butene-1</fullName>
+                <default>false</default>
+                <label>Butene-1</label>
+            </value>
+            <value>
+                <fullName>Carbon Dioxide</fullName>
+                <default>false</default>
+                <label>Carbon Dioxide</label>
+            </value>
+            <value>
+                <fullName>Carbon Monoxide</fullName>
+                <default>false</default>
+                <label>Carbon Monoxide</label>
+            </value>
+            <value>
+                <fullName>Chlorine</fullName>
+                <default>false</default>
+                <label>Chlorine</label>
+            </value>
+            <value>
+                <fullName>Cyclohexane</fullName>
+                <default>false</default>
+                <label>Cyclohexane</label>
+            </value>
+            <value>
+                <fullName>Decane-n</fullName>
+                <default>false</default>
+                <label>Decane-n</label>
+            </value>
+            <value>
+                <fullName>Dimethyl Ether</fullName>
+                <default>false</default>
+                <label>Dimethyl Ether</label>
+            </value>
+            <value>
+                <fullName>Dowtherm A</fullName>
+                <default>false</default>
+                <label>Dowtherm A</label>
+            </value>
+            <value>
+                <fullName>Dowtherm E</fullName>
+                <default>false</default>
+                <label>Dowtherm E</label>
+            </value>
+            <value>
+                <fullName>Ethane</fullName>
+                <default>false</default>
+                <label>Ethane</label>
+            </value>
+            <value>
+                <fullName>Ethyl alcohol</fullName>
+                <default>false</default>
+                <label>Ethyl alcohol</label>
+            </value>
+            <value>
+                <fullName>Ethylene</fullName>
+                <default>false</default>
+                <label>Ethylene</label>
+            </value>
+            <value>
+                <fullName>Ethylene Glicol</fullName>
+                <default>false</default>
+                <label>Ethylene Glicol</label>
+            </value>
+            <value>
+                <fullName>Glycerin</fullName>
+                <default>false</default>
+                <label>Glycerin</label>
+            </value>
+            <value>
+                <fullName>H2 Chloride</fullName>
+                <default>false</default>
+                <label>H2 Chloride</label>
+            </value>
+            <value>
+                <fullName>H2 Sulfide</fullName>
+                <default>false</default>
+                <label>H2 Sulfide</label>
+            </value>
+            <value>
+                <fullName>Hexane-n</fullName>
+                <default>false</default>
+                <label>Hexane-n</label>
+            </value>
+            <value>
+                <fullName>Hydrogen</fullName>
+                <default>false</default>
+                <label>Hydrogen</label>
+            </value>
+            <value>
+                <fullName>Isobutane</fullName>
+                <default>false</default>
+                <label>Isobutane</label>
+            </value>
+            <value>
+                <fullName>Isoprene</fullName>
+                <default>false</default>
+                <label>Isoprene</label>
+            </value>
+            <value>
+                <fullName>Methane</fullName>
+                <default>false</default>
+                <label>Methane</label>
+            </value>
+            <value>
+                <fullName>Methyl alcohol</fullName>
+                <default>false</default>
+                <label>Methyl alcohol</label>
+            </value>
+            <value>
+                <fullName>Natural Gas</fullName>
+                <default>false</default>
+                <label>Natural Gas</label>
+            </value>
+            <value>
+                <fullName>Nitrogen</fullName>
+                <default>false</default>
+                <label>Nitrogen</label>
+            </value>
+            <value>
+                <fullName>Octane-n</fullName>
+                <default>false</default>
+                <label>Octane-n</label>
+            </value>
+            <value>
+                <fullName>Oxygen</fullName>
+                <default>false</default>
+                <label>Oxygen</label>
+            </value>
+            <value>
+                <fullName>Pentane-n</fullName>
+                <default>false</default>
+                <label>Pentane-n</label>
+            </value>
+            <value>
+                <fullName>Propane</fullName>
+                <default>false</default>
+                <label>Propane</label>
+            </value>
+            <value>
+                <fullName>Propene</fullName>
+                <default>false</default>
+                <label>Propene</label>
+            </value>
+            <value>
+                <fullName>Styrene monomer</fullName>
+                <default>false</default>
+                <label>Styrene monomer</label>
+            </value>
+            <value>
+                <fullName>Sulphur O2</fullName>
+                <default>false</default>
+                <label>Sulphur O2</label>
+            </value>
+            <value>
+                <fullName>Toluene</fullName>
+                <default>false</default>
+                <label>Toluene</label>
+            </value>
+            <value>
+                <fullName>Xylene-m</fullName>
+                <default>false</default>
+                <label>Xylene-m</label>
+            </value>
+            <value>
+                <fullName>Xylene-o</fullName>
+                <default>false</default>
+                <label>Xylene-o</label>
+            </value>
+            <value>
+                <fullName>Xylene-p</fullName>
+                <default>false</default>
+                <label>Xylene-p</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

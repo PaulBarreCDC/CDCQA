@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>DCO</fullName>
+        <default>false</default>
+        <label>CDC Contract, Blanket Order</label>
+    </customValue>
+    <customValue>
+        <fullName>DCP</fullName>
+        <default>false</default>
+        <label>CDC Customer Property</label>
+    </customValue>
+    <customValue>
+        <fullName>DFL</fullName>
+        <default>false</default>
+        <label>CDC Flow Lab Order</label>
+    </customValue>
+    <customValue>
+        <fullName>DNO</fullName>
+        <default>false</default>
+        <label>CDC Normal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>DNU</fullName>
+        <default>false</default>
+        <label>CDC Nuclear Order</label>
+    </customValue>
+    <customValue>
+        <fullName>DPR</fullName>
+        <default>false</default>
+        <label>CDC Project Order</label>
+    </customValue>
+    <customValue>
+        <fullName>DWR</fullName>
+        <default>false</default>
+        <label>CDC Warranty Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VCO</fullName>
+        <default>false</default>
+        <label>Groth Contract, Blanket Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VCP</fullName>
+        <default>false</default>
+        <label>Groth Customer Property Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VFL</fullName>
+        <default>false</default>
+        <label>Groth Flow Lab Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VNO</fullName>
+        <default>false</default>
+        <label>Groth Normal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VPR</fullName>
+        <default>false</default>
+        <label>Groth Project Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VSE</fullName>
+        <default>false</default>
+        <label>Groth Service Order</label>
+    </customValue>
+    <customValue>
+        <fullName>VWR</fullName>
+        <default>false</default>
+        <label>Groth Warranty Order</label>
+    </customValue>
+    <customValue>
+        <fullName>INT</fullName>
+        <default>false</default>
+        <label>Internal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>TCO</fullName>
+        <default>false</default>
+        <label>LaMOT Contract, Blanket Order</label>
+    </customValue>
+    <customValue>
+        <fullName>TNO</fullName>
+        <default>false</default>
+        <label>Lamot Disc Normal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>TWR</fullName>
+        <default>false</default>
+        <label>LaMOT Warranty Order</label>
+    </customValue>
+    <customValue>
+        <fullName>LCO</fullName>
+        <default>false</default>
+        <label>LVA Contract, Blanket Order</label>
+    </customValue>
+    <customValue>
+        <fullName>LNO</fullName>
+        <default>false</default>
+        <label>LVA Normal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>LWR</fullName>
+        <default>false</default>
+        <label>LVA Warranty Order</label>
+    </customValue>
+    <customValue>
+        <fullName>PO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Project Order</label>
+    </customValue>
+    <customValue>
+        <fullName>NO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Normal Order</label>
+    </customValue>
+    <customValue>
+        <fullName>EXP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ITAR, EAR, Dual Use</label>
+    </customValue>
+    <customValue>
+        <fullName>QCF</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>AS9100, Nuclear, China, APP A PROJ</label>
+    </customValue>
+    <customValue>
+        <fullName>CON</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Contract / Blanket</label>
+    </customValue>
+    <customValue>
+        <fullName>SO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Stock Order</label>
+    </customValue>
+    <customValue>
+        <fullName>WRT</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Warranty</label>
+    </customValue>
+    <customValue>
+        <fullName>SEO</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Service</label>
+    </customValue>
+    <masterLabel>Order Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

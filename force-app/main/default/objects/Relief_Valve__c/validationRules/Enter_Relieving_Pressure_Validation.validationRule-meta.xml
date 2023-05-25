@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enter_Relieving_Pressure_Validation</fullName>
+    <active>false</active>
+    <description>Must be a non zero value.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),
+ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+Atmospheric_Pressure__c &gt; 0,
+OR(NOT(ISBLANK(Pressure_Relief_Req_Flow_Rate__c)),Pressure_Relief_Req_Flow_Rate__c &gt;= 0),
+NOT(ISPICKVAL(Pressure_Relief_Req_Flow_Units__c,&quot;&quot;)),
+Enter_Relieving_Pressure_Value__c &lt; 0,
+Section_B_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Enter_Relieving_Pressure_Value__c</errorDisplayField>
+    <errorMessage>Please enter a non zero value.</errorMessage>
+</ValidationRule>

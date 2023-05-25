@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__All</fullName>
+    <columns>NAME</columns>
+    <columns>cdcpc__Interface_to_IFS_Attributes__c</columns>
+    <columns>cdcpc__Product__c</columns>
+    <columns>cdcpc__Attribute_Code__c</columns>
+    <columns>cdcpc__Element__c</columns>
+    <columns>cdcpc__Integration_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>cdcpc__Product__c</field>
+        <operation>equals</operation>
+        <value>BGR</value>
+    </filters>
+    <label>All</label>
+</ListView>

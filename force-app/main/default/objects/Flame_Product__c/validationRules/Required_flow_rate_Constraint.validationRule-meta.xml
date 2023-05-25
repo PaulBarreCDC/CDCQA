@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_flow_rate_Constraint</fullName>
+    <active>false</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(TEXT( Max_Allowable_Pressure_Drop__c ))),
+NOT(ISBLANK(TEXT( Max_Allowable_Pressure_Drop_Units__c ))),
+ISBLANK(  Required_Flow_Rate__c ),
+Sizing_Flow_Area_flag__c=true)</errorConditionFormula>
+    <errorDisplayField>Required_Flow_Rate__c</errorDisplayField>
+    <errorMessage>Required Flow Rate: Please Enter a Value</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Process_Pressure_Unit_Validation</fullName>
+    <active>true</active>
+    <description>Max Process Pressure Unit cannot be none if Max Process Pressure greater than 0</description>
+    <errorConditionFormula>OR(
+	AND(
+	ISPICKVAL(Relief_Type__c, &quot;Vacuum&quot;),
+	Max_Process_Pressure__c &gt; 0,
+	(Section_A_Flag__c  = TRUE),
+	ISPICKVAL( Max_Process_Pressure_Unit__c , &quot;&quot;),
+	OR(Vacuum_Setting__c &gt; 0,NOT(ISBLANK(Vacuum_Setting__c )))
+	),
+	AND(
+	ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;),
+	Max_Process_Pressure__c &gt; 0,
+	(Section_A_Flag__c  = TRUE),
+	OR(Vacuum_Setting__c &gt; 0,NOT(ISBLANK(Vacuum_Setting__c ))),
+	ISPICKVAL( Max_Process_Pressure_Unit__c , &quot;&quot;),
+	OR(Pressure_Setting__c &gt; 0,NOT(ISBLANK(Pressure_Setting__c )))
+	)	
+)</errorConditionFormula>
+    <errorDisplayField>Max_Process_Pressure_Unit__c</errorDisplayField>
+    <errorMessage>Maximum Process Pressure UOM  : Please select a value from the drop down</errorMessage>
+</ValidationRule>

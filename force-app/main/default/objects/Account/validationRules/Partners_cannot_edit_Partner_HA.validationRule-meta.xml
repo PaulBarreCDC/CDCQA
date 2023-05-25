@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Partners_cannot_edit_Partner_HA</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(OR($Profile.Name = &quot;System Administrator&quot;,$Profile.Name = &quot;CDC Business Super User&quot;, $Profile.Name = &quot;CDC Standard User&quot;, $Permission.Parent_Account_Access_Limited )) 
+&amp;&amp;  (RecordType.Name = &quot;Partner &amp; House Account&quot; || RecordType.Name = &quot;Parent Account&quot; )</errorConditionFormula>
+    <errorMessage>Please reach out to CDC admin (support@cdc.com) to update partner accounts</errorMessage>
+</ValidationRule>

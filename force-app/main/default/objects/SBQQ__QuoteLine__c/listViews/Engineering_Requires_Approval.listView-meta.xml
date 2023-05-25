@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engineering_Requires_Approval</fullName>
+    <columns>SBQQ__Quote__c</columns>
+    <columns>NAME</columns>
+    <columns>Brand__c</columns>
+    <columns>Engineering_Status__c</columns>
+    <columns>Product_Planning_Status__c</columns>
+    <columns>Discountable_List_Price__c</columns>
+    <columns>Non_Discountable_List_Price__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Line_Status__c</columns>
+    <columns>SBQQ__Product__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Engineering_Status__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <filters>
+        <field>LAST_UPDATE</field>
+        <operation>greaterOrEqual</operation>
+        <value>10/5/2020 12:00 AM</value>
+    </filters>
+    <label>Engineering - Queue</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

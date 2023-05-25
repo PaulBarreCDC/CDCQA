@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_type_Must_select_a_value</fullName>
+    <active>false</active>
+    <description>The field Service type is Mandatory and atleast one value must be selected - Created by Vinayak 10/10/2019</description>
+    <errorConditionFormula>AND(
+				NOT(ISNEW()),
+				ISPICKVAL( Service_Type__c,&quot;&quot;),
+				Bypass__c = FAlSE,
+				Relief_flag__c = TRUE
+				)</errorConditionFormula>
+    <errorDisplayField>Service_Type__c</errorDisplayField>
+    <errorMessage>Please select atleast one value from the dropdown</errorMessage>
+</ValidationRule>

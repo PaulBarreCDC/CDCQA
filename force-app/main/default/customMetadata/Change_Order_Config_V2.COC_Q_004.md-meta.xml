@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>COC Q 004</label>
+    <protected>false</protected>
+    <values>
+        <field>Action__c</field>
+        <value xsi:type="xsd:string">Action:UpdateQuoteLines:Blocked:IFSOperations.cancelOrderIFS|Question:8;
+Action:UpdateQuoteLines:Blocked:IFSOperations.cancelOrderIFS|Question:8</value>
+    </values>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Force_Next__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Option__c</field>
+        <value xsi:type="xsd:string">Change Order in Progress:CHG ORDER;
+Waiting for Approval from Customer to Proceed with Production:CUST HOLD</value>
+    </values>
+    <values>
+        <field>Order__c</field>
+        <value xsi:type="xsd:double">4.0</value>
+    </values>
+    <values>
+        <field>Question_Description__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question_Hint__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Question__c</field>
+        <value xsi:type="xsd:string">Choose Reason for Blocking Order Lines in IFS</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">QuoteLineGrid</value>
+    </values>
+</CustomMetadata>

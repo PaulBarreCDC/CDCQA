@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>CC - Will hold data to change user assigned to task created from Sizing Request -&gt; Salesforce CPQ Quote creation flow.</description>
+    <label>Sizing Request to Quote</label>
+    <pluralLabel>Sizing Request to Quotes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

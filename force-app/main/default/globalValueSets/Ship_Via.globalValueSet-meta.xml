@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>ABX LOGISTICS</fullName>
+        <default>false</default>
+        <label>ABX LOGISTICS</label>
+    </customValue>
+    <customValue>
+        <fullName>AEI</fullName>
+        <default>false</default>
+        <label>AEI</label>
+    </customValue>
+    <customValue>
+        <fullName>AIR PARCEL POST</fullName>
+        <default>false</default>
+        <label>AIR PARCEL POST</label>
+    </customValue>
+    <customValue>
+        <fullName>AMERICAN CARGO</fullName>
+        <default>false</default>
+        <label>AMERICAN CARGO</label>
+    </customValue>
+    <customValue>
+        <fullName>AMERICAN FRT-MTR FRT</fullName>
+        <default>false</default>
+        <label>AMERICAN FRT-MTR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>AVERITT EXPRESS</fullName>
+        <default>false</default>
+        <label>AVERITT EXPRESS</label>
+    </customValue>
+    <customValue>
+        <fullName>BAX</fullName>
+        <default>false</default>
+        <label>BAX</label>
+    </customValue>
+    <customValue>
+        <fullName>BAX INTERNATIONAL</fullName>
+        <default>false</default>
+        <label>BAX INTERNATIONAL</label>
+    </customValue>
+    <customValue>
+        <fullName>BAX OVERNITE</fullName>
+        <default>false</default>
+        <label>BAX OVERNITE</label>
+    </customValue>
+    <customValue>
+        <fullName>BELLAIR</fullName>
+        <default>false</default>
+        <label>BELLAIR</label>
+    </customValue>
+    <customValue>
+        <fullName>BELLAIR DOOR TO DOOR</fullName>
+        <default>false</default>
+        <label>BELLAIR DOOR TO DOOR</label>
+    </customValue>
+    <customValue>
+        <fullName>BEST WAY</fullName>
+        <default>false</default>
+        <label>BEST WAY</label>
+    </customValue>
+    <customValue>
+        <fullName>BEST WAY COLLECT</fullName>
+        <default>false</default>
+        <label>BEST WAY COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>BEST WAY PREPAID</fullName>
+        <default>false</default>
+        <label>BEST WAY PREPAID</label>
+    </customValue>
+    <customValue>
+        <fullName>CAP AIR</fullName>
+        <default>false</default>
+        <label>CAP AIR</label>
+    </customValue>
+    <customValue>
+        <fullName>CCX-MTR FRT</fullName>
+        <default>false</default>
+        <label>CCX-MTR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>CHEETAH</fullName>
+        <default>false</default>
+        <label>CHEETAH</label>
+    </customValue>
+    <customValue>
+        <fullName>CIRCLE AIR FREIGHT</fullName>
+        <default>false</default>
+        <label>CIRCLE AIR FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>CONCORDIA</fullName>
+        <default>false</default>
+        <label>CONCORDIA</label>
+    </customValue>
+    <customValue>
+        <fullName>CONCORDIA FREIGHT</fullName>
+        <default>false</default>
+        <label>CONCORDIA FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>CONWAY</fullName>
+        <default>false</default>
+        <label>CONWAY</label>
+    </customValue>
+    <customValue>
+        <fullName>CUSTOMER PICKUP</fullName>
+        <default>false</default>
+        <label>CUSTOMER PICKUP</label>
+    </customValue>
+    <customValue>
+        <fullName>DAYTON FREIGHT</fullName>
+        <default>false</default>
+        <label>DAYTON FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>DHL</fullName>
+        <default>false</default>
+        <label>DHL</label>
+    </customValue>
+    <customValue>
+        <fullName>DHL COLLECT</fullName>
+        <default>false</default>
+        <label>DHL COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>DHL DANZA</fullName>
+        <default>false</default>
+        <label>DHL DANZA</label>
+    </customValue>
+    <customValue>
+        <fullName>DHL EXPRESS</fullName>
+        <default>false</default>
+        <label>DHL EXPRESS</label>
+    </customValue>
+    <customValue>
+        <fullName>EAGLE GLOBAL</fullName>
+        <default>false</default>
+        <label>EAGLE GLOBAL</label>
+    </customValue>
+    <customValue>
+        <fullName>ESHIPPING</fullName>
+        <default>false</default>
+        <label>ESHIPPING</label>
+    </customValue>
+    <customValue>
+        <fullName>EUROPA WL</fullName>
+        <default>false</default>
+        <label>EUROPA WL</label>
+    </customValue>
+    <customValue>
+        <fullName>EXPRESS AIR FREIGHT</fullName>
+        <default>false</default>
+        <label>EXPRESS AIR FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX</fullName>
+        <default>false</default>
+        <label>FEDEX</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX 1ST O/N</fullName>
+        <default>false</default>
+        <label>FEDEX 1ST O/N</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX 2 DAY</fullName>
+        <default>false</default>
+        <label>FEDEX 2 DAY</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX COLLECT</fullName>
+        <default>false</default>
+        <label>FEDEX COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX ECONOMY</fullName>
+        <default>false</default>
+        <label>FEDEX ECONOMY</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX FREIGHT</fullName>
+        <default>false</default>
+        <label>FEDEX FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX GROUND</fullName>
+        <default>false</default>
+        <label>FEDEX GROUND</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX INTL PRIORITY</fullName>
+        <default>false</default>
+        <label>FEDEX INTL PRIORITY</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX PRI FREIGHT</fullName>
+        <default>false</default>
+        <label>FEDEX PRI FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX PRI OVERNITE</fullName>
+        <default>false</default>
+        <label>FEDEX PRI OVERNITE</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX STD OVERNITE</fullName>
+        <default>false</default>
+        <label>FEDEX STD OVERNITE</label>
+    </customValue>
+    <customValue>
+        <fullName>FEDEX TRADE NETWORK</fullName>
+        <default>false</default>
+        <label>FEDEX TRADE NETWORK</label>
+    </customValue>
+    <customValue>
+        <fullName>FRITZ</fullName>
+        <default>false</default>
+        <label>FRITZ</label>
+    </customValue>
+    <customValue>
+        <fullName>Geodis Wilson</fullName>
+        <default>false</default>
+        <label>Geodis Wilson</label>
+    </customValue>
+    <customValue>
+        <fullName>GLS</fullName>
+        <default>false</default>
+        <label>GLS</label>
+    </customValue>
+    <customValue>
+        <fullName>JAS FORWARDING</fullName>
+        <default>false</default>
+        <label>JAS FORWARDING</label>
+    </customValue>
+    <customValue>
+        <fullName>KERRY</fullName>
+        <default>false</default>
+        <label>KERRY</label>
+    </customValue>
+    <customValue>
+        <fullName>LYNDEN AIR FREIGHT</fullName>
+        <default>false</default>
+        <label>LYNDEN AIR FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>MORRISON EXPRESS</fullName>
+        <default>false</default>
+        <label>MORRISON EXPRESS</label>
+    </customValue>
+    <customValue>
+        <fullName>MSAS/EXCEL</fullName>
+        <default>false</default>
+        <label>MSAS/EXCEL</label>
+    </customValue>
+    <customValue>
+        <fullName>OLD DOMINION</fullName>
+        <default>false</default>
+        <label>OLD DOMINION</label>
+    </customValue>
+    <customValue>
+        <fullName>OVERNITE MOTOR FRT</fullName>
+        <default>false</default>
+        <label>OVERNITE MOTOR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>REEMA TRANSPORT</fullName>
+        <default>false</default>
+        <label>REEMA TRANSPORT</label>
+    </customValue>
+    <customValue>
+        <fullName>ROADWAY MTR FRT</fullName>
+        <default>false</default>
+        <label>ROADWAY MTR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>Saia Motor Freight</fullName>
+        <default>false</default>
+        <label>Saia Motor Freight</label>
+    </customValue>
+    <customValue>
+        <fullName>SCHENKER</fullName>
+        <default>false</default>
+        <label>SCHENKER</label>
+    </customValue>
+    <customValue>
+        <fullName>TBA</fullName>
+        <default>false</default>
+        <label>TBA</label>
+    </customValue>
+    <customValue>
+        <fullName>TNT</fullName>
+        <default>false</default>
+        <label>TNT</label>
+    </customValue>
+    <customValue>
+        <fullName>TNT EXPRESS</fullName>
+        <default>false</default>
+        <label>TNT EXPRESS</label>
+    </customValue>
+    <customValue>
+        <fullName>TRUST AIR CARGO</fullName>
+        <default>false</default>
+        <label>TRUST AIR CARGO</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS</fullName>
+        <default>false</default>
+        <label>UPS</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS 2ND DAY AIR</fullName>
+        <default>false</default>
+        <label>UPS 2ND DAY AIR</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS 3 DAY SELECT</fullName>
+        <default>false</default>
+        <label>UPS 3 DAY SELECT</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS BLUE</fullName>
+        <default>false</default>
+        <label>UPS BLUE</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS COLLECT</fullName>
+        <default>false</default>
+        <label>UPS COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS EXPRESS</fullName>
+        <default>false</default>
+        <label>UPS EXPRESS</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS EXPRESS SAVER</fullName>
+        <default>false</default>
+        <label>UPS EXPRESS SAVER</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS FREIGHT</fullName>
+        <default>false</default>
+        <label>UPS FREIGHT</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS GROUND</fullName>
+        <default>false</default>
+        <label>UPS GROUND</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS GROUND COLLECT</fullName>
+        <default>false</default>
+        <label>UPS GROUND COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS NDA SAVER</fullName>
+        <default>false</default>
+        <label>UPS NDA SAVER</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS NEXT DAY AIR</fullName>
+        <default>false</default>
+        <label>UPS NEXT DAY AIR</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS ORANGE</fullName>
+        <default>false</default>
+        <label>UPS ORANGE</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS RED</fullName>
+        <default>false</default>
+        <label>UPS RED</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS RED COLLECT</fullName>
+        <default>false</default>
+        <label>UPS RED COLLECT</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS SUPPLY CHAIN</fullName>
+        <default>false</default>
+        <label>UPS SUPPLY CHAIN</label>
+    </customValue>
+    <customValue>
+        <fullName>UPS WORLDWIDE</fullName>
+        <default>false</default>
+        <label>UPS WORLDWIDE</label>
+    </customValue>
+    <customValue>
+        <fullName>VAN DUUREN</fullName>
+        <default>false</default>
+        <label>VAN DUUREN</label>
+    </customValue>
+    <customValue>
+        <fullName>VAN GEND EN LOOS</fullName>
+        <default>false</default>
+        <label>VAN GEND EN LOOS</label>
+    </customValue>
+    <customValue>
+        <fullName>WATKINS MTR FRT</fullName>
+        <default>false</default>
+        <label>WATKINS MTR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>WILL CALL</fullName>
+        <default>false</default>
+        <label>WILL CALL</label>
+    </customValue>
+    <customValue>
+        <fullName>WSKT MTR FRT</fullName>
+        <default>false</default>
+        <label>WSKT MTR FRT</label>
+    </customValue>
+    <customValue>
+        <fullName>YELLOW MTR FRT</fullName>
+        <default>false</default>
+        <label>YELLOW MTR FRT</label>
+    </customValue>
+    <masterLabel>Ship Via</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

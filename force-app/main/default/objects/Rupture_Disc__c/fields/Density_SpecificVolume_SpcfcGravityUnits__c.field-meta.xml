@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Density_SpecificVolume_SpcfcGravityUnits__c</fullName>
+    <externalId>false</externalId>
+    <label>Density/SpecificVolume/SpcfcGravityUnits</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>lb/in3</fullName>
+                <default>false</default>
+                <label>lb/in3</label>
+            </value>
+            <value>
+                <fullName>lb/ft3</fullName>
+                <default>false</default>
+                <label>lb/ft3</label>
+            </value>
+            <value>
+                <fullName>lb/gallon (U.S.)</fullName>
+                <default>false</default>
+                <label>lb/gallon (U.S.)</label>
+            </value>
+            <value>
+                <fullName>kg/m3</fullName>
+                <default>false</default>
+                <label>kg/m3</label>
+            </value>
+            <value>
+                <fullName>kg/L</fullName>
+                <default>false</default>
+                <label>kg/L</label>
+            </value>
+            <value>
+                <fullName>lb/yd3</fullName>
+                <default>false</default>
+                <label>lb/yd3</label>
+            </value>
+            <value>
+                <fullName>lb/gallon (Imperial)</fullName>
+                <default>false</default>
+                <label>lb/gallon (Imperial)</label>
+            </value>
+            <value>
+                <fullName>ft3/lb</fullName>
+                <default>false</default>
+                <label>ft3/lb</label>
+            </value>
+            <value>
+                <fullName>m3/kg</fullName>
+                <default>false</default>
+                <label>m3/kg</label>
+            </value>
+            <value>
+                <fullName>SG</fullName>
+                <default>false</default>
+                <label>SG</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

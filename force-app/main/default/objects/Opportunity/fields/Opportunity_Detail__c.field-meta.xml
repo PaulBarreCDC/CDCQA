@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Detail__c</fullName>
+    <externalId>false</externalId>
+    <label>Opportunity Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OEM - New Requirment</fullName>
+                <default>false</default>
+                <label>OEM - New Requirement</label>
+            </value>
+            <value>
+                <fullName>OEM - Repeat Requirment</fullName>
+                <default>false</default>
+                <label>OEM - Repeat Requirement</label>
+            </value>
+            <value>
+                <fullName>Competitor Changeout</fullName>
+                <default>false</default>
+                <label>Competitor Changeout</label>
+            </value>
+            <value>
+                <fullName>MRO</fullName>
+                <default>false</default>
+                <label>MRO</label>
+            </value>
+            <value>
+                <fullName>New Requirement/Addition - Existing Asset</fullName>
+                <default>false</default>
+                <label>New Requirement/Addition - Existing Asset</label>
+            </value>
+            <value>
+                <fullName>Upgrade - Existing Asset</fullName>
+                <default>false</default>
+                <label>Upgrade - Existing Asset</label>
+            </value>
+            <value>
+                <fullName>Expansion - Existing Asset</fullName>
+                <default>false</default>
+                <label>Expansion - Existing Asset</label>
+            </value>
+            <value>
+                <fullName>New Development/New Asset</fullName>
+                <default>false</default>
+                <label>New Development/New Asset</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

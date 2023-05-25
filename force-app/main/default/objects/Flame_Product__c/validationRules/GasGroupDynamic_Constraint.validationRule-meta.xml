@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GasGroupDynamic_Constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISBLANK(TEXT( Mounting__c ))),
+NOT(ISBLANK(TEXT( Pipe_Design__c ))),
+ISBLANK(GasGroupDynamic__c),
+Application_Parameters_flag__c = true)</errorConditionFormula>
+    <errorDisplayField>GasGroupDynamic__c</errorDisplayField>
+    <errorMessage>Gas Group: Please Select any one of the following</errorMessage>
+</ValidationRule>

@@ -1,0 +1,3 @@
+Component_Scrap__c,CSPECS__c,DSCVAR__c,InletRingPartNumber__c,Leadtime__c,MCIR__c,OptionCode__c,Part_Code__c,PTC__c,Qty_Per_Assembly__c,Scrap_Factor__c,Seat_Code__c,SourceCode__c,STC__c,SZC__c,TestingCode__c,Thck_Code__c,Thickness__c
+0,None^CS1^CS2^CS3^CS4^CS5,A,RGT010800800FS0050000000,RA,005,000,RGT,HPZ,1,0,FS,00,NA,0108,000,50,0.005
+0,None^CS1^CS2^CS3^CS4^CS5,A,RGT010800800FS0050000000,RA,005,000,RGT,HPZ,1,0,FS,00,NN,0108,000,50,0.005

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seat__c</fullName>
+    <externalId>false</externalId>
+    <label>Seat</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>FS</fullName>
+                <default>false</default>
+                <label>(FS) Flat Seat</label>
+            </value>
+            <value>
+                <fullName>SF</fullName>
+                <default>false</default>
+                <label>(SF) Sanitary Fitting</label>
+            </value>
+            <value>
+                <fullName>UL</fullName>
+                <default>false</default>
+                <label>(UL) Union Light Lip</label>
+            </value>
+            <value>
+                <fullName>CF</fullName>
+                <default>false</default>
+                <label>(CF) Flanged Clean Sweep</label>
+            </value>
+            <value>
+                <fullName>CL</fullName>
+                <default>false</default>
+                <label>(CL) Flanged Clean Sweep</label>
+            </value>
+            <value>
+                <fullName>DD</fullName>
+                <default>false</default>
+                <label>(DD) Double Disc</label>
+            </value>
+            <value>
+                <fullName>HL</fullName>
+                <default>false</default>
+                <label>(HL) Heavy Lip</label>
+            </value>
+            <value>
+                <fullName>LL</fullName>
+                <default>false</default>
+                <label>(LL) Light Lip</label>
+            </value>
+            <value>
+                <fullName>SL</fullName>
+                <default>false</default>
+                <label>(SL) Sanitary Clean Sweep</label>
+            </value>
+            <value>
+                <fullName>CS</fullName>
+                <default>false</default>
+                <label>(CS) Sanitary Clean Sweep</label>
+            </value>
+            <value>
+                <fullName>Z2</fullName>
+                <default>false</default>
+                <label>for (FS) Screw Type Holder</label>
+            </value>
+            <value>
+                <fullName>VP</fullName>
+                <default>false</default>
+                <label>(VP) Vent Panel</label>
+            </value>
+            <value>
+                <fullName>TG</fullName>
+                <default>false</default>
+                <label>(TG) Tongue and Groove</label>
+            </value>
+            <value>
+                <fullName>Z3</fullName>
+                <default>false</default>
+                <label>for (HF) Screw Type Holder</label>
+            </value>
+            <value>
+                <fullName>UH</fullName>
+                <default>false</default>
+                <label>(UH) Union Heavy Lip</label>
+            </value>
+            <value>
+                <fullName>Z1</fullName>
+                <default>false</default>
+                <label>for (LL) Screw Type Holder</label>
+            </value>
+            <value>
+                <fullName>HF</fullName>
+                <default>false</default>
+                <label>(HF) High Pressure Flat Seat</label>
+            </value>
+            <value>
+                <fullName>UF</fullName>
+                <default>false</default>
+                <label>(UF) Union Flat Seat</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

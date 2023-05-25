@@ -1,0 +1,14 @@
+<template>
+
+    <button class="slds-button" style="margin-left: 4px;" aria-describedby="help" aria-disabled="true" onclick={disableClick} onmouseover={showHideHelpText} onmouseout={showHideHelpText} onfocusout={showHideHelpText}>
+        <lightning-icon icon-name="utility:info" class="utility_hvr" size="xx-small" alternative-text="" title=""></lightning-icon>
+    </button>
+    
+    
+    <div class={cssClass} style="padding-left:2rem; padding-top:5rem; position:absolute; width: 375px; top: -82px;left: 82px;">
+        <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left slds-slide-from-top-to-bottom" role="tooltip" id="help" style="position:absolute;top:-5px;left:35px">
+          <div class="slds-popover__body">{helpText}</div>
+        </div>
+      </div>
+    
+</template>

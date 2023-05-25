@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Production_Planning_Released</fullName>
+    <columns>NAME</columns>
+    <columns>SBQQ__Quote__c</columns>
+    <columns>Brand__c</columns>
+    <columns>Commission_Amount__c</columns>
+    <columns>Product_Planning_Status__c</columns>
+    <columns>Engineering_Status__c</columns>
+    <columns>Discountable_List_Price__c</columns>
+    <columns>Non_Discountable_List_Price__c</columns>
+    <columns>Net_Price_Each__c</columns>
+    <columns>PARTNUMBER__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Product_Planning_Status__c</field>
+        <operation>equals</operation>
+        <value>Released</value>
+    </filters>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>greaterThan</operation>
+        <value>10/1/2020 12:00 AM</value>
+    </filters>
+    <label>Production Planning - Released</label>
+</ListView>

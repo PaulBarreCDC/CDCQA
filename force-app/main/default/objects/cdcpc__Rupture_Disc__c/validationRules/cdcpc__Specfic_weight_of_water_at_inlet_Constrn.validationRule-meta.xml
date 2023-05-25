@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Specfic_weight_of_water_at_inlet_Constrn</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(cdcpc__Evaluation_Per__c,&quot;ASME Water&quot;),
+OR(
+ISBLANK (  cdcpc__Specfic_weight_of_water_at_inlet_condtns__c  )
+)
+)&amp;&amp;
+(cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Specfic_weight_of_water_at_inlet_condtns__c</errorDisplayField>
+    <errorMessage>Please enter a Value</errorMessage>
+</ValidationRule>

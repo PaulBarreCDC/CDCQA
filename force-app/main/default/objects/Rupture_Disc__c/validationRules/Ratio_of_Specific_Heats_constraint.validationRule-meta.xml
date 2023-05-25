@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ratio_of_Specific_Heats_constraint</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( 
+NOT(ISBLANK(  Ratio_of_Specific_Heats__c  )), 
+OR( 
+Ratio_of_Specific_Heats__c&lt; 1, 
+Ratio_of_Specific_Heats__c&gt; 2.2 
+) 
+) &amp;&amp; Bypass__c = FALSE &amp;&amp;
+( Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>Ratio_of_Specific_Heats__c</errorDisplayField>
+    <errorMessage>Ratio of Specific Heats: Please enter a positive Integer value between 1 and 2.2</errorMessage>
+</ValidationRule>

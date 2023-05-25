@@ -1,0 +1,19 @@
+BidirFlag__c,BurstTolMethod__c,CEMark__c,Composite__c,DefMfgRngType__c,DerateType__c,Eleven_Sixteen__c,GoodForVac__c,LiquidTestReqd__c,MatingHolder__c,Media__c,MfgDataSearchGroup__c,MfgDataTemplate__c,NonFragDesign__c,OPtoBpRatio__c,ProductDescr1__c,ProductDescr2__c,ProductDescr3__c,ProductDescr4__c,ProductLevel__c,ProductLine__c,Product__c,PTC__c,RangeComparison__c,RangeTypeGroup__c,Section8Compliant__c,ShopRngMinMax__c,ShopRngType__c,StandardDisc__c,STTSFlag__c,TempTestReqd__c,VacSupportNeeded__c,ZookProduct__c
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.95,HPX-95,Continental,Rupture Disc,,1,FGD,HPX-95,HPX,-10% (-5 Psig),RevA,Y,REV,B,No,No,Yes,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.9,SANITRX HPX II-90,Continental,Rupture Disc,,1,FGD,SANITRX HPX II-90,HPH,-10% (-5 Psig),Rev,Y,REV,A,No,No,Yes,No,No
+No,A,Yes,No,-10%,TEN,No,Yes,No,,Liquid,A,STD,No,0.7,WMP,Continental,Rupture Disc Assembly,,1,FGD,WMP,WMP,-10% (-5 Psig),RevB,Y,OTH,A,Yes,No,No,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.9,HPX-90,Continental,Rupture Disc,,1,FGD,HPX-90,HPN,-10% (-5 Psig),Rev,Y,REV,A,No,No,Yes,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.95,SANITRX HPX II-95,Continental,Rupture Disc,,1,FGD,SANITRX HPX II-95,HP2,-10% (-5 Psig),RevA,Y,REV,B,No,No,Yes,No,No
+No,C,Yes,Yes,Standard,TEN,No,Yes,No,,Liquid,,COMP,Yes,0.8,CDCV,Continental,Rupture Disc,,1,FGD,CDCV,CDV,Standard,Ten,Y,OTH,F,No,No,No,Yes,No
+No,A,Yes,No,-10%,MCX,No,Yes,No,,Liquid,B,TNSC,Yes,0.8,MICRO X,Continental,Rupture Disc,,1,FGD,MICRO X,MCX,-10% (-5 Psig),Rev,Y,OTH,A,No,No,No,No,No
+No,H,Yes,Yes,N/A,TEN,No,No,No,,Liquid,B,COMP,Yes,0.5,ENVIRO-SEAL I,Continental,Rupture Disc,,1,FGD,ENVIRO-SEAL I,EV1,Standard,TenB,Y,ENV,G,No,No,No,No,No
+Yes,C,No,No,Standard,PAS,No,Yes,No,,Liquid,,CAL,Yes,0.8,POS-A-SET,Continental,Rupture Disc,,1,FGD,POS-A-SET,PAS,Standard,PAS,N,OTH,F,No,No,No,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.95,SANITRX HPX-95,Continental,Rupture Disc,,1,FGD,SANITRX HPX-95,HPS,-10% (-5 Psig),RevA,Y,REV,B,No,No,Yes,No,No
+No,C,Yes,Yes,Standard,TEN,No,No,No,,Liquid,,COMP,Yes,0.8,CDC,Continental,Rupture Disc,,1,FGD,CDC,CDC,Standard,Ten,Y,OTH,F,No,No,No,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.9,HPX-Ta,Continental,Rupture Disc,,1,FGD,HPX-Ta,HPT,-10% (-5 Psig),Rev,Y,REV,A,No,No,Yes,No,No
+No,C,Yes,No,Standard,TEN,No,Yes,No,,Liquid,A,STD,No,0.7,STD,Continental,Rupture Disc,,1,FGD,STANDARD,STD,Standard,TenA,Y,OTH,F,Yes,No,No,Yes,No
+Yes,H,Yes,Yes,N/A,TEN,No,No,No,,Liquid,B,DAD,Yes,0.5,ENVIRO-SEAL II,Continental,Rupture Disc,,1,FGD,ENVIRO-SEAL II,EV2,Standard,TenB,Y,ENV,G,No,No,No,No,No
+Yes,H,Yes,Yes,N/A,TEN,No,No,No,,Liquid,,DAD,Yes,0.5,ENVIRO-SEAL III,Continental,Rupture Disc,,1,FGD,ENVIRO-SEAL III,EV3,Standard,TenB,N,ENV,G,No,No,No,No,No
+No,A,Yes,No,Zero,REV,No,Yes,Yes,,Liquid,B,REVS,Yes,0.9,SANITRX HPX-90,Continental,Rupture Disc,,1,FGD,SANITRX HPX-90,HPZ,-10% (-5 Psig),Rev,Y,REV,A,No,No,Yes,No,No
+No,A,Yes,No,Zero,MCX,No,Yes,No,,Liquid,B,TNSC,Yes,0.9,MX-9T,Continental,Rupture Disc,,1,FGD,MX-9T,M9T,-10% (-5 Psig),Rev,Y,OTH,A,No,No,No,No,No
+Yes,C,Yes,No,Standard,CAL,No,Yes,No,,Liquid,,CAL,Yes,0.8,CAL-VAC,Continental,Rupture Disc,,1,FGD,CAL-VAC,CAL,Standard,CAL,N,OTH,F,No,No,No,No,No

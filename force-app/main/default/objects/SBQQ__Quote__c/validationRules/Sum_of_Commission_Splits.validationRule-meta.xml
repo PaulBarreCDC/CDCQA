@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sum_of_Commission_Splits</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT( 1 == Commission_Split_Sold_By_Rep__c +  Commission_Split_Dest_Rep__c +  Commission_Split_Eng_Rep_1__c + Commission_Split_Eng_Rep_2__c ) &amp;&amp;  Quote_Type__c &lt;&gt; &apos;Buy/Resell&apos;</errorConditionFormula>
+    <errorMessage>Sum of Commission Splits Should Be 100%</errorMessage>
+</ValidationRule>

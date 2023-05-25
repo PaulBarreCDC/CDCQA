@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Config_Status__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Config Status</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Incomplete</fullName>
+                <default>true</default>
+                <label>Incomplete</label>
+            </value>
+            <value>
+                <fullName>Complete No Overrides</fullName>
+                <default>false</default>
+                <label>Complete No Overrides</label>
+            </value>
+            <value>
+                <fullName>Complete with Override(s)</fullName>
+                <default>false</default>
+                <label>Complete with Override(s)</label>
+            </value>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

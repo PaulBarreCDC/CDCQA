@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Size__c ,&apos;&apos;)
+)&amp;&amp;
+( Bypass__c = FALSE) &amp;&amp; 
+ (Product_Selection_Flag__c=true)</errorConditionFormula>
+    <errorMessage>Size : Please select a value from the drop down</errorMessage>
+</ValidationRule>

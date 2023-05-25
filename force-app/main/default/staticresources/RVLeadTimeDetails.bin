@@ -1,0 +1,3 @@
+CDC_Ext_ID__c,Flag__c,Lead_Time_Item_No__c,NumVal1__c,NumVal2__c,QueueTimeSchedule__c,RunTimeSchedule__c,Text1val__c,Text2val__c,Text3val__c,Text4val__c,Text5val__c,Text6val__c,Text7val__c
+1,,Base,,,QTNDE1,AssemblyLocation,1221B Fiberglass,,,,,,
+2,,AssemblyLocation,,,QTNDE1,AssemblyLocation,1221B Fiberglass,,,,,,

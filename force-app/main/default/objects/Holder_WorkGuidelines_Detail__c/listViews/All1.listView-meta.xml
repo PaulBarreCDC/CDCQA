@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All1</fullName>
+    <columns>NAME</columns>
+    <columns>OBJECT_ID</columns>
+    <columns>Operation__c</columns>
+    <columns>Text1Val__c</columns>
+    <columns>Standard_Operation_ID__c</columns>
+    <columns>Guideline_Seq__c</columns>
+    <columns>Guideline_Seq_Numeric__c</columns>
+    <columns>Description__c</columns>
+    <columns>Text__c</columns>
+    <columns>Type__c</columns>
+    <columns>Sign_Off__c</columns>
+    <columns>Inspection_Sign_Off_Required__c</columns>
+    <columns>Test__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>OBJECT_ID</field>
+        <operation>equals</operation>
+        <value>a3u0v000000gfEo</value>
+    </filters>
+    <label>All</label>
+</ListView>

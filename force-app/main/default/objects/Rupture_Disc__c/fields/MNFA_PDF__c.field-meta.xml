@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MNFA_PDF__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(1,
+IF(FLOOR(MNFA__c)&gt;=100,1,0),TEXT(FLOOR(MNFA__c)),
+IF(FLOOR(MNFA__c)&lt;100 &amp;&amp; FLOOR(MNFA__c)&gt;=10,1,0),TEXT(FLOOR(MNFA__c)) &amp;&quot;.&quot;&amp; LEFT(TEXT((MNFA__c - FLOOR(MNFA__c))*10),1),
+IF(FLOOR(MNFA__c)&lt;10 &amp;&amp; FLOOR(MNFA__c)&gt;=1,1,0),TEXT(FLOOR(MNFA__c)) &amp;&quot;.&quot;&amp; LEFT(TEXT((MNFA__c - FLOOR(MNFA__c))*100),2),
+IF(FLOOR(MNFA__c)&lt;1 &amp;&amp; (MNFA__c - FLOOR(MNFA__c))&gt;=0.1,1,0), &quot;0.&quot;&amp; LEFT(TEXT((MNFA__c - FLOOR(MNFA__c))*10000),3),
+IF((MNFA__c - FLOOR(MNFA__c))&lt;0.1,1,0), &quot;0.0&quot;&amp; LEFT(TEXT((MNFA__c - FLOOR(MNFA__c))*10000),4),
+&apos;0.000&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MNFA PDF</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

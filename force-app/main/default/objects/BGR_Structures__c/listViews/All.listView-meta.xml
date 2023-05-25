@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>ModulePN__c</columns>
+    <columns>Line_Item_No__c</columns>
+    <columns>Component_part__c</columns>
+    <columns>Model__c</columns>
+    <columns>Sourcing__c</columns>
+    <columns>SpringCode__c</columns>
+    <columns>SZC__c</columns>
+    <columns>SettingLL__c</columns>
+    <columns>SettingUL__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Component_part__c</field>
+        <operation>contains</operation>
+        <value>SPR</value>
+    </filters>
+    <filters>
+        <field>Sourcing__c</field>
+        <operation>equals</operation>
+        <value>00</value>
+    </filters>
+    <filters>
+        <field>SZC__c</field>
+        <operation>equals</operation>
+        <value>05</value>
+    </filters>
+    <label>All</label>
+</ListView>

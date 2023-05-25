@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Back_Pressure_Unit_Validation</fullName>
+    <active>true</active>
+    <description>Back Pressure unit should not be none if back pressure is greater than 0</description>
+    <errorConditionFormula>AND(
+	OR(ISPICKVAL(Relief_Type__c, &quot;Pressure&quot;),ISPICKVAL(Relief_Type__c, &quot;Pressure &amp; Vacuum&quot;)),
+	OR(Pressure_Setting__c &gt; 0,NOT(ISBLANK(Pressure_Setting__c ))),
+	NOT(ISPICKVAL(Pressure_Setting_Units__c, &quot;&quot;)),
+	Back_Pressure__c &gt; 0,
+	ISPICKVAL( Back_Pressure_Units__c , &quot;&quot;),  
+	Section_A_Flag__c  = TRUE
+)</errorConditionFormula>
+    <errorDisplayField>Back_Pressure_Units__c</errorDisplayField>
+    <errorMessage>Back Pressure Unit : Please select a value from the drop down</errorMessage>
+</ValidationRule>

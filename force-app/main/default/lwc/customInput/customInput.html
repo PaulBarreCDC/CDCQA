@@ -1,0 +1,28 @@
+<template>
+    <div class={field.class}>
+        <label if:true={field.label} class="slds-form-element__label">
+          {field.label}
+        </label>
+        <div class="slds-form-element__control">
+          <input  name={field.name} type={field.type} variant="label-hidden" class="slds-input" value={field.value} onfocusout={field.changehandler}/>
+          <lightning-input-field field-name={field.fieldApiName}  class="slds-hide" value={field.value}></lightning-input-field>
+        </div>
+        <template if:true={field.errorMessage}> <div class="slds-form-element__help" id="error-message-unique-id">{field.errorMessage}</div></template>
+    </div>
+
+
+<!--
+
+
+      <div class="slds-form-element slds-form-element_horizontal">
+        <label class="slds-form-element__label" for="horizontal-input-id-01">
+            Supply Pressure
+        </label>
+        <div class="slds-form-element__control">
+            
+            <input name="supplyPressure" min="0" type="number" class="slds-input" variant="label-hidden" value={supplyPressure} onfocusout={RemoveDecimal} ></input>                   
+             <lightning-input-field field-name="Supply_Pressure__c"  class="slds-hide" value={supplyPressure}></lightning-input-field>
+        </div>
+    </div>
+-->
+</template>

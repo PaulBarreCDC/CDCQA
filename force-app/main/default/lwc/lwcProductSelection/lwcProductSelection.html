@@ -1,0 +1,138 @@
+<template>
+   <!-- <template if:false={addProductFlag}>
+        <c-lwc-custom-quote-line-page record-id={recordId}></c-lwc-custom-quote-line-page>
+        <br/>
+        <div class="slds-clearfix">
+            <div class="slds-float_left">
+                <lightning-button variant="brand-outline" onclick={handleAddProduct} name="Add Product" label="Add Product"></lightning-button>
+            </div>
+        </div>
+    </template>
+    <template if:true={addProductFlag}> -->
+        
+        <div class="slds-page-header" style="height: 4rem;">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title" style="margin-top: 0.7rem;">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container" title="brand">
+                                
+                                <div class='icon-container'>
+                                    <lightning-icon src={brandUrl} alternative-text="Brand"></lightning-icon>
+                                </div>
+                              <span class="slds-assistive-text">Brand</span>
+                            </span>
+                          </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate slds-p-left_xx-large" title="Select a Product">Select a Product</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Lightning Layout and LayoutItem Components -->
+        <template if:true={bShowSpinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>            
+        </template>
+        
+            <lightning-card  variant="Narrow">
+                <div class="slds-p-left_small">
+                    <img src={brandUrl} style="width:4.5rem;height:3.5rem;position: absolute; z-index: 1;margin-top: -4.2rem;">
+                </div>
+
+                <lightning-layout horizontal-align="spread" multiple-rows="true">
+                    <lightning-layout-item flexibility="grow" size="12" large-device-size="12">
+                        <lightning-layout multiple-rows="true">
+                            <template for:each={products} for:item="product">
+                                <lightning-layout-item key={product.Id} flexibility="grow" size="3" small-device-size="12" medium-device-size="6" large-device-size="3">
+                                    <div class="demo-only demo-only--sizing slds-grid slds-wrap">
+                                        <div class="slds-size_2-of-2">
+                                            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small gridBackground">
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-col slds-size_10-of-12 slds-align_absolute-center slds-p-around_small">
+                                                            <div class="slds-box">
+                                                        <img src={product.ImageURL} style="width:100px;height:70px;">
+                                                        </div>
+                                                        <!--<lightning-icon icon-name="utility:image" alternative-text=""></lightning-icon>-->
+                                                    </div>
+                                                    <div class="slds-col slds-size_12-of-12 slds-align_absolute-center">
+                                                        <button data-product={product.Id} data-pcode={product.ProductCode} class="slds-button slds-button_brand productGrid" onclick={handleProductSelection}>{product.Name}</button>
+                                                    </div>
+                                                        <!-- <br/>
+                                                    <div class="slds-p-around_small slds-text-align_center slds-text-body_small">{product.Description}</div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </lightning-layout-item>
+                            </template>
+                            <!-- <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="6" large-device-size="3">
+                                <div class="demo-only slds-grid slds-wrap">
+                                    <div class="slds-size_2-of-2">
+                                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small gridBackground">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center slds-p-around_large">
+                                                    <lightning-icon icon-name="utility:image" alternative-text=""></lightning-icon>
+                                                </div>
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center">
+                                                    <button class="slds-button slds-button_brand productGrid" onclick={navigateToProductSelection}>Product 2</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="6" large-device-size="3">
+                                <div class="demo-only  slds-grid slds-wrap">
+                                    <div class="slds-size_2-of-2">
+                                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small gridBackground">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center slds-p-around_large">
+                                                    <lightning-icon icon-name="utility:image" alternative-text=""></lightning-icon>
+                                                </div>
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center">
+                                                    <button class="slds-button slds-button_brand productGrid">Product 3</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" flexibility="grow" size="3" small-device-size="12" medium-device-size="6" large-device-size="3">
+                                <div class="demo-only slds-grid slds-wrap">
+                                    <div class="slds-size_2-of-2">
+                                        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small gridBackground">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center slds-p-around_large">
+                                                    <lightning-icon icon-name="utility:image" alternative-text=""></lightning-icon>
+                                                </div>
+                                                <div class="slds-col slds-size_10-of-12 slds-align_absolute-center">
+                                                    <button class="slds-button slds-button_brand productGrid">Product 4</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-layout-item> -->
+                        </lightning-layout>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </lightning-card>
+            
+        
+   <!-- </template> -->
+    
+    <template if:false={isProductDataAvailable}>
+        <div class="slds-text-heading_small slds-text-align_center slds-p-top_large">
+            No Products found.
+        </div>
+    </template>
+       
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spring_Range_Constraint</fullName>
+    <active>true</active>
+    <description>This is a Mandatory field to be entered by the User.</description>
+    <errorConditionFormula>AND(
+ISBLANK(Spring_Range__c ),
+Bypass__c = FALSE,
+Model__c = &quot;8400A&quot;,
+Product_Material_and_Options_flag__c=true
+)</errorConditionFormula>
+    <errorMessage>Spring Range : Please select a value from the drop down</errorMessage>
+</ValidationRule>

@@ -1,0 +1,2 @@
+MfgRngLL__c,MfgRngUL__c,OutLinerMatl__c,OutLinerThck__c,PTC__c,SCStripThck__c,SealMatl__c,SealThck__c,SecondSealMatl__c,SlotCovMatl__c,SlotCovThck__c,SZC__c,TempLL__c,TempUL__c
+0,9999,,0,HPZ,0.005,73,0.005,,73,0.01,0108,0,9999

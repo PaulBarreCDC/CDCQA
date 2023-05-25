@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Vacuum_Withstand__c</name>
+    <picklistValues>
+        <masterLabel>Back Pressure</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Full Vacuum</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Requirements</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

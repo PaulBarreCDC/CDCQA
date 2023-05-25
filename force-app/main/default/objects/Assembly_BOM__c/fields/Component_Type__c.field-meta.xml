@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Component_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Component Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outlet Gasket</fullName>
+                <default>false</default>
+                <label>Outlet Gasket</label>
+            </value>
+            <value>
+                <fullName>Inlet Gasket</fullName>
+                <default>false</default>
+                <label>Inlet Gasket</label>
+            </value>
+            <value>
+                <fullName>Inlet Ring</fullName>
+                <default>false</default>
+                <label>Inlet Ring</label>
+            </value>
+            <value>
+                <fullName>Arcuate Ring</fullName>
+                <default>false</default>
+                <label>Arcuate Ring</label>
+            </value>
+            <value>
+                <fullName>Outlet Ring</fullName>
+                <default>false</default>
+                <label>Outlet Ring</label>
+            </value>
+            <value>
+                <fullName>Middle Ring</fullName>
+                <default>false</default>
+                <label>Middle Ring</label>
+            </value>
+            <value>
+                <fullName>Inlet Liner</fullName>
+                <default>false</default>
+                <label>Inlet Liner</label>
+            </value>
+            <value>
+                <fullName>Outlet Liner</fullName>
+                <default>false</default>
+                <label>Outlet Liner</label>
+            </value>
+            <value>
+                <fullName>Inlet Coating</fullName>
+                <default>false</default>
+                <label>Inlet Coating</label>
+            </value>
+            <value>
+                <fullName>Outlet Coating</fullName>
+                <default>false</default>
+                <label>Outlet Coating</label>
+            </value>
+            <value>
+                <fullName>Disc</fullName>
+                <default>false</default>
+                <label>Disc</label>
+            </value>
+            <value>
+                <fullName>Top Section</fullName>
+                <default>false</default>
+                <label>Top Section</label>
+            </value>
+            <value>
+                <fullName>Seal</fullName>
+                <default>false</default>
+                <label>Seal</label>
+            </value>
+            <value>
+                <fullName>Seal (Metal)</fullName>
+                <default>false</default>
+                <label>Seal (Metal)</label>
+            </value>
+            <value>
+                <fullName>Teflon Seal</fullName>
+                <default>false</default>
+                <label>Teflon Seal</label>
+            </value>
+            <value>
+                <fullName>Girdle</fullName>
+                <default>false</default>
+                <label>Girdle</label>
+            </value>
+            <value>
+                <fullName>Knifeblade</fullName>
+                <default>false</default>
+                <label>Knifeblade</label>
+            </value>
+            <value>
+                <fullName>Girdle Cover</fullName>
+                <default>false</default>
+                <label>Girdle Cover</label>
+            </value>
+            <value>
+                <fullName>Slot Cover Strips</fullName>
+                <default>false</default>
+                <label>Slot Cover Strips</label>
+            </value>
+            <value>
+                <fullName>Slot Cover</fullName>
+                <default>false</default>
+                <label>Slot Cover</label>
+            </value>
+            <value>
+                <fullName>Slot Cover 2</fullName>
+                <default>false</default>
+                <label>Slot Cover 2</label>
+            </value>
+            <value>
+                <fullName>Vacuum Support</fullName>
+                <default>false</default>
+                <label>Vacuum Support</label>
+            </value>
+            <value>
+                <fullName>Handling Support</fullName>
+                <default>false</default>
+                <label>Handling Support</label>
+            </value>
+            <value>
+                <fullName>Inlet</fullName>
+                <default>false</default>
+                <label>Inlet</label>
+            </value>
+            <value>
+                <fullName>Outlet</fullName>
+                <default>false</default>
+                <label>Outlet</label>
+            </value>
+            <value>
+                <fullName>Holddown Ring</fullName>
+                <default>false</default>
+                <label>Holddown Ring</label>
+            </value>
+            <value>
+                <fullName>Inlet O-Ring</fullName>
+                <default>false</default>
+                <label>Inlet O-Ring</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

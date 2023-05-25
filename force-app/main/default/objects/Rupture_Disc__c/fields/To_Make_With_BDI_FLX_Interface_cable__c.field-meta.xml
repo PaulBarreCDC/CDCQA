@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>To_Make_With_BDI_FLX_Interface_cable__c</fullName>
+    <externalId>false</externalId>
+    <label>Interface cable</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2W-IS</fullName>
+                <default>false</default>
+                <label>2W-IS</label>
+            </value>
+            <value>
+                <fullName>2W-NIS or 4W-NIS</fullName>
+                <default>false</default>
+                <label>2W-NIS or 4W-NIS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

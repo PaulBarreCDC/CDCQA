@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__MetaDataMode__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>This setting will display additional information and badges to enhance the part configurators.</description>
+    <externalId>false</externalId>
+    <label>Meta Data Mode</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

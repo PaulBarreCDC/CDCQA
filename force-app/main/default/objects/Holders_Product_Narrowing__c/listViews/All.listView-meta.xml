@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>HolderProduct__c</columns>
+    <columns>SZC__c</columns>
+    <columns>CDC_Ext_ID__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CDC_Ext_ID__c</field>
+        <operation>equals</operation>
+        <value>699</value>
+    </filters>
+    <label>All</label>
+</ListView>

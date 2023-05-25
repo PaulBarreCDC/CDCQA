@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cdcpc__Pressure_Relieving_Temperature_Constrain</fullName>
+    <active>true</active>
+    <description>Pressure Relieving Temperature is Mandatory field to be selected by the User</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ASME Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;API Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Gas/Vapor&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;ISO Dry Steam&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Gas-Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Vapor-Liquid&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske All Liquid Flashing&quot;) ||
+ISPICKVAL( cdcpc__Evaluation_Per__c , &quot;Fauske 2 Phase Hybrid Gas-Vapor-Liquid&quot;),
+OR(
+ISBLANK(TEXT(  cdcpc__Pressure_Relieving_Temperature__c ))
+)
+)&amp;&amp;
+( cdcpc__Bypass__c = FALSE) &amp;&amp;
+( cdcpc__Sizing_Flag__c = TRUE)</errorConditionFormula>
+    <errorDisplayField>cdcpc__Pressure_Relieving_Temperature__c</errorDisplayField>
+    <errorMessage>Pressure Relieving Temperature: Please select a value from the drop down</errorMessage>
+</ValidationRule>

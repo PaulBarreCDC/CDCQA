@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_FA_Issues</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <columns>Test_Case_Title__c</columns>
+    <columns>Actual_Results__c</columns>
+    <columns>Issue_Status__c</columns>
+    <columns>Disposition__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>Resolution_Assigned_To__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Category__c</field>
+        <operation>contains</operation>
+        <value>Flame Arrester</value>
+    </filters>
+    <filters>
+        <field>Disposition__c</field>
+        <operation>notContain</operation>
+        <value>Logged Not Investigated,New Configurator Error Only (Defect),Legacy Configurator Error (Enhancement),Helper Data Issue (CDC Owned),Neither Codebase Matches Expected Result (Enhancement),Training/Question,Duplicate</value>
+    </filters>
+    <label>FA All Issues</label>
+</ListView>

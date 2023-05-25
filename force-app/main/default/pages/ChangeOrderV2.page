@@ -1,0 +1,323 @@
+<apex:page controller="ChangeOrderControllerV2" lightningStylesheets="true" id="pgChangeOrder">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <style type="text/css">
+        .slds-button_brand{
+        padding-left:1rem !important;
+        padding-right:1rem !important;
+        text-align:center !important;
+        vertical-align:middle !important;
+        -webkit-box-pack:center !important;
+        -ms-flex-pack:center !important;
+        justify-content:center !important;
+        border:1px solid #dddbda !important;
+        -webkit-transition:border 0.15s linear !important;
+        transition:border 0.15s linear !important;
+        background-color:#0070d2 !important;
+        border-color:#0070d2 !important;
+        color:white !important;
+        background:#0070d2 !important;
+        }
+        
+        .slds-button_outline-brand{
+        padding-left:1rem !important;
+        padding-right:1rem !important;
+        text-align:center !important;
+        vertical-align:middle !important;
+        -webkit-box-pack:center !important;
+        -ms-flex-pack:center !important;
+        justify-content:center !important;
+        border:1px solid #dddbda !important;
+        -webkit-transition:border 0.15s linear !important;
+        transition:border 0.15s linear !important;
+        border-color:#dddbda !important;
+        background-color:white !important;
+        border-color:#0070d2 !important;
+        }
+        .cHide{
+        	display:none;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script type="text/javascript">
+    function handleOnAnswer(qNum){
+        console.log('handleOnAnswer :');
+        console.log('qNum'+':' + qNum);
+        onAnswer(qNum); 
+    }
+    
+    function handleAction(){
+        console.log('handleAction :');
+        console.log('activeActionType :' + activeActionType);
+        console.log('activeAlert :' + activeAlert);
+        
+        if(activeActionType == 'Alert'){
+            if(activeAlert != ''){
+                alert(activeAlert);    
+            }
+        }
+        
+    }
+    
+    function showAddAttachmentDialog(){
+        $( "#dialog_AddAttachment" ).dialog({
+            modal: true,
+            title: "Add Attachment",
+            minWidth: $(window).width() * 0.3,
+            width:$(window).width() * 0.5,
+            height: 450,
+            resizable: false,
+            draggable: false
+        });    
+    }
+    
+    function showAddChargeDialog(){
+        $( "#dialog_AddCharge" ).dialog({
+            modal: true,
+            title: "Manage Charges",
+            minWidth: $(window).width() * 0.5,
+            width:$(window).width() * 0.8,
+            height: 500,
+            resizable: false,
+            draggable: false
+        }).parent().appendTo($("#pgChangeOrder\\:frmChangeOrder"));
+    }
+    
+    function addFreightHelper(){
+    	console.log('addFreightHelper :');
+        var url = '/lightning/o/Freight_Information__c/new?defaultFieldValues=Account__c={!oQuote.Shipping_Account__c}';
+        console.log('url'+':' + url);
+        window.open(url,'_blank');    
+    }
+    
+    </script>
+	
+    <apex:outputpanel >
+        <apex:actionstatus id="processingStatus">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="background-color: #DCD6D6;height: 100%;opacity:0.65;width:100%;"> 
+                    <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                        <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                        <span class="waitingDescription">Processing...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionstatus>
+    </apex:outputpanel>
+    
+    <apex:form id="frmChangeOrder">
+        <apex:actionFunction action="{!onBack}" name="onBack" rerender="pnlMain" status="processingStatus">
+            <apex:param assignTo="{!activeQNum}" name="activeQNum" value="" />
+        </apex:actionFunction>
+        
+        <apex:actionFunction action="{!onAnswer}" name="onAnswer" rerender="pnlMain" oncomplete="handleAction();return false;" status="processingStatus">
+            <apex:param assignTo="{!activeQNum}" name="activeQNum" value="" />
+        </apex:actionFunction>
+        
+        <apex:outputPanel id="pnlMain">
+            <apex:pageMessages />
+            <apex:sectionHeader title="Change Order - {!oQuote.Name}" />            
+            <apex:variable value="{!1}" var="qNum"/>
+            
+            <apex:repeat value="{!lstCOCW}" var="cocw">
+                    <!--rendered="{!qNum=activeQNum}"-->
+                    <!--style="display:{!IF(qNum=activeQNum,'','none')}"-->
+                    <apex:outputPanel style="display:{!IF(qNum=activeQNum,'','none')}"> 
+                        
+                        <apex:commandButton styleclass="slds-button slds-button_brand" style="float:right;" value="Back to Quote" action="{!navigateToQuote}"/> <br/><br/>
+                        
+                        <apex:pageBlock >
+                            <apex:pageBlockButtons location="bottom">
+                                <apex:commandButton styleclass="slds-button slds-button_brand" value="Previous" onclick="onBack({!activeQNum}); return false;" rerender="pnlMain" rendered="{!showPrevious}"/>
+                            </apex:pageBlockButtons>
+                            
+                            <div style="font-weight:bold;margin-bottom:10px;font-size: 18px;">{!cocw.oChangeOrderConfig.Question__c}</div>
+                            
+                            <apex:outputPanel layout="block">
+                                <apex:outputText value="{!cocw.oChangeOrderConfig.Question_Hint__c}" escape="false"></apex:outputText>
+                                <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Type__c='Radio'}">
+                                    <apex:outputPanel layout="none" rendered="{!!cocw.oChangeOrderConfig.Force_Next__c}">
+                                        <apex:selectRadio value="{!cocw.selectedAnswer}" onchange="handleOnAnswer({!qNum});">
+                                            <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                        </apex:selectRadio>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Force_Next__c}">
+                                        <apex:selectRadio value="{!cocw.selectedAnswer}">
+                                            <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                        </apex:selectRadio>
+                                        <div style="margin-left: 10px;margin-top: 10px;">
+                                            <apex:commandButton styleclass="slds-button slds-button_brand" value="Ok" onclick="handleOnAnswer({!qNum}); return false;" rerender="pnlMain"/>    
+                                        </div>    
+                                    </apex:outputPanel>
+                                    
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Type__c='QuoteLineGrid'}">
+                                    <apex:pageBlockTable value="{!cocw.lstQuoteLineWrapper}" var="qlw" columns="5" columnsWidth="10%,20%,15%,35%,20%">
+                                        <apex:column headerValue="Action">
+                                            <apex:selectList style="margin-left:15px;width:150px;" value="{!qlw.selectedAnswer}" size="1" multiselect="false">
+                                                <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                            </apex:selectList>
+                                        </apex:column>
+                                        <apex:column headerValue="Line Name">
+                                            {!qlw.oQuoteLine.Name}
+                                        </apex:column>
+                                        <apex:column headerValue="Quantity">
+                                            {!qlw.oQuoteLine.SBQQ__Quantity__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Product Name">
+                                            {!qlw.oQuoteLine.Product_Name__c}
+                                        </apex:column>
+                                        <apex:column headerValue="Part Number">
+                                            {!qlw.oQuoteLine.PARTNUMBER__c}
+                                        </apex:column>
+                                    </apex:pageBlockTable>
+                                    
+                                    <div style="margin-left: 10px;margin-top: 10px;">
+                                        <apex:commandButton styleclass="slds-button slds-button_brand" value="Done" onclick="handleOnAnswer({!qNum}); return false;" rerender="pnlMain"/>    
+                                    </div>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Type__c='Checkbox'}">
+                                    <apex:selectCheckboxes value="{!cocw.lstSelectedAnswer}">
+                                        <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                    </apex:selectCheckboxes>
+                                    <div style="margin-left: 10px;margin-top: 10px;">
+                                        <apex:commandButton styleclass="slds-button slds-button_brand" value="OK" onclick="handleOnAnswer({!qNum}); return false;" rerender="pnlMain"/>    
+                                    </div>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Type__c='Picklist'}">
+                                    <apex:outputPanel layout="none" rendered="{!!cocw.oChangeOrderConfig.Force_Next__c}">
+                                        <apex:selectList style="margin-left:15px;" value="{!cocw.selectedAnswer}" size="1"  onchange="handleOnAnswer({!qNum});">
+                                            <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                        </apex:selectList>    
+                                    </apex:outputPanel>
+                                    <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Force_Next__c}">
+                                        <apex:selectList style="margin-left:15px;" value="{!cocw.selectedAnswer}" size="1">
+                                            <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                        </apex:selectList>
+                                        <div style="margin-left: 10px;margin-top: 10px;">
+                                            <apex:commandButton styleclass="slds-button slds-button_brand" value="OK" onclick="handleOnAnswer({!qNum}); return false;" rerender="pnlMain"/>    
+                                        </div>
+                                    </apex:outputPanel>
+                                    
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel layout="none" rendered="{!cocw.oChangeOrderConfig.Type__c='MultiPicklist'}">
+                                    <apex:selectList value="{!cocw.selectedAnswer}" multiselect="true" size="3" >
+                                        <apex:selectOptions value="{!cocw.lstAnswerOption}"/>
+                                    </apex:selectList>
+                                </apex:outputPanel>
+                                
+                            </apex:outputPanel>
+                        </apex:pageBlock>
+                    </apex:outputPanel>
+                    <apex:variable var="qNum" value="{!qNum + 1}"/>
+            </apex:repeat>   
+            
+            <apex:outputPanel rendered="{!bCommercialSelected}"> 
+                <apex:sectionHeader title="Update Quote Details"/>
+                
+                <apex:outputPanel id="pnlQuoteDetailButtons" layout="block" style="text-align:center;"> 
+                    <apex:commandButton styleclass="slds-button slds-button_brand" value="Add Attachment" onclick="showAddAttachmentDialog();return false;"/>
+                    <apex:commandButton styleclass="slds-button slds-button_brand" value="Add Freight" onclick="addFreightHelper();return false;"/>
+                    <apex:commandButton styleclass="slds-button slds-button_brand" value="Manage Charges" onclick="showAddChargeDialog();return false;" rendered="{!bCommercialChargesSelected}"/>
+                    <br/><br/>
+                </apex:outputPanel>
+                
+                <!--<apex:outputPanel id="pnlAttachment"> 
+                    <apex:commandButton styleclass="slds-button slds-button_brand" style="float:right;" value="{!IF(!bShowAddAttachment,'Show Add Attachment','Hide Add Attachment')}" action="{!toggleAttachmentPanel}" reRender="pnlAttachment"/> <br/><br/>
+                    <apex:pageBlock title="" rendered="{!bShowAddAttachment}">
+                        <apex:iframe src="/flow/Quote_Attachment?recordId={!quoteId}" height="350px" width="50%"/>
+                    </apex:pageBlock>
+                </apex:outputPanel>-->
+                
+                <div id="dialog_AddAttachment" style="display:none;">
+                    <apex:pageBlock >
+                        <apex:iframe src="/flow/Quote_Attachment?recordId={!quoteId}" height="350px" width="100%"/>
+                    </apex:pageBlock>    
+                </div>
+                
+                <apex:outputPanel rendered="{!bCommercialChargesSelected}">
+                    <div id="dialog_AddCharge" style="display:none;">
+                        <apex:pageBlock id="pbCharges">
+                            <apex:pageBlockButtons location="bottom">
+                                <apex:commandButton styleclass="slds-button slds-button_brand" value="Save Charges" action="{!saveCharges}" rerender="pbCharges" status="saveChargesStatus"/>
+                                <apex:actionstatus id="saveChargesStatus">
+                                    <apex:facet name="start"> 
+                                        <img src="/img/loading.gif" alt="" style="padding-left: 4px;" />
+                                    </apex:facet>
+                                </apex:actionstatus>
+                            </apex:pageBlockButtons>
+                            
+                            <apex:commandButton styleclass="slds-button slds-button_brand" style="float:right;" value="Add Charge" action="{!addCharge}" reRender="pbCharges" status="addChargesStatus"/>
+                            <apex:actionstatus id="addChargesStatus">
+                                <apex:facet name="start"> 
+                                    <img src="/img/loading.gif" style="float:right;padding-right:4px;margin-top:7px;"/>
+                                </apex:facet>
+                            </apex:actionstatus>
+                            <br/><br/>
+                            
+                            <apex:pageBlockTable value="{!lstChargeWrapper}" var="cw" columns="5" columnsWidth="10%,20%,15%,35%,20%">
+                                <apex:column headerValue="Action">
+                                    <apex:commandLink rendered="{!ISNULL(cw.oCharge.Id)}" value="Delete" action="{!deleteCharge}" rerender="pbCharges" status="saveChargesStatus">
+                                        <apex:param assignTo="{!nDelChargeIndx}" name="nDelChargeIndx" value="{!cw.nIndex}" />
+                                    </apex:commandLink> 
+                                    <span class="cHide">[{!cw.nIndex+1}]</span>
+                                </apex:column>
+                                <apex:column headerValue="Type">
+                                    <apex:inputField value="{!cw.oCharge.Type__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Amount">
+                                    <apex:inputField value="{!cw.oCharge.Amount__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Quantity">
+                                    <apex:inputField value="{!cw.oCharge.Quantity__c}"/>
+                                </apex:column>
+                                <apex:column headerValue="Status">
+                                    <apex:inputField value="{!cw.oCharge.Status__c}"/>
+                                </apex:column>
+                            </apex:pageBlockTable>   
+                            <br/>
+                        </apex:pageBlock> 
+                    </div>
+                </apex:outputPanel>
+                
+                <apex:pageBlock title="" rendered="{!bCommercialSelected}">
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton styleclass="slds-button slds-button_brand" value="Submit Changes" action="{!saveQuoteDetails}" rerender="pnlMain" status="saveStatus"/>
+                        <apex:actionstatus id="saveStatus">
+                        <apex:facet name="start"> 
+                            <img src="/img/loading.gif" alt="" />
+                            </apex:facet>
+                        </apex:actionstatus>
+                    </apex:pageBlockButtons>
+                    
+                    <apex:repeat value="{!mapChangeOrderOptionWiseCOODs}" var="cocdkey">
+                        <apex:pageBlockSection title="{!cocdkey}" collapsible="false">
+                            <apex:repeat value="{!mapChangeOrderOptionWiseCOODs[cocdkey]}" var="cocd">
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel >{!cocd.Field_Label__c}</apex:outputLabel>
+                                    <apex:outputPanel >
+                                        <apex:inputField value="{!oQuote[cocd.Field_API__c]}"/>
+                                    </apex:outputPanel>
+                                </apex:pageBlockSectionItem>
+                            </apex:repeat>
+                        </apex:pageBlockSection>               
+                    </apex:repeat>
+                </apex:pageBlock>
+                
+            </apex:outputPanel>
+            
+            <script type="text/javascript">
+            var activeActionType = '{!activeActionType}';
+            var activeAlert = '{!activeAlert}';
+            </script>
+        </apex:outputPanel>
+        
+    </apex:form>
+</apex:page>

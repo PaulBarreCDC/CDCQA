@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFVacuum_settings_value_must_be_in_range</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+								ISPICKVAL( Service_Type__c, &quot;Vacuum&quot;),
+								OR(
+												Converted_Setting__c &lt; 0.5,
+												Converted_Setting__c &gt; 55.41
+												)
+								)</errorConditionFormula>
+    <errorDisplayField>Setting__c</errorDisplayField>
+    <errorMessage>The Valid values for Vacuum Setting should be in the range of 0.5 in. water to 55.41 in. water</errorMessage>
+</ValidationRule>

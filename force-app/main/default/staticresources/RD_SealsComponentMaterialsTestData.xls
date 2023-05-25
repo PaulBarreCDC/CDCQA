@@ -1,0 +1,6 @@
+Add_Metal_Seal__c,Atex__c,CDC_Ext_ID__c,Flag__c,MatlCode__c,NACE__c,Non_Fragmenting__c,PressLL__c,PressUL__c,PTC__c,SealUpperTemp__c,STC__c,SZC__c
+No,,,,45,,Yes,6,59,EV1,150,A3,200
+No,,,,45,,Yes,1,59,EV2,150,D2,1200
+No,,,,70,,Yes,15,59,LI1,500,D1,100
+No,,,,73,,Yes,0,99999,CAL,999999,SF,1000
+No,,,,73,,Yes,0,99999,PAS,999999,SF,300

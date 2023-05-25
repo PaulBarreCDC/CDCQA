@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-Chatter</defaultLandingTab>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>sbaa__Approval__c</tabs>
+    <tabs>SBQQ__QuoteLine__c</tabs>
+    <tabs>RD_Routing_Translation__c</tabs>
+    <tabs>RD_PressureClassConnections__c</tabs>
+    <tabs>BGR_Price_Translation__c</tabs>
+    <tabs>FA_Attributes_Details__c</tabs>
+    <tabs>IFS_character_codes__c</tabs>
+    <tabs>Credits_and_Booking__c</tabs>
+    <tabs>RV_VPRTOP_Cons__c</tabs>
+    <tabs>RV_Valve_Structure_Translation__c</tabs>
+    <tabs>RV_MCBODY_PS_Cons__c</tabs>
+</CustomApplication>

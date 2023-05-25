@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Size_Preference_Constraint</fullName>
+    <active>false</active>
+    <description>Size Preference is a mandatory field.</description>
+    <errorConditionFormula>ISBLANK(  Size_Preference__c  )
+&amp;&amp;
+(Section_E_Flag__c= TRUE)</errorConditionFormula>
+    <errorDisplayField>Size_Preference__c</errorDisplayField>
+    <errorMessage>Please select a value.</errorMessage>
+</ValidationRule>

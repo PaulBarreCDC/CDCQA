@@ -1,0 +1,18 @@
+Output__c,Text1Val__c,Text2Val__c,Text3Val__c
+Null,HPN,Rated,
+Y,N,Y,
+Rated,PAS,Start/Full Relief (Min/Max),Rated
+Rated,PAS,Start/Full Relief (Min/Max),Burst Press Min/Max
+Null,HPN,Specified,
+Null,HPX,Burst Pressure Min/Max.,
+Null,PAS,Start/Full Relief (Min/Max),
+Null,HPZ,Burst Pressure Min/Max.,
+Null,HPZ,Specified,
+Null,HPX,Rated,
+Rated,PAS,Start/Full Relief (Min/Max),Specified
+Null,HPX,Specified,
+Null,N,N,
+Not Rated,PAS,Start/Full Relief (Min/Max),No Rating but Must Withstand
+Null,HPZ,Rated,
+Null,HPN,Burst Pressure Min/Max.,
+Not Rated,PAS,Start/Full Relief (Min/Max),No Rating

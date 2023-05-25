@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NACE__c</fullName>
+    <externalId>false</externalId>
+    <label>NACE</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>N</fullName>
+                <default>true</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>MR0175</fullName>
+                <default>false</default>
+                <label>NACE MR0175 / ISO15156</label>
+            </value>
+            <value>
+                <fullName>MR0103</fullName>
+                <default>false</default>
+                <label>NACE MR0103</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
