@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Audience xmlns="http://soap.sforce.com/2006/04/metadata">
+    <audienceName>Partner User</audienceName>
+    <container>CDC Salesforce Partner Community</container>
+    <criteria>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <profile>partner community user</profile>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Profile</type>
+        </criterion>
+        <criterion>
+            <criteriaNumber>1</criteriaNumber>
+            <criterionValue>
+                <profile>cdc partner community users profile</profile>
+            </criterionValue>
+            <operator>Equal</operator>
+            <type>Profile</type>
+        </criterion>
+    </criteria>
+    <formulaFilterType>AllCriteriaMatch</formulaFilterType>
+    <isDefaultAudience>false</isDefaultAudience>
+    <targets>
+        <target>
+            <groupName>d07d0d10-2b95-47bc-ac1a-7d78b7a7354a$#$cf057f75-7f40-4d71-9512-a391d4305238</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Record_List_1_Component</targetValue>
+        </target>
+        <target>
+            <groupName>81774cd5-ced2-4db2-9adc-f27a2bd66927$#$70d1e62a-958f-49b6-8963-fe9ea6a950d6</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Default_Theme_Navigation_Menu_Component_Properties</targetValue>
+        </target>
+        <target>
+            <groupName>d07d0d10-2b95-47bc-ac1a-7d78b7a7354a$#$deafa91a-a24d-4ba8-acaf-d7c69a968839</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Rich_Content_Editor_Component</targetValue>
+        </target>
+        <target>
+            <groupName>d07d0d10-2b95-47bc-ac1a-7d78b7a7354a$#$dcb1a3a2-5fd3-4259-a7e7-a90330b8c658</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Rich_Content_Editor_2_Component</targetValue>
+        </target>
+        <target>
+            <groupName>d07d0d10-2b95-47bc-ac1a-7d78b7a7354a$#$f5a51ba6-3152-4aa4-86f0-c7b29b3671f1</groupName>
+            <priority>1</priority>
+            <targetType>ExperienceVariation</targetType>
+            <targetValue>Home_Record_List_Component</targetValue>
+        </target>
+    </targets>
+</Audience>

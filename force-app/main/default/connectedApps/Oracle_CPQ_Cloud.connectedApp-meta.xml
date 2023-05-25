@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Get</accessMethod>
+        <canvasUrl>https://cdc.bigmachines.com/admin/oauth2/salesforce/oauth_callback.jsp</canvasUrl>
+        <lifecycleClass>BigMachines__OracleOAuthLifecycleHandler</lifecycleClass>
+        <locations>Visualforce</locations>
+        <locations>PageLayout</locations>
+        <samlInitiationMethod>None</samlInitiationMethod>
+    </canvasConfig>
+    <contactEmail>bappleberry@contdisc.com</contactEmail>
+    <contactPhone>8166998655</contactPhone>
+    <label>Oracle CPQ Cloud</label>
+    <oauthConfig>
+        <callbackUrl>https://cdc.bigmachines.com/admin/oauth2/salesforce/oauth_callback.jsp</callbackUrl>
+        <consumerKey>3MVG9S6qnsIUe5wDH7s1r7xavm1c18TK5XM8uwSF2m9lXapQ6TplYGGlus9a7YWuVWFMJgCzKOfkFIAMhO.SQ</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>CDC Partner Community Users Profile</profileName>
+    <profileName>CDC Business Super User</profileName>
+    <profileName>CDC Engineering</profileName>
+    <profileName>CDC Executive User</profileName>
+    <profileName>CDC Inside Sales</profileName>
+    <profileName>CDC Prod. Planning</profileName>
+    <profileName>CDC Steelbrick User</profileName>
+    <profileName>Standard User</profileName>
+    <profileName>System Administrator</profileName>
+    <profileName>CDC RSM/RSE User</profileName>
+    <profileName>CDC Standard User</profileName>
+    <profileName>CDC Integration</profileName>
+</ConnectedApp>

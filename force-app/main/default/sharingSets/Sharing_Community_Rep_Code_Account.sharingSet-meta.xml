@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessMappings>
+        <accessLevel>Read</accessLevel>
+        <object>Account</object>
+        <objectField>Id</objectField>
+        <userField>Account.Rep_Code_Account__c</userField>
+    </accessMappings>
+    <name>Sharing Community Rep Code Account</name>
+    <profiles>CDC Public Community User</profiles>
+</SharingSet>

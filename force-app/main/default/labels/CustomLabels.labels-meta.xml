@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CDC_Error_Encountered_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_Error_Encountered_Heading</shortDescription>
+        <value>Error Encountered!</value>
+    </labels>
+    <labels>
+        <fullName>CDC_Error_Encountered_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_Error_Encountered_Message</shortDescription>
+        <value>Internal Server Error</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ReadOnly_Profile</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ReadOnly_Profile</shortDescription>
+        <value>CDC Executive User</value>
+    </labels>
+    <labels>
+        <fullName>Default_Submittal_Drawing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Default_Submittal_Drawing</shortDescription>
+        <value>9999</value>
+    </labels>
+    <labels>
+        <fullName>HLD_ERROR_MSG_PARTBASE_MISSING</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HLD_ERROR_MSG_PARTBASE_MISSING</shortDescription>
+        <value>Please select a value for PARTNUMBER BASE</value>
+    </labels>
+    <labels>
+        <fullName>HLD_ERROR_MSG_PARTBASE_SINGLE_OPTION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HLD_ERROR_MSG_PARTBASE_SINGLE_OPTION</shortDescription>
+        <value>Please choose only one option for PARTNUMBER BASE</value>
+    </labels>
+    <labels>
+        <fullName>Holder_Temperature_Lower_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Holder Temperature Lower Limit</shortDescription>
+        <value>-320</value>
+    </labels>
+    <labels>
+        <fullName>Holder_Temperature_Upper_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Holder Temperature Upper Limit</shortDescription>
+        <value>1000</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Quote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid_Quote</shortDescription>
+        <value>Invalid Quote Number</value>
+    </labels>
+    <labels>
+        <fullName>ReGeneration_Opportunity_Stage_Condition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReGeneration Opportunity Stage Condition</shortDescription>
+        <value>Discovery/Identified,Solution Design,In Review,Approved (Quote)</value>
+    </labels>
+    <labels>
+        <fullName>ReGeneration_QuoteLine_Status_Condition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReGeneration QuoteLine Status Condition</shortDescription>
+        <value>Primary,Alternate,Removed,Cancel,Block,Unblock</value>
+    </labels>
+    <labels>
+        <fullName>ReGeneration_Quote_Status_Condition</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReGeneration Quote Status Condition</shortDescription>
+        <value>Pending,Change Order,Pending Approvals,Approved,Block,Unblock,Partner Submitted</value>
+    </labels>
+    <labels>
+        <fullName>Regeneration_Pending_Request</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regeneration_Pending_Request</shortDescription>
+        <value>Please try again after the active request is completed.</value>
+    </labels>
+    <labels>
+        <fullName>Regeneration_Records_Chunk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regeneration Records Chunk</shortDescription>
+        <value>25</value>
+    </labels>
+    <labels>
+        <fullName>Regeneration_Successful</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regeneration_Successful</shortDescription>
+        <value>Your request is submitted successfully! You will receive an email notification once it is completed.</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Welcome to UAT</masterLabel>
+    <promptVersions>
+        <body>Click the TAB called TEST CASES to get started</body>
+        <customApplication>UAT_Lightning</customApplication>
+        <delayDays>1</delayDays>
+        <description>Instructs Testers to click on the TEST CASE Tab</description>
+        <dismissButtonLabel>Got It</dismissButtonLabel>
+        <displayPosition>TopRight</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Welcome to UAT</masterLabel>
+        <publishedDate>2022-02-15</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2020-06-29</startDate>
+        <targetPageKey1>home</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>2</timesToDisplay>
+        <title>Welcome to UAT</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

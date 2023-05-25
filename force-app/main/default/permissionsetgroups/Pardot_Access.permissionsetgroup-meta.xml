@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Pardot Access</label>
+    <permissionSets>Pardot_Tab_Access</permissionSets>
+    <permissionSets>force__CRMUserPsl</permissionSets>
+    <permissionSets>pi__Pardot</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

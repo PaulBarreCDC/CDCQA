@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>CDCPC Sales</label>
+    <permissionSets>CDCPC_apex_permissions</permissionSets>
+    <permissionSets>cdcpc__CDCPC_Base_Sales</permissionSets>
+    <permissionSets>cdcpc__CDCPC_PCL_Sales</permissionSets>
+    <permissionSets>cdcpc__CDCPC_RD_Sales</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>
