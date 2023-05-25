@@ -1,0 +1,46 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "0618ddf0-411e-410e-afa7-cf17e4bc82fc",
+  "label" : "productRecommendationsCmp",
+  "regions" : [ {
+    "id" : "343bc8ec-eb1f-460a-a189-afaddf08bcf4",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:productRecommendationsCmp",
+      "id" : "be83eaf5-c56e-4d2d-9413-ca20b680245c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c9f00072-8bc3-4b6d-849f-d40cc8b86c7f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "28b0ccc9-0a1c-4c96-a113-b8d5831c557c",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "productRecommendationsCmp"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "f94959e1-7dba-4aa4-bdee-2a3f9aa1f51e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b8f29f34-da8f-492d-88fa-68370b9235dc",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-productrecommendationscmp"
+}

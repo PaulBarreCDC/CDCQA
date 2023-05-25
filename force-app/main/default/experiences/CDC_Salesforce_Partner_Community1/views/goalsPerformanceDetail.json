@@ -1,0 +1,65 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "45a2b312-72e7-4223-a338-b86c69ec36aa",
+  "label" : "Goals  Performance Detail",
+  "regions" : [ {
+    "id" : "dc41f128-d998-45c5-a4a4-b54f32eb77e2",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "6ecb1145-8eda-41bf-a327-ffd1c11db6dd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "detailsTabLabel" : "Details",
+        "discussionsTabLabel" : "Feed",
+        "recordId" : "{!recordId}",
+        "relatedTabLabel" : "Related",
+        "tab1Type" : "details",
+        "tab2Type" : "related",
+        "tab3Type" : "chatter",
+        "tab4Type" : "none",
+        "timelineTabLabel" : "Activity"
+      },
+      "componentName" : "forceCommunity:recordHomeTabs",
+      "id" : "0bc496a9-4901-45e4-a163-3131139bc097",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7efa4309-5120-4d9c-b21a-7041a4a64c0c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "084c934c-e2ba-4982-b5ee-ba05b3697c5e",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8ed42516-0775-40bc-b1e7-f75fd2b577a7",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2e38563a-39a5-4219-a000-e01ef9f3a33a",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-a4S"
+}

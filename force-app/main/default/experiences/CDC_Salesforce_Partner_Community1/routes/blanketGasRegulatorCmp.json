@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "b550726c-ca50-4f16-a72a-6ffeee728533",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "0c8653bb-f4fb-42a1-8ac4-10c0ef306092",
+  "label" : "blanketGasRegulatorCmp",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-blanketgasregulatorcmp",
+  "type" : "route",
+  "urlPrefix" : "blanketgasregulatorcmp"
+}

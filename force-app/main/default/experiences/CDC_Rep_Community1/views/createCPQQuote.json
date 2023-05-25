@@ -1,0 +1,50 @@
+{
+  "appPageId" : "5d5f9678-f9f5-4a52-af63-302cd7371bc2",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "3a6947cf-3165-41e0-bb0e-f8b910f0347c",
+  "label" : "Create CPQ Quote",
+  "regions" : [ {
+    "id" : "515aeeb3-10d2-47da-ab9f-ea51b46b2e27",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "height" : "300",
+        "pageName" : "BigMachines__QuoteCreate",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:visualforcePage",
+      "id" : "71a6695c-cd4c-4784-9856-19c5c7eafce5",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "eaee736d-08e0-42db-a981-6a46af81990d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "fd5ffd9e-104d-43c9-9e3a-1fd40cee5056",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Create CPQ Quote"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "5783763b-3e6a-4ed4-9609-85b0d74d7fd8",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "04016640-f8a8-4fed-b25e-8dfeffc06264",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-create-cpq-quote"
+}

@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "0618ddf0-411e-410e-afa7-cf17e4bc82fc",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "d93435ba-2477-4dae-9f0e-ce7f8c5b36fa",
+  "label" : "productRecommendationsCmp",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-productrecommendationscmp",
+  "type" : "route",
+  "urlPrefix" : "productrecommendationscmp"
+}

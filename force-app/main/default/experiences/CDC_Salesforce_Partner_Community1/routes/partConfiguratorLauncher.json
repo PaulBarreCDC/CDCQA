@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "6aeeb7fc-f9bd-452b-a681-d336d999acfb",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "380313bf-1176-4c95-8f93-2f4002cdd65b",
+  "label" : "PartConfiguratorLauncher",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-partconfiguratorlauncher",
+  "type" : "route",
+  "urlPrefix" : "partconfiguratorlauncher"
+}

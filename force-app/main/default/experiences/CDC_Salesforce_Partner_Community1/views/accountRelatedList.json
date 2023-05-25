@@ -1,0 +1,52 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "f17b689f-7ee1-4da0-b2ea-9c0f6bc79f19",
+  "label" : "Account Related List",
+  "regions" : [ {
+    "id" : "ba29b1ec-f525-4faa-afd2-9a4c23a20963",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customTitle" : "",
+        "parentRecordId" : "{!recordId}",
+        "relatedListName" : "{!relationshipApiName}",
+        "showBreadCrumbs" : true,
+        "showCustomTitle" : false,
+        "showManualRefreshButton" : true,
+        "showRowNumbers" : true
+      },
+      "componentName" : "forceCommunity:relatedList",
+      "id" : "d9a4ea17-3e5b-4bf1-a969-69a403d72a22",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "548fc80a-cb47-4f0d-9f62-50316d367d3f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "orientation" : "Horizontal",
+        "recordId" : "{!recordId}",
+        "style" : "",
+        "title" : "Quote Editor Actions"
+      },
+      "componentName" : "SBQQ:CPQPanel",
+      "id" : "5384805a-1515-4975-9a4a-b48ea0dc2946",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "230509a8-31ae-42b3-8860-160702574561",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "relatedlist-001"
+}

@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "ab50f87e-6572-48d3-bf18-5a1a77b57c56",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "cdb1e6e3-9c11-438a-a227-94f48ce7bea6",
+  "label" : "ruptureDiscCmp",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-rupturedisccmp",
+  "type" : "route",
+  "urlPrefix" : "rupturedisccmp"
+}

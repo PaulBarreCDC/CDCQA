@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "3a6947cf-3165-41e0-bb0e-f8b910f0347c",
+  "appPageId" : "5d5f9678-f9f5-4a52-af63-302cd7371bc2",
+  "configurationTags" : [ ],
+  "id" : "e0aac5ea-1954-4323-b0e9-878d7123d823",
+  "label" : "Create CPQ Quote",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-create-cpq-quote",
+  "type" : "route",
+  "urlPrefix" : "create-cpq-quote"
+}

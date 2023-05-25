@@ -1,0 +1,46 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "b550726c-ca50-4f16-a72a-6ffeee728533",
+  "label" : "blanketGasRegulatorCmp",
+  "regions" : [ {
+    "id" : "58e20de8-15da-4b75-a0bc-d6bfcd513752",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:BlanketGasRegulatorCmp",
+      "id" : "712f370b-b67b-4b1e-95ef-926254960ab4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7d7c105b-776c-46af-81a4-c42fabfa2edf",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "93a15579-773d-46c3-9c5e-8d6e87cb64c8",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "blanketGasRegulatorCmp"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "0516838b-c20a-4d75-b7ac-136a49e04c9b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "97b78310-d8bf-490b-a4a6-32a3f330072d",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-blanketgasregulatorcmp"
+}

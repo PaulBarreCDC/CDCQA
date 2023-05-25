@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "68ed46d5-c00f-4722-a1b5-2113a2065ef9",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "4e4a6612-ab47-4951-8f48-263b2d258525",
+  "label" : "Quote Line Detail",
+  "objectApiName" : "SBQQ__QuoteLine__c",
+  "routeType" : "detail-a1h",
+  "type" : "route",
+  "urlPrefix" : "quoteline"
+}

@@ -1,0 +1,178 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "d07d0d10-2b95-47bc-ac1a-7d78b7a7354a",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.CDC_Corp_Logo_250x125px_2.1}\" style=\"width: 135.969px; height: 67.9844px;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.COO19050_Partner_Community_Header_V3jpg.1}\"></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "deafa91a-a24d-4ba8-acaf-d7c69a968839",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.CDC_Corp_Logo_250x125px_2.1}\" style=\"width: 135.969px; height: 67.9844px;\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.Public_Community_Header_V3jpg.1}\" alt=\"\"></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "48de65df-b049-4931-bd29-bb80b6711593",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p><br></p><p><br></p><p><br></p><p><br></p><p> </p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "688cce3e-1700-459c-99a2-c0a680eb9ca7",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flowArguments" : "",
+        "flowName" : "Additional_Community_Information"
+      },
+      "componentName" : "forceCommunity:flowCommunity",
+      "id" : "ab075a0c-4d55-496e-9540-6e86506a1314",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "565fbc3b-9cca-40b8-9177-3584e9914e7b",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:customSizingRequestRelatedList",
+      "id" : "d8924986-4835-4d2a-bace-16d1c2cc62a9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6d7977bd-daa6-470b-8322-bb2f3a9c145c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<div style=\"background-color:#f6f7f8;padding-bottom:20px;\">\n    <div style=\"background-color:#00ADEE;\">\n        <!-- <img style=\"height:auto;horizontal-align:middle;\" src=\"https://www.contdisc.com/wp-content/uploads/2018/05/hpx-shadow.png\" alt=\"\" title=\"hpx-shadow\"> -->\n        <img style=\"height:auto;horizontal-align:middle;\" src=\"https://www.contdisc.com/wp-content/uploads/2018/05/hpx-product.png\" alt=\"\" title=\"hpx-product\">\n    </div>\n    <br>\n    <div style=\"justify-content:center;padding:10px;\">\n        <h1 style=\"font-size:2rem;text-transform:uppercase;\"><strong><a href=\"https://www.contdisc.com/hpx-rupture-disc-family/\" target=\"_blank\">HPX<sup>®</sup> Rupture<br>Disc Family</a></strong></h1>\n        <br>\n        <p style=\"font-size:1rem;\">HPX is your most versatile, cost-effective weapon in the battle against overpressure.</p>\n        <br>\n        <p style=\"font-size:1rem;\">Conceived, engineered and manufactured to fit nearly any overpressure protection application, the HPX family has been proven the most reliable in the industry – and the best choice for your operation.</p>\n        <br>\n        <br>\n        <a href=\"https://www.contdisc.com/hpx-rupture-disc-family/\" target=\"_blank\" style=\"padding:17px 30px 13px;border:solid #00ADEE 1px;border-radius:0px;color:#FFF;background-color:#00ADEE;text-transform:uppercase;\">Find your HPX</a>\n    </div>\n</div>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "3902c277-bd74-4b58-b192-09f46f4bbcb4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "enableInlineEdit" : true,
+        "filterName" : "My_Open_Leads",
+        "layout" : "COMPACT",
+        "pageSize" : 5,
+        "scope" : "Lead",
+        "showActionBar" : true,
+        "showChartsPanel" : true,
+        "showDisplay" : "showall",
+        "showFilterPanel" : true,
+        "showImageIcon" : true,
+        "showManualRefreshButton" : true,
+        "showObjectName" : true,
+        "showPinnedList" : true,
+        "showSearchBar" : true
+      },
+      "componentName" : "forceCommunity:objectHome",
+      "id" : "f5a51ba6-3152-4aa4-86f0-c7b29b3671f1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "enableInlineEdit" : true,
+        "filterName" : "My_Tasks1",
+        "layout" : "COMPACT",
+        "pageSize" : 25,
+        "scope" : "Task",
+        "showActionBar" : true,
+        "showChartsPanel" : true,
+        "showDisplay" : "showall",
+        "showFilterPanel" : true,
+        "showImageIcon" : true,
+        "showManualRefreshButton" : true,
+        "showObjectName" : true,
+        "showPinnedList" : true,
+        "showSearchBar" : true
+      },
+      "componentName" : "forceCommunity:objectHome",
+      "id" : "cf057f75-7f40-4d71-9512-a391d4305238",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "cacheAge" : 1440,
+        "filterName" : "",
+        "reportId" : "00O8A000000d8Ng",
+        "showRefreshButton" : true,
+        "showTitle" : true
+      },
+      "componentName" : "forceCommunity:reportChart",
+      "id" : "356e0be6-8ecc-405a-84b3-9afb08e0a548",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "cacheAge" : 1440,
+        "filterName" : "",
+        "reportId" : "00O0v000000XjCw",
+        "showRefreshButton" : true,
+        "showTitle" : true
+      },
+      "componentName" : "forceCommunity:reportChart",
+      "id" : "e1d9ddb1-baf9-4d12-bb4d-b14ac27d6fb6",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fc26b292-ff27-4291-97a8-7b35ee1047fd",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><br></p><p style=\"text-align: center;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 26px;\">&nbsp;&nbsp;</span><span style=\"font-size: 16px;\">For Assistance please contact your Regional Sales Manager</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "dcb1a3a2-5fd3-4259-a7e7-a90330b8c658",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8de8ef73-c907-4ee1-8f50-6d73380420fb",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "8a7cb553-4d72-494d-a6fe-3927f7002f3d",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9016134b-72af-41d6-a5b0-bfad271c6159",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

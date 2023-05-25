@@ -1,0 +1,65 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "68ed46d5-c00f-4722-a1b5-2113a2065ef9",
+  "label" : "Quote Line Detail",
+  "regions" : [ {
+    "id" : "1642153a-421d-429c-8589-978d61686102",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "0a225999-b652-402a-9cf8-adebb0e35cab",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "detailsTabLabel" : "Details",
+        "discussionsTabLabel" : "Feed",
+        "recordId" : "{!recordId}",
+        "relatedTabLabel" : "Related",
+        "tab1Type" : "details",
+        "tab2Type" : "related",
+        "tab3Type" : "none",
+        "tab4Type" : "none",
+        "timelineTabLabel" : "Activity"
+      },
+      "componentName" : "forceCommunity:recordHomeTabs",
+      "id" : "5e665df1-4ff5-4a78-8da6-60e4ff58732d",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "26a0adc1-2c75-4882-970d-d5d30522e98a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "8c642ff0-54cd-43ae-aa80-1a93be36c6eb",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "341e0132-54e5-4ef4-a82a-5c97e1c09fcd",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "006a3ec9-8c06-4ed1-9018-45cca8d21d32",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-a1h"
+}

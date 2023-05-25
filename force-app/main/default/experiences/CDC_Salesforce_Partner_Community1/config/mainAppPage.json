@@ -1,0 +1,11 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "32b9eec6-9478-4211-a063-106a95cdcf68",
+  "headMarkup" : "<style>\n\n</style>",
+  "id" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "isLockerServiceEnabled" : true,
+  "isRelaxedCSPLevel" : true,
+  "label" : "main",
+  "templateName" : "PRM Community Template",
+  "type" : "appPage"
+}

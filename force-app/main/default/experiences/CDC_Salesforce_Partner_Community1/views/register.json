@@ -1,0 +1,66 @@
+{
+  "appPageId" : "07eb87fc-2efc-4d4e-a1eb-bba74ee9f196",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "3f10e79c-b525-47cd-923a-410c7ebc7128",
+  "label" : "Register",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "salesforceIdentity:communityLogo2",
+      "id" : "2fa3cd4a-ee3a-4c91-b8ba-1e28fc6daae1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p><b style=\"font-family: arial; color: rgb(255, 255, 255); font-size: 12px;\">Please enter your information to register for an account. </b></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "9a69fada-5076-40c5-9598-e3c5065d0b04",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "accountId" : "",
+        "confirmPasswordLabel" : "Confirm Password",
+        "emailLabel" : "Email",
+        "extraFieldsFieldSet" : "",
+        "firstnameLabel" : "First Name",
+        "includePasswordField" : false,
+        "lastnameLabel" : "Last Name",
+        "passwordLabel" : "Create Password",
+        "regConfirmUrl" : "./CheckPasswordResetEmail",
+        "startUrl" : "",
+        "submitButtonLabel" : "Register"
+      },
+      "componentName" : "salesforceIdentity:selfRegister2",
+      "id" : "279a5b6e-0ddc-47f2-9039-fbb6f9cf793f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "90ff1741-2b99-4a22-9ae5-d8961f3ec68c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Register"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "663703ba-0be7-4bf5-a5cd-f619e49e1f9d",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "05b7eadc-1a2c-48f6-bb84-aac9b3336cc0",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Login",
+  "type" : "view",
+  "viewType" : "self-register"
+}

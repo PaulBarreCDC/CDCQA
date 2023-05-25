@@ -1,0 +1,62 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "6aeeb7fc-f9bd-452b-a681-d336d999acfb",
+  "label" : "PartConfiguratorLauncher",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerText" : "PartConfiguratorLauncher component will live here",
+        "bannerTextWithKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineArticles\">articles</a> and <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "bannerTextWithoutKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "pageType" : "",
+        "showSubTopics" : true,
+        "title" : "Welcome!",
+        "uniqueNameOrId" : ""
+      },
+      "componentName" : "forceCommunity:headline",
+      "id" : "3163f0f8-8a9f-46dd-87f5-7cb506b93bc3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9a0a9811-33cf-4f38-b4ae-c1bc77a7f541",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "cdcpc:partConfiguratorLauncher",
+      "id" : "e4e7ea79-e7a6-4b82-8637-70432c00a952",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "910484b5-0854-4978-b2b9-8c8e2749287e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "d5d7ad03-5729-4983-9c01-99941ae75bb1",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "PartConfiguratorLauncher"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "dc7210cc-51b0-41c5-aa29-b3f78e6a7e0b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b2f35bba-f685-465f-bab7-0f1f64b7c633",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-partconfiguratorlauncher"
+}

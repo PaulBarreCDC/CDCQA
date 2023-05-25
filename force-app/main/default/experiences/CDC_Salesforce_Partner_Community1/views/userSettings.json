@@ -1,0 +1,35 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "761e5ee6-73bb-4323-9714-2c3087deb2f1",
+  "label" : "User Settings",
+  "regions" : [ {
+    "id" : "43573746-24b4-4bdd-b6ff-41ebf212cdbc",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "hideConnectedSources" : false,
+        "hideEmailNotificationSettings" : false,
+        "id" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:userSettings",
+      "id" : "82191166-dfaf-4a5d-9ed9-ceb54e1378db",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "80b59074-65d8-4ecb-9cc1-982b9ed454da",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "2ab6c840-bb24-4ef9-9541-c2ca0d3f9b32",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "usersettings"
+}

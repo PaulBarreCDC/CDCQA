@@ -1,0 +1,46 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ab50f87e-6572-48d3-bf18-5a1a77b57c56",
+  "label" : "ruptureDiscCmp",
+  "regions" : [ {
+    "id" : "1ac14f16-20dc-4ffe-9e50-7c7671d51841",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:ruptureDiscCmp",
+      "id" : "78709f28-56d1-4ae3-9f0d-bdf2a398d534",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "2e780af6-3d27-4f4c-b31a-4f28c6374798",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "48f17dd7-3b77-4e3b-85e5-4c2f5c761e1a",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "ruptureDiscCmp"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "10ac3937-8cee-41c7-a971-1abd3958757c",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7b2fa4ec-4237-41ca-844e-d22c0fba3eed",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-rupturedisccmp"
+}

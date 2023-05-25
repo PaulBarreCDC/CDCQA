@@ -1,0 +1,46 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "7ac3662b-f67b-4b48-9741-9b3acd56b83d",
+  "label" : "reliefValveCmp",
+  "regions" : [ {
+    "id" : "7f4e559b-123b-48fa-8c68-35b8820faf13",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:reliefValveCmp",
+      "id" : "4d9d59d5-db00-4ab4-b445-0809cf8e08d1",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8855590f-f131-446d-9f51-317b50b915ee",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "ced3f6ab-2d09-49a5-9938-5420283eb176",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "reliefValveCmp"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "474eeb10-849a-47da-8978-550018d7fdf9",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "471c762c-553c-4027-9397-6118362a08e3",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-reliefvalvecmp"
+}

@@ -1,0 +1,65 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "ffd552d0-3873-4c5c-919f-704cc97d5a15",
+  "label" : "Order Detail",
+  "regions" : [ {
+    "id" : "0e90a498-a08f-46ed-9f1b-2dc6381d9ac4",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "561fc378-7b9e-4b07-b46e-eb8bb445065a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "detailsTabLabel" : "Details",
+        "discussionsTabLabel" : "Feed",
+        "recordId" : "{!recordId}",
+        "relatedTabLabel" : "Related",
+        "tab1Type" : "details",
+        "tab2Type" : "related",
+        "tab3Type" : "chatter",
+        "tab4Type" : "none",
+        "timelineTabLabel" : "Activity"
+      },
+      "componentName" : "forceCommunity:recordHomeTabs",
+      "id" : "61520b45-1394-447f-9d6d-1fa1d434ea4f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "575b7d6f-eda5-4e7a-adc3-3f48311a31ac",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "80e5f612-0514-47db-8ac6-7d56d79e077a",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "f28577b4-4a48-435d-b6f7-c9750e39c95b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "177267a5-4493-413f-afca-a10137bd4fe1",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-801"
+}

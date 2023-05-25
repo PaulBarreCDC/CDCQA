@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "0e5b5800-4d34-421d-927a-c590e8576f2f",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "21a92d6c-8a7d-426d-9b12-bfa1a72c6ad4",
+  "label" : "Goals  Performance List",
+  "objectApiName" : "Goals_Performance__c",
+  "routeType" : "list-a4S",
+  "type" : "route",
+  "urlPrefix" : "goals-performance"
+}

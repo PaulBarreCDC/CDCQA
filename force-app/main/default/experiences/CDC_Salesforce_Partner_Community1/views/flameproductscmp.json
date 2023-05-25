@@ -1,0 +1,46 @@
+{
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "0c4b7da5-b1dd-4905-a51b-0cac15f05469",
+  "label" : "flameproductscmp",
+  "regions" : [ {
+    "id" : "2fb93c9f-71b8-42a0-8016-e70630b2f3fb",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:flameProductsCmp",
+      "id" : "6fc80dd3-e83c-4431-a4d8-b1b3fa062bfe",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "df67460d-f13b-45ab-a0ef-28cb526a8faa",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "50e03e34-9ec5-4538-ba71-836992299482",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "flameproductscmp"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "bd89dd81-f0e8-46b8-bd51-6459d20a29be",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "45b693bf-c778-4e00-84e8-c6c3ad874330",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-flameproductscmp"
+}

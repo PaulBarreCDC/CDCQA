@@ -1,0 +1,97 @@
+{
+  "appPageId" : "5d5f9678-f9f5-4a52-af63-302cd7371bc2",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "60121e7f-a071-410d-9a43-6319f88f6edf",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<h1 style=\"text-align: center;\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.COO19050_Partner_Community_Header_V.1}\" /></h1>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "5da6bf99-e6ad-4b16-96ab-74d2f4c11c66",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0c6fe85f-a62c-4967-9a15-b1257392e129",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "showCreateNewCalendar" : false,
+        "showOtherCalendars" : false,
+        "showSidebar" : true
+      },
+      "componentName" : "forceCommunity:calendar",
+      "id" : "2ac2dd16-480c-4cec-bd63-2ed6a3e75fc4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9b8d249b-e39a-40d0-93b3-f2225d829a1f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "listViewIdForNavigation" : "My_Open_Leads",
+        "navigateToListView" : true,
+        "pageSize" : 5,
+        "sortBy" : "CreatedDate",
+        "title" : "Lead Inbox"
+      },
+      "componentName" : "forceCommunity:leadInbox",
+      "id" : "12ff3e91-01ad-4898-9d97-75ed2299059a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b6939b30-93c4-43df-8010-47fd753beaac",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<p><a href=\"//www.contdisc.com\" target=\"_blank\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.CDC_Corp_Logo_250x125px_21.1}\" style=\"width: 220.828px; height: 110.406px;\" /></a><a href=\"https://www.grothcorp.com/\" target=\"_blank\" style=\"background-color: transparent;\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.Groth_Logo_250x125px_1.1}\" style=\"width: 187.25px; height: 93.625px;\" /></a> <a href=\"https://lamotvalvearrestor.com\" target=\"_blank\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.LVA_Logo_250x125px_11.1}\" style=\"width: 194.328px; height: 97.1562px;\" /></a> <a href=\"https://www.lamot.com/rupture-disc/rupture-discs\" target=\"_blank\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.LaMot_Disc_Logo_250x125px_1.1}\" style=\"width: 207px; height: 103.5px;\" /></a></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "17a192de-b2b4-4f5b-90e2-26d7be8ffebe",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<p style=\"text-align: center;\"><span style=\"font-size: 26px;\">&nbsp;</span><span style=\"font-size: 16px;\">For Assistance please contact </span><a href=\"https://contdisccorp--cdcpartial--livepreview.cs67.force.com/s/salesforcesupport@contdisc.com\" target=\"_blank\" style=\"font-size: 16px; background-color: rgb(255, 255, 255);\">Salesforcesupport@contdisc.com</a><span style=\"font-size: 16px;\">&nbsp;&nbsp;</span></p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "01b89644-f38e-4084-bc2a-b13719e76219",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f38714b3-aafd-4d09-b3af-9d8245658944",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "ce38e8c0-8d2e-4982-acd8-43347c3e6fc1",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e5e9bf6b-7520-4773-ab67-3ae7ce723cc1",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

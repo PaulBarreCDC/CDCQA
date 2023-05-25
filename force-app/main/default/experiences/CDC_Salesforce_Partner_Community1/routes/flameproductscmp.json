@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "0c4b7da5-b1dd-4905-a51b-0cac15f05469",
+  "appPageId" : "411083c8-5450-481d-82fa-5617a520ad27",
+  "configurationTags" : [ ],
+  "id" : "e01ce6fb-ecf1-4bce-b9b3-3507fd50ef19",
+  "label" : "flameproductscmp",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-flameproductscmp",
+  "type" : "route",
+  "urlPrefix" : "flameproductscmp"
+}
